@@ -285,7 +285,7 @@ class itk::DOMReader&lt; TOutput &gt;</h3>
 
 <p>Class to read an ITK object from an XML file or a DOM object, using the DOM APIs. </p>
 <p>End-users need to derive from this class to implement readers for user objects. In subclasses, users need to provide an implementation for the virtual functions GenerateData(-,-).</p>
-<p>This class performs similar functions as the <a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader It&#39;s purpose really is just to define the simple interface for e...">XMLReader</a> - both provide the base for handling object reading from an XML source. The difference is that, readers derived from this class perform object reading using the easy-to-use DOM APIs, while XMLReader-based readers use the more error-prone SAX (Simple API for XML) APIs.</p>
+<p>This class performs similar functions as the <a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> - both provide the base for handling object reading from an XML source. The difference is that, readers derived from this class perform object reading using the easy-to-use DOM APIs, while XMLReader-based readers use the more error-prone SAX (Simple API for XML) APIs.</p>
 <p>Internally, this class first implicitly creates an intermediate DOM object from the input XML file using the <a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a>, then performs output object generation by pulling information from the DOM object.</p>
 <p>Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because many user objects to be read, e.g., registrations, transforms, optimizers, and so on, are not objects of type <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
 <p>The following code snippet demonstrates how to use a DOM-based reader that is derived from this class:</p>
@@ -295,7 +295,7 @@ class itk::DOMReader&lt; TOutput &gt;</h3>
 <div class="line">reader-&gt;SetFileName( input_xml_file_name );</div>
 <div class="line">reader-&gt;Update();</div>
 <div class="line">output_object = reader-&gt;GetOutput();</div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader It&#39;s purpose really is just to define the simple interface for e...">XMLReader</a> </dd>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> </dd>
 <dd>
 <a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a> </dd>
 <dd>

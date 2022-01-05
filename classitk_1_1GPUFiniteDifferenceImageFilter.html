@@ -662,8 +662,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a70e6b9bb5be9c219296ebf038df00a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62d652c4a7f8419895251c3ccb47941c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a62d652c4a7f8419895251c3ccb47941c">InitializeIteration</a> () override</td></tr>
 <tr class="separator:a62d652c4a7f8419895251c3ccb47941c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010463b9c44edaff1bc64d5f714fd117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const std::vector&lt; bool &gt; &amp;valid) const override</td></tr>
-<tr class="separator:a010463b9c44edaff1bc64d5f714fd117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657c143eaa00b8cc2a83d71d26bde295"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;valid) const override</td></tr>
+<tr class="separator:a657c143eaa00b8cc2a83d71d26bde295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17b3b66526de6e23c24ca57d7509f6b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a17b3b66526de6e23c24ca57d7509f6b5">PostProcessOutput</a> () override</td></tr>
 <tr class="separator:a17b3b66526de6e23c24ca57d7509f6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3c207b1df862a94747fe2979e94e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#acd3c207b1df862a94747fe2979e94e56">InitializeFunctionCoefficients</a> ()</td></tr>
@@ -1924,8 +1924,8 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
 
 </div>
 </div>
-<a id="a010463b9c44edaff1bc64d5f714fd117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a010463b9c44edaff1bc64d5f714fd117">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
+<a id="a657c143eaa00b8cc2a83d71d26bde295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a657c143eaa00b8cc2a83d71d26bde295">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1944,7 +1944,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; bool &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>valid</em>&#160;</td>
         </tr>
         <tr>
@@ -1963,13 +1963,13 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeStepList</td><td>The set of time changes compiled from all the threaded calls to ThreadedGenerateData. </td></tr>
-    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "list" elements are valid</td></tr>
+    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "timeStepList" elements are valid. Although they are uint8_t, they should be treated like bools.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The default is to return the minimum value in the list. </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a0940c68939455ea3d56910d285396c05">itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a47c8d1ad4f2174ea86b90ee55f841337">itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>

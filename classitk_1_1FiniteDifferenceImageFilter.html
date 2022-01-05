@@ -537,8 +537,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a92547da8cbb19cacc22d8ead68245aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca930cafa0bd5651661a8786655ad0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a2ca930cafa0bd5651661a8786655ad0c">InitializeIteration</a> ()</td></tr>
 <tr class="separator:a2ca930cafa0bd5651661a8786655ad0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0940c68939455ea3d56910d285396c05"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a0940c68939455ea3d56910d285396c05">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const std::vector&lt; bool &gt; &amp;valid) const</td></tr>
-<tr class="separator:a0940c68939455ea3d56910d285396c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c8d1ad4f2174ea86b90ee55f841337"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a47c8d1ad4f2174ea86b90ee55f841337">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;valid) const</td></tr>
+<tr class="separator:a47c8d1ad4f2174ea86b90ee55f841337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ce2aaf1b8d3dc343537f24bbf5bef2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a77ce2aaf1b8d3dc343537f24bbf5bef2">SetElapsedIterations</a> (<a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a> _arg)</td></tr>
 <tr class="separator:a77ce2aaf1b8d3dc343537f24bbf5bef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfc8a4e780f9c56c3f0dc1583c918c1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#acfc8a4e780f9c56c3f0dc1583c918c1d">PostProcessOutput</a> ()</td></tr>
@@ -1869,8 +1869,8 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 
 </div>
 </div>
-<a id="a0940c68939455ea3d56910d285396c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0940c68939455ea3d56910d285396c05">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
+<a id="a47c8d1ad4f2174ea86b90ee55f841337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c8d1ad4f2174ea86b90ee55f841337">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1889,7 +1889,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; bool &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>valid</em>&#160;</td>
         </tr>
         <tr>
@@ -1908,13 +1908,13 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeStepList</td><td>The set of time changes compiled from all the threaded calls to ThreadedGenerateData. </td></tr>
-    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "list" elements are valid</td></tr>
+    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "timeStepList" elements are valid. Although they are uint8_t, they should be treated like bools.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The default is to return the minimum value in the list. </p>
 
-<p>Reimplemented in <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, TParentImageFilter &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, AnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, GradientAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, and <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a010463b9c44edaff1bc64d5f714fd117">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, DenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, TParentImageFilter &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, AnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, GradientAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, and <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">itk::GPUFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, DenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt; &gt;</a>.</p>
 
 </div>
 </div>
