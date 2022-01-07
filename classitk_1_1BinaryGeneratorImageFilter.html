@@ -529,6 +529,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a4d53ce874f13529667a0ba64463d9216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3240bff67d6532aca603e8b42a6193ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BinaryGeneratorImageFilter.html#a3240bff67d6532aca603e8b42a6193ea">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread) override</td></tr>
 <tr class="separator:a3240bff67d6532aca603e8b42a6193ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c128e83e96cf7d70ba371a7ef5f31b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BinaryGeneratorImageFilter.html#a63c128e83e96cf7d70ba371a7ef5f31b">AfterThreadedGenerateData</a> () override</td></tr>
+<tr class="separator:a63c128e83e96cf7d70ba371a7ef5f31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8c333bd817a7868eec42a04acd1caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BinaryGeneratorImageFilter.html#aac8c333bd817a7868eec42a04acd1caa">GenerateOutputInformation</a> () override</td></tr>
 <tr class="separator:aac8c333bd817a7868eec42a04acd1caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -595,8 +597,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3feaf3f80b0339277b2f3502140031f8 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">BeforeThreadedGenerateData</a> ()</td></tr>
 <tr class="separator:a3feaf3f80b0339277b2f3502140031f8 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData</a> ()</td></tr>
-<tr class="separator:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139b7ff884a5efa2d1bee437f50febb1 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageRegionSplitterBase.html">ImageRegionSplitterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a139b7ff884a5efa2d1bee437f50febb1">GetImageRegionSplitter</a> () const</td></tr>
 <tr class="separator:a139b7ff884a5efa2d1bee437f50febb1 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4be3dace79783d5b0bef78812b6875 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a5f4be3dace79783d5b0bef78812b6875">SplitRequestedRegion</a> (unsigned int i, unsigned int pieces, <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;splitRegion)</td></tr>
@@ -1225,6 +1225,38 @@ template&lt;typename TInputImage1 , typename TInputImage2 , typename TOutputImag
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a63c128e83e96cf7d70ba371a7ef5f31b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c128e83e96cf7d70ba371a7ef5f31b">&#9670;&nbsp;</a></span>AfterThreadedGenerateData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage1 , typename TInputImage2 , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1BinaryGeneratorImageFilter.html">itk::BinaryGeneratorImageFilter</a>&lt; TInputImage1, TInputImage2, TOutputImage &gt;::AfterThreadedGenerateData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ImageDimension constants </p>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">itk::ImageSource&lt; TOutputImage &gt;</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html#l00252">252</a> of file <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html">itkBinaryGeneratorImageFilter.h</a>.</p>
+
+</div>
+</div>
 <a id="ae033524b4dbe0fa2d9fcbc8dc2f1bda9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae033524b4dbe0fa2d9fcbc8dc2f1bda9">&#9670;&nbsp;</a></span>CreateAnother()</h2>
 
@@ -2012,7 +2044,7 @@ template&lt;typename TInputImage1 , typename TInputImage2 , typename TOutputImag
 </div><div class="memdoc">
 <p>ImageDimension constants </p>
 
-<p class="definition">Definition at line <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html#l00259">259</a> of file <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html">itkBinaryGeneratorImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html#l00264">264</a> of file <a class="el" href="itkBinaryGeneratorImageFilter_8h_source.html">itkBinaryGeneratorImageFilter.h</a>.</p>
 
 </div>
 </div>
