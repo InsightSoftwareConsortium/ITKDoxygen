@@ -145,9 +145,12 @@ Public Types</h2></td></tr>
 <tr class="separator:a56fd43a9f1dfad6926a4093a89e9aed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3c3176109b5dc269b6b206687d049c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTImageFilterFactory.html#abf3c3176109b5dc269b6b206687d049c">RegisterOneFactory</a> ()</td></tr>
 <tr class="separator:abf3c3176109b5dc269b6b206687d049c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44421ac6a2561c10b0d8a2c6731c1ed"><td class="memTemplParams" colspan="2">template&lt;typename InputPixelType , typename OutputPixelType , vcl_size_t ImageDimension&gt; </td></tr>
-<tr class="memitem:ab44421ac6a2561c10b0d8a2c6731c1ed"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTImageFilterFactory.html#ab44421ac6a2561c10b0d8a2c6731c1ed">OverrideFFTImageFilterType</a> ()</td></tr>
-<tr class="separator:ab44421ac6a2561c10b0d8a2c6731c1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd98caf3f36eee5401cd5c0f854fdf4"><td class="memTemplParams" colspan="2">template&lt;typename InputPixelType , typename OutputPixelType , unsigned int D, unsigned int... ImageDimensions&gt; </td></tr>
+<tr class="memitem:a9fd98caf3f36eee5401cd5c0f854fdf4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTImageFilterFactory.html#a9fd98caf3f36eee5401cd5c0f854fdf4">OverrideFFTImageFilterType</a> (const std::integer_sequence&lt; unsigned int, D, ImageDimensions... &gt; &amp;)</td></tr>
+<tr class="separator:a9fd98caf3f36eee5401cd5c0f854fdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f01537cf50413ac33ac71c3dd1c9e51"><td class="memTemplParams" colspan="2">template&lt;typename InputPixelType , typename OutputPixelType &gt; </td></tr>
+<tr class="memitem:a4f01537cf50413ac33ac71c3dd1c9e51"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTImageFilterFactory.html#a4f01537cf50413ac33ac71c3dd1c9e51">OverrideFFTImageFilterType</a> (const std::integer_sequence&lt; unsigned int &gt; &amp;)</td></tr>
+<tr class="separator:a4f01537cf50413ac33ac71c3dd1c9e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47c027024fc9112a76253bb7d9d06da6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTImageFilterFactory.html#a47c027024fc9112a76253bb7d9d06da6">FFTImageFilterFactory</a> ()</td></tr>
 <tr class="separator:a47c027024fc9112a76253bb7d9d06da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -418,7 +421,7 @@ template&lt;template&lt; typename, typename &gt; class TFFTImageFilter&gt; </div
 </div><div class="memdoc">
 <p>Class methods used to interface with the registered factories. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFFTImageFilterFactory_8h_source.html#l00111">111</a> of file <a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFFTImageFilterFactory_8h_source.html#l00117">117</a> of file <a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>.</p>
 
 </div>
 </div>
@@ -579,15 +582,15 @@ template&lt;template&lt; typename, typename &gt; class TFFTImageFilter&gt; </div
 
 </div>
 </div>
-<a id="ab44421ac6a2561c10b0d8a2c6731c1ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab44421ac6a2561c10b0d8a2c6731c1ed">&#9670;&nbsp;</a></span>OverrideFFTImageFilterType()</h2>
+<a id="a4f01537cf50413ac33ac71c3dd1c9e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f01537cf50413ac33ac71c3dd1c9e51">&#9670;&nbsp;</a></span>OverrideFFTImageFilterType() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;template&lt; typename, typename &gt; class TFFTImageFilter&gt; </div>
 <div class="memtemplate">
-template&lt;typename InputPixelType , typename OutputPixelType , vcl_size_t ImageDimension&gt; </div>
+template&lt;typename InputPixelType , typename OutputPixelType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -595,6 +598,40 @@ template&lt;typename InputPixelType , typename OutputPixelType , vcl_size_t Imag
         <tr>
           <td class="memname">void <a class="el" href="classitk_1_1FFTImageFilterFactory.html">itk::FFTImageFilterFactory</a>&lt; TFFTImageFilter &gt;::OverrideFFTImageFilterType </td>
           <td>(</td>
+          <td class="paramtype">const std::integer_sequence&lt; unsigned int &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Class methods used to interface with the registered factories. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkFFTImageFilterFactory_8h_source.html#l00113">113</a> of file <a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fd98caf3f36eee5401cd5c0f854fdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd98caf3f36eee5401cd5c0f854fdf4">&#9670;&nbsp;</a></span>OverrideFFTImageFilterType() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; typename, typename &gt; class TFFTImageFilter&gt; </div>
+<div class="memtemplate">
+template&lt;typename InputPixelType , typename OutputPixelType , unsigned int D, unsigned int... ImageDimensions&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1FFTImageFilterFactory.html">itk::FFTImageFilterFactory</a>&lt; TFFTImageFilter &gt;::OverrideFFTImageFilterType </td>
+          <td>(</td>
+          <td class="paramtype">const std::integer_sequence&lt; unsigned int, D, ImageDimensions... &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
