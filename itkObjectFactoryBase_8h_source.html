@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Forward reference because of private implementation</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">class </span>OverRideMap;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">struct </span>ObjectFactoryBasePrivate;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">class </span>ObjectFactoryBasePrivate;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html">   62</a></span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT <a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1Object.html">Object</a></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
@@ -226,68 +226,67 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    (void)staticFactoryRegistration;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  PrintSelf(std::ostream &amp; os, <a class="code" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  Initialize();</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  RegisterOverride(<span class="keyword">const</span> <span class="keywordtype">char</span> *               classOverride,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span> *               subclass,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span> *               description,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                   <span class="keywordtype">bool</span>                       enableFlag,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                   <a class="code" href="classitk_1_1CreateObjectFunctionBase.html">CreateObjectFunctionBase</a> * createFunction);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classitk_1_1SmartPointer.html">LightObject::Pointer</a></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  CreateObject(<span class="keyword">const</span> <span class="keywordtype">char</span> * itkclassname);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keyword">virtual</span> std::list&lt;LightObject::Pointer&gt;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  CreateAllObject(<span class="keyword">const</span> <span class="keywordtype">char</span> * itkclassname);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a>();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  ~<a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  SynchronizeObjectFactoryBase(<span class="keywordtype">void</span> * objectFactoryBasePrivate);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <a class="code" href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a>(ObjectFactoryBasePrivate, PimplGlobals);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">  278</a></span>&#160;  OverRideMap * <a class="code" href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">m_OverrideMap</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  InitializeFactoryList();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  PrintSelf(std::ostream &amp; os, <a class="code" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  RegisterOverride(<span class="keyword">const</span> <span class="keywordtype">char</span> *               classOverride,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span> *               subclass,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span> *               description,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                   <span class="keywordtype">bool</span>                       enableFlag,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                   <a class="code" href="classitk_1_1CreateObjectFunctionBase.html">CreateObjectFunctionBase</a> * createFunction);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classitk_1_1SmartPointer.html">LightObject::Pointer</a></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  CreateObject(<span class="keyword">const</span> <span class="keywordtype">char</span> * itkclassname);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keyword">virtual</span> std::list&lt;LightObject::Pointer&gt;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  CreateAllObject(<span class="keyword">const</span> <span class="keywordtype">char</span> * itkclassname);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a>();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  ~<a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  SynchronizeObjectFactoryBase(<span class="keywordtype">void</span> * objectFactoryBasePrivate);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a>(ObjectFactoryBasePrivate, PimplGlobals);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">  282</a></span>&#160;  OverRideMap * <a class="code" href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">m_OverrideMap</a>;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  Initialize();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  RegisterInternal();</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  LoadDynamicFactories();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  LoadLibrariesInPath(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  DeleteNonInternalFactory(<a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a> *);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">  306</a></span>&#160;  <span class="keywordtype">void</span> *        <a class="code" href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">m_LibraryHandle</a>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">  307</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">m_LibraryDate</a>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">  308</a></span>&#160;  std::string   <a class="code" href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">m_LibraryPath</a>;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">  310</a></span>&#160;  <span class="keyword">static</span> ObjectFactoryBasePrivate * <a class="code" href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">m_PimplGlobals</a>;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;};</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  InitializeFactoryList();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  RegisterInternal();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  LoadDynamicFactories();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  LoadLibrariesInPath(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  DeleteNonInternalFactory(<a class="code" href="classitk_1_1ObjectFactoryBase.html">ObjectFactoryBase</a> *);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">  305</a></span>&#160;  <span class="keywordtype">void</span> *        <a class="code" href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">m_LibraryHandle</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">  306</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">m_LibraryDate</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">  307</a></span>&#160;  std::string   <a class="code" href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">m_LibraryPath</a>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">  309</a></span>&#160;  <span class="keyword">static</span> ObjectFactoryBasePrivate * <a class="code" href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">m_PimplGlobals</a>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;};</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aitkCreateObjectFunction_8h_html"><div class="ttname"><a href="itkCreateObjectFunction_8h.html">itkCreateObjectFunction.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html">itk::ObjectFactoryBase</a></div><div class="ttdoc">Create instances of classes using an object factory.</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00062">itkObjectFactoryBase.h:62</a></div></div>
-<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a2e982abae5b81ab0d19ad38d54239326"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">itk::ObjectFactoryBase::m_LibraryPath</a></div><div class="ttdeci">std::string m_LibraryPath</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00308">itkObjectFactoryBase.h:308</a></div></div>
+<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a2e982abae5b81ab0d19ad38d54239326"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a2e982abae5b81ab0d19ad38d54239326">itk::ObjectFactoryBase::m_LibraryPath</a></div><div class="ttdeci">std::string m_LibraryPath</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00307">itkObjectFactoryBase.h:307</a></div></div>
 <div class="ttc" id="astructitk_1_1ObjectFactoryBase_1_1OverrideInformation_html"><div class="ttname"><a href="structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html">itk::ObjectFactoryBase::OverrideInformation</a></div><div class="ttdoc">Internal implementation class for ObjectFactorBase.</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00216">itkObjectFactoryBase.h:216</a></div></div>
 <div class="ttc" id="astructitk_1_1ObjectFactoryBase_1_1OverrideInformation_html_a8bafc7ef7c5ffbfac59827e221934191"><div class="ttname"><a href="structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html#a8bafc7ef7c5ffbfac59827e221934191">itk::ObjectFactoryBase::OverrideInformation::m_OverrideWithName</a></div><div class="ttdeci">std::string m_OverrideWithName</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00219">itkObjectFactoryBase.h:219</a></div></div>
-<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a1d1fada09cdf7385102d0d9581d5a847"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">itk::ObjectFactoryBase::m_LibraryDate</a></div><div class="ttdeci">unsigned long m_LibraryDate</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00307">itkObjectFactoryBase.h:307</a></div></div>
+<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a1d1fada09cdf7385102d0d9581d5a847"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a1d1fada09cdf7385102d0d9581d5a847">itk::ObjectFactoryBase::m_LibraryDate</a></div><div class="ttdeci">unsigned long m_LibraryDate</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00306">itkObjectFactoryBase.h:306</a></div></div>
 <div class="ttc" id="astructitk_1_1ObjectFactoryBase_1_1OverrideInformation_html_aca6051e2be940f6ef50d541f49a278c6"><div class="ttname"><a href="structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html#aca6051e2be940f6ef50d541f49a278c6">itk::ObjectFactoryBase::OverrideInformation::m_EnabledFlag</a></div><div class="ttdeci">bool m_EnabledFlag</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00220">itkObjectFactoryBase.h:220</a></div></div>
 <div class="ttc" id="aitkSingletonMacro_8h_html"><div class="ttname"><a href="itkSingletonMacro_8h.html">itkSingletonMacro.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
@@ -295,11 +294,11 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1CreateObjectFunctionBase_html"><div class="ttname"><a href="classitk_1_1CreateObjectFunctionBase.html">itk::CreateObjectFunctionBase</a></div><div class="ttdoc">Define API for object creation callback functions.</div><div class="ttdef"><b>Definition:</b> <a href="itkCreateObjectFunction_8h_source.html#l00031">itkCreateObjectFunction.h:31</a></div></div>
 <div class="ttc" id="aclassitk_1_1LightObject_html"><div class="ttname"><a href="classitk_1_1LightObject.html">itk::LightObject</a></div><div class="ttdoc">Light weight base class for most itk classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkLightObject_8h_source.html#l00059">itkLightObject.h:59</a></div></div>
 <div class="ttc" id="astructitk_1_1ObjectFactoryBase_1_1OverrideInformation_html_aeaf578e637062c78d8dc8851a26d2c5d"><div class="ttname"><a href="structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html#aeaf578e637062c78d8dc8851a26d2c5d">itk::ObjectFactoryBase::OverrideInformation::m_Description</a></div><div class="ttdeci">std::string m_Description</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00218">itkObjectFactoryBase.h:218</a></div></div>
-<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a2d490ba76b2de617674fa980a6a46f78"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">itk::ObjectFactoryBase::m_OverrideMap</a></div><div class="ttdeci">OverRideMap * m_OverrideMap</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00278">itkObjectFactoryBase.h:278</a></div></div>
-<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_ad0d43fb030e5056f14946783ca213816"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">itk::ObjectFactoryBase::m_LibraryHandle</a></div><div class="ttdeci">void * m_LibraryHandle</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00306">itkObjectFactoryBase.h:306</a></div></div>
+<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a2d490ba76b2de617674fa980a6a46f78"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a2d490ba76b2de617674fa980a6a46f78">itk::ObjectFactoryBase::m_OverrideMap</a></div><div class="ttdeci">OverRideMap * m_OverrideMap</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00282">itkObjectFactoryBase.h:282</a></div></div>
+<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_ad0d43fb030e5056f14946783ca213816"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#ad0d43fb030e5056f14946783ca213816">itk::ObjectFactoryBase::m_LibraryHandle</a></div><div class="ttdeci">void * m_LibraryHandle</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00305">itkObjectFactoryBase.h:305</a></div></div>
 <div class="ttc" id="astructitk_1_1ObjectFactoryBase_1_1OverrideInformation_html_ad028c068956af67facef9dcff714283e"><div class="ttname"><a href="structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html#ad028c068956af67facef9dcff714283e">itk::ObjectFactoryBase::OverrideInformation::m_CreateObject</a></div><div class="ttdeci">CreateObjectFunctionBase::Pointer m_CreateObject</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00221">itkObjectFactoryBase.h:221</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a88ff3d41e3fa124949d117c6ffdfe68d"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">itk::ObjectFactoryBase::m_PimplGlobals</a></div><div class="ttdeci">static ObjectFactoryBasePrivate * m_PimplGlobals</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00310">itkObjectFactoryBase.h:310</a></div></div>
+<div class="ttc" id="aclassitk_1_1ObjectFactoryBase_html_a88ff3d41e3fa124949d117c6ffdfe68d"><div class="ttname"><a href="classitk_1_1ObjectFactoryBase.html#a88ff3d41e3fa124949d117c6ffdfe68d">itk::ObjectFactoryBase::m_PimplGlobals</a></div><div class="ttdeci">static ObjectFactoryBasePrivate * m_PimplGlobals</div><div class="ttdef"><b>Definition:</b> <a href="itkObjectFactoryBase_8h_source.html#l00309">itkObjectFactoryBase.h:309</a></div></div>
 <div class="ttc" id="aitkCommonEnums_8h_html"><div class="ttname"><a href="itkCommonEnums_8h.html">itkCommonEnums.h</a></div></div>
 <div class="ttc" id="aitkSingletonMacro_8h_html_aefcb0659028251ba8edc94be738e3eaf"><div class="ttname"><a href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a></div><div class="ttdeci">#define itkGetGlobalDeclarationMacro(Type, VarName)</div><div class="ttdef"><b>Definition:</b> <a href="itkSingletonMacro_8h_source.html#l00035">itkSingletonMacro.h:35</a></div></div>
 <div class="ttc" id="aclassitk_1_1Object_html"><div class="ttname"><a href="classitk_1_1Object.html">itk::Object</a></div><div class="ttdoc">Base class for most ITK classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkObject_8h_source.html#l00062">itkObject.h:62</a></div></div>
