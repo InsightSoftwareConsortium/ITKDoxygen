@@ -104,94 +104,98 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef itkOutputWindow_h</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define itkOutputWindow_h</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkObject_8h.html">itkObject.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">struct </span>OutputWindowGlobals;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkObject_8h.html">itkObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html">   48</a></span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1Object.html">Object</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#ae705f58c8a4350ed98890e59cc7a2810">   54</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Self</a> = <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a419c5e36b0e517f3644b491972175bf8">   55</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Superclass</a> = <a class="code" href="classitk_1_1Object.html">Object</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a861daf69c433a44369e93f0e619fb21d">   56</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#adbb6eabac082633b0df2a23501ddba06">   57</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;const Self&gt;</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>, <a class="code" href="classitk_1_1Object.html">Object</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">static</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  New();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  GetInstance();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  SetInstance(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a> * instance);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  DisplayText(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">   87</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">DisplayErrorText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    this-&gt;DisplayText(t);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">   96</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">DisplayWarningText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    this-&gt;DisplayText(t);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">  105</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">DisplayGenericOutputText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    this-&gt;DisplayText(t);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">  114</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">DisplayDebugText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    this-&gt;DisplayText(t);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  itkSetMacro(PromptUser, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  itkGetConstMacro(PromptUser, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  itkBooleanMacro(PromptUser);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  ~<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  PrintSelf(std::ostream &amp; os, <a class="code" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a>(OutputWindowGlobals, PimplGlobals);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a761722b3ccb7fb16283cae361695dfa5">  136</a></span>&#160;  <span class="keywordtype">bool</span>                         <a class="code" href="classitk_1_1OutputWindow.html#a761722b3ccb7fb16283cae361695dfa5">m_PromptUser</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">  137</a></span>&#160;  <span class="keyword">static</span> OutputWindowGlobals * <a class="code" href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">m_PimplGlobals</a>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">struct </span>OutputWindowGlobals;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html">   50</a></span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1Object.html">Object</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#ae705f58c8a4350ed98890e59cc7a2810">   56</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Self</a> = <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a419c5e36b0e517f3644b491972175bf8">   57</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Superclass</a> = <a class="code" href="classitk_1_1Object.html">Object</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a861daf69c433a44369e93f0e619fb21d">   58</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#adbb6eabac082633b0df2a23501ddba06">   59</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;const Self&gt;</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>, <a class="code" href="classitk_1_1Object.html">Object</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  New();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  GetInstance();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  SetInstance(<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a> * instance);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  DisplayText(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">   89</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">DisplayErrorText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    this-&gt;DisplayText(t);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">   98</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">DisplayWarningText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    this-&gt;DisplayText(t);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">  107</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">DisplayGenericOutputText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    this-&gt;DisplayText(t);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">  116</a></span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">DisplayDebugText</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * t)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    this-&gt;DisplayText(t);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  itkSetMacro(PromptUser, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  itkGetConstMacro(PromptUser, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  itkBooleanMacro(PromptUser);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  ~<a class="code" href="classitk_1_1OutputWindow.html">OutputWindow</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  PrintSelf(std::ostream &amp; os, <a class="code" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a>(OutputWindowGlobals, PimplGlobals);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a1c7dd7199d03a8d6daaf61bf8cd7854d">  138</a></span>&#160;  std::atomic&lt;bool&gt;            <a class="code" href="classitk_1_1OutputWindow.html#a1c7dd7199d03a8d6daaf61bf8cd7854d">m_PromptUser</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a15407b606ef3cafbabea9ba6349e0737">  139</a></span>&#160;  std::mutex                   <a class="code" href="classitk_1_1OutputWindow.html#a15407b606ef3cafbabea9ba6349e0737">m_cerrMutex</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">  140</a></span>&#160;  <span class="keyword">static</span> OutputWindowGlobals * <a class="code" href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">m_PimplGlobals</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1OutputWindow_html"><div class="ttname"><a href="classitk_1_1OutputWindow.html">itk::OutputWindow</a></div><div class="ttdoc">Messages sent from the system are collected by this object.</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00048">itkOutputWindow.h:48</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a15407b606ef3cafbabea9ba6349e0737"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a15407b606ef3cafbabea9ba6349e0737">itk::OutputWindow::m_cerrMutex</a></div><div class="ttdeci">std::mutex m_cerrMutex</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00139">itkOutputWindow.h:139</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html"><div class="ttname"><a href="classitk_1_1OutputWindow.html">itk::OutputWindow</a></div><div class="ttdoc">Messages sent from the system are collected by this object.</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00050">itkOutputWindow.h:50</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
 <div class="ttc" id="aclassitk_1_1Indent_html"><div class="ttname"><a href="classitk_1_1Indent.html">itk::Indent</a></div><div class="ttdoc">Control indentation during Print() invocation.</div><div class="ttdef"><b>Definition:</b> <a href="itkIndent_8h_source.html#l00049">itkIndent.h:49</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a17668bb809aa49a03a76b1fef41a21a1"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">itk::OutputWindow::m_PimplGlobals</a></div><div class="ttdeci">static OutputWindowGlobals * m_PimplGlobals</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00137">itkOutputWindow.h:137</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a1c7dd7199d03a8d6daaf61bf8cd7854d"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a1c7dd7199d03a8d6daaf61bf8cd7854d">itk::OutputWindow::m_PromptUser</a></div><div class="ttdeci">std::atomic&lt; bool &gt; m_PromptUser</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00138">itkOutputWindow.h:138</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a17668bb809aa49a03a76b1fef41a21a1"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a17668bb809aa49a03a76b1fef41a21a1">itk::OutputWindow::m_PimplGlobals</a></div><div class="ttdeci">static OutputWindowGlobals * m_PimplGlobals</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00140">itkOutputWindow.h:140</a></div></div>
 <div class="ttc" id="aclassitk_1_1LightObject_html"><div class="ttname"><a href="classitk_1_1LightObject.html">itk::LightObject</a></div><div class="ttdoc">Light weight base class for most itk classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkLightObject_8h_source.html#l00059">itkLightObject.h:59</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a47d529ce5cc878e8c41fecf494a46cf7"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">itk::OutputWindow::DisplayErrorText</a></div><div class="ttdeci">virtual void DisplayErrorText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00087">itkOutputWindow.h:87</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a289ff943e6390b230ff47d012232728f"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">itk::OutputWindow::DisplayGenericOutputText</a></div><div class="ttdeci">virtual void DisplayGenericOutputText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00105">itkOutputWindow.h:105</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a47d529ce5cc878e8c41fecf494a46cf7"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a47d529ce5cc878e8c41fecf494a46cf7">itk::OutputWindow::DisplayErrorText</a></div><div class="ttdeci">virtual void DisplayErrorText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00089">itkOutputWindow.h:89</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a289ff943e6390b230ff47d012232728f"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a289ff943e6390b230ff47d012232728f">itk::OutputWindow::DisplayGenericOutputText</a></div><div class="ttdeci">virtual void DisplayGenericOutputText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00107">itkOutputWindow.h:107</a></div></div>
 <div class="ttc" id="aitkObject_8h_html"><div class="ttname"><a href="itkObject_8h.html">itkObject.h</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a761722b3ccb7fb16283cae361695dfa5"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a761722b3ccb7fb16283cae361695dfa5">itk::OutputWindow::m_PromptUser</a></div><div class="ttdeci">bool m_PromptUser</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00136">itkOutputWindow.h:136</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a980e6240c67054a63f44bda2b9d53137"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">itk::OutputWindow::DisplayDebugText</a></div><div class="ttdeci">virtual void DisplayDebugText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00114">itkOutputWindow.h:114</a></div></div>
-<div class="ttc" id="aclassitk_1_1OutputWindow_html_a3445e922132be181ab37c64f07ea0680"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">itk::OutputWindow::DisplayWarningText</a></div><div class="ttdeci">virtual void DisplayWarningText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00096">itkOutputWindow.h:96</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a980e6240c67054a63f44bda2b9d53137"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a980e6240c67054a63f44bda2b9d53137">itk::OutputWindow::DisplayDebugText</a></div><div class="ttdeci">virtual void DisplayDebugText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00116">itkOutputWindow.h:116</a></div></div>
+<div class="ttc" id="aclassitk_1_1OutputWindow_html_a3445e922132be181ab37c64f07ea0680"><div class="ttname"><a href="classitk_1_1OutputWindow.html#a3445e922132be181ab37c64f07ea0680">itk::OutputWindow::DisplayWarningText</a></div><div class="ttdeci">virtual void DisplayWarningText(const char *t)</div><div class="ttdef"><b>Definition:</b> <a href="itkOutputWindow_8h_source.html#l00098">itkOutputWindow.h:98</a></div></div>
 <div class="ttc" id="aitkSingletonMacro_8h_html_aefcb0659028251ba8edc94be738e3eaf"><div class="ttname"><a href="itkSingletonMacro_8h.html#aefcb0659028251ba8edc94be738e3eaf">itkGetGlobalDeclarationMacro</a></div><div class="ttdeci">#define itkGetGlobalDeclarationMacro(Type, VarName)</div><div class="ttdef"><b>Definition:</b> <a href="itkSingletonMacro_8h_source.html#l00035">itkSingletonMacro.h:35</a></div></div>
 <div class="ttc" id="aclassitk_1_1Object_html"><div class="ttname"><a href="classitk_1_1Object.html">itk::Object</a></div><div class="ttdoc">Base class for most ITK classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkObject_8h_source.html#l00062">itkObject.h:62</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
