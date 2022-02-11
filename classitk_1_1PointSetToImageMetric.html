@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classitk_1_1PointSetToImageMetric-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::PointSetToImageMetric&lt; TFixedPointSet, TMovingImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__RegistrationFilters.html">Registration Filters</a> &raquo; <a class="el" href="group__RegistrationComponents.html">Components of Registration Methods</a> &raquo; <a class="el" href="group__RegistrationMetrics.html">Similarity Metrics of Registration Methods</a><a class="el" href="group__Group-Registration.html">Group Registration</a> &raquo;  &#124; <a class="el" href="group__ITKRegistrationCommon.html">Module ITKRegistrationCommon</a></div></div>  </div>
@@ -106,7 +108,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a9d15d80b38f7619acccbfa84f09adb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d95f3b0e06c31fde174418b561ca3b5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a6d95f3b0e06c31fde174418b561ca3b5">DerivativeType</a> = Superclass::DerivativeType</td></tr>
 <tr class="separator:a6d95f3b0e06c31fde174418b561ca3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab218a33e3b0c760bb122f76bbe8e2049"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a> = typename FixedPointSetType::ConstPointer</td></tr>
+<tr class="memitem:ab218a33e3b0c760bb122f76bbe8e2049"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">FixedPointSetType::ConstPointer</a></td></tr>
 <tr class="separator:ab218a33e3b0c760bb122f76bbe8e2049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b665c9f497da30f290903a1d7c2d85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a06b665c9f497da30f290903a1d7c2d85">FixedPointSetType</a> = TFixedPointSet</td></tr>
 <tr class="separator:a06b665c9f497da30f290903a1d7c2d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,7 +130,7 @@ Public Types</h2></td></tr>
 <tr class="separator:ab8a1e776b6fdf527d5d5e66be2bf13c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c422d4025a39ec96339d2ed85500a40"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a3c422d4025a39ec96339d2ed85500a40">MeasureType</a> = Superclass::MeasureType</td></tr>
 <tr class="separator:a3c422d4025a39ec96339d2ed85500a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52cbfe7c1375e85550a445fa309675a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a> = typename MovingImageType::ConstPointer</td></tr>
+<tr class="memitem:a52cbfe7c1375e85550a445fa309675a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">MovingImageType::ConstPointer</a></td></tr>
 <tr class="separator:a52cbfe7c1375e85550a445fa309675a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4372c3eb5e1ace5ccab2c42e681f956"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab4372c3eb5e1ace5ccab2c42e681f956">MovingImagePixelType</a> = typename TMovingImage::PixelType</td></tr>
 <tr class="separator:ab4372c3eb5e1ace5ccab2c42e681f956"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,8 +209,47 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab78f92a52d2f092a928e8aaf8225a0a1"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#aeb7bee8c0139489710d392754fff7184">GradientImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab78f92a52d2f092a928e8aaf8225a0a1">GetGradientImage</a> () const</td></tr>
+<tr class="separator:ab78f92a52d2f092a928e8aaf8225a0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8524b8c0146029ad9dcefb72fb36b6"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ace8524b8c0146029ad9dcefb72fb36b6">GetInterpolator</a> () const</td></tr>
+<tr class="separator:ace8524b8c0146029ad9dcefb72fb36b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f6329c2c98c9469000b2774165213c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#aeb7bee8c0139489710d392754fff7184">GradientImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a67f6329c2c98c9469000b2774165213c">GetModifiableGradientImage</a> ()</td></tr>
+<tr class="separator:a67f6329c2c98c9469000b2774165213c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a21255b06ebff205bea5739cc8b0268"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a7a21255b06ebff205bea5739cc8b0268">GetModifiableInterpolator</a> ()</td></tr>
+<tr class="separator:a7a21255b06ebff205bea5739cc8b0268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08236f9e038dd55794a24536ccb49098"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a08236f9e038dd55794a24536ccb49098">GetModifiableTransform</a> ()</td></tr>
+<tr class="separator:a08236f9e038dd55794a24536ccb49098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c478f7dfe08d6272fa225d8d56382fa"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a4c478f7dfe08d6272fa225d8d56382fa">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a4c478f7dfe08d6272fa225d8d56382fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c9660f0f92a6b6d29ac3d5b843097f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a31c9660f0f92a6b6d29ac3d5b843097f">GetNumberOfParameters</a> () const override</td></tr>
+<tr class="separator:a31c9660f0f92a6b6d29ac3d5b843097f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b4c3b8de927ed97aebf6355e7e3b92"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac0b4c3b8de927ed97aebf6355e7e3b92">GetNumberOfPixelsCounted</a> () const</td></tr>
+<tr class="separator:ac0b4c3b8de927ed97aebf6355e7e3b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37b26e5631dcfb83c85adbcb2ca2728"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab37b26e5631dcfb83c85adbcb2ca2728">GetTransform</a> () const</td></tr>
+<tr class="separator:ab37b26e5631dcfb83c85adbcb2ca2728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4e214d502ca605473c4fa12f0b80e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a8e4e214d502ca605473c4fa12f0b80e0">Initialize</a> ()</td></tr>
+<tr class="separator:a8e4e214d502ca605473c4fa12f0b80e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af290664369118fdbd43e50cb56d18e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a6af290664369118fdbd43e50cb56d18e">SetInterpolator</a> (<a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *_arg)</td></tr>
+<tr class="separator:a6af290664369118fdbd43e50cb56d18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366b5509179f74350ac1699d0798de42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a366b5509179f74350ac1699d0798de42">SetTransform</a> (<a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *_arg)</td></tr>
+<tr class="separator:a366b5509179f74350ac1699d0798de42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4fe2d8841a8e9a2bfc939399df2b34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a3e4fe2d8841a8e9a2bfc939399df2b34">SetTransformParameters</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters) const</td></tr>
+<tr class="separator:a3e4fe2d8841a8e9a2bfc939399df2b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a9218d3859cc8bed5989ec08b53851d1b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a9218d3859cc8bed5989ec08b53851d1b">SetFixedPointSet</a> (const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a06b665c9f497da30f290903a1d7c2d85">FixedPointSetType</a> *_arg)</td></tr>
+<tr class="separator:a9218d3859cc8bed5989ec08b53851d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca83b99d78c1261f2fdbe74162e9ae4"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a06b665c9f497da30f290903a1d7c2d85">FixedPointSetType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a5ca83b99d78c1261f2fdbe74162e9ae4">GetFixedPointSet</a> () const</td></tr>
+<tr class="separator:a5ca83b99d78c1261f2fdbe74162e9ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:afb1f0e233ffbb482e2e75f75c6ff59c3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#afb1f0e233ffbb482e2e75f75c6ff59c3">SetMovingImage</a> (const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a48923b23417af525e528c78bd629aafc">MovingImageType</a> *_arg)</td></tr>
+<tr class="separator:afb1f0e233ffbb482e2e75f75c6ff59c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145fd02db2ec77ef329be664ab72b768"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a48923b23417af525e528c78bd629aafc">MovingImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a145fd02db2ec77ef329be664ab72b768">GetMovingImage</a> () const</td></tr>
+<tr class="separator:a145fd02db2ec77ef329be664ab72b768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a3afbf5586fa8c2ac4800cd35f4c92e07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a3afbf5586fa8c2ac4800cd35f4c92e07">SetComputeGradient</a> (bool _arg)</td></tr>
+<tr class="separator:a3afbf5586fa8c2ac4800cd35f4c92e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac644eeb05fbaef4d56065972e3f9dcab"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac644eeb05fbaef4d56065972e3f9dcab">GetComputeGradient</a> () const</td></tr>
+<tr class="separator:ac644eeb05fbaef4d56065972e3f9dcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1SingleValuedCostFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1SingleValuedCostFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedCostFunction.html">itk::SingleValuedCostFunction</a></td></tr>
 <tr class="memitem:ab221de11a302d91ccdd00368a17fd129 inherit pub_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#ab221de11a302d91ccdd00368a17fd129">GetDerivative</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters, <a class="el" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">DerivativeType</a> &amp;derivative) const =0</td></tr>
 <tr class="separator:ab221de11a302d91ccdd00368a17fd129 inherit pub_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,62 +331,67 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:abe9d1b3a5526d0c442905dc601fd5005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3c61d6203431d26951f2bd3b5f9ed7"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a9b3c61d6203431d26951f2bd3b5f9ed7">MovingImageDimension</a> = TMovingImage::ImageDimension</td></tr>
 <tr class="separator:a9b3c61d6203431d26951f2bd3b5f9ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33fd2e89ae7ad9e08aa6d6bfd5d226d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a33fd2e89ae7ad9e08aa6d6bfd5d226d6">m_NumberOfPixelsCounted</a></td></tr>
-<tr class="separator:a33fd2e89ae7ad9e08aa6d6bfd5d226d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a660b1d2eb8e8924b71a1fd40fb3e8ef7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a660b1d2eb8e8924b71a1fd40fb3e8ef7">m_FixedPointSet</a></td></tr>
-<tr class="separator:a660b1d2eb8e8924b71a1fd40fb3e8ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c3f408d0d804de79c8c4502ac6e8a47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a8c3f408d0d804de79c8c4502ac6e8a47">m_MovingImage</a></td></tr>
-<tr class="separator:a8c3f408d0d804de79c8c4502ac6e8a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae08f49c26f0eb5747060b4052696d938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a42efd0ab0728e87cc431a76593b3da3a">TransformPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ae08f49c26f0eb5747060b4052696d938">m_Transform</a></td></tr>
-<tr class="separator:ae08f49c26f0eb5747060b4052696d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6453b0622da83dc1ef91faf5a5eedc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ad43f8da32d5c218666280ff213bc2da1">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#af6453b0622da83dc1ef91faf5a5eedc5">m_Interpolator</a></td></tr>
-<tr class="separator:af6453b0622da83dc1ef91faf5a5eedc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acff4b580a30a95db3a0a257887f927f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#acff4b580a30a95db3a0a257887f927f9">m_ComputeGradient</a></td></tr>
-<tr class="separator:acff4b580a30a95db3a0a257887f927f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1edcb5315347f0ff16d879b8c2a032b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#aba0c672a3ad5bdde5209e73dcba9e180">GradientImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a1edcb5315347f0ff16d879b8c2a032b3">m_GradientImage</a></td></tr>
-<tr class="separator:a1edcb5315347f0ff16d879b8c2a032b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9218d3859cc8bed5989ec08b53851d1b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a9218d3859cc8bed5989ec08b53851d1b">SetFixedPointSet</a> (const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a06b665c9f497da30f290903a1d7c2d85">FixedPointSetType</a> *_arg)</td></tr>
-<tr class="separator:a9218d3859cc8bed5989ec08b53851d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca83b99d78c1261f2fdbe74162e9ae4"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a06b665c9f497da30f290903a1d7c2d85">FixedPointSetType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a5ca83b99d78c1261f2fdbe74162e9ae4">GetFixedPointSet</a> () const</td></tr>
-<tr class="separator:a5ca83b99d78c1261f2fdbe74162e9ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb1f0e233ffbb482e2e75f75c6ff59c3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#afb1f0e233ffbb482e2e75f75c6ff59c3">SetMovingImage</a> (const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a48923b23417af525e528c78bd629aafc">MovingImageType</a> *_arg)</td></tr>
-<tr class="separator:afb1f0e233ffbb482e2e75f75c6ff59c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a145fd02db2ec77ef329be664ab72b768"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a48923b23417af525e528c78bd629aafc">MovingImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a145fd02db2ec77ef329be664ab72b768">GetMovingImage</a> () const</td></tr>
-<tr class="separator:a145fd02db2ec77ef329be664ab72b768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a366b5509179f74350ac1699d0798de42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a366b5509179f74350ac1699d0798de42">SetTransform</a> (<a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *_arg)</td></tr>
-<tr class="separator:a366b5509179f74350ac1699d0798de42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08236f9e038dd55794a24536ccb49098"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a08236f9e038dd55794a24536ccb49098">GetModifiableTransform</a> ()</td></tr>
-<tr class="separator:a08236f9e038dd55794a24536ccb49098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab37b26e5631dcfb83c85adbcb2ca2728"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#a1db1b73675c441499895f95bee31338f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab37b26e5631dcfb83c85adbcb2ca2728">GetTransform</a> () const</td></tr>
-<tr class="separator:ab37b26e5631dcfb83c85adbcb2ca2728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6af290664369118fdbd43e50cb56d18e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a6af290664369118fdbd43e50cb56d18e">SetInterpolator</a> (<a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *_arg)</td></tr>
-<tr class="separator:a6af290664369118fdbd43e50cb56d18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a21255b06ebff205bea5739cc8b0268"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a7a21255b06ebff205bea5739cc8b0268">GetModifiableInterpolator</a> ()</td></tr>
-<tr class="separator:a7a21255b06ebff205bea5739cc8b0268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace8524b8c0146029ad9dcefb72fb36b6"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#ab8a1e776b6fdf527d5d5e66be2bf13c2">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ace8524b8c0146029ad9dcefb72fb36b6">GetInterpolator</a> () const</td></tr>
-<tr class="separator:ace8524b8c0146029ad9dcefb72fb36b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f6329c2c98c9469000b2774165213c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PointSetToImageMetric.html#aeb7bee8c0139489710d392754fff7184">GradientImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a67f6329c2c98c9469000b2774165213c">GetModifiableGradientImage</a> ()</td></tr>
-<tr class="separator:a67f6329c2c98c9469000b2774165213c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78f92a52d2f092a928e8aaf8225a0a1"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1PointSetToImageMetric.html#aeb7bee8c0139489710d392754fff7184">GradientImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab78f92a52d2f092a928e8aaf8225a0a1">GetGradientImage</a> () const</td></tr>
-<tr class="separator:ab78f92a52d2f092a928e8aaf8225a0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0b4c3b8de927ed97aebf6355e7e3b92"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac0b4c3b8de927ed97aebf6355e7e3b92">GetNumberOfPixelsCounted</a> () const</td></tr>
-<tr class="separator:ac0b4c3b8de927ed97aebf6355e7e3b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e4fe2d8841a8e9a2bfc939399df2b34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a3e4fe2d8841a8e9a2bfc939399df2b34">SetTransformParameters</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters) const</td></tr>
-<tr class="separator:a3e4fe2d8841a8e9a2bfc939399df2b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3afbf5586fa8c2ac4800cd35f4c92e07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a3afbf5586fa8c2ac4800cd35f4c92e07">SetComputeGradient</a> (bool _arg)</td></tr>
-<tr class="separator:a3afbf5586fa8c2ac4800cd35f4c92e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac644eeb05fbaef4d56065972e3f9dcab"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac644eeb05fbaef4d56065972e3f9dcab">GetComputeGradient</a> () const</td></tr>
-<tr class="separator:ac644eeb05fbaef4d56065972e3f9dcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c9660f0f92a6b6d29ac3d5b843097f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a31c9660f0f92a6b6d29ac3d5b843097f">GetNumberOfParameters</a> () const override</td></tr>
-<tr class="separator:a31c9660f0f92a6b6d29ac3d5b843097f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4e214d502ca605473c4fa12f0b80e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a8e4e214d502ca605473c4fa12f0b80e0">Initialize</a> ()</td></tr>
-<tr class="separator:a8e4e214d502ca605473c4fa12f0b80e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac8e7a78019e6b3a15e62704285a945dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac8e7a78019e6b3a15e62704285a945dc">PointSetToImageMetric</a> ()</td></tr>
 <tr class="separator:ac8e7a78019e6b3a15e62704285a945dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac888d819497b8b0745b3253e7b7fb35c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac888d819497b8b0745b3253e7b7fb35c">~PointSetToImageMetric</a> () override=default</td></tr>
-<tr class="separator:ac888d819497b8b0745b3253e7b7fb35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac73e84a17765c5b177ad467efa52e559"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac73e84a17765c5b177ad467efa52e559">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:ac73e84a17765c5b177ad467efa52e559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac888d819497b8b0745b3253e7b7fb35c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ac888d819497b8b0745b3253e7b7fb35c">~PointSetToImageMetric</a> () override=default</td></tr>
+<tr class="separator:ac888d819497b8b0745b3253e7b7fb35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1SingleValuedCostFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1SingleValuedCostFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedCostFunction.html">itk::SingleValuedCostFunction</a></td></tr>
+<tr class="memitem:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#adc5b3f9883a3aeea7a3ef78e6aef5a0a">SingleValuedCostFunction</a> ()=default</td></tr>
+<tr class="separator:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb8f0606b71f5d33db720bbe0c7edc3 inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#a6cb8f0606b71f5d33db720bbe0c7edc3">~SingleValuedCostFunction</a> () override</td></tr>
+<tr class="separator:a6cb8f0606b71f5d33db720bbe0c7edc3 inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1CostFunctionTemplate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1CostFunctionTemplate')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1CostFunctionTemplate.html">itk::CostFunctionTemplate&lt; double &gt;</a></td></tr>
+<tr class="memitem:ac55d95b6846128de96251c7f325e42f4 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#ac55d95b6846128de96251c7f325e42f4">CostFunctionTemplate</a> ()=default</td></tr>
+<tr class="separator:ac55d95b6846128de96251c7f325e42f4 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41d97b6d95edf518eda038919343dce inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#ae41d97b6d95edf518eda038919343dce">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:ae41d97b6d95edf518eda038919343dce inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec74c148e02c540491079c4a28b6f41 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#a4ec74c148e02c540491079c4a28b6f41">~CostFunctionTemplate</a> () override=default</td></tr>
+<tr class="separator:a4ec74c148e02c540491079c4a28b6f41 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
+<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
+<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
+<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
+<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
+<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
+<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:acff4b580a30a95db3a0a257887f927f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#acff4b580a30a95db3a0a257887f927f9">m_ComputeGradient</a></td></tr>
+<tr class="separator:acff4b580a30a95db3a0a257887f927f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660b1d2eb8e8924b71a1fd40fb3e8ef7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a660b1d2eb8e8924b71a1fd40fb3e8ef7">m_FixedPointSet</a></td></tr>
+<tr class="separator:a660b1d2eb8e8924b71a1fd40fb3e8ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1edcb5315347f0ff16d879b8c2a032b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#aba0c672a3ad5bdde5209e73dcba9e180">GradientImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a1edcb5315347f0ff16d879b8c2a032b3">m_GradientImage</a></td></tr>
+<tr class="separator:a1edcb5315347f0ff16d879b8c2a032b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6453b0622da83dc1ef91faf5a5eedc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ad43f8da32d5c218666280ff213bc2da1">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#af6453b0622da83dc1ef91faf5a5eedc5">m_Interpolator</a></td></tr>
+<tr class="separator:af6453b0622da83dc1ef91faf5a5eedc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c3f408d0d804de79c8c4502ac6e8a47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a8c3f408d0d804de79c8c4502ac6e8a47">m_MovingImage</a></td></tr>
+<tr class="separator:a8c3f408d0d804de79c8c4502ac6e8a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33fd2e89ae7ad9e08aa6d6bfd5d226d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a33fd2e89ae7ad9e08aa6d6bfd5d226d6">m_NumberOfPixelsCounted</a></td></tr>
+<tr class="separator:a33fd2e89ae7ad9e08aa6d6bfd5d226d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08f49c26f0eb5747060b4052696d938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PointSetToImageMetric.html#a42efd0ab0728e87cc431a76593b3da3a">TransformPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageMetric.html#ae08f49c26f0eb5747060b4052696d938">m_Transform</a></td></tr>
+<tr class="separator:ae08f49c26f0eb5747060b4052696d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
+<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -365,41 +411,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1SingleValuedCostFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1SingleValuedCostFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedCostFunction.html">itk::SingleValuedCostFunction</a></td></tr>
-<tr class="memitem:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#adc5b3f9883a3aeea7a3ef78e6aef5a0a">SingleValuedCostFunction</a> ()=default</td></tr>
-<tr class="separator:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb8f0606b71f5d33db720bbe0c7edc3 inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#a6cb8f0606b71f5d33db720bbe0c7edc3">~SingleValuedCostFunction</a> () override</td></tr>
-<tr class="separator:a6cb8f0606b71f5d33db720bbe0c7edc3 inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1CostFunctionTemplate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1CostFunctionTemplate')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1CostFunctionTemplate.html">itk::CostFunctionTemplate&lt; double &gt;</a></td></tr>
-<tr class="memitem:ac55d95b6846128de96251c7f325e42f4 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#ac55d95b6846128de96251c7f325e42f4">CostFunctionTemplate</a> ()=default</td></tr>
-<tr class="separator:ac55d95b6846128de96251c7f325e42f4 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae41d97b6d95edf518eda038919343dce inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#ae41d97b6d95edf518eda038919343dce">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ae41d97b6d95edf518eda038919343dce inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec74c148e02c540491079c4a28b6f41 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CostFunctionTemplate.html#a4ec74c148e02c540491079c4a28b6f41">~CostFunctionTemplate</a> () override=default</td></tr>
-<tr class="separator:a4ec74c148e02c540491079c4a28b6f41 inherit pro_methods_classitk_1_1CostFunctionTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
-<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
-<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
-<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
-<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
-<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
-<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
-<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TFixedPointSet, typename TMovingImage&gt;<br />
@@ -477,7 +488,7 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
 template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1PointSetToImageMetric.html">itk::PointSetToImageMetric</a>&lt; TFixedPointSet, TMovingImage &gt;::<a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a> =  typename FixedPointSetType::ConstPointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1PointSetToImageMetric.html">itk::PointSetToImageMetric</a>&lt; TFixedPointSet, TMovingImage &gt;::<a class="el" href="classitk_1_1PointSetToImageMetric.html#ab218a33e3b0c760bb122f76bbe8e2049">FixedPointSetConstPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">FixedPointSetType::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -678,7 +689,7 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
 template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1PointSetToImageMetric.html">itk::PointSetToImageMetric</a>&lt; TFixedPointSet, TMovingImage &gt;::<a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a> =  typename MovingImageType::ConstPointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1PointSetToImageMetric.html">itk::PointSetToImageMetric</a>&lt; TFixedPointSet, TMovingImage &gt;::<a class="el" href="classitk_1_1PointSetToImageMetric.html#a52cbfe7c1375e85550a445fa309675a9">MovingImageConstPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">MovingImageType::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -969,8 +980,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 </div>
 </div>
@@ -998,8 +1007,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 </div>
 </div>
@@ -1028,8 +1035,7 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
+<p>Set/Get the flag for computing the image gradient. When ON the metric derivative is computed using the Jacobian of the transformation and the image gradient. When OFF the metric derivative is computed by finite differences. Mode ON results in higher speed at the price of large memory footprint. Mode OFF results in small memory footprint at the price of large computation time </p>
 
 </div>
 </div>
@@ -1086,8 +1092,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 </div>
 </div>
@@ -1115,8 +1119,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 </div>
 </div>
@@ -1230,7 +1232,7 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
+<p>Get/Set the Moving <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
  </p>
 
 </div>
@@ -1349,8 +1351,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 </div>
 </div>
@@ -1418,7 +1418,7 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
  </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">itk::Object</a>.</p>
@@ -1641,8 +1641,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00185">185</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1669,8 +1667,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00177">177</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1697,8 +1693,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00187">187</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1725,8 +1719,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00183">183</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1753,8 +1745,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00179">179</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1781,8 +1771,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00175">175</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 
@@ -1809,8 +1797,6 @@ template&lt;typename TFixedPointSet , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get/Set the Fixed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. <br  />
- </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPointSetToImageMetric_8h_source.html#l00181">181</a> of file <a class="el" href="itkPointSetToImageMetric_8h_source.html">itkPointSetToImageMetric.h</a>.</p>
 

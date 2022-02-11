@@ -142,15 +142,15 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> PointSetType = <a name="_a1"></a><a class="code" href="classitk_1_1PointSet.html">itk::PointSet&lt;float, Dimension&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> fixedPointSet = PointSetType::New();</div>
-<div class="line">  <span class="keyword">auto</span> movingPointSet = PointSetType::New();</div>
+<div class="line">  <span class="keyword">auto</span> fixedPointSet = <a name="a2"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">PointSetType::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> movingPointSet = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">PointSetType::New</a>();</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">using</span> <a name="a2"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointSetType::PointType</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a name="a3"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointSetType::PointType</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> PointsContainer = PointSetType::PointsContainer;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> fixedPointContainer = PointsContainer::New();</div>
-<div class="line">  <span class="keyword">auto</span> movingPointContainer = PointsContainer::New();</div>
+<div class="line">  <span class="keyword">auto</span> fixedPointContainer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">PointsContainer::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> movingPointContainer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">PointsContainer::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> fixedPoint;</div>
 <div class="line">  <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> movingPoint;</div>
@@ -208,36 +208,36 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> MetricType =</div>
-<div class="line">    <a name="_a3"></a><a class="code" href="classitk_1_1EuclideanDistancePointMetric.html">itk::EuclideanDistancePointMetric&lt;PointSetType, PointSetType&gt;</a>;</div>
+<div class="line">    <a name="_a4"></a><a class="code" href="classitk_1_1EuclideanDistancePointMetric.html">itk::EuclideanDistancePointMetric&lt;PointSetType, PointSetType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> metric = MetricType::New();</div>
+<div class="line">  <span class="keyword">auto</span> metric = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">MetricType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//-----------------------------------------------------------</span></div>
 <div class="line">  <span class="comment">// Set up a Transform</span></div>
 <div class="line">  <span class="comment">//-----------------------------------------------------------</span></div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">using</span> TransformType = <a name="_a4"></a><a class="code" href="classitk_1_1TranslationTransform.html">itk::TranslationTransform&lt;double, Dimension&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> TransformType = <a name="_a5"></a><a class="code" href="classitk_1_1TranslationTransform.html">itk::TranslationTransform&lt;double, Dimension&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> transform = TransformType::New();</div>
+<div class="line">  <span class="keyword">auto</span> transform = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TransformType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Optimizer Type</span></div>
-<div class="line">  <span class="keyword">using</span> OptimizerType = <a name="_a5"></a><a class="code" href="classitk_1_1LevenbergMarquardtOptimizer.html">itk::LevenbergMarquardtOptimizer</a>;</div>
+<div class="line">  <span class="keyword">using</span> OptimizerType = <a name="_a6"></a><a class="code" href="classitk_1_1LevenbergMarquardtOptimizer.html">itk::LevenbergMarquardtOptimizer</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> optimizer = OptimizerType::New();</div>
+<div class="line">  <span class="keyword">auto</span> optimizer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">OptimizerType::New</a>();</div>
 <div class="line">  optimizer-&gt;SetUseCostFunctionGradient(<span class="keyword">false</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Registration Method</span></div>
 <div class="line">  <span class="keyword">using</span> RegistrationType =</div>
-<div class="line">    <a name="_a6"></a><a class="code" href="classitk_1_1PointSetToPointSetRegistrationMethod.html">itk::PointSetToPointSetRegistrationMethod&lt;PointSetType, PointSetType&gt;</a>;</div>
+<div class="line">    <a name="_a7"></a><a class="code" href="classitk_1_1PointSetToPointSetRegistrationMethod.html">itk::PointSetToPointSetRegistrationMethod&lt;PointSetType, PointSetType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> registration = RegistrationType::New();</div>
+<div class="line">  <span class="keyword">auto</span> registration = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RegistrationType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Scale the translation components of the Transform in the Optimizer</span></div>
 <div class="line">  OptimizerType::ScalesType scales(transform-&gt;GetNumberOfParameters());</div>
 <div class="line">  scales.Fill(0.01);</div>
 <div class="line"> </div>
 <div class="line">  constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numberOfIterations = 100;</div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span>            gradientTolerance = 1<a name="a7"></a><a class="code" href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">e</a>-5; <span class="comment">// convergence criterion</span></div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span>            gradientTolerance = 1<a name="a8"></a><a class="code" href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">e</a>-5; <span class="comment">// convergence criterion</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span>            valueTolerance = 1<a class="code" href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">e</a>-5;    <span class="comment">// convergence criterion</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span>            epsilonFunction = 1<a class="code" href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">e</a>-6;   <span class="comment">// convergence criterion</span></div>
 <div class="line"> </div>
@@ -280,12 +280,12 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> BinaryImageType = <a name="_a8"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;unsigned char, Dimension&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> BinaryImageType = <a name="_a9"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;unsigned char, Dimension&gt;</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> PointsToImageFilterType =</div>
-<div class="line">    <a name="_a9"></a><a class="code" href="classitk_1_1PointSetToImageFilter.html">itk::PointSetToImageFilter&lt;PointSetType, BinaryImageType&gt;</a>;</div>
+<div class="line">    <a name="_a10"></a><a class="code" href="classitk_1_1PointSetToImageFilter.html">itk::PointSetToImageFilter&lt;PointSetType, BinaryImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> pointsToImageFilter = PointsToImageFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> pointsToImageFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">PointsToImageFilterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  pointsToImageFilter-&gt;SetInput(fixedPointSet);</div>
 <div class="line"> </div>
@@ -293,7 +293,7 @@ $(function() {
 <div class="line">  spacing.Fill(1.0);</div>
 <div class="line"> </div>
 <div class="line">  <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">BinaryImageType::PointType</a> origin;</div>
-<div class="line">  origin.<a name="a10"></a><a class="code" href="classitk_1_1FixedArray.html#af480f236e14a9a185afd9006fafe5b1d">Fill</a>(0.0);</div>
+<div class="line">  origin.<a name="a11"></a><a class="code" href="classitk_1_1FixedArray.html#af480f236e14a9a185afd9006fafe5b1d">Fill</a>(0.0);</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginLatex</span></div>
@@ -307,13 +307,13 @@ $(function() {
 <div class="line">  pointsToImageFilter-&gt;SetSpacing(spacing);</div>
 <div class="line">  pointsToImageFilter-&gt;SetOrigin(origin);</div>
 <div class="line">  pointsToImageFilter-&gt;Update();</div>
-<div class="line">  BinaryImageType::Pointer binaryImage = pointsToImageFilter-&gt;GetOutput();</div>
+<div class="line">  <a name="a12"></a><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">BinaryImageType::Pointer</a> binaryImage = pointsToImageFilter-&gt;GetOutput();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> DistanceImageType = <a class="code" href="classitk_1_1Image.html">itk::Image&lt;unsigned short, Dimension&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> DistanceFilterType =</div>
-<div class="line">    <a name="_a11"></a><a class="code" href="classitk_1_1DanielssonDistanceMapImageFilter.html">itk::DanielssonDistanceMapImageFilter&lt;BinaryImageType, DistanceImageType&gt;</a>;</div>
+<div class="line">    <a name="_a13"></a><a class="code" href="classitk_1_1DanielssonDistanceMapImageFilter.html">itk::DanielssonDistanceMapImageFilter&lt;BinaryImageType, DistanceImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> distanceFilter = DistanceFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> distanceFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">DistanceFilterType::New</a>();</div>
 <div class="line">  distanceFilter-&gt;SetInput(binaryImage);</div>
 <div class="line">  distanceFilter-&gt;Update();</div>
 <div class="line">  metric-&gt;SetDistanceMap(distanceFilter-&gt;GetOutput());</div>
@@ -334,6 +334,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1PointSetToImageFilter_html"><div class="ttname"><a href="classitk_1_1PointSetToImageFilter.html">itk::PointSetToImageFilter</a></div><div class="ttdoc">Base class for filters that take a PointSet as input and produce an image as output....</div><div class="ttdef"><b>Definition:</b> <a href="itkPointSetToImageFilter_8h_source.html#l00035">itkPointSetToImageFilter.h:35</a></div></div>
 <div class="ttc" id="aclassitk_1_1PointSet_html"><div class="ttname"><a href="classitk_1_1PointSet.html">itk::PointSet</a></div><div class="ttdoc">A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...</div><div class="ttdef"><b>Definition:</b> <a href="itkPointSet_8h_source.html#l00082">itkPointSet.h:82</a></div></div>
 <div class="ttc" id="aitkLevenbergMarquardtOptimizer_8h_html"><div class="ttname"><a href="itkLevenbergMarquardtOptimizer_8h.html">itkLevenbergMarquardtOptimizer.h</a></div></div>
@@ -347,6 +348,7 @@ $(function() {
 <div class="ttc" id="aitkDanielssonDistanceMapImageFilter_8h_html"><div class="ttname"><a href="itkDanielssonDistanceMapImageFilter_8h.html">itkDanielssonDistanceMapImageFilter.h</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_af105436026645171db6a4a3000ee8482"><div class="ttname"><a href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">itk::Math::e</a></div><div class="ttdeci">static constexpr double e</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00054">itkMath.h:54</a></div></div>
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a3c1343e7d285fc01106df9e0c28d5154"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a3c1343e7d285fc01106df9e0c28d5154">itk::GTest::TypedefsAndConstructors::Dimension2::Dimension</a></div><div class="ttdeci">constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00044">itkGTestTypedefsAndConstructors.h:44</a></div></div>
 <div class="ttc" id="aclassitk_1_1PointSetToPointSetRegistrationMethod_html"><div class="ttname"><a href="classitk_1_1PointSetToPointSetRegistrationMethod.html">itk::PointSetToPointSetRegistrationMethod</a></div><div class="ttdoc">Base class for PointSet to PointSet Registration Methods.</div><div class="ttdef"><b>Definition:</b> <a href="itkPointSetToPointSetRegistrationMethod_8h_source.html#l00066">itkPointSetToPointSetRegistrationMethod.h:66</a></div></div>
 <div class="ttc" id="aitkPointSetToImageFilter_8h_html"><div class="ttname"><a href="itkPointSetToImageFilter_8h.html">itkPointSetToImageFilter.h</a></div></div>

@@ -114,14 +114,13 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html">OnePlusOneEvolutionaryOptimizer</a>, <a class="code" href="classitk_1_1SingleValuedNonLinearOptimizer.html">SingleValuedNonLinearOptimizer</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#adbabdbc6d78399f08d81598e1ac60293">   87</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SingleValuedCostFunction.html">CostFunctionType</a> = <a class="code" href="classitk_1_1SingleValuedCostFunction.html">SingleValuedCostFunction</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#a9cf592f064974d3ca43616c43a26a38b">   88</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionType::Pointer</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#a9cf592f064974d3ca43616c43a26a38b">   88</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionPointer</a> = <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">CostFunctionType::Pointer</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#a9c32f690d078e70e5210387dabd25dc0">   91</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1Statistics_1_1RandomVariateGeneratorBase.html">NormalVariateGeneratorType</a> = <a class="code" href="classitk_1_1Statistics_1_1RandomVariateGeneratorBase.html">Statistics::RandomVariateGeneratorBase</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  itkSetMacro(Maximize, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  itkBooleanMacro(Maximize);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  itkGetConstReferenceMacro(Maximize, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#adf9c07e7d470879a1e24a6881aa21975">  100</a></span>&#160;  <a class="code" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#adf9c07e7d470879a1e24a6881aa21975">GetMinimize</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">  </span>{</div>
@@ -145,19 +144,14 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  itkSetMacro(MaximumIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  itkGetConstReferenceMacro(MaximumIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  itkSetMacro(GrowthFactor, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  itkGetConstReferenceMacro(GrowthFactor, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  itkSetMacro(ShrinkFactor, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  itkGetConstReferenceMacro(ShrinkFactor, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  itkSetMacro(InitialRadius, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  itkGetConstReferenceMacro(InitialRadius, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  itkSetMacro(Epsilon, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  itkGetConstReferenceMacro(Epsilon, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  itkGetConstReferenceMacro(FrobeniusNorm, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span></div>
@@ -172,7 +166,6 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> this-&gt;GetCurrentCost();</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  itkGetConstReferenceMacro(CurrentIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  itkGetConstReferenceMacro(Initialized, <span class="keywordtype">bool</span>);</div>
@@ -236,6 +229,7 @@ $(function() {
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1OnePlusOneEvolutionaryOptimizer_html_ad68cbe7d762a79db8fdc5260e4f029d6"><div class="ttname"><a href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#ad68cbe7d762a79db8fdc5260e4f029d6">itk::OnePlusOneEvolutionaryOptimizer::m_FrobeniusNorm</a></div><div class="ttdeci">double m_FrobeniusNorm</div><div class="ttdef"><b>Definition:</b> <a href="itkOnePlusOneEvolutionaryOptimizer_8h_source.html#l00253">itkOnePlusOneEvolutionaryOptimizer.h:253</a></div></div>
 <div class="ttc" id="aclassitk_1_1OnePlusOneEvolutionaryOptimizer_html_ac7b75caaadc64170e050f7804cac0875"><div class="ttname"><a href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html#ac7b75caaadc64170e050f7804cac0875">itk::OnePlusOneEvolutionaryOptimizer::m_Initialized</a></div><div class="ttdeci">bool m_Initialized</div><div class="ttdef"><b>Definition:</b> <a href="itkOnePlusOneEvolutionaryOptimizer_8h_source.html#l00237">itkOnePlusOneEvolutionaryOptimizer.h:237</a></div></div>
 <div class="ttc" id="aclassitk_1_1SingleValuedNonLinearOptimizer_html"><div class="ttname"><a href="classitk_1_1SingleValuedNonLinearOptimizer.html">itk::SingleValuedNonLinearOptimizer</a></div><div class="ttdoc">This class is a base for the Optimization methods that optimize a single valued function.</div><div class="ttdef"><b>Definition:</b> <a href="itkSingleValuedNonLinearOptimizer_8h_source.html#l00035">itkSingleValuedNonLinearOptimizer.h:35</a></div></div>

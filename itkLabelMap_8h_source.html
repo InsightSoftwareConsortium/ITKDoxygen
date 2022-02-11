@@ -105,7 +105,6 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1LabelMap.html">LabelMap</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#a311a2e76dbfab7abc97d4aa418fb75be">   77</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1DataObject.html">Self</a> = <a class="code" href="classitk_1_1LabelMap.html">LabelMap</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#ae59fd46ac118a6004ce0be5bffce48c5">   78</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1Object.html">Superclass</a> = <a class="code" href="classitk_1_1ImageBase.html">ImageBase&lt;TLabelObject::ImageDimension&gt;</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#af48f57263b34a959bdfdc49cf374e75c">   79</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
@@ -118,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#a2fa575d9a7f5aed4a169b8ec4bc2c8a6">   89</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LabelMap.html#a2fa575d9a7f5aed4a169b8ec4bc2c8a6">LabelObjectType</a> = TLabelObject;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#a3720cc59033927cf5ae2d54e5877a15b">   91</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LabelMap.html#a3720cc59033927cf5ae2d54e5877a15b">LabelObjectPointerType</a> = <span class="keyword">typename</span> LabelObjectType::Pointer;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#a3720cc59033927cf5ae2d54e5877a15b">   91</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LabelMap.html#a3720cc59033927cf5ae2d54e5877a15b">LabelObjectPointerType</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">LabelObjectType::Pointer</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> <a class="code" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">Superclass::SizeValueType</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classitk_1_1LabelMap.html#aab5cb15b53c97ee915a01977503f281c">   94</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LabelMap.html#aab5cb15b53c97ee915a01977503f281c">LengthType</a> = <a class="code" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>;</div>
@@ -160,7 +159,6 @@ $(function() {
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  GetLabelObject(<span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a> &amp; label);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a2fa575d9a7f5aed4a169b8ec4bc2c8a6">LabelObjectType</a> *</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  GetLabelObject(<span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a> &amp; label) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  HasLabel(<span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a> label) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
@@ -168,7 +166,6 @@ $(function() {
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  GetNthLabelObject(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageBase.html#aec2a7f64aa2f2605a26940c685dfc65c">SizeValueType</a> &amp; pos);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a2fa575d9a7f5aed4a169b8ec4bc2c8a6">LabelObjectType</a> *</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  GetNthLabelObject(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageBase.html#aec2a7f64aa2f2605a26940c685dfc65c">SizeValueType</a> &amp; pos) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a> &amp;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  GetPixel(<span class="keyword">const</span> <a class="code" href="structitk_1_1Index.html">IndexType</a> &amp; idx) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
@@ -213,7 +210,6 @@ $(function() {
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  itkGetConstMacro(BackgroundValue, <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a>);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  itkSetMacro(BackgroundValue, <a class="code" href="classitk_1_1LabelMap.html#a40eef5492b3e1955a2cdd485723b172c">LabelType</a>);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  PrintLabelObjects(std::ostream &amp; os) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
@@ -424,6 +420,7 @@ $(function() {
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassitk_1_1LabelMap_1_1Iterator_html_a22656f300c6abded4304b94822fe503a"><div class="ttname"><a href="classitk_1_1LabelMap_1_1Iterator.html#a22656f300c6abded4304b94822fe503a">itk::LabelMap::Iterator::IsAtEnd</a></div><div class="ttdeci">bool IsAtEnd() const</div><div class="ttdef"><b>Definition:</b> <a href="itkLabelMap_8h_source.html#l00475">itkLabelMap.h:475</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1LabelMap_html_a3720cc59033927cf5ae2d54e5877a15b"><div class="ttname"><a href="classitk_1_1LabelMap.html#a3720cc59033927cf5ae2d54e5877a15b">itk::LabelMap::LabelObjectPointerType</a></div><div class="ttdeci">typename LabelObjectType::Pointer LabelObjectPointerType</div><div class="ttdef"><b>Definition:</b> <a href="itkLabelMap_8h_source.html#l00091">itkLabelMap.h:91</a></div></div>
 <div class="ttc" id="aclassitk_1_1LabelMap_1_1ConstIterator_html"><div class="ttname"><a href="classitk_1_1LabelMap_1_1ConstIterator.html">itk::LabelMap::ConstIterator</a></div><div class="ttdoc">A forward iterator over the LabelObjects of a LabelMap.</div><div class="ttdef"><b>Definition:</b> <a href="itkLabelMap_8h_source.html#l00318">itkLabelMap.h:318</a></div></div>
 <div class="ttc" id="astructitk_1_1Index_html"><div class="ttname"><a href="structitk_1_1Index.html">itk::Index&lt; VImageDimension &gt;</a></div></div>

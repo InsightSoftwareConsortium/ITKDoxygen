@@ -75,6 +75,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::Statistics::KdTreeBasedKmeansEstimator&lt; TKdTree &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Numerics.html">Group Numerics</a> &raquo; <a class="el" href="group__ITKStatistics.html">Module ITKStatistics</a></div></div>  </div>
@@ -108,6 +110,8 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:aab6da3fb79189fbe8d1bff5cc06c4948"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#aab6da3fb79189fbe8d1bff5cc06c4948">CentroidType</a> = typename KdTreeNodeType::CentroidType</td></tr>
 <tr class="separator:aab6da3fb79189fbe8d1bff5cc06c4948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895d6465c651430de93b36cbad48ee05"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a895d6465c651430de93b36cbad48ee05">ClusterLabelsType</a> = std::unordered_map&lt; <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a05c2ae9f933a949e55df82dc8a3cfece">InstanceIdentifier</a>, unsigned int &gt;</td></tr>
+<tr class="separator:a895d6465c651430de93b36cbad48ee05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d2db9512c151d5145cf8e480b01dec2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a8d2db9512c151d5145cf8e480b01dec2">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:a8d2db9512c151d5145cf8e480b01dec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8beef9ecc46ab771e31dd7c908b338e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a8beef9ecc46ab771e31dd7c908b338e1">DistanceToCentroidMembershipFunctionPointer</a> = typename <a class="el" href="classitk_1_1Statistics_1_1DistanceToCentroidMembershipFunction.html#a71cc5c4867cb74ae6072bac2ff0192d8">DistanceToCentroidMembershipFunctionType::Pointer</a></td></tr>
@@ -169,10 +173,40 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a5c2277faa6372c70d62a86f87dc1a6"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a6a5c2277faa6372c70d62a86f87dc1a6">CreateAnother</a> () const</td></tr>
 <tr class="separator:a6a5c2277faa6372c70d62a86f87dc1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ae2f389003885c07b514ffee1acc0d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a49ae2f389003885c07b514ffee1acc0d">GetCentroidPositionChanges</a> () const</td></tr>
+<tr class="separator:a49ae2f389003885c07b514ffee1acc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3487eef6cbe66f6d7fb5c53613dbd7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4e3487eef6cbe66f6d7fb5c53613dbd7">GetCentroidPositionChangesThreshold</a> () const</td></tr>
+<tr class="separator:a4e3487eef6cbe66f6d7fb5c53613dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47014255bc5610a9d4b9956ff9b53c01"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a47014255bc5610a9d4b9956ff9b53c01">GetCurrentIteration</a> () const</td></tr>
+<tr class="separator:a47014255bc5610a9d4b9956ff9b53c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3be3e430ffe28ce6e7281533727a14b"><td class="memItemLeft" align="right" valign="top">const TKdTree *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ac3be3e430ffe28ce6e7281533727a14b">GetKdTree</a> () const</td></tr>
+<tr class="separator:ac3be3e430ffe28ce6e7281533727a14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a229c6d185b47cd3290adac2fe70d3f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#afc9d7f18806a601c79991ad7ae7e19fa">MeasurementVectorSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a5a229c6d185b47cd3290adac2fe70d3f">GetMeasurementVectorSize</a> () const</td></tr>
+<tr class="separator:a5a229c6d185b47cd3290adac2fe70d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe07619dcda0c9f4bcb7d8c28510865"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a5fe07619dcda0c9f4bcb7d8c28510865">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a5fe07619dcda0c9f4bcb7d8c28510865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1019f1f5d1db1b476f99c9e0313f7cf8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a35b9d076004d28db2f3dfead871fde53">MembershipFunctionVectorObjectType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1019f1f5d1db1b476f99c9e0313f7cf8">GetOutput</a> () const</td></tr>
 <tr class="separator:a1019f1f5d1db1b476f99c9e0313f7cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3fc5f8c6798c40d3538725f7085390"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1a3fc5f8c6798c40d3538725f7085390">GetUseClusterLabels</a> () const</td></tr>
+<tr class="separator:a1a3fc5f8c6798c40d3538725f7085390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0e930a74065f7cbe3974a7fcb07f27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a2f0e930a74065f7cbe3974a7fcb07f27">SetCentroidPositionChangesThreshold</a> (double _arg)</td></tr>
+<tr class="separator:a2f0e930a74065f7cbe3974a7fcb07f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf17d1286ad96fd6474097f34389382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adcf17d1286ad96fd6474097f34389382">SetKdTree</a> (TKdTree *tree)</td></tr>
+<tr class="separator:adcf17d1286ad96fd6474097f34389382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ef7e0a845d1917b7251dac80449afb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a66ef7e0a845d1917b7251dac80449afb">SetUseClusterLabels</a> (bool _arg)</td></tr>
+<tr class="separator:a66ef7e0a845d1917b7251dac80449afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3377356b706c3a421dbaa3210463476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae3377356b706c3a421dbaa3210463476">StartOptimization</a> ()</td></tr>
+<tr class="separator:ae3377356b706c3a421dbaa3210463476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4dff50e26c67545dff0f13aff56ff5b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4dff50e26c67545dff0f13aff56ff5b8">SetParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a> _arg)</td></tr>
+<tr class="separator:a4dff50e26c67545dff0f13aff56ff5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aeafded15518fe8e5d50142457d6180"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7aeafded15518fe8e5d50142457d6180">GetParameters</a> () const</td></tr>
+<tr class="separator:a7aeafded15518fe8e5d50142457d6180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a22d9206ba2d2c3b35ce5999c435ed0c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a22d9206ba2d2c3b35ce5999c435ed0c7">SetMaximumIteration</a> (int _arg)</td></tr>
+<tr class="separator:a22d9206ba2d2c3b35ce5999c435ed0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7557494d91f845c252a10b67262312ac"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7557494d91f845c252a10b67262312ac">GetMaximumIteration</a> () const</td></tr>
+<tr class="separator:a7557494d91f845c252a10b67262312ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,102 +288,44 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a895d6465c651430de93b36cbad48ee05"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a895d6465c651430de93b36cbad48ee05">ClusterLabelsType</a> = std::unordered_map&lt; <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a05c2ae9f933a949e55df82dc8a3cfece">InstanceIdentifier</a>, unsigned int &gt;</td></tr>
-<tr class="separator:a895d6465c651430de93b36cbad48ee05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27fc108a32b39ec29ab92734d7b4b4a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a27fc108a32b39ec29ab92734d7b4b4a9">m_CurrentIteration</a> { 0 }</td></tr>
-<tr class="separator:a27fc108a32b39ec29ab92734d7b4b4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2de6bf988842a08b69cab44b3be0f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a8a2de6bf988842a08b69cab44b3be0f5">m_MaximumIteration</a> { 100 }</td></tr>
-<tr class="separator:a8a2de6bf988842a08b69cab44b3be0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa439d269e015b2fba46d3d38e81e583"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#aaa439d269e015b2fba46d3d38e81e583">m_CentroidPositionChanges</a> { 0.0 }</td></tr>
-<tr class="separator:aaa439d269e015b2fba46d3d38e81e583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0784a390c8edd5ed72cbfc75315cc812"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a0784a390c8edd5ed72cbfc75315cc812">m_CentroidPositionChangesThreshold</a> { 0.0 }</td></tr>
-<tr class="separator:a0784a390c8edd5ed72cbfc75315cc812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac61ac336ae1763614c93bd0196a646bd"><td class="memItemLeft" align="right" valign="top">TKdTree::Pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ac61ac336ae1763614c93bd0196a646bd">m_KdTree</a></td></tr>
-<tr class="separator:ac61ac336ae1763614c93bd0196a646bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea9174fa1b55d3841f7eeff304947c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1EuclideanDistanceMetric.html">EuclideanDistanceMetric</a>&lt; <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &gt;::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1ea9174fa1b55d3841f7eeff304947c5">m_DistanceMetric</a></td></tr>
-<tr class="separator:a1ea9174fa1b55d3841f7eeff304947c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e09307e5d125060bf929968f135dc86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a3e09307e5d125060bf929968f135dc86">m_Parameters</a></td></tr>
-<tr class="separator:a3e09307e5d125060bf929968f135dc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e087fc24c4d141b695eb1ea60f1ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator_1_1CandidateVector.html">CandidateVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a30e087fc24c4d141b695eb1ea60f1ccf">m_CandidateVector</a></td></tr>
-<tr class="separator:a30e087fc24c4d141b695eb1ea60f1ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bdd3abf52578cc1e5a97a11793ae000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a0bdd3abf52578cc1e5a97a11793ae000">m_TempVertex</a></td></tr>
-<tr class="separator:a0bdd3abf52578cc1e5a97a11793ae000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d68b9d97598f4952eed20efe74e227"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a95d68b9d97598f4952eed20efe74e227">m_UseClusterLabels</a> { false }</td></tr>
-<tr class="separator:a95d68b9d97598f4952eed20efe74e227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d28ca28cbba26bf7edaadcd272dbb3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4d28ca28cbba26bf7edaadcd272dbb3e">m_GenerateClusterLabels</a> { false }</td></tr>
-<tr class="separator:a4d28ca28cbba26bf7edaadcd272dbb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a479fa79d9857386fcef322d400229c87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a895d6465c651430de93b36cbad48ee05">ClusterLabelsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a479fa79d9857386fcef322d400229c87">m_ClusterLabels</a></td></tr>
-<tr class="separator:a479fa79d9857386fcef322d400229c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e3a62762430aa32e61ea6a873426331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#afc9d7f18806a601c79991ad7ae7e19fa">MeasurementVectorSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4e3a62762430aa32e61ea6a873426331">m_MeasurementVectorSize</a> { 0 }</td></tr>
-<tr class="separator:a4e3a62762430aa32e61ea6a873426331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22b49ed105ebabee12aec5d1b8c2c445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a79750f37c2b3693d166256738ac45440">MembershipFunctionVectorObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a22b49ed105ebabee12aec5d1b8c2c445">m_MembershipFunctionsObject</a></td></tr>
-<tr class="separator:a22b49ed105ebabee12aec5d1b8c2c445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dff50e26c67545dff0f13aff56ff5b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4dff50e26c67545dff0f13aff56ff5b8">SetParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a> _arg)</td></tr>
-<tr class="separator:a4dff50e26c67545dff0f13aff56ff5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aeafded15518fe8e5d50142457d6180"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7aeafded15518fe8e5d50142457d6180">GetParameters</a> () const</td></tr>
-<tr class="separator:a7aeafded15518fe8e5d50142457d6180"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22d9206ba2d2c3b35ce5999c435ed0c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a22d9206ba2d2c3b35ce5999c435ed0c7">SetMaximumIteration</a> (int _arg)</td></tr>
-<tr class="separator:a22d9206ba2d2c3b35ce5999c435ed0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7557494d91f845c252a10b67262312ac"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7557494d91f845c252a10b67262312ac">GetMaximumIteration</a> () const</td></tr>
-<tr class="separator:a7557494d91f845c252a10b67262312ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f0e930a74065f7cbe3974a7fcb07f27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a2f0e930a74065f7cbe3974a7fcb07f27">SetCentroidPositionChangesThreshold</a> (double _arg)</td></tr>
-<tr class="separator:a2f0e930a74065f7cbe3974a7fcb07f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e3487eef6cbe66f6d7fb5c53613dbd7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4e3487eef6cbe66f6d7fb5c53613dbd7">GetCentroidPositionChangesThreshold</a> () const</td></tr>
-<tr class="separator:a4e3487eef6cbe66f6d7fb5c53613dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcf17d1286ad96fd6474097f34389382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adcf17d1286ad96fd6474097f34389382">SetKdTree</a> (TKdTree *tree)</td></tr>
-<tr class="separator:adcf17d1286ad96fd6474097f34389382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3be3e430ffe28ce6e7281533727a14b"><td class="memItemLeft" align="right" valign="top">const TKdTree *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ac3be3e430ffe28ce6e7281533727a14b">GetKdTree</a> () const</td></tr>
-<tr class="separator:ac3be3e430ffe28ce6e7281533727a14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a229c6d185b47cd3290adac2fe70d3f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#afc9d7f18806a601c79991ad7ae7e19fa">MeasurementVectorSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a5a229c6d185b47cd3290adac2fe70d3f">GetMeasurementVectorSize</a> () const</td></tr>
-<tr class="separator:a5a229c6d185b47cd3290adac2fe70d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47014255bc5610a9d4b9956ff9b53c01"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a47014255bc5610a9d4b9956ff9b53c01">GetCurrentIteration</a> () const</td></tr>
-<tr class="separator:a47014255bc5610a9d4b9956ff9b53c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ae2f389003885c07b514ffee1acc0d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a49ae2f389003885c07b514ffee1acc0d">GetCentroidPositionChanges</a> () const</td></tr>
-<tr class="separator:a49ae2f389003885c07b514ffee1acc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3377356b706c3a421dbaa3210463476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae3377356b706c3a421dbaa3210463476">StartOptimization</a> ()</td></tr>
-<tr class="separator:ae3377356b706c3a421dbaa3210463476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ef7e0a845d1917b7251dac80449afb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a66ef7e0a845d1917b7251dac80449afb">SetUseClusterLabels</a> (bool _arg)</td></tr>
-<tr class="separator:a66ef7e0a845d1917b7251dac80449afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a3fc5f8c6798c40d3538725f7085390"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1a3fc5f8c6798c40d3538725f7085390">GetUseClusterLabels</a> () const</td></tr>
-<tr class="separator:a1a3fc5f8c6798c40d3538725f7085390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ef7a073b6c9b8e344da3c76723ac31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a26ef7a073b6c9b8e344da3c76723ac31">KdTreeBasedKmeansEstimator</a> ()</td></tr>
-<tr class="separator:a26ef7a073b6c9b8e344da3c76723ac31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a937b01a3c814c8b85ab6f9122238a71e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a937b01a3c814c8b85ab6f9122238a71e">~KdTreeBasedKmeansEstimator</a> () override=default</td></tr>
-<tr class="separator:a937b01a3c814c8b85ab6f9122238a71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e2c4ccb533a4daadb1d74876c95263a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a9e2c4ccb533a4daadb1d74876c95263a">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a9e2c4ccb533a4daadb1d74876c95263a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a89b09bbbf3b5a616be0eb9ab402122"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7a89b09bbbf3b5a616be0eb9ab402122">FillClusterLabels</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adbdfa8cd4e77d675f6a94ebb8e10d844">KdTreeNodeType</a> *node, int closestIndex)</td></tr>
-<tr class="separator:a7a89b09bbbf3b5a616be0eb9ab402122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e422dcec9995d4e66dc47edbb6201a2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a9e422dcec9995d4e66dc47edbb6201a2">GetSumOfSquaredPositionChanges</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;previous, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;current)</td></tr>
-<tr class="separator:a9e422dcec9995d4e66dc47edbb6201a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d97ffa9482f1a327c5ea326ead0f4d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a3d97ffa9482f1a327c5ea326ead0f4d4">GetClosestCandidate</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;measurements, std::vector&lt; int &gt; &amp;validIndexes)</td></tr>
-<tr class="separator:a3d97ffa9482f1a327c5ea326ead0f4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a798ac0ab1a8cca634f083768291f76d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a798ac0ab1a8cca634f083768291f76d5">IsFarther</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;pointA, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;pointB, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;lowerBound, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;upperBound)</td></tr>
-<tr class="separator:a798ac0ab1a8cca634f083768291f76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85e70fbe584e0e3114d2506942efcf3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a85e70fbe584e0e3114d2506942efcf3d">Filter</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adbdfa8cd4e77d675f6a94ebb8e10d844">KdTreeNodeType</a> *node, std::vector&lt; int &gt; validIndexes, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;lowerBound, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;upperBound)</td></tr>
-<tr class="separator:a85e70fbe584e0e3114d2506942efcf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4ae2a8b0390a5cd66ce980d5a2e106b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4ae2a8b0390a5cd66ce980d5a2e106b1">CopyParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;source, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;target)</td></tr>
 <tr class="separator:a4ae2a8b0390a5cd66ce980d5a2e106b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a854c8946c3d8b1b018c568c5d7af86a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a854c8946c3d8b1b018c568c5d7af86a8">CopyParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a> &amp;source, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;target)</td></tr>
-<tr class="separator:a854c8946c3d8b1b018c568c5d7af86a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e97317a40154e0b39983e0641b750b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1e97317a40154e0b39983e0641b750b5">CopyParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;source, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a> &amp;target)</td></tr>
 <tr class="separator:a1e97317a40154e0b39983e0641b750b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af45acea203f7136a6bb7a23039d41ad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#af45acea203f7136a6bb7a23039d41ad3">GetPoint</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;point, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> measurements)</td></tr>
+<tr class="memitem:a854c8946c3d8b1b018c568c5d7af86a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a854c8946c3d8b1b018c568c5d7af86a8">CopyParameters</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a> &amp;source, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;target)</td></tr>
+<tr class="separator:a854c8946c3d8b1b018c568c5d7af86a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a89b09bbbf3b5a616be0eb9ab402122"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a7a89b09bbbf3b5a616be0eb9ab402122">FillClusterLabels</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adbdfa8cd4e77d675f6a94ebb8e10d844">KdTreeNodeType</a> *node, int closestIndex)</td></tr>
+<tr class="separator:a7a89b09bbbf3b5a616be0eb9ab402122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e70fbe584e0e3114d2506942efcf3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a85e70fbe584e0e3114d2506942efcf3d">Filter</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#adbdfa8cd4e77d675f6a94ebb8e10d844">KdTreeNodeType</a> *node, std::vector&lt; int &gt; validIndexes, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;lowerBound, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;upperBound)</td></tr>
+<tr class="separator:a85e70fbe584e0e3114d2506942efcf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d97ffa9482f1a327c5ea326ead0f4d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a3d97ffa9482f1a327c5ea326ead0f4d4">GetClosestCandidate</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;measurements, std::vector&lt; int &gt; &amp;validIndexes)</td></tr>
+<tr class="separator:a3d97ffa9482f1a327c5ea326ead0f4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45acea203f7136a6bb7a23039d41ad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#af45acea203f7136a6bb7a23039d41ad3">GetPoint</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;<a class="el" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> measurements)</td></tr>
 <tr class="separator:af45acea203f7136a6bb7a23039d41ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a787b1fef9a1daec693b360b1eae54a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a787b1fef9a1daec693b360b1eae54a8c">PrintPoint</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;point)</td></tr>
+<tr class="memitem:a9e422dcec9995d4e66dc47edbb6201a2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a9e422dcec9995d4e66dc47edbb6201a2">GetSumOfSquaredPositionChanges</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;previous, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a474f253b0614f16048bf019c9f81affe">InternalParametersType</a> &amp;current)</td></tr>
+<tr class="separator:a9e422dcec9995d4e66dc47edbb6201a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798ac0ab1a8cca634f083768291f76d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a798ac0ab1a8cca634f083768291f76d5">IsFarther</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;pointA, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;pointB, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;lowerBound, <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ae88da026c2736c4db480dd9d32d28606">MeasurementVectorType</a> &amp;upperBound)</td></tr>
+<tr class="separator:a798ac0ab1a8cca634f083768291f76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ef7a073b6c9b8e344da3c76723ac31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a26ef7a073b6c9b8e344da3c76723ac31">KdTreeBasedKmeansEstimator</a> ()</td></tr>
+<tr class="separator:a26ef7a073b6c9b8e344da3c76723ac31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787b1fef9a1daec693b360b1eae54a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a787b1fef9a1daec693b360b1eae54a8c">PrintPoint</a> (<a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &amp;<a class="el" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>)</td></tr>
 <tr class="separator:a787b1fef9a1daec693b360b1eae54a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a9e2c4ccb533a4daadb1d74876c95263a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a9e2c4ccb533a4daadb1d74876c95263a">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a9e2c4ccb533a4daadb1d74876c95263a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937b01a3c814c8b85ab6f9122238a71e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a937b01a3c814c8b85ab6f9122238a71e">~KdTreeBasedKmeansEstimator</a> () override=default</td></tr>
+<tr class="separator:a937b01a3c814c8b85ab6f9122238a71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,6 +337,40 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a30e087fc24c4d141b695eb1ea60f1ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator_1_1CandidateVector.html">CandidateVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a30e087fc24c4d141b695eb1ea60f1ccf">m_CandidateVector</a></td></tr>
+<tr class="separator:a30e087fc24c4d141b695eb1ea60f1ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa439d269e015b2fba46d3d38e81e583"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#aaa439d269e015b2fba46d3d38e81e583">m_CentroidPositionChanges</a> { 0.0 }</td></tr>
+<tr class="separator:aaa439d269e015b2fba46d3d38e81e583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0784a390c8edd5ed72cbfc75315cc812"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a0784a390c8edd5ed72cbfc75315cc812">m_CentroidPositionChangesThreshold</a> { 0.0 }</td></tr>
+<tr class="separator:a0784a390c8edd5ed72cbfc75315cc812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479fa79d9857386fcef322d400229c87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a895d6465c651430de93b36cbad48ee05">ClusterLabelsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a479fa79d9857386fcef322d400229c87">m_ClusterLabels</a></td></tr>
+<tr class="separator:a479fa79d9857386fcef322d400229c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27fc108a32b39ec29ab92734d7b4b4a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a27fc108a32b39ec29ab92734d7b4b4a9">m_CurrentIteration</a> { 0 }</td></tr>
+<tr class="separator:a27fc108a32b39ec29ab92734d7b4b4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea9174fa1b55d3841f7eeff304947c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1EuclideanDistanceMetric.html">EuclideanDistanceMetric</a>&lt; <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a> &gt;::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a1ea9174fa1b55d3841f7eeff304947c5">m_DistanceMetric</a></td></tr>
+<tr class="separator:a1ea9174fa1b55d3841f7eeff304947c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d28ca28cbba26bf7edaadcd272dbb3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4d28ca28cbba26bf7edaadcd272dbb3e">m_GenerateClusterLabels</a> { false }</td></tr>
+<tr class="separator:a4d28ca28cbba26bf7edaadcd272dbb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac61ac336ae1763614c93bd0196a646bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TKdTree::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ac61ac336ae1763614c93bd0196a646bd">m_KdTree</a></td></tr>
+<tr class="separator:ac61ac336ae1763614c93bd0196a646bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2de6bf988842a08b69cab44b3be0f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a8a2de6bf988842a08b69cab44b3be0f5">m_MaximumIteration</a> { 100 }</td></tr>
+<tr class="separator:a8a2de6bf988842a08b69cab44b3be0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3a62762430aa32e61ea6a873426331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#afc9d7f18806a601c79991ad7ae7e19fa">MeasurementVectorSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a4e3a62762430aa32e61ea6a873426331">m_MeasurementVectorSize</a> { 0 }</td></tr>
+<tr class="separator:a4e3a62762430aa32e61ea6a873426331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b49ed105ebabee12aec5d1b8c2c445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a79750f37c2b3693d166256738ac45440">MembershipFunctionVectorObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a22b49ed105ebabee12aec5d1b8c2c445">m_MembershipFunctionsObject</a></td></tr>
+<tr class="separator:a22b49ed105ebabee12aec5d1b8c2c445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e09307e5d125060bf929968f135dc86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ab0133a3a8f133124507fa60625e84e9e">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a3e09307e5d125060bf929968f135dc86">m_Parameters</a></td></tr>
+<tr class="separator:a3e09307e5d125060bf929968f135dc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdd3abf52578cc1e5a97a11793ae000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#ad0e31944439460166a0c495445a50ded">ParameterType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a0bdd3abf52578cc1e5a97a11793ae000">m_TempVertex</a></td></tr>
+<tr class="separator:a0bdd3abf52578cc1e5a97a11793ae000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d68b9d97598f4952eed20efe74e227"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html#a95d68b9d97598f4952eed20efe74e227">m_UseClusterLabels</a> { false }</td></tr>
+<tr class="separator:a95d68b9d97598f4952eed20efe74e227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -376,7 +386,7 @@ class itk::Statistics::KdTreeBasedKmeansEstimator&lt; TKdTree &gt;</h3>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageKmeansModelEstimator.html" title="Base class for ImageKmeansModelEstimator object.">ImageKmeansModelEstimator</a> </dd>
 <dd>
 <a class="el" href="classitk_1_1Statistics_1_1WeightedCentroidKdTreeGenerator.html" title="This class generates a KdTree object with centroid information.">WeightedCentroidKdTreeGenerator</a>, <a class="el" href="classitk_1_1Statistics_1_1KdTree.html" title="This class provides methods for k-nearest neighbor search and related data structures for a k-d tree.">KdTree</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2Statistics_2KdTreeBasedKMeansClustering_8cxx-example.html#_a4">Examples/Statistics/KdTreeBasedKMeansClustering.cxx</a>, and <a class="el" href="Examples_2Statistics_2ScalarImageKmeansModelEstimator_8cxx-example.html#_a5">Examples/Statistics/ScalarImageKmeansModelEstimator.cxx</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2Statistics_2KdTreeBasedKMeansClustering_8cxx-example.html#_a5">Examples/Statistics/KdTreeBasedKMeansClustering.cxx</a>, and <a class="el" href="Examples_2Statistics_2ScalarImageKmeansModelEstimator_8cxx-example.html#_a6">Examples/Statistics/ScalarImageKmeansModelEstimator.cxx</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00074">74</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
@@ -412,7 +422,6 @@ template&lt;typename TKdTree &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00158">158</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -808,7 +817,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -836,7 +844,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -970,7 +977,7 @@ template&lt;typename TKdTree &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html">itk::Statistics::KdTreeBasedKmeansEstimator</a>&lt; TKdTree &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html">itk::Statistics::KdTreeBasedKmeansEstimator</a>&lt; TKdTree &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1023,7 +1030,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1102,7 +1108,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1130,7 +1135,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1197,7 +1201,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1217,7 +1220,6 @@ template&lt;typename TKdTree &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1245,7 +1247,7 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
+<p>Set/Get maximum iteration limit. </p>
 
 </div>
 </div>
@@ -1351,7 +1353,7 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
+<p>Set the position to initialize the optimization. </p>
 
 </div>
 </div>
@@ -1457,7 +1459,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1565,7 +1566,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1604,7 +1604,8 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">itk::Object</a>.</p>
 
@@ -1743,7 +1744,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 </div>
 </div>
@@ -1790,7 +1790,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00331">331</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -1871,7 +1870,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00337">337</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -1952,7 +1950,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00336">336</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -1970,7 +1967,7 @@ template&lt;typename TKdTree &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TKdTree::Pointer <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html">itk::Statistics::KdTreeBasedKmeansEstimator</a>&lt; TKdTree &gt;::m_KdTree</td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TKdTree::Pointer</a> <a class="el" href="classitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator.html">itk::Statistics::KdTreeBasedKmeansEstimator</a>&lt; TKdTree &gt;::m_KdTree</td>
         </tr>
       </table>
   </td>
@@ -2033,7 +2030,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00338">338</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -2060,7 +2056,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00339">339</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -2114,7 +2109,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00333">333</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 
@@ -2141,7 +2135,6 @@ template&lt;typename TKdTree &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>current number of iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html#l00335">335</a> of file <a class="el" href="itkKdTreeBasedKmeansEstimator_8h_source.html">itkKdTreeBasedKmeansEstimator.h</a>.</p>
 

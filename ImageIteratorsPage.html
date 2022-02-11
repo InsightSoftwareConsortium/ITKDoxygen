@@ -90,7 +90,7 @@ Introduction</h1>
 <div class="fragment"><div class="line">ForAllThePixels  p   in   image Do   p = 100</div>
 </div><!-- fragment --><p>ImageIterators gets you closer to this algorithmic abstraction. They abstract the low-level processing of images from the particular implementation of the image class.</p>
 <p>Here is how an image iterator is used in ITK:</p>
-<div class="fragment"><div class="line">ImageType::Pointer im = GetAnImageSomeHow();</div>
+<div class="fragment"><div class="line"><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> im = GetAnImageSomeHow();</div>
 <div class="line"> </div>
 <div class="line">ImageIterator  it( im, im-&gt;GetRequestedRegion() );</div>
 <div class="line"> </div>
@@ -102,7 +102,7 @@ Introduction</h1>
 <div class="line">  ++it;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>This code can also be written as:</p>
-<div class="fragment"><div class="line">ImageType::Pointer im = GetAnImageSomeHow();</div>
+<div class="fragment"><div class="line"><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> im = GetAnImageSomeHow();</div>
 <div class="line"> </div>
 <div class="line">ImageIterator  it( im, im-&gt;GetRequestedRegion() );</div>
 <div class="line"> </div>
@@ -151,7 +151,7 @@ ImageIterators vs. STL Iterators</h2>
 <div class="line">  {}</div>
 </div><!-- fragment --><p>ImageIterators, unfortunately, are more complicated than STL iterators. ImageIterators need to store more state information than STL iterators. As one example, ImageIterators can walk a region of an image and an image can have multiple ImageIterators traversing different regions simultaneously. Thus, each ImageIterator must maintain which region it traverses. This results in a fairly heavyweight iterator, where comparing two ImageIterators and constructing iterators is an expensive operation. To address this issue, ImageIterators have a slightly different API than STL iterators.</p>
 <p>First, you do not ask the container (the image) for an iterator. Instead, you construct an iterator and tell it which image to traverse. Here is a snippet of code to construct an iterator that will walk a region of an image:</p>
-<div class="fragment"><div class="line">ImageType::Pointer im = GetAnImageSomeHow();</div>
+<div class="fragment"><div class="line"><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> im = GetAnImageSomeHow();</div>
 <div class="line"> </div>
 <div class="line">ImageIterator  it( im, im-&gt;GetRequestedRegion() );</div>
 </div><!-- fragment --><p>Second, since constructing and comparing ImageIterators is expensive, ImageIterators know the beginning and end of the region. So you ask the iterator rather than the container whether the iterator is at the end of a region.</p>
@@ -214,6 +214,7 @@ Final Comments</h1>
 <p>Before starting to write code that use iterators, users should consider to verify if the particular operation they intend to apply to the image is not already defined in the form of an existing image filter. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

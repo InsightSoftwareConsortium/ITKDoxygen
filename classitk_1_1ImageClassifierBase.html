@@ -74,6 +74,10 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ImageClassifierBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::ImageClassifierBase&lt; TInputImage, TClassifiedImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Segmentation.html">Group Segmentation</a> &raquo; <a class="el" href="group__ITKClassifiers.html">Module ITKClassifiers</a></div></div>  </div>
@@ -100,13 +104,21 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2d65fabfa9f01fbef912f8f4f4f9a94f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> = typename TClassifiedImage::Pointer</td></tr>
+<tr class="memitem:aafa015985b291bc3a2e7be3321242a4f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aafa015985b291bc3a2e7be3321242a4f">ClassifiedImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt; TClassifiedImage &gt;</td></tr>
+<tr class="separator:aafa015985b291bc3a2e7be3321242a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9788965ceaa2077759ddb4c9639316d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#af9788965ceaa2077759ddb4c9639316d">ClassifiedImagePixelType</a> = typename TClassifiedImage::PixelType</td></tr>
+<tr class="separator:af9788965ceaa2077759ddb4c9639316d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d65fabfa9f01fbef912f8f4f4f9a94f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TClassifiedImage::Pointer</a></td></tr>
 <tr class="separator:a2d65fabfa9f01fbef912f8f4f4f9a94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6814529385bf5f2b9a7b4388aec6f19b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a6814529385bf5f2b9a7b4388aec6f19b">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:a6814529385bf5f2b9a7b4388aec6f19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b33238c1e9861874fc2a1f1d60ce1f6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a> = typename TInputImage::ConstPointer</td></tr>
+<tr class="memitem:a17879932ac56ede1d673e2bff368a612"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a17879932ac56ede1d673e2bff368a612">InputImageConstIterator</a> = <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt; TInputImage &gt;</td></tr>
+<tr class="separator:a17879932ac56ede1d673e2bff368a612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b33238c1e9861874fc2a1f1d60ce1f6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">TInputImage::ConstPointer</a></td></tr>
 <tr class="separator:a2b33238c1e9861874fc2a1f1d60ce1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2185eba92fa8134b967876426c12c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a5a2185eba92fa8134b967876426c12c3">InputImagePointer</a> = typename TInputImage::Pointer</td></tr>
+<tr class="memitem:a1016a67f187577d734cd66356c2fa949"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a1016a67f187577d734cd66356c2fa949">InputImagePixelType</a> = typename TInputImage::PixelType</td></tr>
+<tr class="separator:a1016a67f187577d734cd66356c2fa949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2185eba92fa8134b967876426c12c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a5a2185eba92fa8134b967876426c12c3">InputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TInputImage::Pointer</a></td></tr>
 <tr class="separator:a5a2185eba92fa8134b967876426c12c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a113d112cb8af85a8e085bbbefd76ad9b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a113d112cb8af85a8e085bbbefd76ad9b">InputImageType</a> = TInputImage</td></tr>
 <tr class="separator:a113d112cb8af85a8e085bbbefd76ad9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,8 +173,19 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a42c3c5bd8602e8a8ae13ca06f2ad0a46"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a42c3c5bd8602e8a8ae13ca06f2ad0a46">CreateAnother</a> () const</td></tr>
 <tr class="separator:a42c3c5bd8602e8a8ae13ca06f2ad0a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d77391dcba43f44b798fc6b50f7e50"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a95d77391dcba43f44b798fc6b50f7e50">GetClassifiedImage</a> () const</td></tr>
+<tr class="separator:a95d77391dcba43f44b798fc6b50f7e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a3722c6483384d2302197dd44214aa5"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a8a3722c6483384d2302197dd44214aa5">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a8a3722c6483384d2302197dd44214aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac199dedf91392787f8ba9e24739a902f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#ac199dedf91392787f8ba9e24739a902f">GetPixelMembershipValue</a> (const <a class="el" href="classitk_1_1ImageClassifierBase.html#a1016a67f187577d734cd66356c2fa949">InputImagePixelType</a> inputImagePixel)</td></tr>
+<tr class="separator:ac199dedf91392787f8ba9e24739a902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7f2a6323637b5fe0c0ae8c1c0102be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aef7f2a6323637b5fe0c0ae8c1c0102be">SetClassifiedImage</a> (<a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> _arg)</td></tr>
+<tr class="separator:aef7f2a6323637b5fe0c0ae8c1c0102be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7692d1f2bd2445fc7d6d2e1dfa695ea5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a7692d1f2bd2445fc7d6d2e1dfa695ea5">SetInputImage</a> (const <a class="el" href="classitk_1_1ImageClassifierBase.html#a113d112cb8af85a8e085bbbefd76ad9b">InputImageType</a> *_arg)</td></tr>
+<tr class="separator:a7692d1f2bd2445fc7d6d2e1dfa695ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b9496ece1cbbb5e4bdee68412b5499"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageClassifierBase.html#a113d112cb8af85a8e085bbbefd76ad9b">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a97b9496ece1cbbb5e4bdee68412b5499">GetInputImage</a> () const</td></tr>
+<tr class="separator:a97b9496ece1cbbb5e4bdee68412b5499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ClassifierBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ClassifierBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ClassifierBase.html">itk::ClassifierBase&lt; TInputImage &gt;</a></td></tr>
 <tr class="memitem:a0ef572837a3732f384b85bcc6ca0349f inherit pub_methods_classitk_1_1ClassifierBase"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ClassifierBase.html#a0ef572837a3732f384b85bcc6ca0349f">AddMembershipFunction</a> (<a class="el" href="classitk_1_1ClassifierBase.html#ad437c37adf40bb0afee3e068f94d60ea">MembershipFunctionType</a> *function)</td></tr>
 <tr class="separator:a0ef572837a3732f384b85bcc6ca0349f inherit pub_methods_classitk_1_1ClassifierBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,14 +214,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae748e17e256433858dc899468c8da86f inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08ff2e7e7b99667a35b50cf58c837c1e inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a08ff2e7e7b99667a35b50cf58c837c1e">SetAbortGenerateData</a> (bool _arg)</td></tr>
 <tr class="separator:a08ff2e7e7b99667a35b50cf58c837c1e inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#af4bfef7416e9443223d9cfac63412eac">UpdateOutputData</a> ()</td></tr>
+<tr class="separator:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#ad8203286e0ded0fd78fc8db8c4066580">UpdateProgress</a> (float amount)</td></tr>
+<tr class="separator:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a096294f659bbf5aba736cfc9d1cceaa0 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a096294f659bbf5aba736cfc9d1cceaa0">SetProgress</a> (float _arg)</td></tr>
 <tr class="separator:a096294f659bbf5aba736cfc9d1cceaa0 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6bc114db08aff4a04fe58e7aa20a24 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a4f6bc114db08aff4a04fe58e7aa20a24">GetProgress</a> () const</td></tr>
 <tr class="separator:a4f6bc114db08aff4a04fe58e7aa20a24 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#ad8203286e0ded0fd78fc8db8c4066580">UpdateProgress</a> (float amount)</td></tr>
-<tr class="separator:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#af4bfef7416e9443223d9cfac63412eac">UpdateOutputData</a> ()</td></tr>
-<tr class="separator:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,45 +306,19 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1016a67f187577d734cd66356c2fa949"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a1016a67f187577d734cd66356c2fa949">InputImagePixelType</a> = typename TInputImage::PixelType</td></tr>
-<tr class="separator:a1016a67f187577d734cd66356c2fa949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9788965ceaa2077759ddb4c9639316d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#af9788965ceaa2077759ddb4c9639316d">ClassifiedImagePixelType</a> = typename TClassifiedImage::PixelType</td></tr>
-<tr class="separator:af9788965ceaa2077759ddb4c9639316d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17879932ac56ede1d673e2bff368a612"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a17879932ac56ede1d673e2bff368a612">InputImageConstIterator</a> = <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt; TInputImage &gt;</td></tr>
-<tr class="separator:a17879932ac56ede1d673e2bff368a612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafa015985b291bc3a2e7be3321242a4f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aafa015985b291bc3a2e7be3321242a4f">ClassifiedImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt; TClassifiedImage &gt;</td></tr>
-<tr class="separator:aafa015985b291bc3a2e7be3321242a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf7d6196116283ed1f51f43ef32cdaf2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#abf7d6196116283ed1f51f43ef32cdaf2">InputImageSizeType</a> = typename TInputImage::SizeType</td></tr>
-<tr class="separator:abf7d6196116283ed1f51f43ef32cdaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aead30bbc136d9f7c77dc5b3e61d5577e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aead30bbc136d9f7c77dc5b3e61d5577e">m_InputImage</a></td></tr>
-<tr class="separator:aead30bbc136d9f7c77dc5b3e61d5577e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae516af0d018b06b5e5d9238292b9f17b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#ae516af0d018b06b5e5d9238292b9f17b">m_ClassifiedImage</a></td></tr>
-<tr class="separator:ae516af0d018b06b5e5d9238292b9f17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7692d1f2bd2445fc7d6d2e1dfa695ea5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a7692d1f2bd2445fc7d6d2e1dfa695ea5">SetInputImage</a> (const <a class="el" href="classitk_1_1ImageClassifierBase.html#a113d112cb8af85a8e085bbbefd76ad9b">InputImageType</a> *_arg)</td></tr>
-<tr class="separator:a7692d1f2bd2445fc7d6d2e1dfa695ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97b9496ece1cbbb5e4bdee68412b5499"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageClassifierBase.html#a113d112cb8af85a8e085bbbefd76ad9b">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a97b9496ece1cbbb5e4bdee68412b5499">GetInputImage</a> () const</td></tr>
-<tr class="separator:a97b9496ece1cbbb5e4bdee68412b5499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef7f2a6323637b5fe0c0ae8c1c0102be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aef7f2a6323637b5fe0c0ae8c1c0102be">SetClassifiedImage</a> (<a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> _arg)</td></tr>
-<tr class="separator:aef7f2a6323637b5fe0c0ae8c1c0102be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d77391dcba43f44b798fc6b50f7e50"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a95d77391dcba43f44b798fc6b50f7e50">GetClassifiedImage</a> () const</td></tr>
-<tr class="separator:a95d77391dcba43f44b798fc6b50f7e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac199dedf91392787f8ba9e24739a902f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#ac199dedf91392787f8ba9e24739a902f">GetPixelMembershipValue</a> (const <a class="el" href="classitk_1_1ImageClassifierBase.html#a1016a67f187577d734cd66356c2fa949">InputImagePixelType</a> inputImagePixel)</td></tr>
-<tr class="separator:ac199dedf91392787f8ba9e24739a902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f95b158c79110aeb99b34de222afce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a94f95b158c79110aeb99b34de222afce">ImageClassifierBase</a> ()=default</td></tr>
-<tr class="separator:a94f95b158c79110aeb99b34de222afce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b50f46ae1bee818134c03539e85b8f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b50f46ae1bee818134c03539e85b8f4">~ImageClassifierBase</a> () override=default</td></tr>
-<tr class="separator:a2b50f46ae1bee818134c03539e85b8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97c8c2383ae403b426a21d55e233d4ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a97c8c2383ae403b426a21d55e233d4ad">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a97c8c2383ae403b426a21d55e233d4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:af8bbf4503f2c789d754cd4f1cb11ccbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#af8bbf4503f2c789d754cd4f1cb11ccbf">Allocate</a> ()</td></tr>
 <tr class="separator:af8bbf4503f2c789d754cd4f1cb11ccbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7578c5c25038a9121d7361d9997d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#acb7578c5c25038a9121d7361d9997d45">GenerateData</a> () override</td></tr>
 <tr class="separator:acb7578c5c25038a9121d7361d9997d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbdc902bdfbc43b000dbddfef7a1cddf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#adbdc902bdfbc43b000dbddfef7a1cddf">Classify</a> ()</td></tr>
-<tr class="separator:adbdc902bdfbc43b000dbddfef7a1cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a94f95b158c79110aeb99b34de222afce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a94f95b158c79110aeb99b34de222afce">ImageClassifierBase</a> ()=default</td></tr>
+<tr class="separator:a94f95b158c79110aeb99b34de222afce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c8c2383ae403b426a21d55e233d4ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a97c8c2383ae403b426a21d55e233d4ad">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a97c8c2383ae403b426a21d55e233d4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b50f46ae1bee818134c03539e85b8f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b50f46ae1bee818134c03539e85b8f4">~ImageClassifierBase</a> () override=default</td></tr>
+<tr class="separator:a2b50f46ae1bee818134c03539e85b8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ClassifierBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ClassifierBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ClassifierBase.html">itk::ClassifierBase&lt; TInputImage &gt;</a></td></tr>
 <tr class="memitem:a060ab32c7cf40d45658e649d423ff5e9 inherit pro_methods_classitk_1_1ClassifierBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ClassifierBase.html#a060ab32c7cf40d45658e649d423ff5e9">ClassifierBase</a> ()</td></tr>
 <tr class="separator:a060ab32c7cf40d45658e649d423ff5e9 inherit pro_methods_classitk_1_1ClassifierBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -337,12 +334,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,6 +351,26 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:abf7d6196116283ed1f51f43ef32cdaf2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#abf7d6196116283ed1f51f43ef32cdaf2">InputImageSizeType</a> = typename TInputImage::SizeType</td></tr>
+<tr class="separator:abf7d6196116283ed1f51f43ef32cdaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adbdc902bdfbc43b000dbddfef7a1cddf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#adbdc902bdfbc43b000dbddfef7a1cddf">Classify</a> ()</td></tr>
+<tr class="separator:adbdc902bdfbc43b000dbddfef7a1cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae516af0d018b06b5e5d9238292b9f17b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#ae516af0d018b06b5e5d9238292b9f17b">m_ClassifiedImage</a></td></tr>
+<tr class="separator:ae516af0d018b06b5e5d9238292b9f17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead30bbc136d9f7c77dc5b3e61d5577e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageClassifierBase.html#aead30bbc136d9f7c77dc5b3e61d5577e">m_InputImage</a></td></tr>
+<tr class="separator:aead30bbc136d9f7c77dc5b3e61d5577e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -369,7 +386,7 @@ class itk::ImageClassifierBase&lt; TInputImage, TClassifiedImage &gt;</h3>
 <p>This object supports data handling of multiband images. The object accepts the input image in vector format only, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset. A single band image is treated as a vector image with a single element for every vector. The classified image is treated as a single band scalar image.</p>
 <p>This class stores the input and output data as its private members. Before you call the Classify method to start the classification process, you should plug in all necessary parts as described in the superclass documentation.</p>
 <p>The core computation is carried out here. The function requires that the number of classes be set to a non zero value and the membership functions be populated. In addition, the number of classes should be equal to the number of membership functions. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2Segmentation_2GibbsPriorImageFilter1_8cxx-example.html#_a12">Examples/Segmentation/GibbsPriorImageFilter1.cxx</a>, and <a class="el" href="Examples_2Statistics_2ScalarImageMarkovRandomField1_8cxx-example.html#_a7">Examples/Statistics/ScalarImageMarkovRandomField1.cxx</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2Segmentation_2GibbsPriorImageFilter1_8cxx-example.html#_a14">Examples/Segmentation/GibbsPriorImageFilter1.cxx</a>, and <a class="el" href="Examples_2Statistics_2ScalarImageMarkovRandomField1_8cxx-example.html#_a8">Examples/Statistics/ScalarImageMarkovRandomField1.cxx</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="itkImageClassifierBase_8h_source.html#l00071">71</a> of file <a class="el" href="itkImageClassifierBase_8h_source.html">itkImageClassifierBase.h</a>.</p>
@@ -387,7 +404,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageClassifierBase_8h_source.html#l00132">132</a> of file <a class="el" href="itkImageClassifierBase_8h_source.html">itkImageClassifierBase.h</a>.</p>
 
@@ -421,7 +437,7 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
 template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> =  typename TClassifiedImage::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a2d65fabfa9f01fbef912f8f4f4f9a94f">ClassifiedImagePointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TClassifiedImage::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -477,7 +493,7 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
 template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a> =  typename TInputImage::ConstPointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a2b33238c1e9861874fc2a1f1d60ce1f6">InputImageConstPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">TInputImage::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -514,7 +530,7 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
 template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a5a2185eba92fa8134b967876426c12c3">InputImagePointer</a> =  typename TInputImage::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::<a class="el" href="classitk_1_1ImageClassifierBase.html#a5a2185eba92fa8134b967876426c12c3">InputImagePointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TInputImage::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -544,7 +560,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageClassifierBase_8h_source.html#l00153">153</a> of file <a class="el" href="itkImageClassifierBase_8h_source.html">itkImageClassifierBase.h</a>.</p>
 
@@ -649,7 +664,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 </div>
 </div>
@@ -677,7 +691,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 </div>
 </div>
@@ -750,7 +763,7 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1ImageClassifierBase.html">itk::ImageClassifierBase</a>&lt; TInputImage, TClassifiedImage &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -850,7 +863,7 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
+<p>Get/Set the input image. </p>
 
 </div>
 </div>
@@ -968,7 +981,8 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1LightProcessObject.html#aa9d8380e68a1df4eda7a66abff18b110">itk::LightProcessObject</a>.</p>
 
@@ -1054,7 +1068,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageClassifierBase_8h_source.html#l00156">156</a> of file <a class="el" href="itkImageClassifierBase_8h_source.html">itkImageClassifierBase.h</a>.</p>
 
@@ -1081,7 +1094,6 @@ template&lt;typename TInputImage , typename TClassifiedImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type definition for the vector associated with input image pixel type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageClassifierBase_8h_source.html#l00155">155</a> of file <a class="el" href="itkImageClassifierBase_8h_source.html">itkImageClassifierBase.h</a>.</p>
 

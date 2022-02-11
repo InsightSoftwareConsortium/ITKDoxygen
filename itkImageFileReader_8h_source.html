@@ -135,11 +135,9 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  SetImageIO(<a class="code" href="classitk_1_1ImageIOBase.html">ImageIOBase</a> * imageIO);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  itkGetModifiableObjectMacro(ImageIO, <a class="code" href="classitk_1_1ImageIOBase.html">ImageIOBase</a>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  itkSetMacro(UseStreaming, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  itkGetConstReferenceMacro(UseStreaming, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  itkBooleanMacro(UseStreaming);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="classitk_1_1ImageFileReader.html">ImageFileReader</a>();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  ~<a class="code" href="classitk_1_1ImageFileReader.html">ImageFileReader</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
@@ -179,7 +177,7 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOutputImage,</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;          <span class="keyword">typename</span> ConvertPixelTraits = <a class="code" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits&lt;typename TOutputImage::IOPixelType&gt;</a>&gt;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">typename</span> TOutputImage::Pointer</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a></div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="namespaceitk.html#af1a55eea7d8d2452afa4c77eb6bd8d4a">  186</a></span>&#160;<a class="code" href="namespaceitk.html#af1a55eea7d8d2452afa4c77eb6bd8d4a">ReadImage</a>(<span class="keyword">const</span> std::string &amp; filename)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> reader = <a class="code" href="classitk_1_1ImageFileReader.html#ac90899aba4a68053e9ea5bc3860ed442">ImageFileReader&lt;TOutputImage, ConvertPixelTraits&gt;::New</a>();</div>
@@ -187,8 +185,6 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  reader-&gt;Update();</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">return</span> reader-&gt;GetOutput();</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;} <span class="comment">// namespace itk</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
@@ -201,6 +197,7 @@ $(function() {
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif // itkImageFileReader_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageIOBase_html"><div class="ttname"><a href="classitk_1_1ImageIOBase.html">itk::ImageIOBase</a></div><div class="ttdoc">Abstract superclass defines image IO interface.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageIOBase_8h_source.html#l00077">itkImageIOBase.h:77</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageFileReader_html_ac90899aba4a68053e9ea5bc3860ed442"><div class="ttname"><a href="classitk_1_1ImageFileReader.html#ac90899aba4a68053e9ea5bc3860ed442">itk::ImageFileReader::New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aitkImageSource_8h_html"><div class="ttname"><a href="itkImageSource_8h.html">itkImageSource.h</a></div></div>

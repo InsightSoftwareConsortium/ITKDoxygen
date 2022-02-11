@@ -73,6 +73,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classitk_1_1Function_1_1ConvergenceMonitoringFunction-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::Function::ConvergenceMonitoringFunction&lt; TScalar, TEnergyValue &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__Group-Numerics.html">Group Numerics</a> &raquo; <a class="el" href="group__ITKOptimizersv4.html">Module ITKOptimizersv4</a></div></div>  </div>
@@ -142,10 +144,15 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a906c9fca3391fad293a62b5c4b6ddf42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a906c9fca3391fad293a62b5c4b6ddf42">AddEnergyValue</a> (const <a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#aefa10082ab1e35a9fade842557f3b54b">EnergyValueType</a> value)</td></tr>
 <tr class="separator:a906c9fca3391fad293a62b5c4b6ddf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f7a61cdd0e3b53b46c88b3baa683f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a74d206b398b51040f053c75b03821a8c">RealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a51f7a61cdd0e3b53b46c88b3baa683f7">GetConvergenceValue</a> () const =0</td></tr>
+<tr class="separator:a51f7a61cdd0e3b53b46c88b3baa683f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a277eb6a2a5aa61f7a7d5631e82791ae2"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a277eb6a2a5aa61f7a7d5631e82791ae2">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a277eb6a2a5aa61f7a7d5631e82791ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fa0fc52ee0565813e9a55cf6b1e715"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#ad3965aa020c1e1aae72130ec8f3d348f">EnergyValueContainerSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a92fa0fc52ee0565813e9a55cf6b1e715">GetNumberOfEnergyValues</a> () const</td></tr>
 <tr class="separator:a92fa0fc52ee0565813e9a55cf6b1e715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a59d14aa0d2f0ddeda5ee753ed1bc2f28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a59d14aa0d2f0ddeda5ee753ed1bc2f28">ClearEnergyValues</a> ()</td></tr>
+<tr class="separator:a59d14aa0d2f0ddeda5ee753ed1bc2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,18 +215,43 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac609a32bca646284a3b85238a7b1a65b inherit pub_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaeeb17d7efc67f9f628f4e920762167 inherit pub_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent=0) const</td></tr>
 <tr class="separator:aeaeeb17d7efc67f9f628f4e920762167 inherit pub_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d865429e2917b2db310857020ca598e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#ad8c3c252118ddbd704a7636038307878">EnergyValueContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a6d865429e2917b2db310857020ca598e">m_EnergyValues</a></td></tr>
-<tr class="separator:a6d865429e2917b2db310857020ca598e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d14aa0d2f0ddeda5ee753ed1bc2f28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a59d14aa0d2f0ddeda5ee753ed1bc2f28">ClearEnergyValues</a> ()</td></tr>
-<tr class="separator:a59d14aa0d2f0ddeda5ee753ed1bc2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f7a61cdd0e3b53b46c88b3baa683f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a74d206b398b51040f053c75b03821a8c">RealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a51f7a61cdd0e3b53b46c88b3baa683f7">GetConvergenceValue</a> () const =0</td></tr>
-<tr class="separator:a51f7a61cdd0e3b53b46c88b3baa683f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a650f5738e786f138144aa34e601c59c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a650f5738e786f138144aa34e601c59c7">ConvergenceMonitoringFunction</a> ()</td></tr>
 <tr class="separator:a650f5738e786f138144aa34e601c59c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5e3954b0175590415c362b987f64040"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#aa5e3954b0175590415c362b987f64040">~ConvergenceMonitoringFunction</a> () override=default</td></tr>
-<tr class="separator:aa5e3954b0175590415c362b987f64040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67b480af501528632f6beb06582ebdc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a67b480af501528632f6beb06582ebdc5">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:a67b480af501528632f6beb06582ebdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e3954b0175590415c362b987f64040"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#aa5e3954b0175590415c362b987f64040">~ConvergenceMonitoringFunction</a> () override=default</td></tr>
+<tr class="separator:aa5e3954b0175590415c362b987f64040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
+<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
+<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
+<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
+<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
+<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
+<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a6d865429e2917b2db310857020ca598e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#ad8c3c252118ddbd704a7636038307878">EnergyValueContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Function_1_1ConvergenceMonitoringFunction.html#a6d865429e2917b2db310857020ca598e">m_EnergyValues</a></td></tr>
+<tr class="separator:a6d865429e2917b2db310857020ca598e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
+<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -239,29 +271,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
-<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
-<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
-<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
-<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
-<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
-<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
-<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TScalar, typename TEnergyValue&gt;<br />
@@ -497,7 +506,6 @@ template&lt;typename TScalar , typename TEnergyValue &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Clear all the energy values. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkConvergenceMonitoringFunction_8h_source.html#l00099">99</a> of file <a class="el" href="itkConvergenceMonitoringFunction_8h_source.html">itkConvergenceMonitoringFunction.h</a>.</p>
 
@@ -527,7 +535,6 @@ template&lt;typename TScalar , typename TEnergyValue &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Clear all the energy values. </p>
 
 </div>
 </div>
@@ -720,7 +727,8 @@ template&lt;typename TScalar , typename TEnergyValue &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Clear all the energy values. </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">itk::Object</a>.</p>
 
@@ -750,7 +758,6 @@ template&lt;typename TScalar , typename TEnergyValue &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Clear all the energy values. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkConvergenceMonitoringFunction_8h_source.html#l00119">119</a> of file <a class="el" href="itkConvergenceMonitoringFunction_8h_source.html">itkConvergenceMonitoringFunction.h</a>.</p>
 

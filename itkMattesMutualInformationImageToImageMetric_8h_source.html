@@ -162,11 +162,9 @@ $(function() {
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  itkSetClampMacro(NumberOfHistogramBins, <a class="code" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>, 5, <a class="code" href="classitk_1_1NumericTraits.html">NumericTraits&lt;SizeValueType&gt;::max</a>());</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  itkGetConstReferenceMacro(NumberOfHistogramBins, <a class="code" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  itkSetMacro(UseExplicitPDFDerivatives, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  itkGetConstReferenceMacro(UseExplicitPDFDerivatives, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  itkBooleanMacro(UseExplicitPDFDerivatives);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a0a906100422c255c365070c89a271132">  225</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a0a906100422c255c365070c89a271132">PDFValueType</a> = double; <span class="comment">// NOTE:  floating point precision is not as stable.  Double precision proves faster and</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                               <span class="comment">// more robust in real-world testing.</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
@@ -178,21 +176,19 @@ $(function() {
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">if</span> (this-&gt;m_MMIMetricPerThreadVariables == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classitk_1_1SmartPointer.html">JointPDFType::Pointer</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">JointPDFType::Pointer</a>(<span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> this-&gt;m_MMIMetricPerThreadVariables[0].JointPDF;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keyword">const</span> <span class="keyword">typename</span> JointPDFDerivativesType::Pointer</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">JointPDFDerivativesType::Pointer</a></div>
 <div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a5bc506798644818d93aaf072c741320f">  254</a></span>&#160;  <a class="code" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a5bc506798644818d93aaf072c741320f">GetJointPDFDerivatives</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (this-&gt;m_MMIMetricPerThreadVariables == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classitk_1_1SmartPointer.html">JointPDFDerivativesType::Pointer</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">JointPDFDerivativesType::Pointer</a>(<span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> this-&gt;m_MMIMetricPerThreadVariables[0].JointPDFDerivatives;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="classitk_1_1MattesMutualInformationImageToImageMetric.html">MattesMutualInformationImageToImageMetric</a>();</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  ~<a class="code" href="classitk_1_1MattesMutualInformationImageToImageMetric.html">MattesMutualInformationImageToImageMetric</a>() <span class="keyword">override</span>;</div>
@@ -302,6 +298,7 @@ $(function() {
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageToImageMetric_html"><div class="ttname"><a href="classitk_1_1ImageToImageMetric.html">itk::ImageToImageMetric</a></div><div class="ttdoc">Computes similarity between regions of two images.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToImageMetric_8h_source.html#l00054">itkImageToImageMetric.h:54</a></div></div>
 <div class="ttc" id="aclassitk_1_1BSplineKernelFunction_html"><div class="ttname"><a href="classitk_1_1BSplineKernelFunction.html">itk::BSplineKernelFunction</a></div><div class="ttdoc">BSpline kernel used for density estimation and nonparametric regression.</div><div class="ttdef"><b>Definition:</b> <a href="itkBSplineKernelFunction_8h_source.html#l00043">itkBSplineKernelFunction.h:43</a></div></div>
 <div class="ttc" id="aclassitk_1_1SingleValuedCostFunction_html_a153ff76be5fa24aaf0b8f05552a8a579"><div class="ttname"><a href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">itk::SingleValuedCostFunction::MeasureType</a></div><div class="ttdeci">double MeasureType</div><div class="ttdef"><b>Definition:</b> <a href="itkSingleValuedCostFunction_8h_source.html#l00050">itkSingleValuedCostFunction.h:50</a></div></div>

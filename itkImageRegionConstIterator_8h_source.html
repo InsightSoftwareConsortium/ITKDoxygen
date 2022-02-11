@@ -126,14 +126,12 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    m_SpanBeginOffset = 0;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    m_SpanEndOffset = 0;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classitk_1_1ImageRegionConstIterator.html#a93c7c30d77bee58342562a7bc88b2b04">  153</a></span>&#160;  <a class="code" href="classitk_1_1ImageRegionConstIterator.html#a93c7c30d77bee58342562a7bc88b2b04">ImageRegionConstIterator</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageConstIterator.html#a31792bfbfc460a733e9e9df64c100710">ImageType</a> * ptr, <span class="keyword">const</span> <a class="code" href="classitk_1_1ImageConstIterator.html#aaaeeaa80fd3f162f5f1634806d423c80">RegionType</a> &amp; region)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    : <a class="code" href="classitk_1_1ImageConstIterator.html">ImageConstIterator</a>&lt;TImage&gt;(ptr, region)</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    m_SpanBeginOffset = this-&gt;m_BeginOffset;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    m_SpanEndOffset = this-&gt;m_BeginOffset + <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceitk.html#a5380bc8696311d1e1cfa5b350e440839">OffsetValueType</a><span class="keyword">&gt;</span>(this-&gt;m_Region.GetSize()[0]);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classitk_1_1ImageRegionConstIterator.html#ab0246e4dd15182034a4b4cdb8765198d">  167</a></span>&#160;  <a class="code" href="classitk_1_1ImageRegionConstIterator.html#ab0246e4dd15182034a4b4cdb8765198d">ImageRegionConstIterator</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageIterator.html">ImageIterator&lt;TImage&gt;</a> &amp; it)</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    this-&gt;<a class="code" href="classitk_1_1ImageConstIterator.html#a930259ccbe7c230e6925f766af1877b5">ImageConstIterator&lt;TImage&gt;::operator=</a>(it);</div>
@@ -182,8 +180,7 @@ $(function() {
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                      (ind[0] - this-&gt;m_Region.GetIndex()[0]);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    m_SpanBeginOffset = m_SpanEndOffset - <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceitk.html#a5380bc8696311d1e1cfa5b350e440839">OffsetValueType</a><span class="keyword">&gt;</span>(this-&gt;m_Region.GetSize()[0]);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  Self &amp;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <a class="code" href="classAddImageFilter.html">Self</a> &amp;</div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="classitk_1_1ImageRegionConstIterator.html#ab435a6022ff568d6ec33a8cdb053be11">  238</a></span>&#160;  <a class="code" href="classitk_1_1ImageRegionConstIterator.html#ab435a6022ff568d6ec33a8cdb053be11">operator++</a>()</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">if</span> (++this-&gt;m_Offset &gt;= m_SpanEndOffset)</div>
@@ -192,8 +189,7 @@ $(function() {
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  Self &amp;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <a class="code" href="classAddImageFilter.html">Self</a> &amp;</div>
 <div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classitk_1_1ImageRegionConstIterator.html#a6262f01473ea6a5f6fcd6084513ace75">  256</a></span>&#160;  <a class="code" href="classitk_1_1ImageRegionConstIterator.html#a6262f01473ea6a5f6fcd6084513ace75">operator--</a>()</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (--this-&gt;m_Offset &lt; m_SpanBeginOffset)</div>
@@ -202,7 +198,6 @@ $(function() {
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="classitk_1_1ImageRegionConstIterator.html#aefdb23e1e6ed2761151364d20ad50d59">  267</a></span>&#160;  <a class="code" href="namespaceitk.html#a5380bc8696311d1e1cfa5b350e440839">OffsetValueType</a> <a class="code" href="classitk_1_1ImageRegionConstIterator.html#aefdb23e1e6ed2761151364d20ad50d59">m_SpanBeginOffset</a>; <span class="comment">// one pixel before the beginning of the span</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                     <span class="comment">// (row)</span></div>
@@ -252,6 +247,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1ImageRegionConstIterator_html_a93c7c30d77bee58342562a7bc88b2b04"><div class="ttname"><a href="classitk_1_1ImageRegionConstIterator.html#a93c7c30d77bee58342562a7bc88b2b04">itk::ImageRegionConstIterator::ImageRegionConstIterator</a></div><div class="ttdeci">ImageRegionConstIterator(const ImageType *ptr, const RegionType &amp;region)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageRegionConstIterator_8h_source.html#l00153">itkImageRegionConstIterator.h:153</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageConstIterator_html_a0738e240b8ea643723f3d6045d482a33"><div class="ttname"><a href="classitk_1_1ImageConstIterator.html#a0738e240b8ea643723f3d6045d482a33">itk::ImageConstIterator&lt; ImageType &gt;::IndexType</a></div><div class="ttdeci">typename ImageType ::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIterator_8h_source.html#l00100">itkImageConstIterator.h:100</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageRegionConstIterator_html"><div class="ttname"><a href="classitk_1_1ImageRegionConstIterator.html">itk::ImageRegionConstIterator</a></div><div class="ttdoc">A multi-dimensional iterator templated over image type that walks a region of pixels.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageRegionConstIterator_8h_source.html#l00109">itkImageRegionConstIterator.h:109</a></div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageRegionConstIterator_html_a6262f01473ea6a5f6fcd6084513ace75"><div class="ttname"><a href="classitk_1_1ImageRegionConstIterator.html#a6262f01473ea6a5f6fcd6084513ace75">itk::ImageRegionConstIterator::operator--</a></div><div class="ttdeci">Self &amp; operator--()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageRegionConstIterator_8h_source.html#l00256">itkImageRegionConstIterator.h:256</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->

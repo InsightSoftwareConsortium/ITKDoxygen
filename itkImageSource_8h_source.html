@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>, <a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">   90</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1Image.html">OutputImageType</a> = TOutputImage;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">   91</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1SmartPointer.html">OutputImageType::Pointer</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">   91</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">   92</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">OutputImageType::RegionType</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#a34a637c2eb56b4f223249743b3d568b8">   93</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#a34a637c2eb56b4f223249743b3d568b8">OutputImagePixelType</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1Image.html#a97cb53f40bf7f17b5b78404b9c100034">OutputImageType::PixelType</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
@@ -143,45 +143,61 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  GetOutput();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1Image.html">OutputImageType</a> *</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  GetOutput() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="classitk_1_1Image.html">OutputImageType</a> *</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  GetOutput(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> idx);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// setup the mini-pipeline to calculate the correct regions</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// and write to the appropriate bulk data block</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        lastFilterInMiniPipeline-&gt;GraftOutput( this-&gt;GetOutput() );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// execute the mini-pipeline</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        lastFilterInMiniPipeline-&gt;Update();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">// graft the mini-pipeline output back onto this filter&#39;s output.</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// this is needed to get the appropriate regions passed back.</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        this-&gt;GraftOutput( lastFilterInMiniPipeline-&gt;GetOutput() );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;     \endcode</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;   *</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;   * For proper pipeline execution, a filter <span class="keyword">using</span> a mini-pipeline</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;   * must implement the GenerateInputRequestedRegion(),</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;   * GenerateOutputRequestedRegion(), GenerateOutputInformation() and</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;   * EnlargeOutputRequestedRegion() methods as necessary to reflect</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;   * how the mini-pipeline will execute (in other words, the outer</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;   * filter&#39;s pipeline mechanism must be consistent with what the</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   * mini-pipeline will do).</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;   *  */</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  virtual <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  GraftOutput(<a class="code" href="classitk_1_1DataObject.html">DataObject</a> * graft);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  GraftOutput(<span class="keyword">const</span> <a class="code" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp; key, <a class="code" href="classitk_1_1DataObject.html">DataObject</a> * graft);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  virtual <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  GraftOutput(const <a class="code" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp; key, <a class="code" href="classitk_1_1DataObject.html">DataObject</a> * graft);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  virtual <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  GraftNthOutput(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> idx, <a class="code" href="classitk_1_1DataObject.html">DataObject</a> * graft);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <a class="code" href="classitk_1_1SmartPointer.html">ProcessObject::DataObjectPointer</a></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  MakeOutput(<a class="code" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">ProcessObject::DataObjectPointerArraySizeType</a> idx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="classitk_1_1SmartPointer.html">ProcessObject::DataObjectPointer</a></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  MakeOutput(<span class="keyword">const</span> <a class="code" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">ProcessObject::DataObjectIdentifierType</a> &amp;) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>::<a class="code" href="classitk_1_1SmartPointer.html">DataObjectPointer</a></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  MakeOutput(<a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>::<a class="code" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) override;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>::<a class="code" href="classitk_1_1SmartPointer.html">DataObjectPointer</a></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  MakeOutput(const <a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>::<a class="code" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) override;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;protected:</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  ~<a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  ~<a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>() override = default;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  GenerateData() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  GenerateData() override;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  ClassicMultiThread(<a class="code" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a> callbackFunction);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  ThreadedGenerateData(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp; region, <a class="code" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  DynamicThreadedGenerateData(<span class="keyword">const</span> <a class="code" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp; outputRegionForThread);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  virtual <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  ThreadedGenerateData(const <a class="code" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp; region, <a class="code" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  virtual <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  DynamicThreadedGenerateData(const <a class="code" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp; outputRegionForThread);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  virtual <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  AllocateOutputs();</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">  326</a></span>&#160;  <a class="code" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">BeforeThreadedGenerateData</a>()</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  virtual <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">  326</a></span>&#160;  BeforeThreadedGenerateData()</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  {}</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
@@ -214,7 +230,6 @@ $(function() {
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  itkGetConstMacro(DynamicMultiThreading, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  itkSetMacro(DynamicMultiThreading, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="classitk_1_1ImageSource.html#aa26ac1851065e25e726336d3acae4952">  404</a></span>&#160;  itkBooleanMacro(DynamicMultiThreading);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classitk_1_1ImageSource.html#aa26ac1851065e25e726336d3acae4952">m_DynamicMultiThreading</a>;</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;};</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;} <span class="comment">// end namespace itk</span></div>
@@ -225,6 +240,7 @@ $(function() {
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageSource_html_aa5010ce3a8cd7d8d1bc40c4ae211464e"><div class="ttname"><a href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">itk::ImageSource&lt; Image&lt; std::complex&lt; typename TInputImage::PixelType &gt;, TInputImage::ImageDimension &gt; &gt;::OutputImagePointer</a></div><div class="ttdeci">typename OutputImageType::Pointer OutputImagePointer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageSource_8h_source.html#l00091">itkImageSource.h:91</a></div></div>
 <div class="ttc" id="aclassitk_1_1ProcessObject_html_a93046b8571aa1dfe7906ee205b7baf7b"><div class="ttname"><a href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">itk::ProcessObject::DataObjectIdentifierType</a></div><div class="ttdeci">DataObject::DataObjectIdentifierType DataObjectIdentifierType</div><div class="ttdef"><b>Definition:</b> <a href="itkProcessObject_8h_source.html#l00161">itkProcessObject.h:161</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageSource_html_ac1967c5c2e3cbdbf5ae6d1f6c916790d"><div class="ttname"><a href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">itk::ImageSource::AfterThreadedGenerateData</a></div><div class="ttdeci">virtual void AfterThreadedGenerateData()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageSource_8h_source.html#l00340">itkImageSource.h:340</a></div></div>
@@ -256,7 +272,6 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
 <div class="ttc" id="astructitk_1_1ImageSourceCommon_html"><div class="ttname"><a href="structitk_1_1ImageSourceCommon.html">itk::ImageSourceCommon</a></div><div class="ttdoc">Secondary base class of ImageSource common between templates.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageSourceCommon_8h_source.html#l00039">itkImageSourceCommon.h:39</a></div></div>
 <div class="ttc" id="aclassitk_1_1DataObject_html_a57ddb0e03cf59857375712f3217d89e5"><div class="ttname"><a href="classitk_1_1DataObject.html#a57ddb0e03cf59857375712f3217d89e5">itk::DataObject::Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkDataObject_8h_source.html#l00301">itkDataObject.h:301</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageSource_html_a3feaf3f80b0339277b2f3502140031f8"><div class="ttname"><a href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">itk::ImageSource::BeforeThreadedGenerateData</a></div><div class="ttdeci">virtual void BeforeThreadedGenerateData()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageSource_8h_source.html#l00326">itkImageSource.h:326</a></div></div>
 <div class="ttc" id="aclassitk_1_1DataObject_html"><div class="ttname"><a href="classitk_1_1DataObject.html">itk::DataObject</a></div><div class="ttdoc">Base class for all data objects in ITK.</div><div class="ttdef"><b>Definition:</b> <a href="itkDataObject_8h_source.html#l00293">itkDataObject.h:293</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->

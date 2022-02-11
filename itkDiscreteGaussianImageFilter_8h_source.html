@@ -148,28 +148,22 @@ $(function() {
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  itkSetMacro(Variance, <a class="code" href="classitk_1_1FixedArray.html">ArrayType</a>);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  itkGetConstMacro(Variance, <span class="keyword">const</span> <a class="code" href="classitk_1_1FixedArray.html">ArrayType</a>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  itkSetMacro(MaximumError, <a class="code" href="classitk_1_1FixedArray.html">ArrayType</a>);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  itkGetConstMacro(MaximumError, <span class="keyword">const</span> <a class="code" href="classitk_1_1FixedArray.html">ArrayType</a>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  itkGetConstMacro(MaximumKernelWidth, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  itkSetMacro(MaximumKernelWidth, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  itkGetConstMacro(FilterDimensionality, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  itkSetMacro(FilterDimensionality, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  itkSetMacro(InputBoundaryCondition, <a class="code" href="classitk_1_1ImageBoundaryCondition.html">InputBoundaryConditionPointerType</a>);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  itkGetConstMacro(InputBoundaryCondition, <a class="code" href="classitk_1_1ImageBoundaryCondition.html">InputBoundaryConditionPointerType</a>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  itkSetMacro(RealBoundaryCondition, <a class="code" href="classitk_1_1ImageBoundaryCondition.html">RealBoundaryConditionPointerType</a>);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  itkGetConstMacro(RealBoundaryCondition, <a class="code" href="classitk_1_1ImageBoundaryCondition.html">RealBoundaryConditionPointerType</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classitk_1_1DiscreteGaussianImageFilter.html#a5f700074d8a95fa2bbc0a352d89d7fd4">  163</a></span>&#160;  <a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html#a5f700074d8a95fa2bbc0a352d89d7fd4">SetVariance</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="classitk_1_1FixedArray.html#a3d197ee1b99886ec1e507567542bcaac">ArrayType::ValueType</a> v)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    m_Variance.Fill(v);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    this-&gt;Modified();</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classitk_1_1DiscreteGaussianImageFilter.html#a868cb0d4f76b48c3e9f9cab943dfc5d2">  171</a></span>&#160;  <a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html#a868cb0d4f76b48c3e9f9cab943dfc5d2">SetMaximumError</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="classitk_1_1FixedArray.html#a3d197ee1b99886ec1e507567542bcaac">ArrayType::ValueType</a> v)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  {</div>
@@ -216,7 +210,6 @@ $(function() {
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  {</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    this-&gt;SetVariance(sigma * sigma);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  ArrayType</div>
 <div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="classitk_1_1DiscreteGaussianImageFilter.html#a56f3fd049466ab882dee5fff5497b149">  224</a></span>&#160;  <a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html#a56f3fd049466ab882dee5fff5497b149">GetSigmaArray</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword">  </span>{</div>
@@ -227,7 +220,6 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">return</span> sigmas;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="classitk_1_1DiscreteGaussianImageFilter.html#a81c458cfe1eec5ad36cdc4dd67c65bf6">  238</a></span>&#160;  <a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html#a81c458cfe1eec5ad36cdc4dd67c65bf6">GetSigma</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">  </span>{</div>
@@ -261,7 +253,6 @@ $(function() {
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  itkSetMacro(UseImageSpacing, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  itkGetConstMacro(UseImageSpacing, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  itkBooleanMacro(UseImageSpacing);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#if !defined(ITK_FUTURE_LEGACY_REMOVE)</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordtype">void</span></div>

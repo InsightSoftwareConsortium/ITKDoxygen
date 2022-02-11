@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> Superclass::TranslationType;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classitk_1_1ScalableAffineTransform.html#abdb6fc3b6d30ff1470bfbd21bd10907f">   83</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a7c7ab1df9fd69eacf2b69a98a182d1d0">InverseTransformBaseType</a> = <span class="keyword">typename</span> Superclass::InverseTransformBaseType;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classitk_1_1ScalableAffineTransform.html#a38ddcd24e2d8829b7df33e26362333ba">   84</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">InverseTransformBasePointer</a> = <span class="keyword">typename</span> InverseTransformBaseType::Pointer;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classitk_1_1ScalableAffineTransform.html#a38ddcd24e2d8829b7df33e26362333ba">   84</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">InverseTransformBasePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InverseTransformBaseType::Pointer</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  SetIdentity() <span class="keyword">override</span>;</div>
@@ -175,9 +175,8 @@ $(function() {
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> m_Scale;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  GetInverse(Self * inverse) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  GetInverse(<a class="code" href="classAddImageFilter.html">Self</a> * inverse) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  InverseTransformBasePointer</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  GetInverseTransform() <span class="keyword">const override</span>;</div>
@@ -187,7 +186,6 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <a class="code" href="classitk_1_1ScalableAffineTransform.html">ScalableAffineTransform</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> outputSpaceDimension, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> parametersDimension);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="classitk_1_1ScalableAffineTransform.html">ScalableAffineTransform</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> parametersDimension);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="classitk_1_1ScalableAffineTransform.html">ScalableAffineTransform</a>();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  ComputeMatrix() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
@@ -217,6 +215,7 @@ $(function() {
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* itkScalableAffineTransform_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ScalableAffineTransform_html_a4b04742695f5fac2ac859ff5a1800a9d"><div class="ttname"><a href="classitk_1_1ScalableAffineTransform.html#a4b04742695f5fac2ac859ff5a1800a9d">itk::ScalableAffineTransform::SetVarScale</a></div><div class="ttdeci">void SetVarScale(const double *scale)</div><div class="ttdef"><b>Definition:</b> <a href="itkScalableAffineTransform_8h_source.html#l00158">itkScalableAffineTransform.h:158</a></div></div>
 <div class="ttc" id="aclassitk_1_1ScalableAffineTransform_html_aad0c1628a5f837970ba48f836ee54452"><div class="ttname"><a href="classitk_1_1ScalableAffineTransform.html#aad0c1628a5f837970ba48f836ee54452">itk::ScalableAffineTransform::SetScaleComponent</a></div><div class="ttdeci">virtual void SetScaleComponent(const InputVectorType &amp;scale)</div><div class="ttdef"><b>Definition:</b> <a href="itkScalableAffineTransform_8h_source.html#l00097">itkScalableAffineTransform.h:97</a></div></div>
 <div class="ttc" id="aclassitk_1_1Vector_html"><div class="ttname"><a href="classitk_1_1Vector.html">itk::Vector&lt; double, Self::InputSpaceDimension &gt;</a></div></div>
@@ -233,6 +232,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1ScalableAffineTransform_html_a6d377403e09e173d48b3265728303bca"><div class="ttname"><a href="classitk_1_1ScalableAffineTransform.html#a6d377403e09e173d48b3265728303bca">itk::ScalableAffineTransform::GetScale</a></div><div class="ttdeci">virtual const double * GetScale() const</div><div class="ttdef"><b>Definition:</b> <a href="itkScalableAffineTransform_8h_source.html#l00114">itkScalableAffineTransform.h:114</a></div></div>
 <div class="ttc" id="aclassitk_1_1ScalableAffineTransform_html_a03eb92ecf15ebdc14fa0527fe356d44b"><div class="ttname"><a href="classitk_1_1ScalableAffineTransform.html#a03eb92ecf15ebdc14fa0527fe356d44b">itk::ScalableAffineTransform::GetScaleComponent</a></div><div class="ttdeci">virtual const double * GetScaleComponent() const</div><div class="ttdef"><b>Definition:</b> <a href="itkScalableAffineTransform_8h_source.html#l00119">itkScalableAffineTransform.h:119</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

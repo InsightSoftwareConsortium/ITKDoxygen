@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1KLMSegmentationRegion-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::KLMSegmentationRegion Class Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__ImageFilters.html">Image Filters</a> &raquo; <a class="el" href="group__ImageSegmentation.html">Image Segmentation Filters</a> &raquo; <a class="el" href="group__RegionBasedSegmentation.html">Region-Based Segmentation Filters</a> &raquo; <a class="el" href="group__RegionGrowingSegmentation.html">Region Growing Filters</a><a class="el" href="group__Group-Segmentation.html">Group Segmentation</a> &raquo;  &#124; <a class="el" href="group__ITKKLMRegionGrowing.html">Module ITKKLMRegionGrowing</a></div></div>  </div>
@@ -150,8 +152,16 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a86dd7dd546f7486d8421469113816878"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a86dd7dd546f7486d8421469113816878">CombineRegionParameters</a> (const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
+<tr class="separator:a86dd7dd546f7486d8421469113816878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15c2b6a61501332043fced784c830bd9"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a15c2b6a61501332043fced784c830bd9">CreateAnother</a> () const</td></tr>
 <tr class="separator:a15c2b6a61501332043fced784c830bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1355b0b80f9be684da21de4e2d8bebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad1355b0b80f9be684da21de4e2d8bebd">DeleteAllRegionBorders</a> ()</td></tr>
+<tr class="separator:ad1355b0b80f9be684da21de4e2d8bebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb893305398362ecc3a126da9d18c9e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#adb893305398362ecc3a126da9d18c9e6">DeleteRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
+<tr class="separator:adb893305398362ecc3a126da9d18c9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf8ea37aecac1a329d457085df1a305"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a3cf8ea37aecac1a329d457085df1a305">EnergyFunctional</a> (const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
+<tr class="separator:a3cf8ea37aecac1a329d457085df1a305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3583be6ed576af763e22867fd0c6940"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad3583be6ed576af763e22867fd0c6940">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:ad3583be6ed576af763e22867fd0c6940"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf175b7ddc53d3cd94a780c8860e441e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a1aa83e51e68270a8c8eb48f130a97d63">RegionBorderVectorConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#aaf175b7ddc53d3cd94a780c8860e441e">GetRegionBorderConstItBegin</a> ()</td></tr>
@@ -164,6 +174,30 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7f624b3b3aa5f7105171d21d26952da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf7f2a9463778ba80ccb579f8d7a1447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a8fdbdaff40adcfdb8277096d86f95244">RegionBorderVectorSizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#acf7f2a9463778ba80ccb579f8d7a1447">GetRegionBorderSize</a> () const</td></tr>
 <tr class="separator:acf7f2a9463778ba80ccb579f8d7a1447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12925a2e93ab37901c9f03d6a0f75714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a12925a2e93ab37901c9f03d6a0f75714">InsertRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
+<tr class="separator:a12925a2e93ab37901c9f03d6a0f75714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8644c66b168ec9af0dcc0beaca0db8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ae8644c66b168ec9af0dcc0beaca0db8e">InsertRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a886d1b8b081b6f210a514cb2f5ad8032">RegionBorderVectorIterator</a> RegionBorderVectorIt, <a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
+<tr class="separator:ae8644c66b168ec9af0dcc0beaca0db8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c19cd690b1814cb22cbb9321f00038c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a9c19cd690b1814cb22cbb9321f00038c">PrintRegionInfo</a> ()</td></tr>
+<tr class="separator:a9c19cd690b1814cb22cbb9321f00038c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4776fa1136672ef8edb868a583f5a1c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a4776fa1136672ef8edb868a583f5a1c8">PushBackRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
+<tr class="separator:a4776fa1136672ef8edb868a583f5a1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73b2b875becc8aadc2c88954645ccb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad73b2b875becc8aadc2c88954645ccb7">PushFrontRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
+<tr class="separator:ad73b2b875becc8aadc2c88954645ccb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab69acb8b340b13007ba7b7e7fe38aa3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ab69acb8b340b13007ba7b7e7fe38aa3f">ResetRegionLabelAndUpdateBorders</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
+<tr class="separator:ab69acb8b340b13007ba7b7e7fe38aa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb09480f4485bf429c994aeaa75b044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a3cb09480f4485bf429c994aeaa75b044">SetRegionParameters</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> meanRegionIntensity, double regionArea, <a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad236919011877fd8be94619a2bd98fa6">RegionLabelType</a> label)</td></tr>
+<tr class="separator:a3cb09480f4485bf429c994aeaa75b044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80bf2aa5594e994fb926167cf4b74ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a80bf2aa5594e994fb926167cf4b74ff4">UpdateRegionBorderLambda</a> ()</td></tr>
+<tr class="separator:a80bf2aa5594e994fb926167cf4b74ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a5b5a3f8a991f64230d85e8eb7e0a81cd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a5b5a3f8a991f64230d85e8eb7e0a81cd">SetMeanRegionIntensity</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> _arg)</td></tr>
+<tr class="separator:a5b5a3f8a991f64230d85e8eb7e0a81cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ebf2d4398fe6cdf0687c70ebfb622b"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ac2ebf2d4398fe6cdf0687c70ebfb622b">GetMeanRegionIntensity</a> () const</td></tr>
+<tr class="separator:ac2ebf2d4398fe6cdf0687c70ebfb622b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a13a91470c3f80b388fc8f3229d589c0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a13a91470c3f80b388fc8f3229d589c0e">SpliceRegionBorders</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
+<tr class="separator:a13a91470c3f80b388fc8f3229d589c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1SegmentationRegion"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1SegmentationRegion')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1SegmentationRegion.html">itk::SegmentationRegion</a></td></tr>
 <tr class="memitem:a770619ecda1e85f5e49f96ded2bb69d4 inherit pub_methods_classitk_1_1SegmentationRegion"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SegmentationRegion.html#a770619ecda1e85f5e49f96ded2bb69d4">ApplySegmentationRegion</a> ()</td></tr>
 <tr class="separator:a770619ecda1e85f5e49f96ded2bb69d4 inherit pub_methods_classitk_1_1SegmentationRegion"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,65 +295,31 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92766c4b4116fb561001a4cf79654f63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad506b52fb32fdf32d50ffee32b30c553">RegionBorderVectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a92766c4b4116fb561001a4cf79654f63">m_RegionBorderVector</a></td></tr>
-<tr class="separator:a92766c4b4116fb561001a4cf79654f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32e02e30ac9988024f427d3ae6a54c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a32e02e30ac9988024f427d3ae6a54c92">m_MeanRegionIntensity</a></td></tr>
-<tr class="separator:a32e02e30ac9988024f427d3ae6a54c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5a3f8a991f64230d85e8eb7e0a81cd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a5b5a3f8a991f64230d85e8eb7e0a81cd">SetMeanRegionIntensity</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> _arg)</td></tr>
-<tr class="separator:a5b5a3f8a991f64230d85e8eb7e0a81cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ebf2d4398fe6cdf0687c70ebfb622b"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ac2ebf2d4398fe6cdf0687c70ebfb622b">GetMeanRegionIntensity</a> () const</td></tr>
-<tr class="separator:ac2ebf2d4398fe6cdf0687c70ebfb622b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cb09480f4485bf429c994aeaa75b044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a3cb09480f4485bf429c994aeaa75b044">SetRegionParameters</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a> meanRegionIntensity, double regionArea, <a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad236919011877fd8be94619a2bd98fa6">RegionLabelType</a> label)</td></tr>
-<tr class="separator:a3cb09480f4485bf429c994aeaa75b044"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c19cd690b1814cb22cbb9321f00038c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a9c19cd690b1814cb22cbb9321f00038c">PrintRegionInfo</a> ()</td></tr>
-<tr class="separator:a9c19cd690b1814cb22cbb9321f00038c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad73b2b875becc8aadc2c88954645ccb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad73b2b875becc8aadc2c88954645ccb7">PushFrontRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
-<tr class="separator:ad73b2b875becc8aadc2c88954645ccb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4776fa1136672ef8edb868a583f5a1c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a4776fa1136672ef8edb868a583f5a1c8">PushBackRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
-<tr class="separator:a4776fa1136672ef8edb868a583f5a1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12925a2e93ab37901c9f03d6a0f75714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a12925a2e93ab37901c9f03d6a0f75714">InsertRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
-<tr class="separator:a12925a2e93ab37901c9f03d6a0f75714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8644c66b168ec9af0dcc0beaca0db8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ae8644c66b168ec9af0dcc0beaca0db8e">InsertRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationRegion.html#a886d1b8b081b6f210a514cb2f5ad8032">RegionBorderVectorIterator</a> RegionBorderVectorIt, <a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
-<tr class="separator:ae8644c66b168ec9af0dcc0beaca0db8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb893305398362ecc3a126da9d18c9e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#adb893305398362ecc3a126da9d18c9e6">DeleteRegionBorder</a> (<a class="el" href="classitk_1_1KLMSegmentationBorder.html">KLMSegmentationBorder</a> *pBorderCandidate)</td></tr>
-<tr class="separator:adb893305398362ecc3a126da9d18c9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1355b0b80f9be684da21de4e2d8bebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad1355b0b80f9be684da21de4e2d8bebd">DeleteAllRegionBorders</a> ()</td></tr>
-<tr class="separator:ad1355b0b80f9be684da21de4e2d8bebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86dd7dd546f7486d8421469113816878"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a86dd7dd546f7486d8421469113816878">CombineRegionParameters</a> (const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
-<tr class="separator:a86dd7dd546f7486d8421469113816878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cf8ea37aecac1a329d457085df1a305"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a3cf8ea37aecac1a329d457085df1a305">EnergyFunctional</a> (const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
-<tr class="separator:a3cf8ea37aecac1a329d457085df1a305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab69acb8b340b13007ba7b7e7fe38aa3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ab69acb8b340b13007ba7b7e7fe38aa3f">ResetRegionLabelAndUpdateBorders</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
-<tr class="separator:ab69acb8b340b13007ba7b7e7fe38aa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a91470c3f80b388fc8f3229d589c0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a13a91470c3f80b388fc8f3229d589c0e">SpliceRegionBorders</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *region)</td></tr>
-<tr class="separator:a13a91470c3f80b388fc8f3229d589c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80bf2aa5594e994fb926167cf4b74ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a80bf2aa5594e994fb926167cf4b74ff4">UpdateRegionBorderLambda</a> ()</td></tr>
-<tr class="separator:a80bf2aa5594e994fb926167cf4b74ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a66f3a8a435cbe46a408fe4e30abf0029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a66f3a8a435cbe46a408fe4e30abf0029">KLMSegmentationRegion</a> ()</td></tr>
 <tr class="separator:a66f3a8a435cbe46a408fe4e30abf0029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa852f758f15f0da24b65121edb06e47a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#aa852f758f15f0da24b65121edb06e47a">~KLMSegmentationRegion</a> () override</td></tr>
-<tr class="separator:aa852f758f15f0da24b65121edb06e47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9613db9f51585b49854e623951943f17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a9613db9f51585b49854e623951943f17">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:a9613db9f51585b49854e623951943f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:aa852f758f15f0da24b65121edb06e47a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#aa852f758f15f0da24b65121edb06e47a">~KLMSegmentationRegion</a> () override</td></tr>
+<tr class="separator:aa852f758f15f0da24b65121edb06e47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1SegmentationRegion"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1SegmentationRegion')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1SegmentationRegion.html">itk::SegmentationRegion</a></td></tr>
+<tr class="memitem:ad374c91aed57b99a8a949b351a602833 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SegmentationRegion.html#ad374c91aed57b99a8a949b351a602833">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:ad374c91aed57b99a8a949b351a602833 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cddc338c30ae65637ec19da53b5a0ae inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SegmentationRegion.html#a5cddc338c30ae65637ec19da53b5a0ae">SegmentationRegion</a> ()</td></tr>
 <tr class="separator:a5cddc338c30ae65637ec19da53b5a0ae inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad36cb08a2c48042a4f9a82d43d8bb1f0 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SegmentationRegion.html#ad36cb08a2c48042a4f9a82d43d8bb1f0">~SegmentationRegion</a> () override</td></tr>
 <tr class="separator:ad36cb08a2c48042a4f9a82d43d8bb1f0 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad374c91aed57b99a8a949b351a602833 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SegmentationRegion.html#ad374c91aed57b99a8a949b351a602833">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ad374c91aed57b99a8a949b351a602833 inherit pro_methods_classitk_1_1SegmentationRegion"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -331,6 +331,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a32e02e30ac9988024f427d3ae6a54c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a95b6f0a10fae8d8ca22e78a9260845be">MeanRegionIntensityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a32e02e30ac9988024f427d3ae6a54c92">m_MeanRegionIntensity</a></td></tr>
+<tr class="separator:a32e02e30ac9988024f427d3ae6a54c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92766c4b4116fb561001a4cf79654f63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#ad506b52fb32fdf32d50ffee32b30c553">RegionBorderVectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1KLMSegmentationRegion.html#a92766c4b4116fb561001a4cf79654f63">m_RegionBorderVector</a></td></tr>
+<tr class="separator:a92766c4b4116fb561001a4cf79654f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -540,7 +550,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the mean pixel intensity in the region. </p>
 
 </div>
 </div>
@@ -566,7 +575,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the mean pixel intensity in the region. </p>
 
 </div>
 </div>
@@ -600,7 +608,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer itk::KLMSegmentationRegion::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> itk::KLMSegmentationRegion::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -941,7 +949,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the mean pixel intensity in the region. </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">itk::Object</a>.</p>
 
@@ -1128,7 +1137,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the mean pixel intensity in the region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKLMSegmentationRegion_8h_source.html#l00246">246</a> of file <a class="el" href="itkKLMSegmentationRegion_8h_source.html">itkKLMSegmentationRegion.h</a>.</p>
 
@@ -1153,7 +1161,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the mean pixel intensity in the region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkKLMSegmentationRegion_8h_source.html#l00245">245</a> of file <a class="el" href="itkKLMSegmentationRegion_8h_source.html">itkKLMSegmentationRegion.h</a>.</p>
 

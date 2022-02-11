@@ -141,7 +141,7 @@ $(function() {
 <div class="line">  constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> MeasurementVectorLength = 3;</div>
 <div class="line">  <span class="keyword">using</span> MeasurementVectorType = <a name="_a0"></a><a class="code" href="classitk_1_1Vector.html">itk::Vector&lt;float, MeasurementVectorLength&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> SampleType = <a name="_a1"></a><a class="code" href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample&lt;MeasurementVectorType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> sample = SampleType::New();</div>
+<div class="line">  <span class="keyword">auto</span> sample = <a name="a2"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SampleType::New</a>();</div>
 <div class="line">  sample-&gt;SetMeasurementVectorSize(MeasurementVectorLength);</div>
 <div class="line">  MeasurementVectorType mv;</div>
 <div class="line">  mv[0] = 1.0;</div>
@@ -184,9 +184,9 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> MeanAlgorithmType = <a name="_a2"></a><a class="code" href="classitk_1_1Statistics_1_1MeanSampleFilter.html">itk::Statistics::MeanSampleFilter&lt;SampleType&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> MeanAlgorithmType = <a name="_a3"></a><a class="code" href="classitk_1_1Statistics_1_1MeanSampleFilter.html">itk::Statistics::MeanSampleFilter&lt;SampleType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> meanAlgorithm = MeanAlgorithmType::New();</div>
+<div class="line">  <span class="keyword">auto</span> meanAlgorithm = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">MeanAlgorithmType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  meanAlgorithm-&gt;SetInput(sample);</div>
 <div class="line">  meanAlgorithm-&gt;Update();</div>
@@ -205,8 +205,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> CovarianceAlgorithmType =</div>
-<div class="line">    <a name="_a3"></a><a class="code" href="classitk_1_1Statistics_1_1CovarianceSampleFilter.html">itk::Statistics::CovarianceSampleFilter&lt;SampleType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> covarianceAlgorithm = CovarianceAlgorithmType::New();</div>
+<div class="line">    <a name="_a4"></a><a class="code" href="classitk_1_1Statistics_1_1CovarianceSampleFilter.html">itk::Statistics::CovarianceSampleFilter&lt;SampleType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> covarianceAlgorithm = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">CovarianceAlgorithmType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  covarianceAlgorithm-&gt;SetInput(sample);</div>
 <div class="line">  covarianceAlgorithm-&gt;Update();</div>
@@ -227,6 +227,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1Statistics_1_1MeanSampleFilter_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1MeanSampleFilter.html">itk::Statistics::MeanSampleFilter</a></div><div class="ttdoc">Given a sample, this filter computes the sample mean.</div><div class="ttdef"><b>Definition:</b> <a href="itkMeanSampleFilter_8h_source.html#l00049">itkMeanSampleFilter.h:49</a></div></div>
 <div class="ttc" id="aitkListSample_8h_html"><div class="ttname"><a href="itkListSample_8h.html">itkListSample.h</a></div></div>
 <div class="ttc" id="aitkVector_8h_html"><div class="ttname"><a href="itkVector_8h.html">itkVector.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aitkCovarianceSampleFilter_8h_html"><div class="ttname"><a href="itkCovarianceSampleFilter_8h.html">itkCovarianceSampleFilter.h</a></div></div>
 <div class="ttc" id="aitkMeanSampleFilter_8h_html"><div class="ttname"><a href="itkMeanSampleFilter_8h.html">itkMeanSampleFilter.h</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->

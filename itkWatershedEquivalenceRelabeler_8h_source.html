@@ -120,7 +120,6 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a281c5a4a82eda05b51edc93a4526b5e1">   73</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;const Self&gt;</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  itkNewMacro(<a class="code" href="classitk_1_1LightObject.html">Self</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html">EquivalenceRelabeler</a>, <a class="code" href="classitk_1_1ProcessObject.html">ProcessObject</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a5ccf209fab829f7df979999e13872a17">   80</a></span>&#160;  <a class="code" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a5ccf209fab829f7df979999e13872a17">SetInputImage</a>(<a class="code" href="classitk_1_1Image.html">ImageType</a> * img)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
@@ -131,14 +130,13 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classitk_1_1Image.html">ImageType</a> *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#a8ac4b11f6af39456790a8a16a1f43cb2">ProcessObject::GetInput</a>(0));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a9581983322bbb13e62c32338f9c7ed92">   93</a></span>&#160;  <a class="code" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a9581983322bbb13e62c32338f9c7ed92">SetOutputImage</a>(<a class="code" href="classitk_1_1Image.html">ImageType</a> * img)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#aa3d6b1395c571fb6ffd4cc424e11b0b2">ProcessObject::SetNthOutput</a>(0, img);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">typename</span> ImageType::Pointer</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a></div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a71c284a9874c0c74f207536f025fffda">   99</a></span>&#160;  <a class="code" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a71c284a9874c0c74f207536f025fffda">GetOutputImage</a>()</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classitk_1_1Image.html">ImageType</a> *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#a841eb57781dedc571592230d46305ab4">ProcessObject::GetOutput</a>(0));</div>
@@ -150,7 +148,7 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#a8a2ddac98ac435c20af2cf466e838ee6">ProcessObject::SetNthInput</a>(1, et);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  EquivalencyTableType::Pointer</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">EquivalencyTableType::Pointer</a></div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#ab4fcbceae7a4a158db84586adee93548">  112</a></span>&#160;  <a class="code" href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#ab4fcbceae7a4a158db84586adee93548">GetEquivalencyTable</a>()</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classitk_1_1EquivalencyTable.html">EquivalencyTableType</a> *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#a8ac4b11f6af39456790a8a16a1f43cb2">ProcessObject::GetInput</a>(1));</div>
@@ -192,6 +190,7 @@ $(function() {
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1EquivalencyTable_html"><div class="ttname"><a href="classitk_1_1EquivalencyTable.html">itk::EquivalencyTable</a></div><div class="ttdoc">Hash table to manage integral label equivalencies.</div><div class="ttdef"><b>Definition:</b> <a href="itkEquivalencyTable_8h_source.html#l00044">itkEquivalencyTable.h:44</a></div></div>
 <div class="ttc" id="aclassitk_1_1watershed_1_1EquivalenceRelabeler_html_a74bcd66677ae5903e6c3f8620556a53c"><div class="ttname"><a href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#a74bcd66677ae5903e6c3f8620556a53c">itk::watershed::EquivalenceRelabeler::GetInputImage</a></div><div class="ttdeci">const ImageType * GetInputImage()</div><div class="ttdef"><b>Definition:</b> <a href="itkWatershedEquivalenceRelabeler_8h_source.html#l00085">itkWatershedEquivalenceRelabeler.h:85</a></div></div>
 <div class="ttc" id="aclassitk_1_1watershed_1_1EquivalenceRelabeler_html_ab4fcbceae7a4a158db84586adee93548"><div class="ttname"><a href="classitk_1_1watershed_1_1EquivalenceRelabeler.html#ab4fcbceae7a4a158db84586adee93548">itk::watershed::EquivalenceRelabeler::GetEquivalencyTable</a></div><div class="ttdeci">EquivalencyTableType::Pointer GetEquivalencyTable()</div><div class="ttdef"><b>Definition:</b> <a href="itkWatershedEquivalenceRelabeler_8h_source.html#l00112">itkWatershedEquivalenceRelabeler.h:112</a></div></div>

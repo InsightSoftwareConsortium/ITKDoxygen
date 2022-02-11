@@ -73,6 +73,9 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ImageModelEstimatorBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::ImageModelEstimatorBase&lt; TInputImage, TMembershipFunction &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__ImageFilters.html">Image Filters</a> &raquo; <a class="el" href="group__ImageSegmentation.html">Image Segmentation Filters</a> &raquo; <a class="el" href="group__IntensityImageSegmentation.html">Intensity-Based Image Segmentation Filters</a> &raquo; <a class="el" href="group__ClassificationFilters.html">Pixel Classification Filters</a><a class="el" href="group__Group-Segmentation.html">Group Segmentation</a> &raquo;  &#124; <a class="el" href="group__ITKClassifiers.html">Module ITKClassifiers</a></div></div>  </div>
@@ -101,11 +104,11 @@ $(function() {
 Public Types</h2></td></tr>
 <tr class="memitem:a247e04072f20d2bdd63fa918555eb07f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a247e04072f20d2bdd63fa918555eb07f">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:a247e04072f20d2bdd63fa918555eb07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4efe88621a352f3810b9a281993783d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a> = typename TInputImage::Pointer</td></tr>
+<tr class="memitem:ad4efe88621a352f3810b9a281993783d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TInputImage::Pointer</a></td></tr>
 <tr class="separator:ad4efe88621a352f3810b9a281993783d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ca37d1a0624954daf4eb23a8cc49d6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> = TInputImage</td></tr>
 <tr class="separator:af9ca37d1a0624954daf4eb23a8cc49d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e7daa26be1c3d72159879789098d26c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> = typename TMembershipFunction::Pointer</td></tr>
+<tr class="memitem:a7e7daa26be1c3d72159879789098d26c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TMembershipFunction::Pointer</a></td></tr>
 <tr class="separator:a7e7daa26be1c3d72159879789098d26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04b6dd56b39fe35424ef41f75dc32bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a> = std::vector&lt; <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> &gt;</td></tr>
 <tr class="separator:ac04b6dd56b39fe35424ef41f75dc32bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,12 +146,31 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a99d842e5916cdb523753dab0cdc6d9d3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a99d842e5916cdb523753dab0cdc6d9d3">AddMembershipFunction</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> function)</td></tr>
+<tr class="separator:a99d842e5916cdb523753dab0cdc6d9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557f949b8fe24e002848e6ffc2ca653a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a557f949b8fe24e002848e6ffc2ca653a">DeleteAllMembershipFunctions</a> ()</td></tr>
+<tr class="separator:a557f949b8fe24e002848e6ffc2ca653a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd28b7a35c47904425f58499b082f5b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abd28b7a35c47904425f58499b082f5b1">GetMembershipFunctions</a> () const</td></tr>
+<tr class="separator:abd28b7a35c47904425f58499b082f5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c78302370cbaeac1f3d81a188d14e4"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a59c78302370cbaeac1f3d81a188d14e4">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a59c78302370cbaeac1f3d81a188d14e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb815dc3cb2ec8b23b7ef792ae02070"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#addb815dc3cb2ec8b23b7ef792ae02070">GetNumberOfMembershipFunctions</a> ()</td></tr>
+<tr class="separator:addb815dc3cb2ec8b23b7ef792ae02070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf34a85e90d21bea74a850c4d2fa337"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a9bf34a85e90d21bea74a850c4d2fa337">GetNumberOfModels</a> () const</td></tr>
 <tr class="separator:a9bf34a85e90d21bea74a850c4d2fa337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63ef1b315310d6e44da53a3daaa0c49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac63ef1b315310d6e44da53a3daaa0c49">SetMembershipFunctions</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a> membershipFunctions)</td></tr>
+<tr class="separator:ac63ef1b315310d6e44da53a3daaa0c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ef28923bd91ab6d42c50e344279c1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a33ef28923bd91ab6d42c50e344279c1d">SetNumberOfModels</a> (unsigned int _arg)</td></tr>
 <tr class="separator:a33ef28923bd91ab6d42c50e344279c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb25bc7895cc1b86b9a07d93a7c46ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abb25bc7895cc1b86b9a07d93a7c46ca0">Update</a> ()</td></tr>
+<tr class="separator:abb25bc7895cc1b86b9a07d93a7c46ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a0fa6f2e44676334bcdf4f79c810f86da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a0fa6f2e44676334bcdf4f79c810f86da">SetInputImage</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *_arg)</td></tr>
+<tr class="separator:a0fa6f2e44676334bcdf4f79c810f86da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab541e89bc3e111d23e73e90c404ed8bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ab541e89bc3e111d23e73e90c404ed8bb">GetModifiableInputImage</a> ()</td></tr>
+<tr class="separator:ab541e89bc3e111d23e73e90c404ed8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad049c5c1a2d3bff8f1f3c9a2b523bb69"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad049c5c1a2d3bff8f1f3c9a2b523bb69">GetInputImage</a> () const</td></tr>
+<tr class="separator:ad049c5c1a2d3bff8f1f3c9a2b523bb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1LightProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1LightProcessObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1LightProcessObject.html">itk::LightProcessObject</a></td></tr>
 <tr class="memitem:a6df9fab61f133bc98e8473cacde48d25 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a6df9fab61f133bc98e8473cacde48d25">AbortGenerateDataOff</a> ()</td></tr>
 <tr class="separator:a6df9fab61f133bc98e8473cacde48d25 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,14 +182,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae748e17e256433858dc899468c8da86f inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08ff2e7e7b99667a35b50cf58c837c1e inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a08ff2e7e7b99667a35b50cf58c837c1e">SetAbortGenerateData</a> (bool _arg)</td></tr>
 <tr class="separator:a08ff2e7e7b99667a35b50cf58c837c1e inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#af4bfef7416e9443223d9cfac63412eac">UpdateOutputData</a> ()</td></tr>
+<tr class="separator:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#ad8203286e0ded0fd78fc8db8c4066580">UpdateProgress</a> (float amount)</td></tr>
+<tr class="separator:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a096294f659bbf5aba736cfc9d1cceaa0 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a096294f659bbf5aba736cfc9d1cceaa0">SetProgress</a> (float _arg)</td></tr>
 <tr class="separator:a096294f659bbf5aba736cfc9d1cceaa0 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6bc114db08aff4a04fe58e7aa20a24 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a4f6bc114db08aff4a04fe58e7aa20a24">GetProgress</a> () const</td></tr>
 <tr class="separator:a4f6bc114db08aff4a04fe58e7aa20a24 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#ad8203286e0ded0fd78fc8db8c4066580">UpdateProgress</a> (float amount)</td></tr>
-<tr class="separator:ad8203286e0ded0fd78fc8db8c4066580 inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#af4bfef7416e9443223d9cfac63412eac">UpdateOutputData</a> ()</td></tr>
-<tr class="separator:af4bfef7416e9443223d9cfac63412eac inherit pub_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,40 +252,56 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac609a32bca646284a3b85238a7b1a65b inherit pub_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaeeb17d7efc67f9f628f4e920762167 inherit pub_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent=0) const</td></tr>
 <tr class="separator:aeaeeb17d7efc67f9f628f4e920762167 inherit pub_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a1fee7fd0d885654713f24e1fe550d8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7a1fee7fd0d885654713f24e1fe550d8">m_NumberOfModels</a> { 0 }</td></tr>
-<tr class="separator:a7a1fee7fd0d885654713f24e1fe550d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920d82da09263732c1389dcc6f990556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a920d82da09263732c1389dcc6f990556">m_MembershipFunctions</a></td></tr>
-<tr class="separator:a920d82da09263732c1389dcc6f990556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73fd45327dab67f9d37f9758e343ced0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a73fd45327dab67f9d37f9758e343ced0">m_InputImage</a></td></tr>
-<tr class="separator:a73fd45327dab67f9d37f9758e343ced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa6f2e44676334bcdf4f79c810f86da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a0fa6f2e44676334bcdf4f79c810f86da">SetInputImage</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *_arg)</td></tr>
-<tr class="separator:a0fa6f2e44676334bcdf4f79c810f86da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab541e89bc3e111d23e73e90c404ed8bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ab541e89bc3e111d23e73e90c404ed8bb">GetModifiableInputImage</a> ()</td></tr>
-<tr class="separator:ab541e89bc3e111d23e73e90c404ed8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad049c5c1a2d3bff8f1f3c9a2b523bb69"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#af9ca37d1a0624954daf4eb23a8cc49d6">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad049c5c1a2d3bff8f1f3c9a2b523bb69">GetInputImage</a> () const</td></tr>
-<tr class="separator:ad049c5c1a2d3bff8f1f3c9a2b523bb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac63ef1b315310d6e44da53a3daaa0c49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac63ef1b315310d6e44da53a3daaa0c49">SetMembershipFunctions</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a> membershipFunctions)</td></tr>
-<tr class="separator:ac63ef1b315310d6e44da53a3daaa0c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd28b7a35c47904425f58499b082f5b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abd28b7a35c47904425f58499b082f5b1">GetMembershipFunctions</a> () const</td></tr>
-<tr class="separator:abd28b7a35c47904425f58499b082f5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb815dc3cb2ec8b23b7ef792ae02070"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#addb815dc3cb2ec8b23b7ef792ae02070">GetNumberOfMembershipFunctions</a> ()</td></tr>
-<tr class="separator:addb815dc3cb2ec8b23b7ef792ae02070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557f949b8fe24e002848e6ffc2ca653a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a557f949b8fe24e002848e6ffc2ca653a">DeleteAllMembershipFunctions</a> ()</td></tr>
-<tr class="separator:a557f949b8fe24e002848e6ffc2ca653a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d842e5916cdb523753dab0cdc6d9d3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a99d842e5916cdb523753dab0cdc6d9d3">AddMembershipFunction</a> (<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> function)</td></tr>
-<tr class="separator:a99d842e5916cdb523753dab0cdc6d9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb25bc7895cc1b86b9a07d93a7c46ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abb25bc7895cc1b86b9a07d93a7c46ca0">Update</a> ()</td></tr>
-<tr class="separator:abb25bc7895cc1b86b9a07d93a7c46ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3baa7657e2ef82da6273b474521e2775"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a3baa7657e2ef82da6273b474521e2775">ImageModelEstimatorBase</a> ()</td></tr>
-<tr class="separator:a3baa7657e2ef82da6273b474521e2775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb764bd8144a95e9b5453218fd1bf28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#adeb764bd8144a95e9b5453218fd1bf28">~ImageModelEstimatorBase</a> () override=default</td></tr>
-<tr class="separator:adeb764bd8144a95e9b5453218fd1bf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a218749088df2ed854f7028896f73ccc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a218749088df2ed854f7028896f73ccc4">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a218749088df2ed854f7028896f73ccc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:abbbaa32259f9ff730300c47301fa1f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abbbaa32259f9ff730300c47301fa1f6a">GenerateData</a> () override</td></tr>
 <tr class="separator:abbbaa32259f9ff730300c47301fa1f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baa7657e2ef82da6273b474521e2775"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a3baa7657e2ef82da6273b474521e2775">ImageModelEstimatorBase</a> ()</td></tr>
+<tr class="separator:a3baa7657e2ef82da6273b474521e2775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218749088df2ed854f7028896f73ccc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a218749088df2ed854f7028896f73ccc4">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a218749088df2ed854f7028896f73ccc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb764bd8144a95e9b5453218fd1bf28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#adeb764bd8144a95e9b5453218fd1bf28">~ImageModelEstimatorBase</a> () override=default</td></tr>
+<tr class="separator:adeb764bd8144a95e9b5453218fd1bf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightProcessObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightProcessObject.html">itk::LightProcessObject</a></td></tr>
+<tr class="memitem:a1581550e696e146e947fc581027512af inherit pro_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a1581550e696e146e947fc581027512af">LightProcessObject</a> ()</td></tr>
+<tr class="separator:a1581550e696e146e947fc581027512af inherit pro_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f548d82c914482b720a75ff660ae36 inherit pro_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a89f548d82c914482b720a75ff660ae36">~LightProcessObject</a> () override</td></tr>
+<tr class="separator:a89f548d82c914482b720a75ff660ae36 inherit pro_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
+<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
+<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
+<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
+<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
+<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
+<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:a2112a47045142bad3563be35d3e49530"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a2112a47045142bad3563be35d3e49530">EstimateModels</a> ()=0</td></tr>
 <tr class="separator:a2112a47045142bad3563be35d3e49530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a73fd45327dab67f9d37f9758e343ced0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a73fd45327dab67f9d37f9758e343ced0">m_InputImage</a></td></tr>
+<tr class="separator:a73fd45327dab67f9d37f9758e343ced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920d82da09263732c1389dcc6f990556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ac04b6dd56b39fe35424ef41f75dc32bf">MembershipFunctionPointerVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a920d82da09263732c1389dcc6f990556">m_MembershipFunctions</a></td></tr>
+<tr class="separator:a920d82da09263732c1389dcc6f990556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1fee7fd0d885654713f24e1fe550d8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7a1fee7fd0d885654713f24e1fe550d8">m_NumberOfModels</a> { 0 }</td></tr>
+<tr class="separator:a7a1fee7fd0d885654713f24e1fe550d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -286,31 +324,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightProcessObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightProcessObject.html">itk::LightProcessObject</a></td></tr>
-<tr class="memitem:a1581550e696e146e947fc581027512af inherit pro_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a1581550e696e146e947fc581027512af">LightProcessObject</a> ()</td></tr>
-<tr class="separator:a1581550e696e146e947fc581027512af inherit pro_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f548d82c914482b720a75ff660ae36 inherit pro_methods_classitk_1_1LightProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightProcessObject.html#a89f548d82c914482b720a75ff660ae36">~LightProcessObject</a> () override</td></tr>
-<tr class="separator:a89f548d82c914482b720a75ff660ae36 inherit pro_methods_classitk_1_1LightProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
-<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
-<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
-<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
-<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
-<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
-<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,7 +369,7 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
 template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1ImageModelEstimatorBase.html">itk::ImageModelEstimatorBase</a>&lt; TInputImage, TMembershipFunction &gt;::<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a> =  typename TInputImage::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1ImageModelEstimatorBase.html">itk::ImageModelEstimatorBase</a>&lt; TInputImage, TMembershipFunction &gt;::<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#ad4efe88621a352f3810b9a281993783d">InputImagePointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TInputImage::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -393,7 +406,7 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
 template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1ImageModelEstimatorBase.html">itk::ImageModelEstimatorBase</a>&lt; TInputImage, TMembershipFunction &gt;::<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> =  typename TMembershipFunction::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1ImageModelEstimatorBase.html">itk::ImageModelEstimatorBase</a>&lt; TInputImage, TMembershipFunction &gt;::<a class="el" href="classitk_1_1ImageModelEstimatorBase.html#a7e7daa26be1c3d72159879789098d26c">MembershipFunctionPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TMembershipFunction::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -501,7 +514,6 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
 
 </div>
 </div>
@@ -529,7 +541,6 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
 
 </div>
 </div>
@@ -639,7 +650,7 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
+<p>This method causes the filter to generate its output. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1LightProcessObject.html#a26a48c8dab2da74e61bf3adb764c9e14">itk::LightProcessObject</a>.</p>
 
@@ -669,7 +680,7 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
+<p>Type definitions for the training image. Get/Set the input image. </p>
 
 </div>
 </div>
@@ -727,7 +738,7 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
+<p>Type definitions for the training image. Get/Set the input image. </p>
 
 </div>
 </div>
@@ -856,7 +867,8 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1LightProcessObject.html#aa9d8380e68a1df4eda7a66abff18b110">itk::LightProcessObject</a>.</p>
 
@@ -1047,7 +1059,6 @@ template&lt;typename TInputImage , typename TMembershipFunction &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container to hold the membership functions </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageModelEstimatorBase_8h_source.html#l00148">148</a> of file <a class="el" href="itkImageModelEstimatorBase_8h_source.html">itkImageModelEstimatorBase.h</a>.</p>
 

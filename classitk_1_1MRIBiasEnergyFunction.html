@@ -75,6 +75,8 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1MRIBiasEnergyFunction-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::MRIBiasEnergyFunction&lt; TImage, TImageMask, TBiasField &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKBiasCorrection.html">Module ITKBiasCorrection</a></div></div>  </div>
@@ -111,7 +113,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a7eb9034955b958476ac3f26d46e86d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cf601ad08c3dd0acff89250c8fba52c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a0cf601ad08c3dd0acff89250c8fba52c">ImageIndexType</a> = typename ImageType::IndexType</td></tr>
 <tr class="separator:a0cf601ad08c3dd0acff89250c8fba52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec78bf47be384376124950b677c077f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a> = typename ImageType::Pointer</td></tr>
+<tr class="memitem:aec78bf47be384376124950b677c077f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a></td></tr>
 <tr class="separator:aec78bf47be384376124950b677c077f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e58bd4e78d3185596e6b91bd6193281"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a8e58bd4e78d3185596e6b91bd6193281">ImageRegionType</a> = typename ImageType::RegionType</td></tr>
 <tr class="separator:a8e58bd4e78d3185596e6b91bd6193281"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,7 +123,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a11bb46550b18b37967d4120c4e62d29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf5d2e7219b8c8dc449b2f8f32976d6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#addf5d2e7219b8c8dc449b2f8f32976d6">MaskElementType</a> = typename MaskType::PixelType</td></tr>
 <tr class="separator:addf5d2e7219b8c8dc449b2f8f32976d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af48d64daeeafc1a3fdd3b22d02b13c6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a> = typename MaskType::Pointer</td></tr>
+<tr class="memitem:af48d64daeeafc1a3fdd3b22d02b13c6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">MaskType::Pointer</a></td></tr>
 <tr class="separator:af48d64daeeafc1a3fdd3b22d02b13c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9353a8fc360dae5e474cb8ad41216652"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a9353a8fc360dae5e474cb8ad41216652">MaskType</a> = TImageMask</td></tr>
 <tr class="separator:a9353a8fc360dae5e474cb8ad41216652"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,8 +188,18 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2424592e9f2ad0b76e64519a8cf75a2c"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a2424592e9f2ad0b76e64519a8cf75a2c">CreateAnother</a> () const</td></tr>
 <tr class="separator:a2424592e9f2ad0b76e64519a8cf75a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59a96b334f945294725953440ef960a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aa59a96b334f945294725953440ef960a">GetDerivative</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;, <a class="el" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">DerivativeType</a> &amp;) const override</td></tr>
+<tr class="separator:aa59a96b334f945294725953440ef960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad849498dae22db3e5dbc04a60c6248f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ad849498dae22db3e5dbc04a60c6248f6">GetEnergy0</a> (double diff)</td></tr>
+<tr class="separator:ad849498dae22db3e5dbc04a60c6248f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a097e3fcac3c57301e5d40d7a863a523a"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a097e3fcac3c57301e5d40d7a863a523a">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a097e3fcac3c57301e5d40d7a863a523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724144ad0efc904aa5c03495f42b51a4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a724144ad0efc904aa5c03495f42b51a4">GetNumberOfParameters</a> () const override</td></tr>
+<tr class="separator:a724144ad0efc904aa5c03495f42b51a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48c0ddeb8c21d2ff8b4009b3af152f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ae48c0ddeb8c21d2ff8b4009b3af152f5">GetValue</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters) const override</td></tr>
+<tr class="separator:ae48c0ddeb8c21d2ff8b4009b3af152f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7577d3976837d41e1b4d4423db264fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a7577d3976837d41e1b4d4423db264fd8">InitializeDistributions</a> (<a class="el" href="classitk_1_1Array.html">Array</a>&lt; double &gt; classMeans, <a class="el" href="classitk_1_1Array.html">Array</a>&lt; double &gt; classSigmas)</td></tr>
+<tr class="separator:a7577d3976837d41e1b4d4423db264fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0c2068122c12d9d24c9683c18368307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ae0c2068122c12d9d24c9683c18368307">SetBiasField</a> (<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ac7e566bc60c14cde70004e4a6ef63571">BiasFieldType</a> *bias)</td></tr>
 <tr class="separator:ae0c2068122c12d9d24c9683c18368307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d3b9482f65b1c770a1d23655c68bafa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a9d3b9482f65b1c770a1d23655c68bafa">SetImage</a> (<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af6320541035829d8185d56e1264f0e95">ImageType</a> *_arg)</td></tr>
@@ -196,6 +208,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abf93c99623c2c521716661b75a4fbbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad419002a60921f6635a1370e7ca1b96"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aad419002a60921f6635a1370e7ca1b96">SetRegion</a> (<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a8e58bd4e78d3185596e6b91bd6193281">ImageRegionType</a> _arg)</td></tr>
 <tr class="separator:aad419002a60921f6635a1370e7ca1b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a426c01d22479c6b05ede8c6993a9562a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a426c01d22479c6b05ede8c6993a9562a">SetSamplingFactors</a> (const <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a59f5f8f665ba6165d1b58dc2a7214248">SamplingFactorType</a> factor)</td></tr>
+<tr class="separator:a426c01d22479c6b05ede8c6993a9562a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1SingleValuedCostFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1SingleValuedCostFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedCostFunction.html">itk::SingleValuedCostFunction</a></td></tr>
 <tr class="memitem:aae24dc9b1410e60d61c402221d65a622 inherit pub_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#aae24dc9b1410e60d61c402221d65a622">GetValueAndDerivative</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters, <a class="el" href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">MeasureType</a> &amp;value, <a class="el" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">DerivativeType</a> &amp;derivative) const</td></tr>
 <tr class="separator:aae24dc9b1410e60d61c402221d65a622 inherit pub_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,37 +305,13 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a3999bcfe6dc69088ee7eb047550d50ed"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a3999bcfe6dc69088ee7eb047550d50ed">SpaceDimension</a> = 3</td></tr>
 <tr class="separator:a3999bcfe6dc69088ee7eb047550d50ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeec9abad87b69c3ecd42ff59b9141f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ac7e566bc60c14cde70004e4a6ef63571">BiasFieldType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#adeec9abad87b69c3ecd42ff59b9141f2">m_BiasField</a></td></tr>
-<tr class="separator:adeec9abad87b69c3ecd42ff59b9141f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bae30e201fb88898e1d62702a9463bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a9bae30e201fb88898e1d62702a9463bc">m_Image</a></td></tr>
-<tr class="separator:a9bae30e201fb88898e1d62702a9463bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46608ed30e3d0c3ad7abdd6209286430"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a46608ed30e3d0c3ad7abdd6209286430">m_Mask</a></td></tr>
-<tr class="separator:a46608ed30e3d0c3ad7abdd6209286430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31787245884ffaa051cae898f2440b19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a8e58bd4e78d3185596e6b91bd6193281">ImageRegionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a31787245884ffaa051cae898f2440b19">m_Region</a></td></tr>
-<tr class="separator:a31787245884ffaa051cae898f2440b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87ad1dc49ea3fbe5cc7312af17b24dcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a11bb46550b18b37967d4120c4e62d29c">InternalEnergyFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a87ad1dc49ea3fbe5cc7312af17b24dcb">m_InternalEnergyFunction</a></td></tr>
-<tr class="separator:a87ad1dc49ea3fbe5cc7312af17b24dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13080680dc26ae0eca58e27521d5c4da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a59f5f8f665ba6165d1b58dc2a7214248">SamplingFactorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a13080680dc26ae0eca58e27521d5c4da">m_SamplingFactor</a></td></tr>
-<tr class="separator:a13080680dc26ae0eca58e27521d5c4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426c01d22479c6b05ede8c6993a9562a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a426c01d22479c6b05ede8c6993a9562a">SetSamplingFactors</a> (const <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a59f5f8f665ba6165d1b58dc2a7214248">SamplingFactorType</a> factor)</td></tr>
-<tr class="separator:a426c01d22479c6b05ede8c6993a9562a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad849498dae22db3e5dbc04a60c6248f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ad849498dae22db3e5dbc04a60c6248f6">GetEnergy0</a> (double diff)</td></tr>
-<tr class="separator:ad849498dae22db3e5dbc04a60c6248f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae48c0ddeb8c21d2ff8b4009b3af152f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ae48c0ddeb8c21d2ff8b4009b3af152f5">GetValue</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;parameters) const override</td></tr>
-<tr class="separator:ae48c0ddeb8c21d2ff8b4009b3af152f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa59a96b334f945294725953440ef960a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aa59a96b334f945294725953440ef960a">GetDerivative</a> (const <a class="el" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">ParametersType</a> &amp;, <a class="el" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">DerivativeType</a> &amp;) const override</td></tr>
-<tr class="separator:aa59a96b334f945294725953440ef960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7577d3976837d41e1b4d4423db264fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a7577d3976837d41e1b4d4423db264fd8">InitializeDistributions</a> (<a class="el" href="classitk_1_1Array.html">Array</a>&lt; double &gt; classMeans, <a class="el" href="classitk_1_1Array.html">Array</a>&lt; double &gt; classSigmas)</td></tr>
-<tr class="separator:a7577d3976837d41e1b4d4423db264fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724144ad0efc904aa5c03495f42b51a4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a724144ad0efc904aa5c03495f42b51a4">GetNumberOfParameters</a> () const override</td></tr>
-<tr class="separator:a724144ad0efc904aa5c03495f42b51a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:aabddcfe062cf6372e0a3471bcba4ef37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aabddcfe062cf6372e0a3471bcba4ef37">MRIBiasEnergyFunction</a> ()</td></tr>
 <tr class="separator:aabddcfe062cf6372e0a3471bcba4ef37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27b7e70d9206ff7c731445e2da4e19aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a27b7e70d9206ff7c731445e2da4e19aa">~MRIBiasEnergyFunction</a> () override</td></tr>
 <tr class="separator:a27b7e70d9206ff7c731445e2da4e19aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1SingleValuedCostFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1SingleValuedCostFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedCostFunction.html">itk::SingleValuedCostFunction</a></td></tr>
 <tr class="memitem:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedCostFunction.html#adc5b3f9883a3aeea7a3ef78e6aef5a0a">SingleValuedCostFunction</a> ()=default</td></tr>
 <tr class="separator:adc5b3f9883a3aeea7a3ef78e6aef5a0a inherit pro_methods_classitk_1_1SingleValuedCostFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,12 +327,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,6 +344,24 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adeec9abad87b69c3ecd42ff59b9141f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#ac7e566bc60c14cde70004e4a6ef63571">BiasFieldType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#adeec9abad87b69c3ecd42ff59b9141f2">m_BiasField</a></td></tr>
+<tr class="separator:adeec9abad87b69c3ecd42ff59b9141f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bae30e201fb88898e1d62702a9463bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a9bae30e201fb88898e1d62702a9463bc">m_Image</a></td></tr>
+<tr class="separator:a9bae30e201fb88898e1d62702a9463bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ad1dc49ea3fbe5cc7312af17b24dcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a11bb46550b18b37967d4120c4e62d29c">InternalEnergyFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a87ad1dc49ea3fbe5cc7312af17b24dcb">m_InternalEnergyFunction</a></td></tr>
+<tr class="separator:a87ad1dc49ea3fbe5cc7312af17b24dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46608ed30e3d0c3ad7abdd6209286430"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a46608ed30e3d0c3ad7abdd6209286430">m_Mask</a></td></tr>
+<tr class="separator:a46608ed30e3d0c3ad7abdd6209286430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31787245884ffaa051cae898f2440b19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a8e58bd4e78d3185596e6b91bd6193281">ImageRegionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a31787245884ffaa051cae898f2440b19">m_Region</a></td></tr>
+<tr class="separator:a31787245884ffaa051cae898f2440b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13080680dc26ae0eca58e27521d5c4da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a59f5f8f665ba6165d1b58dc2a7214248">SamplingFactorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#a13080680dc26ae0eca58e27521d5c4da">m_SamplingFactor</a></td></tr>
+<tr class="separator:a13080680dc26ae0eca58e27521d5c4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -468,7 +477,7 @@ template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </d
 template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a> =  typename ImageType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#aec78bf47be384376124950b677c077f7">ImagePointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -560,7 +569,7 @@ template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </d
 template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a> =  typename MaskType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::<a class="el" href="classitk_1_1MRIBiasEnergyFunction.html#af48d64daeeafc1a3fdd3b22d02b13c6f">MaskPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">MaskType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -750,7 +759,7 @@ template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1MRIBiasEnergyFunction.html">itk::MRIBiasEnergyFunction</a>&lt; TImage, TImageMask, TBiasField &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -896,7 +905,6 @@ template&lt;typename TImage , typename TImageMask , typename TBiasField &gt; </d
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Bias field object pointer. </p>
 
 </div>
 </div>

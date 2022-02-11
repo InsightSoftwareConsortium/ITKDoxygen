@@ -118,7 +118,6 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html">PatchBasedDenoisingImageFilter</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a7b618c425cd3a82a6d95367a9131dec0">   70</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html">Self</a> = <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html">PatchBasedDenoisingImageFilter</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a22c1ee995cfdde3be2010b1915f9e8da">   71</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ProcessObject.html">Superclass</a> = <a class="code" href="classitk_1_1PatchBasedDenoisingBaseImageFilter.html">PatchBasedDenoisingBaseImageFilter&lt;TInputImage, TOutputImage&gt;</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ad62921cde74550a4e4e5e5f632fb5ae9">   72</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
@@ -155,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> Superclass::PatchWeightsType;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a44745cd596bf64ae0cc3b919f50a4b8b">  115</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html">BaseSamplerType</a> = <a class="code" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html">itk::Statistics::RegionConstrainedSubsampler&lt;PatchSampleType, InputImageRegionType&gt;</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">  116</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">BaseSamplerPointer</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1SmartPointer.html">BaseSamplerType::Pointer</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">  116</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">BaseSamplerPointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">BaseSamplerType::Pointer</a>;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#adad1a924b054a0a8d97f7a3a0cb81918">  117</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#adad1a924b054a0a8d97f7a3a0cb81918">InstanceIdentifier</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html#aa32661b85fb382f964dfb926944b66e4">BaseSamplerType::InstanceIdentifier</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a91b45a7aa325e6214a4735d5a66095c6">  124</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FixedArray.html">EigenValuesArrayType</a> = <a class="code" href="classitk_1_1FixedArray.html">FixedArray&lt;PixelValueType, 3&gt;</a>;</div>
@@ -179,27 +178,21 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  itkSetMacro(UseSmoothDiscPatchWeights, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  itkBooleanMacro(UseSmoothDiscPatchWeights);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  itkGetConstMacro(UseSmoothDiscPatchWeights, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  SetKernelBandwidthSigma(<span class="keyword">const</span> <a class="code" href="classitk_1_1Array.html">RealArrayType</a> &amp; kernelSigma);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  itkGetConstMacro(KernelBandwidthSigma, <a class="code" href="classitk_1_1Array.html">RealArrayType</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  itkSetClampMacro(KernelBandwidthFractionPixelsForEstimation, <span class="keywordtype">double</span>, 0.01, 1.0);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  itkGetConstReferenceMacro(KernelBandwidthFractionPixelsForEstimation, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  itkSetMacro(ComputeConditionalDerivatives, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  itkBooleanMacro(ComputeConditionalDerivatives);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  itkGetConstMacro(ComputeConditionalDerivatives, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  itkSetMacro(UseFastTensorComputations, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  itkBooleanMacro(UseFastTensorComputations);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  itkGetConstMacro(UseFastTensorComputations, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a772e0feba51e3688034717b5abc8edaf">  194</a></span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> MaxSigmaUpdateIterations = 20;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  itkSetClampMacro(KernelBandwidthMultiplicationFactor, <span class="keywordtype">double</span>, 0.01, 100);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  itkGetConstReferenceMacro(KernelBandwidthMultiplicationFactor, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  SetNoiseSigma(<span class="keyword">const</span> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ad77a2de075e06999a763a5d5948f745f">RealType</a> &amp; sigma);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
@@ -207,7 +200,6 @@ $(function() {
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  itkSetObjectMacro(Sampler, <a class="code" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html">BaseSamplerType</a>);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  itkGetModifiableObjectMacro(Sampler, <a class="code" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html">BaseSamplerType</a>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  itkGetConstMacro(NumIndependentComponents, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">protected</span>:</div>
@@ -322,7 +314,6 @@ $(function() {
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        a, b, weight, useCachedComputations, cacheIndex, eigenValsCache, eigenVecsCache, diff, norm);</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  }</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> PixelT&gt;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a9849ee995e2350f6ddf5ebcaa2f5c5fa">  358</a></span>&#160;  <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a9849ee995e2350f6ddf5ebcaa2f5c5fa">ComputeDifferenceAndWeightedSquaredNorm</a>(<span class="keyword">const</span> PixelT &amp;          a,</div>
@@ -351,7 +342,6 @@ $(function() {
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      <span class="keywordflow">return</span> this-&gt;AddEuclideanUpdate(a, b);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> RealT&gt;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  RealType</div>
 <div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a74bc618989db1ecfa25ba24f9b999bcd">  391</a></span>&#160;  <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a74bc618989db1ecfa25ba24f9b999bcd">AddUpdate</a>(<span class="keyword">const</span> RealT &amp; a, <span class="keyword">const</span> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ad77a2de075e06999a763a5d5948f745f">RealType</a> &amp; b)</div>
@@ -400,7 +390,7 @@ $(function() {
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keyword">virtual</span> RealType</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  ComputeGradientJointEntropy(InstanceIdentifier                  <span class="keywordtype">id</span>,</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                              <span class="keyword">typename</span> ListAdaptorType::Pointer &amp; inList,</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                              <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ListAdaptorType::Pointer</a> &amp; inList,</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                              BaseSamplerPointer &amp;                sampler,</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                              ThreadDataStruct &amp;                  threadData);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
@@ -500,7 +490,7 @@ $(function() {
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
 <div class="line"><a name="l00545"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ab8e71d2f839f1f6cac2294f82aaed23d">  545</a></span>&#160;  std::vector&lt;ThreadDataStruct&gt; <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ab8e71d2f839f1f6cac2294f82aaed23d">m_ThreadData</a>;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aef3e01d10c9e96b5b63072e996510f27">  548</a></span>&#160;  <span class="keyword">typename</span> OutputImageType::Pointer <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aef3e01d10c9e96b5b63072e996510f27">m_UpdateBuffer</a>;</div>
+<div class="line"><a name="l00548"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aef3e01d10c9e96b5b63072e996510f27">  548</a></span>&#160;  <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aef3e01d10c9e96b5b63072e996510f27">m_UpdateBuffer</a>;</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
 <div class="line"><a name="l00550"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a9f95338072f8302dfef1681a3afd3c93">  550</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_NumPixelComponents{ 0 };</div>
 <div class="line"><a name="l00551"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#adeea4dc9acab4bea4e91d19d09c91dae">  551</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_NumIndependentComponents{ 0 };</div>
@@ -530,7 +520,7 @@ $(function() {
 <div class="line"><a name="l00575"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a3a89917ee81b5182b53769cfffd07d7d">  575</a></span>&#160;  <span class="keywordtype">bool</span>     m_NoiseSigmaIsSet{ <span class="keyword">false</span> };</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
 <div class="line"><a name="l00577"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ae1317c2f37064f1ffaa1e30762f452d9">  577</a></span>&#160;  <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">BaseSamplerPointer</a>                <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ae1317c2f37064f1ffaa1e30762f452d9">m_Sampler</a>;</div>
-<div class="line"><a name="l00578"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#af81996f50cd703ab66485da5edf41d85">  578</a></span>&#160;  <span class="keyword">typename</span> ListAdaptorType::Pointer <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#af81996f50cd703ab66485da5edf41d85">m_SearchSpaceList</a>;</div>
+<div class="line"><a name="l00578"></a><span class="lineno"><a class="line" href="classitk_1_1PatchBasedDenoisingImageFilter.html#af81996f50cd703ab66485da5edf41d85">  578</a></span>&#160;  <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ListAdaptorType::Pointer</a> <a class="code" href="classitk_1_1PatchBasedDenoisingImageFilter.html#af81996f50cd703ab66485da5edf41d85">m_SearchSpaceList</a>;</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;};</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;} <span class="comment">// end namespace itk</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; </div>
@@ -541,6 +531,7 @@ $(function() {
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassitk_1_1PatchBasedDenoisingImageFilter_html_aaaf40c8b2de7b675369d5b328463c8d6"><div class="ttname"><a href="classitk_1_1PatchBasedDenoisingImageFilter.html#aaaf40c8b2de7b675369d5b328463c8d6">itk::PatchBasedDenoisingImageFilter::ComputeMinMax</a></div><div class="ttdeci">DisableIfMultiComponent&lt; typename TImageType::PixelType &gt;::type ComputeMinMax(const TImageType *img)</div><div class="ttdef"><b>Definition:</b> <a href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00312">itkPatchBasedDenoisingImageFilter.h:312</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1PatchBasedDenoisingImageFilter_html_a0e50584b2c80774fc9588ba0d14fee94"><div class="ttname"><a href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">itk::PatchBasedDenoisingImageFilter::DisableIfMultiComponent</a></div><div class="ttdeci">typename std::enable_if&lt; std::is_same&lt; T, typename NumericTraits&lt; T &gt;::ValueType &gt;::value, U &gt; DisableIfMultiComponent</div><div class="ttdef"><b>Definition:</b> <a href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00244">itkPatchBasedDenoisingImageFilter.h:244</a></div></div>
 <div class="ttc" id="aclassitk_1_1PatchBasedDenoisingImageFilter_html_a810a15c7f75d5f9d815de1529884abe4"><div class="ttname"><a href="classitk_1_1PatchBasedDenoisingImageFilter.html#a810a15c7f75d5f9d815de1529884abe4">itk::PatchBasedDenoisingImageFilter::BaseSamplerPointer</a></div><div class="ttdeci">typename BaseSamplerType::Pointer BaseSamplerPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00116">itkPatchBasedDenoisingImageFilter.h:116</a></div></div>
 <div class="ttc" id="aclassitk_1_1PatchBasedDenoisingImageFilter_html_ad77a2de075e06999a763a5d5948f745f"><div class="ttname"><a href="classitk_1_1PatchBasedDenoisingImageFilter.html#ad77a2de075e06999a763a5d5948f745f">itk::PatchBasedDenoisingImageFilter::RealType</a></div><div class="ttdeci">typename NumericTraits&lt; PixelType &gt;::RealType RealType</div><div class="ttdef"><b>Definition:</b> <a href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00101">itkPatchBasedDenoisingImageFilter.h:101</a></div></div>

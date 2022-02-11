@@ -214,7 +214,6 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code" href="classitk_1_1MaskImageFilter.html#ab9226d60ba55ebbe71de8c675b1cf696">MaskImageType</a> *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="classitk_1_1ProcessObject.html#a8ac4b11f6af39456790a8a16a1f43cb2">ProcessObject::GetInput</a>(1));</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classitk_1_1MaskImageFilter.html#ad31c5bd4f61c5a9431c0b9de1478d916">  196</a></span>&#160;  <a class="code" href="classitk_1_1MaskImageFilter.html#ad31c5bd4f61c5a9431c0b9de1478d916">SetOutsideValue</a>(<span class="keyword">const</span> <span class="keyword">typename</span> TOutputImage::PixelType &amp; outsideValue)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  {</div>
@@ -224,7 +223,6 @@ $(function() {
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      this-&gt;GetFunctor().SetOutsideValue(outsideValue);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keyword">const</span> <span class="keyword">typename</span> TOutputImage::PixelType &amp;</div>
 <div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classitk_1_1MaskImageFilter.html#ab7307af6467a17ac030fe2665dd1b795">  207</a></span>&#160;  <a class="code" href="classitk_1_1MaskImageFilter.html#ab7307af6467a17ac030fe2665dd1b795">GetOutsideValue</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">  </span>{</div>
@@ -240,7 +238,6 @@ $(function() {
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      this-&gt;GetFunctor().SetMaskingValue(maskingValue);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keyword">const</span> <span class="keyword">typename</span> TMaskImage::PixelType &amp;</div>
 <div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="classitk_1_1MaskImageFilter.html#a94c769d9e3bd070827f36de39e6296a4">  226</a></span>&#160;  <a class="code" href="classitk_1_1MaskImageFilter.html#a94c769d9e3bd070827f36de39e6296a4">GetMaskingValue</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keyword">  </span>{</div>
@@ -276,8 +273,8 @@ $(function() {
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  }</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  itkGetConstReferenceMacro(Functor, FunctorType);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  FunctorType &amp;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  itkGetConstReferenceMacro(Functor, <a class="code" href="itkAddImageFilter_8h.html#a0f4d23e9b04a60bb50b3156b794836cf">FunctorType</a>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <a class="code" href="itkAddImageFilter_8h.html#a0f4d23e9b04a60bb50b3156b794836cf">FunctorType</a> &amp;</div>
 <div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="classitk_1_1MaskImageFilter.html#a183528374f95652ad805e32579d5bf41">  262</a></span>&#160;  <a class="code" href="classitk_1_1MaskImageFilter.html#a183528374f95652ad805e32579d5bf41">GetFunctor</a>()</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  {</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> m_Functor;</div>
@@ -348,6 +345,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1Functor_1_1MaskInput_html"><div class="ttname"><a href="classitk_1_1Functor_1_1MaskInput.html">itk::Functor::MaskInput</a></div><div class="ttdef"><b>Definition:</b> <a href="itkMaskImageFilter_8h_source.html#l00036">itkMaskImageFilter.h:36</a></div></div>
 <div class="ttc" id="aclassitk_1_1MaskImageFilter_html_a94c769d9e3bd070827f36de39e6296a4"><div class="ttname"><a href="classitk_1_1MaskImageFilter.html#a94c769d9e3bd070827f36de39e6296a4">itk::MaskImageFilter::GetMaskingValue</a></div><div class="ttdeci">const TMaskImage::PixelType &amp; GetMaskingValue() const</div><div class="ttdef"><b>Definition:</b> <a href="itkMaskImageFilter_8h_source.html#l00226">itkMaskImageFilter.h:226</a></div></div>
 <div class="ttc" id="aclassitk_1_1Functor_1_1MaskInput_html_ab2f89bc6096e2be1f76936a6386f982d"><div class="ttname"><a href="classitk_1_1Functor_1_1MaskInput.html#ab2f89bc6096e2be1f76936a6386f982d">itk::Functor::MaskInput::operator==</a></div><div class="ttdeci">bool operator==(const MaskInput &amp;) const</div><div class="ttdef"><b>Definition:</b> <a href="itkMaskImageFilter_8h_source.html#l00048">itkMaskImageFilter.h:48</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a0f4d23e9b04a60bb50b3156b794836cf"><div class="ttname"><a href="itkAddImageFilter_8h.html#a0f4d23e9b04a60bb50b3156b794836cf">FunctorType</a></div><div class="ttdeci">Functor::Add2&lt; typename TInputImage1::PixelType, typename TInputImage2::PixelType, typename TOutputImage::PixelType &gt; FunctorType</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00096">itkAddImageFilter.h:96</a></div></div>
 <div class="ttc" id="aclassitk_1_1MaskImageFilter_html_ac7d9cf520f3ab9568d4ae63378f98da9"><div class="ttname"><a href="classitk_1_1MaskImageFilter.html#ac7d9cf520f3ab9568d4ae63378f98da9">itk::MaskImageFilter::SetMaskImage</a></div><div class="ttdeci">void SetMaskImage(const MaskImageType *maskImage)</div><div class="ttdef"><b>Definition:</b> <a href="itkMaskImageFilter_8h_source.html#l00182">itkMaskImageFilter.h:182</a></div></div>
 <div class="ttc" id="aclassitk_1_1VariableLengthVector_html"><div class="ttname"><a href="classitk_1_1VariableLengthVector.html">itk::VariableLengthVector</a></div><div class="ttdoc">Represents an array whose length can be defined at run-time.</div><div class="ttdef"><b>Definition:</b> <a href="itkConstantBoundaryCondition_8h_source.html#l00028">itkConstantBoundaryCondition.h:28</a></div></div>
 <div class="ttc" id="aclassitk_1_1MaskImageFilter_html_a15468361dddcaa993adc6be99b0abf03"><div class="ttname"><a href="classitk_1_1MaskImageFilter.html#a15468361dddcaa993adc6be99b0abf03">itk::MaskImageFilter::CheckOutsideValue</a></div><div class="ttdeci">void CheckOutsideValue(const VariableLengthVector&lt; TValue &gt; *)</div><div class="ttdef"><b>Definition:</b> <a href="itkMaskImageFilter_8h_source.html#l00276">itkMaskImageFilter.h:276</a></div></div>

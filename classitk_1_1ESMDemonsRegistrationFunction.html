@@ -76,6 +76,9 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ESMDemonsRegistrationFunction-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::ESMDemonsRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &raquo; <a class="el" href="group__FiniteDifferenceFunctions.html">Finite Difference Functions</a><a class="el" href="group__Group-Registration.html">Group Registration</a> &raquo;  &#124; <a class="el" href="group__ITKPDEDeformableRegistration.html">Module ITKPDEDeformableRegistration</a></div></div>  </div>
@@ -121,6 +124,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a84ad7a397bbb410dc8107c5c1b05362e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52de3ad817260af2d5f0802abc177329"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a52de3ad817260af2d5f0802abc177329">GradientCalculatorType</a> = <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt; <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a715c507ae3505dd56014604f9bcf0ed4">FixedImageType</a> &gt;</td></tr>
 <tr class="separator:a52de3ad817260af2d5f0802abc177329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e08d38ede4a92356f9ea8b7515b4843"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a6e08d38ede4a92356f9ea8b7515b4843">GradientEnum</a> = <a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">ESMDemonsRegistrationFunctionEnums::Gradient</a></td></tr>
+<tr class="separator:a6e08d38ede4a92356f9ea8b7515b4843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc74843125e191c78d597ea21318593"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aadc74843125e191c78d597ea21318593">IndexType</a> = typename FixedImageType::IndexType</td></tr>
 <tr class="separator:aadc74843125e191c78d597ea21318593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f04c5618fc774a8825b46519bd0173e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a3f04c5618fc774a8825b46519bd0173e">InterpolatorPointer</a> = typename <a class="el" href="classitk_1_1InterpolateImageFunction.html#a5a8e1455c8a8a7514af0819dc15b4564">InterpolatorType::Pointer</a></td></tr>
@@ -154,13 +159,13 @@ Public Types</h2></td></tr>
 <tr class="separator:a2bd1e9d1e06a39832893998122d54888 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c71e08e26f2e9953690b282856c747e inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a3c71e08e26f2e9953690b282856c747e">DisplacementFieldType</a> = TDisplacementField</td></tr>
 <tr class="separator:a3c71e08e26f2e9953690b282856c747e inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac968dc94b16273e43c04c25acd66c270 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#ac968dc94b16273e43c04c25acd66c270">DisplacementFieldTypePointer</a> = typename DisplacementFieldType::Pointer</td></tr>
+<tr class="memitem:ac968dc94b16273e43c04c25acd66c270 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#ac968dc94b16273e43c04c25acd66c270">DisplacementFieldTypePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">DisplacementFieldType::Pointer</a></td></tr>
 <tr class="separator:ac968dc94b16273e43c04c25acd66c270 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd315251df0f8cb5cbef3eee42393e1d inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#afd315251df0f8cb5cbef3eee42393e1d">FixedImagePointer</a> = typename FixedImageType::ConstPointer</td></tr>
+<tr class="memitem:afd315251df0f8cb5cbef3eee42393e1d inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#afd315251df0f8cb5cbef3eee42393e1d">FixedImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">FixedImageType::ConstPointer</a></td></tr>
 <tr class="separator:afd315251df0f8cb5cbef3eee42393e1d inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715c507ae3505dd56014604f9bcf0ed4 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a715c507ae3505dd56014604f9bcf0ed4">FixedImageType</a> = TFixedImage</td></tr>
 <tr class="separator:a715c507ae3505dd56014604f9bcf0ed4 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe5a4a73857688b1de58d3f803d51437 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#afe5a4a73857688b1de58d3f803d51437">MovingImagePointer</a> = typename MovingImageType::ConstPointer</td></tr>
+<tr class="memitem:afe5a4a73857688b1de58d3f803d51437 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#afe5a4a73857688b1de58d3f803d51437">MovingImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">MovingImageType::ConstPointer</a></td></tr>
 <tr class="separator:afe5a4a73857688b1de58d3f803d51437 inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b54ea0950ff9b37e235ccf7e06b488b inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a9b54ea0950ff9b37e235ccf7e06b488b">MovingImageType</a> = TMovingImage</td></tr>
 <tr class="separator:a9b54ea0950ff9b37e235ccf7e06b488b inherit pub_types_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,10 +212,42 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a4587ad36d9f294064884265677b487d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a5fa2eea8269d7a582cfcdecebd7a960b">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4587ad36d9f294064884265677b487d8">ComputeGlobalTimeStep</a> (void *) const override</td></tr>
+<tr class="separator:a4587ad36d9f294064884265677b487d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ff1008d927c38b6fea65d91a265c8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a9aabeeb0c7e0121b6ff23dd68d75eb1a">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#af6ff1008d927c38b6fea65d91a265c8b">ComputeUpdate</a> (const <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a0bd4ac179488c4eaf11f0ba324a0582f">NeighborhoodType</a> &amp;it, void *gd, const <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a8d32a09a75381ff93176453bdde806ad">FloatOffsetType</a> &amp;offset=<a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a8d32a09a75381ff93176453bdde806ad">FloatOffsetType</a>(0.0)) override</td></tr>
+<tr class="separator:af6ff1008d927c38b6fea65d91a265c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70526c65bc8343953669860f19c0b1ee"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a70526c65bc8343953669860f19c0b1ee">CreateAnother</a> () const</td></tr>
 <tr class="separator:a70526c65bc8343953669860f19c0b1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c7d5c21c3ec7e6db777bc38f357809"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae9c7d5c21c3ec7e6db777bc38f357809">GetGlobalDataPointer</a> () const override</td></tr>
+<tr class="separator:ae9c7d5c21c3ec7e6db777bc38f357809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e39a0643443630e384489c9b2b98f2f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4e39a0643443630e384489c9b2b98f2f">GetIntensityDifferenceThreshold</a> () const</td></tr>
+<tr class="separator:a4e39a0643443630e384489c9b2b98f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac21f3c3ad630c54fc79083ee0c96c7e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aac21f3c3ad630c54fc79083ee0c96c7e">GetMaximumUpdateStepLength</a> () const</td></tr>
+<tr class="separator:aac21f3c3ad630c54fc79083ee0c96c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d555ff5567408f443d333172d14cce"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a08d555ff5567408f443d333172d14cce">GetMetric</a> () const</td></tr>
+<tr class="separator:a08d555ff5567408f443d333172d14cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ad0ffb543bb0e1641d305fb45829ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1deb1a23ab8f19d1019f83ca48edd712">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a93ad0ffb543bb0e1641d305fb45829ae">GetMovingImageInterpolator</a> ()</td></tr>
+<tr class="separator:a93ad0ffb543bb0e1641d305fb45829ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc529e0bc993d625c5ed782af8b35637"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#afc529e0bc993d625c5ed782af8b35637">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:afc529e0bc993d625c5ed782af8b35637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a499d28d437343187df66f725f1274"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a37a499d28d437343187df66f725f1274">GetRMSChange</a> () const</td></tr>
+<tr class="separator:a37a499d28d437343187df66f725f1274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b6fc1c3977e6fa0c59d005dc47f143"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a65b6fc1c3977e6fa0c59d005dc47f143">InitializeIteration</a> () override</td></tr>
+<tr class="separator:a65b6fc1c3977e6fa0c59d005dc47f143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c2e4087e3c4ebe894192614f2dbdc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a59c2e4087e3c4ebe894192614f2dbdc1">ReleaseGlobalDataPointer</a> (void *gd) const override</td></tr>
+<tr class="separator:a59c2e4087e3c4ebe894192614f2dbdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae557a3e4cc9819d7872211ce921a01f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae557a3e4cc9819d7872211ce921a01f8">SetIntensityDifferenceThreshold</a> (double)</td></tr>
+<tr class="separator:ae557a3e4cc9819d7872211ce921a01f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74fe79822c1f4261acf7bdc52f062543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a74fe79822c1f4261acf7bdc52f062543">SetMaximumUpdateStepLength</a> (double sm)</td></tr>
+<tr class="separator:a74fe79822c1f4261acf7bdc52f062543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa10b3f0cefa57aa4767b665e55e2a287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aa10b3f0cefa57aa4767b665e55e2a287">SetMovingImageInterpolator</a> (<a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1deb1a23ab8f19d1019f83ca48edd712">InterpolatorType</a> *ptr)</td></tr>
+<tr class="separator:aa10b3f0cefa57aa4767b665e55e2a287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4e4c2abdab9ea0ad2f4e55c9220301db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4e4c2abdab9ea0ad2f4e55c9220301db">SetUseGradientType</a> (<a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a> gtype)</td></tr>
+<tr class="separator:a4e4c2abdab9ea0ad2f4e55c9220301db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526ee2a22bf3b20fd6ee713f5f5b9891"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a526ee2a22bf3b20fd6ee713f5f5b9891">GetUseGradientType</a> () const</td></tr>
+<tr class="separator:a526ee2a22bf3b20fd6ee713f5f5b9891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1PDEDeformableRegistrationFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1PDEDeformableRegistrationFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">itk::PDEDeformableRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a></td></tr>
 <tr class="memitem:ab3760c953025b4052fcb380133521dad inherit pub_methods_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a3c71e08e26f2e9953690b282856c747e">DisplacementFieldType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#ab3760c953025b4052fcb380133521dad">GetDisplacementField</a> ()</td></tr>
 <tr class="separator:ab3760c953025b4052fcb380133521dad inherit pub_methods_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,89 +321,20 @@ Static Public Attributes</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1FiniteDifferenceFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1FiniteDifferenceFunction')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">itk::FiniteDifferenceFunction&lt; TDisplacementField &gt;</a></td></tr>
 <tr class="memitem:a7be3fd1d1a17df64f30f14945bfbc7cc inherit pub_static_attribs_classitk_1_1FiniteDifferenceFunction"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a7be3fd1d1a17df64f30f14945bfbc7cc">ImageDimension</a></td></tr>
 <tr class="separator:a7be3fd1d1a17df64f30f14945bfbc7cc inherit pub_static_attribs_classitk_1_1FiniteDifferenceFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e08d38ede4a92356f9ea8b7515b4843"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a6e08d38ede4a92356f9ea8b7515b4843">GradientEnum</a> = <a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">ESMDemonsRegistrationFunctionEnums::Gradient</a></td></tr>
-<tr class="separator:a6e08d38ede4a92356f9ea8b7515b4843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
 <tr class="memitem:a6e81f65a064372d2627e029c6e0e0694"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a6e81f65a064372d2627e029c6e0e0694">FixedImageNeighborhoodIteratorType</a> = <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html">ConstNeighborhoodIterator</a>&lt; <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a715c507ae3505dd56014604f9bcf0ed4">FixedImageType</a> &gt;</td></tr>
 <tr class="separator:a6e81f65a064372d2627e029c6e0e0694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e6d79a09d1b166c7d406a39b52430c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a90a732ae37cc9d57711705edf547aef5">PointType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a34e6d79a09d1b166c7d406a39b52430c">m_FixedImageOrigin</a></td></tr>
-<tr class="separator:a34e6d79a09d1b166c7d406a39b52430c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b221adc2f13ac481b17ea0e502a72c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aaec7bbc817b0ab3825c3aca06e76b5e2">SpacingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1b221adc2f13ac481b17ea0e502a72c8">m_FixedImageSpacing</a></td></tr>
-<tr class="separator:a1b221adc2f13ac481b17ea0e502a72c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f88cb6906f141fbbdf0dfb921bdd3b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a40ae0d8e5c01d58c1cd0cda8371d82ac">DirectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1f88cb6906f141fbbdf0dfb921bdd3b4">m_FixedImageDirection</a></td></tr>
-<tr class="separator:a1f88cb6906f141fbbdf0dfb921bdd3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9af5edce5d0e66e80470f01b3b9e196"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aa9af5edce5d0e66e80470f01b3b9e196">m_Normalizer</a></td></tr>
-<tr class="separator:aa9af5edce5d0e66e80470f01b3b9e196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a498c91ab8d30d33f2141258ecafa7fe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a84ad7a397bbb410dc8107c5c1b05362e">GradientCalculatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a498c91ab8d30d33f2141258ecafa7fe6">m_FixedImageGradientCalculator</a></td></tr>
-<tr class="separator:a498c91ab8d30d33f2141258ecafa7fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1b9490141614718123428003c42b17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a208539a1789df6a3595e9c83160d2826">MovingImageGradientCalculatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ac1b9490141614718123428003c42b17a">m_MappedMovingImageGradientCalculator</a></td></tr>
-<tr class="separator:ac1b9490141614718123428003c42b17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae230de835376cc28cc492647a6d3ff3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae230de835376cc28cc492647a6d3ff3f">m_UseGradientType</a></td></tr>
-<tr class="separator:ae230de835376cc28cc492647a6d3ff3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafe88f2913977e7a1889966c11aa1a40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a3f04c5618fc774a8825b46519bd0173e">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aafe88f2913977e7a1889966c11aa1a40">m_MovingImageInterpolator</a></td></tr>
-<tr class="separator:aafe88f2913977e7a1889966c11aa1a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab405645c98bb1598416cdd5a3b405fdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a7dc5a278555e0d2b80dada0cf4f01ea4">WarperPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ab405645c98bb1598416cdd5a3b405fdb">m_MovingImageWarper</a></td></tr>
-<tr class="separator:ab405645c98bb1598416cdd5a3b405fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f91025134c6f3fa77b58f2256431b5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a9b54ea0950ff9b37e235ccf7e06b488b">MovingImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a2f91025134c6f3fa77b58f2256431b5d">m_MovingImageWarperOutput</a></td></tr>
-<tr class="separator:a2f91025134c6f3fa77b58f2256431b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae293bd2ae3c0197293cdfe1b5e525c2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a5fa2eea8269d7a582cfcdecebd7a960b">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae293bd2ae3c0197293cdfe1b5e525c2d">m_TimeStep</a></td></tr>
-<tr class="separator:ae293bd2ae3c0197293cdfe1b5e525c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3c4f721c44d61fdf3d73298cce935e1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ab3c4f721c44d61fdf3d73298cce935e1">m_DenominatorThreshold</a></td></tr>
-<tr class="separator:ab3c4f721c44d61fdf3d73298cce935e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038d2eb52936f21d55bf1e05daeb3bd7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a038d2eb52936f21d55bf1e05daeb3bd7">m_IntensityDifferenceThreshold</a></td></tr>
-<tr class="separator:a038d2eb52936f21d55bf1e05daeb3bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c00d86c09d64af33191dac8d3f52ff4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a0c00d86c09d64af33191dac8d3f52ff4">m_MaximumUpdateStepLength</a></td></tr>
-<tr class="separator:a0c00d86c09d64af33191dac8d3f52ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d69e9033e5fc224dfcc4824114577e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a6d69e9033e5fc224dfcc4824114577e6">m_Metric</a></td></tr>
-<tr class="separator:a6d69e9033e5fc224dfcc4824114577e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a9eb7271381b7d2d79f00915023878"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#af1a9eb7271381b7d2d79f00915023878">m_SumOfSquaredDifference</a></td></tr>
-<tr class="separator:af1a9eb7271381b7d2d79f00915023878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0bccb84619adb263761b0bccc465481"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ad0bccb84619adb263761b0bccc465481">m_NumberOfPixelsProcessed</a></td></tr>
-<tr class="separator:ad0bccb84619adb263761b0bccc465481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a463262823745efd63aa56504e76c932f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a463262823745efd63aa56504e76c932f">m_RMSChange</a></td></tr>
-<tr class="separator:a463262823745efd63aa56504e76c932f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19e37fba26f240788f0c1b5f7a6863fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a19e37fba26f240788f0c1b5f7a6863fc">m_SumOfSquaredChange</a></td></tr>
-<tr class="separator:a19e37fba26f240788f0c1b5f7a6863fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8438e710124ccf32e8021163c521ee"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#adb8438e710124ccf32e8021163c521ee">m_MetricCalculationLock</a></td></tr>
-<tr class="separator:adb8438e710124ccf32e8021163c521ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa10b3f0cefa57aa4767b665e55e2a287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aa10b3f0cefa57aa4767b665e55e2a287">SetMovingImageInterpolator</a> (<a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1deb1a23ab8f19d1019f83ca48edd712">InterpolatorType</a> *ptr)</td></tr>
-<tr class="separator:aa10b3f0cefa57aa4767b665e55e2a287"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93ad0ffb543bb0e1641d305fb45829ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1deb1a23ab8f19d1019f83ca48edd712">InterpolatorType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a93ad0ffb543bb0e1641d305fb45829ae">GetMovingImageInterpolator</a> ()</td></tr>
-<tr class="separator:a93ad0ffb543bb0e1641d305fb45829ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4587ad36d9f294064884265677b487d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a5fa2eea8269d7a582cfcdecebd7a960b">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4587ad36d9f294064884265677b487d8">ComputeGlobalTimeStep</a> (void *) const override</td></tr>
-<tr class="separator:a4587ad36d9f294064884265677b487d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c7d5c21c3ec7e6db777bc38f357809"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae9c7d5c21c3ec7e6db777bc38f357809">GetGlobalDataPointer</a> () const override</td></tr>
-<tr class="separator:ae9c7d5c21c3ec7e6db777bc38f357809"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59c2e4087e3c4ebe894192614f2dbdc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a59c2e4087e3c4ebe894192614f2dbdc1">ReleaseGlobalDataPointer</a> (void *gd) const override</td></tr>
-<tr class="separator:a59c2e4087e3c4ebe894192614f2dbdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b6fc1c3977e6fa0c59d005dc47f143"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a65b6fc1c3977e6fa0c59d005dc47f143">InitializeIteration</a> () override</td></tr>
-<tr class="separator:a65b6fc1c3977e6fa0c59d005dc47f143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ff1008d927c38b6fea65d91a265c8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a9aabeeb0c7e0121b6ff23dd68d75eb1a">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#af6ff1008d927c38b6fea65d91a265c8b">ComputeUpdate</a> (const <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a0bd4ac179488c4eaf11f0ba324a0582f">NeighborhoodType</a> &amp;it, void *gd, const <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a8d32a09a75381ff93176453bdde806ad">FloatOffsetType</a> &amp;offset=<a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a8d32a09a75381ff93176453bdde806ad">FloatOffsetType</a>(0.0)) override</td></tr>
-<tr class="separator:af6ff1008d927c38b6fea65d91a265c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d555ff5567408f443d333172d14cce"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a08d555ff5567408f443d333172d14cce">GetMetric</a> () const</td></tr>
-<tr class="separator:a08d555ff5567408f443d333172d14cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a499d28d437343187df66f725f1274"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a37a499d28d437343187df66f725f1274">GetRMSChange</a> () const</td></tr>
-<tr class="separator:a37a499d28d437343187df66f725f1274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae557a3e4cc9819d7872211ce921a01f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae557a3e4cc9819d7872211ce921a01f8">SetIntensityDifferenceThreshold</a> (double)</td></tr>
-<tr class="separator:ae557a3e4cc9819d7872211ce921a01f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e39a0643443630e384489c9b2b98f2f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4e39a0643443630e384489c9b2b98f2f">GetIntensityDifferenceThreshold</a> () const</td></tr>
-<tr class="separator:a4e39a0643443630e384489c9b2b98f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74fe79822c1f4261acf7bdc52f062543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a74fe79822c1f4261acf7bdc52f062543">SetMaximumUpdateStepLength</a> (double sm)</td></tr>
-<tr class="separator:a74fe79822c1f4261acf7bdc52f062543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac21f3c3ad630c54fc79083ee0c96c7e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aac21f3c3ad630c54fc79083ee0c96c7e">GetMaximumUpdateStepLength</a> () const</td></tr>
-<tr class="separator:aac21f3c3ad630c54fc79083ee0c96c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e4c2abdab9ea0ad2f4e55c9220301db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a4e4c2abdab9ea0ad2f4e55c9220301db">SetUseGradientType</a> (<a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a> gtype)</td></tr>
-<tr class="separator:a4e4c2abdab9ea0ad2f4e55c9220301db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a526ee2a22bf3b20fd6ee713f5f5b9891"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a526ee2a22bf3b20fd6ee713f5f5b9891">GetUseGradientType</a> () const</td></tr>
-<tr class="separator:a526ee2a22bf3b20fd6ee713f5f5b9891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:af52b77cd1ed4fb1ba1c673347ebf9a5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#af52b77cd1ed4fb1ba1c673347ebf9a5f">ESMDemonsRegistrationFunction</a> ()</td></tr>
 <tr class="separator:af52b77cd1ed4fb1ba1c673347ebf9a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27720e2403fa86c7dd9659371a1c3146"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a27720e2403fa86c7dd9659371a1c3146">~ESMDemonsRegistrationFunction</a> () override=default</td></tr>
-<tr class="separator:a27720e2403fa86c7dd9659371a1c3146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add87c474ab63558e574b72f5e05c2f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#add87c474ab63558e574b72f5e05c2f73">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:add87c474ab63558e574b72f5e05c2f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a27720e2403fa86c7dd9659371a1c3146"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a27720e2403fa86c7dd9659371a1c3146">~ESMDemonsRegistrationFunction</a> () override=default</td></tr>
+<tr class="separator:a27720e2403fa86c7dd9659371a1c3146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1PDEDeformableRegistrationFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1PDEDeformableRegistrationFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">itk::PDEDeformableRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a></td></tr>
 <tr class="memitem:a87837aee49b96a003c851783e78a40db inherit pro_methods_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a87837aee49b96a003c851783e78a40db">PDEDeformableRegistrationFunction</a> ()</td></tr>
 <tr class="separator:a87837aee49b96a003c851783e78a40db inherit pro_methods_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -390,6 +358,52 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab3c4f721c44d61fdf3d73298cce935e1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ab3c4f721c44d61fdf3d73298cce935e1">m_DenominatorThreshold</a></td></tr>
+<tr class="separator:ab3c4f721c44d61fdf3d73298cce935e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f88cb6906f141fbbdf0dfb921bdd3b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a40ae0d8e5c01d58c1cd0cda8371d82ac">DirectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1f88cb6906f141fbbdf0dfb921bdd3b4">m_FixedImageDirection</a></td></tr>
+<tr class="separator:a1f88cb6906f141fbbdf0dfb921bdd3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a498c91ab8d30d33f2141258ecafa7fe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a84ad7a397bbb410dc8107c5c1b05362e">GradientCalculatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a498c91ab8d30d33f2141258ecafa7fe6">m_FixedImageGradientCalculator</a></td></tr>
+<tr class="separator:a498c91ab8d30d33f2141258ecafa7fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e6d79a09d1b166c7d406a39b52430c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a90a732ae37cc9d57711705edf547aef5">PointType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a34e6d79a09d1b166c7d406a39b52430c">m_FixedImageOrigin</a></td></tr>
+<tr class="separator:a34e6d79a09d1b166c7d406a39b52430c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b221adc2f13ac481b17ea0e502a72c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aaec7bbc817b0ab3825c3aca06e76b5e2">SpacingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a1b221adc2f13ac481b17ea0e502a72c8">m_FixedImageSpacing</a></td></tr>
+<tr class="separator:a1b221adc2f13ac481b17ea0e502a72c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038d2eb52936f21d55bf1e05daeb3bd7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a038d2eb52936f21d55bf1e05daeb3bd7">m_IntensityDifferenceThreshold</a></td></tr>
+<tr class="separator:a038d2eb52936f21d55bf1e05daeb3bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b9490141614718123428003c42b17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a208539a1789df6a3595e9c83160d2826">MovingImageGradientCalculatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ac1b9490141614718123428003c42b17a">m_MappedMovingImageGradientCalculator</a></td></tr>
+<tr class="separator:ac1b9490141614718123428003c42b17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c00d86c09d64af33191dac8d3f52ff4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a0c00d86c09d64af33191dac8d3f52ff4">m_MaximumUpdateStepLength</a></td></tr>
+<tr class="separator:a0c00d86c09d64af33191dac8d3f52ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d69e9033e5fc224dfcc4824114577e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a6d69e9033e5fc224dfcc4824114577e6">m_Metric</a></td></tr>
+<tr class="separator:a6d69e9033e5fc224dfcc4824114577e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8438e710124ccf32e8021163c521ee"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#adb8438e710124ccf32e8021163c521ee">m_MetricCalculationLock</a></td></tr>
+<tr class="separator:adb8438e710124ccf32e8021163c521ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe88f2913977e7a1889966c11aa1a40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a3f04c5618fc774a8825b46519bd0173e">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aafe88f2913977e7a1889966c11aa1a40">m_MovingImageInterpolator</a></td></tr>
+<tr class="separator:aafe88f2913977e7a1889966c11aa1a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab405645c98bb1598416cdd5a3b405fdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a7dc5a278555e0d2b80dada0cf4f01ea4">WarperPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ab405645c98bb1598416cdd5a3b405fdb">m_MovingImageWarper</a></td></tr>
+<tr class="separator:ab405645c98bb1598416cdd5a3b405fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f91025134c6f3fa77b58f2256431b5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a9b54ea0950ff9b37e235ccf7e06b488b">MovingImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a2f91025134c6f3fa77b58f2256431b5d">m_MovingImageWarperOutput</a></td></tr>
+<tr class="separator:a2f91025134c6f3fa77b58f2256431b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9af5edce5d0e66e80470f01b3b9e196"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#aa9af5edce5d0e66e80470f01b3b9e196">m_Normalizer</a></td></tr>
+<tr class="separator:aa9af5edce5d0e66e80470f01b3b9e196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bccb84619adb263761b0bccc465481"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ad0bccb84619adb263761b0bccc465481">m_NumberOfPixelsProcessed</a></td></tr>
+<tr class="separator:ad0bccb84619adb263761b0bccc465481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463262823745efd63aa56504e76c932f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a463262823745efd63aa56504e76c932f">m_RMSChange</a></td></tr>
+<tr class="separator:a463262823745efd63aa56504e76c932f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e37fba26f240788f0c1b5f7a6863fc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#a19e37fba26f240788f0c1b5f7a6863fc">m_SumOfSquaredChange</a></td></tr>
+<tr class="separator:a19e37fba26f240788f0c1b5f7a6863fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a9eb7271381b7d2d79f00915023878"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#af1a9eb7271381b7d2d79f00915023878">m_SumOfSquaredDifference</a></td></tr>
+<tr class="separator:af1a9eb7271381b7d2d79f00915023878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae293bd2ae3c0197293cdfe1b5e525c2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a5fa2eea8269d7a582cfcdecebd7a960b">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae293bd2ae3c0197293cdfe1b5e525c2d">m_TimeStep</a></td></tr>
+<tr class="separator:ae293bd2ae3c0197293cdfe1b5e525c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae230de835376cc28cc492647a6d3ff3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021">GradientEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html#ae230de835376cc28cc492647a6d3ff3f">m_UseGradientType</a></td></tr>
+<tr class="separator:ae230de835376cc28cc492647a6d3ff3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1PDEDeformableRegistrationFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1PDEDeformableRegistrationFunction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">itk::PDEDeformableRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a></td></tr>
 <tr class="memitem:a5a3c4ea6817128a9f07f66b24cf8dba6 inherit pro_attribs_classitk_1_1PDEDeformableRegistrationFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#ac968dc94b16273e43c04c25acd66c270">DisplacementFieldTypePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a5a3c4ea6817128a9f07f66b24cf8dba6">m_DisplacementField</a></td></tr>
 <tr class="separator:a5a3c4ea6817128a9f07f66b24cf8dba6 inherit pro_attribs_classitk_1_1PDEDeformableRegistrationFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -602,7 +616,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
         </tr>
       </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00243">243</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -888,7 +901,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 </div>
 </div>
@@ -916,7 +928,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 </div>
 </div>
@@ -1013,7 +1024,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html">itk::ESMDemonsRegistrationFunction</a>&lt; TFixedImage, TMovingImage, TDisplacementField &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1ESMDemonsRegistrationFunction.html">itk::ESMDemonsRegistrationFunction</a>&lt; TFixedImage, TMovingImage, TDisplacementField &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1086,7 +1097,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 </div>
 </div>
@@ -1114,7 +1124,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00238">238</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1264,7 +1273,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
+<p>Set/Get the type of used image forces </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00259">259</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1363,7 +1372,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html#a4e0fc31298fe3013af15c3e25442d614">itk::PDEDeformableRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a>.</p>
 
@@ -1598,7 +1608,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00287">287</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1679,7 +1688,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00286">286</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1895,7 +1903,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00304">304</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1922,7 +1929,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00288">288</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1949,7 +1955,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00323">323</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -1976,7 +1981,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00324">324</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -2003,7 +2007,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00325">325</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -2030,7 +2033,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00322">322</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 
@@ -2084,7 +2086,6 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p>FixedImage image neighborhood iterator type. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00296">296</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
 

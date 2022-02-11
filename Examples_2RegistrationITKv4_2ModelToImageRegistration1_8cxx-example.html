@@ -228,13 +228,13 @@ $(function() {
 <div class="line"><span class="keyword">class </span>IterationCallback : <span class="keyword">public</span> <a name="_a0"></a><a class="code" href="classitk_1_1Command.html">itk::Command</a></div>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">using</span> Self = IterationCallback;</div>
-<div class="line">  <span class="keyword">using</span> Superclass = <a name="a1"></a><a class="code" href="namespaceitk.html#af2b97d337bf8035236a54a91fdcf040a">itk::Command</a>;</div>
-<div class="line">  <span class="keyword">using</span> Pointer = <a name="_a2"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> ConstPointer = <a name="_a3"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a name="_a1"></a><a class="code" href="classAddImageFilter.html">Self</a> = IterationCallback;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> = <a name="a2"></a><a class="code" href="namespaceitk.html#af2b97d337bf8035236a54a91fdcf040a">itk::Command</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = <a name="_a3"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = <a name="_a4"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  itkTypeMacro(IterationCallback, Superclass);</div>
-<div class="line">  itkNewMacro(Self);</div>
+<div class="line">  itkTypeMacro(IterationCallback, <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a>);</div>
+<div class="line">  itkNewMacro(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> OptimizerType = TOptimizer;</div>
 <div class="line"> </div>
@@ -244,9 +244,8 @@ $(function() {
 <div class="line">    m_Optimizer = optimizer;</div>
 <div class="line">    m_Optimizer-&gt;AddObserver(itk::IterationEvent(), <span class="keyword">this</span>);</div>
 <div class="line">  }</div>
-<div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span></div>
-<div class="line">  <a name="a4"></a><a class="code" href="classitk_1_1Command.html#aa63870ad4b3927aaf128866ef161b208">Execute</a>(<a name="_a5"></a><a class="code" href="classitk_1_1Object.html">itk::Object</a> * caller, <span class="keyword">const</span> <a name="_a6"></a><a class="code" href="classitk_1_1EventObject.html">itk::EventObject</a> &amp; event)<span class="keyword"> override</span></div>
+<div class="line">  <a name="a5"></a><a class="code" href="classitk_1_1Command.html#aa63870ad4b3927aaf128866ef161b208">Execute</a>(<a name="_a6"></a><a class="code" href="classitk_1_1Object.html">itk::Object</a> * caller, <span class="keyword">const</span> <a name="_a7"></a><a class="code" href="classitk_1_1EventObject.html">itk::EventObject</a> &amp; event)<span class="keyword"> override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <a class="code" href="classitk_1_1Command.html#aa63870ad4b3927aaf128866ef161b208">Execute</a>((<span class="keyword">const</span> <a class="code" href="classitk_1_1Object.html">itk::Object</a> *)caller, event);</div>
 <div class="line">  }</div>
@@ -278,7 +277,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">protected</span>:</div>
 <div class="line">  IterationCallback() = <span class="keywordflow">default</span>;</div>
-<div class="line">  <a name="_a7"></a><a class="code" href="classitk_1_1WeakPointer.html">itk::WeakPointer&lt;OptimizerType&gt;</a> m_Optimizer;</div>
+<div class="line">  <a name="_a8"></a><a class="code" href="classitk_1_1WeakPointer.html">itk::WeakPointer&lt;OptimizerType&gt;</a> m_Optimizer;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//  Software Guide : BeginLatex</span></div>
@@ -311,32 +310,32 @@ $(function() {
 <div class="line"><span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TFixedImage, <span class="keyword">typename</span> TMovingSpatialObject&gt;</div>
 <div class="line"><span class="keyword">class </span>SimpleImageToSpatialObjectMetric</div>
-<div class="line">  : <span class="keyword">public</span> <a name="_a8"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html">itk::ImageToSpatialObjectMetric</a>&lt;TFixedImage, TMovingSpatialObject&gt;</div>
+<div class="line">  : <span class="keyword">public</span> <a name="_a9"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html">itk::ImageToSpatialObjectMetric</a>&lt;TFixedImage, TMovingSpatialObject&gt;</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">using</span> Self = SimpleImageToSpatialObjectMetric;</div>
-<div class="line">  <span class="keyword">using</span> Superclass =</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="classAddImageFilter.html">Self</a> = SimpleImageToSpatialObjectMetric;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> =</div>
 <div class="line">    <a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html">itk::ImageToSpatialObjectMetric&lt;TFixedImage, TMovingSpatialObject&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> Pointer = <a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> ConstPointer = <a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">using</span> <a name="a9"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = <a name="_a10"></a><a class="code" href="classitk_1_1Point.html">itk::Point&lt;double, 2&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a name="a10"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = <a name="_a11"></a><a class="code" href="classitk_1_1Point.html">itk::Point&lt;double, 2&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> PointListType = std::list&lt;PointType&gt;;</div>
 <div class="line">  <span class="keyword">using</span> MovingSpatialObjectType = TMovingSpatialObject;</div>
-<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a11"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">Superclass::ParametersType</a>;</div>
-<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a12"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">Superclass::DerivativeType</a>;</div>
-<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a13"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">Superclass::MeasureType</a>;</div>
+<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a12"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#add8c412bb10134d476a9c98584d0da2f">Superclass::ParametersType</a>;</div>
+<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a13"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">Superclass::DerivativeType</a>;</div>
+<div class="line">  <span class="keyword">using</span> <span class="keyword">typename</span> <a name="a14"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">Superclass::MeasureType</a>;</div>
 <div class="line"> </div>
-<div class="line">  itkNewMacro(Self);</div>
+<div class="line">  itkNewMacro(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
 <div class="line"> </div>
 <div class="line">  itkTypeMacro(SimpleImageToSpatialObjectMetric, ImageToSpatialObjectMetric);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ParametricSpaceDimension = 3;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span></div>
-<div class="line">  <a name="a14"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html#ad637edb79ec84f907d3d831c9cbfc85c">SetMovingSpatialObject</a>(<span class="keyword">const</span> MovingSpatialObjectType * <span class="keywordtype">object</span>)<span class="keyword"> override</span></div>
+<div class="line">  <a name="a15"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html#ad637edb79ec84f907d3d831c9cbfc85c">SetMovingSpatialObject</a>(<span class="keyword">const</span> MovingSpatialObjectType * <span class="keywordtype">object</span>)<span class="keyword"> override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">if</span> (!this-&gt;m_FixedImage)</div>
 <div class="line">    {</div>
@@ -347,20 +346,19 @@ $(function() {
 <div class="line">    this-&gt;m_MovingSpatialObject = object;</div>
 <div class="line">    m_PointList.clear();</div>
 <div class="line">    <span class="keyword">using</span> myIteratorType =</div>
-<div class="line">      <a name="_a15"></a><a class="code" href="classitk_1_1ImageRegionConstIteratorWithIndex.html">itk::ImageRegionConstIteratorWithIndex&lt;TFixedImage&gt;</a>;</div>
-<div class="line"> </div>
+<div class="line">      <a name="_a16"></a><a class="code" href="classitk_1_1ImageRegionConstIteratorWithIndex.html">itk::ImageRegionConstIteratorWithIndex&lt;TFixedImage&gt;</a>;</div>
 <div class="line">    myIteratorType it(this-&gt;m_FixedImage,</div>
 <div class="line">                      this-&gt;m_FixedImage-&gt;GetBufferedRegion());</div>
 <div class="line"> </div>
-<div class="line">    <a class="code" href="classitk_1_1Point.html">itk::Point&lt;double, 2&gt;</a> point;</div>
+<div class="line">    <a class="code" href="classitk_1_1Point.html">itk::Point&lt;double, 2&gt;</a> <a name="a17"></a><a class="code" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">while</span> (!it.IsAtEnd())</div>
 <div class="line">    {</div>
-<div class="line">      this-&gt;m_FixedImage-&gt;TransformIndexToPhysicalPoint(it.GetIndex(), point);</div>
+<div class="line">      this-&gt;m_FixedImage-&gt;TransformIndexToPhysicalPoint(it.GetIndex(), <a class="code" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>);</div>
 <div class="line"> </div>
-<div class="line">      <span class="keywordflow">if</span> (this-&gt;m_MovingSpatialObject-&gt;IsInsideInWorldSpace(point, 99999))</div>
+<div class="line">      <span class="keywordflow">if</span> (this-&gt;m_MovingSpatialObject-&gt;IsInsideInWorldSpace(<a class="code" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>, 99999))</div>
 <div class="line">      {</div>
-<div class="line">        m_PointList.push_back(point);</div>
+<div class="line">        m_PointList.push_back(<a class="code" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>);</div>
 <div class="line">      }</div>
 <div class="line">      ++it;</div>
 <div class="line">    }</div>
@@ -370,7 +368,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span></div>
-<div class="line">  <a name="a16"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#ab221de11a302d91ccdd00368a17fd129">GetDerivative</a>(<span class="keyword">const</span> ParametersType &amp;, DerivativeType &amp;)<span class="keyword"> const override</span></div>
+<div class="line">  <a name="a18"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#ab221de11a302d91ccdd00368a17fd129">GetDerivative</a>(<span class="keyword">const</span> ParametersType &amp;, DerivativeType &amp;)<span class="keyword"> const override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  }</div>
@@ -394,11 +392,10 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  MeasureType</div>
-<div class="line">  <a name="a17"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a8d21f6a4fafb79760b61967a1617c380">GetValue</a>(<span class="keyword">const</span> ParametersType &amp; parameters)<span class="keyword"> const override</span></div>
+<div class="line">  <a name="a19"></a><a class="code" href="classitk_1_1SingleValuedCostFunction.html#a8d21f6a4fafb79760b61967a1617c380">GetValue</a>(<span class="keyword">const</span> ParametersType &amp; parameters)<span class="keyword"> const override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">double</span> value;</div>
 <div class="line">    this-&gt;m_Transform-&gt;SetParameters(parameters);</div>
-<div class="line"> </div>
 <div class="line">    value = 0;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : m_PointList)</div>
 <div class="line">    {</div>
@@ -413,14 +410,13 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span></div>
-<div class="line">  <a name="a18"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html#aea2a427b9c5b4da7dd4e685546aceb78">GetValueAndDerivative</a>(<span class="keyword">const</span> ParametersType &amp; parameters,</div>
+<div class="line">  <a name="a20"></a><a class="code" href="classitk_1_1ImageToSpatialObjectMetric.html#aea2a427b9c5b4da7dd4e685546aceb78">GetValueAndDerivative</a>(<span class="keyword">const</span> ParametersType &amp; parameters,</div>
 <div class="line">                        MeasureType &amp;          Value,</div>
 <div class="line">                        DerivativeType &amp;       Derivative)<span class="keyword"> const override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    Value = this-&gt;<a class="code" href="classitk_1_1SingleValuedCostFunction.html#a8d21f6a4fafb79760b61967a1617c380">GetValue</a>(parameters);</div>
 <div class="line">    this-&gt;<a class="code" href="classitk_1_1SingleValuedCostFunction.html#ab221de11a302d91ccdd00368a17fd129">GetDerivative</a>(parameters, Derivative);</div>
 <div class="line">  }</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  PointListType m_PointList;</div>
 <div class="line">};</div>
@@ -456,8 +452,8 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> GroupType = <a name="_a19"></a><a class="code" href="classitk_1_1GroupSpatialObject.html">itk::GroupSpatialObject&lt;2&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> EllipseType = <a name="_a20"></a><a class="code" href="classitk_1_1EllipseSpatialObject.html">itk::EllipseSpatialObject&lt;2&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> GroupType = <a name="_a21"></a><a class="code" href="classitk_1_1GroupSpatialObject.html">itk::GroupSpatialObject&lt;2&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> EllipseType = <a name="_a22"></a><a class="code" href="classitk_1_1EllipseSpatialObject.html">itk::EllipseSpatialObject&lt;2&gt;</a>;</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -472,7 +468,7 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> ImageType = <a name="_a21"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;float, 2&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> ImageType = <a name="_a23"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;float, 2&gt;</a>;</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -486,9 +482,9 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">auto</span> ellipse1 = EllipseType::New();</div>
-<div class="line">  <span class="keyword">auto</span> ellipse2 = EllipseType::New();</div>
-<div class="line">  <span class="keyword">auto</span> ellipse3 = EllipseType::New();</div>
+<div class="line">  <span class="keyword">auto</span> ellipse1 = <a name="a24"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">EllipseType::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> ellipse2 = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">EllipseType::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> ellipse3 = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">EllipseType::New</a>();</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -571,7 +567,7 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">auto</span> group = GroupType::New();</div>
+<div class="line">  <span class="keyword">auto</span> group = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">GroupType::New</a>();</div>
 <div class="line">  group-&gt;AddChild(ellipse1);</div>
 <div class="line">  group-&gt;AddChild(ellipse2);</div>
 <div class="line">  group-&gt;AddChild(ellipse3);</div>
@@ -593,7 +589,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> SpatialObjectToImageFilterType =</div>
-<div class="line">    <a name="_a22"></a><a class="code" href="classitk_1_1SpatialObjectToImageFilter.html">itk::SpatialObjectToImageFilter&lt;GroupType, ImageType&gt;</a>;</div>
+<div class="line">    <a name="_a25"></a><a class="code" href="classitk_1_1SpatialObjectToImageFilter.html">itk::SpatialObjectToImageFilter&lt;GroupType, ImageType&gt;</a>;</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -608,7 +604,7 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">auto</span> imageFilter = SpatialObjectToImageFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> imageFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SpatialObjectToImageFilterType::New</a>();</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -636,10 +632,10 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <a name="a23"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#aea16424ec17542804734482565dc4572">ImageType::SizeType</a> size;</div>
+<div class="line">  <a name="a26"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#aea16424ec17542804734482565dc4572">ImageType::SizeType</a> size;</div>
 <div class="line">  size[0] = 200;</div>
 <div class="line">  size[1] = 200;</div>
-<div class="line">  imageFilter-&gt;<a name="a24"></a><a class="code" href="structitk_1_1Size.html#a59403dcbe6f841c6775a2d76d4f7850a">SetSize</a>(size);</div>
+<div class="line">  imageFilter-&gt;<a name="a27"></a><a class="code" href="structitk_1_1Size.html#a59403dcbe6f841c6775a2d76d4f7850a">SetSize</a>(size);</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -669,8 +665,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">//  Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> GaussianFilterType =</div>
-<div class="line">    <a name="_a25"></a><a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html">itk::DiscreteGaussianImageFilter&lt;ImageType, ImageType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> gaussianFilter = GaussianFilterType::New();</div>
+<div class="line">    <a name="_a28"></a><a class="code" href="classitk_1_1DiscreteGaussianImageFilter.html">itk::DiscreteGaussianImageFilter&lt;ImageType, ImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> gaussianFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">GaussianFilterType::New</a>();</div>
 <div class="line">  <span class="comment">//  Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -718,8 +714,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> RegistrationType =</div>
-<div class="line">    <a name="_a26"></a><a class="code" href="classitk_1_1ImageToSpatialObjectRegistrationMethod.html">itk::ImageToSpatialObjectRegistrationMethod&lt;ImageType, GroupType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> registration = RegistrationType::New();</div>
+<div class="line">    <a name="_a29"></a><a class="code" href="classitk_1_1ImageToSpatialObjectRegistrationMethod.html">itk::ImageToSpatialObjectRegistrationMethod&lt;ImageType, GroupType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> registration = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RegistrationType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -735,7 +731,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> MetricType = SimpleImageToSpatialObjectMetric&lt;ImageType, GroupType&gt;;</div>
-<div class="line">  <span class="keyword">auto</span> metric = MetricType::New();</div>
+<div class="line">  <span class="keyword">auto</span> metric = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">MetricType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -748,8 +744,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> InterpolatorType =</div>
-<div class="line">    <a name="_a27"></a><a class="code" href="classitk_1_1LinearInterpolateImageFunction.html">itk::LinearInterpolateImageFunction&lt;ImageType, double&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> interpolator = InterpolatorType::New();</div>
+<div class="line">    <a name="_a30"></a><a class="code" href="classitk_1_1LinearInterpolateImageFunction.html">itk::LinearInterpolateImageFunction&lt;ImageType, double&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> interpolator = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">InterpolatorType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -762,8 +758,8 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> OptimizerType = <a name="_a28"></a><a class="code" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html">itk::OnePlusOneEvolutionaryOptimizer</a>;</div>
-<div class="line">  <span class="keyword">auto</span> optimizer = OptimizerType::New();</div>
+<div class="line">  <span class="keyword">using</span> OptimizerType = <a name="_a31"></a><a class="code" href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html">itk::OnePlusOneEvolutionaryOptimizer</a>;</div>
+<div class="line">  <span class="keyword">auto</span> optimizer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">OptimizerType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -776,8 +772,8 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> TransformType = <a name="_a29"></a><a class="code" href="classitk_1_1Euler2DTransform.html">itk::Euler2DTransform&lt;&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> transform = TransformType::New();</div>
+<div class="line">  <span class="keyword">using</span> TransformType = <a name="_a32"></a><a class="code" href="classitk_1_1Euler2DTransform.html">itk::Euler2DTransform&lt;&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> transform = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TransformType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -795,7 +791,7 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">auto</span> generator = <a name="a30"></a><a class="code" href="classitk_1_1Statistics_1_1NormalVariateGenerator.html#a07a6a6afa0d73ee0c08f9e4e2bae1698">itk::Statistics::NormalVariateGenerator::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> generator = <a name="a33"></a><a class="code" href="classitk_1_1Statistics_1_1NormalVariateGenerator.html#a07a6a6afa0d73ee0c08f9e4e2bae1698">itk::Statistics::NormalVariateGenerator::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -862,7 +858,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> IterationCallbackType = IterationCallback&lt;OptimizerType&gt;;</div>
-<div class="line">  <span class="keyword">auto</span> callback = IterationCallbackType::New();</div>
+<div class="line">  <span class="keyword">auto</span> callback = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">IterationCallbackType::New</a>();</div>
 <div class="line">  callback-&gt;SetOptimizer(optimizer);</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
@@ -1008,11 +1004,13 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1DiscreteGaussianImageFilter_html"><div class="ttname"><a href="classitk_1_1DiscreteGaussianImageFilter.html">itk::DiscreteGaussianImageFilter</a></div><div class="ttdoc">Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...</div><div class="ttdef"><b>Definition:</b> <a href="itkDiscreteGaussianImageFilter_8h_source.html#l00064">itkDiscreteGaussianImageFilter.h:64</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageToSpatialObjectRegistrationMethod_html"><div class="ttname"><a href="classitk_1_1ImageToSpatialObjectRegistrationMethod.html">itk::ImageToSpatialObjectRegistrationMethod</a></div><div class="ttdoc">Base class for Image Registration Methods.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToSpatialObjectRegistrationMethod_8h_source.html#l00084">itkImageToSpatialObjectRegistrationMethod.h:84</a></div></div>
 <div class="ttc" id="aclassitk_1_1SingleValuedCostFunction_html_a153ff76be5fa24aaf0b8f05552a8a579"><div class="ttname"><a href="classitk_1_1SingleValuedCostFunction.html#a153ff76be5fa24aaf0b8f05552a8a579">itk::SingleValuedCostFunction::MeasureType</a></div><div class="ttdeci">double MeasureType</div><div class="ttdef"><b>Definition:</b> <a href="itkSingleValuedCostFunction_8h_source.html#l00050">itkSingleValuedCostFunction.h:50</a></div></div>
 <div class="ttc" id="aitkImageToSpatialObjectMetric_8h_html"><div class="ttname"><a href="itkImageToSpatialObjectMetric_8h.html">itkImageToSpatialObjectMetric.h</a></div></div>
 <div class="ttc" id="aitkEuler2DTransform_8h_html"><div class="ttname"><a href="itkEuler2DTransform_8h.html">itkEuler2DTransform.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageRegionConstIteratorWithIndex_html"><div class="ttname"><a href="classitk_1_1ImageRegionConstIteratorWithIndex.html">itk::ImageRegionConstIteratorWithIndex</a></div><div class="ttdoc">A multi-dimensional iterator templated over image type that walks an image region and is specialized ...</div><div class="ttdef"><b>Definition:</b> <a href="itkImageRegionConstIteratorWithIndex_8h_source.html#l00130">itkImageRegionConstIteratorWithIndex.h:130</a></div></div>
 <div class="ttc" id="aitkLinearInterpolateImageFunction_8h_html"><div class="ttname"><a href="itkLinearInterpolateImageFunction_8h.html">itkLinearInterpolateImageFunction.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageToSpatialObjectMetric_html_aea2a427b9c5b4da7dd4e685546aceb78"><div class="ttname"><a href="classitk_1_1ImageToSpatialObjectMetric.html#aea2a427b9c5b4da7dd4e685546aceb78">itk::ImageToSpatialObjectMetric::GetValueAndDerivative</a></div><div class="ttdeci">void GetValueAndDerivative(const ParametersType &amp;parameters, MeasureType &amp;Value, DerivativeType &amp;Derivative) const override=0</div></div>
@@ -1030,6 +1028,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1LinearInterpolateImageFunction_html"><div class="ttname"><a href="classitk_1_1LinearInterpolateImageFunction.html">itk::LinearInterpolateImageFunction</a></div><div class="ttdoc">Linearly interpolate an image at specified positions.</div><div class="ttdef"><b>Definition:</b> <a href="itkLinearInterpolateImageFunction_8h_source.html#l00050">itkLinearInterpolateImageFunction.h:50</a></div></div>
 <div class="ttc" id="aclassitk_1_1Command_html"><div class="ttname"><a href="classitk_1_1Command.html">itk::Command</a></div><div class="ttdoc">Superclass for callback/observer methods.</div><div class="ttdef"><b>Definition:</b> <a href="itkCommand_8h_source.html#l00045">itkCommand.h:45</a></div></div>
 <div class="ttc" id="aitkGroupSpatialObject_8h_html"><div class="ttname"><a href="itkGroupSpatialObject_8h.html">itkGroupSpatialObject.h</a></div></div>
+<div class="ttc" id="anamespaceitk_html_abf959f34e6a412061bbddd15cdd23f47"><div class="ttname"><a href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">itk::point</a></div><div class="ttdeci">*par Constraints *The filter requires an image with at least two dimensions and a vector *length of at least The theory supports extension to scalar but *the implementation of the itk vector classes do not **The template parameter TRealType must be floating point(float or double) or *a user-defined &quot;real&quot; numerical type with arithmetic operations defined *sufficient to compute derivatives. **\par Performance *This filter will automatically multithread if run with *SetUsePrincipleComponents</div></div>
 <div class="ttc" id="aitkSpatialObjectToImageFilter_8h_html"><div class="ttname"><a href="itkSpatialObjectToImageFilter_8h.html">itkSpatialObjectToImageFilter.h</a></div></div>
 <div class="ttc" id="anamespaceitk_html_af2b97d337bf8035236a54a91fdcf040a"><div class="ttname"><a href="namespaceitk.html#af2b97d337bf8035236a54a91fdcf040a">itk::Command</a></div><div class="ttdeci">class ITK_FORWARD_EXPORT Command</div><div class="ttdef"><b>Definition:</b> <a href="itkObject_8h_source.html#l00043">itkObject.h:43</a></div></div>
 <div class="ttc" id="aitkOnePlusOneEvolutionaryOptimizer_8h_html"><div class="ttname"><a href="itkOnePlusOneEvolutionaryOptimizer_8h.html">itkOnePlusOneEvolutionaryOptimizer.h</a></div></div>
@@ -1047,10 +1046,13 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
 <div class="ttc" id="aclassitk_1_1EventObject_html"><div class="ttname"><a href="classitk_1_1EventObject.html">itk::EventObject</a></div><div class="ttdoc">Abstraction of the Events used to communicating among filters and with GUIs.</div><div class="ttdef"><b>Definition:</b> <a href="itkEventObject_8h_source.html#l00057">itkEventObject.h:57</a></div></div>
 <div class="ttc" id="aclassitk_1_1OnePlusOneEvolutionaryOptimizer_html"><div class="ttname"><a href="classitk_1_1OnePlusOneEvolutionaryOptimizer.html">itk::OnePlusOneEvolutionaryOptimizer</a></div><div class="ttdoc">1+1 evolutionary strategy optimizer</div><div class="ttdef"><b>Definition:</b> <a href="itkOnePlusOneEvolutionaryOptimizer_8h_source.html#l00071">itkOnePlusOneEvolutionaryOptimizer.h:71</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
 <div class="ttc" id="aclassitk_1_1SingleValuedCostFunction_html_a3040b706e83393aa406681524a5851e7"><div class="ttname"><a href="classitk_1_1SingleValuedCostFunction.html#a3040b706e83393aa406681524a5851e7">itk::SingleValuedCostFunction::DerivativeType</a></div><div class="ttdeci">Array&lt; ParametersValueType &gt; DerivativeType</div><div class="ttdef"><b>Definition:</b> <a href="itkSingleValuedCostFunction_8h_source.html#l00059">itkSingleValuedCostFunction.h:59</a></div></div>
 <div class="ttc" id="aclassitk_1_1GroupSpatialObject_html"><div class="ttname"><a href="classitk_1_1GroupSpatialObject.html">itk::GroupSpatialObject</a></div><div class="ttdoc">Representation of a group based on the spatial object classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkGroupSpatialObject_8h_source.html#l00039">itkGroupSpatialObject.h:39</a></div></div>
 <div class="ttc" id="aitkCommand_8h_html"><div class="ttname"><a href="itkCommand_8h.html">itkCommand.h</a></div></div>
 <div class="ttc" id="aitkDiscreteGaussianImageFilter_8h_html"><div class="ttname"><a href="itkDiscreteGaussianImageFilter_8h.html">itkDiscreteGaussianImageFilter.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00089">itkAddImageFilter.h:89</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageToSpatialObjectMetric_html"><div class="ttname"><a href="classitk_1_1ImageToSpatialObjectMetric.html">itk::ImageToSpatialObjectMetric</a></div><div class="ttdoc">Computes similarity between a moving spatial object and an Image to be registered.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToSpatialObjectMetric_8h_source.html#l00060">itkImageToSpatialObjectMetric.h:60</a></div></div>
 <div class="ttc" id="aclassitk_1_1Statistics_1_1NormalVariateGenerator_html_a07a6a6afa0d73ee0c08f9e4e2bae1698"><div class="ttname"><a href="classitk_1_1Statistics_1_1NormalVariateGenerator.html#a07a6a6afa0d73ee0c08f9e4e2bae1698">itk::Statistics::NormalVariateGenerator::New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <!-- HTML footer for doxygen 1.8.15-->

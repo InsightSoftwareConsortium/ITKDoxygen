@@ -111,7 +111,18 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structitk_1_1ImageAlgorithm.html#aea72d0c9b7ae5685114fb59a138129f3">   45</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structitk_1_1ImageAlgorithm.html#aea72d0c9b7ae5685114fb59a138129f3">TrueType</a> = std::true_type;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structitk_1_1ImageAlgorithm.html#a0c8ba350f13295619638f50b6df7c4ce">   46</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structitk_1_1ImageAlgorithm.html#a0c8ba350f13295619638f50b6df7c4ce">FalseType</a> = std::false_type;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         <span class="keywordflow">while</span>( !it.IsAtEnd() )</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;           ot.Set( <span class="keyword">static_cast&lt;</span> typename TInputImage::PixelType <span class="keyword">&gt;</span>( it.Get() ) );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;           ++ot;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;           ++it;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;           }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;     \endcode</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   *</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   * \note: It is important not to explicitly pass the <span class="keyword">template</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   * arguments to <span class="keyword">this</span> method as it may not result in an optimized</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   * method being called.</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   */</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputImageType, <span class="keyword">typename</span> OutputImageType&gt;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structitk_1_1ImageAlgorithm.html#a5ec5bcac992cb3b1302840636530ba20">   72</a></span>&#160;  <a class="code" href="structitk_1_1ImageAlgorithm.html#a5ec5bcac992cb3b1302840636530ba20">Copy</a>(<span class="keyword">const</span> InputImageType *                       inImage,</div>
@@ -199,11 +210,11 @@ $(function() {
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  };</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TPixelType, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VImageDimension&gt;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keyword">struct </span>PixelSize&lt;<a class="code" href="classitk_1_1VectorImage.html">VectorImage</a>&lt;TPixelType, VImageDimension&gt;&gt;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keyword">struct </span>PixelSize&lt;VectorImage&lt;TPixelType, VImageDimension&gt;&gt;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  {</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">using</span> ImageType = <a class="code" href="classitk_1_1VectorImage.html">VectorImage&lt;TPixelType, VImageDimension&gt;</a>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="structitk_1_1ImageAlgorithm_1_1PixelSize.html#aad5a474f4fe5621ed4427c5549e889f5">Get</a>(<span class="keyword">const</span> ImageType * i)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    Get(<span class="keyword">const</span> ImageType * i)</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">size_t</span> vectorLength = ImageType::AccessorFunctorType::GetVectorLength(i);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="keywordflow">return</span> vectorLength;</div>
@@ -219,8 +230,6 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TOutputType<span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  };</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keyword">static</span> TType *</div>
 <div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="structitk_1_1ImageAlgorithm.html#a7186d2ed2474ae88bd6034ed8c91e9fe">  202</a></span>&#160;  <a class="code" href="structitk_1_1ImageAlgorithm.html#a7186d2ed2474ae88bd6034ed8c91e9fe">CopyHelper</a>(<span class="keyword">const</span> TType * first, <span class="keyword">const</span> TType * last, TType * result)</div>
@@ -264,7 +273,7 @@ $(function() {
 <div class="ttc" id="astructitk_1_1ImageAlgorithm_1_1PixelSize_html"><div class="ttname"><a href="structitk_1_1ImageAlgorithm_1_1PixelSize.html">itk::ImageAlgorithm::PixelSize</a></div><div class="ttdef"><b>Definition:</b> <a href="itkImageAlgorithm_8h_source.html#l00163">itkImageAlgorithm.h:163</a></div></div>
 <div class="ttc" id="astructitk_1_1ImageAlgorithm_1_1StaticCast_html"><div class="ttname"><a href="structitk_1_1ImageAlgorithm_1_1StaticCast.html">itk::ImageAlgorithm::StaticCast</a></div><div class="ttdef"><b>Definition:</b> <a href="itkImageAlgorithm_8h_source.html#l00188">itkImageAlgorithm.h:188</a></div></div>
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
-<div class="ttc" id="astructitk_1_1ImageAlgorithm_html_a5ec5bcac992cb3b1302840636530ba20"><div class="ttname"><a href="structitk_1_1ImageAlgorithm.html#a5ec5bcac992cb3b1302840636530ba20">itk::ImageAlgorithm::Copy</a></div><div class="ttdeci">static void Copy(const InputImageType *inImage, OutputImageType *outImage, const typename InputImageType::RegionType &amp;inRegion, const typename OutputImageType::RegionType &amp;outRegion)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAlgorithm_8h_source.html#l00072">itkImageAlgorithm.h:72</a></div></div>
+<div class="ttc" id="astructitk_1_1ImageAlgorithm_html_a5ec5bcac992cb3b1302840636530ba20"><div class="ttname"><a href="structitk_1_1ImageAlgorithm.html#a5ec5bcac992cb3b1302840636530ba20">itk::ImageAlgorithm::Copy</a></div><div class="ttdeci">static void Copy(const InputImageType *inImage, OutputImageType *outImage, const typename InputImageType::RegionType &amp;inRegion, const typename OutputImageType::RegionType &amp;outRegion)</div><div class="ttdoc">This generic function copies a region from one image to another. It may perform optimizations on the ...</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAlgorithm_8h_source.html#l00072">itkImageAlgorithm.h:72</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

@@ -118,8 +118,8 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a2cfa4b51aabd9ef07ced2c77db77e625">   67</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a2cfa4b51aabd9ef07ced2c77db77e625">OutputImageRegionType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">OutputImageType::RegionType</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a71c62c1cc74795c81f436c1d3ac0168d">   68</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a71c62c1cc74795c81f436c1d3ac0168d">InputImageRegionType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">InputImageType::RegionType</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#ab6d0514c3533b6dc2efd6962f816b6fa">   71</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#ab6d0514c3533b6dc2efd6962f816b6fa">InputImagePointer</a> = <span class="keyword">typename</span> InputImageType::Pointer;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a6b302f70ec4d7f2bcea40473bf6b5181">   72</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a6b302f70ec4d7f2bcea40473bf6b5181">InputImageConstPointer</a> = <span class="keyword">typename</span> InputImageType::ConstPointer;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#ab6d0514c3533b6dc2efd6962f816b6fa">   71</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#ab6d0514c3533b6dc2efd6962f816b6fa">InputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a6b302f70ec4d7f2bcea40473bf6b5181">   72</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a6b302f70ec4d7f2bcea40473bf6b5181">InputImageConstPointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a81d9e703be51ff8a5cca134cab492ba3">   75</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a81d9e703be51ff8a5cca134cab492ba3">OutputImagePixelType</a> = <span class="keyword">typename</span> OutputImageType::PixelType;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a2600de697cac836a70af47ab643f5788">   76</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a2600de697cac836a70af47ab643f5788">InputImagePixelType</a> = <span class="keyword">typename</span> InputImageType::PixelType;</div>
@@ -152,7 +152,6 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      this-&gt;Modified();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  itkGetModifiableObjectMacro(ReferenceImage, TInputImage);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  itkSetMacro(UseReferenceImage, <span class="keywordtype">bool</span>);</div>
@@ -161,17 +160,13 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  itkSetMacro(OutputSpacing, SpacingType);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  itkGetConstReferenceMacro(OutputSpacing, SpacingType);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  itkSetMacro(OutputOrigin, <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  itkGetConstReferenceMacro(OutputOrigin, <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  itkSetMacro(OutputDirection, <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">DirectionType</a>);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  itkGetConstReferenceMacro(OutputDirection, <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">DirectionType</a>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  itkSetMacro(OutputOffset, OutputImageOffsetType);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  itkGetConstReferenceMacro(OutputOffset, OutputImageOffsetType);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  itkSetVectorMacro(OutputOffset, OutputImageOffsetValueType, ImageDimension);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#a244dccfba0b795d3e46bc0fdd8942e9b">  156</a></span>&#160;  <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#a244dccfba0b795d3e46bc0fdd8942e9b">ChangeAll</a>()</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  {</div>
@@ -180,7 +175,6 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    this-&gt;ChangeDirectionOn();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    this-&gt;ChangeRegionOn();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classitk_1_1ChangeInformationImageFilter.html#ab70eb0c908ec53d7d702a2829ec24ec3">  168</a></span>&#160;  <a class="code" href="classitk_1_1ChangeInformationImageFilter.html#ab70eb0c908ec53d7d702a2829ec24ec3">ChangeNone</a>()</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  {</div>
@@ -189,7 +183,6 @@ $(function() {
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    this-&gt;ChangeDirectionOff();</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    this-&gt;ChangeRegionOff();</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  itkSetMacro(ChangeSpacing, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  itkBooleanMacro(ChangeSpacing);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  itkGetConstMacro(ChangeSpacing, <span class="keywordtype">bool</span>);</div>
@@ -209,7 +202,6 @@ $(function() {
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  itkSetMacro(CenterImage, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  itkBooleanMacro(CenterImage);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  itkGetConstMacro(CenterImage, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  GenerateOutputInformation() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
@@ -255,8 +247,10 @@ $(function() {
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ChangeInformationImageFilter_html_a17c09fbfbc44fd787c59d42b97b3733a"><div class="ttname"><a href="classitk_1_1ChangeInformationImageFilter.html#a17c09fbfbc44fd787c59d42b97b3733a">itk::ChangeInformationImageFilter::OutputImageOffsetType</a></div><div class="ttdeci">typename OutputImageType::OffsetType OutputImageOffsetType</div><div class="ttdef"><b>Definition:</b> <a href="itkChangeInformationImageFilter_8h_source.html#l00081">itkChangeInformationImageFilter.h:81</a></div></div>
 <div class="ttc" id="aclassitk_1_1ChangeInformationImageFilter_html_a0b665b2a6c00cd4a536f570efc6e06d5"><div class="ttname"><a href="classitk_1_1ChangeInformationImageFilter.html#a0b665b2a6c00cd4a536f570efc6e06d5">itk::ChangeInformationImageFilter::m_ChangeRegion</a></div><div class="ttdeci">bool m_ChangeRegion</div><div class="ttdef"><b>Definition:</b> <a href="itkChangeInformationImageFilter_8h_source.html#l00256">itkChangeInformationImageFilter.h:256</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a0818775ab9709819a7aae6e5ff87d6c5"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">itk::GTest::TypedefsAndConstructors::Dimension2::DirectionType</a></div><div class="ttdeci">ImageBaseType::DirectionType DirectionType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00052">itkGTestTypedefsAndConstructors.h:52</a></div></div>
 <div class="ttc" id="aclassitk_1_1ChangeInformationImageFilter_html_aa4dae6754574e25d12a43d63cac66cd1"><div class="ttname"><a href="classitk_1_1ChangeInformationImageFilter.html#aa4dae6754574e25d12a43d63cac66cd1">itk::ChangeInformationImageFilter::OutputImageSizeType</a></div><div class="ttdeci">typename OutputImageType::SizeType OutputImageSizeType</div><div class="ttdef"><b>Definition:</b> <a href="itkChangeInformationImageFilter_8h_source.html#l00080">itkChangeInformationImageFilter.h:80</a></div></div>
 <div class="ttc" id="aclassitk_1_1ChangeInformationImageFilter_html_a81d9e703be51ff8a5cca134cab492ba3"><div class="ttname"><a href="classitk_1_1ChangeInformationImageFilter.html#a81d9e703be51ff8a5cca134cab492ba3">itk::ChangeInformationImageFilter::OutputImagePixelType</a></div><div class="ttdeci">typename OutputImageType::PixelType OutputImagePixelType</div><div class="ttdef"><b>Definition:</b> <a href="itkChangeInformationImageFilter_8h_source.html#l00075">itkChangeInformationImageFilter.h:75</a></div></div>

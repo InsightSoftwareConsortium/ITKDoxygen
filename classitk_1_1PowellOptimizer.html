@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1PowellOptimizer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::PowellOptimizer Class Reference<div class="ingroups"><a class="el" href="group__Numerics.html">Numerics</a><a class="el" href="group__Numerics.html">Numerics</a><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__RegistrationFilters.html">Registration Filters</a> &raquo;  &#124; <a class="el" href="group__RegistrationComponents.html">Components of Registration Methods</a> &raquo;  &#124; <a class="el" href="group__Optimizers.html">Optimizers</a><a class="el" href="group__Group-Numerics.html">Group Numerics</a> &raquo;  &#124; <a class="el" href="group__ITKOptimizers.html">Module ITKOptimizers</a></div></div>  </div>
@@ -180,8 +182,65 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0691bb65888e9df8267cec5f5542bb5"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad0691bb65888e9df8267cec5f5542bb5">CreateAnother</a> () const</td></tr>
 <tr class="separator:ad0691bb65888e9df8267cec5f5542bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07cfd4786161d3af7a29b3463ad6da39"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a07cfd4786161d3af7a29b3463ad6da39">GetCatchGetValueException</a> () const</td></tr>
+<tr class="separator:a07cfd4786161d3af7a29b3463ad6da39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795b4265efde56c116fd5ced7e301c88"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a795b4265efde56c116fd5ced7e301c88">GetCurrentIteration</a> () const</td></tr>
+<tr class="separator:a795b4265efde56c116fd5ced7e301c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae448832ef6f106121b30b8b066af1f7f"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ae448832ef6f106121b30b8b066af1f7f">GetCurrentLineIteration</a> () const</td></tr>
+<tr class="separator:ae448832ef6f106121b30b8b066af1f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939161d99842f849257c7897f4582498"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a939161d99842f849257c7897f4582498">GetMetricWorstPossibleValue</a> () const</td></tr>
+<tr class="separator:a939161d99842f849257c7897f4582498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e7d8d87099b387b1efc14f4e09e4548"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a1e7d8d87099b387b1efc14f4e09e4548">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a1e7d8d87099b387b1efc14f4e09e4548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870b89315b94c85f3f0e88a549bb7a87"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a870b89315b94c85f3f0e88a549bb7a87">GetStopConditionDescription</a> () const override</td></tr>
+<tr class="separator:a870b89315b94c85f3f0e88a549bb7a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2497ff3d589f370745c782c828ae5ff8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2497ff3d589f370745c782c828ae5ff8">SetCatchGetValueException</a> (bool _arg)</td></tr>
+<tr class="separator:a2497ff3d589f370745c782c828ae5ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba20fd7ce32e246856728b7f1f22e95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afba20fd7ce32e246856728b7f1f22e95">SetMetricWorstPossibleValue</a> (double _arg)</td></tr>
+<tr class="separator:afba20fd7ce32e246856728b7f1f22e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455566cee9a5851a077ba055113350a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a455566cee9a5851a077ba055113350a4">StartOptimization</a> () override</td></tr>
+<tr class="separator:a455566cee9a5851a077ba055113350a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4116e4d808e01964348b7e34d3630cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4116e4d808e01964348b7e34d3630cd4">StopOptimization</a> ()</td></tr>
+<tr class="separator:a4116e4d808e01964348b7e34d3630cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a0b8d6c911fdd8d81dd298ae7bb07c51f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a0b8d6c911fdd8d81dd298ae7bb07c51f">SetMaximize</a> (bool _arg)</td></tr>
+<tr class="separator:a0b8d6c911fdd8d81dd298ae7bb07c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a9d50e645ce4fb14260d97f6a8fdb8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a62a9d50e645ce4fb14260d97f6a8fdb8">MaximizeOn</a> ()</td></tr>
+<tr class="separator:a62a9d50e645ce4fb14260d97f6a8fdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52429063db09a371190905aa357c582"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad52429063db09a371190905aa357c582">MaximizeOff</a> ()</td></tr>
+<tr class="separator:ad52429063db09a371190905aa357c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fab1780944bd74118f254b182e70815"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4fab1780944bd74118f254b182e70815">GetMaximize</a> () const</td></tr>
+<tr class="separator:a4fab1780944bd74118f254b182e70815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:afbb0634d89de31a45dfaa1700836c207"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afbb0634d89de31a45dfaa1700836c207">SetMaximumIteration</a> (unsigned int _arg)</td></tr>
+<tr class="separator:afbb0634d89de31a45dfaa1700836c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9cbb77e430166f68afbb121dd9e5ee"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a9a9cbb77e430166f68afbb121dd9e5ee">GetMaximumIteration</a> () const</td></tr>
+<tr class="separator:a9a9cbb77e430166f68afbb121dd9e5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a1471464027834e58d5ee293de75c2315"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a1471464027834e58d5ee293de75c2315">SetMaximumLineIteration</a> (unsigned int _arg)</td></tr>
+<tr class="separator:a1471464027834e58d5ee293de75c2315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9551726fff1885d32ac6ce2534fb52"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a0e9551726fff1885d32ac6ce2534fb52">GetMaximumLineIteration</a> () const</td></tr>
+<tr class="separator:a0e9551726fff1885d32ac6ce2534fb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aaf8974bcf53c96361970e4699a7d2958"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aaf8974bcf53c96361970e4699a7d2958">SetStepLength</a> (double _arg)</td></tr>
+<tr class="separator:aaf8974bcf53c96361970e4699a7d2958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7eef92538a6b69c58be85d9ce8be36"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aee7eef92538a6b69c58be85d9ce8be36">GetStepLength</a> () const</td></tr>
+<tr class="separator:aee7eef92538a6b69c58be85d9ce8be36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ab23357aa611297753fbd4bd7b3d434ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ab23357aa611297753fbd4bd7b3d434ff">SetStepTolerance</a> (double _arg)</td></tr>
+<tr class="separator:ab23357aa611297753fbd4bd7b3d434ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c50238ebf66c47ff1f54a3eaddece08"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a5c50238ebf66c47ff1f54a3eaddece08">GetStepTolerance</a> () const</td></tr>
+<tr class="separator:a5c50238ebf66c47ff1f54a3eaddece08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a21c0e810b98477e2e30ee793d7125333"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a21c0e810b98477e2e30ee793d7125333">SetValueTolerance</a> (double _arg)</td></tr>
+<tr class="separator:a21c0e810b98477e2e30ee793d7125333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ac4986ba485f78574f90748b15028f"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ac6ac4986ba485f78574f90748b15028f">GetValueTolerance</a> () const</td></tr>
+<tr class="separator:ac6ac4986ba485f78574f90748b15028f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ad1b4b5d676d744e8488af0c95d5cbb52"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad1b4b5d676d744e8488af0c95d5cbb52">GetCurrentCost</a> () const</td></tr>
+<tr class="separator:ad1b4b5d676d744e8488af0c95d5cbb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9dda83c130c5cb58d0f441a1056d4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aeb9dda83c130c5cb58d0f441a1056d4d">GetValue</a> () const</td></tr>
+<tr class="separator:aeb9dda83c130c5cb58d0f441a1056d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1SingleValuedNonLinearOptimizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html">itk::SingleValuedNonLinearOptimizer</a></td></tr>
 <tr class="memitem:ae17266f9b5a317d4b4af3b0833e320cf inherit pub_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#ae17266f9b5a317d4b4af3b0833e320cf">CreateAnother</a> () const</td></tr>
 <tr class="separator:ae17266f9b5a317d4b4af3b0833e320cf inherit pub_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,6 +253,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b8bb17ff108584fe455a588190d2742 inherit pub_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a6b8bb17ff108584fe455a588190d2742">SetCostFunction</a> (<a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#abf3491740cd8e7a146ee4d7a5881b0c0">CostFunctionType</a> *costFunction)</td></tr>
 <tr class="separator:a6b8bb17ff108584fe455a588190d2742 inherit pub_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Optimizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Optimizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Optimizer.html">itk::Optimizer</a></td></tr>
+<tr class="memitem:a69cc04b9f3ebfba14dc3d8a3dafc6938 inherit pub_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a69cc04b9f3ebfba14dc3d8a3dafc6938">GetCurrentPosition</a> () const</td></tr>
+<tr class="separator:a69cc04b9f3ebfba14dc3d8a3dafc6938 inherit pub_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aefd32fd450255843e4323599a99048 inherit pub_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a6aefd32fd450255843e4323599a99048">GetInitialPosition</a> () const</td></tr>
 <tr class="separator:a6aefd32fd450255843e4323599a99048 inherit pub_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cb5f8c3401c277c7735dbfe5a934e8 inherit pub_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a46cb5f8c3401c277c7735dbfe5a934e8">SetInitialPosition</a> (const <a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a> &amp;param)</td></tr>
@@ -204,8 +265,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aed40322834d3695f05636c3ecfb8bbcf inherit pub_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825b667d8930141690fa67750df984ba inherit pub_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1Optimizer.html#a85627322706767c9b577e2b8f84f6a75">ScalesType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a825b667d8930141690fa67750df984ba">GetInverseScales</a> () const</td></tr>
 <tr class="separator:a825b667d8930141690fa67750df984ba inherit pub_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69cc04b9f3ebfba14dc3d8a3dafc6938 inherit pub_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a69cc04b9f3ebfba14dc3d8a3dafc6938">GetCurrentPosition</a> () const</td></tr>
-<tr class="separator:a69cc04b9f3ebfba14dc3d8a3dafc6938 inherit pub_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,131 +355,49 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafc9412f30528b441a4d99d3838d9b60"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aafc9412f30528b441a4d99d3838d9b60">m_SpaceDimension</a></td></tr>
-<tr class="separator:aafc9412f30528b441a4d99d3838d9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb43ec38392df023e165c2b436a4c358"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afb43ec38392df023e165c2b436a4c358">m_CurrentIteration</a></td></tr>
-<tr class="separator:afb43ec38392df023e165c2b436a4c358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecace6f12a60e1952aff0b0684b87223"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aecace6f12a60e1952aff0b0684b87223">m_CurrentLineIteration</a></td></tr>
-<tr class="separator:aecace6f12a60e1952aff0b0684b87223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6141b02ad9c46cf07d3aa2ed86c5cc34"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6141b02ad9c46cf07d3aa2ed86c5cc34">m_MaximumIteration</a></td></tr>
-<tr class="separator:a6141b02ad9c46cf07d3aa2ed86c5cc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc4775f32ad36b66116fb064d6e69bc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4bc4775f32ad36b66116fb064d6e69bc">m_MaximumLineIteration</a></td></tr>
-<tr class="separator:a4bc4775f32ad36b66116fb064d6e69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71729d9ddcefac11ffb8b2d1c29797d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a71729d9ddcefac11ffb8b2d1c29797d8">m_CatchGetValueException</a></td></tr>
-<tr class="separator:a71729d9ddcefac11ffb8b2d1c29797d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3373d5591d5db4e59187ea2eb9240dcd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3373d5591d5db4e59187ea2eb9240dcd">m_MetricWorstPossibleValue</a></td></tr>
-<tr class="separator:a3373d5591d5db4e59187ea2eb9240dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2169815014ab976585bc5d8ad90ef7f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2169815014ab976585bc5d8ad90ef7f2">m_Maximize</a></td></tr>
-<tr class="separator:a2169815014ab976585bc5d8ad90ef7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61a9cf0c0715434a89e981a798396f88"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a61a9cf0c0715434a89e981a798396f88">m_StepLength</a></td></tr>
-<tr class="separator:a61a9cf0c0715434a89e981a798396f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6133059e1f5580448b3fa49bed1552b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6133059e1f5580448b3fa49bed1552b3">m_StepTolerance</a></td></tr>
-<tr class="separator:a6133059e1f5580448b3fa49bed1552b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899aefbbaf3a652a7baaf69463b4498f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a899aefbbaf3a652a7baaf69463b4498f">m_LineOrigin</a></td></tr>
-<tr class="separator:a899aefbbaf3a652a7baaf69463b4498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab9b61f84ab6ee58f11fae6226be725d"><td class="memItemLeft" align="right" valign="top">vnl_vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aab9b61f84ab6ee58f11fae6226be725d">m_LineDirection</a></td></tr>
-<tr class="separator:aab9b61f84ab6ee58f11fae6226be725d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d9385423f45207712e916bd7a31fd94"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6d9385423f45207712e916bd7a31fd94">m_ValueTolerance</a></td></tr>
-<tr class="separator:a6d9385423f45207712e916bd7a31fd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e7f1119c8941d277146630a8de95e52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3e7f1119c8941d277146630a8de95e52">m_CurrentCost</a></td></tr>
-<tr class="separator:a3e7f1119c8941d277146630a8de95e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98bcf84cd5ca045d81da4b5469a22ef3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a98bcf84cd5ca045d81da4b5469a22ef3">m_Stop</a></td></tr>
-<tr class="separator:a98bcf84cd5ca045d81da4b5469a22ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a551bb58170bde73baa4453284dd4e239"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a551bb58170bde73baa4453284dd4e239">m_StopConditionDescription</a></td></tr>
-<tr class="separator:a551bb58170bde73baa4453284dd4e239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b8d6c911fdd8d81dd298ae7bb07c51f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a0b8d6c911fdd8d81dd298ae7bb07c51f">SetMaximize</a> (bool _arg)</td></tr>
-<tr class="separator:a0b8d6c911fdd8d81dd298ae7bb07c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62a9d50e645ce4fb14260d97f6a8fdb8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a62a9d50e645ce4fb14260d97f6a8fdb8">MaximizeOn</a> ()</td></tr>
-<tr class="separator:a62a9d50e645ce4fb14260d97f6a8fdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52429063db09a371190905aa357c582"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad52429063db09a371190905aa357c582">MaximizeOff</a> ()</td></tr>
-<tr class="separator:ad52429063db09a371190905aa357c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fab1780944bd74118f254b182e70815"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4fab1780944bd74118f254b182e70815">GetMaximize</a> () const</td></tr>
-<tr class="separator:a4fab1780944bd74118f254b182e70815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb0634d89de31a45dfaa1700836c207"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afbb0634d89de31a45dfaa1700836c207">SetMaximumIteration</a> (unsigned int _arg)</td></tr>
-<tr class="separator:afbb0634d89de31a45dfaa1700836c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9cbb77e430166f68afbb121dd9e5ee"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a9a9cbb77e430166f68afbb121dd9e5ee">GetMaximumIteration</a> () const</td></tr>
-<tr class="separator:a9a9cbb77e430166f68afbb121dd9e5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1471464027834e58d5ee293de75c2315"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a1471464027834e58d5ee293de75c2315">SetMaximumLineIteration</a> (unsigned int _arg)</td></tr>
-<tr class="separator:a1471464027834e58d5ee293de75c2315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9551726fff1885d32ac6ce2534fb52"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a0e9551726fff1885d32ac6ce2534fb52">GetMaximumLineIteration</a> () const</td></tr>
-<tr class="separator:a0e9551726fff1885d32ac6ce2534fb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8974bcf53c96361970e4699a7d2958"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aaf8974bcf53c96361970e4699a7d2958">SetStepLength</a> (double _arg)</td></tr>
-<tr class="separator:aaf8974bcf53c96361970e4699a7d2958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7eef92538a6b69c58be85d9ce8be36"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aee7eef92538a6b69c58be85d9ce8be36">GetStepLength</a> () const</td></tr>
-<tr class="separator:aee7eef92538a6b69c58be85d9ce8be36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab23357aa611297753fbd4bd7b3d434ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ab23357aa611297753fbd4bd7b3d434ff">SetStepTolerance</a> (double _arg)</td></tr>
-<tr class="separator:ab23357aa611297753fbd4bd7b3d434ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c50238ebf66c47ff1f54a3eaddece08"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a5c50238ebf66c47ff1f54a3eaddece08">GetStepTolerance</a> () const</td></tr>
-<tr class="separator:a5c50238ebf66c47ff1f54a3eaddece08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21c0e810b98477e2e30ee793d7125333"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a21c0e810b98477e2e30ee793d7125333">SetValueTolerance</a> (double _arg)</td></tr>
-<tr class="separator:a21c0e810b98477e2e30ee793d7125333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ac4986ba485f78574f90748b15028f"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ac6ac4986ba485f78574f90748b15028f">GetValueTolerance</a> () const</td></tr>
-<tr class="separator:ac6ac4986ba485f78574f90748b15028f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1b4b5d676d744e8488af0c95d5cbb52"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad1b4b5d676d744e8488af0c95d5cbb52">GetCurrentCost</a> () const</td></tr>
-<tr class="separator:ad1b4b5d676d744e8488af0c95d5cbb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb9dda83c130c5cb58d0f441a1056d4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aeb9dda83c130c5cb58d0f441a1056d4d">GetValue</a> () const</td></tr>
-<tr class="separator:aeb9dda83c130c5cb58d0f441a1056d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a795b4265efde56c116fd5ced7e301c88"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a795b4265efde56c116fd5ced7e301c88">GetCurrentIteration</a> () const</td></tr>
-<tr class="separator:a795b4265efde56c116fd5ced7e301c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae448832ef6f106121b30b8b066af1f7f"><td class="memItemLeft" align="right" valign="top">virtual const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ae448832ef6f106121b30b8b066af1f7f">GetCurrentLineIteration</a> () const</td></tr>
-<tr class="separator:ae448832ef6f106121b30b8b066af1f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455566cee9a5851a077ba055113350a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a455566cee9a5851a077ba055113350a4">StartOptimization</a> () override</td></tr>
-<tr class="separator:a455566cee9a5851a077ba055113350a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4116e4d808e01964348b7e34d3630cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4116e4d808e01964348b7e34d3630cd4">StopOptimization</a> ()</td></tr>
-<tr class="separator:a4116e4d808e01964348b7e34d3630cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cfd4786161d3af7a29b3463ad6da39"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a07cfd4786161d3af7a29b3463ad6da39">GetCatchGetValueException</a> () const</td></tr>
-<tr class="separator:a07cfd4786161d3af7a29b3463ad6da39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2497ff3d589f370745c782c828ae5ff8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2497ff3d589f370745c782c828ae5ff8">SetCatchGetValueException</a> (bool _arg)</td></tr>
-<tr class="separator:a2497ff3d589f370745c782c828ae5ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a939161d99842f849257c7897f4582498"><td class="memItemLeft" align="right" valign="top">virtual const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a939161d99842f849257c7897f4582498">GetMetricWorstPossibleValue</a> () const</td></tr>
-<tr class="separator:a939161d99842f849257c7897f4582498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba20fd7ce32e246856728b7f1f22e95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afba20fd7ce32e246856728b7f1f22e95">SetMetricWorstPossibleValue</a> (double _arg)</td></tr>
-<tr class="separator:afba20fd7ce32e246856728b7f1f22e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a870b89315b94c85f3f0e88a549bb7a87"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a870b89315b94c85f3f0e88a549bb7a87">GetStopConditionDescription</a> () const override</td></tr>
-<tr class="separator:a870b89315b94c85f3f0e88a549bb7a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ead02d6700e14e3a5fff7cd7ba0afb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3ead02d6700e14e3a5fff7cd7ba0afb0">PowellOptimizer</a> ()</td></tr>
-<tr class="separator:a3ead02d6700e14e3a5fff7cd7ba0afb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6374c5f41432d5dc66a234a56fdda4c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6374c5f41432d5dc66a234a56fdda4c8">PowellOptimizer</a> (const <a class="el" href="classitk_1_1PowellOptimizer.html">PowellOptimizer</a> &amp;)</td></tr>
-<tr class="separator:a6374c5f41432d5dc66a234a56fdda4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee74ccdacee42e4dceb7236ee22bddd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aee74ccdacee42e4dceb7236ee22bddd4">~PowellOptimizer</a> () override</td></tr>
-<tr class="separator:aee74ccdacee42e4dceb7236ee22bddd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a82607be0428fb607bb5ce31ddc7bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad7a82607be0428fb607bb5ce31ddc7bc">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ad7a82607be0428fb607bb5ce31ddc7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa24effd520706c0bfbf0b5aac7134a81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aa24effd520706c0bfbf0b5aac7134a81">SetCurrentCost</a> (double _arg)</td></tr>
-<tr class="separator:aa24effd520706c0bfbf0b5aac7134a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b768582373b57961448ea8544b747cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3b768582373b57961448ea8544b747cb">SetLine</a> (const <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;origin, const vnl_vector&lt; double &gt; &amp;direction)</td></tr>
-<tr class="separator:a3b768582373b57961448ea8544b747cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa300b9dedb2cb6e6d2c579ece255f4de"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aa300b9dedb2cb6e6d2c579ece255f4de">GetLineValue</a> (double x) const</td></tr>
-<tr class="separator:aa300b9dedb2cb6e6d2c579ece255f4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b1656a20b53e753091eaa9d47d4f9e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a87b1656a20b53e753091eaa9d47d4f9e">GetLineValue</a> (double x, <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;tempCoord) const</td></tr>
-<tr class="separator:a87b1656a20b53e753091eaa9d47d4f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34eb6cab8357b9bb0984c782e5ce2e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad34eb6cab8357b9bb0984c782e5ce2e5">SetCurrentLinePoint</a> (double x, double fx)</td></tr>
-<tr class="separator:ad34eb6cab8357b9bb0984c782e5ce2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad499cc7781a858cb533a84749c5418ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad499cc7781a858cb533a84749c5418ab">Swap</a> (double *a, double *b) const</td></tr>
-<tr class="separator:ad499cc7781a858cb533a84749c5418ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8123bac289975d6da49b4b74cea1866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ae8123bac289975d6da49b4b74cea1866">Shift</a> (double *a, double *b, double *c, double d) const</td></tr>
-<tr class="separator:ae8123bac289975d6da49b4b74cea1866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a1c75568fb997936e769a91554666eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a1a1c75568fb997936e769a91554666eb">LineBracket</a> (double *x1, double *x2, double *x3, double *f1, double *f2, double *f3)</td></tr>
-<tr class="separator:a1a1c75568fb997936e769a91554666eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cc594f47927bc69657440080d19238c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2cc594f47927bc69657440080d19238c">LineBracket</a> (double *x1, double *x2, double *x3, double *f1, double *f2, double *f3, <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;tempCoord)</td></tr>
-<tr class="separator:a2cc594f47927bc69657440080d19238c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6be6c7a06863bb3c0e5bcf77fb141c5c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6be6c7a06863bb3c0e5bcf77fb141c5c">BracketedLineOptimize</a> (double ax, double bx, double cx, double fa, double functionValueOfb, double fc, double *extX, double *extVal)</td></tr>
 <tr class="separator:a6be6c7a06863bb3c0e5bcf77fb141c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd76346cdd144b12df6b4ad18cbc1404"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afd76346cdd144b12df6b4ad18cbc1404">BracketedLineOptimize</a> (double ax, double bx, double cx, double fa, double functionValueOfb, double fc, double *extX, double *extVal, <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;tempCoord)</td></tr>
 <tr class="separator:afd76346cdd144b12df6b4ad18cbc1404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa300b9dedb2cb6e6d2c579ece255f4de"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aa300b9dedb2cb6e6d2c579ece255f4de">GetLineValue</a> (double x) const</td></tr>
+<tr class="separator:aa300b9dedb2cb6e6d2c579ece255f4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b1656a20b53e753091eaa9d47d4f9e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a87b1656a20b53e753091eaa9d47d4f9e">GetLineValue</a> (double x, <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;tempCoord) const</td></tr>
+<tr class="separator:a87b1656a20b53e753091eaa9d47d4f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8792a94d77f70787be58925a1fa2c5c8"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a8792a94d77f70787be58925a1fa2c5c8">GetSpaceDimension</a> ()</td></tr>
 <tr class="separator:a8792a94d77f70787be58925a1fa2c5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e8bb5f0aac58ef79faa34764d7b047"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a07e8bb5f0aac58ef79faa34764d7b047">SetSpaceDimension</a> (unsigned int dim)</td></tr>
-<tr class="separator:a07e8bb5f0aac58ef79faa34764d7b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5299f6221b1a4c1d7149287aa2636905"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a5299f6221b1a4c1d7149287aa2636905">SetCurrentIteration</a> (unsigned int _arg)</td></tr>
-<tr class="separator:a5299f6221b1a4c1d7149287aa2636905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f48afb95cc1fb7d7d0ef32f9e83a255"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a5f48afb95cc1fb7d7d0ef32f9e83a255">GetStop</a> ()</td></tr>
 <tr class="separator:a5f48afb95cc1fb7d7d0ef32f9e83a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1c75568fb997936e769a91554666eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a1a1c75568fb997936e769a91554666eb">LineBracket</a> (double *x1, double *x2, double *x3, double *f1, double *f2, double *f3)</td></tr>
+<tr class="separator:a1a1c75568fb997936e769a91554666eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc594f47927bc69657440080d19238c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2cc594f47927bc69657440080d19238c">LineBracket</a> (double *x1, double *x2, double *x3, double *f1, double *f2, double *f3, <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;tempCoord)</td></tr>
+<tr class="separator:a2cc594f47927bc69657440080d19238c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ead02d6700e14e3a5fff7cd7ba0afb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3ead02d6700e14e3a5fff7cd7ba0afb0">PowellOptimizer</a> ()</td></tr>
+<tr class="separator:a3ead02d6700e14e3a5fff7cd7ba0afb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6374c5f41432d5dc66a234a56fdda4c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6374c5f41432d5dc66a234a56fdda4c8">PowellOptimizer</a> (const <a class="el" href="classitk_1_1PowellOptimizer.html">PowellOptimizer</a> &amp;)</td></tr>
+<tr class="separator:a6374c5f41432d5dc66a234a56fdda4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a82607be0428fb607bb5ce31ddc7bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad7a82607be0428fb607bb5ce31ddc7bc">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:ad7a82607be0428fb607bb5ce31ddc7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24effd520706c0bfbf0b5aac7134a81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aa24effd520706c0bfbf0b5aac7134a81">SetCurrentCost</a> (double _arg)</td></tr>
+<tr class="separator:aa24effd520706c0bfbf0b5aac7134a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5299f6221b1a4c1d7149287aa2636905"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a5299f6221b1a4c1d7149287aa2636905">SetCurrentIteration</a> (unsigned int _arg)</td></tr>
+<tr class="separator:a5299f6221b1a4c1d7149287aa2636905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34eb6cab8357b9bb0984c782e5ce2e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad34eb6cab8357b9bb0984c782e5ce2e5">SetCurrentLinePoint</a> (double x, double fx)</td></tr>
+<tr class="separator:ad34eb6cab8357b9bb0984c782e5ce2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b768582373b57961448ea8544b747cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3b768582373b57961448ea8544b747cb">SetLine</a> (const <a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a> &amp;origin, const vnl_vector&lt; double &gt; &amp;direction)</td></tr>
+<tr class="separator:a3b768582373b57961448ea8544b747cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e8bb5f0aac58ef79faa34764d7b047"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a07e8bb5f0aac58ef79faa34764d7b047">SetSpaceDimension</a> (unsigned int dim)</td></tr>
+<tr class="separator:a07e8bb5f0aac58ef79faa34764d7b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f35cfc444ae6385debe6db81de4c24d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4f35cfc444ae6385debe6db81de4c24d">SetStop</a> (bool _arg)</td></tr>
 <tr class="separator:a4f35cfc444ae6385debe6db81de4c24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:ae8123bac289975d6da49b4b74cea1866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ae8123bac289975d6da49b4b74cea1866">Shift</a> (double *a, double *b, double *c, double d) const</td></tr>
+<tr class="separator:ae8123bac289975d6da49b4b74cea1866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad499cc7781a858cb533a84749c5418ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#ad499cc7781a858cb533a84749c5418ab">Swap</a> (double *a, double *b) const</td></tr>
+<tr class="separator:ad499cc7781a858cb533a84749c5418ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee74ccdacee42e4dceb7236ee22bddd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aee74ccdacee42e4dceb7236ee22bddd4">~PowellOptimizer</a> () override</td></tr>
+<tr class="separator:aee74ccdacee42e4dceb7236ee22bddd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1SingleValuedNonLinearOptimizer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html">itk::SingleValuedNonLinearOptimizer</a></td></tr>
 <tr class="memitem:ac103ebd52cfe2510947d20e75659d332 inherit pro_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#ac103ebd52cfe2510947d20e75659d332">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:ac103ebd52cfe2510947d20e75659d332 inherit pro_methods_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -436,19 +413,19 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Optimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Optimizer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Optimizer.html">itk::Optimizer</a></td></tr>
 <tr class="memitem:a6bd6fc61abd521467db7f69a09c5cb70 inherit pro_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a6bd6fc61abd521467db7f69a09c5cb70">Optimizer</a> ()</td></tr>
 <tr class="separator:a6bd6fc61abd521467db7f69a09c5cb70 inherit pro_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88188efc5f0245f1564f8df302bf90d8 inherit pro_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a88188efc5f0245f1564f8df302bf90d8">~Optimizer</a> () override=default</td></tr>
-<tr class="separator:a88188efc5f0245f1564f8df302bf90d8 inherit pro_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa42eb628bcd3a89143b8cd944f1df72e inherit pro_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#aa42eb628bcd3a89143b8cd944f1df72e">SetCurrentPosition</a> (const <a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a> &amp;param)</td></tr>
 <tr class="separator:aa42eb628bcd3a89143b8cd944f1df72e inherit pro_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88188efc5f0245f1564f8df302bf90d8 inherit pro_methods_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a88188efc5f0245f1564f8df302bf90d8">~Optimizer</a> () override=default</td></tr>
+<tr class="separator:a88188efc5f0245f1564f8df302bf90d8 inherit pro_methods_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -460,14 +437,52 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a71729d9ddcefac11ffb8b2d1c29797d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a71729d9ddcefac11ffb8b2d1c29797d8">m_CatchGetValueException</a></td></tr>
+<tr class="separator:a71729d9ddcefac11ffb8b2d1c29797d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7f1119c8941d277146630a8de95e52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3e7f1119c8941d277146630a8de95e52">m_CurrentCost</a></td></tr>
+<tr class="separator:a3e7f1119c8941d277146630a8de95e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb43ec38392df023e165c2b436a4c358"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#afb43ec38392df023e165c2b436a4c358">m_CurrentIteration</a></td></tr>
+<tr class="separator:afb43ec38392df023e165c2b436a4c358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecace6f12a60e1952aff0b0684b87223"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aecace6f12a60e1952aff0b0684b87223">m_CurrentLineIteration</a></td></tr>
+<tr class="separator:aecace6f12a60e1952aff0b0684b87223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9b61f84ab6ee58f11fae6226be725d"><td class="memItemLeft" align="right" valign="top">vnl_vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aab9b61f84ab6ee58f11fae6226be725d">m_LineDirection</a></td></tr>
+<tr class="separator:aab9b61f84ab6ee58f11fae6226be725d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899aefbbaf3a652a7baaf69463b4498f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1NonLinearOptimizer.html#ab29e3adf15ebcba1365a98843a5142ee">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a899aefbbaf3a652a7baaf69463b4498f">m_LineOrigin</a></td></tr>
+<tr class="separator:a899aefbbaf3a652a7baaf69463b4498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2169815014ab976585bc5d8ad90ef7f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a2169815014ab976585bc5d8ad90ef7f2">m_Maximize</a></td></tr>
+<tr class="separator:a2169815014ab976585bc5d8ad90ef7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6141b02ad9c46cf07d3aa2ed86c5cc34"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6141b02ad9c46cf07d3aa2ed86c5cc34">m_MaximumIteration</a></td></tr>
+<tr class="separator:a6141b02ad9c46cf07d3aa2ed86c5cc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc4775f32ad36b66116fb064d6e69bc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a4bc4775f32ad36b66116fb064d6e69bc">m_MaximumLineIteration</a></td></tr>
+<tr class="separator:a4bc4775f32ad36b66116fb064d6e69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3373d5591d5db4e59187ea2eb9240dcd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a3373d5591d5db4e59187ea2eb9240dcd">m_MetricWorstPossibleValue</a></td></tr>
+<tr class="separator:a3373d5591d5db4e59187ea2eb9240dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc9412f30528b441a4d99d3838d9b60"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#aafc9412f30528b441a4d99d3838d9b60">m_SpaceDimension</a></td></tr>
+<tr class="separator:aafc9412f30528b441a4d99d3838d9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a9cf0c0715434a89e981a798396f88"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a61a9cf0c0715434a89e981a798396f88">m_StepLength</a></td></tr>
+<tr class="separator:a61a9cf0c0715434a89e981a798396f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6133059e1f5580448b3fa49bed1552b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6133059e1f5580448b3fa49bed1552b3">m_StepTolerance</a></td></tr>
+<tr class="separator:a6133059e1f5580448b3fa49bed1552b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bcf84cd5ca045d81da4b5469a22ef3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a98bcf84cd5ca045d81da4b5469a22ef3">m_Stop</a></td></tr>
+<tr class="separator:a98bcf84cd5ca045d81da4b5469a22ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a551bb58170bde73baa4453284dd4e239"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a551bb58170bde73baa4453284dd4e239">m_StopConditionDescription</a></td></tr>
+<tr class="separator:a551bb58170bde73baa4453284dd4e239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9385423f45207712e916bd7a31fd94"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PowellOptimizer.html#a6d9385423f45207712e916bd7a31fd94">m_ValueTolerance</a></td></tr>
+<tr class="separator:a6d9385423f45207712e916bd7a31fd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1SingleValuedNonLinearOptimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1SingleValuedNonLinearOptimizer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html">itk::SingleValuedNonLinearOptimizer</a></td></tr>
 <tr class="memitem:a0ea6465331732c1e08b49f6fb55dd618 inherit pro_attribs_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9368a26ce9126b738775a10ad6f52586">CostFunctionPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a0ea6465331732c1e08b49f6fb55dd618">m_CostFunction</a></td></tr>
 <tr class="separator:a0ea6465331732c1e08b49f6fb55dd618 inherit pro_attribs_classitk_1_1SingleValuedNonLinearOptimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1Optimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1Optimizer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1Optimizer.html">itk::Optimizer</a></td></tr>
-<tr class="memitem:ad1c644d4282e24fafbc97bb9645cb2ee inherit pro_attribs_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#ad1c644d4282e24fafbc97bb9645cb2ee">m_ScalesInitialized</a> { false }</td></tr>
-<tr class="separator:ad1c644d4282e24fafbc97bb9645cb2ee inherit pro_attribs_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fce3c9823a6947745f7b06748076189 inherit pro_attribs_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Optimizer.html#ac06d8de5bd229a64f45c36a10ea40805">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#a1fce3c9823a6947745f7b06748076189">m_CurrentPosition</a></td></tr>
 <tr class="separator:a1fce3c9823a6947745f7b06748076189 inherit pro_attribs_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1c644d4282e24fafbc97bb9645cb2ee inherit pro_attribs_classitk_1_1Optimizer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Optimizer.html#ad1c644d4282e24fafbc97bb9645cb2ee">m_ScalesInitialized</a> { false }</td></tr>
+<tr class="separator:ad1c644d4282e24fafbc97bb9645cb2ee inherit pro_attribs_classitk_1_1Optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -622,7 +637,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -649,7 +663,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -675,7 +688,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -829,7 +841,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -843,7 +854,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer itk::PowellOptimizer::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> itk::PowellOptimizer::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -883,7 +894,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1025,7 +1035,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1051,7 +1060,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set if the <a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> should Maximize the metric </p>
 
 </div>
 </div>
@@ -1077,7 +1086,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set/Get maximum iteration limit. </p>
 
 </div>
 </div>
@@ -1103,7 +1112,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set/Get the maximum number of line search iterations </p>
 
 </div>
 </div>
@@ -1129,7 +1138,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1185,7 +1193,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1211,7 +1218,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set/Get StepLength for the (scaled) spacing of the sampling of parameter space while bracketing the extremum </p>
 
 </div>
 </div>
@@ -1237,7 +1244,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set/Get StepTolerance. Once the local extreme is known to be within this distance of the current parameter values, optimization terminates </p>
 
 </div>
 </div>
@@ -1263,7 +1270,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1289,7 +1295,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Get the reason for termination </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Optimizer.html#a713f4680d44a5f6ec3b29e148bc5ad30">itk::Optimizer</a>.</p>
 
@@ -1317,7 +1323,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Return Current Value </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00121">121</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -1345,7 +1351,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set/Get ValueTolerance. Once this current cost function value is known to be within this tolerance of the cost function value at the local extreme, optimization terminates </p>
 
 </div>
 </div>
@@ -1475,7 +1481,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1501,7 +1506,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set if the <a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> should Maximize the metric </p>
 
 </div>
 </div>
@@ -1527,7 +1532,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Set if the <a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> should Maximize the metric </p>
 
 </div>
 </div>
@@ -1590,7 +1595,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Optimizer.html#ac0cd0d25eaeeba4b4fd9e14a70ed872c">itk::Optimizer</a>.</p>
 
@@ -1619,7 +1625,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1646,7 +1651,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1673,7 +1677,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1855,7 +1858,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -1882,7 +1884,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00236">236</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -1965,7 +1966,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 </div>
 </div>
@@ -2158,7 +2158,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00261">261</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2234,7 +2233,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00255">255</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2259,7 +2257,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00272">272</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2284,7 +2281,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00271">271</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2359,7 +2355,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00259">259</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2384,7 +2379,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00262">262</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2409,7 +2403,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00248">248</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2459,7 +2452,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00269">269</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2509,7 +2501,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00285">285</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 
@@ -2534,7 +2525,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current iteration </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPowellOptimizer_8h_source.html#l00274">274</a> of file <a class="el" href="itkPowellOptimizer_8h_source.html">itkPowellOptimizer.h</a>.</p>
 

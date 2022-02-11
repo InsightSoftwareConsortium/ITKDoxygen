@@ -106,15 +106,15 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(VectorExpandImageFilter);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">using</span> Self = VectorExpandImageFilter;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">using</span> Superclass = ImageToImageFilter&lt;TInputImage, TOutputImage&gt;;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">using</span> Pointer = SmartPointer&lt;Self&gt;;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">using</span> ConstPointer = SmartPointer&lt;const Self&gt;;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">using</span> <a class="code" href="classAddImageFilter.html">Self</a> = VectorExpandImageFilter;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> = ImageToImageFilter&lt;TInputImage, TOutputImage&gt;;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = SmartPointer&lt;Self&gt;;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = SmartPointer&lt;const Self&gt;;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  itkNewMacro(Self);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  itkNewMacro(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">using</span> InputImagePointer = <span class="keyword">typename</span> TInputImage::Pointer;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">using</span> OutputImagePointer = <span class="keyword">typename</span> TOutputImage::Pointer;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">using</span> InputImagePointer = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TInputImage::Pointer</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">using</span> OutputImagePointer = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">using</span> OutputImageRegionType = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">TOutputImage::RegionType</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  itkTypeMacro(VectorExpandImageFilter, ImageToImageFilter);</div>
@@ -139,17 +139,15 @@ $(function() {
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">using</span> CoordRepType = double;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">using</span> InterpolatorType = VectorInterpolateImageFunction&lt;InputImageType, CoordRepType&gt;;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">using</span> InterpolatorPointer = <span class="keyword">typename</span> InterpolatorType::Pointer;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">using</span> InterpolatorPointer = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">using</span> DefaultInterpolatorType = VectorLinearInterpolateImageFunction&lt;InputImageType, CoordRepType&gt;;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  itkSetObjectMacro(Interpolator, InterpolatorType);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  itkGetModifiableObjectMacro(Interpolator, InterpolatorType);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  itkSetMacro(ExpandFactors, ExpandFactorsArrayType);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  SetExpandFactors(<span class="keyword">const</span> <span class="keywordtype">float</span> factor);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  itkSetVectorMacro(ExpandFactors, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, ImageDimension);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  itkGetConstReferenceMacro(ExpandFactors, ExpandFactorsArrayType);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">void</span></div>
@@ -191,12 +189,16 @@ $(function() {
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif // ITK_LEGACY_REMOVE</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="aitkVectorLinearInterpolateImageFunction_8h_html"><div class="ttname"><a href="itkVectorLinearInterpolateImageFunction_8h.html">itkVectorLinearInterpolateImageFunction.h</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a11afc1c40aa6161a6e22aec177054371"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">itk::GTest::TypedefsAndConstructors::Dimension2::RegionType</a></div><div class="ttdeci">ImageBaseType::RegionType RegionType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00054">itkGTestTypedefsAndConstructors.h:54</a></div></div>
 <div class="ttc" id="aitkImageToImageFilter_8h_html"><div class="ttname"><a href="itkImageToImageFilter_8h.html">itkImageToImageFilter.h</a></div></div>
 <div class="ttc" id="aitkConceptChecking_8h_html_a009eae6c305d9c390972159815e6a710"><div class="ttname"><a href="itkConceptChecking_8h.html#a009eae6c305d9c390972159815e6a710">itkConceptMacro</a></div><div class="ttdeci">#define itkConceptMacro(name, concept)</div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00065">itkConceptChecking.h:65</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a3c1343e7d285fc01106df9e0c28d5154"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a3c1343e7d285fc01106df9e0c28d5154">itk::GTest::TypedefsAndConstructors::Dimension2::Dimension</a></div><div class="ttdeci">constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00044">itkGTestTypedefsAndConstructors.h:44</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00089">itkAddImageFilter.h:89</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

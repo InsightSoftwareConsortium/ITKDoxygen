@@ -133,13 +133,12 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a136568ed2bde2782645d0246de31075d">  107</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1BandNode.html">BandNodeType</a> = <a class="code" href="classitk_1_1BandNode.html">BandNode&lt;IndexType, PixelType&gt;</a>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a7833efcd1e975771a5d0d56c4e70133d">  110</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1NarrowBand.html">NarrowBandType</a> = <a class="code" href="classitk_1_1NarrowBand.html">NarrowBand&lt;BandNodeType&gt;</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a073a838c72b91f011a6be8e341e842ad">  111</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a073a838c72b91f011a6be8e341e842ad">NarrowBandPointer</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1SmartPointer.html">NarrowBandType::Pointer</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a073a838c72b91f011a6be8e341e842ad">  111</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a073a838c72b91f011a6be8e341e842ad">NarrowBandPointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">NarrowBandType::Pointer</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#ad0f30908ac6ba9f63d7246f3f4870e34">  112</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#ad0f30908ac6ba9f63d7246f3f4870e34">RegionType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a11afc1c40aa6161a6e22aec177054371">NarrowBandType::RegionType</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a10401840cbdbf1ec9f6e766f85c09f16">  113</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a10401840cbdbf1ec9f6e766f85c09f16">NarrowBandIterator</a> = <span class="keyword">typename</span> <a class="code" href="classitk_1_1NarrowBand.html#aebd334682763738e4f3f7acfc2f8f4cc">NarrowBandType::Iterator</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  itkSetMacro(IsoSurfaceValue, <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a571a33a9636bb72294f30708bb480d38">ValueType</a>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  itkGetConstMacro(IsoSurfaceValue, <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a571a33a9636bb72294f30708bb480d38">ValueType</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">//  itkGetConstMacro( RMSChange, ValueType);</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">void</span></div>
@@ -148,7 +147,6 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    m_NarrowBand-&gt;PushBack(node); <span class="comment">// add new node</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    this-&gt;Modified();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#abf473b77d9dc6c9e28da64b3643a1e69">  136</a></span>&#160;  <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#abf473b77d9dc6c9e28da64b3643a1e69">InsertNarrowBandNode</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a1410141a161fd7becbfef900af655304">IndexType</a> &amp; index)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  {</div>
@@ -181,7 +179,6 @@ $(function() {
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      this-&gt;Modified();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">float</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#a89eac81ce53f783cfbb5cf7a18fe7790">  174</a></span>&#160;  <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#a89eac81ce53f783cfbb5cf7a18fe7790">GetNarrowBandTotalRadius</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">  </span>{</div>
@@ -197,7 +194,6 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      this-&gt;Modified();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordtype">float</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#ae213a8a4fe78654a035ac8b27dec2627">  194</a></span>&#160;  <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#ae213a8a4fe78654a035ac8b27dec2627">GetNarrowBandInnerRadius</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">  </span>{</div>
@@ -224,7 +220,7 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classitk_1_1NarrowBandImageFilterBase.html#ac0d6ef4aa4c235302d0582078cf37284">  222</a></span>&#160;  <a class="code" href="classitk_1_1NarrowBandImageFilterBase.html#ac0d6ef4aa4c235302d0582078cf37284">NarrowBandImageFilterBase</a>()</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    m_NarrowBand = NarrowBandType::New();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    m_NarrowBand = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">NarrowBandType::New</a>();</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    m_NarrowBand-&gt;SetTotalRadius(4);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    m_NarrowBand-&gt;SetInnerRadius(2);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    m_ReinitializationFrequency = 6;</div>
@@ -314,6 +310,7 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aitkFiniteDifferenceImageFilter_8h_html"><div class="ttname"><a href="itkFiniteDifferenceImageFilter_8h.html">itkFiniteDifferenceImageFilter.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1NarrowBandImageFilterBase_html"><div class="ttname"><a href="classitk_1_1NarrowBandImageFilterBase.html">itk::NarrowBandImageFilterBase</a></div><div class="ttdoc">This class implements a multi-threaded finite difference image to image solver that can be applied to...</div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBandImageFilterBase_8h_source.html#l00069">itkNarrowBandImageFilterBase.h:69</a></div></div>
 <div class="ttc" id="aitkObjectStore_8h_html"><div class="ttname"><a href="itkObjectStore_8h.html">itkObjectStore.h</a></div></div>
@@ -359,6 +356,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1NarrowBandImageFilterBase_html_aaf61c23088b8910db91ec905d7f9bbc3"><div class="ttname"><a href="classitk_1_1NarrowBandImageFilterBase.html#aaf61c23088b8910db91ec905d7f9bbc3">itk::NarrowBandImageFilterBase::ApplyUpdate</a></div><div class="ttdeci">void ApplyUpdate(const TimeStepType &amp;) override</div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBandImageFilterBase_8h_source.html#l00323">itkNarrowBandImageFilterBase.h:323</a></div></div>
 <div class="ttc" id="aitkPlatformMultiThreader_8h_html"><div class="ttname"><a href="itkPlatformMultiThreader_8h.html">itkPlatformMultiThreader.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1NarrowBandImageFilterBase_html_aa2e9e8bdf86749ebfcb2df45905c116e"><div class="ttname"><a href="classitk_1_1NarrowBandImageFilterBase.html#aa2e9e8bdf86749ebfcb2df45905c116e">itk::NarrowBandImageFilterBase::CreateNarrowBand</a></div><div class="ttdeci">virtual void CreateNarrowBand()</div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBandImageFilterBase_8h_source.html#l00205">itkNarrowBandImageFilterBase.h:205</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aclassitk_1_1BandNode_html"><div class="ttname"><a href="classitk_1_1BandNode.html">itk::BandNode</a></div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBand_8h_source.html#l00035">itkNarrowBand.h:35</a></div></div>
 <div class="ttc" id="astructitk_1_1NarrowBandImageFilterBase_1_1ThreadRegionType_html_ade10534d854cc0e4d6d4b7d0996cb0f9"><div class="ttname"><a href="structitk_1_1NarrowBandImageFilterBase_1_1ThreadRegionType.html#ade10534d854cc0e4d6d4b7d0996cb0f9">itk::NarrowBandImageFilterBase::ThreadRegionType::last</a></div><div class="ttdeci">NarrowBandIterator last</div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBandImageFilterBase_8h_source.html#l00249">itkNarrowBandImageFilterBase.h:249</a></div></div>
 <div class="ttc" id="aclassitk_1_1NarrowBandImageFilterBase_html_a571a33a9636bb72294f30708bb480d38"><div class="ttname"><a href="classitk_1_1NarrowBandImageFilterBase.html#a571a33a9636bb72294f30708bb480d38">itk::NarrowBandImageFilterBase&lt; TInputImage, Image&lt; float, TInputImage::ImageDimension &gt; &gt;::ValueType</a></div><div class="ttdeci">typename OutputImageType::ValueType ValueType</div><div class="ttdef"><b>Definition:</b> <a href="itkNarrowBandImageFilterBase_8h_source.html#l00104">itkNarrowBandImageFilterBase.h:104</a></div></div>

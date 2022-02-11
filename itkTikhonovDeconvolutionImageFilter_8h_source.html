@@ -107,7 +107,6 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1TikhonovDeconvolutionImageFilter.html">TikhonovDeconvolutionImageFilter</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classitk_1_1TikhonovDeconvolutionImageFilter.html#a03479f0c06183e24edfa66ae1e4d997c">   61</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Self</a> = <a class="code" href="classitk_1_1TikhonovDeconvolutionImageFilter.html">TikhonovDeconvolutionImageFilter</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classitk_1_1TikhonovDeconvolutionImageFilter.html#a659a60ea068aeec6ff09898d08cfec91">   62</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Superclass</a> = <a class="code" href="classitk_1_1InverseDeconvolutionImageFilter.html">InverseDeconvolutionImageFilter&lt;TInputImage, TKernelImage, TOutputImage, TInternalPrecision&gt;</a>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classitk_1_1TikhonovDeconvolutionImageFilter.html#a51384957ae97a9546264530e6e49a848">   63</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
@@ -144,7 +143,6 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  itkSetMacro(RegularizationConstant, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  itkGetConstMacro(RegularizationConstant, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="classitk_1_1TikhonovDeconvolutionImageFilter.html">TikhonovDeconvolutionImageFilter</a>();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  ~<a class="code" href="classitk_1_1TikhonovDeconvolutionImageFilter.html">TikhonovDeconvolutionImageFilter</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
@@ -204,7 +202,6 @@ $(function() {
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> m_RegularizationConstant;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classitk_1_1Functor_1_1TikhonovDeconvolutionFunctor.html#ac57cc9559ab86164371f586b325a38d1">  174</a></span>&#160;  <a class="code" href="classitk_1_1Functor_1_1TikhonovDeconvolutionFunctor.html#ac57cc9559ab86164371f586b325a38d1">SetKernelZeroMagnitudeThreshold</a>(<span class="keywordtype">double</span> mu)</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  {</div>
@@ -215,7 +212,6 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> m_KernelZeroMagnitudeThreshold;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classitk_1_1Functor_1_1TikhonovDeconvolutionFunctor.html#a7e74e28f546fad2bee43c67a10280779">  186</a></span>&#160;  <span class="keywordtype">double</span> m_RegularizationConstant = 0.0;</div>
 <div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="classitk_1_1Functor_1_1TikhonovDeconvolutionFunctor.html#a2d04a1fafde4a64d6a3aecd362adc6a5">  187</a></span>&#160;  <span class="keywordtype">double</span> m_KernelZeroMagnitudeThreshold = 0.0;</div>

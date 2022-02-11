@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classitk_1_1MultiTransform-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::MultiTransform&lt; TParametersValueType, NDimensions, NSubDimensions &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKTransform.html">Module ITKTransform</a></div></div>  </div>
@@ -223,8 +225,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba90296d3ea4f1808739c91b1296da70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a780f79400a78f2014c7bdd5e8213f"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiTransform.html#a3a3260670ca13c7597f5d6bc69d09b1f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a16a780f79400a78f2014c7bdd5e8213f">GetBackTransform</a> () const</td></tr>
 <tr class="separator:a16a780f79400a78f2014c7bdd5e8213f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fddc44ea9e621c8538a55b2972f89f8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a9fddc44ea9e621c8538a55b2972f89f8">GetFixedParameters</a> () const override</td></tr>
+<tr class="separator:a9fddc44ea9e621c8538a55b2972f89f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ce50e0e2f731e78042bbee8920d3dc"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiTransform.html#a3a3260670ca13c7597f5d6bc69d09b1f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a64ce50e0e2f731e78042bbee8920d3dc">GetFrontTransform</a> () const</td></tr>
 <tr class="separator:a64ce50e0e2f731e78042bbee8920d3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44bf42739c80aede3c00c07053729d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#af44bf42739c80aede3c00c07053729d2">GetInverse</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *inverse) const</td></tr>
+<tr class="separator:af44bf42739c80aede3c00c07053729d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9925ed7d75efbb7ab92827643955d4"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a4e9925ed7d75efbb7ab92827643955d4">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a4e9925ed7d75efbb7ab92827643955d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0856a81ea2d665f4033b388a81916cc5"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiTransform.html#a429f6b16dd12ed5c6a843d2dd171781e">TransformTypePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a0856a81ea2d665f4033b388a81916cc5">GetNthTransform</a> (<a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a> n) const</td></tr>
@@ -233,17 +239,40 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a86c765ab42fd6029dda78a7b6fd76ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c41decad6b8f7cae36fade18c989c33"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MultiTransform.html#a3a3260670ca13c7597f5d6bc69d09b1f">TransformType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3c41decad6b8f7cae36fade18c989c33">GetNthTransformModifiablePointer</a> (const <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a> n) const</td></tr>
 <tr class="separator:a3c41decad6b8f7cae36fade18c989c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89a2c883f83ca61a58a7c5f96cf1ebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ac89a2c883f83ca61a58a7c5f96cf1ebf">GetNumberOfFixedParameters</a> () const override</td></tr>
+<tr class="separator:ac89a2c883f83ca61a58a7c5f96cf1ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39a7f2b10072eef010d6b6230c26d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ae39a7f2b10072eef010d6b6230c26d35">GetNumberOfLocalParameters</a> () const override</td></tr>
+<tr class="separator:ae39a7f2b10072eef010d6b6230c26d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccf4cd08177133e35020068043bdee6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a6ccf4cd08177133e35020068043bdee6">GetNumberOfParameters</a> () const override</td></tr>
+<tr class="separator:a6ccf4cd08177133e35020068043bdee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa88bcbd5d6e67274627173ef5044a253"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#aa88bcbd5d6e67274627173ef5044a253">GetNumberOfTransforms</a> () const</td></tr>
 <tr class="separator:aa88bcbd5d6e67274627173ef5044a253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2fde67fbbf504697177010d10f85b2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#add2fde67fbbf504697177010d10f85b2">GetParameters</a> () const override</td></tr>
+<tr class="separator:add2fde67fbbf504697177010d10f85b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773a8aade0c1c4c0a810e40b98e29dc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplateEnums.html#afe2e44f89c4bf9fea390031aa6045100">TransformCategoryEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a773a8aade0c1c4c0a810e40b98e29dc1">GetTransformCategory</a> () const override</td></tr>
+<tr class="separator:a773a8aade0c1c4c0a810e40b98e29dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa236a39a19aace98dda502bab8c0e931"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiTransform.html#ae5d903e6a190471a5e507b67fb1ab8d7">TransformQueueType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#aa236a39a19aace98dda502bab8c0e931">GetTransformQueue</a> () const</td></tr>
 <tr class="separator:aa236a39a19aace98dda502bab8c0e931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d1259e02820a16eb07262281f0a35a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a77d1259e02820a16eb07262281f0a35a">IsLinear</a> () const override</td></tr>
+<tr class="separator:a77d1259e02820a16eb07262281f0a35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb6fb1662c6db0292cdf1e6cfb6b4d9d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#abb6fb1662c6db0292cdf1e6cfb6b4d9d">IsTransformQueueEmpty</a> () const</td></tr>
 <tr class="separator:abb6fb1662c6db0292cdf1e6cfb6b4d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ed3736612047e23ddbdd028030984a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a34ed3736612047e23ddbdd028030984a">PrependTransform</a> (<a class="el" href="classitk_1_1MultiTransform.html#a3a3260670ca13c7597f5d6bc69d09b1f">TransformType</a> *t)</td></tr>
 <tr class="separator:a34ed3736612047e23ddbdd028030984a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae87f0a7ef99f55d0b2f5d8fa22b6fb05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ae87f0a7ef99f55d0b2f5d8fa22b6fb05">RemoveTransform</a> ()</td></tr>
 <tr class="separator:ae87f0a7ef99f55d0b2f5d8fa22b6fb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af26ce237839bf50445e063d674da4bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#af26ce237839bf50445e063d674da4bf4">SetFixedParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a> &amp;inputParameters) override</td></tr>
+<tr class="separator:af26ce237839bf50445e063d674da4bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad662bcaf64466e0d8b17e07e6307bf11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ad662bcaf64466e0d8b17e07e6307bf11">SetParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a> &amp;inputParameters) override</td></tr>
+<tr class="separator:ad662bcaf64466e0d8b17e07e6307bf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8d1351209542c6603e5cdc79d15876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a8d8d1351209542c6603e5cdc79d15876">UpdateTransformParameters</a> (const <a class="el" href="classitk_1_1Transform.html#a141328ee719db195ffd4d66558dfab63">DerivativeType</a> &amp;update, <a class="el" href="classitk_1_1MultiTransform.html#a672c13f73247a82c794abfa344b28b35">ScalarType</a> factor=1.0) override</td></tr>
+<tr class="separator:a8d8d1351209542c6603e5cdc79d15876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a490bce3590fd6fb4d1429ea9b3f344f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a490bce3590fd6fb4d1429ea9b3f344f0">ClearTransformQueue</a> ()</td></tr>
+<tr class="separator:a490bce3590fd6fb4d1429ea9b3f344f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Transform"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Transform')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Transform.html">itk::Transform&lt; double, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a4aa2faeb65f28e262debb0452678e16e inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a4aa2faeb65f28e262debb0452678e16e">ComputeJacobianWithRespectToParametersCachedTemporaries</a> (const <a class="el" href="classitk_1_1Transform.html#af1926ed4eed6555187a5c76bcd7f918e">InputPointType</a> &amp;p, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;jacobian, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;) const</td></tr>
+<tr class="separator:a4aa2faeb65f28e262debb0452678e16e inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af17ed77416fdf979c8c4fb3fafb34af0 inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#af17ed77416fdf979c8c4fb3fafb34af0">CopyInFixedParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a99886572cc43c0fc4c3c9326e753edb1">FixedParametersValueType</a> *const begin, const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a99886572cc43c0fc4c3c9326e753edb1">FixedParametersValueType</a> *const end) override</td></tr>
 <tr class="separator:af17ed77416fdf979c8c4fb3fafb34af0 inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a101ae06e5bf44a2affb099d7a087eb4b inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a101ae06e5bf44a2affb099d7a087eb4b">CopyInParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a41078b49454d93ef0d4ed4f6c76e3840">ParametersValueType</a> *const begin, const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a41078b49454d93ef0d4ed4f6c76e3840">ParametersValueType</a> *const end) override</td></tr>
@@ -322,8 +351,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac42fa124a4f31a0ccace06fd6021cdb7 inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6fce6a75a66774be0dac737e492d2c7 inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aa6fce6a75a66774be0dac737e492d2c7">ComputeJacobianWithRespectToParameters</a> (const <a class="el" href="classitk_1_1Transform.html#af1926ed4eed6555187a5c76bcd7f918e">InputPointType</a> &amp;, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;) const=0</td></tr>
 <tr class="separator:aa6fce6a75a66774be0dac737e492d2c7 inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aa2faeb65f28e262debb0452678e16e inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a4aa2faeb65f28e262debb0452678e16e">ComputeJacobianWithRespectToParametersCachedTemporaries</a> (const <a class="el" href="classitk_1_1Transform.html#af1926ed4eed6555187a5c76bcd7f918e">InputPointType</a> &amp;p, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;jacobian, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;) const</td></tr>
-<tr class="separator:a4aa2faeb65f28e262debb0452678e16e inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e74dab463b5c09ddc32cdd8c13ec7e9 inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a0e74dab463b5c09ddc32cdd8c13ec7e9">ComputeJacobianWithRespectToPosition</a> (const <a class="el" href="classitk_1_1Transform.html#af1926ed4eed6555187a5c76bcd7f918e">InputPointType</a> &amp;, <a class="el" href="classitk_1_1Transform.html#a0de955c5c576543aa3b34d05062b1cc9">JacobianPositionType</a> &amp;) const</td></tr>
 <tr class="separator:a0e74dab463b5c09ddc32cdd8c13ec7e9 inherit pub_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1001afcf092caad8ee77deba108fb98c inherit pub_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a1001afcf092caad8ee77deba108fb98c">itkLegacyMacro</a> (virtual void <a class="el" href="classitk_1_1Transform.html#a0e74dab463b5c09ddc32cdd8c13ec7e9">ComputeJacobianWithRespectToPosition</a>(const <a class="el" href="classitk_1_1Transform.html#af1926ed4eed6555187a5c76bcd7f918e">InputPointType</a> &amp;x, <a class="el" href="classitk_1_1Transform.html#a09f438a3644f7ee18c2e8a60262c2f7b">JacobianType</a> &amp;jacobian) const)</td></tr>
@@ -417,50 +444,76 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a75b923134cf17dfc9ccb02365225f849 inherit pub_static_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8ad8dd615b66dc206e48212d1d5a2ad inherit pub_static_attribs_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aa8ad8dd615b66dc206e48212d1d5a2ad">OutputSpaceDimension</a></td></tr>
 <tr class="separator:aa8ad8dd615b66dc206e48212d1d5a2ad inherit pub_static_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3fa1391bd38ccabc442ca730733f55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MultiTransform.html#ae5d903e6a190471a5e507b67fb1ab8d7">TransformQueueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3a3fa1391bd38ccabc442ca730733f55">m_TransformQueue</a></td></tr>
-<tr class="separator:a3a3fa1391bd38ccabc442ca730733f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ee0d8f52051adea8d3c0cb5a2cf6c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a15ee0d8f52051adea8d3c0cb5a2cf6c0">m_NumberOfLocalParameters</a></td></tr>
-<tr class="separator:a15ee0d8f52051adea8d3c0cb5a2cf6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fdbb06f6862e0ba58cfb94fa7325945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a8a5e057b4cffb3bb060d83cbb8cd2255">ModifiedTimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3fdbb06f6862e0ba58cfb94fa7325945">m_LocalParametersUpdateTime</a></td></tr>
-<tr class="separator:a3fdbb06f6862e0ba58cfb94fa7325945"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a490bce3590fd6fb4d1429ea9b3f344f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a490bce3590fd6fb4d1429ea9b3f344f0">ClearTransformQueue</a> ()</td></tr>
-<tr class="separator:a490bce3590fd6fb4d1429ea9b3f344f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d1259e02820a16eb07262281f0a35a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a77d1259e02820a16eb07262281f0a35a">IsLinear</a> () const override</td></tr>
-<tr class="separator:a77d1259e02820a16eb07262281f0a35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a773a8aade0c1c4c0a810e40b98e29dc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplateEnums.html#afe2e44f89c4bf9fea390031aa6045100">TransformCategoryEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a773a8aade0c1c4c0a810e40b98e29dc1">GetTransformCategory</a> () const override</td></tr>
-<tr class="separator:a773a8aade0c1c4c0a810e40b98e29dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2fde67fbbf504697177010d10f85b2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#add2fde67fbbf504697177010d10f85b2">GetParameters</a> () const override</td></tr>
-<tr class="separator:add2fde67fbbf504697177010d10f85b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad662bcaf64466e0d8b17e07e6307bf11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ad662bcaf64466e0d8b17e07e6307bf11">SetParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a> &amp;inputParameters) override</td></tr>
-<tr class="separator:ad662bcaf64466e0d8b17e07e6307bf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fddc44ea9e621c8538a55b2972f89f8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a9fddc44ea9e621c8538a55b2972f89f8">GetFixedParameters</a> () const override</td></tr>
-<tr class="separator:a9fddc44ea9e621c8538a55b2972f89f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af26ce237839bf50445e063d674da4bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#af26ce237839bf50445e063d674da4bf4">SetFixedParameters</a> (const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a> &amp;inputParameters) override</td></tr>
-<tr class="separator:af26ce237839bf50445e063d674da4bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ccf4cd08177133e35020068043bdee6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a6ccf4cd08177133e35020068043bdee6">GetNumberOfParameters</a> () const override</td></tr>
-<tr class="separator:a6ccf4cd08177133e35020068043bdee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae39a7f2b10072eef010d6b6230c26d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ae39a7f2b10072eef010d6b6230c26d35">GetNumberOfLocalParameters</a> () const override</td></tr>
-<tr class="separator:ae39a7f2b10072eef010d6b6230c26d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89a2c883f83ca61a58a7c5f96cf1ebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#ac89a2c883f83ca61a58a7c5f96cf1ebf">GetNumberOfFixedParameters</a> () const override</td></tr>
-<tr class="separator:ac89a2c883f83ca61a58a7c5f96cf1ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8d1351209542c6603e5cdc79d15876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a8d8d1351209542c6603e5cdc79d15876">UpdateTransformParameters</a> (const <a class="el" href="classitk_1_1Transform.html#a141328ee719db195ffd4d66558dfab63">DerivativeType</a> &amp;update, <a class="el" href="classitk_1_1MultiTransform.html#a672c13f73247a82c794abfa344b28b35">ScalarType</a> factor=1.0) override</td></tr>
-<tr class="separator:a8d8d1351209542c6603e5cdc79d15876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44bf42739c80aede3c00c07053729d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#af44bf42739c80aede3c00c07053729d2">GetInverse</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> *inverse) const</td></tr>
-<tr class="separator:af44bf42739c80aede3c00c07053729d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9d8acb8b57e86500858ee225f28f18ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a9d8acb8b57e86500858ee225f28f18ba">MultiTransform</a> ()</td></tr>
 <tr class="separator:a9d8acb8b57e86500858ee225f28f18ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82acb6cf85347cdf420d72b2dcd9ae91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a82acb6cf85347cdf420d72b2dcd9ae91">~MultiTransform</a> () override=default</td></tr>
-<tr class="separator:a82acb6cf85347cdf420d72b2dcd9ae91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae7a487819717f3ebae6c298639d3290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#aae7a487819717f3ebae6c298639d3290">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:aae7a487819717f3ebae6c298639d3290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f074978724cee5a29ee273694d0704"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a84f074978724cee5a29ee273694d0704">PushFrontTransform</a> (<a class="el" href="classitk_1_1MultiTransform.html#a429f6b16dd12ed5c6a843d2dd171781e">TransformTypePointer</a> t)</td></tr>
-<tr class="separator:a84f074978724cee5a29ee273694d0704"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3afbfd0608836f2b1b77aa52fe43dcad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3afbfd0608836f2b1b77aa52fe43dcad">PushBackTransform</a> (<a class="el" href="classitk_1_1MultiTransform.html#a429f6b16dd12ed5c6a843d2dd171781e">TransformTypePointer</a> t)</td></tr>
-<tr class="separator:a3afbfd0608836f2b1b77aa52fe43dcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57df327cd8ebae18c51a180f2c819792"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a57df327cd8ebae18c51a180f2c819792">PopFrontTransform</a> ()</td></tr>
-<tr class="separator:a57df327cd8ebae18c51a180f2c819792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecad7591af5c481849b4386ef9b18d1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#aecad7591af5c481849b4386ef9b18d1c">PopBackTransform</a> ()</td></tr>
 <tr class="separator:aecad7591af5c481849b4386ef9b18d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57df327cd8ebae18c51a180f2c819792"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a57df327cd8ebae18c51a180f2c819792">PopFrontTransform</a> ()</td></tr>
+<tr class="separator:a57df327cd8ebae18c51a180f2c819792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7a487819717f3ebae6c298639d3290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#aae7a487819717f3ebae6c298639d3290">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:aae7a487819717f3ebae6c298639d3290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afbfd0608836f2b1b77aa52fe43dcad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3afbfd0608836f2b1b77aa52fe43dcad">PushBackTransform</a> (<a class="el" href="classitk_1_1MultiTransform.html#a429f6b16dd12ed5c6a843d2dd171781e">TransformTypePointer</a> t)</td></tr>
+<tr class="separator:a3afbfd0608836f2b1b77aa52fe43dcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f074978724cee5a29ee273694d0704"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a84f074978724cee5a29ee273694d0704">PushFrontTransform</a> (<a class="el" href="classitk_1_1MultiTransform.html#a429f6b16dd12ed5c6a843d2dd171781e">TransformTypePointer</a> t)</td></tr>
+<tr class="separator:a84f074978724cee5a29ee273694d0704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82acb6cf85347cdf420d72b2dcd9ae91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a82acb6cf85347cdf420d72b2dcd9ae91">~MultiTransform</a> () override=default</td></tr>
+<tr class="separator:a82acb6cf85347cdf420d72b2dcd9ae91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Transform"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Transform')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Transform.html">itk::Transform&lt; double, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:aa07bd9bd490b6e3ff479f7a7b697b50f inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aa07bd9bd490b6e3ff479f7a7b697b50f">InternalClone</a> () const override</td></tr>
+<tr class="separator:aa07bd9bd490b6e3ff479f7a7b697b50f inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec2b699bcc395414f641ab8214e68595 inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Transform.html#a0e073c03e6b525475d6eded797f92368">OutputDiffusionTensor3DType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aec2b699bcc395414f641ab8214e68595">PreservationOfPrincipalDirectionDiffusionTensor3DReorientation</a> (const <a class="el" href="classitk_1_1Transform.html#a69a0903820f604b22dd9a805492741e8">InputDiffusionTensor3DType</a> &amp;, const <a class="el" href="classitk_1_1Transform.html#a7ff0cb24e44cf9fcb0d3ad6d3d8d06af">InverseJacobianPositionType</a> &amp;) const</td></tr>
+<tr class="separator:aec2b699bcc395414f641ab8214e68595 inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bd106b4531b69a0a6a2505ea3a32fb inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a06bd106b4531b69a0a6a2505ea3a32fb">Transform</a> ()=default</td></tr>
+<tr class="separator:a06bd106b4531b69a0a6a2505ea3a32fb inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de4a982a40cefa822a98d36668f936e inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a1de4a982a40cefa822a98d36668f936e">Transform</a> (<a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a> numberOfParameters)</td></tr>
+<tr class="separator:a1de4a982a40cefa822a98d36668f936e inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29079e5f8f02c4f9dafbf9756480de61 inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a29079e5f8f02c4f9dafbf9756480de61">~Transform</a> () override=default</td></tr>
+<tr class="separator:a29079e5f8f02c4f9dafbf9756480de61 inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1TransformBaseTemplate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1TransformBaseTemplate')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1TransformBaseTemplate.html">itk::TransformBaseTemplate&lt; double &gt;</a></td></tr>
+<tr class="memitem:a327cc03dc55a012417e07df55d9ca227 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a327cc03dc55a012417e07df55d9ca227">TransformBaseTemplate</a> ()=default</td></tr>
+<tr class="separator:a327cc03dc55a012417e07df55d9ca227 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ee27a486b0b0b34d9d566ee0af9615 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a92ee27a486b0b0b34d9d566ee0af9615">~TransformBaseTemplate</a> () override=default</td></tr>
+<tr class="separator:a92ee27a486b0b0b34d9d566ee0af9615 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
+<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
+<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
+<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
+<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
+<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
+<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a3fdbb06f6862e0ba58cfb94fa7325945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a8a5e057b4cffb3bb060d83cbb8cd2255">ModifiedTimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3fdbb06f6862e0ba58cfb94fa7325945">m_LocalParametersUpdateTime</a></td></tr>
+<tr class="separator:a3fdbb06f6862e0ba58cfb94fa7325945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ee0d8f52051adea8d3c0cb5a2cf6c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a15ee0d8f52051adea8d3c0cb5a2cf6c0">m_NumberOfLocalParameters</a></td></tr>
+<tr class="separator:a15ee0d8f52051adea8d3c0cb5a2cf6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3fa1391bd38ccabc442ca730733f55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MultiTransform.html#ae5d903e6a190471a5e507b67fb1ab8d7">TransformQueueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiTransform.html#a3a3fa1391bd38ccabc442ca730733f55">m_TransformQueue</a></td></tr>
+<tr class="separator:a3a3fa1391bd38ccabc442ca730733f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1Transform"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1Transform')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1Transform.html">itk::Transform&lt; double, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a82aac3ea12286a857c2291ee26aa2eab inherit pro_attribs_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a82aac3ea12286a857c2291ee26aa2eab">m_FixedParameters</a></td></tr>
+<tr class="separator:a82aac3ea12286a857c2291ee26aa2eab inherit pro_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d2ae39eaeffc74c87c2bc4d75f86ee inherit pro_attribs_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a36d2ae39eaeffc74c87c2bc4d75f86ee">m_Parameters</a></td></tr>
+<tr class="separator:a36d2ae39eaeffc74c87c2bc4d75f86ee inherit pro_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
+<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -480,50 +533,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Transform"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Transform')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Transform.html">itk::Transform&lt; double, 3, 3 &gt;</a></td></tr>
-<tr class="memitem:aa07bd9bd490b6e3ff479f7a7b697b50f inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aa07bd9bd490b6e3ff479f7a7b697b50f">InternalClone</a> () const override</td></tr>
-<tr class="separator:aa07bd9bd490b6e3ff479f7a7b697b50f inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06bd106b4531b69a0a6a2505ea3a32fb inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a06bd106b4531b69a0a6a2505ea3a32fb">Transform</a> ()=default</td></tr>
-<tr class="separator:a06bd106b4531b69a0a6a2505ea3a32fb inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de4a982a40cefa822a98d36668f936e inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a1de4a982a40cefa822a98d36668f936e">Transform</a> (<a class="el" href="classitk_1_1TransformBaseTemplate.html#a338555cd226e2d8d85e6ffeff1e59c09">NumberOfParametersType</a> numberOfParameters)</td></tr>
-<tr class="separator:a1de4a982a40cefa822a98d36668f936e inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29079e5f8f02c4f9dafbf9756480de61 inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a29079e5f8f02c4f9dafbf9756480de61">~Transform</a> () override=default</td></tr>
-<tr class="separator:a29079e5f8f02c4f9dafbf9756480de61 inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec2b699bcc395414f641ab8214e68595 inherit pro_methods_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Transform.html#a0e073c03e6b525475d6eded797f92368">OutputDiffusionTensor3DType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#aec2b699bcc395414f641ab8214e68595">PreservationOfPrincipalDirectionDiffusionTensor3DReorientation</a> (const <a class="el" href="classitk_1_1Transform.html#a69a0903820f604b22dd9a805492741e8">InputDiffusionTensor3DType</a> &amp;, const <a class="el" href="classitk_1_1Transform.html#a7ff0cb24e44cf9fcb0d3ad6d3d8d06af">InverseJacobianPositionType</a> &amp;) const</td></tr>
-<tr class="separator:aec2b699bcc395414f641ab8214e68595 inherit pro_methods_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1TransformBaseTemplate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1TransformBaseTemplate')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1TransformBaseTemplate.html">itk::TransformBaseTemplate&lt; double &gt;</a></td></tr>
-<tr class="memitem:a327cc03dc55a012417e07df55d9ca227 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a327cc03dc55a012417e07df55d9ca227">TransformBaseTemplate</a> ()=default</td></tr>
-<tr class="separator:a327cc03dc55a012417e07df55d9ca227 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ee27a486b0b0b34d9d566ee0af9615 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a92ee27a486b0b0b34d9d566ee0af9615">~TransformBaseTemplate</a> () override=default</td></tr>
-<tr class="separator:a92ee27a486b0b0b34d9d566ee0af9615 inherit pro_methods_classitk_1_1TransformBaseTemplate"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
-<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
-<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
-<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
-<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
-<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
-<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1Transform"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1Transform')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1Transform.html">itk::Transform&lt; double, 3, 3 &gt;</a></td></tr>
-<tr class="memitem:a36d2ae39eaeffc74c87c2bc4d75f86ee inherit pro_attribs_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a36d2ae39eaeffc74c87c2bc4d75f86ee">m_Parameters</a></td></tr>
-<tr class="separator:a36d2ae39eaeffc74c87c2bc4d75f86ee inherit pro_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82aac3ea12286a857c2291ee26aa2eab inherit pro_attribs_classitk_1_1Transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Transform.html#a82aac3ea12286a857c2291ee26aa2eab">m_FixedParameters</a></td></tr>
-<tr class="separator:a82aac3ea12286a857c2291ee26aa2eab inherit pro_attribs_classitk_1_1Transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
-<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TParametersValueType = double, unsigned int NDimensions = 3, unsigned int NSubDimensions = NDimensions&gt;<br />
@@ -759,7 +768,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 </div>
 </div>
@@ -911,7 +919,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 </div>
 </div>
@@ -1111,7 +1118,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 </div>
 </div>
@@ -1139,7 +1145,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 </div>
 </div>
@@ -1167,7 +1172,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 </div>
 </div>
@@ -1369,7 +1373,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1CompositeTransform.html#a5c5d6aa25942e1189372c7fb0861762b">itk::CompositeTransform&lt; TParametersValueType, NDimensions &gt;</a>.</p>
 
@@ -1401,7 +1404,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1CompositeTransform.html#a5dec65524baf4c5a6a23902c696154d3">itk::CompositeTransform&lt; TParametersValueType, NDimensions &gt;</a>.</p>
 
@@ -1475,7 +1477,8 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">itk::Object</a>.</p>
 
@@ -1506,7 +1509,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1CompositeTransform.html#aefffdb194993dcc8dcf749314fc79309">itk::CompositeTransform&lt; TParametersValueType, NDimensions &gt;</a>.</p>
 
@@ -1539,7 +1541,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1CompositeTransform.html#ac63f0f2dee32fdd6a3b35b47ba08b843">itk::CompositeTransform&lt; TParametersValueType, NDimensions &gt;</a>.</p>
 
@@ -1592,7 +1593,7 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
           <td class="memname">void <a class="el" href="classitk_1_1MultiTransform.html">itk::MultiTransform</a>&lt; TParametersValueType, NDimensions, NSubDimensions &gt;::SetFixedParameters </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a6a8714f29ddf32563ad67f8a0157b854">FixedParametersType</a> &amp;&#160;</td>
-          <td class="paramname"><em>inputParameters</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1602,7 +1603,7 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
+<p>Set the fixed parameters. </p>
 
 <p>Implements <a class="el" href="classitk_1_1TransformBaseTemplate.html#a20c6792841fc887181b0306ff2d43aef">itk::TransformBaseTemplate&lt; double &gt;</a>.</p>
 
@@ -1623,7 +1624,7 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
           <td class="memname">void <a class="el" href="classitk_1_1MultiTransform.html">itk::MultiTransform</a>&lt; TParametersValueType, NDimensions, NSubDimensions &gt;::SetParameters </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1TransformBaseTemplate.html#a01529871a7df678104279d9aed35b4cf">ParametersType</a> &amp;&#160;</td>
-          <td class="paramname"><em>inputParameters</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1633,7 +1634,7 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
+<p>Set the transformation parameters and update internal transformation. </p>
 
 <p>Implements <a class="el" href="classitk_1_1TransformBaseTemplate.html#a8c1e31432a6ec355e5eba42c20a17cf1">itk::TransformBaseTemplate&lt; double &gt;</a>.</p>
 
@@ -1729,7 +1730,6 @@ template&lt;typename TParametersValueType  = double, unsigned int NDimensions = 
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> container object. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiTransform_8h_source.html#l00353">353</a> of file <a class="el" href="itkMultiTransform_8h_source.html">itkMultiTransform.h</a>.</p>
 

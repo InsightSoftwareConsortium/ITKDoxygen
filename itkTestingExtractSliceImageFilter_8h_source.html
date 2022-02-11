@@ -117,7 +117,6 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> std::ostream &amp;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="namespaceitk_1_1Testing.html#a05df95dee3436fdb43de2cdf27473288">operator&lt;&lt;</a>(std::ostream &amp; out, <span class="keyword">const</span> <a class="code" href="classitk_1_1Testing_1_1ExtractSliceImageFilterEnums.html#a5524417e7ae3747d21da27f1a0aec05a">ExtractSliceImageFilterEnums::TestExtractSliceImageFilterCollapseStrategy</a> value);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TInputImage, <span class="keyword">typename</span> TOutputImage&gt;</div>
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classitk_1_1Testing_1_1ExtractSliceImageFilter.html">  108</a></span>&#160;<span class="keyword">class </span>ITK_TEMPLATE_EXPORT <a class="code" href="classitk_1_1Testing_1_1ExtractSliceImageFilter.html">ExtractSliceImageFilter</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>&lt;TOutputImage&gt;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
@@ -177,7 +176,6 @@ $(function() {
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        itkExceptionMacro(&lt;&lt; <span class="stringliteral">&quot;Invalid Strategy Chosen for itk::ExtractSliceImageFilter&quot;</span>);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    this-&gt;m_DirectionCollaspeStrategy = choosenStrategy;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    this-&gt;Modified();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
@@ -213,13 +211,11 @@ $(function() {
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  SetExtractionRegion(<a class="code" href="classitk_1_1Testing_1_1ExtractSliceImageFilter.html#ae79df5990c04d76be51c05aa8a0ddfcd">InputImageRegionType</a> extractRegion);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  itkGetConstMacro(ExtractionRegion, <a class="code" href="classitk_1_1Testing_1_1ExtractSliceImageFilter.html#ae79df5990c04d76be51c05aa8a0ddfcd">InputImageRegionType</a>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keyword">using</span> Superclass::SetInput;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  SetInput(<span class="keyword">const</span> TInputImage * input);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keyword">const</span> TInputImage *</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  GetInput() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#ifdef ITK_USE_CONCEPT_CHECKING</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="comment">// Begin concept checking</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="itkConceptChecking_8h.html#a009eae6c305d9c390972159815e6a710">itkConceptMacro</a>(InputCovertibleToOutputCheck, (<a class="code" href="structitk_1_1Concept_1_1Convertible.html">Concept::Convertible&lt;InputImagePixelType, OutputImagePixelType&gt;</a>));</div>

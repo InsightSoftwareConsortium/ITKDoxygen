@@ -174,7 +174,6 @@ $(function() {
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  itkSetGetDecoratedInputMacro(HistogramBinMinimum, <a class="code" href="classitk_1_1Statistics_1_1SampleToHistogramFilter.html#a2dc9301509f89c949b77631dd0c043a7">HistogramMeasurementVectorType</a>);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  itkSetGetDecoratedInputMacro(HistogramBinMaximum, <a class="code" href="classitk_1_1Statistics_1_1SampleToHistogramFilter.html#a2dc9301509f89c949b77631dd0c043a7">HistogramMeasurementVectorType</a>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  itkSetGetDecoratedInputMacro(AutoMinimumMaximum, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
@@ -191,7 +190,6 @@ $(function() {
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keyword">using</span> Superclass::MakeOutput;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="classitk_1_1SmartPointer.html">DataObjectPointer</a></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  MakeOutput(<a class="code" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">// Where the histogram is actually computed</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  GenerateData() <span class="keyword">override</span>;</div>
@@ -204,7 +202,6 @@ $(function() {
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keyword">auto</span> fromMax = <span class="keyword">static_cast&lt;</span><a class="code" href="classitk_1_1Statistics_1_1SampleToHistogramFilter.html#ad9f2574736d16f7ffedec5604a82f6af">MeasurementType</a><span class="keyword">&gt;</span>(<a class="code" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">NumericTraits&lt;HistogramMeasurementType&gt;::max</a>());</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keyword">auto</span> fromMin = <span class="keyword">static_cast&lt;</span><a class="code" href="classitk_1_1Statistics_1_1SampleToHistogramFilter.html#ad9f2574736d16f7ffedec5604a82f6af">MeasurementType</a><span class="keyword">&gt;</span>(<a class="code" href="classitk_1_1NumericTraits.html#a40826e6b55e0fec2457fed6075d9e1f1">NumericTraits&lt;HistogramMeasurementType&gt;::min</a>());</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">if</span> (from &gt;= fromMax)</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">NumericTraits&lt;HistogramMeasurementType&gt;::max</a>();</div>

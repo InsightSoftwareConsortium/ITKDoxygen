@@ -132,20 +132,19 @@ $(function() {
 <div class="line">  : <span class="keyword">public</span> <a name="_a1"></a><a class="code" href="classitk_1_1FunctionBase.html">itk::FunctionBase</a>&lt;MeasurementVectorType, double&gt;</div>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">using</span> Self = ExampleWeightFunction;</div>
-<div class="line">  <span class="keyword">using</span> Superclass = <a class="code" href="classitk_1_1FunctionBase.html">itk::FunctionBase&lt;MeasurementVectorType, double&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> Pointer = <a name="_a2"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> ConstPointer = <a name="_a3"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a name="_a2"></a><a class="code" href="classAddImageFilter.html">Self</a> = ExampleWeightFunction;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> = <a class="code" href="classitk_1_1FunctionBase.html">itk::FunctionBase&lt;MeasurementVectorType, double&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = <a name="_a3"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;Self&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = <a name="_a4"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt;const Self&gt;</a>;</div>
 <div class="line"> </div>
 <div class="line">  itkTypeMacro(ExampleWeightFunction, FunctionBase);</div>
-<div class="line">  itkNewMacro(Self);</div>
-<div class="line"> </div>
+<div class="line">  itkNewMacro(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
 <div class="line">  <span class="keyword">using</span> InputType = MeasurementVectorType;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> OutputType = double;</div>
 <div class="line"> </div>
 <div class="line">  OutputType</div>
-<div class="line">  <a name="a4"></a><a class="code" href="classitk_1_1FunctionBase.html#ab972f824813df0217d9c5053bbc18681">Evaluate</a>(<span class="keyword">const</span> InputType &amp; input)<span class="keyword"> const override</span></div>
+<div class="line">  <a name="a5"></a><a class="code" href="classitk_1_1FunctionBase.html#ab972f824813df0217d9c5053bbc18681">Evaluate</a>(<span class="keyword">const</span> InputType &amp; input)<span class="keyword"> const override</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">if</span> (input[0] &lt; 3.0)</div>
 <div class="line">    {</div>
@@ -156,7 +155,6 @@ $(function() {
 <div class="line">      <span class="keywordflow">return</span> 0.01;</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">protected</span>:</div>
 <div class="line">  ExampleWeightFunction() = <span class="keywordflow">default</span>;</div>
 <div class="line">  ~ExampleWeightFunction() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
@@ -174,8 +172,8 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> SampleType = <a name="_a5"></a><a class="code" href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample&lt;MeasurementVectorType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> sample = SampleType::New();</div>
+<div class="line">  <span class="keyword">using</span> SampleType = <a name="_a6"></a><a class="code" href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample&lt;MeasurementVectorType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> sample = <a name="a7"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SampleType::New</a>();</div>
 <div class="line">  sample-&gt;SetMeasurementVectorSize(3);</div>
 <div class="line">  MeasurementVectorType mv;</div>
 <div class="line">  mv[0] = 1.0;</div>
@@ -221,14 +219,14 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> WeightedMeanAlgorithmType =</div>
-<div class="line">    <a name="_a6"></a><a class="code" href="classitk_1_1Statistics_1_1WeightedMeanSampleFilter.html">itk::Statistics::WeightedMeanSampleFilter&lt;SampleType&gt;</a>;</div>
+<div class="line">    <a name="_a8"></a><a class="code" href="classitk_1_1Statistics_1_1WeightedMeanSampleFilter.html">itk::Statistics::WeightedMeanSampleFilter&lt;SampleType&gt;</a>;</div>
 <div class="line"> </div>
 <div class="line">  WeightedMeanAlgorithmType::WeightArrayType weightArray(sample-&gt;Size());</div>
 <div class="line">  weightArray.Fill(0.5);</div>
 <div class="line">  weightArray[2] = 0.01;</div>
 <div class="line">  weightArray[4] = 0.01;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> weightedMeanAlgorithm = WeightedMeanAlgorithmType::New();</div>
+<div class="line">  <span class="keyword">auto</span> weightedMeanAlgorithm = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">WeightedMeanAlgorithmType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  weightedMeanAlgorithm-&gt;SetInput(sample);</div>
 <div class="line">  weightedMeanAlgorithm-&gt;SetWeights(weightArray);</div>
@@ -238,9 +236,9 @@ $(function() {
 <div class="line">            &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> WeightedCovarianceAlgorithmType =</div>
-<div class="line">    <a name="_a7"></a><a class="code" href="classitk_1_1Statistics_1_1WeightedCovarianceSampleFilter.html">itk::Statistics::WeightedCovarianceSampleFilter&lt;SampleType&gt;</a>;</div>
+<div class="line">    <a name="_a9"></a><a class="code" href="classitk_1_1Statistics_1_1WeightedCovarianceSampleFilter.html">itk::Statistics::WeightedCovarianceSampleFilter&lt;SampleType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> weightedCovarianceAlgorithm = WeightedCovarianceAlgorithmType::New();</div>
+<div class="line">  <span class="keyword">auto</span> weightedCovarianceAlgorithm = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">WeightedCovarianceAlgorithmType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  weightedCovarianceAlgorithm-&gt;SetInput(sample);</div>
 <div class="line">  weightedCovarianceAlgorithm-&gt;SetWeights(weightArray);</div>
@@ -263,7 +261,7 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">auto</span> weightFunction = ExampleWeightFunction::New();</div>
+<div class="line">  <span class="keyword">auto</span> weightFunction = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ExampleWeightFunction::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  weightedMeanAlgorithm-&gt;SetWeightingFunction(weightFunction);</div>
 <div class="line">  weightedMeanAlgorithm-&gt;Update();</div>
@@ -287,6 +285,8 @@ $(function() {
 </div><!-- fragment --> </div><!-- contents -->
 <div class="ttc" id="aclassitk_1_1Statistics_1_1WeightedCovarianceSampleFilter_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1WeightedCovarianceSampleFilter.html">itk::Statistics::WeightedCovarianceSampleFilter</a></div><div class="ttdoc">Calculates the covariance matrix of the target sample data. where each measurement vector has an asso...</div><div class="ttdef"><b>Definition:</b> <a href="itkWeightedCovarianceSampleFilter_8h_source.html#l00044">itkWeightedCovarianceSampleFilter.h:44</a></div></div>
 <div class="ttc" id="aclassitk_1_1FunctionBase_html_ab972f824813df0217d9c5053bbc18681"><div class="ttname"><a href="classitk_1_1FunctionBase.html#ab972f824813df0217d9c5053bbc18681">itk::FunctionBase::Evaluate</a></div><div class="ttdeci">virtual OutputType Evaluate(const InputType &amp;input) const =0</div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="aclassitk_1_1Vector_html"><div class="ttname"><a href="classitk_1_1Vector.html">itk::Vector</a></div><div class="ttdoc">A templated class holding a n-Dimensional vector.</div><div class="ttdef"><b>Definition:</b> <a href="itkVector_8h_source.html#l00062">itkVector.h:62</a></div></div>
 <div class="ttc" id="aclassitk_1_1Statistics_1_1ListSample_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample</a></div><div class="ttdoc">This class is the native implementation of the a Sample with an STL container.</div><div class="ttdef"><b>Definition:</b> <a href="itkListSample_8h_source.html#l00051">itkListSample.h:51</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
@@ -296,6 +296,9 @@ $(function() {
 <div class="ttc" id="aitkVector_8h_html"><div class="ttname"><a href="itkVector_8h.html">itkVector.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1Statistics_1_1WeightedMeanSampleFilter_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1WeightedMeanSampleFilter.html">itk::Statistics::WeightedMeanSampleFilter</a></div><div class="ttdoc">Given a sample where each measurement vector has associated weight value, this filter computes the sa...</div><div class="ttdef"><b>Definition:</b> <a href="itkWeightedMeanSampleFilter_8h_source.html#l00043">itkWeightedMeanSampleFilter.h:43</a></div></div>
 <div class="ttc" id="aitkWeightedCovarianceSampleFilter_8h_html"><div class="ttname"><a href="itkWeightedCovarianceSampleFilter_8h.html">itkWeightedCovarianceSampleFilter.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00089">itkAddImageFilter.h:89</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

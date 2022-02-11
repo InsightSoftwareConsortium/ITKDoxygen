@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1VTKImageImport.html">VTKImageImport</a>, <a class="code" href="classitk_1_1ImageSource.html">ImageSource</a>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#ab95355f2d44c359a7137037af82042f3">   74</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> = TOutputImage;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a6878af946131b243dbaf821c87611c7e">   75</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> OutputImageType::Pointer;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a6878af946131b243dbaf821c87611c7e">   75</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a9a8c35108ace582fd4744f87af77eedb">   76</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a9a8c35108ace582fd4744f87af77eedb">OutputPixelType</a> = <span class="keyword">typename</span> OutputImageType::PixelType;</div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a89ae6f966a263644d5d49a708f101f23">   77</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a89ae6f966a263644d5d49a708f101f23">OutputSizeType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#aea16424ec17542804734482565dc4572">OutputImageType::SizeType</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a4271fb4d117d3205cdfa78cdb797471c">   78</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a4271fb4d117d3205cdfa78cdb797471c">OutputIndexType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">OutputImageType::IndexType</a>;</div>
@@ -145,19 +145,14 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a0a404df503d84099629b93b0fd1230ce">   95</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a0a404df503d84099629b93b0fd1230ce">UpdateDataCallbackType</a> = void (*)(<span class="keywordtype">void</span> *);</div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#ac3315856471b9ae4abbe75cc954ea85f">   96</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#ac3315856471b9ae4abbe75cc954ea85f">DataExtentCallbackType</a> = <span class="keywordtype">int</span> * (*)(<span class="keywordtype">void</span> *);</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a0fd08f122eb7979e34fd84ca37dda8e0">   97</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a0fd08f122eb7979e34fd84ca37dda8e0">BufferPointerCallbackType</a> = <span class="keywordtype">void</span> * (*)(<span class="keywordtype">void</span> *);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#a2e6448796e7a18cf86c89d04b34454ae">  101</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#a2e6448796e7a18cf86c89d04b34454ae">FloatSpacingCallbackType</a> = <span class="keywordtype">float</span> * (*)(<span class="keywordtype">void</span> *);</div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classitk_1_1VTKImageImport.html#abe58e7fb5e1a219cba3a9900a33a2efb">  102</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1VTKImageImport.html#abe58e7fb5e1a219cba3a9900a33a2efb">FloatOriginCallbackType</a> = <span class="keywordtype">float</span> * (*)(<span class="keywordtype">void</span> *);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  itkSetMacro(UpdateInformationCallback, <a class="code" href="classitk_1_1VTKImageImport.html#adf77e5db2b6b117af2a7fe8e010e24bc">UpdateInformationCallbackType</a>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  itkGetConstMacro(UpdateInformationCallback, <a class="code" href="classitk_1_1VTKImageImport.html#adf77e5db2b6b117af2a7fe8e010e24bc">UpdateInformationCallbackType</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  itkSetMacro(PipelineModifiedCallback, <a class="code" href="classitk_1_1VTKImageImport.html#a81c18e5d999eb33084bc22ed2b930916">PipelineModifiedCallbackType</a>);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  itkGetConstMacro(PipelineModifiedCallback, <a class="code" href="classitk_1_1VTKImageImport.html#a81c18e5d999eb33084bc22ed2b930916">PipelineModifiedCallbackType</a>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  itkSetMacro(WholeExtentCallback, <a class="code" href="classitk_1_1VTKImageImport.html#aeb2c39b6bcea847658bbbcc7a0e7b7c8">WholeExtentCallbackType</a>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  itkGetConstMacro(WholeExtentCallback, <a class="code" href="classitk_1_1VTKImageImport.html#aeb2c39b6bcea847658bbbcc7a0e7b7c8">WholeExtentCallbackType</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  itkSetMacro(SpacingCallback, <a class="code" href="classitk_1_1VTKImageImport.html#a808a6ba7ec2e5ee40ee2a610fd8ec2e3">SpacingCallbackType</a>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  itkGetConstMacro(SpacingCallback, <a class="code" href="classitk_1_1VTKImageImport.html#a808a6ba7ec2e5ee40ee2a610fd8ec2e3">SpacingCallbackType</a>);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  itkSetMacro(FloatSpacingCallback, <a class="code" href="classitk_1_1VTKImageImport.html#a2e6448796e7a18cf86c89d04b34454ae">FloatSpacingCallbackType</a>);</div>
@@ -167,7 +162,6 @@ $(function() {
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    this-&gt;SetFloatSpacingCallback(f);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  itkSetMacro(OriginCallback, OriginCallbackType);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  itkGetConstMacro(OriginCallback, OriginCallbackType);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  itkSetMacro(FloatOriginCallback, FloatOriginCallbackType);</div>
@@ -177,31 +171,22 @@ $(function() {
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    this-&gt;SetFloatOriginCallback(f);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  itkSetMacro(DirectionCallback, DirectionCallbackType);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  itkGetConstMacro(DirectionCallback, DirectionCallbackType);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  itkSetMacro(ScalarTypeCallback, ScalarTypeCallbackType);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  itkGetConstMacro(ScalarTypeCallback, ScalarTypeCallbackType);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  itkSetMacro(NumberOfComponentsCallback, NumberOfComponentsCallbackType);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  itkGetConstMacro(NumberOfComponentsCallback, NumberOfComponentsCallbackType);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  itkSetMacro(PropagateUpdateExtentCallback, PropagateUpdateExtentCallbackType);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  itkGetConstMacro(PropagateUpdateExtentCallback, PropagateUpdateExtentCallbackType);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  itkSetMacro(UpdateDataCallback, UpdateDataCallbackType);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  itkGetConstMacro(UpdateDataCallback, UpdateDataCallbackType);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  itkSetMacro(DataExtentCallback, DataExtentCallbackType);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  itkGetConstMacro(DataExtentCallback, DataExtentCallbackType);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  itkSetMacro(BufferPointerCallback, BufferPointerCallbackType);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  itkGetConstMacro(BufferPointerCallback, BufferPointerCallbackType);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="itkVTKImageImport_8h.html#af58723fdecfe85bb9705f367eb724be2">itkSetMacro2</a>(CallbackUserData, <span class="keywordtype">void</span> *);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  itkGetConstMacro(CallbackUserData, <span class="keywordtype">void</span> *);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="classitk_1_1VTKImageImport.html">VTKImageImport</a>();</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  ~<a class="code" href="classitk_1_1VTKImageImport.html">VTKImageImport</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
@@ -247,6 +232,7 @@ $(function() {
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif // itkVTKImageImport_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1VTKImageImport_html_a9a087c5c8d13c429b31784af3e002c5c"><div class="ttname"><a href="classitk_1_1VTKImageImport.html#a9a087c5c8d13c429b31784af3e002c5c">itk::VTKImageImport::m_BufferPointerCallback</a></div><div class="ttdeci">BufferPointerCallbackType m_BufferPointerCallback</div><div class="ttdef"><b>Definition:</b> <a href="itkVTKImageImport_8h_source.html#l00217">itkVTKImageImport.h:217</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageSource_html_aa5010ce3a8cd7d8d1bc40c4ae211464e"><div class="ttname"><a href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">itk::ImageSource::OutputImagePointer</a></div><div class="ttdeci">typename OutputImageType::Pointer OutputImagePointer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageSource_8h_source.html#l00091">itkImageSource.h:91</a></div></div>
 <div class="ttc" id="aitkImageSource_8h_html"><div class="ttname"><a href="itkImageSource_8h.html">itkImageSource.h</a></div></div>

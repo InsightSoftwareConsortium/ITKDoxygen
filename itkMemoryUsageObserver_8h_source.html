@@ -153,7 +153,6 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // __linux__</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#if defined(__APPLE__)</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT MacOSXMemoryUsageObserver : <span class="keyword">public</span> MemoryUsageObserverBase</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
@@ -164,7 +163,6 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif // Mac OS X</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#if defined(__SUNPRO_CC) || defined(__sun__)</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT SunSolarisMemoryUsageObserver : <span class="keyword">public</span> MemoryUsageObserverBase</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
@@ -175,7 +173,6 @@ $(function() {
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif // Sun Solaris</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#if !defined(WIN32) &amp;&amp; !defined(_WIN32)</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classitk_1_1SysResourceMemoryUsageObserver.html">  121</a></span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT <a class="code" href="classitk_1_1SysResourceMemoryUsageObserver.html">SysResourceMemoryUsageObserver</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1MemoryUsageObserverBase.html">MemoryUsageObserverBase</a></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
@@ -184,7 +181,6 @@ $(function() {
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="classitk_1_1MemoryUsageObserverBase.html#a642fdfd459ec0e609676acf573999689">MemoryLoadType</a></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  GetMemoryUsage() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#  if defined(ITK_HAS_MALLINFO) || defined(ITK_HAS_MALLINFO2)</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">class </span>ITKCommon_EXPORT MallinfoMemoryUsageObserver : <span class="keyword">public</span> <a class="code" href="classitk_1_1MemoryUsageObserverBase.html">MemoryUsageObserverBase</a></div>
@@ -197,7 +193,6 @@ $(function() {
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#  endif // Mallinfo</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif   // !defined(WIN32) &amp;&amp; !defined(_WIN32)</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">/* \class MemoryUsageObserver</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> * The best MemoryUsageObserver has been chosen for each OS.</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> * However, SysResourceMemoryUsageObserver is far from being accurate. Other</span></div>

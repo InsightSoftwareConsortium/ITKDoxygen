@@ -100,7 +100,6 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TParametersValueType = <span class="keywordtype">double</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> NDimensions = 3&gt;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Number of dimensions in the input space</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classitk_1_1AffineTransform.html">  101</a></span>&#160;<span class="keyword">class </span>ITK_TEMPLATE_EXPORT <a class="code" href="classitk_1_1AffineTransform.html">AffineTransform</a></div>
@@ -145,7 +144,7 @@ $(function() {
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> Superclass::TranslationType;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classitk_1_1AffineTransform.html#a7c7ab1df9fd69eacf2b69a98a182d1d0">  149</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a7c7ab1df9fd69eacf2b69a98a182d1d0">InverseTransformBaseType</a> = <span class="keyword">typename</span> Superclass::InverseTransformBaseType;</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">  150</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">InverseTransformBasePointer</a> = <span class="keyword">typename</span> InverseTransformBaseType::Pointer;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">  150</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1AffineTransform.html#a99b6cb0dbf03d4133982281aad383af5">InverseTransformBasePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InverseTransformBaseType::Pointer</a>;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  Translate(<span class="keyword">const</span> <a class="code" href="classitk_1_1Vector.html">OutputVectorType</a> &amp; trans, <span class="keywordtype">bool</span> pre = <span class="keyword">false</span>);</div>
@@ -158,7 +157,6 @@ $(function() {
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  Rotate(<span class="keywordtype">int</span> axis1, <span class="keywordtype">int</span> axis2, TParametersValueType angle, <span class="keywordtype">bool</span> pre = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  Rotate2D(TParametersValueType angle, <span class="keywordtype">bool</span> pre = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
@@ -184,7 +182,6 @@ $(function() {
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="classitk_1_1AffineTransform.html">AffineTransform</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1Matrix.html">MatrixType</a> &amp; matrix, <span class="keyword">const</span> <a class="code" href="classitk_1_1Vector.html">OutputVectorType</a> &amp; offset);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="classitk_1_1AffineTransform.html">AffineTransform</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> parametersDimension);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <a class="code" href="classitk_1_1AffineTransform.html">AffineTransform</a>();</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  ~<a class="code" href="classitk_1_1AffineTransform.html">AffineTransform</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordtype">void</span></div>
@@ -199,6 +196,7 @@ $(function() {
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* itkAffineTransform_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1Vector_html"><div class="ttname"><a href="classitk_1_1Vector.html">itk::Vector&lt; double, Self::OutputSpaceDimension &gt;</a></div></div>
 <div class="ttc" id="aclassitk_1_1MatrixOffsetTransformBase_html"><div class="ttname"><a href="classitk_1_1MatrixOffsetTransformBase.html">itk::MatrixOffsetTransformBase</a></div><div class="ttdoc">Matrix and Offset transformation of a vector space (e.g. space coordinates)</div><div class="ttdef"><b>Definition:</b> <a href="itkMatrixOffsetTransformBase_8h_source.html#l00106">itkMatrixOffsetTransformBase.h:106</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>

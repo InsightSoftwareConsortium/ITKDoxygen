@@ -109,12 +109,12 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(SphereMeshSource);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">using</span> Self = SphereMeshSource;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">using</span> Superclass = MeshSource&lt;TOutputMesh&gt;;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">using</span> Pointer = SmartPointer&lt;Self&gt;;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">using</span> ConstPointer = SmartPointer&lt;const Self&gt;;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">using</span> <a class="code" href="classAddImageFilter.html">Self</a> = SphereMeshSource;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> = MeshSource&lt;TOutputMesh&gt;;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = SmartPointer&lt;Self&gt;;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = SmartPointer&lt;const Self&gt;;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  itkNewMacro(Self);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  itkNewMacro(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  itkTypeMacro(SphereMeshSource, MeshSource);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">using</span> OPointType = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">OutputMeshType::PointType</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">using</span> OPixelType = <span class="keyword">typename</span> OMeshTraits::PixelType;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">using</span> OutputMeshPointer = <span class="keyword">typename</span> OutputMeshType::Pointer;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">using</span> OutputMeshPointer = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputMeshType::Pointer</a>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">using</span> CellTraits = <span class="keyword">typename</span> OutputMeshType::CellTraits;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">using</span> PointsContainerPointer = <span class="keyword">typename</span> OutputMeshType::PointsContainerPointer;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">using</span> PointsContainer = <span class="keyword">typename</span> OutputMeshType::PointsContainer;</div>
@@ -135,7 +135,6 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  itkSetMacro(ResolutionX, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  itkSetMacro(ResolutionY, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  itkSetMacro(Center, OPointType);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  itkSetMacro(Scale, OPointType);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -159,13 +158,17 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  OPointType m_Scale;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a4e283d9983c57c5015a80d0b1d1cf09f"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">itk::GTest::TypedefsAndConstructors::Dimension2::PointType</a></div><div class="ttdeci">ImageBaseType::PointType PointType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00051">itkGTestTypedefsAndConstructors.h:51</a></div></div>
 <div class="ttc" id="aitkMeshSource_8h_html"><div class="ttname"><a href="itkMeshSource_8h.html">itkMeshSource.h</a></div></div>
 <div class="ttc" id="aitkMesh_8h_html"><div class="ttname"><a href="itkMesh_8h.html">itkMesh.h</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
 <div class="ttc" id="aitkDefaultStaticMeshTraits_8h_html"><div class="ttname"><a href="itkDefaultStaticMeshTraits_8h.html">itkDefaultStaticMeshTraits.h</a></div></div>
 <div class="ttc" id="aitkVector_8h_html"><div class="ttname"><a href="itkVector_8h.html">itkVector.h</a></div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
 <div class="ttc" id="aitkTriangleCell_8h_html"><div class="ttname"><a href="itkTriangleCell_8h.html">itkTriangleCell.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00089">itkAddImageFilter.h:89</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

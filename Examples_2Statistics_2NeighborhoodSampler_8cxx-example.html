@@ -139,7 +139,7 @@ $(function() {
 <div class="line">  <span class="keyword">using</span> MeasurementVectorType =</div>
 <div class="line">    <a name="_a0"></a><a class="code" href="classitk_1_1Vector.html">itk::Vector&lt;MeasurementType, MeasurementVectorLength&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> SampleType = <a name="_a1"></a><a class="code" href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample&lt;MeasurementVectorType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> sample = SampleType::New();</div>
+<div class="line">  <span class="keyword">auto</span> sample = <a name="a2"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SampleType::New</a>();</div>
 <div class="line">  sample-&gt;SetMeasurementVectorSize(MeasurementVectorLength);</div>
 <div class="line"> </div>
 <div class="line">  MeasurementVectorType mv;</div>
@@ -170,8 +170,8 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> SamplerType = <a name="_a2"></a><a class="code" href="classitk_1_1Statistics_1_1NeighborhoodSampler.html">itk::Statistics::NeighborhoodSampler&lt;SampleType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> sampler = SamplerType::New();</div>
+<div class="line">  <span class="keyword">using</span> SamplerType = <a name="_a3"></a><a class="code" href="classitk_1_1Statistics_1_1NeighborhoodSampler.html">itk::Statistics::NeighborhoodSampler&lt;SampleType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> sampler = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SamplerType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  sampler-&gt;SetInputSample(sample);</div>
 <div class="line">  SamplerType::CenterType center(MeasurementVectorLength);</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line">  sampler-&gt;SetRadius(&amp;radius);</div>
 <div class="line">  sampler-&gt;Update();</div>
 <div class="line"> </div>
-<div class="line">  SamplerType::OutputType::Pointer output = sampler-&gt;GetOutput();</div>
+<div class="line">  <a name="a4"></a><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">SamplerType::OutputType::Pointer</a> output = sampler-&gt;GetOutput();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -208,11 +208,13 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1Vector_html"><div class="ttname"><a href="classitk_1_1Vector.html">itk::Vector</a></div><div class="ttdoc">A templated class holding a n-Dimensional vector.</div><div class="ttdef"><b>Definition:</b> <a href="itkVector_8h_source.html#l00062">itkVector.h:62</a></div></div>
 <div class="ttc" id="aclassitk_1_1Statistics_1_1ListSample_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1ListSample.html">itk::Statistics::ListSample</a></div><div class="ttdoc">This class is the native implementation of the a Sample with an STL container.</div><div class="ttdef"><b>Definition:</b> <a href="itkListSample_8h_source.html#l00051">itkListSample.h:51</a></div></div>
 <div class="ttc" id="aitkListSample_8h_html"><div class="ttname"><a href="itkListSample_8h.html">itkListSample.h</a></div></div>
 <div class="ttc" id="aitkVector_8h_html"><div class="ttname"><a href="itkVector_8h.html">itkVector.h</a></div></div>
 <div class="ttc" id="aitkNeighborhoodSampler_8h_html"><div class="ttname"><a href="itkNeighborhoodSampler_8h.html">itkNeighborhoodSampler.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aclassitk_1_1Statistics_1_1NeighborhoodSampler_html"><div class="ttname"><a href="classitk_1_1Statistics_1_1NeighborhoodSampler.html">itk::Statistics::NeighborhoodSampler</a></div><div class="ttdoc">Generates a Subsample out of a Sample, based on a user-provided distance to a MeasurementVector.</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodSampler_8h_source.html#l00044">itkNeighborhoodSampler.h:44</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->

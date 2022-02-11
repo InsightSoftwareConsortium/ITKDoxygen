@@ -114,8 +114,8 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1FrequencyBandImageFilter.html">FrequencyBandImageFilter</a>, <a class="code" href="classitk_1_1UnaryFrequencyDomainFilter.html">UnaryFrequencyDomainFilter</a>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#a0e4609d3b869b0cef62a4e4974379f40">   71</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a0e4609d3b869b0cef62a4e4974379f40">ImageType</a> = TImageType;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#a1165ea14fc4524b5600cb8b619a39b54">   72</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a1165ea14fc4524b5600cb8b619a39b54">ImagePointer</a> = <span class="keyword">typename</span> ImageType::Pointer;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#aa068b0593196f8a6b230220fab613c18">   73</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#aa068b0593196f8a6b230220fab613c18">ImageConstPointer</a> = <span class="keyword">typename</span> ImageType::ConstPointer;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#a1165ea14fc4524b5600cb8b619a39b54">   72</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a1165ea14fc4524b5600cb8b619a39b54">ImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#aa068b0593196f8a6b230220fab613c18">   73</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#aa068b0593196f8a6b230220fab613c18">ImageConstPointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ImageType::ConstPointer</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#ad4416d0d03c67ca262cbdbff67f265a6">   74</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#ad4416d0d03c67ca262cbdbff67f265a6">IndexType</a> = <span class="keyword">typename</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">TImageType::IndexType</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#aa57ccaed654e881a9ea175294c6d8528">   75</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#aa57ccaed654e881a9ea175294c6d8528">PixelType</a> = <span class="keyword">typename</span> TImageType::PixelType;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#a090bcc994247906ee5a52b8fc077754e">   83</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a090bcc994247906ee5a52b8fc077754e">FrequencyIteratorType</a> = TFrequencyIterator;</div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">   84</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a> = <span class="keyword">typename</span> FrequencyIteratorType::FrequencyValueType;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/****** Frequency Threshold Getters/Setters *****/</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">  /****** Frequency Threshold Getters/Setters *****/</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  itkGetConstReferenceMacro(LowFrequencyThreshold, <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  itkSetMacro(LowFrequencyThreshold, <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a>);</div>
@@ -138,7 +138,6 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  itkSetMacro(HighFrequencyThreshold, <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  SetHighFrequencyThresholdInRadians(<span class="keyword">const</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a> &amp; freqHighInRadians);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  SetFrequencyThresholds(<span class="keyword">const</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a> &amp; freqLow, <span class="keyword">const</span> <a class="code" href="classitk_1_1FrequencyBandImageFilter.html#a5d2a5b5232fe8238e1b560a7a5723327">FrequencyValueType</a> &amp; freqHigh);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
@@ -149,15 +148,12 @@ $(function() {
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  itkSetMacro(PassLowFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  itkGetConstReferenceMacro(PassLowFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  itkBooleanMacro(PassLowFrequencyThreshold);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  itkSetMacro(PassHighFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  itkGetConstReferenceMacro(PassHighFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  itkBooleanMacro(PassHighFrequencyThreshold);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  itkSetMacro(PassBand, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  itkGetConstReferenceMacro(PassBand, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  itkBooleanMacro(PassBand);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  SetPassBand(<span class="keyword">const</span> <span class="keywordtype">bool</span> passLowThreshold, <span class="keyword">const</span> <span class="keywordtype">bool</span> passHighThreshold);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
@@ -167,16 +163,12 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  itkSetMacro(RadialBand, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  itkGetConstReferenceMacro(RadialBand, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  itkBooleanMacro(RadialBand);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  itkSetMacro(PassNegativeLowFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  itkGetConstReferenceMacro(PassNegativeLowFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  itkBooleanMacro(PassNegativeLowFrequencyThreshold);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  itkSetMacro(PassNegativeHighFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  itkGetConstReferenceMacro(PassNegativeHighFrequencyThreshold, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  itkBooleanMacro(PassNegativeHighFrequencyThreshold);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <a class="code" href="classitk_1_1FrequencyBandImageFilter.html">FrequencyBandImageFilter</a>();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordtype">void</span></div>
@@ -211,6 +203,8 @@ $(function() {
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="aclassitk_1_1FrequencyBandImageFilter_html"><div class="ttname"><a href="classitk_1_1FrequencyBandImageFilter.html">itk::FrequencyBandImageFilter</a></div><div class="ttdoc">Performs a frequency band filtering on a frequency domain image.</div><div class="ttdef"><b>Definition:</b> <a href="itkFrequencyBandImageFilter_8h_source.html#l00053">itkFrequencyBandImageFilter.h:53</a></div></div>
 <div class="ttc" id="aclassitk_1_1FrequencyBandImageFilter_html_ad4416d0d03c67ca262cbdbff67f265a6"><div class="ttname"><a href="classitk_1_1FrequencyBandImageFilter.html#ad4416d0d03c67ca262cbdbff67f265a6">itk::FrequencyBandImageFilter::IndexType</a></div><div class="ttdeci">typename TImageType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkFrequencyBandImageFilter_8h_source.html#l00074">itkFrequencyBandImageFilter.h:74</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>

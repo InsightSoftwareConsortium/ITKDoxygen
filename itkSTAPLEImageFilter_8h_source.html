@@ -121,15 +121,14 @@ $(function() {
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a61867f887f683eb46f4bddfd7e8e1529">  147</a></span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ImageDimension = TOutputImage::ImageDimension;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#ad29e0b12670aee44e4a9bb6dea212612">  150</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> = TInputImage;</div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a5d7023dfd7900d70daf5c5922427b58a">  151</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageToImageFilter.html#a7b4b2b6c36e69a757c4622c24c9e4540">InputImagePointer</a> = <span class="keyword">typename</span> InputImageType::Pointer;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a5d7023dfd7900d70daf5c5922427b58a">  151</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageToImageFilter.html#a7b4b2b6c36e69a757c4622c24c9e4540">InputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a4328d7afd603325a37562ffc2c255e56">  152</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> = TOutputImage;</div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a8c237468f805a8da4736a9e5a4a672fd">  153</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> OutputImageType::Pointer;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a8c237468f805a8da4736a9e5a4a672fd">  153</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a>;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> Superclass::OutputImageRegionType;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  itkSetMacro(ForegroundValue, <a class="code" href="classitk_1_1STAPLEImageFilter.html#ae42f11517d8d1a520d3f650f128c9155">InputPixelType</a>);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  itkGetConstMacro(ForegroundValue, <a class="code" href="classitk_1_1STAPLEImageFilter.html#ae42f11517d8d1a520d3f650f128c9155">InputPixelType</a>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;</div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#ab0c605b560b128e1e94cb5b222a1a3f3">  167</a></span>&#160;  <a class="code" href="classitk_1_1STAPLEImageFilter.html#ab0c605b560b128e1e94cb5b222a1a3f3">GetSpecificity</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">  </span>{</div>
@@ -151,7 +150,6 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> m_Sensitivity[i];</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classitk_1_1STAPLEImageFilter.html#a3633c090d82d025634e60f9396d2e869">  197</a></span>&#160;  <a class="code" href="classitk_1_1STAPLEImageFilter.html#a3633c090d82d025634e60f9396d2e869">GetSpecificity</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  {</div>
@@ -161,13 +159,10 @@ $(function() {
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> m_Specificity[i];</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  }</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  itkSetMacro(MaximumIterations, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  itkGetConstMacro(MaximumIterations, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  itkSetMacro(ConfidenceWeight, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  itkGetConstMacro(ConfidenceWeight, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  itkGetConstMacro(ElapsedIterations, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#ifdef ITK_USE_CONCEPT_CHECKING</span></div>
@@ -210,6 +205,7 @@ $(function() {
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1STAPLEImageFilter_html_a2c20956c5f7d61f101351e75a44dc158"><div class="ttname"><a href="classitk_1_1STAPLEImageFilter.html#a2c20956c5f7d61f101351e75a44dc158">itk::STAPLEImageFilter::OutputPixelType</a></div><div class="ttdeci">typename TOutputImage::PixelType OutputPixelType</div><div class="ttdef"><b>Definition:</b> <a href="itkSTAPLEImageFilter_8h_source.html#l00141">itkSTAPLEImageFilter.h:141</a></div></div>
 <div class="ttc" id="aclassitk_1_1STAPLEImageFilter_html_ae42f11517d8d1a520d3f650f128c9155"><div class="ttname"><a href="classitk_1_1STAPLEImageFilter.html#ae42f11517d8d1a520d3f650f128c9155">itk::STAPLEImageFilter::InputPixelType</a></div><div class="ttdeci">typename TInputImage::PixelType InputPixelType</div><div class="ttdef"><b>Definition:</b> <a href="itkSTAPLEImageFilter_8h_source.html#l00142">itkSTAPLEImageFilter.h:142</a></div></div>
 <div class="ttc" id="aclassitk_1_1STAPLEImageFilter_html_ab0c605b560b128e1e94cb5b222a1a3f3"><div class="ttname"><a href="classitk_1_1STAPLEImageFilter.html#ab0c605b560b128e1e94cb5b222a1a3f3">itk::STAPLEImageFilter::GetSpecificity</a></div><div class="ttdeci">const std::vector&lt; double &gt; &amp; GetSpecificity() const</div><div class="ttdef"><b>Definition:</b> <a href="itkSTAPLEImageFilter_8h_source.html#l00167">itkSTAPLEImageFilter.h:167</a></div></div>

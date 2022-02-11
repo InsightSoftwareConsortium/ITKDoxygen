@@ -75,6 +75,9 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1GPUKernelManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::GPUKernelManager Class Reference<div class="ingroups"><a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKGPUCommon.html">Module ITKGPUCommon</a></div></div>  </div>
@@ -128,16 +131,28 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f4695bf925a85f923156ad7b58837ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf3d9939575713637ec2e9e9a6c3856"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#aadf3d9939575713637ec2e9e9a6c3856">CreateKernel</a> (const char *kernelName)</td></tr>
 <tr class="separator:aadf3d9939575713637ec2e9e9a6c3856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0c3b518ea85383e8262e702fb37b9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a4f0c3b518ea85383e8262e702fb37b9a">GetCurrentCommandQueueID</a> () const</td></tr>
+<tr class="separator:a4f0c3b518ea85383e8262e702fb37b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ecd422285fb5ac05d8ffe956a447caa"><td class="memItemLeft" align="right" valign="top">cl_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a8ecd422285fb5ac05d8ffe956a447caa">GetDeviceInfo</a> (cl_kernel_work_group_info paramName, vcl_size_t argSize, void *argValue)</td></tr>
 <tr class="separator:a8ecd422285fb5ac05d8ffe956a447caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a583a2b66cc2feabbc1adc9d882cbf"><td class="memItemLeft" align="right" valign="top">cl_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a22a583a2b66cc2feabbc1adc9d882cbf">GetKernelWorkGroupInfo</a> (int kernelIdx, cl_kernel_work_group_info paramName, void *value)</td></tr>
 <tr class="separator:a22a583a2b66cc2feabbc1adc9d882cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70a3250d1936e52bb61cb0a422287bed"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a70a3250d1936e52bb61cb0a422287bed">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a70a3250d1936e52bb61cb0a422287bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d214aa3f20365380b3097de3dbfcf0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a78d214aa3f20365380b3097de3dbfcf0">LaunchKernel</a> (int kernelIdx, int dim, vcl_size_t *globalWorkSize, vcl_size_t *localWorkSize)</td></tr>
+<tr class="separator:a78d214aa3f20365380b3097de3dbfcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636cb470c297357e7e569ee1f3aa4dd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a636cb470c297357e7e569ee1f3aa4dd4">LaunchKernel1D</a> (int kernelIdx, vcl_size_t globalWorkSize, vcl_size_t localWorkSize)</td></tr>
+<tr class="separator:a636cb470c297357e7e569ee1f3aa4dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a872cc413f9fedbdf720e40bbb44ea5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2a872cc413f9fedbdf720e40bbb44ea5">LaunchKernel2D</a> (int kernelIdx, vcl_size_t globalWorkSizeX, vcl_size_t globalWorkSizeY, vcl_size_t localWorkSizeX, vcl_size_t localWorkSizeY)</td></tr>
+<tr class="separator:a2a872cc413f9fedbdf720e40bbb44ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b522c9412fdc182ce255a46c2ab37e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a1b522c9412fdc182ce255a46c2ab37e1">LaunchKernel3D</a> (int kernelIdx, vcl_size_t globalWorkSizeX, vcl_size_t globalWorkSizeY, vcl_size_t globalWorkSizeZ, vcl_size_t localWorkSizeX, vcl_size_t localWorkSizeY, vcl_size_t localWorkSizeZ)</td></tr>
+<tr class="separator:a1b522c9412fdc182ce255a46c2ab37e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc91a5bb80c5cd83e9d41c11ab0829a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#abc91a5bb80c5cd83e9d41c11ab0829a9">LoadProgramFromFile</a> (const char *filename, const char *cPreamble=&quot;&quot;)</td></tr>
 <tr class="separator:abc91a5bb80c5cd83e9d41c11ab0829a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339528a82f4ba75951f241410c7b1907"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a339528a82f4ba75951f241410c7b1907">LoadProgramFromString</a> (const char *cSource, const char *cPreamble=&quot;&quot;)</td></tr>
 <tr class="separator:a339528a82f4ba75951f241410c7b1907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511e955ea2f2284e0d3a8697dfcd7420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a511e955ea2f2284e0d3a8697dfcd7420">SetCurrentCommandQueue</a> (int queueid)</td></tr>
+<tr class="separator:a511e955ea2f2284e0d3a8697dfcd7420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f8a674bc5e184ffca02d3468e309031"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a3f8a674bc5e184ffca02d3468e309031">SetKernelArg</a> (int kernelIdx, cl_uint argIdx, vcl_size_t argSize, const void *argVal)</td></tr>
 <tr class="separator:a3f8a674bc5e184ffca02d3468e309031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2940081936e476a4fb9019bc2113d368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2940081936e476a4fb9019bc2113d368">SetKernelArgWithChar</a> (int kernelIdx, cl_uint argIdx, char argVal)</td></tr>
@@ -162,6 +177,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2879c9682f672cc5bb3055bb6ce62c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd14e540316e5cfaadf30c75d6547d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2dd14e540316e5cfaadf30c75d6547d7">SetKernelArgWithUShort</a> (int kernelIdx, cl_uint argIdx, unsigned short argVal)</td></tr>
 <tr class="separator:a2dd14e540316e5cfaadf30c75d6547d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memTemplParams" colspan="2">template&lt;typename TGPUImageDataManager &gt; </td></tr>
+<tr class="memitem:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a98bcca87f6c68fe9713fe6d8a0c48dd2">SetKernelArgWithImageAndBufferedRegion</a> (int kernelIdx, cl_uint &amp;argIdx, TGPUImageDataManager *manager)</td></tr>
+<tr class="separator:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a6ae67a0a04f90cd2498ed8a6bd2ef662 inherit pub_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a6ae67a0a04f90cd2498ed8a6bd2ef662">Clone</a> () const</td></tr>
 <tr class="separator:a6ae67a0a04f90cd2498ed8a6bd2ef662 inherit pub_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,45 +206,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e84a5c058c4ec6e660dfca30ad62cd"><td class="memItemLeft" align="right" valign="top">cl_program&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#ae7e84a5c058c4ec6e660dfca30ad62cd">m_Program</a></td></tr>
-<tr class="separator:ae7e84a5c058c4ec6e660dfca30ad62cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a58657d2b3f6b7d321a024287ec406"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1GPUContextManager.html">GPUContextManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a93a58657d2b3f6b7d321a024287ec406">m_Manager</a></td></tr>
-<tr class="separator:a93a58657d2b3f6b7d321a024287ec406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a545c447f7adaef029f302840f8ced573"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a545c447f7adaef029f302840f8ced573">m_CommandQueueId</a></td></tr>
-<tr class="separator:a545c447f7adaef029f302840f8ced573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70cda6d5eccd314e652eea18915d26cf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cl_kernel &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a70cda6d5eccd314e652eea18915d26cf">m_KernelContainer</a></td></tr>
-<tr class="separator:a70cda6d5eccd314e652eea18915d26cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeae17aacc6ed40bf53de152fd82746ae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="structitk_1_1GPUKernelManager_1_1KernelArgumentList.html">KernelArgumentList</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#aeae17aacc6ed40bf53de152fd82746ae">m_KernelArgumentReady</a></td></tr>
-<tr class="separator:aeae17aacc6ed40bf53de152fd82746ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memTemplParams" colspan="2">template&lt;typename TGPUImageDataManager &gt; </td></tr>
-<tr class="memitem:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a98bcca87f6c68fe9713fe6d8a0c48dd2">SetKernelArgWithImageAndBufferedRegion</a> (int kernelIdx, cl_uint &amp;argIdx, TGPUImageDataManager *manager)</td></tr>
-<tr class="separator:a98bcca87f6c68fe9713fe6d8a0c48dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78d214aa3f20365380b3097de3dbfcf0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a78d214aa3f20365380b3097de3dbfcf0">LaunchKernel</a> (int kernelIdx, int dim, vcl_size_t *globalWorkSize, vcl_size_t *localWorkSize)</td></tr>
-<tr class="separator:a78d214aa3f20365380b3097de3dbfcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a636cb470c297357e7e569ee1f3aa4dd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a636cb470c297357e7e569ee1f3aa4dd4">LaunchKernel1D</a> (int kernelIdx, vcl_size_t globalWorkSize, vcl_size_t localWorkSize)</td></tr>
-<tr class="separator:a636cb470c297357e7e569ee1f3aa4dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a872cc413f9fedbdf720e40bbb44ea5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2a872cc413f9fedbdf720e40bbb44ea5">LaunchKernel2D</a> (int kernelIdx, vcl_size_t globalWorkSizeX, vcl_size_t globalWorkSizeY, vcl_size_t localWorkSizeX, vcl_size_t localWorkSizeY)</td></tr>
-<tr class="separator:a2a872cc413f9fedbdf720e40bbb44ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b522c9412fdc182ce255a46c2ab37e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a1b522c9412fdc182ce255a46c2ab37e1">LaunchKernel3D</a> (int kernelIdx, vcl_size_t globalWorkSizeX, vcl_size_t globalWorkSizeY, vcl_size_t globalWorkSizeZ, vcl_size_t localWorkSizeX, vcl_size_t localWorkSizeY, vcl_size_t localWorkSizeZ)</td></tr>
-<tr class="separator:a1b522c9412fdc182ce255a46c2ab37e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a511e955ea2f2284e0d3a8697dfcd7420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a511e955ea2f2284e0d3a8697dfcd7420">SetCurrentCommandQueue</a> (int queueid)</td></tr>
-<tr class="separator:a511e955ea2f2284e0d3a8697dfcd7420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f0c3b518ea85383e8262e702fb37b9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a4f0c3b518ea85383e8262e702fb37b9a">GetCurrentCommandQueueID</a> () const</td></tr>
-<tr class="separator:a4f0c3b518ea85383e8262e702fb37b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c1e958aef053e0a765248cb65ecc855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2c1e958aef053e0a765248cb65ecc855">GPUKernelManager</a> ()</td></tr>
-<tr class="separator:a2c1e958aef053e0a765248cb65ecc855"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09656cfdd69ecdfa1388017aade5dbc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a09656cfdd69ecdfa1388017aade5dbc4">~GPUKernelManager</a> () override</td></tr>
-<tr class="separator:a09656cfdd69ecdfa1388017aade5dbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:aed6a8d54ae5e01f9330ec22b8a42d35c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#aed6a8d54ae5e01f9330ec22b8a42d35c">CheckArgumentReady</a> (int kernelIdx)</td></tr>
 <tr class="separator:aed6a8d54ae5e01f9330ec22b8a42d35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1e958aef053e0a765248cb65ecc855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a2c1e958aef053e0a765248cb65ecc855">GPUKernelManager</a> ()</td></tr>
+<tr class="separator:a2c1e958aef053e0a765248cb65ecc855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c408eb715d1791cc904e10b7b6c4657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a4c408eb715d1791cc904e10b7b6c4657">ResetArguments</a> (int kernelIdx)</td></tr>
 <tr class="separator:a4c408eb715d1791cc904e10b7b6c4657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memTemplParams" colspan="2">template&lt;typename TArg &gt; </td></tr>
-<tr class="memitem:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a63cf6f5dbfc9f9d1cab1dbae741da26d">SetTypedKernelArg</a> (int kernelIdx, cl_uint argIdx, TArg argVal)</td></tr>
-<tr class="separator:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a09656cfdd69ecdfa1388017aade5dbc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a09656cfdd69ecdfa1388017aade5dbc4">~GPUKernelManager</a> () override</td></tr>
+<tr class="separator:a09656cfdd69ecdfa1388017aade5dbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,6 +230,28 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memTemplParams" colspan="2">template&lt;typename TArg &gt; </td></tr>
+<tr class="memitem:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a63cf6f5dbfc9f9d1cab1dbae741da26d">SetTypedKernelArg</a> (int kernelIdx, cl_uint argIdx, TArg argVal)</td></tr>
+<tr class="separator:a63cf6f5dbfc9f9d1cab1dbae741da26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a545c447f7adaef029f302840f8ced573"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a545c447f7adaef029f302840f8ced573">m_CommandQueueId</a></td></tr>
+<tr class="separator:a545c447f7adaef029f302840f8ced573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae17aacc6ed40bf53de152fd82746ae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="structitk_1_1GPUKernelManager_1_1KernelArgumentList.html">KernelArgumentList</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#aeae17aacc6ed40bf53de152fd82746ae">m_KernelArgumentReady</a></td></tr>
+<tr class="separator:aeae17aacc6ed40bf53de152fd82746ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cda6d5eccd314e652eea18915d26cf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cl_kernel &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a70cda6d5eccd314e652eea18915d26cf">m_KernelContainer</a></td></tr>
+<tr class="separator:a70cda6d5eccd314e652eea18915d26cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a58657d2b3f6b7d321a024287ec406"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1GPUContextManager.html">GPUContextManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#a93a58657d2b3f6b7d321a024287ec406">m_Manager</a></td></tr>
+<tr class="separator:a93a58657d2b3f6b7d321a024287ec406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e84a5c058c4ec6e660dfca30ad62cd"><td class="memItemLeft" align="right" valign="top">cl_program&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUKernelManager.html#ae7e84a5c058c4ec6e660dfca30ad62cd">m_Program</a></td></tr>
+<tr class="separator:ae7e84a5c058c4ec6e660dfca30ad62cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,7 +349,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -362,7 +374,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -390,7 +401,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -404,7 +414,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer itk::GPUKernelManager::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> itk::GPUKernelManager::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -454,7 +464,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -592,7 +601,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -627,7 +635,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -674,7 +681,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -733,7 +739,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -843,7 +848,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -862,7 +866,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -1370,7 +1373,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 </div>
 </div>
@@ -1394,7 +1396,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkGPUKernelManager_8h_source.html#l00204">204</a> of file <a class="el" href="itkGPUKernelManager_8h_source.html">itkGPUKernelManager.h</a>.</p>
 
@@ -1419,7 +1420,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkGPUKernelManager_8h_source.html#l00207">207</a> of file <a class="el" href="itkGPUKernelManager_8h_source.html">itkGPUKernelManager.h</a>.</p>
 
@@ -1446,7 +1446,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkGPUKernelManager_8h_source.html#l00206">206</a> of file <a class="el" href="itkGPUKernelManager_8h_source.html">itkGPUKernelManager.h</a>.</p>
 
@@ -1473,7 +1472,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkGPUKernelManager_8h_source.html#l00203">203</a> of file <a class="el" href="itkGPUKernelManager_8h_source.html">itkGPUKernelManager.h</a>.</p>
 
@@ -1498,7 +1496,6 @@ template&lt;typename TArg &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pass to GPU both the pixel buffer and the buffered region. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkGPUKernelManager_8h_source.html#l00201">201</a> of file <a class="el" href="itkGPUKernelManager_8h_source.html">itkGPUKernelManager.h</a>.</p>
 

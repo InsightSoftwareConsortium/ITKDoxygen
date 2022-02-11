@@ -75,6 +75,9 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::MultiScaleHessianBasedMeasureImageFilter&lt; TInputImage, THessianImage, TOutputImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__ImageFilters.html">Image Filters</a> &raquo; <a class="el" href="group__IntensityImageFilters.html">Intensity Image Filters</a> &#124; <a class="el" href="group__TensorObjects.html">Objects Related to Tensor Images</a><a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo;  &#124; <a class="el" href="group__ITKImageFeature.html">Module ITKImageFeature</a></div></div>  </div>
@@ -105,6 +108,8 @@ Public Types</h2></td></tr>
 <tr class="separator:ac51f4a010ef58bb7729931a779f287b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff97cbe44bc80717802712d097949bee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aff97cbe44bc80717802712d097949bee">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:aff97cbe44bc80717802712d097949bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1271e4e1a1ba8ef9f48679aea530fda"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab1271e4e1a1ba8ef9f48679aea530fda">DataObjectPointerArraySizeType</a> = <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">ProcessObject::DataObjectPointerArraySizeType</a></td></tr>
+<tr class="separator:ab1271e4e1a1ba8ef9f48679aea530fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae31db2bf802e7f023bf8a30e4c75afcf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ae31db2bf802e7f023bf8a30e4c75afcf">HessianFilterType</a> = <a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html">HessianRecursiveGaussianImageFilter</a>&lt; <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ac7855bdb6e6b2be2a3c6916d809842d7">InputImageType</a>, <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c5a7749d33e1654ed8a15a9cd4b52d5">HessianImageType</a> &gt;</td></tr>
 <tr class="separator:ae31db2bf802e7f023bf8a30e4c75afcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c5a7749d33e1654ed8a15a9cd4b52d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c5a7749d33e1654ed8a15a9cd4b52d5">HessianImageType</a> = THessianImage</td></tr>
@@ -129,6 +134,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a5826f727175c51a29ef8c3e69470c4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab37b9a0078a284a289689bf8f56c8d3b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab37b9a0078a284a289689bf8f56c8d3b">Self</a> = <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html">MultiScaleHessianBasedMeasureImageFilter</a></td></tr>
 <tr class="separator:ab37b9a0078a284a289689bf8f56c8d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd7d54447e9ee3d62aa1a1cbc5f0077"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aefd7d54447e9ee3d62aa1a1cbc5f0077">SigmaStepMethodEnum</a> = <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">MultiScaleHessianBasedMeasureImageFilterEnums::SigmaStepMethod</a></td></tr>
+<tr class="separator:aefd7d54447e9ee3d62aa1a1cbc5f0077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3497cbd3d60a93a59b362073367604b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aa3497cbd3d60a93a59b362073367604b">Superclass</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
 <tr class="separator:aa3497cbd3d60a93a59b362073367604b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad06279b88706d8ae0724d979efd654e0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad06279b88706d8ae0724d979efd654e0">UpdateBufferType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; double, <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#af89f097f6f8000e8a804dd66968cb407">Self::ImageDimension</a> &gt;</td></tr>
@@ -136,11 +143,11 @@ Public Types</h2></td></tr>
 <tr class="inherit_header pub_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
 <tr class="memitem:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae23fc89d336966b2c24b84e66ff6a405">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f37682bc322d3054a4dd750225e1115 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a3f37682bc322d3054a4dd750225e1115">InputImageConstPointer</a> = typename InputImageType::ConstPointer</td></tr>
+<tr class="memitem:a3f37682bc322d3054a4dd750225e1115 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a3f37682bc322d3054a4dd750225e1115">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
 <tr class="separator:a3f37682bc322d3054a4dd750225e1115 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade300ac2f877a19dd63c976b03f4db19 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ade300ac2f877a19dd63c976b03f4db19">InputImagePixelType</a> = typename InputImageType::PixelType</td></tr>
 <tr class="separator:ade300ac2f877a19dd63c976b03f4db19 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b4b2b6c36e69a757c4622c24c9e4540 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7b4b2b6c36e69a757c4622c24c9e4540">InputImagePointer</a> = typename InputImageType::Pointer</td></tr>
+<tr class="memitem:a7b4b2b6c36e69a757c4622c24c9e4540 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7b4b2b6c36e69a757c4622c24c9e4540">InputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a></td></tr>
 <tr class="separator:a7b4b2b6c36e69a757c4622c24c9e4540 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1215bdc5af73b842e71587c5ad8e6b4 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> = typename InputImageType::RegionType</td></tr>
 <tr class="separator:af1215bdc5af73b842e71587c5ad8e6b4 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,7 +170,7 @@ Public Types</h2></td></tr>
 <tr class="separator:af0ca8b1aca9833abb5643f7f267fa643 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a637c2eb56b4f223249743b3d568b8 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a34a637c2eb56b4f223249743b3d568b8">OutputImagePixelType</a> = typename OutputImageType::PixelType</td></tr>
 <tr class="separator:a34a637c2eb56b4f223249743b3d568b8 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5010ce3a8cd7d8d1bc40c4ae211464e inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = typename OutputImageType::Pointer</td></tr>
+<tr class="memitem:aa5010ce3a8cd7d8d1bc40c4ae211464e inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa5010ce3a8cd7d8d1bc40c4ae211464e">OutputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a></td></tr>
 <tr class="separator:aa5010ce3a8cd7d8d1bc40c4ae211464e inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a480f6a15f7241d2c63c1b4131246ff03 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
 <tr class="separator:a480f6a15f7241d2c63c1b4131246ff03 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,8 +224,70 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab85fb067ae55f176e238055a7c2f627f"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab85fb067ae55f176e238055a7c2f627f">CreateAnother</a> () const</td></tr>
 <tr class="separator:ab85fb067ae55f176e238055a7c2f627f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7d88b7b752b28c1d59f676ef696038"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c5a7749d33e1654ed8a15a9cd4b52d5">HessianImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9d7d88b7b752b28c1d59f676ef696038">GetHessianOutput</a> () const</td></tr>
+<tr class="separator:a9d7d88b7b752b28c1d59f676ef696038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb8eae83a340d27f8f09645fbe35648"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a3bb8eae83a340d27f8f09645fbe35648">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a3bb8eae83a340d27f8f09645fbe35648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9854893003077c16579962ea7a0e07"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8fec8b8b00f66935d321a6d883b8f05a">ScalesImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a3c9854893003077c16579962ea7a0e07">GetScalesOutput</a> () const</td></tr>
+<tr class="separator:a3c9854893003077c16579962ea7a0e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c78a21f7341ba9e1d7f337b9429263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a19c78a21f7341ba9e1d7f337b9429263">SetSigmaStepMethodToEquispaced</a> ()</td></tr>
+<tr class="separator:a19c78a21f7341ba9e1d7f337b9429263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40abdc44e29f0dbd1f9248c02b55d202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a40abdc44e29f0dbd1f9248c02b55d202">SetSigmaStepMethodToLogarithmic</a> ()</td></tr>
+<tr class="separator:a40abdc44e29f0dbd1f9248c02b55d202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a05c6603b33cfaeecc2b0e3c771ad51ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a05c6603b33cfaeecc2b0e3c771ad51ec">SetSigmaMinimum</a> (double _arg)</td></tr>
+<tr class="separator:a05c6603b33cfaeecc2b0e3c771ad51ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21bafd7ca7656605ef020d32e55bbf20"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a21bafd7ca7656605ef020d32e55bbf20">GetSigmaMinimum</a> () const</td></tr>
+<tr class="separator:a21bafd7ca7656605ef020d32e55bbf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7f68053919d02b2012e8de628c08e895"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7f68053919d02b2012e8de628c08e895">SetSigmaMaximum</a> (double _arg)</td></tr>
+<tr class="separator:a7f68053919d02b2012e8de628c08e895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26381d3144eb01b47af79e3cbaaea4b7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a26381d3144eb01b47af79e3cbaaea4b7">GetSigmaMaximum</a> () const</td></tr>
+<tr class="separator:a26381d3144eb01b47af79e3cbaaea4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7ba90a23d07b47fdba1f0ce3b25ce1cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7ba90a23d07b47fdba1f0ce3b25ce1cf">SetNumberOfSigmaSteps</a> (unsigned int _arg)</td></tr>
+<tr class="separator:a7ba90a23d07b47fdba1f0ce3b25ce1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a34b96f3d6522423a18e7f88801019"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a00a34b96f3d6522423a18e7f88801019">GetNumberOfSigmaSteps</a> () const</td></tr>
+<tr class="separator:a00a34b96f3d6522423a18e7f88801019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a664b07b184b07115bcbf52f6e564c48e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a664b07b184b07115bcbf52f6e564c48e">SetHessianToMeasureFilter</a> (<a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *_arg)</td></tr>
+<tr class="separator:a664b07b184b07115bcbf52f6e564c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffb37e44b2125e26197ea47873809fd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a1ffb37e44b2125e26197ea47873809fd">GetModifiableHessianToMeasureFilter</a> ()</td></tr>
+<tr class="separator:a1ffb37e44b2125e26197ea47873809fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f356c87e224341900e67c1344ad674e"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a6f356c87e224341900e67c1344ad674e">GetHessianToMeasureFilter</a> () const</td></tr>
+<tr class="separator:a6f356c87e224341900e67c1344ad674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a02c89a0011124624791d971bfa6286ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a02c89a0011124624791d971bfa6286ad">SetNonNegativeHessianBasedMeasure</a> (bool _arg)</td></tr>
+<tr class="separator:a02c89a0011124624791d971bfa6286ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cfaf32e4a05735a65d3f70e515f666"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab8cfaf32e4a05735a65d3f70e515f666">GetNonNegativeHessianBasedMeasure</a> () const</td></tr>
+<tr class="separator:ab8cfaf32e4a05735a65d3f70e515f666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725b6acfe5af3d5f4b041c9b3aa13b39"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a725b6acfe5af3d5f4b041c9b3aa13b39">NonNegativeHessianBasedMeasureOn</a> ()</td></tr>
+<tr class="separator:a725b6acfe5af3d5f4b041c9b3aa13b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb4bb9adb7e65d5db898b918fbbd45c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aceb4bb9adb7e65d5db898b918fbbd45c">NonNegativeHessianBasedMeasureOff</a> ()</td></tr>
+<tr class="separator:aceb4bb9adb7e65d5db898b918fbbd45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7c94421290db331076aaefd56bf806ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7c94421290db331076aaefd56bf806ea">SetSigmaStepMethod</a> (const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a> _arg)</td></tr>
+<tr class="separator:a7c94421290db331076aaefd56bf806ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4b8127d4bc4d53986c4b828fd5dc59"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5e4b8127d4bc4d53986c4b828fd5dc59">GetSigmaStepMethod</a> () const</td></tr>
+<tr class="separator:a5e4b8127d4bc4d53986c4b828fd5dc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a6c7c81ac98d6015ab307a64b130801b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a6c7c81ac98d6015ab307a64b130801b8">SetGenerateScalesOutput</a> (bool _arg)</td></tr>
+<tr class="separator:a6c7c81ac98d6015ab307a64b130801b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e5c2b866828c8856684f2509eec571"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad4e5c2b866828c8856684f2509eec571">GetGenerateScalesOutput</a> () const</td></tr>
+<tr class="separator:ad4e5c2b866828c8856684f2509eec571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1cefcefcef3fbe99038623e3e40ccd4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#af1cefcefcef3fbe99038623e3e40ccd4">GenerateScalesOutputOn</a> ()</td></tr>
+<tr class="separator:af1cefcefcef3fbe99038623e3e40ccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45c550af4400f585958c2612aa297ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab45c550af4400f585958c2612aa297ad">GenerateScalesOutputOff</a> ()</td></tr>
+<tr class="separator:ab45c550af4400f585958c2612aa297ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:adadb8ddef69f57c893a4509b2ed120e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#adadb8ddef69f57c893a4509b2ed120e4">SetGenerateHessianOutput</a> (bool _arg)</td></tr>
+<tr class="separator:adadb8ddef69f57c893a4509b2ed120e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d7585f7bfd3fa60524a40fe4865c9e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a59d7585f7bfd3fa60524a40fe4865c9e">GetGenerateHessianOutput</a> () const</td></tr>
+<tr class="separator:a59d7585f7bfd3fa60524a40fe4865c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba64bb8d1c61254bd4ae4280cd53ee9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9ba64bb8d1c61254bd4ae4280cd53ee9">GenerateHessianOutputOn</a> ()</td></tr>
+<tr class="separator:a9ba64bb8d1c61254bd4ae4280cd53ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad819aba2eab18ae1ca55c5fc174ff6dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad819aba2eab18ae1ca55c5fc174ff6dd">GenerateHessianOutputOff</a> ()</td></tr>
+<tr class="separator:ad819aba2eab18ae1ca55c5fc174ff6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
 <tr class="memitem:aa1867af1cf99ffa50b519b930f19bbd2 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#aa1867af1cf99ffa50b519b930f19bbd2">GetInput</a> () const</td></tr>
 <tr class="separator:aa1867af1cf99ffa50b519b930f19bbd2 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,12 +318,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7eddfd5cd5771049676e509b5504f330 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7eddfd5cd5771049676e509b5504f330">GetDirectionTolerance</a> () const</td></tr>
 <tr class="separator:a7eddfd5cd5771049676e509b5504f330 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
+<tr class="memitem:ac048b2d1ecab9b5b4c36206148297ee2 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac048b2d1ecab9b5b4c36206148297ee2">GetOutput</a> (unsigned int idx)</td></tr>
+<tr class="separator:ac048b2d1ecab9b5b4c36206148297ee2 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf28d6b7fc62c37717f2aaeb3fdf42f5 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#acf28d6b7fc62c37717f2aaeb3fdf42f5">GetOutput</a> ()</td></tr>
 <tr class="separator:acf28d6b7fc62c37717f2aaeb3fdf42f5 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7291487384c8d0a26daa6cafe4f1199d inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a7291487384c8d0a26daa6cafe4f1199d">GetOutput</a> () const</td></tr>
 <tr class="separator:a7291487384c8d0a26daa6cafe4f1199d inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac048b2d1ecab9b5b4c36206148297ee2 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac048b2d1ecab9b5b4c36206148297ee2">GetOutput</a> (unsigned int idx)</td></tr>
-<tr class="separator:ac048b2d1ecab9b5b4c36206148297ee2 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93ec849c07f540382cc4f3ab75a71617 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a93ec849c07f540382cc4f3ab75a71617">GraftOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
 <tr class="separator:a93ec849c07f540382cc4f3ab75a71617 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb19de1bb36d5b2d1fde7690670a9ec6 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aeb19de1bb36d5b2d1fde7690670a9ec6">GraftOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
@@ -280,6 +349,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab96faea3ce5fba038600b508656bd935 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c2173693e5d40b79fbee9c2e4ba36cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#affc1697c75f0b69276e7d1eef38f1076">DataObjectPointerArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a7c2173693e5d40b79fbee9c2e4ba36cc">GetInputs</a> ()</td></tr>
 <tr class="separator:a7c2173693e5d40b79fbee9c2e4ba36cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe21128e0e4d141c1b5a574ce2532082 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#ac785162c57322d7f2a9761b7f8b3b93c">MultiThreaderType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abe21128e0e4d141c1b5a574ce2532082">GetMultiThreader</a> () const</td></tr>
+<tr class="separator:abe21128e0e4d141c1b5a574ce2532082 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec0e05720b7cf441fbd9e3566dc74c8 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a3ec0e05720b7cf441fbd9e3566dc74c8">GetNumberOfIndexedInputs</a> () const</td></tr>
 <tr class="separator:a3ec0e05720b7cf441fbd9e3566dc74c8 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a888749caebd941c8e7ca7cdcdd3b5f6c inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a888749caebd941c8e7ca7cdcdd3b5f6c">GetNumberOfIndexedOutputs</a> () const</td></tr>
@@ -304,12 +375,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0d3b92d28ed7b67e62e1dd514bdc1663 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab336fe5a5c0d2acb1c9ca3e7e33e393c inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ab336fe5a5c0d2acb1c9ca3e7e33e393c">IncrementProgress</a> (float increment)</td></tr>
 <tr class="separator:ab336fe5a5c0d2acb1c9ca3e7e33e393c inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c28f61dc9f69046f8d39c9e2976f9cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a2c28f61dc9f69046f8d39c9e2976f9cc">PrepareOutputs</a> ()</td></tr>
+<tr class="separator:a2c28f61dc9f69046f8d39c9e2976f9cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0cc3a4eedea62c0d727ddd632352f98 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ab0cc3a4eedea62c0d727ddd632352f98">PropagateRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
 <tr class="separator:ab0cc3a4eedea62c0d727ddd632352f98 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a902f4d0a85c7eca1b8891030bb89a2f3 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a902f4d0a85c7eca1b8891030bb89a2f3">ResetPipeline</a> ()</td></tr>
 <tr class="separator:a902f4d0a85c7eca1b8891030bb89a2f3 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45ba74f68fd66b265d2764c5c7040275 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a45ba74f68fd66b265d2764c5c7040275">SetAbortGenerateData</a> (bool _arg)</td></tr>
 <tr class="separator:a45ba74f68fd66b265d2764c5c7040275 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3edf04675264eb619dec4d3fdf7446bf inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a3edf04675264eb619dec4d3fdf7446bf">SetMultiThreader</a> (<a class="el" href="classitk_1_1ProcessObject.html#ac785162c57322d7f2a9761b7f8b3b93c">MultiThreaderType</a> *threader)</td></tr>
+<tr class="separator:a3edf04675264eb619dec4d3fdf7446bf inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4041fb21e9105500eee311e265691bd5 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5">Update</a> ()</td></tr>
 <tr class="separator:a4041fb21e9105500eee311e265691bd5 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94a8c5c8d65c414bd14aaca3935aa97b inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a94a8c5c8d65c414bd14aaca3935aa97b">UpdateLargestPossibleRegion</a> ()</td></tr>
@@ -340,12 +415,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a07e1d0d435747ae65bfb213bd12053e8 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa79d97fcba0a12fa9848baffbafccd4a inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aa79d97fcba0a12fa9848baffbafccd4a">GetNumberOfWorkUnits</a> () const</td></tr>
 <tr class="separator:aa79d97fcba0a12fa9848baffbafccd4a inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe21128e0e4d141c1b5a574ce2532082 inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#ac785162c57322d7f2a9761b7f8b3b93c">MultiThreaderType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abe21128e0e4d141c1b5a574ce2532082">GetMultiThreader</a> () const</td></tr>
-<tr class="separator:abe21128e0e4d141c1b5a574ce2532082 inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3edf04675264eb619dec4d3fdf7446bf inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a3edf04675264eb619dec4d3fdf7446bf">SetMultiThreader</a> (<a class="el" href="classitk_1_1ProcessObject.html#ac785162c57322d7f2a9761b7f8b3b93c">MultiThreaderType</a> *threader)</td></tr>
-<tr class="separator:a3edf04675264eb619dec4d3fdf7446bf inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c28f61dc9f69046f8d39c9e2976f9cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a2c28f61dc9f69046f8d39c9e2976f9cc">PrepareOutputs</a> ()</td></tr>
-<tr class="separator:a2c28f61dc9f69046f8d39c9e2976f9cc inherit pub_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,14 +481,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a14175a4ea19a3848f46c887b1127f3d7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a14175a4ea19a3848f46c887b1127f3d7">New</a> ()</td></tr>
 <tr class="separator:a14175a4ea19a3848f46c887b1127f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7440de754357373eb6f137df1b803ed9">SetGlobalDefaultDirectionTolerance</a> (double)</td></tr>
-<tr class="separator:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0dbecad3f9685120bfb0878767113837">GetGlobalDefaultCoordinateTolerance</a> ()</td></tr>
+<tr class="separator:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c079e8813621ce4cf31a9376ba9b65d inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a2c079e8813621ce4cf31a9376ba9b65d">GetGlobalDefaultDirectionTolerance</a> ()</td></tr>
 <tr class="separator:a2c079e8813621ce4cf31a9376ba9b65d inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b572c0db5441e1f09c21899ec4f29e3 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7b572c0db5441e1f09c21899ec4f29e3">SetGlobalDefaultCoordinateTolerance</a> (double)</td></tr>
 <tr class="separator:a7b572c0db5441e1f09c21899ec4f29e3 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0dbecad3f9685120bfb0878767113837">GetGlobalDefaultCoordinateTolerance</a> ()</td></tr>
-<tr class="separator:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7440de754357373eb6f137df1b803ed9">SetGlobalDefaultDirectionTolerance</a> (double)</td></tr>
+<tr class="separator:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a722122bd785f53294ff40b828d5ffa4d inherit pub_static_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a722122bd785f53294ff40b828d5ffa4d">GetGlobalWarningDisplay</a> ()</td></tr>
 <tr class="separator:a722122bd785f53294ff40b828d5ffa4d inherit pub_static_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,152 +518,63 @@ Static Public Attributes</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
 <tr class="memitem:abaa451dfb579f07b6b2674f2500ac8a4 inherit pub_static_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#abaa451dfb579f07b6b2674f2500ac8a4">OutputImageDimension</a></td></tr>
 <tr class="separator:abaa451dfb579f07b6b2674f2500ac8a4 inherit pub_static_attribs_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd7d54447e9ee3d62aa1a1cbc5f0077"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aefd7d54447e9ee3d62aa1a1cbc5f0077">SigmaStepMethodEnum</a> = <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">MultiScaleHessianBasedMeasureImageFilterEnums::SigmaStepMethod</a></td></tr>
-<tr class="separator:aefd7d54447e9ee3d62aa1a1cbc5f0077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1271e4e1a1ba8ef9f48679aea530fda"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab1271e4e1a1ba8ef9f48679aea530fda">DataObjectPointerArraySizeType</a> = <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">ProcessObject::DataObjectPointerArraySizeType</a></td></tr>
-<tr class="separator:ab1271e4e1a1ba8ef9f48679aea530fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31b0d205ef0e67b9b41857e3e5416fc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a31b0d205ef0e67b9b41857e3e5416fc5">m_NonNegativeHessianBasedMeasure</a></td></tr>
-<tr class="separator:a31b0d205ef0e67b9b41857e3e5416fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefce53d815559922da378d55812c44b2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aefce53d815559922da378d55812c44b2">m_SigmaMinimum</a></td></tr>
-<tr class="separator:aefce53d815559922da378d55812c44b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a63434a24746dc52fa4ea2de57a6b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a06a63434a24746dc52fa4ea2de57a6b7">m_SigmaMaximum</a></td></tr>
-<tr class="separator:a06a63434a24746dc52fa4ea2de57a6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c33f13caac4d858a12b0822a7eb190c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c33f13caac4d858a12b0822a7eb190c">m_NumberOfSigmaSteps</a></td></tr>
-<tr class="separator:a5c33f13caac4d858a12b0822a7eb190c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52df58ca2f5978e79f7146dcf13fac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ac52df58ca2f5978e79f7146dcf13fac2">m_SigmaStepMethod</a></td></tr>
-<tr class="separator:ac52df58ca2f5978e79f7146dcf13fac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8341cb437d249a52a5f42127be83e33f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageToImageFilter.html#a070d07c154ac66be8fbf5b4a358f16dc">HessianToMeasureFilterType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8341cb437d249a52a5f42127be83e33f">m_HessianToMeasureFilter</a></td></tr>
-<tr class="separator:a8341cb437d249a52a5f42127be83e33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8cf38738fbd88a06887011352e6d428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html#a39396e066b8d054b5c6048e8aee46f6c">HessianFilterType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad8cf38738fbd88a06887011352e6d428">m_HessianFilter</a></td></tr>
-<tr class="separator:ad8cf38738fbd88a06887011352e6d428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cce657f723c44beb2ab0a9fac54b519"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">UpdateBufferType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9cce657f723c44beb2ab0a9fac54b519">m_UpdateBuffer</a></td></tr>
-<tr class="separator:a9cce657f723c44beb2ab0a9fac54b519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246aaf795b716000151bad1260dfbda7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a246aaf795b716000151bad1260dfbda7">m_GenerateScalesOutput</a></td></tr>
-<tr class="separator:a246aaf795b716000151bad1260dfbda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ea64b5fe10f5fbd628978e54cc693c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9ea64b5fe10f5fbd628978e54cc693c9">m_GenerateHessianOutput</a></td></tr>
-<tr class="separator:a9ea64b5fe10f5fbd628978e54cc693c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05c6603b33cfaeecc2b0e3c771ad51ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a05c6603b33cfaeecc2b0e3c771ad51ec">SetSigmaMinimum</a> (double _arg)</td></tr>
-<tr class="separator:a05c6603b33cfaeecc2b0e3c771ad51ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21bafd7ca7656605ef020d32e55bbf20"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a21bafd7ca7656605ef020d32e55bbf20">GetSigmaMinimum</a> () const</td></tr>
-<tr class="separator:a21bafd7ca7656605ef020d32e55bbf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f68053919d02b2012e8de628c08e895"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7f68053919d02b2012e8de628c08e895">SetSigmaMaximum</a> (double _arg)</td></tr>
-<tr class="separator:a7f68053919d02b2012e8de628c08e895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26381d3144eb01b47af79e3cbaaea4b7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a26381d3144eb01b47af79e3cbaaea4b7">GetSigmaMaximum</a> () const</td></tr>
-<tr class="separator:a26381d3144eb01b47af79e3cbaaea4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba90a23d07b47fdba1f0ce3b25ce1cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7ba90a23d07b47fdba1f0ce3b25ce1cf">SetNumberOfSigmaSteps</a> (unsigned int _arg)</td></tr>
-<tr class="separator:a7ba90a23d07b47fdba1f0ce3b25ce1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a34b96f3d6522423a18e7f88801019"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a00a34b96f3d6522423a18e7f88801019">GetNumberOfSigmaSteps</a> () const</td></tr>
-<tr class="separator:a00a34b96f3d6522423a18e7f88801019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664b07b184b07115bcbf52f6e564c48e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a664b07b184b07115bcbf52f6e564c48e">SetHessianToMeasureFilter</a> (<a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *_arg)</td></tr>
-<tr class="separator:a664b07b184b07115bcbf52f6e564c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffb37e44b2125e26197ea47873809fd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a1ffb37e44b2125e26197ea47873809fd">GetModifiableHessianToMeasureFilter</a> ()</td></tr>
-<tr class="separator:a1ffb37e44b2125e26197ea47873809fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f356c87e224341900e67c1344ad674e"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a03a4e9e0bff0cb903216348cf46dcee2">HessianToMeasureFilterType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a6f356c87e224341900e67c1344ad674e">GetHessianToMeasureFilter</a> () const</td></tr>
-<tr class="separator:a6f356c87e224341900e67c1344ad674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02c89a0011124624791d971bfa6286ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a02c89a0011124624791d971bfa6286ad">SetNonNegativeHessianBasedMeasure</a> (bool _arg)</td></tr>
-<tr class="separator:a02c89a0011124624791d971bfa6286ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cfaf32e4a05735a65d3f70e515f666"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab8cfaf32e4a05735a65d3f70e515f666">GetNonNegativeHessianBasedMeasure</a> () const</td></tr>
-<tr class="separator:ab8cfaf32e4a05735a65d3f70e515f666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725b6acfe5af3d5f4b041c9b3aa13b39"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a725b6acfe5af3d5f4b041c9b3aa13b39">NonNegativeHessianBasedMeasureOn</a> ()</td></tr>
-<tr class="separator:a725b6acfe5af3d5f4b041c9b3aa13b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceb4bb9adb7e65d5db898b918fbbd45c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aceb4bb9adb7e65d5db898b918fbbd45c">NonNegativeHessianBasedMeasureOff</a> ()</td></tr>
-<tr class="separator:aceb4bb9adb7e65d5db898b918fbbd45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c94421290db331076aaefd56bf806ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a7c94421290db331076aaefd56bf806ea">SetSigmaStepMethod</a> (const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a> _arg)</td></tr>
-<tr class="separator:a7c94421290db331076aaefd56bf806ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e4b8127d4bc4d53986c4b828fd5dc59"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5e4b8127d4bc4d53986c4b828fd5dc59">GetSigmaStepMethod</a> () const</td></tr>
-<tr class="separator:a5e4b8127d4bc4d53986c4b828fd5dc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19c78a21f7341ba9e1d7f337b9429263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a19c78a21f7341ba9e1d7f337b9429263">SetSigmaStepMethodToEquispaced</a> ()</td></tr>
-<tr class="separator:a19c78a21f7341ba9e1d7f337b9429263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40abdc44e29f0dbd1f9248c02b55d202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a40abdc44e29f0dbd1f9248c02b55d202">SetSigmaStepMethodToLogarithmic</a> ()</td></tr>
-<tr class="separator:a40abdc44e29f0dbd1f9248c02b55d202"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d7d88b7b752b28c1d59f676ef696038"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c5a7749d33e1654ed8a15a9cd4b52d5">HessianImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9d7d88b7b752b28c1d59f676ef696038">GetHessianOutput</a> () const</td></tr>
-<tr class="separator:a9d7d88b7b752b28c1d59f676ef696038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9854893003077c16579962ea7a0e07"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8fec8b8b00f66935d321a6d883b8f05a">ScalesImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a3c9854893003077c16579962ea7a0e07">GetScalesOutput</a> () const</td></tr>
-<tr class="separator:a3c9854893003077c16579962ea7a0e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c7c81ac98d6015ab307a64b130801b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a6c7c81ac98d6015ab307a64b130801b8">SetGenerateScalesOutput</a> (bool _arg)</td></tr>
-<tr class="separator:a6c7c81ac98d6015ab307a64b130801b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e5c2b866828c8856684f2509eec571"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad4e5c2b866828c8856684f2509eec571">GetGenerateScalesOutput</a> () const</td></tr>
-<tr class="separator:ad4e5c2b866828c8856684f2509eec571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1cefcefcef3fbe99038623e3e40ccd4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#af1cefcefcef3fbe99038623e3e40ccd4">GenerateScalesOutputOn</a> ()</td></tr>
-<tr class="separator:af1cefcefcef3fbe99038623e3e40ccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab45c550af4400f585958c2612aa297ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ab45c550af4400f585958c2612aa297ad">GenerateScalesOutputOff</a> ()</td></tr>
-<tr class="separator:ab45c550af4400f585958c2612aa297ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adadb8ddef69f57c893a4509b2ed120e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#adadb8ddef69f57c893a4509b2ed120e4">SetGenerateHessianOutput</a> (bool _arg)</td></tr>
-<tr class="separator:adadb8ddef69f57c893a4509b2ed120e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d7585f7bfd3fa60524a40fe4865c9e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a59d7585f7bfd3fa60524a40fe4865c9e">GetGenerateHessianOutput</a> () const</td></tr>
-<tr class="separator:a59d7585f7bfd3fa60524a40fe4865c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba64bb8d1c61254bd4ae4280cd53ee9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9ba64bb8d1c61254bd4ae4280cd53ee9">GenerateHessianOutputOn</a> ()</td></tr>
-<tr class="separator:a9ba64bb8d1c61254bd4ae4280cd53ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad819aba2eab18ae1ca55c5fc174ff6dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad819aba2eab18ae1ca55c5fc174ff6dd">GenerateHessianOutputOff</a> ()</td></tr>
-<tr class="separator:ad819aba2eab18ae1ca55c5fc174ff6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94eab4a5f3a45030028348cca5717586"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a94eab4a5f3a45030028348cca5717586">MultiScaleHessianBasedMeasureImageFilter</a> ()</td></tr>
-<tr class="separator:a94eab4a5f3a45030028348cca5717586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4cef9e67031c9a68e627ea7ce42e6bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ac4cef9e67031c9a68e627ea7ce42e6bc">~MultiScaleHessianBasedMeasureImageFilter</a> () override=default</td></tr>
-<tr class="separator:ac4cef9e67031c9a68e627ea7ce42e6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8657bd73f5b05b70a79fec00b12c813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ae8657bd73f5b05b70a79fec00b12c813">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ae8657bd73f5b05b70a79fec00b12c813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea2fcdd0d853eadb195f115206a126e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aea2fcdd0d853eadb195f115206a126e4">GenerateData</a> () override</td></tr>
-<tr class="separator:aea2fcdd0d853eadb195f115206a126e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a24bf858b2a9f3eae3f4aaed1dd619a30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a24bf858b2a9f3eae3f4aaed1dd619a30">EnlargeOutputRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *) override</td></tr>
 <tr class="separator:a24bf858b2a9f3eae3f4aaed1dd619a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2fcdd0d853eadb195f115206a126e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aea2fcdd0d853eadb195f115206a126e4">GenerateData</a> () override</td></tr>
+<tr class="separator:aea2fcdd0d853eadb195f115206a126e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affff5fa7657538393e4c0f86ddaf78d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a4e3d2e04a5085503ccb0b5a1715f17dc">DataObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#affff5fa7657538393e4c0f86ddaf78d7">MakeOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) override</td></tr>
 <tr class="separator:affff5fa7657538393e4c0f86ddaf78d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c5e318e231649e7d9d778bbd7facfc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8c5e318e231649e7d9d778bbd7facfc3">UpdateMaximumResponse</a> (double sigma)</td></tr>
-<tr class="separator:a8c5e318e231649e7d9d778bbd7facfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a644322a4cd6d25fdf5ee2d8994ebc053"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a644322a4cd6d25fdf5ee2d8994ebc053">ComputeSigmaValue</a> (int scaleLevel)</td></tr>
-<tr class="separator:a644322a4cd6d25fdf5ee2d8994ebc053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed00843430806fb9ba4c81fee87cb76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a0ed00843430806fb9ba4c81fee87cb76">AllocateUpdateBuffer</a> ()</td></tr>
-<tr class="separator:a0ed00843430806fb9ba4c81fee87cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae052150189e0c19be8035e1814287f16">InputToOutputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::OutputImageDimension, Self::InputImageDimension &gt;</td></tr>
-<tr class="separator:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a455189fce2b61b9f70f8a7b3649c67cb">OutputToInputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::InputImageDimension, Self::OutputImageDimension &gt;</td></tr>
-<tr class="separator:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94eab4a5f3a45030028348cca5717586"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a94eab4a5f3a45030028348cca5717586">MultiScaleHessianBasedMeasureImageFilter</a> ()</td></tr>
+<tr class="separator:a94eab4a5f3a45030028348cca5717586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8657bd73f5b05b70a79fec00b12c813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ae8657bd73f5b05b70a79fec00b12c813">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:ae8657bd73f5b05b70a79fec00b12c813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4cef9e67031c9a68e627ea7ce42e6bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ac4cef9e67031c9a68e627ea7ce42e6bc">~MultiScaleHessianBasedMeasureImageFilter</a> () override=default</td></tr>
+<tr class="separator:ac4cef9e67031c9a68e627ea7ce42e6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a3faec3a5618c7953140e50f465001aff inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a3faec3a5618c7953140e50f465001aff">PushBackInput</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input) override</td></tr>
-<tr class="separator:a3faec3a5618c7953140e50f465001aff inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1206d74aee577e235f9bb11cdf1dc34e inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a1206d74aee577e235f9bb11cdf1dc34e">PushFrontInput</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input) override</td></tr>
-<tr class="separator:a1206d74aee577e235f9bb11cdf1dc34e inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae201413bc62727f7e282dbd176288b4f">CallCopyInputRegionToOutputRegion</a> (<a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;srcRegion)</td></tr>
+<tr class="separator:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb1b2f9c20c1b13f03b41921422ce17 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0cb1b2f9c20c1b13f03b41921422ce17">CallCopyOutputRegionToInputRegion</a> (<a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;srcRegion)</td></tr>
+<tr class="separator:a0cb1b2f9c20c1b13f03b41921422ce17 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6983235b756f273551b95c174b314e67 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a6983235b756f273551b95c174b314e67">GenerateInputRequestedRegion</a> () override</td></tr>
+<tr class="separator:a6983235b756f273551b95c174b314e67 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73cfb17cc5b3d28d98c6a6e6a10b43d7 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a73cfb17cc5b3d28d98c6a6e6a10b43d7">ImageToImageFilter</a> ()</td></tr>
 <tr class="separator:a73cfb17cc5b3d28d98c6a6e6a10b43d7 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cd52d3fa5a21ccbafd87aaa68a484bc inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a6cd52d3fa5a21ccbafd87aaa68a484bc">~ImageToImageFilter</a> () override=default</td></tr>
-<tr class="separator:a6cd52d3fa5a21ccbafd87aaa68a484bc inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fd631e1dbb1d2e154a5200f4d855ada inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a8fd631e1dbb1d2e154a5200f4d855ada">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:a8fd631e1dbb1d2e154a5200f4d855ada inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac689fc5a3e7feca1121cdf2a750f63f0 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ac689fc5a3e7feca1121cdf2a750f63f0">VerifyInputInformation</a> () ITKv5_CONST override</td></tr>
 <tr class="separator:ac689fc5a3e7feca1121cdf2a750f63f0 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6983235b756f273551b95c174b314e67 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a6983235b756f273551b95c174b314e67">GenerateInputRequestedRegion</a> () override</td></tr>
-<tr class="separator:a6983235b756f273551b95c174b314e67 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cb1b2f9c20c1b13f03b41921422ce17 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0cb1b2f9c20c1b13f03b41921422ce17">CallCopyOutputRegionToInputRegion</a> (<a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;srcRegion)</td></tr>
-<tr class="separator:a0cb1b2f9c20c1b13f03b41921422ce17 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae201413bc62727f7e282dbd176288b4f">CallCopyInputRegionToOutputRegion</a> (<a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;srcRegion)</td></tr>
-<tr class="separator:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd52d3fa5a21ccbafd87aaa68a484bc inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a6cd52d3fa5a21ccbafd87aaa68a484bc">~ImageToImageFilter</a> () override=default</td></tr>
+<tr class="separator:a6cd52d3fa5a21ccbafd87aaa68a484bc inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3faec3a5618c7953140e50f465001aff inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a3faec3a5618c7953140e50f465001aff">PushBackInput</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input) override</td></tr>
+<tr class="separator:a3faec3a5618c7953140e50f465001aff inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1206d74aee577e235f9bb11cdf1dc34e inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a1206d74aee577e235f9bb11cdf1dc34e">PushFrontInput</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input) override</td></tr>
+<tr class="separator:a1206d74aee577e235f9bb11cdf1dc34e inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
-<tr class="memitem:ac3cbb84c68e32c41b4582a822cfa3fae inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac3cbb84c68e32c41b4582a822cfa3fae">ImageSource</a> ()</td></tr>
-<tr class="separator:ac3cbb84c68e32c41b4582a822cfa3fae inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bca7bad6981d2e66cee2845f1213078 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a4bca7bad6981d2e66cee2845f1213078">~ImageSource</a> () override=default</td></tr>
-<tr class="separator:a4bca7bad6981d2e66cee2845f1213078 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb2c5a1c45808a9c5e25e394ef491156 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData</a> () override</td></tr>
-<tr class="separator:adb2c5a1c45808a9c5e25e394ef491156 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48bc252eed7ff9927c90783aa71013ea inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a48bc252eed7ff9927c90783aa71013ea">ClassicMultiThread</a> (<a class="el" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a> callbackFunction)</td></tr>
-<tr class="separator:a48bc252eed7ff9927c90783aa71013ea inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;region, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId)</td></tr>
-<tr class="separator:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a33ccffad80a3d0d24384c79927642630">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread)</td></tr>
-<tr class="separator:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData</a> ()</td></tr>
+<tr class="separator:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c61aaef76b8efe3e7b5dddf907c2fba inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a2c61aaef76b8efe3e7b5dddf907c2fba">AllocateOutputs</a> ()</td></tr>
 <tr class="separator:a2c61aaef76b8efe3e7b5dddf907c2fba inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3feaf3f80b0339277b2f3502140031f8 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">BeforeThreadedGenerateData</a> ()</td></tr>
 <tr class="separator:a3feaf3f80b0339277b2f3502140031f8 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData</a> ()</td></tr>
-<tr class="separator:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bc252eed7ff9927c90783aa71013ea inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a48bc252eed7ff9927c90783aa71013ea">ClassicMultiThread</a> (<a class="el" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a> callbackFunction)</td></tr>
+<tr class="separator:a48bc252eed7ff9927c90783aa71013ea inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2c5a1c45808a9c5e25e394ef491156 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData</a> () override</td></tr>
+<tr class="separator:adb2c5a1c45808a9c5e25e394ef491156 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139b7ff884a5efa2d1bee437f50febb1 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageRegionSplitterBase.html">ImageRegionSplitterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a139b7ff884a5efa2d1bee437f50febb1">GetImageRegionSplitter</a> () const</td></tr>
 <tr class="separator:a139b7ff884a5efa2d1bee437f50febb1 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3cbb84c68e32c41b4582a822cfa3fae inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac3cbb84c68e32c41b4582a822cfa3fae">ImageSource</a> ()</td></tr>
+<tr class="separator:ac3cbb84c68e32c41b4582a822cfa3fae inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4be3dace79783d5b0bef78812b6875 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a5f4be3dace79783d5b0bef78812b6875">SplitRequestedRegion</a> (unsigned int i, unsigned int pieces, <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;splitRegion)</td></tr>
 <tr class="separator:a5f4be3dace79783d5b0bef78812b6875 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bca7bad6981d2e66cee2845f1213078 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a4bca7bad6981d2e66cee2845f1213078">~ImageSource</a> () override=default</td></tr>
+<tr class="separator:a4bca7bad6981d2e66cee2845f1213078 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;region, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId)</td></tr>
+<tr class="separator:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a33ccffad80a3d0d24384c79927642630">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread)</td></tr>
+<tr class="separator:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a3024b85b01ce519e3dc080e2108e2e inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a9a3024b85b01ce519e3dc080e2108e2e">GetDynamicMultiThreading</a> () const</td></tr>
 <tr class="separator:a9a3024b85b01ce519e3dc080e2108e2e inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e68a7c7e850259c56495c0c88ff9191 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a5e68a7c7e850259c56495c0c88ff9191">SetDynamicMultiThreading</a> (bool _arg)</td></tr>
@@ -604,28 +584,94 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa85f396119ecadc88730a9a1cae12a53 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa85f396119ecadc88730a9a1cae12a53">DynamicMultiThreadingOff</a> ()</td></tr>
 <tr class="separator:aa85f396119ecadc88730a9a1cae12a53 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ProcessObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ProcessObject.html">itk::ProcessObject</a></td></tr>
-<tr class="memitem:a6e23a5cf8976d22e52efc55198228669 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6e23a5cf8976d22e52efc55198228669">ProcessObject</a> ()</td></tr>
-<tr class="separator:a6e23a5cf8976d22e52efc55198228669 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f1637fe26dd2d229fea2cb38604fe3a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a7f1637fe26dd2d229fea2cb38604fe3a">~ProcessObject</a> () override</td></tr>
-<tr class="separator:a7f1637fe26dd2d229fea2cb38604fe3a inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ac59f1d8d5ee901007d9cc3d7de5ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ae0ac59f1d8d5ee901007d9cc3d7de5ab">AddInput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
+<tr class="separator:ae0ac59f1d8d5ee901007d9cc3d7de5ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e59a4b8b966bdb32f8359bc52f789c inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a25e59a4b8b966bdb32f8359bc52f789c">AddOptionalInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
+<tr class="separator:a25e59a4b8b966bdb32f8359bc52f789c inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2856e897dd2b37bf70628f03425c87 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#adf2856e897dd2b37bf70628f03425c87">AddOptionalInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;, <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
+<tr class="separator:adf2856e897dd2b37bf70628f03425c87 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644f319ba7534460446379e82f4a7ab1 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a644f319ba7534460446379e82f4a7ab1">AddOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
+<tr class="separator:a644f319ba7534460446379e82f4a7ab1 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7009e5eb5583ca283013df95b4a097c3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a7009e5eb5583ca283013df95b4a097c3">AddRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
+<tr class="separator:a7009e5eb5583ca283013df95b4a097c3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9366095b24bb0850c175734387de417c inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a9366095b24bb0850c175734387de417c">AddRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;, <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
+<tr class="separator:a9366095b24bb0850c175734387de417c inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03cd4fd7c884d92d3cac364e375b7ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af03cd4fd7c884d92d3cac364e375b7ab">CacheInputReleaseDataFlags</a> ()</td></tr>
+<tr class="separator:af03cd4fd7c884d92d3cac364e375b7ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe61fb6b7de8c443e7af1561bd722736 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">GenerateOutputInformation</a> ()</td></tr>
+<tr class="separator:abe61fb6b7de8c443e7af1561bd722736 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a00e709645b6f53d0a83390b97dfba inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a31a00e709645b6f53d0a83390b97dfba">GenerateOutputRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
+<tr class="separator:a31a00e709645b6f53d0a83390b97dfba inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ac4b11f6af39456790a8a16a1f43cb2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8ac4b11f6af39456790a8a16a1f43cb2">GetInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key)</td></tr>
 <tr class="separator:a8ac4b11f6af39456790a8a16a1f43cb2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96f2479c374761fe59598fa7b8a024f inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ac96f2479c374761fe59598fa7b8a024f">GetInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key) const</td></tr>
 <tr class="separator:ac96f2479c374761fe59598fa7b8a024f inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeb7b5b16f2811dff03769522d215e02 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aaeb7b5b16f2811dff03769522d215e02">GetInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
-<tr class="separator:aaeb7b5b16f2811dff03769522d215e02 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9e17b697b5598a8ba4e2a71719c1ed inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aaa9e17b697b5598a8ba4e2a71719c1ed">GetInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
-<tr class="separator:aaa9e17b697b5598a8ba4e2a71719c1ed inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33146cb6219b67349eb1c643617dd82f inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a33146cb6219b67349eb1c643617dd82f">SetInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
-<tr class="separator:a33146cb6219b67349eb1c643617dd82f inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2ddac98ac435c20af2cf466e838ee6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8a2ddac98ac435c20af2cf466e838ee6">SetNthInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
-<tr class="separator:a8a2ddac98ac435c20af2cf466e838ee6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ac59f1d8d5ee901007d9cc3d7de5ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ae0ac59f1d8d5ee901007d9cc3d7de5ab">AddInput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
-<tr class="separator:ae0ac59f1d8d5ee901007d9cc3d7de5ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a66d029c6ac7af9b5558efbd17613e3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8a66d029c6ac7af9b5558efbd17613e3">GetNumberOfRequiredInputs</a> () const</td></tr>
+<tr class="separator:a8a66d029c6ac7af9b5558efbd17613e3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8243a9b5917d88b93ccd0ea51b8d15a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af8243a9b5917d88b93ccd0ea51b8d15a">GetNumberOfRequiredOutputs</a> () const</td></tr>
+<tr class="separator:af8243a9b5917d88b93ccd0ea51b8d15a inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebf8ea01fca4bdbd79b328efacb92d6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8ebf8ea01fca4bdbd79b328efacb92d6">IsIndexedInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
+<tr class="separator:a8ebf8ea01fca4bdbd79b328efacb92d6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add34bbee6af7d8ad1ac020b867a89595 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#add34bbee6af7d8ad1ac020b867a89595">IsIndexedOutputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
+<tr class="separator:add34bbee6af7d8ad1ac020b867a89595 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad360aa6aaf6db4d72b37e83d4de0f7ad inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad360aa6aaf6db4d72b37e83d4de0f7ad">IsRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
+<tr class="separator:ad360aa6aaf6db4d72b37e83d4de0f7ad inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963d4b11e0de1c5ab595bffcccdfd93f inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a963d4b11e0de1c5ab595bffcccdfd93f">MakeIndexFromInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name) const</td></tr>
+<tr class="separator:a963d4b11e0de1c5ab595bffcccdfd93f inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac448bc7e6438a02fc7f0f696e7b27b7d inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ac448bc7e6438a02fc7f0f696e7b27b7d">MakeIndexFromOutputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name) const</td></tr>
+<tr class="separator:ac448bc7e6438a02fc7f0f696e7b27b7d inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8b67feff07974339be55273c8ebb64 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6e8b67feff07974339be55273c8ebb64">MakeNameFromInputIndex</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
+<tr class="separator:a6e8b67feff07974339be55273c8ebb64 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37f7be2370bfe0f0fd2d93f0940bcec inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ae37f7be2370bfe0f0fd2d93f0940bcec">MakeNameFromOutputIndex</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
+<tr class="separator:ae37f7be2370bfe0f0fd2d93f0940bcec inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e23a5cf8976d22e52efc55198228669 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6e23a5cf8976d22e52efc55198228669">ProcessObject</a> ()</td></tr>
+<tr class="separator:a6e23a5cf8976d22e52efc55198228669 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed10f6dd255911518c98ae38c0c72917 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aed10f6dd255911518c98ae38c0c72917">PropagateResetPipeline</a> ()</td></tr>
+<tr class="separator:aed10f6dd255911518c98ae38c0c72917 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba4a15c3031fd6b243232cbe55e6ff4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a0ba4a15c3031fd6b243232cbe55e6ff4">ReleaseInputs</a> ()</td></tr>
+<tr class="separator:a0ba4a15c3031fd6b243232cbe55e6ff4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4248752c656b995457e1eb8268f25a29 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a4248752c656b995457e1eb8268f25a29">RemoveInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key)</td></tr>
 <tr class="separator:a4248752c656b995457e1eb8268f25a29 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56e14a4022ee59cdb7c9bf6f84d7bee inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ae56e14a4022ee59cdb7c9bf6f84d7bee">RemoveInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>)</td></tr>
 <tr class="separator:ae56e14a4022ee59cdb7c9bf6f84d7bee inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e69fc7ca2cae9b2ee5df783c4ddfcf7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a4e69fc7ca2cae9b2ee5df783c4ddfcf7">RemoveOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key)</td></tr>
+<tr class="separator:a4e69fc7ca2cae9b2ee5df783c4ddfcf7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad656d815d06e80f3e19f8fa8f8c341e2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad656d815d06e80f3e19f8fa8f8c341e2">RemoveOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
+<tr class="separator:ad656d815d06e80f3e19f8fa8f8c341e2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8528b6a7008d6dbd273ada782cd18d7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af8528b6a7008d6dbd273ada782cd18d7">RemoveRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
+<tr class="separator:af8528b6a7008d6dbd273ada782cd18d7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788a8386d1da37ef1b595ca50c5ae008 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a788a8386d1da37ef1b595ca50c5ae008">RestoreInputReleaseDataFlags</a> ()</td></tr>
+<tr class="separator:a788a8386d1da37ef1b595ca50c5ae008 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33146cb6219b67349eb1c643617dd82f inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a33146cb6219b67349eb1c643617dd82f">SetInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
+<tr class="separator:a33146cb6219b67349eb1c643617dd82f inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2ddac98ac435c20af2cf466e838ee6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8a2ddac98ac435c20af2cf466e838ee6">SetNthInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
+<tr class="separator:a8a2ddac98ac435c20af2cf466e838ee6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d6b1395c571fb6ffd4cc424e11b0b2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aa3d6b1395c571fb6ffd4cc424e11b0b2">SetNthOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
+<tr class="separator:aa3d6b1395c571fb6ffd4cc424e11b0b2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619bad04ba15ca3fbb5edd5bcbf6d813 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a619bad04ba15ca3fbb5edd5bcbf6d813">SetNumberOfIndexedInputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> num)</td></tr>
+<tr class="separator:a619bad04ba15ca3fbb5edd5bcbf6d813 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9844f3ecf7550a90b44d61101eb6839 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad9844f3ecf7550a90b44d61101eb6839">SetNumberOfIndexedOutputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> num)</td></tr>
+<tr class="separator:ad9844f3ecf7550a90b44d61101eb6839 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8429f22b00ed2ccdcc9e2fefa2fd2ce8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8429f22b00ed2ccdcc9e2fefa2fd2ce8">SetNumberOfRequiredInputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>)</td></tr>
+<tr class="separator:a8429f22b00ed2ccdcc9e2fefa2fd2ce8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2531888b55fe7112860b43f5e01642 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a5e2531888b55fe7112860b43f5e01642">SetNumberOfRequiredOutputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> _arg)</td></tr>
+<tr class="separator:a5e2531888b55fe7112860b43f5e01642 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43d784aba024a7a050733d693f854744 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a43d784aba024a7a050733d693f854744">SetOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
+<tr class="separator:a43d784aba024a7a050733d693f854744 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4b515a2e0ee341fe4e35bb7d0d14d8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1a4b515a2e0ee341fe4e35bb7d0d14d8">SetPrimaryInput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *object)</td></tr>
+<tr class="separator:a1a4b515a2e0ee341fe4e35bb7d0d14d8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c61adbb92e30b9ca4ddddfa2ab5cd96 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6c61adbb92e30b9ca4ddddfa2ab5cd96">SetPrimaryOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *object)</td></tr>
+<tr class="separator:a6c61adbb92e30b9ca4ddddfa2ab5cd96 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a82a74447434661b2c1adf50257c6eb inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a2a82a74447434661b2c1adf50257c6eb">SetRequiredInputNames</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a66437d5614f9c14da747ab77f0d76b08">NameArray</a> &amp;)</td></tr>
+<tr class="separator:a2a82a74447434661b2c1adf50257c6eb inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73000f23064b7d2898fa21135080b4cf inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a73000f23064b7d2898fa21135080b4cf">VerifyPreconditions</a> () ITKv5_CONST</td></tr>
+<tr class="separator:a73000f23064b7d2898fa21135080b4cf inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1637fe26dd2d229fea2cb38604fe3a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a7f1637fe26dd2d229fea2cb38604fe3a">~ProcessObject</a> () override</td></tr>
+<tr class="separator:a7f1637fe26dd2d229fea2cb38604fe3a inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb7b5b16f2811dff03769522d215e02 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aaeb7b5b16f2811dff03769522d215e02">GetInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
+<tr class="separator:aaeb7b5b16f2811dff03769522d215e02 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9e17b697b5598a8ba4e2a71719c1ed inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aaa9e17b697b5598a8ba4e2a71719c1ed">GetInput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
+<tr class="separator:aaa9e17b697b5598a8ba4e2a71719c1ed inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a610a45a8ce300fc4c7c4022578108c2e inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a610a45a8ce300fc4c7c4022578108c2e">GetPrimaryInput</a> ()</td></tr>
 <tr class="separator:a610a45a8ce300fc4c7c4022578108c2e inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbf1bd589c7155ce3422e168e752b24a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abbf1bd589c7155ce3422e168e752b24a">GetPrimaryInput</a> () const</td></tr>
@@ -634,28 +680,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a0b46394305196132211f34731af5b7c1 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2918441a2ef8f4001b7f898511374475 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a2918441a2ef8f4001b7f898511374475">GetPrimaryInputName</a> () const</td></tr>
 <tr class="separator:a2918441a2ef8f4001b7f898511374475 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a4b515a2e0ee341fe4e35bb7d0d14d8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1a4b515a2e0ee341fe4e35bb7d0d14d8">SetPrimaryInput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *object)</td></tr>
-<tr class="separator:a1a4b515a2e0ee341fe4e35bb7d0d14d8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a619bad04ba15ca3fbb5edd5bcbf6d813 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a619bad04ba15ca3fbb5edd5bcbf6d813">SetNumberOfIndexedInputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> num)</td></tr>
-<tr class="separator:a619bad04ba15ca3fbb5edd5bcbf6d813 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8429f22b00ed2ccdcc9e2fefa2fd2ce8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8429f22b00ed2ccdcc9e2fefa2fd2ce8">SetNumberOfRequiredInputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>)</td></tr>
-<tr class="separator:a8429f22b00ed2ccdcc9e2fefa2fd2ce8 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a66d029c6ac7af9b5558efbd17613e3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8a66d029c6ac7af9b5558efbd17613e3">GetNumberOfRequiredInputs</a> () const</td></tr>
-<tr class="separator:a8a66d029c6ac7af9b5558efbd17613e3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8528b6a7008d6dbd273ada782cd18d7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af8528b6a7008d6dbd273ada782cd18d7">RemoveRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
-<tr class="separator:af8528b6a7008d6dbd273ada782cd18d7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad360aa6aaf6db4d72b37e83d4de0f7ad inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad360aa6aaf6db4d72b37e83d4de0f7ad">IsRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
-<tr class="separator:ad360aa6aaf6db4d72b37e83d4de0f7ad inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a82a74447434661b2c1adf50257c6eb inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a2a82a74447434661b2c1adf50257c6eb">SetRequiredInputNames</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a66437d5614f9c14da747ab77f0d76b08">NameArray</a> &amp;)</td></tr>
-<tr class="separator:a2a82a74447434661b2c1adf50257c6eb inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7009e5eb5583ca283013df95b4a097c3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a7009e5eb5583ca283013df95b4a097c3">AddRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
-<tr class="separator:a7009e5eb5583ca283013df95b4a097c3 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9366095b24bb0850c175734387de417c inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a9366095b24bb0850c175734387de417c">AddRequiredInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;, <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
-<tr class="separator:a9366095b24bb0850c175734387de417c inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e59a4b8b966bdb32f8359bc52f789c inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a25e59a4b8b966bdb32f8359bc52f789c">AddOptionalInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;)</td></tr>
-<tr class="separator:a25e59a4b8b966bdb32f8359bc52f789c inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2856e897dd2b37bf70628f03425c87 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#adf2856e897dd2b37bf70628f03425c87">AddOptionalInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;, <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
-<tr class="separator:adf2856e897dd2b37bf70628f03425c87 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a841eb57781dedc571592230d46305ab4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a841eb57781dedc571592230d46305ab4">GetOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key)</td></tr>
 <tr class="separator:a841eb57781dedc571592230d46305ab4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6548fcd6929dbdf92fce3fb5c1a90d77 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6548fcd6929dbdf92fce3fb5c1a90d77">GetOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key) const</td></tr>
@@ -668,54 +692,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aadfd786d1c6ea86239d820559f936bba inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29f666a51ae4ba9e8f31061446c37c32 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a29f666a51ae4ba9e8f31061446c37c32">GetOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> i) const</td></tr>
 <tr class="separator:a29f666a51ae4ba9e8f31061446c37c32 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d784aba024a7a050733d693f854744 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a43d784aba024a7a050733d693f854744">SetOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
-<tr class="separator:a43d784aba024a7a050733d693f854744 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e69fc7ca2cae9b2ee5df783c4ddfcf7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a4e69fc7ca2cae9b2ee5df783c4ddfcf7">RemoveOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key)</td></tr>
-<tr class="separator:a4e69fc7ca2cae9b2ee5df783c4ddfcf7 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac272475435b72d0b17fbbc8eb895531a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ac272475435b72d0b17fbbc8eb895531a">GetPrimaryOutput</a> ()</td></tr>
 <tr class="separator:ac272475435b72d0b17fbbc8eb895531a inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd3497dbe2aed38841cbe37a28ec0594 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abd3497dbe2aed38841cbe37a28ec0594">GetPrimaryOutput</a> () const</td></tr>
 <tr class="separator:abd3497dbe2aed38841cbe37a28ec0594 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c61adbb92e30b9ca4ddddfa2ab5cd96 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6c61adbb92e30b9ca4ddddfa2ab5cd96">SetPrimaryOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *object)</td></tr>
-<tr class="separator:a6c61adbb92e30b9ca4ddddfa2ab5cd96 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3d6b1395c571fb6ffd4cc424e11b0b2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aa3d6b1395c571fb6ffd4cc424e11b0b2">SetNthOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
-<tr class="separator:aa3d6b1395c571fb6ffd4cc424e11b0b2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a644f319ba7534460446379e82f4a7ab1 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a644f319ba7534460446379e82f4a7ab1">AddOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
-<tr class="separator:a644f319ba7534460446379e82f4a7ab1 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad656d815d06e80f3e19f8fa8f8c341e2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad656d815d06e80f3e19f8fa8f8c341e2">RemoveOutput</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx)</td></tr>
-<tr class="separator:ad656d815d06e80f3e19f8fa8f8c341e2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e2531888b55fe7112860b43f5e01642 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a5e2531888b55fe7112860b43f5e01642">SetNumberOfRequiredOutputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> _arg)</td></tr>
-<tr class="separator:a5e2531888b55fe7112860b43f5e01642 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8243a9b5917d88b93ccd0ea51b8d15a inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af8243a9b5917d88b93ccd0ea51b8d15a">GetNumberOfRequiredOutputs</a> () const</td></tr>
-<tr class="separator:af8243a9b5917d88b93ccd0ea51b8d15a inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9844f3ecf7550a90b44d61101eb6839 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ad9844f3ecf7550a90b44d61101eb6839">SetNumberOfIndexedOutputs</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> num)</td></tr>
-<tr class="separator:ad9844f3ecf7550a90b44d61101eb6839 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e8b67feff07974339be55273c8ebb64 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6e8b67feff07974339be55273c8ebb64">MakeNameFromInputIndex</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
-<tr class="separator:a6e8b67feff07974339be55273c8ebb64 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae37f7be2370bfe0f0fd2d93f0940bcec inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ae37f7be2370bfe0f0fd2d93f0940bcec">MakeNameFromOutputIndex</a> (<a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a> idx) const</td></tr>
-<tr class="separator:ae37f7be2370bfe0f0fd2d93f0940bcec inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963d4b11e0de1c5ab595bffcccdfd93f inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a963d4b11e0de1c5ab595bffcccdfd93f">MakeIndexFromInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name) const</td></tr>
-<tr class="separator:a963d4b11e0de1c5ab595bffcccdfd93f inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac448bc7e6438a02fc7f0f696e7b27b7d inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">DataObjectPointerArraySizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#ac448bc7e6438a02fc7f0f696e7b27b7d">MakeIndexFromOutputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;name) const</td></tr>
-<tr class="separator:ac448bc7e6438a02fc7f0f696e7b27b7d inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ebf8ea01fca4bdbd79b328efacb92d6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a8ebf8ea01fca4bdbd79b328efacb92d6">IsIndexedInputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
-<tr class="separator:a8ebf8ea01fca4bdbd79b328efacb92d6 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add34bbee6af7d8ad1ac020b867a89595 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#add34bbee6af7d8ad1ac020b867a89595">IsIndexedOutputName</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;) const</td></tr>
-<tr class="separator:add34bbee6af7d8ad1ac020b867a89595 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73000f23064b7d2898fa21135080b4cf inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a73000f23064b7d2898fa21135080b4cf">VerifyPreconditions</a> () ITKv5_CONST</td></tr>
-<tr class="separator:a73000f23064b7d2898fa21135080b4cf inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a00e709645b6f53d0a83390b97dfba inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a31a00e709645b6f53d0a83390b97dfba">GenerateOutputRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output)</td></tr>
-<tr class="separator:a31a00e709645b6f53d0a83390b97dfba inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe61fb6b7de8c443e7af1561bd722736 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">GenerateOutputInformation</a> ()</td></tr>
-<tr class="separator:abe61fb6b7de8c443e7af1561bd722736 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed10f6dd255911518c98ae38c0c72917 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#aed10f6dd255911518c98ae38c0c72917">PropagateResetPipeline</a> ()</td></tr>
-<tr class="separator:aed10f6dd255911518c98ae38c0c72917 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ba4a15c3031fd6b243232cbe55e6ff4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a0ba4a15c3031fd6b243232cbe55e6ff4">ReleaseInputs</a> ()</td></tr>
-<tr class="separator:a0ba4a15c3031fd6b243232cbe55e6ff4 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af03cd4fd7c884d92d3cac364e375b7ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#af03cd4fd7c884d92d3cac364e375b7ab">CacheInputReleaseDataFlags</a> ()</td></tr>
-<tr class="separator:af03cd4fd7c884d92d3cac364e375b7ab inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a788a8386d1da37ef1b595ca50c5ae008 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a788a8386d1da37ef1b595ca50c5ae008">RestoreInputReleaseDataFlags</a> ()</td></tr>
-<tr class="separator:a788a8386d1da37ef1b595ca50c5ae008 inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5caacebd5f8e8fae37e5aa5b5ef3c87b inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a5caacebd5f8e8fae37e5aa5b5ef3c87b">GetThreaderUpdateProgress</a> () const</td></tr>
 <tr class="separator:a5caacebd5f8e8fae37e5aa5b5ef3c87b inherit pro_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1723f29d9fe78dccbab7440064e7e7c2 inherit pro_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1723f29d9fe78dccbab7440064e7e7c2">ThreaderUpdateProgressOn</a> ()</td></tr>
@@ -727,12 +707,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -744,6 +724,46 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0ed00843430806fb9ba4c81fee87cb76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a0ed00843430806fb9ba4c81fee87cb76">AllocateUpdateBuffer</a> ()</td></tr>
+<tr class="separator:a0ed00843430806fb9ba4c81fee87cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644322a4cd6d25fdf5ee2d8994ebc053"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a644322a4cd6d25fdf5ee2d8994ebc053">ComputeSigmaValue</a> (int scaleLevel)</td></tr>
+<tr class="separator:a644322a4cd6d25fdf5ee2d8994ebc053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5e318e231649e7d9d778bbd7facfc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8c5e318e231649e7d9d778bbd7facfc3">UpdateMaximumResponse</a> (double sigma)</td></tr>
+<tr class="separator:a8c5e318e231649e7d9d778bbd7facfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9ea64b5fe10f5fbd628978e54cc693c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9ea64b5fe10f5fbd628978e54cc693c9">m_GenerateHessianOutput</a></td></tr>
+<tr class="separator:a9ea64b5fe10f5fbd628978e54cc693c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246aaf795b716000151bad1260dfbda7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a246aaf795b716000151bad1260dfbda7">m_GenerateScalesOutput</a></td></tr>
+<tr class="separator:a246aaf795b716000151bad1260dfbda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cf38738fbd88a06887011352e6d428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html#a39396e066b8d054b5c6048e8aee46f6c">HessianFilterType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ad8cf38738fbd88a06887011352e6d428">m_HessianFilter</a></td></tr>
+<tr class="separator:ad8cf38738fbd88a06887011352e6d428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8341cb437d249a52a5f42127be83e33f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageToImageFilter.html#a070d07c154ac66be8fbf5b4a358f16dc">HessianToMeasureFilterType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a8341cb437d249a52a5f42127be83e33f">m_HessianToMeasureFilter</a></td></tr>
+<tr class="separator:a8341cb437d249a52a5f42127be83e33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b0d205ef0e67b9b41857e3e5416fc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a31b0d205ef0e67b9b41857e3e5416fc5">m_NonNegativeHessianBasedMeasure</a></td></tr>
+<tr class="separator:a31b0d205ef0e67b9b41857e3e5416fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c33f13caac4d858a12b0822a7eb190c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a5c33f13caac4d858a12b0822a7eb190c">m_NumberOfSigmaSteps</a></td></tr>
+<tr class="separator:a5c33f13caac4d858a12b0822a7eb190c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a63434a24746dc52fa4ea2de57a6b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a06a63434a24746dc52fa4ea2de57a6b7">m_SigmaMaximum</a></td></tr>
+<tr class="separator:a06a63434a24746dc52fa4ea2de57a6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefce53d815559922da378d55812c44b2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#aefce53d815559922da378d55812c44b2">m_SigmaMinimum</a></td></tr>
+<tr class="separator:aefce53d815559922da378d55812c44b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52df58ca2f5978e79f7146dcf13fac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilterEnums.html#ace213e1aa852c7e8d6587c9e8cf33af4">SigmaStepMethodEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#ac52df58ca2f5978e79f7146dcf13fac2">m_SigmaStepMethod</a></td></tr>
+<tr class="separator:ac52df58ca2f5978e79f7146dcf13fac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cce657f723c44beb2ab0a9fac54b519"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">UpdateBufferType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#a9cce657f723c44beb2ab0a9fac54b519">m_UpdateBuffer</a></td></tr>
+<tr class="separator:a9cce657f723c44beb2ab0a9fac54b519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
+<tr class="memitem:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae052150189e0c19be8035e1814287f16">InputToOutputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::OutputImageDimension, Self::InputImageDimension &gt;</td></tr>
+<tr class="separator:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a455189fce2b61b9f70f8a7b3649c67cb">OutputToInputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::InputImageDimension, Self::OutputImageDimension &gt;</td></tr>
+<tr class="separator:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
 <tr class="memitem:ace549c5decbf99e28846d7f9e7b84a39 inherit pro_static_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classitk_1_1ImageRegionSplitterBase.html">ImageRegionSplitterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ace549c5decbf99e28846d7f9e7b84a39">GetGlobalDefaultSplitter</a> ()</td></tr>
 <tr class="separator:ace549c5decbf99e28846d7f9e7b84a39 inherit pro_static_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -758,10 +778,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa26ac1851065e25e726336d3acae4952 inherit pro_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa26ac1851065e25e726336d3acae4952">m_DynamicMultiThreading</a></td></tr>
 <tr class="separator:aa26ac1851065e25e726336d3acae4952 inherit pro_attribs_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1ProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1ProcessObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1ProcessObject.html">itk::ProcessObject</a></td></tr>
-<tr class="memitem:a73d93d85a417c77cf20cbd01d3a7677d inherit pro_attribs_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a73d93d85a417c77cf20cbd01d3a7677d">m_Updating</a></td></tr>
-<tr class="separator:a73d93d85a417c77cf20cbd01d3a7677d inherit pro_attribs_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6808e5c930d19feeaf22faefefbab783 inherit pro_attribs_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6808e5c930d19feeaf22faefefbab783">m_OutputInformationMTime</a></td></tr>
 <tr class="separator:a6808e5c930d19feeaf22faefefbab783 inherit pro_attribs_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d93d85a417c77cf20cbd01d3a7677d inherit pro_attribs_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a73d93d85a417c77cf20cbd01d3a7677d">m_Updating</a></td></tr>
+<tr class="separator:a73d93d85a417c77cf20cbd01d3a7677d inherit pro_attribs_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1077,7 +1097,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00167">167</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -1145,7 +1164,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 </div>
 </div>
@@ -1173,7 +1191,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 </div>
 </div>
@@ -1202,7 +1219,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 </div>
 </div>
@@ -1231,7 +1247,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 </div>
 </div>
@@ -1247,7 +1262,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html">itk::MultiScaleHessianBasedMeasureImageFilter</a>&lt; TInputImage, THessianImage, TOutputImage &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html">itk::MultiScaleHessianBasedMeasureImageFilter</a>&lt; TInputImage, THessianImage, TOutputImage &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1290,7 +1305,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Give the process object a chance to indicate that it will produce more output than it was requested to produce. For example, many imaging filters must compute the entire output at once or can only produce output in complete slices. Such filters cannot handle smaller requested regions. These filters must provide an implementation of this method, setting the output requested region to the size they will produce. By default, a process object does not modify the size of the output requested region. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#ac26647c13232381be4f6b1c63e2ec3c9">itk::ProcessObject</a>.</p>
 
@@ -1350,7 +1365,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with hessian values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1378,7 +1393,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with hessian values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1406,7 +1421,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with scale values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1434,7 +1449,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with scale values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1462,7 +1477,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with hessian values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1490,7 +1505,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to generate an image with scale values at each pixel for the best vesselness response </p>
 
 </div>
 </div>
@@ -1538,7 +1553,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get HessianToMeasureFilter. This will be a filter that takes Hessian input image and produces enhanced output scalar image. The filter must derive from itk::ImageToImage filter </p>
 
 </div>
 </div>
@@ -1566,7 +1581,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get HessianToMeasureFilter. This will be a filter that takes Hessian input image and produces enhanced output scalar image. The filter must derive from itk::ImageToImage filter </p>
 
 </div>
 </div>
@@ -1624,7 +1639,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to inform the filter that the Hessian-based measure is non-negative (classical measures like Sato's and Frangi's are), hence it has a minimum at zero. In this case, the update buffer is initialized at zero, and the output scale and Hessian are zero in case the Hessian-based measure returns zero for all scales. Otherwise, the minimum output scale and Hessian are the ones obtained at scale SigmaMinimum. On by default. </p>
 
 </div>
 </div>
@@ -1652,7 +1667,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get macros for Number of Scales </p>
 
 </div>
 </div>
@@ -1700,7 +1715,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get macros for SigmaMax </p>
 
 </div>
 </div>
@@ -1728,7 +1743,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get macros for SigmaMin </p>
 
 </div>
 </div>
@@ -1756,7 +1771,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Set/Get the method used to generate scale sequence (Equispaced or Logarithmic) </p>
 
 </div>
 </div>
@@ -1785,7 +1800,9 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+
+<p>Make a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a> of the correct type to used as the specified output. </p>
+<p>Every <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> subclass must be able to create a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a> that can be used as a specified output. This method is automatically called when <a class="el" href="classitk_1_1DataObject.html#a8a70b06ebb65da85628342f3e992bc4c">DataObject::DisconnectPipeline()</a> is called. <a class="el" href="classitk_1_1DataObject.html#a8a70b06ebb65da85628342f3e992bc4c">DataObject::DisconnectPipeline</a>, disconnects a data object from being an output of its current source. When the data object is disconnected, the <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> needs to construct a replacement output data object so that the <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> is in a valid state. So <a class="el" href="classitk_1_1DataObject.html#a8a70b06ebb65da85628342f3e992bc4c">DataObject::DisconnectPipeline</a> eventually calls <a class="el" href="classitk_1_1ProcessObject.html#acb9c58aa8c95e29d724303c59c8f5101" title="Make a DataObject of the correct type to used as the specified output.">ProcessObject::MakeOutput</a>. Note that MakeOutput always returns a itkSmartPointer to a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>. <a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a> and <a class="el" href="classitk_1_1MeshSource.html" title="Base class for all process objects that output mesh data.">MeshSource</a> override this method to create the correct type of image and mesh respectively. If a filter has multiple outputs of different types, then that filter must provide an implementation of <a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html#affff5fa7657538393e4c0f86ddaf78d7" title="Make a DataObject of the correct type to used as the specified output.">MakeOutput()</a>. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#acb9c58aa8c95e29d724303c59c8f5101">itk::ProcessObject</a>.</p>
 
@@ -1843,7 +1860,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to inform the filter that the Hessian-based measure is non-negative (classical measures like Sato's and Frangi's are), hence it has a minimum at zero. In this case, the update buffer is initialized at zero, and the output scale and Hessian are zero in case the Hessian-based measure returns zero for all scales. Otherwise, the minimum output scale and Hessian are the ones obtained at scale SigmaMinimum. On by default. </p>
 
 </div>
 </div>
@@ -1871,7 +1888,7 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods to turn on/off flag to inform the filter that the Hessian-based measure is non-negative (classical measures like Sato's and Frangi's are), hence it has a minimum at zero. In this case, the update buffer is initialized at zero, and the output scale and Hessian are zero in case the Hessian-based measure returns zero for all scales. Otherwise, the minimum output scale and Hessian are the ones obtained at scale SigmaMinimum. On by default. </p>
 
 </div>
 </div>
@@ -1910,7 +1927,8 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
+<p>Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
+ </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#aef3453b86dd89913c90a0574d400ed48">itk::ProcessObject</a>.</p>
 
@@ -2213,7 +2231,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 </div>
 </div>
@@ -2266,7 +2283,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00257">257</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2293,7 +2309,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00256">256</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2320,7 +2335,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00252">252</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2347,7 +2361,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00250">250</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2374,7 +2387,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00242">242</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2401,7 +2413,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00247">247</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2428,7 +2439,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00245">245</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2455,7 +2465,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00244">244</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2482,7 +2491,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00248">248</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 
@@ -2509,7 +2517,6 @@ template&lt;typename TInputImage , typename THessianImage , typename TOutputImag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is overloaded to create the Scales and Hessian output images </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00254">254</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
 

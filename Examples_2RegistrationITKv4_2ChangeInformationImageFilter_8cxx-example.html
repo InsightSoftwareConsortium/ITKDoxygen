@@ -152,8 +152,8 @@ $(function() {
 <div class="line">  <span class="keyword">using</span> ReaderType = <a name="_a2"></a><a class="code" href="classitk_1_1ImageFileReader.html">itk::ImageFileReader&lt;ImageType&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> WriterType = <a name="_a3"></a><a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;ImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> reader = ReaderType::New();</div>
-<div class="line">  <span class="keyword">auto</span> writer = WriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> reader = <a name="a4"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ReaderType::New</a>();</div>
+<div class="line">  <span class="keyword">auto</span> writer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">WriterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  reader-&gt;SetFileName(argv[1]);</div>
 <div class="line">  writer-&gt;SetFileName(argv[2]);</div>
@@ -170,9 +170,9 @@ $(function() {
 <div class="line">  <span class="comment">//  Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> FilterType = <a name="_a4"></a><a class="code" href="classitk_1_1ChangeInformationImageFilter.html">itk::ChangeInformationImageFilter&lt;ImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> FilterType = <a name="_a5"></a><a class="code" href="classitk_1_1ChangeInformationImageFilter.html">itk::ChangeInformationImageFilter&lt;ImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> filter = FilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> filter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FilterType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//</span></div>
@@ -189,11 +189,11 @@ $(function() {
 <div class="line">    <span class="keywordflow">return</span> EXIT_FAILURE;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  ImageType::ConstPointer inputImage = reader-&gt;GetOutput();</div>
+<div class="line">  <a name="a6"></a><a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ImageType::ConstPointer</a> inputImage = reader-&gt;GetOutput();</div>
 <div class="line"> </div>
-<div class="line">  <a name="a5"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">ImageType::PointType</a>     origin = inputImage-&gt;GetOrigin();</div>
+<div class="line">  <a name="a7"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">ImageType::PointType</a>     origin = inputImage-&gt;GetOrigin();</div>
 <div class="line">  ImageType::SpacingType   spacing = inputImage-&gt;GetSpacing();</div>
-<div class="line">  <a name="a6"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">ImageType::DirectionType</a> direction = inputImage-&gt;GetDirection();</div>
+<div class="line">  <a name="a8"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">ImageType::DirectionType</a> direction = inputImage-&gt;GetDirection();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (argc &gt; 3)</div>
 <div class="line">  {</div>
@@ -209,7 +209,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (argc &gt; 6)</div>
 <div class="line">  {</div>
-<div class="line">    <a name="a7"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#afc9b2e09ca815e90af469040c64abd94">ImageType::PointType::VectorType</a> translation;</div>
+<div class="line">    <a name="a9"></a><a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#afc9b2e09ca815e90af469040c64abd94">ImageType::PointType::VectorType</a> translation;</div>
 <div class="line"> </div>
 <div class="line">    translation[0] = std::stod(argv[4]);</div>
 <div class="line">    translation[1] = std::stod(argv[5]);</div>
@@ -225,11 +225,11 @@ $(function() {
 <div class="line">  {</div>
 <div class="line">    <span class="keywordtype">double</span> additionalAngle = std::stod(argv[7]);</div>
 <div class="line"> </div>
-<div class="line">    <a name="_a8"></a><a class="code" href="classitk_1_1Versor.html">itk::Versor&lt;itk::SpacePrecisionType&gt;</a> rotation;</div>
-<div class="line">    <span class="keywordtype">double</span> angleInRadians = additionalAngle * <a name="a9"></a><a class="code" href="namespaceitk_1_1Math.html#aec856bda469effc7a873b9baaae75583">itk::Math::pi</a> / 180.0;</div>
-<div class="line">    rotation.<a name="a10"></a><a class="code" href="classitk_1_1Versor.html#a817c1cab4a5566d40f46035345754539">SetRotationAroundZ</a>(angleInRadians);</div>
+<div class="line">    <a name="_a10"></a><a class="code" href="classitk_1_1Versor.html">itk::Versor&lt;itk::SpacePrecisionType&gt;</a> rotation;</div>
+<div class="line">    <span class="keywordtype">double</span> angleInRadians = additionalAngle * <a name="a11"></a><a class="code" href="namespaceitk_1_1Math.html#aec856bda469effc7a873b9baaae75583">itk::Math::pi</a> / 180.0;</div>
+<div class="line">    rotation.<a name="a12"></a><a class="code" href="classitk_1_1Versor.html#a817c1cab4a5566d40f46035345754539">SetRotationAroundZ</a>(angleInRadians);</div>
 <div class="line"> </div>
-<div class="line">    <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">ImageType::DirectionType</a> newDirection = direction * rotation.<a name="a11"></a><a class="code" href="classitk_1_1Versor.html#a7befaabad1598ebd3bf333c9ce8efa8a">GetMatrix</a>();</div>
+<div class="line">    <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">ImageType::DirectionType</a> newDirection = direction * rotation.<a name="a13"></a><a class="code" href="classitk_1_1Versor.html#a7befaabad1598ebd3bf333c9ce8efa8a">GetMatrix</a>();</div>
 <div class="line"> </div>
 <div class="line">    filter-&gt;SetOutputDirection(newDirection);</div>
 <div class="line">    filter-&gt;ChangeDirectionOn();</div>
@@ -265,6 +265,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a0818775ab9709819a7aae6e5ff87d6c5"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a0818775ab9709819a7aae6e5ff87d6c5">itk::GTest::TypedefsAndConstructors::Dimension2::DirectionType</a></div><div class="ttdeci">ImageBaseType::DirectionType DirectionType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00052">itkGTestTypedefsAndConstructors.h:52</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_afc9b2e09ca815e90af469040c64abd94"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#afc9b2e09ca815e90af469040c64abd94">itk::GTest::TypedefsAndConstructors::Dimension2::VectorType</a></div><div class="ttdeci">ImageBaseType::SpacingType VectorType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00053">itkGTestTypedefsAndConstructors.h:53</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a4e283d9983c57c5015a80d0b1d1cf09f"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">itk::GTest::TypedefsAndConstructors::Dimension2::PointType</a></div><div class="ttdeci">ImageBaseType::PointType PointType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00051">itkGTestTypedefsAndConstructors.h:51</a></div></div>
@@ -278,6 +279,7 @@ $(function() {
 <div class="ttc" id="aitkVersor_8h_html"><div class="ttname"><a href="itkVersor_8h.html">itkVersor.h</a></div></div>
 <div class="ttc" id="aitkImageFileWriter_8h_html"><div class="ttname"><a href="itkImageFileWriter_8h.html">itkImageFileWriter.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aclassitk_1_1Versor_html_a7befaabad1598ebd3bf333c9ce8efa8a"><div class="ttname"><a href="classitk_1_1Versor.html#a7befaabad1598ebd3bf333c9ce8efa8a">itk::Versor::GetMatrix</a></div><div class="ttdeci">MatrixType GetMatrix() const</div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_aec856bda469effc7a873b9baaae75583"><div class="ttname"><a href="namespaceitk_1_1Math.html#aec856bda469effc7a873b9baaae75583">itk::Math::pi</a></div><div class="ttdeci">static constexpr double pi</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00064">itkMath.h:64</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a3c1343e7d285fc01106df9e0c28d5154"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a3c1343e7d285fc01106df9e0c28d5154">itk::GTest::TypedefsAndConstructors::Dimension2::Dimension</a></div><div class="ttdeci">constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00044">itkGTestTypedefsAndConstructors.h:44</a></div></div>

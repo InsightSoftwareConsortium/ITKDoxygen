@@ -108,10 +108,10 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(FastMarchingStoppingCriterionBase);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">using</span> Self = FastMarchingStoppingCriterionBase;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">using</span> Superclass = StoppingCriterionBase;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">using</span> Pointer = SmartPointer&lt;Self&gt;;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">using</span> ConstPointer = SmartPointer&lt;const Self&gt;;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">using</span> <a class="code" href="classAddImageFilter.html">Self</a> = FastMarchingStoppingCriterionBase;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a> = StoppingCriterionBase;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a> = SmartPointer&lt;Self&gt;;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">using</span> <a class="code" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a> = SmartPointer&lt;const Self&gt;;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">using</span> Traits = FastMarchingTraits&lt;TInput, TOutput&gt;;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">using</span> NodeType = <span class="keyword">typename</span> Traits::NodeType;</div>
@@ -127,7 +127,6 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_CurrentValue = <a class="code" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">NumericTraits&lt;OutputPixelType&gt;::ZeroValue</a>();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    m_PreviousValue = <a class="code" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">NumericTraits&lt;OutputPixelType&gt;::ZeroValue</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;Reset();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
@@ -143,13 +142,12 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  FastMarchingStoppingCriterionBase()</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    : Superclass()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    : <a class="code" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    , m_Domain(nullptr)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_CurrentValue = <a class="code" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">NumericTraits&lt;OutputPixelType&gt;::ZeroValue</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_PreviousValue = <a class="code" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">NumericTraits&lt;OutputPixelType&gt;::ZeroValue</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  ~FastMarchingStoppingCriterionBase() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  OutputDomainPointer m_Domain;</div>
@@ -164,11 +162,15 @@ $(function() {
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  SetCurrentNode(<span class="keyword">const</span> NodeType &amp; iNode) = 0;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a2f58dcf154217e9a950e9621f60e4339"><div class="ttname"><a href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">ConstPointer</a></div><div class="ttdeci">SmartPointer&lt; const Self &gt; ConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
 <div class="ttc" id="aitkFastMarchingTraits_8h_html"><div class="ttname"><a href="itkFastMarchingTraits_8h.html">itkFastMarchingTraits.h</a></div></div>
 <div class="ttc" id="aitkStoppingCriterionBase_8h_html"><div class="ttname"><a href="itkStoppingCriterionBase_8h.html">itkStoppingCriterionBase.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1NumericTraits_html_a2a78b68c2a6ed8fe843b298265e5dd7a"><div class="ttname"><a href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">itk::NumericTraits::ZeroValue</a></div><div class="ttdeci">static T ZeroValue()</div><div class="ttdef"><b>Definition:</b> <a href="itkNumericTraits_8h_source.html#l00148">itkNumericTraits.h:148</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
 <div class="ttc" id="aitkNumericTraits_8h_html"><div class="ttname"><a href="itkNumericTraits_8h.html">itkNumericTraits.h</a></div></div>
+<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00089">itkAddImageFilter.h:89</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

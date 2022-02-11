@@ -116,34 +116,27 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1PowellOptimizer.html">PowellOptimizer</a>, <a class="code" href="classitk_1_1SingleValuedNonLinearOptimizer.html">SingleValuedNonLinearOptimizer</a>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classitk_1_1PowellOptimizer.html#a3da56fa2091c0595a50cb03494656ad3">   80</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SingleValuedCostFunction.html">CostFunctionType</a> = <a class="code" href="classitk_1_1SingleValuedCostFunction.html">SingleValuedCostFunction</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classitk_1_1PowellOptimizer.html#a4323c1daa4fb32b146c4045c69c53c0a">   81</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionType::Pointer</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classitk_1_1PowellOptimizer.html#a4323c1daa4fb32b146c4045c69c53c0a">   81</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">CostFunctionPointer</a> = <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">CostFunctionType::Pointer</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  itkSetMacro(Maximize, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  itkBooleanMacro(Maximize);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  itkGetConstReferenceMacro(Maximize, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  itkSetMacro(MaximumIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  itkGetConstReferenceMacro(MaximumIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  itkSetMacro(MaximumLineIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  itkGetConstMacro(MaximumLineIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  itkSetMacro(StepLength, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  itkGetConstReferenceMacro(StepLength, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  itkSetMacro(StepTolerance, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  itkGetConstReferenceMacro(StepTolerance, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  itkSetMacro(ValueTolerance, <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  itkGetConstReferenceMacro(ValueTolerance, <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  itkGetConstReferenceMacro(CurrentCost, <a class="code" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a>);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="classitk_1_1SingleValuedNonLinearOptimizer.html#a9559e44d47af0a69551e5d101f26b737">MeasureType</a></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classitk_1_1PowellOptimizer.html#aeb9dda83c130c5cb58d0f441a1056d4d">  121</a></span>&#160;  <a class="code" href="classitk_1_1PowellOptimizer.html#aeb9dda83c130c5cb58d0f441a1056d4d">GetValue</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> this-&gt;GetCurrentCost();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  itkGetConstReferenceMacro(CurrentIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  itkGetConstReferenceMacro(CurrentLineIteration, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
@@ -268,6 +261,7 @@ $(function() {
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1PowellOptimizer_html_a899aefbbaf3a652a7baaf69463b4498f"><div class="ttname"><a href="classitk_1_1PowellOptimizer.html#a899aefbbaf3a652a7baaf69463b4498f">itk::PowellOptimizer::m_LineOrigin</a></div><div class="ttdeci">ParametersType m_LineOrigin</div><div class="ttdef"><b>Definition:</b> <a href="itkPowellOptimizer_8h_source.html#l00271">itkPowellOptimizer.h:271</a></div></div>
 <div class="ttc" id="aclassitk_1_1OptimizerParameters_html"><div class="ttname"><a href="classitk_1_1OptimizerParameters.html">itk::OptimizerParameters&lt; double &gt;</a></div></div>
 <div class="ttc" id="aclassitk_1_1SingleValuedNonLinearOptimizer_html"><div class="ttname"><a href="classitk_1_1SingleValuedNonLinearOptimizer.html">itk::SingleValuedNonLinearOptimizer</a></div><div class="ttdoc">This class is a base for the Optimization methods that optimize a single valued function.</div><div class="ttdef"><b>Definition:</b> <a href="itkSingleValuedNonLinearOptimizer_8h_source.html#l00035">itkSingleValuedNonLinearOptimizer.h:35</a></div></div>

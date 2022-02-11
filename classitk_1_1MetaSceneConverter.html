@@ -74,6 +74,10 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1MetaSceneConverter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::MetaSceneConverter&lt; NDimensions, PixelType, TMeshTraits &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKSpatialObjects.html">Module ITKSpatialObjects</a></div></div>  </div>
@@ -141,16 +145,45 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8730a1489fafd460a34fde638a67dffb"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a8730a1489fafd460a34fde638a67dffb">CreateAnother</a> () const</td></tr>
 <tr class="separator:a8730a1489fafd460a34fde638a67dffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea2c8a1ab295418e83818d5913f49a1"><td class="memItemLeft" align="right" valign="top">MetaScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a1ea2c8a1ab295418e83818d5913f49a1">CreateMetaScene</a> (const <a class="el" href="classitk_1_1MetaSceneConverter.html#aee818223691a631316d7ced354de7f36">SpatialObjectType</a> *soScene, unsigned int depth=<a class="el" href="classitk_1_1SpatialObject.html#a959cbf91cdd1d552b5d90a89918bc6c2">SpatialObjectType::MaximumDepth</a>, const std::string &amp;name=&quot;&quot;)</td></tr>
+<tr class="separator:a1ea2c8a1ab295418e83818d5913f49a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6cc7e720dd027f59e8ca9bcfc4888"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2135232642057d9a3903ad94e828f788">SpatialObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aebc6cc7e720dd027f59e8ca9bcfc4888">CreateSpatialObjectScene</a> (MetaScene *mScene)</td></tr>
+<tr class="separator:aebc6cc7e720dd027f59e8ca9bcfc4888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bcaa88c3ccd653eb8f7583e52a54978"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1MetaEvent.html">MetaEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a4bcaa88c3ccd653eb8f7583e52a54978">GetEvent</a> ()</td></tr>
 <tr class="separator:a4bcaa88c3ccd653eb8f7583e52a54978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6eb410383b7fb6324c4c2306a242a31"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac6eb410383b7fb6324c4c2306a242a31">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:ac6eb410383b7fb6324c4c2306a242a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7dee1b3ede107cdc7d84ee8c87a4425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2135232642057d9a3903ad94e828f788">SpatialObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae7dee1b3ede107cdc7d84ee8c87a4425">ReadMeta</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:ae7dee1b3ede107cdc7d84ee8c87a4425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fb1b1e80ae56b1849465bc3b39636d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7fb1b1e80ae56b1849465bc3b39636d5">RegisterMetaConverter</a> (const std::string &amp;metaTypeName, const std::string &amp;spatialObjectTypeName, <a class="el" href="classitk_1_1MetaSceneConverter.html#a99b0a97009d4eff3eee9327b4851648c">MetaConverterBaseType</a> *converter)</td></tr>
+<tr class="separator:a7fb1b1e80ae56b1849465bc3b39636d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae0865d286902cdb40c213ae1f411b1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a4ae0865d286902cdb40c213ae1f411b1">SetEvent</a> (<a class="el" href="classitk_1_1MetaEvent.html">MetaEvent</a> *_arg)</td></tr>
 <tr class="separator:a4ae0865d286902cdb40c213ae1f411b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6fa9b25a9a34bda7ed20e0002cfa2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a6c6fa9b25a9a34bda7ed20e0002cfa2b">WriteMeta</a> (const <a class="el" href="classitk_1_1MetaSceneConverter.html#aee818223691a631316d7ced354de7f36">SpatialObjectType</a> *soScene, const std::string &amp;<a class="el" href="itkTestDriverInclude_8h.html#ac81f9269c8d57eed4d5b56f054fc84de">fileName</a>, unsigned int depth=<a class="el" href="classitk_1_1SpatialObject.html#a959cbf91cdd1d552b5d90a89918bc6c2">SpatialObjectType::MaximumDepth</a>, const std::string &amp;soName=&quot;&quot;)</td></tr>
 <tr class="separator:a6c6fa9b25a9a34bda7ed20e0002cfa2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7cb2cb30f33694512a309af328aee518"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7cb2cb30f33694512a309af328aee518">SetBinaryPoints</a> (bool _arg)</td></tr>
+<tr class="separator:a7cb2cb30f33694512a309af328aee518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56984d87b77f4634b17396ccf4befd3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae56984d87b77f4634b17396ccf4befd3">GetBinaryPoints</a> () const</td></tr>
+<tr class="separator:ae56984d87b77f4634b17396ccf4befd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af652e81943bcd458db5d8e05823e4940"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#af652e81943bcd458db5d8e05823e4940">BinaryPointsOn</a> ()</td></tr>
+<tr class="separator:af652e81943bcd458db5d8e05823e4940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d853231e81ab2be415ddd03d0d7f655"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2d853231e81ab2be415ddd03d0d7f655">BinaryPointsOff</a> ()</td></tr>
+<tr class="separator:a2d853231e81ab2be415ddd03d0d7f655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:afe3597f97b179936d368ef943be0f7a6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#afe3597f97b179936d368ef943be0f7a6">SetTransformPrecision</a> (unsigned int _arg)</td></tr>
+<tr class="separator:afe3597f97b179936d368ef943be0f7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c231b2aa28f5b2e50163f902f34f2b"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac5c231b2aa28f5b2e50163f902f34f2b">GetTransformPrecision</a> ()</td></tr>
+<tr class="separator:ac5c231b2aa28f5b2e50163f902f34f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ac107ef2842cd6a6870b49217cdc5eb71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac107ef2842cd6a6870b49217cdc5eb71">SetWriteImagesInSeparateFile</a> (bool _arg)</td></tr>
+<tr class="separator:ac107ef2842cd6a6870b49217cdc5eb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae64fcfd8e07e876a605382b45073d8ae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae64fcfd8e07e876a605382b45073d8ae">GetWriteImagesInSeparateFile</a> () const</td></tr>
+<tr class="separator:ae64fcfd8e07e876a605382b45073d8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaf93671cfb6acfa5a3d07bf237065b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a6eaf93671cfb6acfa5a3d07bf237065b">WriteImagesInSeparateFileOn</a> ()</td></tr>
+<tr class="separator:a6eaf93671cfb6acfa5a3d07bf237065b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747f268a0735b14bdf54a15290a5f9a8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a747f268a0735b14bdf54a15290a5f9a8">WriteImagesInSeparateFileOff</a> ()</td></tr>
+<tr class="separator:a747f268a0735b14bdf54a15290a5f9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,80 +265,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e75071b8cab257c9fd61e1ed64e30c7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2e75071b8cab257c9fd61e1ed64e30c7">TransformType</a> = typename <a class="el" href="classitk_1_1SpatialObject.html#ae77b7e95eb6b381c8e66c8deb4539ddb">SpatialObjectType::TransformType</a></td></tr>
-<tr class="separator:a2e75071b8cab257c9fd61e1ed64e30c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0247668bd1142f725a1282ee34361a2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac0247668bd1142f725a1282ee34361a2">MetaObjectListType</a> = std::list&lt; MetaObject * &gt;</td></tr>
-<tr class="separator:ac0247668bd1142f725a1282ee34361a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb847c330becc3e5f2a997580c8fe8ba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aeb847c330becc3e5f2a997580c8fe8ba">m_Orientation</a> [100]</td></tr>
-<tr class="separator:aeb847c330becc3e5f2a997580c8fe8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a704c9567009108221e838c5b3184576f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a704c9567009108221e838c5b3184576f">m_Position</a> [10]</td></tr>
-<tr class="separator:a704c9567009108221e838c5b3184576f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7666aa10be31799e3111755ed1f32411"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7666aa10be31799e3111755ed1f32411">m_CenterOfRotation</a> [10]</td></tr>
-<tr class="separator:a7666aa10be31799e3111755ed1f32411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a83e7c7d8124b7a51e71ac4d1a0bdee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaEvent.html">MetaEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a9a83e7c7d8124b7a51e71ac4d1a0bdee">m_Event</a></td></tr>
-<tr class="separator:a9a83e7c7d8124b7a51e71ac4d1a0bdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87a7d604be9e3cebe8d876bc14166bf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a87a7d604be9e3cebe8d876bc14166bf8">m_BinaryPoints</a></td></tr>
-<tr class="separator:a87a7d604be9e3cebe8d876bc14166bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f930c0559e835b9634279689fcb1f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a09f930c0559e835b9634279689fcb1f8">m_WriteImagesInSeparateFile</a></td></tr>
-<tr class="separator:a09f930c0559e835b9634279689fcb1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3f15da2b97cdbba99f44f071672d8fd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#af3f15da2b97cdbba99f44f071672d8fd">m_TransformPrecision</a></td></tr>
-<tr class="separator:af3f15da2b97cdbba99f44f071672d8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19c156dc87708ad776661f8af6259d58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#aa33ad7c7584a2c4eded9479ecda9022b">ConverterMapType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a19c156dc87708ad776661f8af6259d58">m_ConverterMap</a></td></tr>
-<tr class="separator:a19c156dc87708ad776661f8af6259d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cb2cb30f33694512a309af328aee518"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7cb2cb30f33694512a309af328aee518">SetBinaryPoints</a> (bool _arg)</td></tr>
-<tr class="separator:a7cb2cb30f33694512a309af328aee518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae56984d87b77f4634b17396ccf4befd3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae56984d87b77f4634b17396ccf4befd3">GetBinaryPoints</a> () const</td></tr>
-<tr class="separator:ae56984d87b77f4634b17396ccf4befd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af652e81943bcd458db5d8e05823e4940"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#af652e81943bcd458db5d8e05823e4940">BinaryPointsOn</a> ()</td></tr>
-<tr class="separator:af652e81943bcd458db5d8e05823e4940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d853231e81ab2be415ddd03d0d7f655"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2d853231e81ab2be415ddd03d0d7f655">BinaryPointsOff</a> ()</td></tr>
-<tr class="separator:a2d853231e81ab2be415ddd03d0d7f655"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe3597f97b179936d368ef943be0f7a6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#afe3597f97b179936d368ef943be0f7a6">SetTransformPrecision</a> (unsigned int _arg)</td></tr>
-<tr class="separator:afe3597f97b179936d368ef943be0f7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5c231b2aa28f5b2e50163f902f34f2b"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac5c231b2aa28f5b2e50163f902f34f2b">GetTransformPrecision</a> ()</td></tr>
-<tr class="separator:ac5c231b2aa28f5b2e50163f902f34f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac107ef2842cd6a6870b49217cdc5eb71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac107ef2842cd6a6870b49217cdc5eb71">SetWriteImagesInSeparateFile</a> (bool _arg)</td></tr>
-<tr class="separator:ac107ef2842cd6a6870b49217cdc5eb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae64fcfd8e07e876a605382b45073d8ae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae64fcfd8e07e876a605382b45073d8ae">GetWriteImagesInSeparateFile</a> () const</td></tr>
-<tr class="separator:ae64fcfd8e07e876a605382b45073d8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eaf93671cfb6acfa5a3d07bf237065b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a6eaf93671cfb6acfa5a3d07bf237065b">WriteImagesInSeparateFileOn</a> ()</td></tr>
-<tr class="separator:a6eaf93671cfb6acfa5a3d07bf237065b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a747f268a0735b14bdf54a15290a5f9a8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a747f268a0735b14bdf54a15290a5f9a8">WriteImagesInSeparateFileOff</a> ()</td></tr>
-<tr class="separator:a747f268a0735b14bdf54a15290a5f9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fb1b1e80ae56b1849465bc3b39636d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7fb1b1e80ae56b1849465bc3b39636d5">RegisterMetaConverter</a> (const std::string &amp;metaTypeName, const std::string &amp;spatialObjectTypeName, <a class="el" href="classitk_1_1MetaSceneConverter.html#a99b0a97009d4eff3eee9327b4851648c">MetaConverterBaseType</a> *converter)</td></tr>
-<tr class="separator:a7fb1b1e80ae56b1849465bc3b39636d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea2c8a1ab295418e83818d5913f49a1"><td class="memItemLeft" align="right" valign="top">MetaScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a1ea2c8a1ab295418e83818d5913f49a1">CreateMetaScene</a> (const <a class="el" href="classitk_1_1MetaSceneConverter.html#aee818223691a631316d7ced354de7f36">SpatialObjectType</a> *soScene, unsigned int depth=<a class="el" href="classitk_1_1SpatialObject.html#a959cbf91cdd1d552b5d90a89918bc6c2">SpatialObjectType::MaximumDepth</a>, const std::string &amp;name=&quot;&quot;)</td></tr>
-<tr class="separator:a1ea2c8a1ab295418e83818d5913f49a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebc6cc7e720dd027f59e8ca9bcfc4888"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2135232642057d9a3903ad94e828f788">SpatialObjectPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aebc6cc7e720dd027f59e8ca9bcfc4888">CreateSpatialObjectScene</a> (MetaScene *mScene)</td></tr>
-<tr class="separator:aebc6cc7e720dd027f59e8ca9bcfc4888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a5df65a2d73f0514fcf8320d44991df5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a5df65a2d73f0514fcf8320d44991df5c">MetaSceneConverter</a> ()</td></tr>
 <tr class="separator:a5df65a2d73f0514fcf8320d44991df5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9268d9a2f43e50f189f79152bb156d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ae9268d9a2f43e50f189f79152bb156d1">~MetaSceneConverter</a> () override=default</td></tr>
 <tr class="separator:ae9268d9a2f43e50f189f79152bb156d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memTemplParams" colspan="2">template&lt;typename TConverter &gt; </td></tr>
-<tr class="memitem:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memTemplItemLeft" align="right" valign="top">MetaObject *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aac0de2746209ae4ffe6892cbfd7fe65b">SpatialObjectToMetaObject</a> (<a class="el" href="classitk_1_1MetaSceneConverter.html#abde43ef89b7cb14c6bbd024865b48499">SpatialObjectConstPointer</a> &amp;so)</td></tr>
-<tr class="separator:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4850988a6d678000ce654012f5f5375"><td class="memTemplParams" colspan="2">template&lt;typename TConverter &gt; </td></tr>
-<tr class="memitem:ab4850988a6d678000ce654012f5f5375"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2135232642057d9a3903ad94e828f788">SpatialObjectPointer</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ab4850988a6d678000ce654012f5f5375">MetaObjectToSpatialObject</a> (const MetaObject *mo)</td></tr>
-<tr class="separator:ab4850988a6d678000ce654012f5f5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9364eb75cdd5e92d7f776856c2c63e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aa9364eb75cdd5e92d7f776856c2c63e1">SetTransform</a> (MetaObject *obj, const <a class="el" href="classitk_1_1MetaSceneConverter.html#a2e75071b8cab257c9fd61e1ed64e30c7">TransformType</a> *transform)</td></tr>
-<tr class="separator:aa9364eb75cdd5e92d7f776856c2c63e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c50529426922d9ef1a55e83ff544cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a9c50529426922d9ef1a55e83ff544cd0">SetTransform</a> (<a class="el" href="classitk_1_1MetaSceneConverter.html#aee818223691a631316d7ced354de7f36">SpatialObjectType</a> *so, const MetaObject *meta)</td></tr>
-<tr class="separator:a9c50529426922d9ef1a55e83ff544cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,6 +294,48 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:ac0247668bd1142f725a1282ee34361a2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ac0247668bd1142f725a1282ee34361a2">MetaObjectListType</a> = std::list&lt; MetaObject * &gt;</td></tr>
+<tr class="separator:ac0247668bd1142f725a1282ee34361a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e75071b8cab257c9fd61e1ed64e30c7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2e75071b8cab257c9fd61e1ed64e30c7">TransformType</a> = typename <a class="el" href="classitk_1_1SpatialObject.html#ae77b7e95eb6b381c8e66c8deb4539ddb">SpatialObjectType::TransformType</a></td></tr>
+<tr class="separator:a2e75071b8cab257c9fd61e1ed64e30c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab4850988a6d678000ce654012f5f5375"><td class="memTemplParams" colspan="2">template&lt;typename TConverter &gt; </td></tr>
+<tr class="memitem:ab4850988a6d678000ce654012f5f5375"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#a2135232642057d9a3903ad94e828f788">SpatialObjectPointer</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#ab4850988a6d678000ce654012f5f5375">MetaObjectToSpatialObject</a> (const MetaObject *mo)</td></tr>
+<tr class="separator:ab4850988a6d678000ce654012f5f5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9364eb75cdd5e92d7f776856c2c63e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aa9364eb75cdd5e92d7f776856c2c63e1">SetTransform</a> (MetaObject *obj, const <a class="el" href="classitk_1_1MetaSceneConverter.html#a2e75071b8cab257c9fd61e1ed64e30c7">TransformType</a> *transform)</td></tr>
+<tr class="separator:aa9364eb75cdd5e92d7f776856c2c63e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c50529426922d9ef1a55e83ff544cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a9c50529426922d9ef1a55e83ff544cd0">SetTransform</a> (<a class="el" href="classitk_1_1MetaSceneConverter.html#aee818223691a631316d7ced354de7f36">SpatialObjectType</a> *so, const MetaObject *meta)</td></tr>
+<tr class="separator:a9c50529426922d9ef1a55e83ff544cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memTemplParams" colspan="2">template&lt;typename TConverter &gt; </td></tr>
+<tr class="memitem:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memTemplItemLeft" align="right" valign="top">MetaObject *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aac0de2746209ae4ffe6892cbfd7fe65b">SpatialObjectToMetaObject</a> (<a class="el" href="classitk_1_1MetaSceneConverter.html#abde43ef89b7cb14c6bbd024865b48499">SpatialObjectConstPointer</a> &amp;so)</td></tr>
+<tr class="separator:aac0de2746209ae4ffe6892cbfd7fe65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a87a7d604be9e3cebe8d876bc14166bf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a87a7d604be9e3cebe8d876bc14166bf8">m_BinaryPoints</a></td></tr>
+<tr class="separator:a87a7d604be9e3cebe8d876bc14166bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7666aa10be31799e3111755ed1f32411"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a7666aa10be31799e3111755ed1f32411">m_CenterOfRotation</a> [10]</td></tr>
+<tr class="separator:a7666aa10be31799e3111755ed1f32411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c156dc87708ad776661f8af6259d58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaSceneConverter.html#aa33ad7c7584a2c4eded9479ecda9022b">ConverterMapType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a19c156dc87708ad776661f8af6259d58">m_ConverterMap</a></td></tr>
+<tr class="separator:a19c156dc87708ad776661f8af6259d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a83e7c7d8124b7a51e71ac4d1a0bdee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MetaEvent.html">MetaEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a9a83e7c7d8124b7a51e71ac4d1a0bdee">m_Event</a></td></tr>
+<tr class="separator:a9a83e7c7d8124b7a51e71ac4d1a0bdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb847c330becc3e5f2a997580c8fe8ba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#aeb847c330becc3e5f2a997580c8fe8ba">m_Orientation</a> [100]</td></tr>
+<tr class="separator:aeb847c330becc3e5f2a997580c8fe8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704c9567009108221e838c5b3184576f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a704c9567009108221e838c5b3184576f">m_Position</a> [10]</td></tr>
+<tr class="separator:a704c9567009108221e838c5b3184576f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f15da2b97cdbba99f44f071672d8fd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#af3f15da2b97cdbba99f44f071672d8fd">m_TransformPrecision</a></td></tr>
+<tr class="separator:af3f15da2b97cdbba99f44f071672d8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f930c0559e835b9634279689fcb1f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MetaSceneConverter.html#a09f930c0559e835b9634279689fcb1f8">m_WriteImagesInSeparateFile</a></td></tr>
+<tr class="separator:a09f930c0559e835b9634279689fcb1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,7 +444,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00130">130</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -562,7 +580,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00128">128</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -593,7 +610,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -621,7 +637,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -694,7 +709,7 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1MetaSceneConverter.html">itk::MetaSceneConverter</a>&lt; NDimensions, PixelType, TMeshTraits &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1MetaSceneConverter.html">itk::MetaSceneConverter</a>&lt; NDimensions, PixelType, TMeshTraits &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -745,7 +760,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -766,7 +780,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -879,7 +892,7 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
+<p>set/get the precision for writing out numbers as plain text </p>
 
 </div>
 </div>
@@ -907,7 +920,7 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
+<p>Set if the images should be written in different files </p>
 
 </div>
 </div>
@@ -938,9 +951,10 @@ template&lt;typename TConverter &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00143">143</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New()</a>.</p>
 
 </div>
 </div>
@@ -1122,7 +1136,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -1161,7 +1174,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 </div>
 </div>
@@ -1250,9 +1262,10 @@ template&lt;typename TConverter &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00134">134</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New()</a>.</p>
 
 </div>
 </div>
@@ -1280,7 +1293,7 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
+<p>Set if the images should be written in different files </p>
 
 </div>
 </div>
@@ -1308,7 +1321,7 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
+<p>Set if the images should be written in different files </p>
 
 </div>
 </div>
@@ -1377,7 +1390,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00159">159</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1404,7 +1416,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00156">156</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1431,7 +1442,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00162">162</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1458,7 +1468,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00158">158</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1485,7 +1494,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00154">154</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1512,7 +1520,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00155">155</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1539,7 +1546,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00161">161</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 
@@ -1566,7 +1572,6 @@ template&lt;unsigned int NDimensions = 3, typename PixelType  = unsigned char, t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set if the points should be saved in binary/ASCII </p>
 
 <p class="definition">Definition at line <a class="el" href="itkMetaSceneConverter_8h_source.html#l00160">160</a> of file <a class="el" href="itkMetaSceneConverter_8h_source.html">itkMetaSceneConverter.h</a>.</p>
 

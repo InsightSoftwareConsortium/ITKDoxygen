@@ -75,6 +75,10 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classitk_1_1LevelSetEquationTermContainer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::LevelSetEquationTermContainer&lt; TInputImage, TLevelSetContainer &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Segmentation.html">Group Segmentation</a> &raquo; <a class="el" href="group__ITKLevelSetsv4.html">Module ITKLevelSetsv4</a></div></div>  </div>
@@ -110,11 +114,11 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:afa09a28a6db6211a2f017645a5aeb6f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#afa09a28a6db6211a2f017645a5aeb6f7">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:afa09a28a6db6211a2f017645a5aeb6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06260f0b552b71acfe0a32c7f6a47d67"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a> = typename InputImageType::Pointer</td></tr>
+<tr class="memitem:a06260f0b552b71acfe0a32c7f6a47d67"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a></td></tr>
 <tr class="separator:a06260f0b552b71acfe0a32c7f6a47d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d11da7db5425b0ea2bcd1690e04e772"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> = TInputImage</td></tr>
 <tr class="separator:a7d11da7db5425b0ea2bcd1690e04e772"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4162631094cb9036b57647c0e55c7cd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a> = typename LevelSetContainerType::Pointer</td></tr>
+<tr class="memitem:ae4162631094cb9036b57647c0e55c7cd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">LevelSetContainerType::Pointer</a></td></tr>
 <tr class="separator:ae4162631094cb9036b57647c0e55c7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff4545da016bb48556a13563f1365f0a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> = TLevelSetContainer</td></tr>
 <tr class="separator:aff4545da016bb48556a13563f1365f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,10 +171,59 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa6dc01b6366315156e33f035f1454d5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aa6dc01b6366315156e33f035f1454d5f">AddTerm</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a> &amp;iId, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *iTerm)</td></tr>
+<tr class="separator:aa6dc01b6366315156e33f035f1454d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee630f06bb15d40f2613b4b765e0bb80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1Iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aee630f06bb15d40f2613b4b765e0bb80">Begin</a> ()</td></tr>
+<tr class="separator:aee630f06bb15d40f2613b4b765e0bb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded83231f3a8dbce45a3f14eb2010520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1ConstIterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aded83231f3a8dbce45a3f14eb2010520">Begin</a> () const</td></tr>
+<tr class="separator:aded83231f3a8dbce45a3f14eb2010520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be20caf61cd35178ef00a007ae2c0ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7be20caf61cd35178ef00a007ae2c0ff">ComputeCFLContribution</a> () const</td></tr>
+<tr class="separator:a7be20caf61cd35178ef00a007ae2c0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af898f7cd9f9f65910d7c104c29381f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3af898f7cd9f9f65910d7c104c29381f">ComputeRequiredData</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aef6008fa6dab916c7781ac5888b78048">LevelSetDataType</a> &amp;ioData)</td></tr>
+<tr class="separator:a3af898f7cd9f9f65910d7c104c29381f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a815b07ab8946bdb96db1654b1c5450cc"><td class="memItemLeft" align="right" valign="top">virtual ::<a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">itk::LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a815b07ab8946bdb96db1654b1c5450cc">CreateAnother</a> () const</td></tr>
 <tr class="separator:a815b07ab8946bdb96db1654b1c5450cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8163c63cf8f62749ed67e5a010445b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1Iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3f8163c63cf8f62749ed67e5a010445b">End</a> ()</td></tr>
+<tr class="separator:a3f8163c63cf8f62749ed67e5a010445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a82463099c7260937692b0f0f6c971"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1ConstIterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aa4a82463099c7260937692b0f0f6c971">End</a> () const</td></tr>
+<tr class="separator:aa4a82463099c7260937692b0f0f6c971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f5f3f261a256ecca3ac5d46dc46a567"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8f5f3f261a256ecca3ac5d46dc46a567">Evaluate</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP)</td></tr>
+<tr class="separator:a8f5f3f261a256ecca3ac5d46dc46a567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0f368d2c3577c33574f984328e543a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9d0f368d2c3577c33574f984328e543a">Evaluate</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aef6008fa6dab916c7781ac5888b78048">LevelSetDataType</a> &amp;iData)</td></tr>
+<tr class="separator:a9d0f368d2c3577c33574f984328e543a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1868282df8bb0e8dd955546afdff85"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#acf1868282df8bb0e8dd955546afdff85">GetCurrentLevelSetId</a> ()</td></tr>
+<tr class="separator:acf1868282df8bb0e8dd955546afdff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1edece225638e27b1a089ea7ca5eac0b"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a1edece225638e27b1a089ea7ca5eac0b">GetLevelSetContainer</a> () const</td></tr>
+<tr class="separator:a1edece225638e27b1a089ea7ca5eac0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04090d978e95509ff2c25f6101226c07"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a04090d978e95509ff2c25f6101226c07">GetModifiableLevelSetContainer</a> ()</td></tr>
+<tr class="separator:a04090d978e95509ff2c25f6101226c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a267c7b544032ad42eb3071242f212b"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a6a267c7b544032ad42eb3071242f212b">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a6a267c7b544032ad42eb3071242f212b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71176f83413bb0429475dc311f731431"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a71176f83413bb0429475dc311f731431">GetTerm</a> (const std::string &amp;iName)</td></tr>
+<tr class="separator:a71176f83413bb0429475dc311f731431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb1cf32c5192dcbaf9982b0aa55c7b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#adeb1cf32c5192dcbaf9982b0aa55c7b4">GetTerm</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a> &amp;iId)</td></tr>
+<tr class="separator:adeb1cf32c5192dcbaf9982b0aa55c7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af91f8251f867801f1b37f95036cde83f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af91f8251f867801f1b37f95036cde83f">Initialize</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP)</td></tr>
+<tr class="separator:af91f8251f867801f1b37f95036cde83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a5a3cbe0940d625f69da85e84cf3cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ac8a5a3cbe0940d625f69da85e84cf3cc">InitializeParameters</a> ()</td></tr>
+<tr class="separator:ac8a5a3cbe0940d625f69da85e84cf3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac712ac4780082d601b32c73156b16a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ac712ac4780082d601b32c73156b16a2c">PushTerm</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *iTerm)</td></tr>
+<tr class="separator:ac712ac4780082d601b32c73156b16a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47bf8e6afe67129cb064b9591a38e3b9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a47bf8e6afe67129cb064b9591a38e3b9">SetCurrentLevelSetId</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a> _arg)</td></tr>
+<tr class="separator:a47bf8e6afe67129cb064b9591a38e3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aeb3402060ca446ff1fbd8d49dd2fb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8aeb3402060ca446ff1fbd8d49dd2fb2">SetLevelSetContainer</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *_arg)</td></tr>
+<tr class="separator:a8aeb3402060ca446ff1fbd8d49dd2fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d33cb720dbf73959f424b2aecfc4c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3d33cb720dbf73959f424b2aecfc4c13">Update</a> ()</td></tr>
+<tr class="separator:a3d33cb720dbf73959f424b2aecfc4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98663a60ea3b51d83b37d51cd0678b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ab98663a60ea3b51d83b37d51cd0678b3">UpdatePixel</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &amp;oldValue, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &amp;newValue)</td></tr>
+<tr class="separator:ab98663a60ea3b51d83b37d51cd0678b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a8eef8e9d9d287ac038c99ef2433af0ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8eef8e9d9d287ac038c99ef2433af0ee">SetInput</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *_arg)</td></tr>
+<tr class="separator:a8eef8e9d9d287ac038c99ef2433af0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a883f0a2e8386053bbf37afff6a654828"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a883f0a2e8386053bbf37afff6a654828">GetModifiableInput</a> ()</td></tr>
+<tr class="separator:a883f0a2e8386053bbf37afff6a654828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10eaecd0651ea3127eea6cdf7d922300"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a10eaecd0651ea3127eea6cdf7d922300">GetInput</a> () const</td></tr>
+<tr class="separator:a10eaecd0651ea3127eea6cdf7d922300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,104 +305,43 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac95d685484c147687dcd5161790fe49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aac95d685484c147687dcd5161790fe49">MapTermContainerType</a> = std::map&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a>, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#abd9b4ceccb15759ec8f98be253dcb885">TermPointer</a> &gt;</td></tr>
-<tr class="separator:aac95d685484c147687dcd5161790fe49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e757640485966a63f78c44e5625d912"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9e757640485966a63f78c44e5625d912">MapTermContainerIteratorType</a> = typename MapTermContainerType::iterator</td></tr>
-<tr class="separator:a9e757640485966a63f78c44e5625d912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e54093b8f943ae13cc58f15b13d52f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a75e54093b8f943ae13cc58f15b13d52f">MapTermContainerConstIteratorType</a> = typename MapTermContainerType::const_iterator</td></tr>
-<tr class="separator:a75e54093b8f943ae13cc58f15b13d52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
 <tr class="memitem:a057b0ecc07b8c4d71656c1834109573d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a057b0ecc07b8c4d71656c1834109573d">HashMapStringTermContainerType</a> = std::unordered_map&lt; std::string, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#abd9b4ceccb15759ec8f98be253dcb885">TermPointer</a> &gt;</td></tr>
 <tr class="separator:a057b0ecc07b8c4d71656c1834109573d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f181081322c679b305034e4fbd7b2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a77f181081322c679b305034e4fbd7b2d">RequiredDataType</a> = typename <a class="el" href="classitk_1_1LevelSetEquationTermBase.html#a7fb585d45235b30dff2eb29f6410e7cb">TermType::RequiredDataType</a></td></tr>
-<tr class="separator:a77f181081322c679b305034e4fbd7b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ba839c4a79f61e27df1cfc28c7a2c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad5ba839c4a79f61e27df1cfc28c7a2c8">MapCFLContainerType</a> = std::map&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a>, std::atomic&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &gt; &gt;</td></tr>
-<tr class="separator:ad5ba839c4a79f61e27df1cfc28c7a2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd7b1115637cb797e1e8a719900b9cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8bd7b1115637cb797e1e8a719900b9cf">MapCFLContainerIterator</a> = typename MapCFLContainerType::iterator</td></tr>
-<tr class="separator:a8bd7b1115637cb797e1e8a719900b9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5bcea9f0755648f36dce94bee41ff97"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae5bcea9f0755648f36dce94bee41ff97">MapCFLContainerConstIterator</a> = typename MapCFLContainerType::const_iterator</td></tr>
 <tr class="separator:ae5bcea9f0755648f36dce94bee41ff97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9830fc407400559db7e7783cc10a9394"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9830fc407400559db7e7783cc10a9394">Iterator</a></td></tr>
-<tr class="separator:a9830fc407400559db7e7783cc10a9394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30f7cb3254a830c185dc3f05445a998d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a30f7cb3254a830c185dc3f05445a998d">m_CurrentLevelSetId</a></td></tr>
-<tr class="separator:a30f7cb3254a830c185dc3f05445a998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72cab574024be6183a9c754171b8510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad72cab574024be6183a9c754171b8510">m_LevelSetContainer</a></td></tr>
-<tr class="separator:ad72cab574024be6183a9c754171b8510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ae280bcd5241818e745ff9f17fe9625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a6ae280bcd5241818e745ff9f17fe9625">m_Input</a></td></tr>
-<tr class="separator:a6ae280bcd5241818e745ff9f17fe9625"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50f02b8d1ebab8ca8eb2fdb44777924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a057b0ecc07b8c4d71656c1834109573d">HashMapStringTermContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad50f02b8d1ebab8ca8eb2fdb44777924">m_NameContainer</a></td></tr>
-<tr class="separator:ad50f02b8d1ebab8ca8eb2fdb44777924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a06c5fa93811cd7d6d3213292240ded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a77f181081322c679b305034e4fbd7b2d">RequiredDataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8a06c5fa93811cd7d6d3213292240ded">m_RequiredData</a></td></tr>
-<tr class="separator:a8a06c5fa93811cd7d6d3213292240ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefbff20ead2ef28aff9785c6bda7ded0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aac95d685484c147687dcd5161790fe49">MapTermContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aefbff20ead2ef28aff9785c6bda7ded0">m_Container</a></td></tr>
-<tr class="separator:aefbff20ead2ef28aff9785c6bda7ded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad33c8592748302e7641133d143dd3f32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad5ba839c4a79f61e27df1cfc28c7a2c8">MapCFLContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad33c8592748302e7641133d143dd3f32">m_TermContribution</a></td></tr>
-<tr class="separator:ad33c8592748302e7641133d143dd3f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eef8e9d9d287ac038c99ef2433af0ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8eef8e9d9d287ac038c99ef2433af0ee">SetInput</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *_arg)</td></tr>
-<tr class="separator:a8eef8e9d9d287ac038c99ef2433af0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a883f0a2e8386053bbf37afff6a654828"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a883f0a2e8386053bbf37afff6a654828">GetModifiableInput</a> ()</td></tr>
-<tr class="separator:a883f0a2e8386053bbf37afff6a654828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10eaecd0651ea3127eea6cdf7d922300"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7d11da7db5425b0ea2bcd1690e04e772">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a10eaecd0651ea3127eea6cdf7d922300">GetInput</a> () const</td></tr>
-<tr class="separator:a10eaecd0651ea3127eea6cdf7d922300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47bf8e6afe67129cb064b9591a38e3b9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a47bf8e6afe67129cb064b9591a38e3b9">SetCurrentLevelSetId</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a> _arg)</td></tr>
-<tr class="separator:a47bf8e6afe67129cb064b9591a38e3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf1868282df8bb0e8dd955546afdff85"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#acf1868282df8bb0e8dd955546afdff85">GetCurrentLevelSetId</a> ()</td></tr>
-<tr class="separator:acf1868282df8bb0e8dd955546afdff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aeb3402060ca446ff1fbd8d49dd2fb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8aeb3402060ca446ff1fbd8d49dd2fb2">SetLevelSetContainer</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *_arg)</td></tr>
-<tr class="separator:a8aeb3402060ca446ff1fbd8d49dd2fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04090d978e95509ff2c25f6101226c07"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a04090d978e95509ff2c25f6101226c07">GetModifiableLevelSetContainer</a> ()</td></tr>
-<tr class="separator:a04090d978e95509ff2c25f6101226c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1edece225638e27b1a089ea7ca5eac0b"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aff4545da016bb48556a13563f1365f0a">LevelSetContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a1edece225638e27b1a089ea7ca5eac0b">GetLevelSetContainer</a> () const</td></tr>
-<tr class="separator:a1edece225638e27b1a089ea7ca5eac0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac712ac4780082d601b32c73156b16a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ac712ac4780082d601b32c73156b16a2c">PushTerm</a> (<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *iTerm)</td></tr>
-<tr class="separator:ac712ac4780082d601b32c73156b16a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6dc01b6366315156e33f035f1454d5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aa6dc01b6366315156e33f035f1454d5f">AddTerm</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a> &amp;iId, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *iTerm)</td></tr>
-<tr class="separator:aa6dc01b6366315156e33f035f1454d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb1cf32c5192dcbaf9982b0aa55c7b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#adeb1cf32c5192dcbaf9982b0aa55c7b4">GetTerm</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a> &amp;iId)</td></tr>
-<tr class="separator:adeb1cf32c5192dcbaf9982b0aa55c7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71176f83413bb0429475dc311f731431"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af71b322829e07264f6c7dc9eda8c3409">TermType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a71176f83413bb0429475dc311f731431">GetTerm</a> (const std::string &amp;iName)</td></tr>
-<tr class="separator:a71176f83413bb0429475dc311f731431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af91f8251f867801f1b37f95036cde83f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af91f8251f867801f1b37f95036cde83f">Initialize</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP)</td></tr>
-<tr class="separator:af91f8251f867801f1b37f95036cde83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98663a60ea3b51d83b37d51cd0678b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ab98663a60ea3b51d83b37d51cd0678b3">UpdatePixel</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &amp;oldValue, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &amp;newValue)</td></tr>
-<tr class="separator:ab98663a60ea3b51d83b37d51cd0678b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8a5a3cbe0940d625f69da85e84cf3cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ac8a5a3cbe0940d625f69da85e84cf3cc">InitializeParameters</a> ()</td></tr>
-<tr class="separator:ac8a5a3cbe0940d625f69da85e84cf3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f5f3f261a256ecca3ac5d46dc46a567"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8f5f3f261a256ecca3ac5d46dc46a567">Evaluate</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP)</td></tr>
-<tr class="separator:a8f5f3f261a256ecca3ac5d46dc46a567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d0f368d2c3577c33574f984328e543a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9d0f368d2c3577c33574f984328e543a">Evaluate</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aef6008fa6dab916c7781ac5888b78048">LevelSetDataType</a> &amp;iData)</td></tr>
-<tr class="separator:a9d0f368d2c3577c33574f984328e543a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d33cb720dbf73959f424b2aecfc4c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3d33cb720dbf73959f424b2aecfc4c13">Update</a> ()</td></tr>
-<tr class="separator:a3d33cb720dbf73959f424b2aecfc4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be20caf61cd35178ef00a007ae2c0ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a7be20caf61cd35178ef00a007ae2c0ff">ComputeCFLContribution</a> () const</td></tr>
-<tr class="separator:a7be20caf61cd35178ef00a007ae2c0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af898f7cd9f9f65910d7c104c29381f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3af898f7cd9f9f65910d7c104c29381f">ComputeRequiredData</a> (const <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#af110e8ea7c76e67c316e68ca9aee6281">LevelSetInputIndexType</a> &amp;iP, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aef6008fa6dab916c7781ac5888b78048">LevelSetDataType</a> &amp;ioData)</td></tr>
-<tr class="separator:a3af898f7cd9f9f65910d7c104c29381f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee630f06bb15d40f2613b4b765e0bb80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1Iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aee630f06bb15d40f2613b4b765e0bb80">Begin</a> ()</td></tr>
-<tr class="separator:aee630f06bb15d40f2613b4b765e0bb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f8163c63cf8f62749ed67e5a010445b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1Iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a3f8163c63cf8f62749ed67e5a010445b">End</a> ()</td></tr>
-<tr class="separator:a3f8163c63cf8f62749ed67e5a010445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aded83231f3a8dbce45a3f14eb2010520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1ConstIterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aded83231f3a8dbce45a3f14eb2010520">Begin</a> () const</td></tr>
-<tr class="separator:aded83231f3a8dbce45a3f14eb2010520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a82463099c7260937692b0f0f6c971"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer_1_1ConstIterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aa4a82463099c7260937692b0f0f6c971">End</a> () const</td></tr>
-<tr class="separator:aa4a82463099c7260937692b0f0f6c971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd7b1115637cb797e1e8a719900b9cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8bd7b1115637cb797e1e8a719900b9cf">MapCFLContainerIterator</a> = typename MapCFLContainerType::iterator</td></tr>
+<tr class="separator:a8bd7b1115637cb797e1e8a719900b9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ba839c4a79f61e27df1cfc28c7a2c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad5ba839c4a79f61e27df1cfc28c7a2c8">MapCFLContainerType</a> = std::map&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a>, std::atomic&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a62e4c7ab972f3c1556d203982adc76aa">LevelSetOutputRealType</a> &gt; &gt;</td></tr>
+<tr class="separator:ad5ba839c4a79f61e27df1cfc28c7a2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e54093b8f943ae13cc58f15b13d52f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a75e54093b8f943ae13cc58f15b13d52f">MapTermContainerConstIteratorType</a> = typename MapTermContainerType::const_iterator</td></tr>
+<tr class="separator:a75e54093b8f943ae13cc58f15b13d52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e757640485966a63f78c44e5625d912"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9e757640485966a63f78c44e5625d912">MapTermContainerIteratorType</a> = typename MapTermContainerType::iterator</td></tr>
+<tr class="separator:a9e757640485966a63f78c44e5625d912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac95d685484c147687dcd5161790fe49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aac95d685484c147687dcd5161790fe49">MapTermContainerType</a> = std::map&lt; <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a18bd268545a778f29cb5a3eb3e2d8588">TermIdType</a>, <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#abd9b4ceccb15759ec8f98be253dcb885">TermPointer</a> &gt;</td></tr>
+<tr class="separator:aac95d685484c147687dcd5161790fe49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f181081322c679b305034e4fbd7b2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a77f181081322c679b305034e4fbd7b2d">RequiredDataType</a> = typename <a class="el" href="classitk_1_1LevelSetEquationTermBase.html#a7fb585d45235b30dff2eb29f6410e7cb">TermType::RequiredDataType</a></td></tr>
+<tr class="separator:a77f181081322c679b305034e4fbd7b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a10cca38a98f4fd1412dfdde59e1471bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a10cca38a98f4fd1412dfdde59e1471bb">LevelSetEquationTermContainer</a> ()</td></tr>
 <tr class="separator:a10cca38a98f4fd1412dfdde59e1471bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae57dbfa3f69b9b8808935db0782a8694"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae57dbfa3f69b9b8808935db0782a8694">~LevelSetEquationTermContainer</a> () override=default</td></tr>
 <tr class="separator:ae57dbfa3f69b9b8808935db0782a8694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
 <tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
 <tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,9 +353,31 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aefbff20ead2ef28aff9785c6bda7ded0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aac95d685484c147687dcd5161790fe49">MapTermContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#aefbff20ead2ef28aff9785c6bda7ded0">m_Container</a></td></tr>
+<tr class="separator:aefbff20ead2ef28aff9785c6bda7ded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f7cb3254a830c185dc3f05445a998d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a33ffd101507f2c5e6891375a91c27d02">LevelSetIdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a30f7cb3254a830c185dc3f05445a998d">m_CurrentLevelSetId</a></td></tr>
+<tr class="separator:a30f7cb3254a830c185dc3f05445a998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae280bcd5241818e745ff9f17fe9625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a6ae280bcd5241818e745ff9f17fe9625">m_Input</a></td></tr>
+<tr class="separator:a6ae280bcd5241818e745ff9f17fe9625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72cab574024be6183a9c754171b8510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad72cab574024be6183a9c754171b8510">m_LevelSetContainer</a></td></tr>
+<tr class="separator:ad72cab574024be6183a9c754171b8510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50f02b8d1ebab8ca8eb2fdb44777924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a057b0ecc07b8c4d71656c1834109573d">HashMapStringTermContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad50f02b8d1ebab8ca8eb2fdb44777924">m_NameContainer</a></td></tr>
+<tr class="separator:ad50f02b8d1ebab8ca8eb2fdb44777924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a06c5fa93811cd7d6d3213292240ded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a77f181081322c679b305034e4fbd7b2d">RequiredDataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a8a06c5fa93811cd7d6d3213292240ded">m_RequiredData</a></td></tr>
+<tr class="separator:a8a06c5fa93811cd7d6d3213292240ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33c8592748302e7641133d143dd3f32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad5ba839c4a79f61e27df1cfc28c7a2c8">MapCFLContainerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ad33c8592748302e7641133d143dd3f32">m_TermContribution</a></td></tr>
+<tr class="separator:ad33c8592748302e7641133d143dd3f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a9830fc407400559db7e7783cc10a9394"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a9830fc407400559db7e7783cc10a9394">Iterator</a></td></tr>
+<tr class="separator:a9830fc407400559db7e7783cc10a9394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TInputImage, typename TLevelSetContainer&gt;<br />
@@ -419,7 +433,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00315">315</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -434,7 +447,7 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
 template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a> =  typename InputImageType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#a06260f0b552b71acfe0a32c7f6a47d67">InputImagePointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -470,7 +483,7 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
 template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a> =  typename LevelSetContainerType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::<a class="el" href="classitk_1_1LevelSetEquationTermContainer.html#ae4162631094cb9036b57647c0e55c7cd">LevelSetContainerPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">LevelSetContainerType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -680,7 +693,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00326">326</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -707,7 +719,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00325">325</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -734,7 +745,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00324">324</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -761,7 +771,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00142">142</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -788,7 +797,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00141">141</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -815,7 +823,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00140">140</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -860,7 +867,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00319">319</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -981,7 +987,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1009,7 +1014,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1061,7 +1065,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1081,7 +1084,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1132,7 +1134,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1148,7 +1149,7 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual::itk::LightObject::Pointer <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::CreateAnother </td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">virtual::itk::LightObject::Pointer</a> <a class="el" href="classitk_1_1LevelSetEquationTermContainer.html">itk::LevelSetEquationTermContainer</a>&lt; TInputImage, TLevelSetContainer &gt;::CreateAnother </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1182,7 +1183,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1202,7 +1202,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1254,7 +1253,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1282,7 +1280,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1338,7 +1335,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1394,7 +1390,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1587,7 +1582,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1645,7 +1639,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 </div>
 </div>
@@ -1728,7 +1721,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00145">145</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1756,7 +1748,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00322">322</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1783,7 +1774,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00310">310</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1810,7 +1800,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00313">313</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1837,7 +1826,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00311">311</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1864,7 +1852,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00317">317</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1891,7 +1878,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00320">320</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 
@@ -1918,7 +1904,6 @@ template&lt;typename TInputImage , typename TLevelSetContainer &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set/Get the input image to be segmented. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html#l00328">328</a> of file <a class="el" href="itkLevelSetEquationTermContainer_8h_source.html">itkLevelSetEquationTermContainer.h</a>.</p>
 

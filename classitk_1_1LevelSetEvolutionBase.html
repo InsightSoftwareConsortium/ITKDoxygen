@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classitk_1_1LevelSetEvolutionBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::LevelSetEvolutionBase&lt; TEquationContainer, TLevelSet &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__Group-Segmentation.html">Group Segmentation</a> &raquo; <a class="el" href="group__ITKLevelSetsv4.html">Module ITKLevelSetsv4</a></div></div>  </div>
@@ -106,7 +108,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a754a007364ff0abd69e5a49bd4907f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1f692d6743e150e8426cd6ceac9db8b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ae1f692d6743e150e8426cd6ceac9db8b">DomainMapImageFilterType</a> = typename LevelSetContainerType::DomainMapImageFilterType</td></tr>
 <tr class="separator:ae1f692d6743e150e8426cd6ceac9db8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac72e923a259d634f7e6a8942cda41cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a> = typename EquationContainerType::Pointer</td></tr>
+<tr class="memitem:aac72e923a259d634f7e6a8942cda41cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">EquationContainerType::Pointer</a></td></tr>
 <tr class="separator:aac72e923a259d634f7e6a8942cda41cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b2adb2c23b96cb9eecd074446eff436"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> = TEquationContainer</td></tr>
 <tr class="separator:a7b2adb2c23b96cb9eecd074446eff436"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,7 +120,7 @@ Public Types</h2></td></tr>
 <tr class="separator:ae2cbfaf6606fbe6f10fe73bb7875d802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a080b5049f978f3450f42bb1040f4b388"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a080b5049f978f3450f42bb1040f4b388">IdListType</a> = typename LevelSetContainerType::IdListType</td></tr>
 <tr class="separator:a080b5049f978f3450f42bb1040f4b388"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5131d7eae974dad000dd8d4512f6ceff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a5131d7eae974dad000dd8d4512f6ceff">InputImageConstPointer</a> = typename InputImageType::ConstPointer</td></tr>
+<tr class="memitem:a5131d7eae974dad000dd8d4512f6ceff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a5131d7eae974dad000dd8d4512f6ceff">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
 <tr class="separator:a5131d7eae974dad000dd8d4512f6ceff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9cce0f02e186d7f3d64e1d4566bffc9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aa9cce0f02e186d7f3d64e1d4566bffc9">InputImagePixelType</a> = typename InputImageType::PixelType</td></tr>
 <tr class="separator:aa9cce0f02e186d7f3d64e1d4566bffc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,11 +154,11 @@ Public Types</h2></td></tr>
 <tr class="separator:af59377becd67b1b564605bcd5e399a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac712b8042a92546ee6db4e56fd92a1b9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ac712b8042a92546ee6db4e56fd92a1b9">Superclass</a> = <a class="el" href="classitk_1_1Object.html">Object</a></td></tr>
 <tr class="separator:ac712b8042a92546ee6db4e56fd92a1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9fa8c7b7a14ea1b04b8de96712de19e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9fa8c7b7a14ea1b04b8de96712de19e">TermContainerPointer</a> = typename TermContainerType::Pointer</td></tr>
+<tr class="memitem:ad9fa8c7b7a14ea1b04b8de96712de19e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9fa8c7b7a14ea1b04b8de96712de19e">TermContainerPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TermContainerType::Pointer</a></td></tr>
 <tr class="separator:ad9fa8c7b7a14ea1b04b8de96712de19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae22589ebe632936a476501df772d9e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aeae22589ebe632936a476501df772d9e">TermContainerType</a> = typename EquationContainerType::TermContainerType</td></tr>
 <tr class="separator:aeae22589ebe632936a476501df772d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cf45b8a3392e9d6ec8a409e242af6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a37cf45b8a3392e9d6ec8a409e242af6b">TermPointer</a> = typename TermType::Pointer</td></tr>
+<tr class="memitem:a37cf45b8a3392e9d6ec8a409e242af6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a37cf45b8a3392e9d6ec8a409e242af6b">TermPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TermType::Pointer</a></td></tr>
 <tr class="separator:a37cf45b8a3392e9d6ec8a409e242af6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe9669faa1e28771696cd7eb0b81fe64"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#afe9669faa1e28771696cd7eb0b81fe64">TermType</a> = typename TermContainerType::TermType</td></tr>
 <tr class="separator:afe9669faa1e28771696cd7eb0b81fe64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,8 +187,33 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8132696509f500b0c065403f8397b650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2756cfcdbd75f60359c2aeab5ec370"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#abc2756cfcdbd75f60359c2aeab5ec370">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:abc2756cfcdbd75f60359c2aeab5ec370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44cce5a271e83df7b61aa688f95d3038"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a44cce5a271e83df7b61aa688f95d3038">GetNumberOfIterations</a> () const</td></tr>
+<tr class="separator:a44cce5a271e83df7b61aa688f95d3038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a097ecc4ca6ba36108e8a1c631ca75a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a0a097ecc4ca6ba36108e8a1c631ca75a">SetLevelSetContainer</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a339b2e29b23e7fd836e7240dcb052d36">LevelSetContainerType</a> *_arg)</td></tr>
 <tr class="separator:a0a097ecc4ca6ba36108e8a1c631ca75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61385b93ce153538e66342014bb90e1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a61385b93ce153538e66342014bb90e1d">SetTimeStep</a> (const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a> &amp;iDt)</td></tr>
+<tr class="separator:a61385b93ce153538e66342014bb90e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30304a4c0d0683326de8ca806164d4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af30304a4c0d0683326de8ca806164d4a">Update</a> ()</td></tr>
+<tr class="separator:af30304a4c0d0683326de8ca806164d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a708cde6a9eb4824911ebf4256d3a1c34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a708cde6a9eb4824911ebf4256d3a1c34">SetAlpha</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a> _arg)</td></tr>
+<tr class="separator:a708cde6a9eb4824911ebf4256d3a1c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983c40e49c295169649f5435f9d468ab"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a983c40e49c295169649f5435f9d468ab">GetAlpha</a> ()</td></tr>
+<tr class="separator:a983c40e49c295169649f5435f9d468ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4ab0dbb3528290335e71858fc4e9dd65"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4ab0dbb3528290335e71858fc4e9dd65">SetEquationContainer</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *_arg)</td></tr>
+<tr class="separator:a4ab0dbb3528290335e71858fc4e9dd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8056975ed50f91a77fda4dd8d4aa1f89"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a8056975ed50f91a77fda4dd8d4aa1f89">GetModifiableEquationContainer</a> ()</td></tr>
+<tr class="separator:a8056975ed50f91a77fda4dd8d4aa1f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a9ae0737a29a01bb2e879f2d61f435"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a04a9ae0737a29a01bb2e879f2d61f435">GetEquationContainer</a> () const</td></tr>
+<tr class="separator:a04a9ae0737a29a01bb2e879f2d61f435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:af5eaf0d022c935e386893973e2d6d993"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af5eaf0d022c935e386893973e2d6d993">SetStoppingCriterion</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *_arg)</td></tr>
+<tr class="separator:af5eaf0d022c935e386893973e2d6d993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548c0141d4a5e9970fd2b80933e2cddf"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a548c0141d4a5e9970fd2b80933e2cddf">GetModifiableStoppingCriterion</a> ()</td></tr>
+<tr class="separator:a548c0141d4a5e9970fd2b80933e2cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5473afe270f2c66e32ae7a152f2279"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4d5473afe270f2c66e32ae7a152f2279">GetStoppingCriterion</a> () const</td></tr>
+<tr class="separator:a4d5473afe270f2c66e32ae7a152f2279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,68 +281,77 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a845e27f289935c17a79c8821bb6ac929"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a845e27f289935c17a79c8821bb6ac929">ImageDimension</a> = InputImageType::ImageDimension</td></tr>
 <tr class="separator:a845e27f289935c17a79c8821bb6ac929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4018d66fefbb7b07ec72eede0ab3403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a203723c61f5541b55562f620b2a70073">StoppingCriterionPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad4018d66fefbb7b07ec72eede0ab3403">m_StoppingCriterion</a></td></tr>
-<tr class="separator:ad4018d66fefbb7b07ec72eede0ab3403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0436e61bf247b1e7eda354da77be901"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad0436e61bf247b1e7eda354da77be901">m_EquationContainer</a></td></tr>
-<tr class="separator:ad0436e61bf247b1e7eda354da77be901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a420a770d02a598dcdbeddf5518ae77e1"><td class="memItemLeft" align="right" valign="top">LevelSetContainerType::Pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a420a770d02a598dcdbeddf5518ae77e1">m_LevelSetContainer</a></td></tr>
-<tr class="separator:a420a770d02a598dcdbeddf5518ae77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acce476470c027a5d19ec8e94d9585111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#acce476470c027a5d19ec8e94d9585111">m_Alpha</a></td></tr>
-<tr class="separator:acce476470c027a5d19ec8e94d9585111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e7b31db81868796b1485173c1f817d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9e7b31db81868796b1485173c1f817d">m_Dt</a></td></tr>
-<tr class="separator:ad9e7b31db81868796b1485173c1f817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad812f4b6d4b51ebd182e09bf4198dd97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad812f4b6d4b51ebd182e09bf4198dd97">m_RMSChangeAccumulator</a></td></tr>
-<tr class="separator:ad812f4b6d4b51ebd182e09bf4198dd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8171469176d78b2ce566852f23c88012"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a8171469176d78b2ce566852f23c88012">m_UserGloballyDefinedTimeStep</a></td></tr>
-<tr class="separator:a8171469176d78b2ce566852f23c88012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acee56c46800bc9b919c907ccbbacbd41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#acee56c46800bc9b919c907ccbbacbd41">m_NumberOfIterations</a></td></tr>
-<tr class="separator:acee56c46800bc9b919c907ccbbacbd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dff0e95ce2ac8a18749f5d1cf288ee9"><td class="memItemLeft" align="right" valign="top">LevelSetContainerType::Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a2dff0e95ce2ac8a18749f5d1cf288ee9">m_LevelSetContainerIteratorToProcessWhenThreading</a></td></tr>
-<tr class="separator:a2dff0e95ce2ac8a18749f5d1cf288ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac240dfc76a4da96ad185c830d2d68548"><td class="memItemLeft" align="right" valign="top">LevelSetContainerType::Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ac240dfc76a4da96ad185c830d2d68548">m_LevelSetUpdateContainerIteratorToProcessWhenThreading</a></td></tr>
-<tr class="separator:ac240dfc76a4da96ad185c830d2d68548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a708cde6a9eb4824911ebf4256d3a1c34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a708cde6a9eb4824911ebf4256d3a1c34">SetAlpha</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a> _arg)</td></tr>
-<tr class="separator:a708cde6a9eb4824911ebf4256d3a1c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983c40e49c295169649f5435f9d468ab"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a983c40e49c295169649f5435f9d468ab">GetAlpha</a> ()</td></tr>
-<tr class="separator:a983c40e49c295169649f5435f9d468ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61385b93ce153538e66342014bb90e1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a61385b93ce153538e66342014bb90e1d">SetTimeStep</a> (const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a> &amp;iDt)</td></tr>
-<tr class="separator:a61385b93ce153538e66342014bb90e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab0dbb3528290335e71858fc4e9dd65"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4ab0dbb3528290335e71858fc4e9dd65">SetEquationContainer</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *_arg)</td></tr>
-<tr class="separator:a4ab0dbb3528290335e71858fc4e9dd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8056975ed50f91a77fda4dd8d4aa1f89"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a8056975ed50f91a77fda4dd8d4aa1f89">GetModifiableEquationContainer</a> ()</td></tr>
-<tr class="separator:a8056975ed50f91a77fda4dd8d4aa1f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04a9ae0737a29a01bb2e879f2d61f435"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a7b2adb2c23b96cb9eecd074446eff436">EquationContainerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a04a9ae0737a29a01bb2e879f2d61f435">GetEquationContainer</a> () const</td></tr>
-<tr class="separator:a04a9ae0737a29a01bb2e879f2d61f435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5eaf0d022c935e386893973e2d6d993"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af5eaf0d022c935e386893973e2d6d993">SetStoppingCriterion</a> (<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *_arg)</td></tr>
-<tr class="separator:af5eaf0d022c935e386893973e2d6d993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a548c0141d4a5e9970fd2b80933e2cddf"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a548c0141d4a5e9970fd2b80933e2cddf">GetModifiableStoppingCriterion</a> ()</td></tr>
-<tr class="separator:a548c0141d4a5e9970fd2b80933e2cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5473afe270f2c66e32ae7a152f2279"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af59377becd67b1b564605bcd5e399a76">StoppingCriterionType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4d5473afe270f2c66e32ae7a152f2279">GetStoppingCriterion</a> () const</td></tr>
-<tr class="separator:a4d5473afe270f2c66e32ae7a152f2279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cce5a271e83df7b61aa688f95d3038"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a44cce5a271e83df7b61aa688f95d3038">GetNumberOfIterations</a> () const</td></tr>
-<tr class="separator:a44cce5a271e83df7b61aa688f95d3038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af30304a4c0d0683326de8ca806164d4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#af30304a4c0d0683326de8ca806164d4a">Update</a> ()</td></tr>
-<tr class="separator:af30304a4c0d0683326de8ca806164d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1445b834acfd3e3316a739a021364d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aa1445b834acfd3e3316a739a021364d5">LevelSetEvolutionBase</a> ()</td></tr>
-<tr class="separator:aa1445b834acfd3e3316a739a021364d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4345a00501ed6767f59d1948569566f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4345a00501ed6767f59d1948569566f9">~LevelSetEvolutionBase</a> () override=default</td></tr>
-<tr class="separator:a4345a00501ed6767f59d1948569566f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a783991ce6f38b0b725c631675ffff35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a783991ce6f38b0b725c631675ffff35d">CheckSetUp</a> ()</td></tr>
-<tr class="separator:a783991ce6f38b0b725c631675ffff35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5dccf81a59d3d313ef0cc2b50ab43d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aa5dccf81a59d3d313ef0cc2b50ab43d1">InitializeIteration</a> ()</td></tr>
-<tr class="separator:aa5dccf81a59d3d313ef0cc2b50ab43d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab24e854bbbfccd9ae4d0c37aa5aae53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aab24e854bbbfccd9ae4d0c37aa5aae53">Evolve</a> ()</td></tr>
-<tr class="separator:aab24e854bbbfccd9ae4d0c37aa5aae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac6a3831d65bce76a1c432a627058765f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ac6a3831d65bce76a1c432a627058765f">AllocateUpdateBuffer</a> ()</td></tr>
 <tr class="separator:ac6a3831d65bce76a1c432a627058765f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783991ce6f38b0b725c631675ffff35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a783991ce6f38b0b725c631675ffff35d">CheckSetUp</a> ()</td></tr>
+<tr class="separator:a783991ce6f38b0b725c631675ffff35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77c633617f8e736d5e20548d324aa77a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a77c633617f8e736d5e20548d324aa77a">ComputeIteration</a> ()</td></tr>
 <tr class="separator:a77c633617f8e736d5e20548d324aa77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a965d1803516cce834f2e063b71b56141"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a965d1803516cce834f2e063b71b56141">ComputeTimeStepForNextIteration</a> ()</td></tr>
 <tr class="separator:a965d1803516cce834f2e063b71b56141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e4e26c0248736c7f0fd00ec3e379933"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a2e4e26c0248736c7f0fd00ec3e379933">UpdateLevelSets</a> ()=0</td></tr>
-<tr class="separator:a2e4e26c0248736c7f0fd00ec3e379933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab24e854bbbfccd9ae4d0c37aa5aae53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aab24e854bbbfccd9ae4d0c37aa5aae53">Evolve</a> ()</td></tr>
+<tr class="separator:aab24e854bbbfccd9ae4d0c37aa5aae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dccf81a59d3d313ef0cc2b50ab43d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aa5dccf81a59d3d313ef0cc2b50ab43d1">InitializeIteration</a> ()</td></tr>
+<tr class="separator:aa5dccf81a59d3d313ef0cc2b50ab43d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1445b834acfd3e3316a739a021364d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aa1445b834acfd3e3316a739a021364d5">LevelSetEvolutionBase</a> ()</td></tr>
+<tr class="separator:aa1445b834acfd3e3316a739a021364d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae592efa9eff49b1ba25f707422aeb467"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ae592efa9eff49b1ba25f707422aeb467">UpdateEquations</a> ()=0</td></tr>
 <tr class="separator:ae592efa9eff49b1ba25f707422aeb467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4e26c0248736c7f0fd00ec3e379933"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a2e4e26c0248736c7f0fd00ec3e379933">UpdateLevelSets</a> ()=0</td></tr>
+<tr class="separator:a2e4e26c0248736c7f0fd00ec3e379933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4345a00501ed6767f59d1948569566f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a4345a00501ed6767f59d1948569566f9">~LevelSetEvolutionBase</a> () override=default</td></tr>
+<tr class="separator:a4345a00501ed6767f59d1948569566f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
+<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
+<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
+<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
+<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
+<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
+<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
+<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
+<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:acce476470c027a5d19ec8e94d9585111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#acce476470c027a5d19ec8e94d9585111">m_Alpha</a></td></tr>
+<tr class="separator:acce476470c027a5d19ec8e94d9585111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e7b31db81868796b1485173c1f817d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9e7b31db81868796b1485173c1f817d">m_Dt</a></td></tr>
+<tr class="separator:ad9e7b31db81868796b1485173c1f817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0436e61bf247b1e7eda354da77be901"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad0436e61bf247b1e7eda354da77be901">m_EquationContainer</a></td></tr>
+<tr class="separator:ad0436e61bf247b1e7eda354da77be901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a420a770d02a598dcdbeddf5518ae77e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">LevelSetContainerType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a420a770d02a598dcdbeddf5518ae77e1">m_LevelSetContainer</a></td></tr>
+<tr class="separator:a420a770d02a598dcdbeddf5518ae77e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dff0e95ce2ac8a18749f5d1cf288ee9"><td class="memItemLeft" align="right" valign="top">LevelSetContainerType::Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a2dff0e95ce2ac8a18749f5d1cf288ee9">m_LevelSetContainerIteratorToProcessWhenThreading</a></td></tr>
+<tr class="separator:a2dff0e95ce2ac8a18749f5d1cf288ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac240dfc76a4da96ad185c830d2d68548"><td class="memItemLeft" align="right" valign="top">LevelSetContainerType::Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ac240dfc76a4da96ad185c830d2d68548">m_LevelSetUpdateContainerIteratorToProcessWhenThreading</a></td></tr>
+<tr class="separator:ac240dfc76a4da96ad185c830d2d68548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee56c46800bc9b919c907ccbbacbd41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#acee56c46800bc9b919c907ccbbacbd41">m_NumberOfIterations</a></td></tr>
+<tr class="separator:acee56c46800bc9b919c907ccbbacbd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad812f4b6d4b51ebd182e09bf4198dd97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a86a86eac4ba4d1e77433dae43c728d87">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad812f4b6d4b51ebd182e09bf4198dd97">m_RMSChangeAccumulator</a></td></tr>
+<tr class="separator:ad812f4b6d4b51ebd182e09bf4198dd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4018d66fefbb7b07ec72eede0ab3403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a203723c61f5541b55562f620b2a70073">StoppingCriterionPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad4018d66fefbb7b07ec72eede0ab3403">m_StoppingCriterion</a></td></tr>
+<tr class="separator:ad4018d66fefbb7b07ec72eede0ab3403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8171469176d78b2ce566852f23c88012"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a8171469176d78b2ce566852f23c88012">m_UserGloballyDefinedTimeStep</a></td></tr>
+<tr class="separator:a8171469176d78b2ce566852f23c88012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
+<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
+<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -335,31 +371,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad2017ee10bba6dc34ab9b3062ee573ca inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
-<tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
-<tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a34e26032ee9d1d62f6e0063cd9508271">~Object</a> () override</td></tr>
-<tr class="separator:a34e26032ee9d1d62f6e0063cd9508271 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4ff8d3cfffbd57f5a63db49316de2e43">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a4ff8d3cfffbd57f5a63db49316de2e43 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a8e4727e5335cefea414e4d55331bee96">PrintObservers</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:a8e4727e5335cefea414e4d55331bee96 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ab8cf8f1435ef918d019fdc0104303796">SetTimeStamp</a> (const <a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a> &amp;timeStamp)</td></tr>
-<tr class="separator:ab8cf8f1435ef918d019fdc0104303796 inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a63733dda6af0d67f0341f9f00190b82a">InternalClone</a> () const</td></tr>
-<tr class="separator:a63733dda6af0d67f0341f9f00190b82a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#ad30fd900f0b5fcb5ca6ed40162df204a">LightObject</a> ()</td></tr>
-<tr class="separator:ad30fd900f0b5fcb5ca6ed40162df204a inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#af6b93ea6034042907cfafe7a05d60fa2">PrintHeader</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:af6b93ea6034042907cfafe7a05d60fa2 inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aa8a1cda36007db80f5e3024d9b23c0bb">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
-<tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
-<tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
-<tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a></td></tr>
-<tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TEquationContainer, typename TLevelSet&gt;<br />
@@ -438,7 +449,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
 template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a> =  typename EquationContainerType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#aac72e923a259d634f7e6a8942cda41cf">EquationContainerPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">EquationContainerType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -546,7 +557,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
 template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a5131d7eae974dad000dd8d4512f6ceff">InputImageConstPointer</a> =  typename InputImageType::ConstPointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a5131d7eae974dad000dd8d4512f6ceff">InputImageConstPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -852,7 +863,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
 template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9fa8c7b7a14ea1b04b8de96712de19e">TermContainerPointer</a> =  typename TermContainerType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#ad9fa8c7b7a14ea1b04b8de96712de19e">TermContainerPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TermContainerType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -888,7 +899,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
 template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a37cf45b8a3392e9d6ec8a409e242af6b">TermPointer</a> =  typename TermType::Pointer</td>
+          <td class="memname">using <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::<a class="el" href="classitk_1_1LevelSetEvolutionBase.html#a37cf45b8a3392e9d6ec8a409e242af6b">TermPointer</a> =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TermType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -940,7 +951,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 </div>
 </div>
@@ -968,7 +978,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 </div>
 </div>
@@ -1027,7 +1036,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 </div>
 </div>
@@ -1144,7 +1152,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
+<p>Set/Get the value of alpha for computing the time-step using CFL conditions </p>
 
 </div>
 </div>
@@ -1172,7 +1180,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
+<p>Set/Get the equation container for updating all the level sets </p>
 
 </div>
 </div>
@@ -1227,7 +1235,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
+<p>Set/Get the equation container for updating all the level sets </p>
 
 </div>
 </div>
@@ -1282,7 +1290,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
+<p>Set/Get the Stopping Criterion </p>
 
 </div>
 </div>
@@ -1368,7 +1376,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
+<p>Set/Get the Stopping Criterion </p>
 
 </div>
 </div>
@@ -1580,7 +1588,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p>Implemented in <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01MalcolmSparseLevelSetImage_3_01VDimension_01_4_01_4.html#a6907886fe101491ac784a137bd759b0d">itk::LevelSetEvolution&lt; TEquationContainer, MalcolmSparseLevelSetImage&lt; VDimension &gt; &gt;</a>, <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01ShiSparseLevelSetImage_3_01VDimension_01_4_01_4.html#a0f9908a09de717bf7a8192e63eb67d42">itk::LevelSetEvolution&lt; TEquationContainer, ShiSparseLevelSetImage&lt; VDimension &gt; &gt;</a>, <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01WhitakerSparseLevelSetImage_3_01TOutput_00_01VDimension_01_4_01_4.html#aef393ecfa17f5396c5858e4d97a8b9e2">itk::LevelSetEvolution&lt; TEquationContainer, WhitakerSparseLevelSetImage&lt; TOutput, VDimension &gt; &gt;</a>, and <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01LevelSetDenseImage_3_01TImage_01_4_01_4.html#ae63a291a1980bfd0e073b59a5d9e7919">itk::LevelSetEvolution&lt; TEquationContainer, LevelSetDenseImage&lt; TImage &gt; &gt;</a>.</p>
 
@@ -1610,7 +1617,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p>Implemented in <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01MalcolmSparseLevelSetImage_3_01VDimension_01_4_01_4.html#abcf8c03df561ee4e7560e4a4b98eeab7">itk::LevelSetEvolution&lt; TEquationContainer, MalcolmSparseLevelSetImage&lt; VDimension &gt; &gt;</a>, <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01ShiSparseLevelSetImage_3_01VDimension_01_4_01_4.html#a160d874a43905118891a04cab9504d03">itk::LevelSetEvolution&lt; TEquationContainer, ShiSparseLevelSetImage&lt; VDimension &gt; &gt;</a>, <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01WhitakerSparseLevelSetImage_3_01TOutput_00_01VDimension_01_4_01_4.html#ad02fbc0359b71f1439d80b37c1efde0f">itk::LevelSetEvolution&lt; TEquationContainer, WhitakerSparseLevelSetImage&lt; TOutput, VDimension &gt; &gt;</a>, and <a class="el" href="classitk_1_1LevelSetEvolution_3_01TEquationContainer_00_01LevelSetDenseImage_3_01TImage_01_4_01_4.html#a174b8ddae6dee20dbaaaefe5e3526b1f">itk::LevelSetEvolution&lt; TEquationContainer, LevelSetDenseImage&lt; TImage &gt; &gt;</a>.</p>
 
@@ -1664,7 +1670,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00168">168</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1691,7 +1696,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00169">169</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1718,7 +1722,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00165">165</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1736,7 +1739,7 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LevelSetContainerType::Pointer <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::m_LevelSetContainer</td>
+          <td class="memname"><a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">LevelSetContainerType::Pointer</a> <a class="el" href="classitk_1_1LevelSetEvolutionBase.html">itk::LevelSetEvolutionBase</a>&lt; TEquationContainer, TLevelSet &gt;::m_LevelSetContainer</td>
         </tr>
       </table>
   </td>
@@ -1745,7 +1748,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00166">166</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1799,7 +1801,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00176">176</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1826,7 +1827,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00172">172</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1853,7 +1853,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00170">170</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1880,7 +1879,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00163">163</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 
@@ -1907,7 +1905,6 @@ template&lt;typename TEquationContainer , typename TLevelSet &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Helper members for threading. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkLevelSetEvolutionBase_8h_source.html#l00171">171</a> of file <a class="el" href="itkLevelSetEvolutionBase_8h_source.html">itkLevelSetEvolutionBase.h</a>.</p>
 

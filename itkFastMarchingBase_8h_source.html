@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classitk_1_1FastMarchingBase.html#afeba73803efb2566c0f761ea00b0e389">  161</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FastMarchingBase.html#afeba73803efb2566c0f761ea00b0e389">LabelType</a> = <span class="keyword">typename</span> Traits::LabelType;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classitk_1_1FastMarchingBase.html#ada3739ecda8f264b393b0af750bcd351">  164</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FastMarchingBase.html#ada3739ecda8f264b393b0af750bcd351">StoppingCriterionType</a> = FastMarchingStoppingCriterionBase&lt;TInput, TOutput&gt;;</div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classitk_1_1FastMarchingBase.html#a301e9186d3565b7f698c3933bfae0b12">  165</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FastMarchingBase.html#a301e9186d3565b7f698c3933bfae0b12">StoppingCriterionPointer</a> = <span class="keyword">typename</span> StoppingCriterionType::Pointer;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classitk_1_1FastMarchingBase.html#a301e9186d3565b7f698c3933bfae0b12">  165</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1FastMarchingBase.html#a301e9186d3565b7f698c3933bfae0b12">StoppingCriterionPointer</a> = <span class="keyword">typename</span> <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">StoppingCriterionType::Pointer</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="comment">/*</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">  using ElementIdentifier = long;</span></div>
@@ -178,19 +178,14 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  itkSetEnumMacro(<a class="code" href="classTopologyCheck.html">TopologyCheck</a>, <a class="code" href="classitk_1_1FastMarchingTraitsEnums.html#aeca7d37d9a6a8518457fc4e05dff1677">TopologyCheckEnum</a>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  itkGetConstReferenceMacro(<a class="code" href="classTopologyCheck.html">TopologyCheck</a>, <a class="code" href="classitk_1_1FastMarchingTraitsEnums.html#aeca7d37d9a6a8518457fc4e05dff1677">TopologyCheckEnum</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  itkSetObjectMacro(TrialPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  itkGetModifiableObjectMacro(TrialPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  itkSetObjectMacro(AlivePoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  itkGetModifiableObjectMacro(AlivePoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  itkSetObjectMacro(ProcessedPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  itkGetModifiableObjectMacro(ProcessedPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  itkSetObjectMacro(ForbiddenPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  itkGetModifiableObjectMacro(ForbiddenPoints, <a class="code" href="classitk_1_1FastMarchingBase.html#a5a75e5fa4eae79775de52ec437422b99">NodePairContainerType</a>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  itkSetObjectMacro(StoppingCriterion, <a class="code" href="classitk_1_1FastMarchingBase.html#ada3739ecda8f264b393b0af750bcd351">StoppingCriterionType</a>);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  itkGetModifiableObjectMacro(StoppingCriterion, <a class="code" href="classitk_1_1FastMarchingBase.html#ada3739ecda8f264b393b0af750bcd351">StoppingCriterionType</a>);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
@@ -206,7 +201,6 @@ $(function() {
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  itkGetConstReferenceMacro(CollectPoints, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  itkBooleanMacro(CollectPoints);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="classitk_1_1FastMarchingBase.html">FastMarchingBase</a>();</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
@@ -284,6 +278,7 @@ $(function() {
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassitk_1_1FastMarchingBase_html_a6cfc951b9b9e698d062f1d7bf6e428fe"><div class="ttname"><a href="classitk_1_1FastMarchingBase.html#a6cfc951b9b9e698d062f1d7bf6e428fe">itk::FastMarchingBase::OutputDomainType</a></div><div class="ttdeci">typename Traits::OutputDomainType OutputDomainType</div><div class="ttdef"><b>Definition:</b> <a href="itkFastMarchingBase_8h_source.html#l00148">itkFastMarchingBase.h:148</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1FastMarchingBase_html_abf7a0d8ab9b1dbeb932f7154aff49de9"><div class="ttname"><a href="classitk_1_1FastMarchingBase.html#abf7a0d8ab9b1dbeb932f7154aff49de9">itk::FastMarchingBase::PriorityQueueType</a></div><div class="ttdeci">std::priority_queue&lt; NodePairType, HeapContainerType, NodeComparerType &gt; PriorityQueueType</div><div class="ttdef"><b>Definition:</b> <a href="itkFastMarchingBase_8h_source.html#l00268">itkFastMarchingBase.h:268</a></div></div>
 <div class="ttc" id="anamespaceitk_html_a4ddb2ea2fb952fb678005a3c81c32ada"><div class="ttname"><a href="namespaceitk.html#a4ddb2ea2fb952fb678005a3c81c32ada">itk::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Array&lt; TValue &gt; &amp;arr)</div><div class="ttdef"><b>Definition:</b> <a href="itkArray_8h_source.html#l00216">itkArray.h:216</a></div></div>
 <div class="ttc" id="aclassTopologyCheck_html"><div class="ttname"><a href="classTopologyCheck.html">TopologyCheck</a></div></div>

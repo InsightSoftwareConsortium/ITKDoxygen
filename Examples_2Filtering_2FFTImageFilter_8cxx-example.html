@@ -176,7 +176,7 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> FFTFilterType = <a name="_a2"></a><a class="code" href="classitk_1_1VnlForwardFFTImageFilter.html">itk::VnlForwardFFTImageFilter&lt;ImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> fftFilter = FFTFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> fftFilter = <a name="a3"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FFTFilterType::New</a>();</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginLatex</span></div>
@@ -186,8 +186,8 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : EndLatex</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
-<div class="line">  <span class="keyword">using</span> ReaderType = <a name="_a3"></a><a class="code" href="classitk_1_1ImageFileReader.html">itk::ImageFileReader&lt;ImageType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> reader = ReaderType::New();</div>
+<div class="line">  <span class="keyword">using</span> ReaderType = <a name="_a4"></a><a class="code" href="classitk_1_1ImageFileReader.html">itk::ImageFileReader&lt;ImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">auto</span> reader = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ReaderType::New</a>();</div>
 <div class="line">  reader-&gt;SetFileName(argv[1]);</div>
 <div class="line"> </div>
 <div class="line">  fftFilter-&gt;SetInput(reader-&gt;GetOutput());</div>
@@ -227,9 +227,9 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> ComplexImageType = FFTFilterType::OutputImageType;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">using</span> ComplexWriterType = <a name="_a4"></a><a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;ComplexImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> ComplexWriterType = <a name="_a5"></a><a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;ComplexImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> complexWriter = ComplexWriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> complexWriter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ComplexWriterType::New</a>();</div>
 <div class="line">  complexWriter-&gt;SetFileName(argv[4]);</div>
 <div class="line"> </div>
 <div class="line">  complexWriter-&gt;SetInput(fftFilter-&gt;GetOutput());</div>
@@ -275,9 +275,9 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> RealFilterType =</div>
-<div class="line">    <a name="_a5"></a><a class="code" href="classitk_1_1ComplexToRealImageFilter.html">itk::ComplexToRealImageFilter&lt;ComplexImageType, ImageType&gt;</a>;</div>
+<div class="line">    <a name="_a6"></a><a class="code" href="classitk_1_1ComplexToRealImageFilter.html">itk::ComplexToRealImageFilter&lt;ComplexImageType, ImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> realFilter = RealFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> realFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RealFilterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  realFilter-&gt;SetInput(fftFilter-&gt;GetOutput());</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
@@ -301,9 +301,9 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> RescaleFilterType =</div>
-<div class="line">    <a name="_a6"></a><a class="code" href="classitk_1_1RescaleIntensityImageFilter.html">itk::RescaleIntensityImageFilter&lt;ImageType, WriteImageType&gt;</a>;</div>
+<div class="line">    <a name="_a7"></a><a class="code" href="classitk_1_1RescaleIntensityImageFilter.html">itk::RescaleIntensityImageFilter&lt;ImageType, WriteImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> intensityRescaler = RescaleFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> intensityRescaler = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RescaleFilterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  intensityRescaler-&gt;SetInput(realFilter-&gt;GetOutput());</div>
 <div class="line"> </div>
@@ -313,7 +313,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> WriterType = <a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;WriteImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> writer = WriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> writer = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">WriterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  writer-&gt;SetFileName(argv[2]);</div>
 <div class="line"> </div>
@@ -345,9 +345,9 @@ $(function() {
 <div class="line">  <span class="keyword">using</span> ComplexImageType = FFTFilterType::OutputImageType;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> ImaginaryFilterType =</div>
-<div class="line">    <a name="_a7"></a><a class="code" href="classitk_1_1ComplexToImaginaryImageFilter.html">itk::ComplexToImaginaryImageFilter&lt;ComplexImageType, ImageType&gt;</a>;</div>
+<div class="line">    <a name="_a8"></a><a class="code" href="classitk_1_1ComplexToImaginaryImageFilter.html">itk::ComplexToImaginaryImageFilter&lt;ComplexImageType, ImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> imaginaryFilter = ImaginaryFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> imaginaryFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ImaginaryFilterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  imaginaryFilter-&gt;SetInput(fftFilter-&gt;GetOutput());</div>
 <div class="line">  <span class="comment">// Software Guide : EndCodeSnippet</span></div>
@@ -389,7 +389,7 @@ $(function() {
 <div class="line">  <span class="comment">// Software Guide : BeginCodeSnippet</span></div>
 <div class="line">  <span class="keyword">using</span> ComplexReaderType = <a class="code" href="classitk_1_1ImageFileReader.html">itk::ImageFileReader&lt;ComplexImageType&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> complexReader = ComplexReaderType::New();</div>
+<div class="line">  <span class="keyword">auto</span> complexReader = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">ComplexReaderType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  complexReader-&gt;SetFileName(argv[4]);</div>
 <div class="line">  complexReader-&gt;Update();</div>
@@ -419,6 +419,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1VnlForwardFFTImageFilter_html"><div class="ttname"><a href="classitk_1_1VnlForwardFFTImageFilter.html">itk::VnlForwardFFTImageFilter</a></div><div class="ttdoc">VNL based forward Fast Fourier Transform.</div><div class="ttdef"><b>Definition:</b> <a href="itkVnlForwardFFTImageFilter_8h_source.html#l00045">itkVnlForwardFFTImageFilter.h:45</a></div></div>
 <div class="ttc" id="aclassitk_1_1RescaleIntensityImageFilter_html"><div class="ttname"><a href="classitk_1_1RescaleIntensityImageFilter.html">itk::RescaleIntensityImageFilter</a></div><div class="ttdoc">Applies a linear transformation to the intensity levels of the input Image.</div><div class="ttdef"><b>Definition:</b> <a href="itkRescaleIntensityImageFilter_8h_source.html#l00147">itkRescaleIntensityImageFilter.h:147</a></div></div>
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a3c1343e7d285fc01106df9e0c28d5154"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a3c1343e7d285fc01106df9e0c28d5154">itk::GTest::TypedefsAndConstructors::Dimension2::Dimension</a></div><div class="ttdeci">constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00044">itkGTestTypedefsAndConstructors.h:44</a></div></div>
 <div class="ttc" id="aclassitk_1_1ComplexToRealImageFilter_html"><div class="ttname"><a href="classitk_1_1ComplexToRealImageFilter.html">itk::ComplexToRealImageFilter</a></div><div class="ttdoc">Computes pixel-wise the real(x) part of a complex image.</div><div class="ttdef"><b>Definition:</b> <a href="itkComplexToRealImageFilter_8h_source.html#l00057">itkComplexToRealImageFilter.h:57</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->

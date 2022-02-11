@@ -255,14 +255,11 @@ $(function() {
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  {</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    this-&gt;SetReleaseDataFlag(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  itkSetMacro(ReleaseDataBeforeUpdateFlag, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  itkGetConstReferenceMacro(ReleaseDataBeforeUpdateFlag, <span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  itkBooleanMacro(ReleaseDataBeforeUpdateFlag);</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  itkSetClampMacro(NumberOfWorkUnits, <a class="code" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, 1, <a class="code" href="namespaceitk.html#a5fa2792eb5503d959a5a3efbc4cf1077">ITK_MAX_THREADS</a>);</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  itkGetConstReferenceMacro(NumberOfWorkUnits, <a class="code" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor">#if !defined(ITK_LEGACY_REMOVE) || defined(ITKV4_COMPATIBILITY)</span></div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  itkLegacyMacro(<span class="keywordtype">void</span> SetNumberOfThreads(<a class="code" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> count)) { this-&gt;SetNumberOfWorkUnits(count); }</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
@@ -307,7 +304,6 @@ $(function() {
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> idx &lt; m_IndexedInputs.size() ? m_IndexedInputs[idx]-&gt;second.GetPointer() : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;  }</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;  SetInput(<span class="keyword">const</span> DataObjectIdentifierType &amp; key, <a class="code" href="classitk_1_1DataObject.html">DataObject</a> * input);</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
@@ -339,7 +335,6 @@ $(function() {
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordflow">return</span> m_IndexedInputs[0]-&gt;second;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;  }</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;  SetPrimaryInputName(<span class="keyword">const</span> DataObjectIdentifierType &amp; key);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *</div>
@@ -347,7 +342,6 @@ $(function() {
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="keywordflow">return</span> this-&gt;m_IndexedInputs[0]-&gt;first.c_str();</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;  }</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;  SetPrimaryInput(<a class="code" href="classitk_1_1DataObject.html">DataObject</a> * <span class="keywordtype">object</span>);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
@@ -386,7 +380,6 @@ $(function() {
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;  GetOutput(<span class="keyword">const</span> DataObjectIdentifierType &amp; key);</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1DataObject.html">DataObject</a> *</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;  GetOutput(<span class="keyword">const</span> DataObjectIdentifierType &amp; key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;  SetPrimaryOutputName(<span class="keyword">const</span> DataObjectIdentifierType &amp; key);</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *</div>
@@ -394,12 +387,10 @@ $(function() {
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordflow">return</span> this-&gt;m_IndexedOutputs[0]-&gt;first.c_str();</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;  }</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;  <a class="code" href="classitk_1_1DataObject.html">DataObject</a> *</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;  GetOutput(DataObjectPointerArraySizeType i);</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;  <span class="keyword">const</span> <a class="code" href="classitk_1_1DataObject.html">DataObject</a> *</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;  GetOutput(DataObjectPointerArraySizeType i) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  SetOutput(<span class="keyword">const</span> DataObjectIdentifierType &amp; name, <a class="code" href="classitk_1_1DataObject.html">DataObject</a> * output);</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
@@ -416,7 +407,6 @@ $(function() {
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="keywordflow">return</span> m_IndexedOutputs[0]-&gt;second;</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;  }</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  SetPrimaryOutput(<a class="code" href="classitk_1_1DataObject.html">DataObject</a> * <span class="keywordtype">object</span>);</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
@@ -488,14 +478,11 @@ $(function() {
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;  itkBooleanMacro(ThreaderUpdateProgress);</div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;  SetThreaderUpdateProgress(<span class="keywordtype">bool</span> arg);</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160; </div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160; </div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> constexpr <span class="keywordtype">float</span></div>
 <div class="line"><a name="l00916"></a><span class="lineno"><a class="line" href="classitk_1_1ProcessObject.html#a07a30552aaad5d0ddf777cba609b8082">  916</a></span>&#160;  <a class="code" href="classitk_1_1ProcessObject.html#a07a30552aaad5d0ddf777cba609b8082">progressFixedToFloat</a>(<a class="code" href="namespaceitk.html#a109e7e66d7632a8f961fb36698e56e5f">uint32_t</a> fixed)</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;  {</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    <span class="keywordflow">return</span> double(fixed) / double(std::numeric_limits&lt;uint32_t&gt;::max());</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;  };</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160; </div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="namespaceitk.html#a109e7e66d7632a8f961fb36698e56e5f">uint32_t</a></div>
 <div class="line"><a name="l00927"></a><span class="lineno"><a class="line" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">  927</a></span>&#160;  <a class="code" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a>(<span class="keywordtype">float</span> f)</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;  {</div>
@@ -510,7 +497,6 @@ $(function() {
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="keywordtype">double</span> temp = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(f) * std::numeric_limits&lt;uint32_t&gt;::max();</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceitk.html#a109e7e66d7632a8f961fb36698e56e5f">uint32_t</a><span class="keyword">&gt;</span>(temp);</div>
 <div class="line"><a name="l00939"></a><span class="lineno"><a class="line" href="classitk_1_1ProcessObject.html#a73d93d85a417c77cf20cbd01d3a7677d">  939</a></span>&#160;  };</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160; </div>
 <div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;  <span class="keywordtype">bool</span> m_Updating;</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160; </div>
 <div class="line"><a name="l00950"></a><span class="lineno"><a class="line" href="classitk_1_1ProcessObject.html#a6808e5c930d19feeaf22faefefbab783">  950</a></span>&#160;  <a class="code" href="classitk_1_1TimeStamp.html">TimeStamp</a> <a class="code" href="classitk_1_1ProcessObject.html#a6808e5c930d19feeaf22faefefbab783">m_OutputInformationMTime</a>;</div>

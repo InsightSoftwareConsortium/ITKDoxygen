@@ -162,7 +162,7 @@ $(function() {
 <div class="line">  <a name="_a2"></a><a class="code" href="classitk_1_1SmartPointer.html">itk::ImageFileReader&lt;ImageType&gt;::Pointer</a> reader =</div>
 <div class="line">    <a name="a3"></a><a class="code" href="classitk_1_1ImageFileReader.html#ac90899aba4a68053e9ea5bc3860ed442">itk::ImageFileReader&lt;ImageType&gt;::New</a>();</div>
 <div class="line"> </div>
-<div class="line">  ImageType::Pointer img;</div>
+<div class="line">  <a name="a4"></a><a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> img;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Set the properties for NrrdReader</span></div>
 <div class="line">  reader-&gt;SetFileName(argv[1]);</div>
@@ -207,15 +207,15 @@ $(function() {
 <div class="line">  <span class="comment">// DWMRI_gradient_0003:=0.110000        0.664000        0.740000</span></div>
 <div class="line">  <span class="comment">// ...</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <a name="_a4"></a><a class="code" href="classitk_1_1MetaDataDictionary.html">itk::MetaDataDictionary</a>  imgMetaDictionary = img-&gt;GetMetaDataDictionary();</div>
-<div class="line">  std::vector&lt;std::string&gt; imgMetaKeys = imgMetaDictionary.<a name="a5"></a><a class="code" href="classitk_1_1MetaDataDictionary.html#a7029ca3ac0763473876d02f98a3f661d">GetKeys</a>();</div>
+<div class="line">  <a name="_a5"></a><a class="code" href="classitk_1_1MetaDataDictionary.html">itk::MetaDataDictionary</a>  imgMetaDictionary = img-&gt;GetMetaDataDictionary();</div>
+<div class="line">  std::vector&lt;std::string&gt; imgMetaKeys = imgMetaDictionary.<a name="a6"></a><a class="code" href="classitk_1_1MetaDataDictionary.html#a7029ca3ac0763473876d02f98a3f661d">GetKeys</a>();</div>
 <div class="line">  std::vector&lt;std::string&gt;::const_iterator itKey = imgMetaKeys.begin();</div>
 <div class="line">  std::string                              metaString;</div>
 <div class="line"> </div>
 <div class="line">  TensorReconstructionImageFilterType::GradientDirectionType vect3d;</div>
-<div class="line">  TensorReconstructionImageFilterType::GradientDirectionContainerType::Pointer</div>
-<div class="line">    DiffusionVectors = TensorReconstructionImageFilterType::</div>
-<div class="line">      GradientDirectionContainerType::New();</div>
+<div class="line">  <a class="code" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TensorReconstructionImageFilterType::GradientDirectionContainerType::Pointer</a></div>
+<div class="line">    DiffusionVectors = <a name="a7"></a><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TensorReconstructionImageFilterType::</a></div>
+<div class="line"><a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">      GradientDirectionContainerType::New</a>();</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> (; itKey != imgMetaKeys.end(); ++itKey)</div>
@@ -270,7 +270,7 @@ $(function() {
 <div class="line">  <span class="comment">// gradient and reference images in separate images and writing them out to</span></div>
 <div class="line">  <span class="comment">// files, so they can be fired up in your favourite volume viewer.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <span class="keyword">using</span> ReferenceImageType = <a name="_a6"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;PixelType, Dimension&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> ReferenceImageType = <a name="_a8"></a><a class="code" href="classitk_1_1Image.html">itk::Image&lt;PixelType, Dimension&gt;</a>;</div>
 <div class="line">  <span class="keyword">using</span> GradientImageType = ReferenceImageType;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// A container of smart pointers to images. This container will hold</span></div>
@@ -279,16 +279,16 @@ $(function() {
 <div class="line">  std::vector&lt;GradientImageType::Pointer&gt; imageContainer;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// iterator to iterate over the DWI Vector image just read in.</span></div>
-<div class="line">  <span class="keyword">using</span> DWIIteratorType = <a name="_a7"></a><a class="code" href="classitk_1_1ImageRegionConstIterator.html">itk::ImageRegionConstIterator&lt;ImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> DWIIteratorType = <a name="_a9"></a><a class="code" href="classitk_1_1ImageRegionConstIterator.html">itk::ImageRegionConstIterator&lt;ImageType&gt;</a>;</div>
 <div class="line">  DWIIteratorType dwiit(img, img-&gt;GetBufferedRegion());</div>
-<div class="line">  <span class="keyword">using</span> IteratorType = <a name="_a8"></a><a class="code" href="classitk_1_1ImageRegionIterator.html">itk::ImageRegionIterator&lt;GradientImageType&gt;</a>;</div>
+<div class="line">  <span class="keyword">using</span> IteratorType = <a name="_a10"></a><a class="code" href="classitk_1_1ImageRegionIterator.html">itk::ImageRegionIterator&lt;GradientImageType&gt;</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// In this for loop, we will extract the &#39;n&#39; gradient images + 1 reference</span></div>
 <div class="line">  <span class="comment">// image from the DWI Vector image.</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numberOfImages; ++i)</div>
 <div class="line">  {</div>
-<div class="line">    <span class="keyword">auto</span> image = GradientImageType::New();</div>
+<div class="line">    <span class="keyword">auto</span> image = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">GradientImageType::New</a>();</div>
 <div class="line">    image-&gt;CopyInformation(img);</div>
 <div class="line">    image-&gt;SetBufferedRegion(img-&gt;GetBufferedRegion());</div>
 <div class="line">    image-&gt;SetRequestedRegion(img-&gt;GetRequestedRegion());</div>
@@ -313,10 +313,10 @@ $(function() {
 <div class="line">  <span class="keywordflow">if</span> ((argc &gt; 4) &amp;&amp; (std::stoi(argv[6])))</div>
 <div class="line">  {</div>
 <div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> referenceImageIndex = 0;</div>
-<div class="line">    <span class="keyword">using</span> GradientWriterType = <a name="_a9"></a><a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;GradientImageType&gt;</a>;</div>
+<div class="line">    <span class="keyword">using</span> GradientWriterType = <a name="_a11"></a><a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;GradientImageType&gt;</a>;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numberOfImages; ++i)</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keyword">auto</span> gradientWriter = GradientWriterType::New();</div>
+<div class="line">      <span class="keyword">auto</span> gradientWriter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">GradientWriterType::New</a>();</div>
 <div class="line">      gradientWriter-&gt;SetInput(imageContainer[i]);</div>
 <div class="line">      <span class="keywordtype">char</span> filename[100];</div>
 <div class="line">      <span class="keywordflow">if</span> (DiffusionVectors-&gt;ElementAt(i).two_norm() &lt;=</div>
@@ -339,7 +339,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="comment">// -------------------------------------------------------------------------</span></div>
 <div class="line">  <span class="keyword">auto</span> tensorReconstructionFilter =</div>
-<div class="line">    TensorReconstructionImageFilterType::New();</div>
+<div class="line">    <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TensorReconstructionImageFilterType::New</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// The reference and the gradient images are conveniently provided as</span></div>
 <div class="line">  <span class="comment">// input to the DiffusionTensor3DReconstructionImageFilter as</span></div>
@@ -377,7 +377,7 @@ $(function() {
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">using</span> TensorWriterType = <a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter</a>&lt;</div>
 <div class="line">    TensorReconstructionImageFilterType::OutputImageType&gt;;</div>
-<div class="line">  <span class="keyword">auto</span> tensorWriter = TensorWriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> tensorWriter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TensorWriterType::New</a>();</div>
 <div class="line">  tensorWriter-&gt;SetFileName(argv[3]);</div>
 <div class="line">  tensorWriter-&gt;SetInput(tensorReconstructionFilter-&gt;GetOutput());</div>
 <div class="line">  tensorWriter-&gt;Update();</div>
@@ -392,18 +392,18 @@ $(function() {
 <div class="line">    TensorReconstructionImageFilterType::TensorPixelType;</div>
 <div class="line">  <span class="keyword">using</span> RealValueType = TensorPixelType::RealValueType;</div>
 <div class="line">  <span class="keyword">using</span> FAImageType = <a class="code" href="classitk_1_1Image.html">itk::Image&lt;RealValueType, Dimension&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> FAFilterType = <a name="_a10"></a><a class="code" href="classitk_1_1TensorFractionalAnisotropyImageFilter.html">itk::TensorFractionalAnisotropyImageFilter</a>&lt;</div>
+<div class="line">  <span class="keyword">using</span> FAFilterType = <a name="_a12"></a><a class="code" href="classitk_1_1TensorFractionalAnisotropyImageFilter.html">itk::TensorFractionalAnisotropyImageFilter</a>&lt;</div>
 <div class="line">    TensorReconstructionImageFilterType::OutputImageType,</div>
 <div class="line">    FAImageType&gt;;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> fractionalAnisotropyFilter = FAFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> fractionalAnisotropyFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FAFilterType::New</a>();</div>
 <div class="line">  fractionalAnisotropyFilter-&gt;SetInput(</div>
 <div class="line">    tensorReconstructionFilter-&gt;GetOutput());</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Write the FA image</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">using</span> FAWriterType = <a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;FAFilterType::OutputImageType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> faWriter = FAWriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> faWriter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FAWriterType::New</a>();</div>
 <div class="line">  faWriter-&gt;SetInput(fractionalAnisotropyFilter-&gt;GetOutput());</div>
 <div class="line">  faWriter-&gt;SetFileName(argv[4]);</div>
 <div class="line">  faWriter-&gt;Update();</div>
@@ -414,15 +414,15 @@ $(function() {
 <div class="line">    TensorReconstructionImageFilterType::TensorPixelType;</div>
 <div class="line">  <span class="keyword">using</span> RealValueType = TensorPixelType::RealValueType;</div>
 <div class="line">  <span class="keyword">using</span> RAImageType = <a class="code" href="classitk_1_1Image.html">itk::Image&lt;RealValueType, Dimension&gt;</a>;</div>
-<div class="line">  <span class="keyword">using</span> RAFilterType = <a name="_a11"></a><a class="code" href="classitk_1_1TensorRelativeAnisotropyImageFilter.html">itk::TensorRelativeAnisotropyImageFilter</a>&lt;</div>
+<div class="line">  <span class="keyword">using</span> RAFilterType = <a name="_a13"></a><a class="code" href="classitk_1_1TensorRelativeAnisotropyImageFilter.html">itk::TensorRelativeAnisotropyImageFilter</a>&lt;</div>
 <div class="line">    TensorReconstructionImageFilterType::OutputImageType,</div>
 <div class="line">    RAImageType&gt;;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> relativeAnisotropyFilter = RAFilterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> relativeAnisotropyFilter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RAFilterType::New</a>();</div>
 <div class="line">  relativeAnisotropyFilter-&gt;SetInput(tensorReconstructionFilter-&gt;GetOutput());</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using</span> RAWriterType = <a class="code" href="classitk_1_1ImageFileWriter.html">itk::ImageFileWriter&lt;RAFilterType::OutputImageType&gt;</a>;</div>
-<div class="line">  <span class="keyword">auto</span> raWriter = RAWriterType::New();</div>
+<div class="line">  <span class="keyword">auto</span> raWriter = <a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RAWriterType::New</a>();</div>
 <div class="line">  raWriter-&gt;SetInput(relativeAnisotropyFilter-&gt;GetOutput());</div>
 <div class="line">  raWriter-&gt;SetFileName(argv[5]);</div>
 <div class="line">  raWriter-&gt;Update();</div>
@@ -431,6 +431,7 @@ $(function() {
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="ttc" id="aitkTensorRelativeAnisotropyImageFilter_8h_html"><div class="ttname"><a href="itkTensorRelativeAnisotropyImageFilter_8h.html">itkTensorRelativeAnisotropyImageFilter.h</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00092">itkAddImageFilter.h:92</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageFileReader_html_ac90899aba4a68053e9ea5bc3860ed442"><div class="ttname"><a href="classitk_1_1ImageFileReader.html#ac90899aba4a68053e9ea5bc3860ed442">itk::ImageFileReader::New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aclassitk_1_1TensorFractionalAnisotropyImageFilter_html"><div class="ttname"><a href="classitk_1_1TensorFractionalAnisotropyImageFilter.html">itk::TensorFractionalAnisotropyImageFilter</a></div><div class="ttdoc">Computes the Fractional Anisotropy for every pixel of a input tensor image.</div><div class="ttdef"><b>Definition:</b> <a href="itkTensorFractionalAnisotropyImageFilter_8h_source.html#l00071">itkTensorFractionalAnisotropyImageFilter.h:71</a></div></div>
 <div class="ttc" id="aitkDiffusionTensor3DReconstructionImageFilter_8h_html"><div class="ttname"><a href="itkDiffusionTensor3DReconstructionImageFilter_8h.html">itkDiffusionTensor3DReconstructionImageFilter.h</a></div></div>
@@ -447,6 +448,7 @@ $(function() {
 <div class="ttc" id="aitkTensorFractionalAnisotropyImageFilter_8h_html"><div class="ttname"><a href="itkTensorFractionalAnisotropyImageFilter_8h.html">itkTensorFractionalAnisotropyImageFilter.h</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageRegionConstIterator_html"><div class="ttname"><a href="classitk_1_1ImageRegionConstIterator.html">itk::ImageRegionConstIterator&lt; ImageType &gt;</a></div></div>
 <div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a3c1343e7d285fc01106df9e0c28d5154"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a3c1343e7d285fc01106df9e0c28d5154">itk::GTest::TypedefsAndConstructors::Dimension2::Dimension</a></div><div class="ttdeci">constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00044">itkGTestTypedefsAndConstructors.h:44</a></div></div>
 <div class="ttc" id="aclassitk_1_1MetaDataDictionary_html_a7029ca3ac0763473876d02f98a3f661d"><div class="ttname"><a href="classitk_1_1MetaDataDictionary.html#a7029ca3ac0763473876d02f98a3f661d">itk::MetaDataDictionary::GetKeys</a></div><div class="ttdeci">std::vector&lt; std::string &gt; GetKeys() const</div></div>
 <!-- HTML footer for doxygen 1.8.15-->

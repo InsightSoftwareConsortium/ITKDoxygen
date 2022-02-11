@@ -74,6 +74,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="structitk_1_1Index-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">itk::Index&lt; VDimension &gt; Struct Template Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__DataAccess.html">Data Access Objects</a> &raquo; <a class="el" href="group__ImageAccess.html">Image Access Objects</a><a class="el" href="group__DataRepresentation.html">Data Representation Objects</a> &raquo;  &#124; <a class="el" href="group__ImageObjects.html">Image Representation Objects</a><a class="el" href="group__Group-Core.html">Group Core</a> &raquo;  &#124; <a class="el" href="group__ITKCommon.html">Module ITKCommon</a></div></div>  </div>
@@ -92,104 +94,91 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a1c46cd972e31a3c21468816613993a80"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a> = const <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> *</td></tr>
+<tr class="separator:a1c46cd972e31a3c21468816613993a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82362491c2d8061d7ccb6141099c6cd4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a> = const <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> &amp;</td></tr>
+<tr class="separator:a82362491c2d8061d7ccb6141099c6cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830c659c7b349341a3e5ba686de60d1c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a830c659c7b349341a3e5ba686de60d1c">const_reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a> &gt;</td></tr>
+<tr class="separator:a830c659c7b349341a3e5ba686de60d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae022d0400ae93d22ab2cb744781c082a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ae022d0400ae93d22ab2cb744781c082a">difference_type</a> = std::ptrdiff_t</td></tr>
+<tr class="separator:ae022d0400ae93d22ab2cb744781c082a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a23559ac4900eb67eb0cf0b5bdb438"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a55a23559ac4900eb67eb0cf0b5bdb438">IndexType</a> = <a class="el" href="structitk_1_1Index.html">Index</a>&lt; VDimension &gt;</td></tr>
 <tr class="separator:a55a23559ac4900eb67eb0cf0b5bdb438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6633638d1ee896de6e7f58aead34fe6f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> = <a class="el" href="namespaceitk.html#a8041e536e36d73ad708136cd2634f341">itk::IndexValueType</a></td></tr>
 <tr class="separator:a6633638d1ee896de6e7f58aead34fe6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a327464ad429bf949e723c343a890b2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a> = <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> *</td></tr>
+<tr class="separator:a3a327464ad429bf949e723c343a890b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6299df0361722fcefe7f2f98f8fb544"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> = <a class="el" href="structitk_1_1Offset.html">Offset</a>&lt; VDimension &gt;</td></tr>
 <tr class="separator:aa6299df0361722fcefe7f2f98f8fb544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3531a5e42944e34285db90b5e3dcf27"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#af3531a5e42944e34285db90b5e3dcf27">OffsetValueType</a> = <a class="el" href="namespaceitk.html#a5380bc8696311d1e1cfa5b350e440839">itk::OffsetValueType</a></td></tr>
 <tr class="separator:af3531a5e42944e34285db90b5e3dcf27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46ff8a091cae0978557edb56627e7b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a> = <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> &amp;</td></tr>
+<tr class="separator:ad46ff8a091cae0978557edb56627e7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7acc3d28540e75af3cb79a3db8335ef2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a7acc3d28540e75af3cb79a3db8335ef2">reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a> &gt;</td></tr>
+<tr class="separator:a7acc3d28540e75af3cb79a3db8335ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a729fc51df034b68f98347d5bbefaafe6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> = <a class="el" href="structitk_1_1Index.html">Index</a></td></tr>
 <tr class="separator:a729fc51df034b68f98347d5bbefaafe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c86defb13c531f6d3f144141fbe560"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> = unsigned int</td></tr>
+<tr class="separator:a62c86defb13c531f6d3f144141fbe560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c851025842f7789d127cd9ca07bc488"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> = <a class="el" href="structitk_1_1Size.html">Size</a>&lt; VDimension &gt;</td></tr>
 <tr class="separator:a1c851025842f7789d127cd9ca07bc488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80860d43457c062383259438360f1fd3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> = <a class="el" href="namespaceitk.html#a8041e536e36d73ad708136cd2634f341">itk::IndexValueType</a></td></tr>
+<tr class="separator:a80860d43457c062383259438360f1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ff343b072149ddcfb9cac7d5b80ce18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a6ff343b072149ddcfb9cac7d5b80ce18">operator+</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz) const</td></tr>
-<tr class="separator:a6ff343b072149ddcfb9cac7d5b80ce18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af5dc36898568b1c360003ac64c53cbb9"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#af5dc36898568b1c360003ac64c53cbb9">GetIndexDimension</a> ()</td></tr>
-<tr class="separator:af5dc36898568b1c360003ac64c53cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ac5b01ab54fac28a1decad72d9b253baf"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ac5b01ab54fac28a1decad72d9b253baf">Dimension</a> = VDimension</td></tr>
-<tr class="separator:ac5b01ab54fac28a1decad72d9b253baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80860d43457c062383259438360f1fd3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> = <a class="el" href="namespaceitk.html#a8041e536e36d73ad708136cd2634f341">itk::IndexValueType</a></td></tr>
-<tr class="separator:a80860d43457c062383259438360f1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46ff8a091cae0978557edb56627e7b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a> = <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> &amp;</td></tr>
-<tr class="separator:ad46ff8a091cae0978557edb56627e7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82362491c2d8061d7ccb6141099c6cd4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a> = const <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> &amp;</td></tr>
-<tr class="separator:a82362491c2d8061d7ccb6141099c6cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a327464ad429bf949e723c343a890b2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a> = <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> *</td></tr>
-<tr class="separator:a3a327464ad429bf949e723c343a890b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c46cd972e31a3c21468816613993a80"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a> = const <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> *</td></tr>
-<tr class="separator:a1c46cd972e31a3c21468816613993a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c86defb13c531f6d3f144141fbe560"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> = unsigned int</td></tr>
-<tr class="separator:a62c86defb13c531f6d3f144141fbe560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae022d0400ae93d22ab2cb744781c082a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ae022d0400ae93d22ab2cb744781c082a">difference_type</a> = std::ptrdiff_t</td></tr>
-<tr class="separator:ae022d0400ae93d22ab2cb744781c082a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7acc3d28540e75af3cb79a3db8335ef2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a7acc3d28540e75af3cb79a3db8335ef2">reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a> &gt;</td></tr>
-<tr class="separator:a7acc3d28540e75af3cb79a3db8335ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a830c659c7b349341a3e5ba686de60d1c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a830c659c7b349341a3e5ba686de60d1c">const_reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a> &gt;</td></tr>
-<tr class="separator:a830c659c7b349341a3e5ba686de60d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4892703f4aff82beb56c00044e9eba14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4892703f4aff82beb56c00044e9eba14">m_InternalArray</a> [VDimension]</td></tr>
-<tr class="separator:a4892703f4aff82beb56c00044e9eba14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a606a3aa5e621546bc02f1fda1b6bff61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a606a3aa5e621546bc02f1fda1b6bff61">GetBasisIndex</a> (unsigned int dim)</td></tr>
-<tr class="separator:a606a3aa5e621546bc02f1fda1b6bff61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3264ac6bc3f0dc656072dcc4e82be10d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3264ac6bc3f0dc656072dcc4e82be10d">Filled</a> (const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> value)</td></tr>
-<tr class="separator:a3264ac6bc3f0dc656072dcc4e82be10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acda0ecd7067e8e7197ca410f0beb3472"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#acda0ecd7067e8e7197ca410f0beb3472">operator+=</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz)</td></tr>
-<tr class="separator:acda0ecd7067e8e7197ca410f0beb3472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a953da2968f5a8b2b546edb1090d3663a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a953da2968f5a8b2b546edb1090d3663a">operator-</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz) const</td></tr>
-<tr class="separator:a953da2968f5a8b2b546edb1090d3663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe84bec51e85e8561417d0aeacf3bc95"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#afe84bec51e85e8561417d0aeacf3bc95">operator-=</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz)</td></tr>
-<tr class="separator:afe84bec51e85e8561417d0aeacf3bc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addcbc7913f637b06a515bfebd359becc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#addcbc7913f637b06a515bfebd359becc">operator+</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset) const</td></tr>
-<tr class="separator:addcbc7913f637b06a515bfebd359becc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f64f61ea3469c7baea9135dd1c2d9fb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a7f64f61ea3469c7baea9135dd1c2d9fb">operator+=</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset)</td></tr>
-<tr class="separator:a7f64f61ea3469c7baea9135dd1c2d9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c004f65c4935fa0995ede3f7364c8fe"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4c004f65c4935fa0995ede3f7364c8fe">operator-=</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset)</td></tr>
-<tr class="separator:a4c004f65c4935fa0995ede3f7364c8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fbc90a270ded8b77ff88ae1bd9fb8dd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a5fbc90a270ded8b77ff88ae1bd9fb8dd">operator-</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;off) const</td></tr>
-<tr class="separator:a5fbc90a270ded8b77ff88ae1bd9fb8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e77c5679caac59b4a8e00c0036c56b5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a0e77c5679caac59b4a8e00c0036c56b5">operator-</a> (const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;vec) const</td></tr>
-<tr class="separator:a0e77c5679caac59b4a8e00c0036c56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08fd69692dd6b5f67cd4fe4953e4693b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a08fd69692dd6b5f67cd4fe4953e4693b">operator*</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;vec) const</td></tr>
-<tr class="separator:a08fd69692dd6b5f67cd4fe4953e4693b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82e9813851e8faf69e449e116620e430"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a82e9813851e8faf69e449e116620e430">GetIndex</a> () const</td></tr>
-<tr class="separator:a82e9813851e8faf69e449e116620e430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6fabcf86ebd86490c5e67241daada20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#af6fabcf86ebd86490c5e67241daada20">SetIndex</a> (const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> val[VDimension])</td></tr>
-<tr class="separator:af6fabcf86ebd86490c5e67241daada20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd76ce7e0a171f7842fa20c058d5ae7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#abd76ce7e0a171f7842fa20c058d5ae7b">SetElement</a> (unsigned long element, <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> val)</td></tr>
-<tr class="separator:abd76ce7e0a171f7842fa20c058d5ae7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84992b9bd65614e4ce2b42b3d7bc26d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a84992b9bd65614e4ce2b42b3d7bc26d7">GetElement</a> (unsigned long element) const</td></tr>
-<tr class="separator:a84992b9bd65614e4ce2b42b3d7bc26d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa352eaf9df0e22c9449e13e7ce2c1cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#aa352eaf9df0e22c9449e13e7ce2c1cbc">Fill</a> (<a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> value)</td></tr>
-<tr class="separator:aa352eaf9df0e22c9449e13e7ce2c1cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a468dd9ee3d479b4d1a636742b1d696a4">CopyWithRound</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VDimension &gt; &amp;point)</td></tr>
-<tr class="separator:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd329acb9cad11bf7b82903660dd740"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a0fd329acb9cad11bf7b82903660dd740"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a0fd329acb9cad11bf7b82903660dd740">CopyWithCast</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VDimension &gt; &amp;point)</td></tr>
-<tr class="separator:a0fd329acb9cad11bf7b82903660dd740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376ce6c4a10f77f7478130bd6611449f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a376ce6c4a10f77f7478130bd6611449f">assign</a> (const <a class="el" href="structitk_1_1Index.html#a80860d43457c062383259438360f1fd3">value_type</a> &amp;newValue)</td></tr>
 <tr class="separator:a376ce6c4a10f77f7478130bd6611449f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4057cc1de0f0cda06ddc655d3085b349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4057cc1de0f0cda06ddc655d3085b349">swap</a> (<a class="el" href="structitk_1_1Index.html">Index</a> &amp;other)</td></tr>
-<tr class="separator:a4057cc1de0f0cda06ddc655d3085b349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cdd016a80da1cbb0c4cc5030b2a964c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a6cdd016a80da1cbb0c4cc5030b2a964c">at</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos)</td></tr>
+<tr class="separator:a6cdd016a80da1cbb0c4cc5030b2a964c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd39e00cfc582135b3f6695d38490dc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#afd39e00cfc582135b3f6695d38490dc8">at</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos) const</td></tr>
+<tr class="separator:afd39e00cfc582135b3f6695d38490dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa775c890962d90398af91c87833f6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a8fa775c890962d90398af91c87833f6b">back</a> ()</td></tr>
+<tr class="separator:a8fa775c890962d90398af91c87833f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3c68669a08eb089f2a6c034d733060"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a8a3c68669a08eb089f2a6c034d733060">back</a> () const</td></tr>
+<tr class="separator:a8a3c68669a08eb089f2a6c034d733060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8674b5f3f344dfc42d32932fb50b95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#acf8674b5f3f344dfc42d32932fb50b95">begin</a> ()</td></tr>
 <tr class="separator:acf8674b5f3f344dfc42d32932fb50b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4936d0b93b4e78ef37909de9652cc692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4936d0b93b4e78ef37909de9652cc692">begin</a> () const</td></tr>
 <tr class="separator:a4936d0b93b4e78ef37909de9652cc692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91cb7869f0080b968c4c7889d930540"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ad91cb7869f0080b968c4c7889d930540">data</a> ()</td></tr>
+<tr class="separator:ad91cb7869f0080b968c4c7889d930540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b52f7f947aa9be77f1482df15a5a42"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a15b52f7f947aa9be77f1482df15a5a42">data</a> () const</td></tr>
+<tr class="separator:a15b52f7f947aa9be77f1482df15a5a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a703b593efeaada47857a57c3159c5"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a52a703b593efeaada47857a57c3159c5">empty</a> () const</td></tr>
+<tr class="separator:a52a703b593efeaada47857a57c3159c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4684699dac2563d89bd81bbbdad47e08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a3a327464ad429bf949e723c343a890b2">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4684699dac2563d89bd81bbbdad47e08">end</a> ()</td></tr>
 <tr class="separator:a4684699dac2563d89bd81bbbdad47e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9cdd4bdbb9aeafdbc3fb2aa35f7681c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a1c46cd972e31a3c21468816613993a80">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ad9cdd4bdbb9aeafdbc3fb2aa35f7681c">end</a> () const</td></tr>
 <tr class="separator:ad9cdd4bdbb9aeafdbc3fb2aa35f7681c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa352eaf9df0e22c9449e13e7ce2c1cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#aa352eaf9df0e22c9449e13e7ce2c1cbc">Fill</a> (<a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> value)</td></tr>
+<tr class="separator:aa352eaf9df0e22c9449e13e7ce2c1cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac000bba63db3f125f86719830abbe5c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ac000bba63db3f125f86719830abbe5c5">front</a> ()</td></tr>
+<tr class="separator:ac000bba63db3f125f86719830abbe5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc022f30f14cdc69739c20b22c72c90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3dc022f30f14cdc69739c20b22c72c90">front</a> () const</td></tr>
+<tr class="separator:a3dc022f30f14cdc69739c20b22c72c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84992b9bd65614e4ce2b42b3d7bc26d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a84992b9bd65614e4ce2b42b3d7bc26d7">GetElement</a> (unsigned long element) const</td></tr>
+<tr class="separator:a84992b9bd65614e4ce2b42b3d7bc26d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e9813851e8faf69e449e116620e430"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a82e9813851e8faf69e449e116620e430">GetIndex</a> () const</td></tr>
+<tr class="separator:a82e9813851e8faf69e449e116620e430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0f086bad80355a14daf41e8a989a0e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3e0f086bad80355a14daf41e8a989a0e">max_size</a> () const</td></tr>
+<tr class="separator:a3e0f086bad80355a14daf41e8a989a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fd69692dd6b5f67cd4fe4953e4693b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a08fd69692dd6b5f67cd4fe4953e4693b">operator*</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;vec) const</td></tr>
+<tr class="separator:a08fd69692dd6b5f67cd4fe4953e4693b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addcbc7913f637b06a515bfebd359becc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#addcbc7913f637b06a515bfebd359becc">operator+</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset) const</td></tr>
+<tr class="separator:addcbc7913f637b06a515bfebd359becc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff343b072149ddcfb9cac7d5b80ce18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a6ff343b072149ddcfb9cac7d5b80ce18">operator+</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz) const</td></tr>
+<tr class="separator:a6ff343b072149ddcfb9cac7d5b80ce18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbc90a270ded8b77ff88ae1bd9fb8dd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a5fbc90a270ded8b77ff88ae1bd9fb8dd">operator-</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;off) const</td></tr>
+<tr class="separator:a5fbc90a270ded8b77ff88ae1bd9fb8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e77c5679caac59b4a8e00c0036c56b5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a0e77c5679caac59b4a8e00c0036c56b5">operator-</a> (const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;vec) const</td></tr>
+<tr class="separator:a0e77c5679caac59b4a8e00c0036c56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953da2968f5a8b2b546edb1090d3663a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a953da2968f5a8b2b546edb1090d3663a">operator-</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz) const</td></tr>
+<tr class="separator:a953da2968f5a8b2b546edb1090d3663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a8702afe4cd691ca789a608ab3222a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a84a8702afe4cd691ca789a608ab3222a">operator[]</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos)</td></tr>
+<tr class="separator:a84a8702afe4cd691ca789a608ab3222a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d00513b1824a3f3ab47f7852d2c9e8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a00d00513b1824a3f3ab47f7852d2c9e8">operator[]</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos) const</td></tr>
+<tr class="separator:a00d00513b1824a3f3ab47f7852d2c9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ef561bcdb48b9a3a06e391875331c66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a7acc3d28540e75af3cb79a3db8335ef2">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3ef561bcdb48b9a3a06e391875331c66">rbegin</a> ()</td></tr>
 <tr class="separator:a3ef561bcdb48b9a3a06e391875331c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2de19d1a42ed5bde605453541571057f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a830c659c7b349341a3e5ba686de60d1c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a2de19d1a42ed5bde605453541571057f">rbegin</a> () const</td></tr>
@@ -198,32 +187,58 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a37110b4ba6ac9c3f15ae69dd44ae96ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47cd128e7e105603f412db91fedf45fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a830c659c7b349341a3e5ba686de60d1c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a47cd128e7e105603f412db91fedf45fc">rend</a> () const</td></tr>
 <tr class="separator:a47cd128e7e105603f412db91fedf45fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd76ce7e0a171f7842fa20c058d5ae7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#abd76ce7e0a171f7842fa20c058d5ae7b">SetElement</a> (unsigned long element, <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> val)</td></tr>
+<tr class="separator:abd76ce7e0a171f7842fa20c058d5ae7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fabcf86ebd86490c5e67241daada20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#af6fabcf86ebd86490c5e67241daada20">SetIndex</a> (const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> val[VDimension])</td></tr>
+<tr class="separator:af6fabcf86ebd86490c5e67241daada20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a537abd5f6846f802e075ef82685d791d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a537abd5f6846f802e075ef82685d791d">size</a> () const</td></tr>
 <tr class="separator:a537abd5f6846f802e075ef82685d791d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0f086bad80355a14daf41e8a989a0e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3e0f086bad80355a14daf41e8a989a0e">max_size</a> () const</td></tr>
-<tr class="separator:a3e0f086bad80355a14daf41e8a989a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a703b593efeaada47857a57c3159c5"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a52a703b593efeaada47857a57c3159c5">empty</a> () const</td></tr>
-<tr class="separator:a52a703b593efeaada47857a57c3159c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a8702afe4cd691ca789a608ab3222a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a84a8702afe4cd691ca789a608ab3222a">operator[]</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos)</td></tr>
-<tr class="separator:a84a8702afe4cd691ca789a608ab3222a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00d00513b1824a3f3ab47f7852d2c9e8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a00d00513b1824a3f3ab47f7852d2c9e8">operator[]</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos) const</td></tr>
-<tr class="separator:a00d00513b1824a3f3ab47f7852d2c9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cdd016a80da1cbb0c4cc5030b2a964c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a6cdd016a80da1cbb0c4cc5030b2a964c">at</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos)</td></tr>
-<tr class="separator:a6cdd016a80da1cbb0c4cc5030b2a964c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd39e00cfc582135b3f6695d38490dc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#afd39e00cfc582135b3f6695d38490dc8">at</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos) const</td></tr>
-<tr class="separator:afd39e00cfc582135b3f6695d38490dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac000bba63db3f125f86719830abbe5c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ac000bba63db3f125f86719830abbe5c5">front</a> ()</td></tr>
-<tr class="separator:ac000bba63db3f125f86719830abbe5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc022f30f14cdc69739c20b22c72c90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3dc022f30f14cdc69739c20b22c72c90">front</a> () const</td></tr>
-<tr class="separator:a3dc022f30f14cdc69739c20b22c72c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fa775c890962d90398af91c87833f6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#ad46ff8a091cae0978557edb56627e7b3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a8fa775c890962d90398af91c87833f6b">back</a> ()</td></tr>
-<tr class="separator:a8fa775c890962d90398af91c87833f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a3c68669a08eb089f2a6c034d733060"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a82362491c2d8061d7ccb6141099c6cd4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a8a3c68669a08eb089f2a6c034d733060">back</a> () const</td></tr>
-<tr class="separator:a8a3c68669a08eb089f2a6c034d733060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad91cb7869f0080b968c4c7889d930540"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ad91cb7869f0080b968c4c7889d930540">data</a> ()</td></tr>
-<tr class="separator:ad91cb7869f0080b968c4c7889d930540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15b52f7f947aa9be77f1482df15a5a42"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a15b52f7f947aa9be77f1482df15a5a42">data</a> () const</td></tr>
-<tr class="separator:a15b52f7f947aa9be77f1482df15a5a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4057cc1de0f0cda06ddc655d3085b349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4057cc1de0f0cda06ddc655d3085b349">swap</a> (<a class="el" href="structitk_1_1Index.html">Index</a> &amp;other)</td></tr>
+<tr class="separator:a4057cc1de0f0cda06ddc655d3085b349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:acda0ecd7067e8e7197ca410f0beb3472"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#acda0ecd7067e8e7197ca410f0beb3472">operator+=</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz)</td></tr>
+<tr class="separator:acda0ecd7067e8e7197ca410f0beb3472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:afe84bec51e85e8561417d0aeacf3bc95"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#afe84bec51e85e8561417d0aeacf3bc95">operator-=</a> (const <a class="el" href="structitk_1_1Index.html#a1c851025842f7789d127cd9ca07bc488">SizeType</a> &amp;sz)</td></tr>
+<tr class="separator:afe84bec51e85e8561417d0aeacf3bc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7f64f61ea3469c7baea9135dd1c2d9fb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a7f64f61ea3469c7baea9135dd1c2d9fb">operator+=</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset)</td></tr>
+<tr class="separator:a7f64f61ea3469c7baea9135dd1c2d9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4c004f65c4935fa0995ede3f7364c8fe"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4c004f65c4935fa0995ede3f7364c8fe">operator-=</a> (const <a class="el" href="structitk_1_1Index.html#aa6299df0361722fcefe7f2f98f8fb544">OffsetType</a> &amp;offset)</td></tr>
+<tr class="separator:a4c004f65c4935fa0995ede3f7364c8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
+<tr class="memitem:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a468dd9ee3d479b4d1a636742b1d696a4">CopyWithRound</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VDimension &gt; &amp;<a class="el" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>)</td></tr>
+<tr class="separator:a468dd9ee3d479b4d1a636742b1d696a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a0fd329acb9cad11bf7b82903660dd740"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
+<tr class="memitem:a0fd329acb9cad11bf7b82903660dd740"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a0fd329acb9cad11bf7b82903660dd740">CopyWithCast</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VDimension &gt; &amp;<a class="el" href="namespaceitk.html#abf959f34e6a412061bbddd15cdd23f47">point</a>)</td></tr>
+<tr class="separator:a0fd329acb9cad11bf7b82903660dd740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a606a3aa5e621546bc02f1fda1b6bff61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a606a3aa5e621546bc02f1fda1b6bff61">GetBasisIndex</a> (unsigned int dim)</td></tr>
+<tr class="separator:a606a3aa5e621546bc02f1fda1b6bff61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dc36898568b1c360003ac64c53cbb9"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#af5dc36898568b1c360003ac64c53cbb9">GetIndexDimension</a> ()</td></tr>
+<tr class="separator:af5dc36898568b1c360003ac64c53cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a3264ac6bc3f0dc656072dcc4e82be10d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structitk_1_1Index.html#a729fc51df034b68f98347d5bbefaafe6">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a3264ac6bc3f0dc656072dcc4e82be10d">Filled</a> (const <a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a> value)</td></tr>
+<tr class="separator:a3264ac6bc3f0dc656072dcc4e82be10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4892703f4aff82beb56c00044e9eba14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Index.html#a6633638d1ee896de6e7f58aead34fe6f">IndexValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a4892703f4aff82beb56c00044e9eba14">m_InternalArray</a> [VDimension]</td></tr>
+<tr class="separator:a4892703f4aff82beb56c00044e9eba14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac5b01ab54fac28a1decad72d9b253baf"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#ac5b01ab54fac28a1decad72d9b253baf">Dimension</a> = VDimension</td></tr>
+<tr class="separator:ac5b01ab54fac28a1decad72d9b253baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:a488f5c58e320b2b657e29b36f56f2a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Index.html#a488f5c58e320b2b657e29b36f56f2a78">ExceptionThrowingBoundsCheck</a> (<a class="el" href="structitk_1_1Index.html#a62c86defb13c531f6d3f144141fbe560">size_type</a> pos) const</td></tr>
 <tr class="separator:a488f5c58e320b2b657e29b36f56f2a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -265,7 +280,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00335">335</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -284,7 +298,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00333">333</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -303,7 +316,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00339">339</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -322,7 +334,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00337">337</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -378,7 +389,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00334">334</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -434,7 +444,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00332">332</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -453,7 +462,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00338">338</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -491,7 +499,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00336">336</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -592,7 +599,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00428">428</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -623,7 +629,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00435">435</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -653,7 +658,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00454">454</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -685,7 +689,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00460">460</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -715,7 +718,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00358">358</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -747,7 +749,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00364">364</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -843,7 +844,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00466">466</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -873,7 +873,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00472">472</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -903,7 +902,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00418">418</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -933,7 +931,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00370">370</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -965,7 +962,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00376">376</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -996,7 +992,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00495">495</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1090,7 +1085,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00442">442</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1120,7 +1114,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00448">448</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1277,7 +1270,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00412">412</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1624,7 +1616,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00423">423</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1655,7 +1646,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00425">425</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1685,7 +1675,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00382">382</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1715,7 +1704,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00388">388</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1745,7 +1733,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00394">394</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1775,7 +1762,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00400">400</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1882,7 +1868,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00406">406</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
@@ -1913,7 +1898,6 @@ template&lt;unsigned int VDimension = 2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mirror the std::array type aliases and member function so that the <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> class can be treated as a container class in a way that is similar to the std::array. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkIndex_8h_source.html#l00352">352</a> of file <a class="el" href="itkIndex_8h_source.html">itkIndex.h</a>.</p>
 
