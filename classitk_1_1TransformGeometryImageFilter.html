@@ -128,7 +128,7 @@ Public Types</h2></td></tr>
 <tr class="separator:ae0fdb46d4601b6d85688aa7632046ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac516e1530f05d387786bc3e39bbc774d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformGeometryImageFilter.html#ac516e1530f05d387786bc3e39bbc774d">Superclass</a> = <a class="el" href="classitk_1_1InPlaceImageFilter.html">InPlaceImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
 <tr class="separator:ac516e1530f05d387786bc3e39bbc774d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa44c495671fc527e0dae8e722afea2a3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformGeometryImageFilter.html#aa44c495671fc527e0dae8e722afea2a3">TransformConstPointer</a> = typename <a class="el" href="classitk_1_1Transform.html#a176924057d951beec15bd51432da1d09">TransformType::ConstPointer</a></td></tr>
+<tr class="memitem:aa44c495671fc527e0dae8e722afea2a3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformGeometryImageFilter.html#aa44c495671fc527e0dae8e722afea2a3">TransformConstPointer</a> = typename <a class="el" href="classitk_1_1Transform.html#a93b311d0b8cab8438a894359eefe4f77">TransformType::ConstPointer</a></td></tr>
 <tr class="separator:aa44c495671fc527e0dae8e722afea2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f0927391218a1585576bb9ab4c80d42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TransformGeometryImageFilter.html#a4f0927391218a1585576bb9ab4c80d42">TransformType</a> = <a class="el" href="classitk_1_1Transform.html">Transform</a>&lt; double, <a class="el" href="classitk_1_1TransformGeometryImageFilter.html#a86a2fb5441f7c12ce169f912a63a62ff">InputImageDimension</a>, <a class="el" href="classitk_1_1TransformGeometryImageFilter.html#a58bd8792e0da7438d05c8aca857c1a31">OutputImageDimension</a> &gt;</td></tr>
 <tr class="separator:a4f0927391218a1585576bb9ab4c80d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -749,9 +749,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename TInputImage, typename TOutputImage&gt;<br />
 class itk::TransformGeometryImageFilter&lt; TInputImage, TOutputImage &gt;</h3>
 
-<p>Pseudo-Resample an image by modifying the geometric meta-data and not the pixels. </p>
-<p>The <a class="el" href="classitk_1_1TransformGeometryImageFilter.html" title="Pseudo-Resample an image by modifying the geometric meta-data and not the pixels.">TransformGeometryImageFilter</a> will generate a physical memory-modified version of the input image if the input transform is not identity. Its neglectful use can be a source of problems: e.g. it can exhaust the memory if the image is very large, and it WILL reduce the image quality when there are lots of transforms to be superimposed for the input image. Often times, we are not interested in the intermediate transformed images.</p>
-<p>If all the transforms are rigid, there is a far superior way to achieve a similar result. Updating image metadata in-place removes the accumulated resampling errors as well as eliminating the expense of accessing the physical memory of the image. We need to compose all the transforms beforehand to make use of this filter.</p>
+<p>Modify an image's geometric meta-data, changing its "physical" extent. </p>
+<p>The <a class="el" href="classitk_1_1TransformGeometryImageFilter.html" title="Modify an image&#39;s geometric meta-data, changing its &quot;physical&quot; extent.">TransformGeometryImageFilter</a> "physically" changes the image in space using the given transformation. The specific transformation type can be any type derived from the <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html" title="Matrix and Offset transformation of a vector space (e.g. space coordinates)">MatrixOffsetTransformBase</a> and the <a class="el" href="classitk_1_1TranslationTransform.html" title="Translation transformation of a vector space (e.g. space coordinates)">TranslationTransform</a>. The modification of the geometric meta-data is an alternative to resampling the moving image onto the fixed image grid, after registration. The advantages of using this approach over resampling are two-fold, it does not introduce artifacts into the result because the original intensity information is not modified, and it is computationally more efficient.</p>
+<p>When the filter is used with a rigid or translation transformation the resulting image can be saved in any desired format. When the filter is used with an affine transformation the resulting image should be saved in a format that supports a non ortho-normal direction cosine matrix (e.g. nrrd).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"></td><td></td></tr>
@@ -759,7 +759,7 @@ class itk::TransformGeometryImageFilter&lt; TInputImage, TOutputImage &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00104">104</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9326029aeee492bed129fcdb6401c0ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9326029aeee492bed129fcdb6401c0ae">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -775,7 +775,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00112">112</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00113">113</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -793,7 +793,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00124">124</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00125">125</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -811,7 +811,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00122">122</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00123">123</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -829,7 +829,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00125">125</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00126">126</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -847,7 +847,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00123">123</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00124">124</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -866,7 +866,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p>input/output image type alias </p>
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00121">121</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00122">122</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -884,7 +884,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00130">130</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00131">131</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -902,7 +902,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00128">128</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00129">129</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -920,7 +920,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00129">129</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00130">130</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -938,7 +938,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00127">127</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00128">128</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -956,7 +956,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00111">111</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00112">112</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p>Standard class type alias </p>
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00109">109</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00110">110</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -993,7 +993,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00110">110</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00111">111</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1006,12 +1006,12 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1TransformGeometryImageFilter.html">itk::TransformGeometryImageFilter</a>&lt; TInputImage, TOutputImage &gt;::<a class="el" href="classitk_1_1TransformGeometryImageFilter.html#aa44c495671fc527e0dae8e722afea2a3">TransformConstPointer</a> =  typename <a class="el" href="classitk_1_1Transform.html#a176924057d951beec15bd51432da1d09">TransformType::ConstPointer</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1TransformGeometryImageFilter.html">itk::TransformGeometryImageFilter</a>&lt; TInputImage, TOutputImage &gt;::<a class="el" href="classitk_1_1TransformGeometryImageFilter.html#aa44c495671fc527e0dae8e722afea2a3">TransformConstPointer</a> =  typename <a class="el" href="classitk_1_1Transform.html#a93b311d0b8cab8438a894359eefe4f77">TransformType::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00143">143</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00144">144</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1030,7 +1030,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> type alias </p>
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00142">142</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00143">143</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1545,7 +1545,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p>ImageDimension constants </p>
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00133">133</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00134">134</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1571,7 +1571,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00134">134</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00135">135</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
 
 </div>
 </div>

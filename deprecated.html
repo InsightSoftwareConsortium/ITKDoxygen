@@ -77,11 +77,11 @@ $(function() {
 <dd><a class="anchor" id="_deprecated000011"></a>  </dd>
 <dt>Member <a class="el" href="classitk_1_1HistogramAlgorithmBase.html#ae44289d6ee557dbaf2b94d75cbac5d45">itk::HistogramAlgorithmBase&lt; TInputHistogram &gt;::HistogramAlgorithmBase</a>  ()</dt>
 <dd><a class="anchor" id="_deprecated000010"></a> Update() is deprecated because classes that do not derive from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> are not part of the pipeline and should therefore not have an Update() method. It is included for backwards compatibility.  </dd>
-<dt>Class <a class="el" href="structitk_1_1Image_1_1Rebind.html">itk::Image&lt; TPixel, VImageDimension &gt;::Rebind&lt; UPixelType, NUImageDimension &gt;</a>  </dt>
+<dt>Class <a class="el" href="structitk_1_1Image_1_1Rebind.html">itk::Image&lt; TPixel, VImageDimension &gt;::Rebind&lt; UPixelType, VUImageDimension &gt;</a>  </dt>
 <dd><a class="anchor" id="_deprecated000001"></a>Use RebindImageType instead  </dd>
 <dt>Class <a class="el" href="structitk_1_1ImageAdaptor_1_1Rebind.html">itk::ImageAdaptor&lt; TImage, TAccessor &gt;::Rebind&lt; UPixelType, UImageDimension &gt;</a>  </dt>
 <dd><a class="anchor" id="_deprecated000007"></a>Use RebindImageType instead  </dd>
-<dt>Member <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#a41194262d85b34f75aeb80eaf7c9f840">itk::MatrixOffsetTransformBase&lt; TParametersValueType, NInputDimensions, NOutputDimensions &gt;::GetInverseMatrix</a>  () const</dt>
+<dt>Member <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#adf0ed061b44ec31d6ac18a04f75f197e">itk::MatrixOffsetTransformBase&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;::GetInverseMatrix</a>  () const</dt>
 <dd><a class="anchor" id="_deprecated000009"></a>Use GetInverse for public API instead. Method will eventually be made a protected member function  </dd>
 <dt>Member <a class="el" href="classitk_1_1ProcessObject.html#ae8b77f3e24996b9abcf40b04403661ce">itk::ProcessObject::GetProgress</a>  () const</dt>
 <dd><a class="anchor" id="_deprecated000002"></a> Set the execution progress of a process object. The progress is a floating number in [0,1] with 0 meaning no progress and 1 meaning the filter has completed execution. The ProgressEvent is NOT invoked. This method is deprecated because filters should not be calling SetProgress directly but should be using UpdateProgress or IncrementProgress instead.  </dd>
@@ -89,7 +89,7 @@ $(function() {
 <dd><p class="startdd"><a class="anchor" id="_deprecated000003"></a> Reset the progress accumulator. This method should not be necessary because this functionality is already present in the filter constructor. </p>
 <p class="enddd"><a class="anchor" id="_deprecated000004"></a> Reset the filter progress but keep the accumulated progress. This method is deprecated because the <a class="el" href="classitk_1_1ProgressAccumulator.html" title="Facilitates progress reporting for filters that wrap around multiple other filters.">ProgressAccumulator</a> now internally checks if a filter has been restarted and updates the accumulated progress automatically. This method also used to have the unfortunate side effect of forcing filters to rerun even if their parameters and input had not changed. This is because it called SetProgress(0) on the filters, which triggered a ModifiedTime and thus caused the filters to rerun. To avoid this behavior, the implementation of this method is now empty.  </p>
 </dd>
-<dt>Member <a class="el" href="classitk_1_1Vector.html#a106ee9550311054cceb66015e98c6457">itk::Vector&lt; T, NVectorDimension &gt;::Vector</a>  (const ValueType &amp;r)</dt>
+<dt>Member <a class="el" href="classitk_1_1Vector.html#ae62751ddb90fa46dd98412929c69767f">itk::Vector&lt; T, VVectorDimension &gt;::Vector</a>  (const ValueType &amp;r)</dt>
 <dd><a class="anchor" id="_deprecated000005"></a>  </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#a6e977a63dee112c32843f5e570c1cb2e">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUseImageSpacingOff</a>  ()</dt>
 <dd><a class="anchor" id="_deprecated000013"></a>Use VectorGradientMagnitudeImageFilter::UseImageSpacingOff instead.  </dd>
@@ -99,7 +99,7 @@ $(function() {
 <dd><a class="anchor" id="_deprecated000015"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOff instead.  </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#ab73d2fcff58b93eb77fe54311b126e52">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUsePrincipleComponentsOn</a>  ()</dt>
 <dd><a class="anchor" id="_deprecated000014"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOn instead.  </dd>
-<dt>Class <a class="el" href="structitk_1_1VectorImage_1_1Rebind.html">itk::VectorImage::Rebind&lt; UPixelType, NUImageDimension &gt;</a>  </dt>
+<dt>Class <a class="el" href="structitk_1_1VectorImage_1_1Rebind.html">itk::VectorImage::Rebind&lt; UPixelType, VUImageDimension &gt;</a>  </dt>
 <dd><a class="anchor" id="_deprecated000006"></a>Use template alias RebindImageType instead </dd>
 </dl>
 </div></div><!-- contents -->
