@@ -656,8 +656,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a17b3b66526de6e23c24ca57d7509f6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af712e7e503e3f72244d4a918365753b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#af712e7e503e3f72244d4a918365753b3">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:af712e7e503e3f72244d4a918365753b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a657c143eaa00b8cc2a83d71d26bde295"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a657c143eaa00b8cc2a83d71d26bde295">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;valid) const override</td></tr>
-<tr class="separator:a657c143eaa00b8cc2a83d71d26bde295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e709782b4e104523c81afeb77b236f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#ad0e709782b4e104523c81afeb77b236f">ResolveTimeStep</a> (const std::vector&lt; <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a044a7685196c114685bcbdccda3f81f8">TimeStepType</a> &gt; &amp;timeStepList, const <a class="el" href="namespaceitk.html#a1d0e0eacfee24e169cb2bc168f46b70e">BooleanStdVectorType</a> &amp;valid) const override</td></tr>
+<tr class="separator:ad0e709782b4e104523c81afeb77b236f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b330e8813d366fb522c55e4877daa04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a8b330e8813d366fb522c55e4877daa04">ThreadedHalt</a> (void *) override</td></tr>
 <tr class="separator:a8b330e8813d366fb522c55e4877daa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50808af91f9636a56cb7a50284077cc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#a50808af91f9636a56cb7a50284077cc8">~GPUFiniteDifferenceImageFilter</a> () override</td></tr>
@@ -1942,8 +1942,8 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
 
 </div>
 </div>
-<a id="a657c143eaa00b8cc2a83d71d26bde295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a657c143eaa00b8cc2a83d71d26bde295">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
+<a id="ad0e709782b4e104523c81afeb77b236f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e709782b4e104523c81afeb77b236f">&#9670;&nbsp;</a></span>ResolveTimeStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1962,7 +1962,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceitk.html#a1d0e0eacfee24e169cb2bc168f46b70e">BooleanStdVectorType</a> &amp;&#160;</td>
           <td class="paramname"><em>valid</em>&#160;</td>
         </tr>
         <tr>
@@ -1981,13 +1981,13 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeStepList</td><td>The set of time changes compiled from all the threaded calls to ThreadedGenerateData. </td></tr>
-    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "timeStepList" elements are valid. Although they are uint8_t, they should be treated like bools.</td></tr>
+    <tr><td class="paramname">valid</td><td>The set of flags indicating which of "timeStepList" elements are valid.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The default is to return the minimum value in the list. </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a47c8d1ad4f2174ea86b90ee55f841337">itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a3db3b48ac910bf6530385d7de6713df8">itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
@@ -2370,9 +2370,9 @@ template&lt;typename TInputImage , typename TOutputImage , typename TParentImage
 <div class="footer" align="left">
   <small>Tarballs of the nightly generated Doxygen documentation are available
     for the
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
   </small>
 </div>
 <address class="footer"><small>

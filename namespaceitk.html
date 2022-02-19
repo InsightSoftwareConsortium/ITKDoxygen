@@ -3558,6 +3558,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a1d0e0eacfee24e169cb2bc168f46b70e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a1d0e0eacfee24e169cb2bc168f46b70e">BooleanStdVectorType</a> = std::vector&lt; <a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a> &gt;</td></tr>
+<tr class="separator:a1d0e0eacfee24e169cb2bc168f46b70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7968cabc0d327acba2aba0460a96c9d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a7968cabc0d327acba2aba0460a96c9d9">CellGeometryEnum</a> = <a class="el" href="classitk_1_1CommonEnums.html#a689d3fe0822471806a38161a1709399a">CommonEnums::CellGeometry</a></td></tr>
 <tr class="separator:a7968cabc0d327acba2aba0460a96c9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af805c87071bf622fef3bf8a765066185"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html#af805c87071bf622fef3bf8a765066185">ChoiceMethodEnum</a> = <a class="el" href="classitk_1_1MergeLabelMapFilterEnums.html#add034ea2127e71e479b67a7ded35d083">MergeLabelMapFilterEnums::ChoiceMethod</a></td></tr>
@@ -4589,6 +4591,25 @@ Variables</h2></td></tr>
 <dd>
 Leila Baghdadi Mouse Imaging Centre, Toronto, Canada 2005. </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a1d0e0eacfee24e169cb2bc168f46b70e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0e0eacfee24e169cb2bc168f46b70e">&#9670;&nbsp;</a></span>BooleanStdVectorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceitk.html#a1d0e0eacfee24e169cb2bc168f46b70e">itk::BooleanStdVectorType</a> = typedef std::vector&lt;<a class="el" href="namespaceitk.html#a7f475fc7c9afc4fd9e2564f00149e9e7">uint8_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The type alias <code>BooleanStdVectorType</code> provides an alternative to <code>std::vector&lt;bool&gt;</code>. <code>std::vector&lt;bool&gt;</code> is not thread safe due to the possibility of multiple bits being packed together in the same memory location. BooleanStdVectorType does not have such a space optimization. BooleanStdVectorType is semantically like <code>std::vector&lt;bool&gt;</code>, but unlike <code>std::vector&lt;bool&gt;</code>, it does "avoid data races when the contents of the contained
+object in different elements in the same container [...] are modified concurrently", according to the C++ Standard, section [container.requirements.dataraces], "Container data races".</p>
+<dl class="section note"><dt>Note</dt><dd>BooleanStdVectorType is only intended to be used for the storage of Boolean values (true and false), not for arbitrary integer values. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBooleanStdVector_8h_source.html#l00037">37</a> of file <a class="el" href="itkBooleanStdVector_8h_source.html">itkBooleanStdVector.h</a>.</p>
+
+</div>
+</div>
 <a id="a7968cabc0d327acba2aba0460a96c9d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7968cabc0d327acba2aba0460a96c9d9">&#9670;&nbsp;</a></span>CellGeometryEnum</h2>
 
@@ -5503,7 +5524,7 @@ template&lt;typename TFromType , typename TToType &gt; </div>
 </div><div class="memdoc">
 <p>This helps to meet backward compatibility </p>
 
-<p class="definition">Definition at line <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html#l00212">212</a> of file <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html">itkQuasiNewtonOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html#l00211">211</a> of file <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html">itkQuasiNewtonOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -17344,9 +17365,9 @@ template&lt;typename TIterator &gt; </div>
 <div class="footer" align="left">
   <small>Tarballs of the nightly generated Doxygen documentation are available
     for the
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
   </small>
 </div>
 <address class="footer"><small>
