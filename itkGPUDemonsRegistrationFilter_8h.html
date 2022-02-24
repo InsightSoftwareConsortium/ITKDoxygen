@@ -70,102 +70,13 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">itkGPUDemonsRegistrationFilter.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="itkOpenCLUtil_8h_source.html">itkOpenCLUtil.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itkDemonsRegistrationFilter_8h_source.html">itkDemonsRegistrationFilter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html">itkGPUPDEDeformableRegistrationFilter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itkVersion_8h_source.html">itkVersion.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itkObjectFactoryBase_8h_source.html">itkObjectFactoryBase.h</a>&quot;</code><br />
-<code>#include &quot;itkGPUDemonsRegistrationFilter.hxx&quot;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for itkGPUDemonsRegistrationFilter.h:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="itkGPUDemonsRegistrationFilter_8h__incl.svg" width="5303" height="1528"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-</div>
+
 <p><a href="itkGPUDemonsRegistrationFilter_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUDemonsRegistrationFilter.html">itk::GPUDemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GPUDemonsRegistrationFilterFactory.html">itk::GPUDemonsRegistrationFilterFactory</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceitk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html">itk</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a62aeee3837bacb0fd1d94647046f866e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkGPUDemonsRegistrationFilter_8h.html#a62aeee3837bacb0fd1d94647046f866e">OverrideDemonsRegistrationFilterTypeMacro</a>(ipt,  opt,  dm)</td></tr>
-<tr class="separator:a62aeee3837bacb0fd1d94647046f866e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a62aeee3837bacb0fd1d94647046f866e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62aeee3837bacb0fd1d94647046f866e">&#9670;&nbsp;</a></span>OverrideDemonsRegistrationFilterTypeMacro</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OverrideDemonsRegistrationFilterTypeMacro</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ipt, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">opt, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">dm&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  {                                                                                                       \</div>
-<div class="line">    using InputImageType = GPUImage&lt;ipt, dm&gt;;                                                             \</div>
-<div class="line">    using OutputImageType = GPUImage&lt;opt, dm&gt;;                                                            \</div>
-<div class="line">    using VectorPixelType = Vector&lt;float, dm&gt;;                                                            \</div>
-<div class="line">    using DisplacementFieldType = GPUImage&lt;VectorPixelType, dm&gt;;                                          \</div>
-<div class="line">    this-&gt;RegisterOverride(                                                                               \</div>
-<div class="line">      <span class="keyword">typeid</span>(DemonsRegistrationFilter&lt;InputImageType, OutputImageType, DisplacementFieldType&gt;).name(),    \</div>
-<div class="line">      <span class="keyword">typeid</span>(GPUDemonsRegistrationFilter&lt;InputImageType, OutputImageType, DisplacementFieldType&gt;).name(), \</div>
-<div class="line">      <span class="stringliteral">&quot;GPU Demons Registration Filter Override&quot;</span>,                                                          \</div>
-<div class="line">      <span class="keyword">true</span>,                                                                                               \</div>
-<div class="line">      CreateObjectFunction&lt;                                                                               \</div>
-<div class="line">        GPUDemonsRegistrationFilter&lt;InputImageType, OutputImageType, DisplacementFieldType&gt;&gt;::<a class="code" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a>());     \</div>
-<div class="line">  }                                                                                                       \</div>
-<div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFilter_8h_source.html#l00194">194</a> of file <a class="el" href="itkGPUDemonsRegistrationFilter_8h_source.html">itkGPUDemonsRegistrationFilter.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

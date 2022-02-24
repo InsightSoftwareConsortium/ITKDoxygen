@@ -74,74 +74,7 @@ $(function() {
 <div class="title">itkMomentsThresholdCalculator.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkMomentsThresholdCalculator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef itkMomentsThresholdCalculator_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define itkMomentsThresholdCalculator_h</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkHistogramThresholdCalculator_8h.html">itkHistogramThresholdCalculator.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> THistogram, <span class="keyword">typename</span> TOutput = <span class="keywordtype">double</span>&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html">   48</a></span>&#160;<span class="keyword">class </span>ITK_TEMPLATE_EXPORT <a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a> : <span class="keyword">public</span> <a class="code" href="classitk_1_1HistogramThresholdCalculator.html">HistogramThresholdCalculator</a>&lt;THistogram, TOutput&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#aff69409983b033ce4d93106c14f058d0">   54</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Self</a> = <a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#a7f74e9a80ae3ba7b66a9218fd7dd5599">   55</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1LightObject.html">Superclass</a> = <a class="code" href="classitk_1_1HistogramThresholdCalculator.html">HistogramThresholdCalculator&lt;THistogram, TOutput&gt;</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#a91d83f1477796e06488f75d233e362db">   56</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#a99061e74a6274ac6ee614fe539043859">   57</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;const Self&gt;</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  itkNewMacro(<a class="code" href="classitk_1_1LightObject.html">Self</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a>, <a class="code" href="classitk_1_1HistogramThresholdCalculator.html">HistogramThresholdCalculator</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#acb324c0ce26807f66938e416a066bebe">   66</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1MomentsThresholdCalculator.html#acb324c0ce26807f66938e416a066bebe">HistogramType</a> = THistogram;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classitk_1_1MomentsThresholdCalculator.html#ada01b356c5cf865fa084ec66ec8ff45f">   67</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1MomentsThresholdCalculator.html#ada01b356c5cf865fa084ec66ec8ff45f">OutputType</a> = TOutput;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  ~<a class="code" href="classitk_1_1MomentsThresholdCalculator.html">MomentsThresholdCalculator</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  GenerateData() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#  include &quot;itkMomentsThresholdCalculator.hxx&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1MomentsThresholdCalculator_html_ada01b356c5cf865fa084ec66ec8ff45f"><div class="ttname"><a href="classitk_1_1MomentsThresholdCalculator.html#ada01b356c5cf865fa084ec66ec8ff45f">itk::MomentsThresholdCalculator::OutputType</a></div><div class="ttdeci">TOutput OutputType</div><div class="ttdef"><b>Definition:</b> <a href="itkMomentsThresholdCalculator_8h_source.html#l00067">itkMomentsThresholdCalculator.h:67</a></div></div>
-<div class="ttc" id="aitkHistogramThresholdCalculator_8h_html"><div class="ttname"><a href="itkHistogramThresholdCalculator_8h.html">itkHistogramThresholdCalculator.h</a></div></div>
-<div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
-<div class="ttc" id="aclassitk_1_1LightObject_html"><div class="ttname"><a href="classitk_1_1LightObject.html">itk::LightObject</a></div><div class="ttdoc">Light weight base class for most itk classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkLightObject_8h_source.html#l00055">itkLightObject.h:55</a></div></div>
-<div class="ttc" id="aclassitk_1_1MomentsThresholdCalculator_html"><div class="ttname"><a href="classitk_1_1MomentsThresholdCalculator.html">itk::MomentsThresholdCalculator</a></div><div class="ttdoc">Computes the Moments's threshold for an image.</div><div class="ttdef"><b>Definition:</b> <a href="itkMomentsThresholdCalculator_8h_source.html#l00048">itkMomentsThresholdCalculator.h:48</a></div></div>
-<div class="ttc" id="aclassitk_1_1MomentsThresholdCalculator_html_acb324c0ce26807f66938e416a066bebe"><div class="ttname"><a href="classitk_1_1MomentsThresholdCalculator.html#acb324c0ce26807f66938e416a066bebe">itk::MomentsThresholdCalculator::HistogramType</a></div><div class="ttdeci">THistogram HistogramType</div><div class="ttdef"><b>Definition:</b> <a href="itkMomentsThresholdCalculator_8h_source.html#l00066">itkMomentsThresholdCalculator.h:66</a></div></div>
-<div class="ttc" id="aclassitk_1_1HistogramThresholdCalculator_html"><div class="ttname"><a href="classitk_1_1HistogramThresholdCalculator.html">itk::HistogramThresholdCalculator</a></div><div class="ttdoc">Base class to compute a threshold value based on the histogram of an image.</div><div class="ttdef"><b>Definition:</b> <a href="itkHistogramThresholdCalculator_8h_source.html#l00046">itkHistogramThresholdCalculator.h:46</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
+<a href="itkMomentsThresholdCalculator_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

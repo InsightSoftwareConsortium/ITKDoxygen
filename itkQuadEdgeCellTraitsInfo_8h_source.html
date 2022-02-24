@@ -74,63 +74,7 @@ $(function() {
 <div class="title">itkQuadEdgeCellTraitsInfo.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkQuadEdgeCellTraitsInfo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef itkQuadEdgeCellTraitsInfo_h</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define itkQuadEdgeCellTraitsInfo_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkQuadEdgeMeshPoint_8h.html">itkQuadEdgeMeshPoint.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkMapContainer_8h.html">itkMapContainer.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkIntTypes_8h.html">itkIntTypes.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> VPointDimension,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <span class="keyword">typename</span> TCoordRep = float,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          <span class="keyword">typename</span> TInterpolationWeight = float,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          <span class="keyword">typename</span> TPointIdentifier = <a class="code" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          <span class="keyword">typename</span> TCellIdentifier = <a class="code" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          <span class="keyword">typename</span> TCellFeatureIdentifier = <span class="keywordtype">unsigned</span> char,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          <span class="keyword">typename</span> TPoint = QuadEdgeMeshPoint&lt;TCoordRep, VPointDimension&gt;,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          <span class="keyword">typename</span> TPointsContainer = MapContainer&lt;TPointIdentifier, TPoint&gt;,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          <span class="keyword">typename</span> TUsingCellsContainer = std::set&lt;TPointIdentifier&gt;,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          <span class="keyword">typename</span> TQE = GeometricalQuadEdge&lt;unsigned long, unsigned long, bool, bool, true&gt;&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">class </span>QuadEdgeMeshCellTraitsInfo</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> PointDimension = VPointDimension;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">using</span> CoordRepType = TCoordRep;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">using</span> InterpolationWeightType = TInterpolationWeight;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">using</span> PointIdentifier = TPointIdentifier;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">using</span> CellIdentifier = TCellIdentifier;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">using</span> CellFeatureIdentifier = TCellFeatureIdentifier;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">using</span> <a class="code" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = TPoint;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">using</span> PointsContainer = TPointsContainer;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">using</span> UsingCellsContainer = TUsingCellsContainer;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aitkQuadEdgeMeshPoint_8h_html"><div class="ttname"><a href="itkQuadEdgeMeshPoint_8h.html">itkQuadEdgeMeshPoint.h</a></div></div>
-<div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a4e283d9983c57c5015a80d0b1d1cf09f"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">itk::GTest::TypedefsAndConstructors::Dimension2::PointType</a></div><div class="ttdeci">ImageBaseType::PointType PointType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00051">itkGTestTypedefsAndConstructors.h:51</a></div></div>
-<div class="ttc" id="aitkIntTypes_8h_html"><div class="ttname"><a href="itkIntTypes_8h.html">itkIntTypes.h</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aitkMapContainer_8h_html"><div class="ttname"><a href="itkMapContainer_8h.html">itkMapContainer.h</a></div></div>
-<div class="ttc" id="anamespaceitk_html_a85602046bfa12294b70634299f5f1015"><div class="ttname"><a href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">itk::IdentifierType</a></div><div class="ttdeci">SizeValueType IdentifierType</div><div class="ttdef"><b>Definition:</b> <a href="itkIntTypes_8h_source.html#l00087">itkIntTypes.h:87</a></div></div>
+<a href="itkQuadEdgeCellTraitsInfo_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

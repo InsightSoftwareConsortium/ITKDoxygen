@@ -74,62 +74,7 @@ $(function() {
 <div class="title">itkConvertVariableLengthVectorPixelBuffer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkConvertVariableLengthVectorPixelBuffer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef itkConvertVariableLengthVectorPixelBuffer_h</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define itkConvertVariableLengthVectorPixelBuffer_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkConvertPixelBuffer_8h.html">itkConvertPixelBuffer.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkVariableLengthVector_8h.html">itkVariableLengthVector.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputPixelType, <span class="keyword">typename</span> T, <span class="keyword">typename</span> OutputConvertTraits&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classitk_1_1ConvertPixelBuffer_3_01InputPixelType_00_01VariableLengthVector_3_01T_01_4_00_01OutputConvertTraits_01_4.html">   35</a></span>&#160;<span class="keyword">class </span>ITK_TEMPLATE_EXPORT <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a>&lt;InputPixelType, <a class="code" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>&lt;T&gt;, OutputConvertTraits&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Remove all constructor/ destructor / assignments for class with only static member functions.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a>(<a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  operator=(<span class="keyword">const</span> <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  operator=(<a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classitk_1_1ConvertPixelBuffer.html">ConvertPixelBuffer</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classitk_1_1ConvertPixelBuffer_3_01InputPixelType_00_01VariableLengthVector_3_01T_01_4_00_01OutputConvertTraits_01_4.html#a508390108ce122510a9bcc2c01b61313">   49</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1ConvertPixelBuffer_3_01InputPixelType_00_01VariableLengthVector_3_01T_01_4_00_01OutputConvertTraits_01_4.html#a508390108ce122510a9bcc2c01b61313">OutputComponentType</a> = <span class="keyword">typename</span> OutputConvertTraits::ComponentType;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Convert(InputPixelType * inputData, <span class="keywordtype">int</span> inputNumberOfComponents, <a class="code" href="classitk_1_1VariableLengthVector.html">VariableLengthVector&lt;T&gt;</a> * outputData, <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace itk</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#  include &quot;itkConvertVariableLengthVectorPixelBuffer.hxx&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // itkConvertVariableLengthVectorPixelBuffer_h</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1ConvertPixelBuffer_3_01InputPixelType_00_01VariableLengthVector_3_01T_01_4_00_01OutputConvertTraits_01_4_html_a508390108ce122510a9bcc2c01b61313"><div class="ttname"><a href="classitk_1_1ConvertPixelBuffer_3_01InputPixelType_00_01VariableLengthVector_3_01T_01_4_00_01OutputConvertTraits_01_4.html#a508390108ce122510a9bcc2c01b61313">itk::ConvertPixelBuffer&lt; InputPixelType, VariableLengthVector&lt; T &gt;, OutputConvertTraits &gt;::OutputComponentType</a></div><div class="ttdeci">typename OutputConvertTraits::ComponentType OutputComponentType</div><div class="ttdef"><b>Definition:</b> <a href="itkConvertVariableLengthVectorPixelBuffer_8h_source.html#l00049">itkConvertVariableLengthVectorPixelBuffer.h:49</a></div></div>
-<div class="ttc" id="aitkConvertPixelBuffer_8h_html"><div class="ttname"><a href="itkConvertPixelBuffer_8h.html">itkConvertPixelBuffer.h</a></div></div>
-<div class="ttc" id="aitkVariableLengthVector_8h_html"><div class="ttname"><a href="itkVariableLengthVector_8h.html">itkVariableLengthVector.h</a></div></div>
-<div class="ttc" id="aclassitk_1_1VariableLengthVector_html"><div class="ttname"><a href="classitk_1_1VariableLengthVector.html">itk::VariableLengthVector</a></div><div class="ttdoc">Represents an array whose length can be defined at run-time.</div><div class="ttdef"><b>Definition:</b> <a href="itkConstantBoundaryCondition_8h_source.html#l00028">itkConstantBoundaryCondition.h:28</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1ConvertPixelBuffer_html"><div class="ttname"><a href="classitk_1_1ConvertPixelBuffer.html">itk::ConvertPixelBuffer</a></div><div class="ttdoc">Class to convert blocks of data from one type to another.</div><div class="ttdef"><b>Definition:</b> <a href="itkConvertPixelBuffer_8h_source.html#l00046">itkConvertPixelBuffer.h:46</a></div></div>
+<a href="itkConvertVariableLengthVectorPixelBuffer_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

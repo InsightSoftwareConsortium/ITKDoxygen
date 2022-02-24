@@ -74,74 +74,7 @@ $(function() {
 <div class="title">itkRGBToVectorImageAdaptor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkRGBToVectorImageAdaptor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef itkRGBToVectorImageAdaptor_h</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define itkRGBToVectorImageAdaptor_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkImageAdaptor_8h.html">itkImageAdaptor.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkRGBToVectorPixelAccessor_8h.html">itkRGBToVectorPixelAccessor.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TImage&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classitk_1_1RGBToVectorImageAdaptor.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html">RGBToVectorImageAdaptor</a></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  : <span class="keyword">public</span> <a class="code" href="classitk_1_1ImageAdaptor.html">ImageAdaptor</a>&lt;TImage, Accessor::RGBToVectorPixelAccessor&lt;typename TImage::PixelType::ComponentType&gt;&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ITK_DISALLOW_COPY_AND_MOVE(<a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html">RGBToVectorImageAdaptor</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classitk_1_1RGBToVectorImageAdaptor.html#a5b8651a86536209704592d19991aa98b">   43</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1DataObject.html">Self</a> = <a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html#a2244273c00b7224ac5d2c7a6884bd4b6">RGBToVectorImageAdaptor</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1Object.html">Superclass</a> =</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classitk_1_1RGBToVectorImageAdaptor.html#a1d306ecbee7b92f80a6e3c0b18fdefd9">   45</a></span>&#160;    <a class="code" href="classitk_1_1ImageAdaptor.html">ImageAdaptor&lt;TImage, Accessor::RGBToVectorPixelAccessor&lt;typename TImage::PixelType::ComponentType&gt;</a>&gt;;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classitk_1_1RGBToVectorImageAdaptor.html#a29c0896ece719ca6ba5ace4cadae8783">   47</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classitk_1_1RGBToVectorImageAdaptor.html#afe43ced239a9b9f574e311f3d454168f">   48</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1SmartPointer.html">ConstPointer</a> = <a class="code" href="classitk_1_1SmartPointer.html">SmartPointer&lt;const Self&gt;</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  itkNewMacro(<a class="code" href="classitk_1_1DataObject.html">Self</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  itkTypeMacro(<a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html">RGBToVectorImageAdaptor</a>, <a class="code" href="classitk_1_1ImageAdaptor.html">ImageAdaptor</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> <a class="code" href="classitk_1_1ImageAdaptor.html#abdd2d51fffefeb42b7682a7bf3f0b186">Superclass::PixelContainer</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> <a class="code" href="classitk_1_1ImageAdaptor.html#a299fa2ae5c967c051cfab4a78107882f">Superclass::PixelContainerPointer</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">using</span> <span class="keyword">typename</span> <a class="code" href="classitk_1_1ImageAdaptor.html#af3f7a105f45dfcce6eb2133e2db8aa53">Superclass::PixelContainerConstPointer</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html#a2244273c00b7224ac5d2c7a6884bd4b6">RGBToVectorImageAdaptor</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="classitk_1_1RGBToVectorImageAdaptor.html#a262cef1a4665905a4e5ea4eeb0620d0e">~RGBToVectorImageAdaptor</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1ImageAdaptor_html_af3f7a105f45dfcce6eb2133e2db8aa53"><div class="ttname"><a href="classitk_1_1ImageAdaptor.html#af3f7a105f45dfcce6eb2133e2db8aa53">itk::ImageAdaptor::PixelContainerConstPointer</a></div><div class="ttdeci">typename TImage::PixelContainerConstPointer PixelContainerConstPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAdaptor_8h_source.html#l00241">itkImageAdaptor.h:241</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageAdaptor_html_abdd2d51fffefeb42b7682a7bf3f0b186"><div class="ttname"><a href="classitk_1_1ImageAdaptor.html#abdd2d51fffefeb42b7682a7bf3f0b186">itk::ImageAdaptor::PixelContainer</a></div><div class="ttdeci">typename TImage::PixelContainer PixelContainer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAdaptor_8h_source.html#l00239">itkImageAdaptor.h:239</a></div></div>
-<div class="ttc" id="aclassitk_1_1RGBToVectorImageAdaptor_html_a262cef1a4665905a4e5ea4eeb0620d0e"><div class="ttname"><a href="classitk_1_1RGBToVectorImageAdaptor.html#a262cef1a4665905a4e5ea4eeb0620d0e">itk::RGBToVectorImageAdaptor::~RGBToVectorImageAdaptor</a></div><div class="ttdeci">~RGBToVectorImageAdaptor() override=default</div></div>
-<div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
-<div class="ttc" id="aitkImageAdaptor_8h_html"><div class="ttname"><a href="itkImageAdaptor_8h.html">itkImageAdaptor.h</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageAdaptor_html"><div class="ttname"><a href="classitk_1_1ImageAdaptor.html">itk::ImageAdaptor</a></div><div class="ttdoc">Give access to partial aspects of voxels from an Image.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAdaptor_8h_source.html#l00056">itkImageAdaptor.h:56</a></div></div>
-<div class="ttc" id="aclassitk_1_1RGBToVectorImageAdaptor_html"><div class="ttname"><a href="classitk_1_1RGBToVectorImageAdaptor.html">itk::RGBToVectorImageAdaptor</a></div><div class="ttdoc">Presents an image of pixel type RGBPixel as being and image of Vectors.</div><div class="ttdef"><b>Definition:</b> <a href="itkRGBToVectorImageAdaptor_8h_source.html#l00036">itkRGBToVectorImageAdaptor.h:36</a></div></div>
-<div class="ttc" id="aclassitk_1_1RGBToVectorImageAdaptor_html_a2244273c00b7224ac5d2c7a6884bd4b6"><div class="ttname"><a href="classitk_1_1RGBToVectorImageAdaptor.html#a2244273c00b7224ac5d2c7a6884bd4b6">itk::RGBToVectorImageAdaptor::RGBToVectorImageAdaptor</a></div><div class="ttdeci">RGBToVectorImageAdaptor()=default</div></div>
-<div class="ttc" id="aclassitk_1_1ImageAdaptor_html_a299fa2ae5c967c051cfab4a78107882f"><div class="ttname"><a href="classitk_1_1ImageAdaptor.html#a299fa2ae5c967c051cfab4a78107882f">itk::ImageAdaptor::PixelContainerPointer</a></div><div class="ttdeci">typename TImage::PixelContainerPointer PixelContainerPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageAdaptor_8h_source.html#l00240">itkImageAdaptor.h:240</a></div></div>
-<div class="ttc" id="aitkRGBToVectorPixelAccessor_8h_html"><div class="ttname"><a href="itkRGBToVectorPixelAccessor_8h.html">itkRGBToVectorPixelAccessor.h</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1Object_html"><div class="ttname"><a href="classitk_1_1Object.html">itk::Object</a></div><div class="ttdoc">Base class for most ITK classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkObject_8h_source.html#l00062">itkObject.h:62</a></div></div>
-<div class="ttc" id="aclassitk_1_1DataObject_html"><div class="ttname"><a href="classitk_1_1DataObject.html">itk::DataObject</a></div><div class="ttdoc">Base class for all data objects in ITK.</div><div class="ttdef"><b>Definition:</b> <a href="itkDataObject_8h_source.html#l00293">itkDataObject.h:293</a></div></div>
+<a href="itkRGBToVectorImageAdaptor_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

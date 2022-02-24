@@ -74,76 +74,7 @@ $(function() {
 <div class="title">itkGreenPixelAccessor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkGreenPixelAccessor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef itkGreenPixelAccessor_h</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define itkGreenPixelAccessor_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkRGBPixel_8h.html">itkRGBPixel.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classitk_1_1GreenPixelAccessor.html">GreenPixelAccessor</a></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#a6c30c738f7a6069fb949d7008ed5eca0">   45</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1GreenPixelAccessor.html">Self</a> = <a class="code" href="classitk_1_1GreenPixelAccessor.html">GreenPixelAccessor</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#a52ab0c8aa3f5c3011967bf2f4815e1de">   49</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1GreenPixelAccessor.html#a52ab0c8aa3f5c3011967bf2f4815e1de">ExternalType</a> = T;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#ab3f3d46aea34233af020cb9e7d311e5a">   53</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1RGBPixel.html">InternalType</a> = <a class="code" href="classitk_1_1RGBPixel.html">RGBPixel&lt;T&gt;</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#a1c3bebf1238d8de81473fb792db947fd">   57</a></span>&#160;  <a class="code" href="classitk_1_1GreenPixelAccessor.html#a1c3bebf1238d8de81473fb792db947fd">Set</a>(<a class="code" href="classitk_1_1RGBPixel.html">InternalType</a> &amp; output, <span class="keyword">const</span> <a class="code" href="classitk_1_1GreenPixelAccessor.html#a52ab0c8aa3f5c3011967bf2f4815e1de">ExternalType</a> &amp; input)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    output.<a class="code" href="classitk_1_1RGBPixel.html#aa9f2ec8e99d954b961cacc1e43d89248">SetGreen</a>(input);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="classitk_1_1GreenPixelAccessor.html#a52ab0c8aa3f5c3011967bf2f4815e1de">ExternalType</a> &amp;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#a5cdb4d45a6d2617fd60b02f6e784dcce">   64</a></span>&#160;  <a class="code" href="classitk_1_1GreenPixelAccessor.html#a5cdb4d45a6d2617fd60b02f6e784dcce">Get</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1RGBPixel.html">InternalType</a> &amp; input)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> input.<a class="code" href="classitk_1_1RGBPixel.html#a6e6296250f9684460809f022676912e6">GetGreen</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classitk_1_1GreenPixelAccessor.html#ace920b3ae1c5c2da67675496753c4397">   70</a></span>&#160;  <a class="code" href="classitk_1_1GreenPixelAccessor.html#ace920b3ae1c5c2da67675496753c4397">operator==</a>(<span class="keyword">const</span> <a class="code" href="classitk_1_1GreenPixelAccessor.html">Self</a> &amp;)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classitk_1_1GreenPixelAccessor.html#aceff109eca62ed23cedf6d7e6adf2c17">ITK_UNEQUAL_OPERATOR_MEMBER_FUNCTION</a>(<a class="code" href="classAddImageFilter.html">Self</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1RGBPixel_html"><div class="ttname"><a href="classitk_1_1RGBPixel.html">itk::RGBPixel</a></div><div class="ttdoc">Represent Red, Green and Blue components for color images.</div><div class="ttdef"><b>Definition:</b> <a href="itkRGBPixel_8h_source.html#l00058">itkRGBPixel.h:58</a></div></div>
-<div class="ttc" id="aitkRGBPixel_8h_html"><div class="ttname"><a href="itkRGBPixel_8h.html">itkRGBPixel.h</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html_a1c3bebf1238d8de81473fb792db947fd"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html#a1c3bebf1238d8de81473fb792db947fd">itk::GreenPixelAccessor::Set</a></div><div class="ttdeci">void Set(InternalType &amp;output, const ExternalType &amp;input) const</div><div class="ttdef"><b>Definition:</b> <a href="itkGreenPixelAccessor_8h_source.html#l00057">itkGreenPixelAccessor.h:57</a></div></div>
-<div class="ttc" id="aclassitk_1_1RGBPixel_html_a6e6296250f9684460809f022676912e6"><div class="ttname"><a href="classitk_1_1RGBPixel.html#a6e6296250f9684460809f022676912e6">itk::RGBPixel::GetGreen</a></div><div class="ttdeci">const ComponentType &amp; GetGreen() const</div><div class="ttdef"><b>Definition:</b> <a href="itkRGBPixel_8h_source.html#l00214">itkRGBPixel.h:214</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html_aceff109eca62ed23cedf6d7e6adf2c17"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html#aceff109eca62ed23cedf6d7e6adf2c17">itk::GreenPixelAccessor::ITK_UNEQUAL_OPERATOR_MEMBER_FUNCTION</a></div><div class="ttdeci">ITK_UNEQUAL_OPERATOR_MEMBER_FUNCTION(Self)</div></div>
-<div class="ttc" id="aclassitk_1_1RGBPixel_html_aa9f2ec8e99d954b961cacc1e43d89248"><div class="ttname"><a href="classitk_1_1RGBPixel.html#aa9f2ec8e99d954b961cacc1e43d89248">itk::RGBPixel::SetGreen</a></div><div class="ttdeci">void SetGreen(ComponentType green)</div><div class="ttdef"><b>Definition:</b> <a href="itkRGBPixel_8h_source.html#l00183">itkRGBPixel.h:183</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html_a5cdb4d45a6d2617fd60b02f6e784dcce"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html#a5cdb4d45a6d2617fd60b02f6e784dcce">itk::GreenPixelAccessor::Get</a></div><div class="ttdeci">const ExternalType &amp; Get(const InternalType &amp;input) const</div><div class="ttdef"><b>Definition:</b> <a href="itkGreenPixelAccessor_8h_source.html#l00064">itkGreenPixelAccessor.h:64</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html">itk::GreenPixelAccessor</a></div><div class="ttdoc">Give access to the Green component of a RGBPixel type.</div><div class="ttdef"><b>Definition:</b> <a href="itkGreenPixelAccessor_8h_source.html#l00041">itkGreenPixelAccessor.h:41</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html_ace920b3ae1c5c2da67675496753c4397"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html#ace920b3ae1c5c2da67675496753c4397">itk::GreenPixelAccessor::operator==</a></div><div class="ttdeci">bool operator==(const Self &amp;) const</div><div class="ttdef"><b>Definition:</b> <a href="itkGreenPixelAccessor_8h_source.html#l00070">itkGreenPixelAccessor.h:70</a></div></div>
-<div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00080">itkAddImageFilter.h:80</a></div></div>
-<div class="ttc" id="aclassitk_1_1GreenPixelAccessor_html_a52ab0c8aa3f5c3011967bf2f4815e1de"><div class="ttname"><a href="classitk_1_1GreenPixelAccessor.html#a52ab0c8aa3f5c3011967bf2f4815e1de">itk::GreenPixelAccessor::ExternalType</a></div><div class="ttdeci">T ExternalType</div><div class="ttdef"><b>Definition:</b> <a href="itkGreenPixelAccessor_8h_source.html#l00049">itkGreenPixelAccessor.h:49</a></div></div>
+<a href="itkGreenPixelAccessor_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>

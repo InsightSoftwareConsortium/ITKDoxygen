@@ -74,71 +74,7 @@ $(function() {
 <div class="title">itkDefaultPixelAccessor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="itkDefaultPixelAccessor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*=========================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright NumFOCUS</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *         http://www.apache.org/licenses/LICENSE-2.0.txt</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *  Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *=========================================================================*/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef itkDefaultPixelAccessor_h</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define itkDefaultPixelAccessor_h</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="itkMacro_8h.html">itkMacro.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceitk.html">itk</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html">   54</a></span>&#160;<span class="keyword">class </span>ITK_TEMPLATE_EXPORT <a class="code" href="classitk_1_1DefaultPixelAccessor.html">DefaultPixelAccessor</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classitk_1_1DefaultPixelAccessor.html">DefaultPixelAccessor</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ~<a class="code" href="classitk_1_1DefaultPixelAccessor.html">DefaultPixelAccessor</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html#a5b2617a483f74a2063227b0001bf3b6e">   62</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1DefaultPixelAccessor.html#a5b2617a483f74a2063227b0001bf3b6e">ExternalType</a> = TType;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html#a78192f4e02125906c7bc83ace3abed25">   66</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classitk_1_1DefaultPixelAccessor.html#a78192f4e02125906c7bc83ace3abed25">InternalType</a> = TType;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html#a8368e7a53f1ed2f0be0855d66c8d3acd">   70</a></span>&#160;  <a class="code" href="classitk_1_1DefaultPixelAccessor.html#a8368e7a53f1ed2f0be0855d66c8d3acd">Set</a>(TType &amp; output, <span class="keyword">const</span> TType &amp; input)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    output = input;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">inline</span> TType &amp;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html#af74683a50ae929664e5426be25fc9cce">   77</a></span>&#160;  <a class="code" href="classitk_1_1DefaultPixelAccessor.html#af74683a50ae929664e5426be25fc9cce">Get</a>(TType &amp; input)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> input;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> TType &amp;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classitk_1_1DefaultPixelAccessor.html#aafdedf88777431415e589732745a0551">   84</a></span>&#160;  <a class="code" href="classitk_1_1DefaultPixelAccessor.html#aafdedf88777431415e589732745a0551">Get</a>(<span class="keyword">const</span> TType &amp; input)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> input;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
-</div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html_a5b2617a483f74a2063227b0001bf3b6e"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html#a5b2617a483f74a2063227b0001bf3b6e">itk::DefaultPixelAccessor::ExternalType</a></div><div class="ttdeci">TType ExternalType</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00062">itkDefaultPixelAccessor.h:62</a></div></div>
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html_a78192f4e02125906c7bc83ace3abed25"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html#a78192f4e02125906c7bc83ace3abed25">itk::DefaultPixelAccessor::InternalType</a></div><div class="ttdeci">TType InternalType</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00066">itkDefaultPixelAccessor.h:66</a></div></div>
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html">itk::DefaultPixelAccessor</a></div><div class="ttdoc">Give access to partial aspects a type.</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00054">itkDefaultPixelAccessor.h:54</a></div></div>
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html_a8368e7a53f1ed2f0be0855d66c8d3acd"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html#a8368e7a53f1ed2f0be0855d66c8d3acd">itk::DefaultPixelAccessor::Set</a></div><div class="ttdeci">void Set(TType &amp;output, const TType &amp;input) const</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00070">itkDefaultPixelAccessor.h:70</a></div></div>
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html_aafdedf88777431415e589732745a0551"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html#aafdedf88777431415e589732745a0551">itk::DefaultPixelAccessor::Get</a></div><div class="ttdeci">const TType &amp; Get(const TType &amp;input) const</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00084">itkDefaultPixelAccessor.h:84</a></div></div>
-<div class="ttc" id="aitkMacro_8h_html"><div class="ttname"><a href="itkMacro_8h.html">itkMacro.h</a></div></div>
-<div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:24</a></div></div>
-<div class="ttc" id="aclassitk_1_1DefaultPixelAccessor_html_af74683a50ae929664e5426be25fc9cce"><div class="ttname"><a href="classitk_1_1DefaultPixelAccessor.html#af74683a50ae929664e5426be25fc9cce">itk::DefaultPixelAccessor::Get</a></div><div class="ttdeci">TType &amp; Get(TType &amp;input) const</div><div class="ttdef"><b>Definition:</b> <a href="itkDefaultPixelAccessor_8h_source.html#l00077">itkDefaultPixelAccessor.h:77</a></div></div>
+<a href="itkDefaultPixelAccessor_8h.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>
