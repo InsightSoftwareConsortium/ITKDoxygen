@@ -80,7 +80,7 @@ Multithreading". Applications built with ITK can also manage their own execution
 Filters may process their data in multiple threads in a shared memory configuration.</div></div>
 <h1><a class="anchor" id="FilterThreadSafety"></a>
 Filter Level Multithreading</h1>
-<p>A multithreaded filter provides an implementation of the ThreadedGenerateData() method (see <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">itk::ImageSource::ThreadedGenerateData()</a>) as opposed to the normal single threaded GenerateData() method (see <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">itk::ImageSource::GenerateData()</a>). A superclass of the filter will spawn several threads (usually matching the number of processors in the system) and call ThreadedGenerateData() in each thread specifying the portion of the output that a given thread is responsible for generating. For instance, on a dual processor computer, an image processing filter will spawn two threads, each processing thread will generate one half of the output image, and each thread is restricted to writing to separate portions of the output image. Note that the "entire" input and "entire" output images (i.e. what would be available normally to the GenerateData() method, see the discussion on Streaming) are available to each call of ThreadedGenerateData(). Each thread is allowed to read from anywhere in the input image but each thread can only write to its designated portion of the output image.</p>
+<p>A multithreaded filter provides an implementation of the ThreadedGenerateData() method (see itk::ImageSource::ThreadedGenerateData()) as opposed to the normal single threaded GenerateData() method (see itk::ImageSource::GenerateData()). A superclass of the filter will spawn several threads (usually matching the number of processors in the system) and call ThreadedGenerateData() in each thread specifying the portion of the output that a given thread is responsible for generating. For instance, on a dual processor computer, an image processing filter will spawn two threads, each processing thread will generate one half of the output image, and each thread is restricted to writing to separate portions of the output image. Note that the "entire" input and "entire" output images (i.e. what would be available normally to the GenerateData() method, see the discussion on Streaming) are available to each call of ThreadedGenerateData(). Each thread is allowed to read from anywhere in the input image but each thread can only write to its designated portion of the output image.</p>
 <p>The output image is a single contiguous block on memory that is used for all processing threads. Each thread is informed which pixels they are responsible for producing the output values. All the threads write to this same block of memory but a given thread is only allowed to set specific pixels.</p>
 <h2><a class="anchor" id="FilterMemoryAllocation"></a>
 Memory Management</h2>
@@ -101,9 +101,9 @@ Thread Safety in the Numerics Library</h1>
 <div class="footer" align="left">
   <small>Tarballs of the nightly generated Doxygen documentation are available
     for the
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
   </small>
 </div>
 <address class="footer"><small>

@@ -92,15 +92,15 @@ Introduction</h1>
 </div><!-- fragment --><dl class="section user"><dt></dt><dd>The code above is readable and straightforward to implement. But its efficiency is limited to the speed of random access into the image. It also assumes a two dimensional image. We can eliminate the random access bottleneck by using iterators to dereference pixels, and for a two-dimensional image, code-readability may not suffer much. But what if we want code for three or more dimensions? Before long, the code size and complexity will increase to unmanageable levels. In Itk, we have encapsulated this functionality for efficiency, readability, and reusability.</dd></dl>
 <h1><a class="anchor" id="NeighborhoodIteratorsSection"></a>
 Neighborhood iterators</h1>
-<p><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> neighborhood iteration and dereferencing is encapsulated in the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">itk::NeighborhoodIterator</a> classes. ITK NeighborhoodIterators allow for code that is closer to the algorithmic abstraction,</p>
+<p>itk::Image neighborhood iteration and dereferencing is encapsulated in the itk::NeighborhoodIterator classes. ITK NeighborhoodIterators allow for code that is closer to the algorithmic abstraction,</p>
 <div class="fragment"><div class="line">ForAllTheIndicies i in Image</div>
 <div class="line">   GetTheNeighbors n in a 3x3 region around i</div>
 <div class="line">     Compute the mean of all pixels n</div>
 <div class="line">       Write the value to the output at i</div>
 </div><!-- fragment --><p>Here is how the pseudocode above can be rewritten in ITK using neighborhood iterators: ( In the code examples that follow, some template parameters may have been omitted for clarity. )</p>
-<div class="fragment"><div class="line">1   <span class="keyword">using</span> ImageType = <a class="code" href="classitk_1_1Image.html">itk::Image&lt;float, 2&gt;</a>;</div>
+<div class="fragment"><div class="line">1   <span class="keyword">using</span> ImageType = itk::Image&lt;float, 2&gt;;</div>
 <div class="line">2   <span class="keyword">using</span> NeighborhoodIterator = itk::SmartNeighborhoodIterator&lt;ImageType&gt;;</div>
-<div class="line">3   <span class="keyword">using</span> ImageIterator = <a class="code" href="classitk_1_1ImageRegionIterator.html">itk::ImageRegionIterator&lt;ImageType&gt;</a>;</div>
+<div class="line">3   <span class="keyword">using</span> ImageIterator = itk::ImageRegionIterator&lt;ImageType&gt;;</div>
 <div class="line">4</div>
 <div class="line">5   ImageType::Pointer input_image  = GetImageSomehow();</div>
 <div class="line">6   ImageType::Pointer output_image = GetImageSomehow();</div>
@@ -125,7 +125,7 @@ Neighborhood iterators</h1>
 <div class="line">25      out.Set(accum/(<span class="keywordtype">float</span>)(it.Size()));</div>
 <div class="line">26    }</div>
 </div><!-- fragment --><dl class="section user"><dt></dt><dd><br  />
- Note that the computational work is confined to lines 18-26. The code is also completely generalized for multiple dimensions. For example, changing line 1 to: <div class="fragment"><div class="line">1   <span class="keyword">using</span> ImageType = <a class="code" href="classitk_1_1Image.html">itk::Image&lt;float, 5&gt;</a>;</div>
+ Note that the computational work is confined to lines 18-26. The code is also completely generalized for multiple dimensions. For example, changing line 1 to: <div class="fragment"><div class="line">1   <span class="keyword">using</span> ImageType = itk::Image&lt;float, 5&gt;;</div>
 </div><!-- fragment --> produces an averaging filter for five-dimensional images.</dd></dl>
 <dl class="section user"><dt></dt><dd>The values in the neighborhood are dereferenced through the GetPixel(n) method of the iterator. Think of the iterator as a C array, storing neighborhood values in the same order that they are stored in the image, with the lowest dimension as the fastest increasing dimension.</dd></dl>
 <h1><a class="anchor" id="OperatorsOperationsSection"></a>
@@ -202,17 +202,15 @@ Further information</h1>
 <dl class="section user"><dt></dt><dd>The best documentation of the API for these objects is are the class definitions themselves, since the API is subject to change as the tookit matures and is refined. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<div class="ttc" id="aclassitk_1_1ImageRegionIterator_html"><div class="ttname"><a href="classitk_1_1ImageRegionIterator.html">itk::ImageRegionIterator</a></div><div class="ttdoc">A multi-dimensional iterator templated over image type that walks a region of pixels.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageRegionIterator_8h_source.html#l00080">itkImageRegionIterator.h:80</a></div></div>
-<div class="ttc" id="aclassitk_1_1Image_html"><div class="ttname"><a href="classitk_1_1Image.html">itk::Image</a></div><div class="ttdoc">Templated n-dimensional image class.</div><div class="ttdef"><b>Definition:</b> <a href="itkImage_8h_source.html#l00088">itkImage.h:88</a></div></div>
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <hr class="footer"/>
 <div class="footer" align="left">
   <small>Tarballs of the nightly generated Doxygen documentation are available
     for the
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
-    <a href="http://public.kitware.com/pub/itk/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocHtml.tar.gz">html</a>,
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocXml.tar.gz">xml</a>, and
+    <a href="http://itk.org/files/NightlyDoxygen/InsightDoxygenDocTag.gz">tag file</a>.
   </small>
 </div>
 <address class="footer"><small>
