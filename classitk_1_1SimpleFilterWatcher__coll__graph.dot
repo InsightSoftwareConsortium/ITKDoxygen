@@ -1,0 +1,23 @@
+digraph "itk::SimpleFilterWatcher"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="itk::SimpleFilterWatcher",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co..."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_TimeProbe" ,fontname="Helvetica"];
+  Node2 [label="itk::TimeProbe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1TimeProbe.html",tooltip="Computes the time passed between two points in code."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="itk::ResourceProbe\l\< RealTimeClock::TimeStamp\lType, RealTimeClock::TimeStampType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ResourceProbe.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_ProbeValueList" ,fontname="Helvetica"];
+  Node4 [label="std::vector\< RealTimeClock\l::TimeStampType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_NameOfProbe\nm_TypeString\nm_UnitString" ,fontname="Helvetica"];
+  Node5 [label="std::string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_RealTimeClock" ,fontname="Helvetica"];
+  Node7 [label="itk::SmartPointer\<\l Self \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1SmartPointer.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Comment" ,fontname="Helvetica"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_AbortFilterCommand\nm_EndFilterCommand\nm_IterationFilterCommand\nm_Process\nm_ProgressFilterCommand\nm_StartFilterCommand" ,fontname="Helvetica"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_ProgressOutput" ,fontname="Helvetica"];
+  Node8 [label="std::mutex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+}

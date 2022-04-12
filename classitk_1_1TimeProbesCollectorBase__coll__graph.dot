@@ -1,0 +1,24 @@
+digraph "itk::TimeProbesCollectorBase"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="itk::TimeProbesCollectorBase",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Aggregates a set of time probes."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="itk::ResourceProbesCollector\lBase\< TimeProbe \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ResourceProbesCollectorBase.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Probes" ,fontname="Helvetica"];
+  Node3 [label="std::map\< IdType, TimeProbe \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
+  Node4 [label="itk::TimeProbe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1TimeProbe.html",tooltip="Computes the time passed between two points in code."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="itk::ResourceProbe\l\< RealTimeClock::TimeStamp\lType, RealTimeClock::TimeStampType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ResourceProbe.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_ProbeValueList" ,fontname="Helvetica"];
+  Node6 [label="std::vector\< RealTimeClock\l::TimeStampType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_NameOfProbe\nm_TypeString\nm_UnitString" ,fontname="Helvetica"];
+  Node7 [label="std::string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node9 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_RealTimeClock" ,fontname="Helvetica"];
+  Node9 [label="itk::SmartPointer\<\l Self \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1SmartPointer.html",tooltip=" "];
+}

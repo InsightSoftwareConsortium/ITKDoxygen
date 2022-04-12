@@ -1,0 +1,34 @@
+digraph "itk::BinaryThresholdImageFilter&lt; TInputImage, TOutputImage &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="itk::BinaryThresholdImage\lFilter\< TInputImage, TOutputImage \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Binarize an input image by thresholding."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="itk::UnaryFunctorImageFilter\l\< TInputImage, TOutputImage,\l Functor::BinaryThreshold\<\l TInputImage::PixelType, TOutputImage\l::PixelType \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1UnaryFunctorImageFilter.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="itk::InPlaceImageFilter\l\< TInputImage, TOutputImage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1InPlaceImageFilter.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="itk::ImageToImageFilter\l\< TInputImage, TOutputImage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ImageToImageFilter.html",tooltip="Base class for filters that take an image as input and produce an image as output."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="itk::ImageSource\< TOutput\lImage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ImageSource.html",tooltip="Base class for all process objects that output image data."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="itk::ProcessObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ProcessObject.html",tooltip="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe..."];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="itk::Object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1Object.html",tooltip="Base class for most ITK classes."];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="itk::LightObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1LightObject.html",tooltip="Light weight base class for most itk classes."];
+  Node9 -> Node5 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="itk::ImageSourceCommon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structitk_1_1ImageSourceCommon.html",tooltip="Secondary base class of ImageSource common between templates."];
+  Node10 -> Node4 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="itk::ImageToImageFilterCommon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1ImageToImageFilterCommon.html",tooltip="Secondary base class of ImageToImageFilter common between templates."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="itk::GPUImageToImageFilter\l\< TInputImage, TOutputImage,\l BinaryThresholdImageFilter\l\< TInputImage, TOutputImage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1GPUImageToImageFilter.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="itk::GPUInPlaceImageFilter\l\< TInputImage, TOutputImage,\l BinaryThresholdImageFilter\l\< TInputImage, TOutputImage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1GPUInPlaceImageFilter.html",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="itk::GPUUnaryFunctorImage\lFilter\< TInputImage, TOutputImage,\l Functor::GPUBinaryThreshold\l\< TInputImage::PixelType, TOutputImage\l::PixelType \>, BinaryThresholdImageFilter\l\< TInputImage, TOutputImage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1GPUUnaryFunctorImageFilter.html",tooltip=" "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="itk::GPUBinaryThresholdImage\lFilter\< TInputImage, TOutputImage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classitk_1_1GPUBinaryThresholdImageFilter.html",tooltip="GPU version of binary threshold image filter."];
+}
