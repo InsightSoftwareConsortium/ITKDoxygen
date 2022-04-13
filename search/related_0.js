@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['antsneighborhoodcorrelationimagetoimagemetricv4getvalueandderivativethreader_3c_20threadedimageregionpartitioner_3c_20virtualimagedimension_20_3e_2c_20superclass_2c_20self_20_3e_0',['ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedImageRegionPartitioner&lt; VirtualImageDimension &gt;, Superclass, Self &gt;',['../classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4.html#a38f5da0bbb199f223751a5e0b3a6976a',1,'itk::ANTSNeighborhoodCorrelationImageToImageMetricv4']]],
+  ['antsneighborhoodcorrelationimagetoimagemetricv4getvalueandderivativethreader_3c_20threadedindexedcontainerpartitioner_2c_20superclass_2c_20self_20_3e_1',['ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedIndexedContainerPartitioner, Superclass, Self &gt;',['../classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4.html#a26e2b1f8d450bec78a6522aafd5cf830',1,'itk::ANTSNeighborhoodCorrelationImageToImageMetricv4']]]
+];
