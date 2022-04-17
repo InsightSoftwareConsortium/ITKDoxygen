@@ -1,3 +1,3 @@
 $(function(){
-    document.getElementById("datetime").textContent = "Sat, 16 Apr 2022 00:12:23 +0000"
+    document.getElementById("datetime").textContent = "Sun, 17 Apr 2022 00:13:57 +0000"
 });
