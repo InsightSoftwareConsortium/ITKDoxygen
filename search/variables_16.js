@@ -7,6 +7,6 @@ var searchData=
   ['weighted_5fprincipal_5fmoments_4',['WEIGHTED_PRINCIPAL_MOMENTS',['../classitk_1_1StatisticsLabelObject.html#ac1e2b10dbafac5e7fa02b92710fa4d8a',1,'itk::StatisticsLabelObject']]],
   ['weightedcentroid_5',['WeightedCentroid',['../structitk_1_1Statistics_1_1KdTreeBasedKmeansEstimator_1_1CandidateVector_1_1Candidate.html#a31b66eaadfb8cc1cc064a4cc9ba1a22a',1,'itk::Statistics::KdTreeBasedKmeansEstimator::CandidateVector::Candidate']]],
   ['where_6',['where',['../structitk_1_1ScanlineFilterCommon_1_1RunLength.html#a3a1b8782a3f1a9b0a1ff1628af9ac8ee',1,'itk::ScanlineFilterCommon::RunLength']]],
-  ['windowlength_7',['windowLength',['../classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#af5c7a69cbc48ee91e4d3c7dedd18828b',1,'itk::ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader']]],
+  ['windowlength_7',['windowLength',['../structitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_1_1ScanParametersType.html#a7a83282b61d54b1088dd30ce18599111',1,'itk::ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader::ScanParametersType']]],
   ['workunitid_8',['WorkUnitID',['../structitk_1_1MultiThreaderBase_1_1WorkUnitInfo.html#a970126c7a3074c10f53a9729aeed8848',1,'itk::MultiThreaderBase::WorkUnitInfo']]]
 ];

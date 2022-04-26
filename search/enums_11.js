@@ -11,5 +11,6 @@ var searchData=
   ['topologycheck_8',['TopologyCheck',['../classitk_1_1FastMarchingTraitsEnums.html#aeca7d37d9a6a8518457fc4e05dff1677',1,'itk::FastMarchingTraitsEnums']]],
   ['transformcategory_9',['TransformCategory',['../classitk_1_1TransformBaseTemplateEnums.html#afe2e44f89c4bf9fea390031aa6045100',1,'itk::TransformBaseTemplateEnums']]],
   ['transformdirection_10',['TransformDirection',['../classitk_1_1ComplexToComplexFFTImageFilterEnums.html#a041bb72f10be1a3625344da5c25d5f73',1,'itk::ComplexToComplexFFTImageFilterEnums']]],
-  ['traversaldirection_11',['TraversalDirection',['../classRayCastHelperEnums.html#a7fd05e919fe5092d9e563d6382e414ac',1,'RayCastHelperEnums']]]
+  ['transformdirectiontype_11',['TransformDirectionType',['../classitk_1_1ComplexToComplex1DFFTImageFilter.html#a3d473ca1e9d1403f3fd523f2ca3302a3',1,'itk::ComplexToComplex1DFFTImageFilter']]],
+  ['traversaldirection_12',['TraversalDirection',['../classRayCastHelperEnums.html#a7fd05e919fe5092d9e563d6382e414ac',1,'RayCastHelperEnums']]]
 ];

@@ -6,7 +6,7 @@ var searchData=
   ['eigenvalscache_3',['eigenValsCache',['../structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html#a31eec1293111075f3db0088c7df482fe',1,'itk::PatchBasedDenoisingImageFilter::ThreadDataStruct']]],
   ['eigenvecscache_4',['eigenVecsCache',['../structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html#ac6d6cfe9d7948d246bc15349f90cbf0a',1,'itk::PatchBasedDenoisingImageFilter::ThreadDataStruct']]],
   ['elongation_5',['ELONGATION',['../classitk_1_1ShapeLabelObject.html#acad6be1d7fb8e0478cc3d4d3596f5e90',1,'itk::ShapeLabelObject']]],
-  ['end_6',['End',['../classitk_1_1NarrowBand.html#ac04586787d50113b88d92a0312092f91',1,'itk::NarrowBand']]],
+  ['end_6',['End',['../structitk_1_1NarrowBand_1_1RegionType.html#ace6b8297bb1c647d44c3b2fc2aac9e96',1,'itk::NarrowBand::RegionType']]],
   ['entropyfirstderivative_7',['entropyFirstDerivative',['../structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html#afc403056c2d0d8e94a350c284fcf202b',1,'itk::PatchBasedDenoisingImageFilter::ThreadDataStruct']]],
   ['entropysecondderivative_8',['entropySecondDerivative',['../structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html#a1ae3fb5ad4904b748d88cf2cad9f46a1',1,'itk::PatchBasedDenoisingImageFilter::ThreadDataStruct']]],
   ['eps_9',['eps',['../classitk_1_1SimplexMeshGeometry.html#a79c938dff7dc875621acce211a80653e',1,'itk::SimplexMeshGeometry::eps()'],['../namespaceitk_1_1Math.html#a3ccbf0316fffc239970c7233a8bf1dad',1,'itk::Math::eps()']]],
