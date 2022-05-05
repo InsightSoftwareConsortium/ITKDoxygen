@@ -206,10 +206,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Image Adaptors are an implementation of the <em>Adaptor Design Pattern</em>. They are designed to present an image of a particular type as being an image of a different type. Adaptors perform simple operations on pixel values for which is not easy to justify the use of an image filter.</p>
-<p >One of the principal tasks of ImageAdaptors is to perform casting.</p>
-<p >For example: you have an image whose pixels are of type <code>unsigned char</code> and you need to feed this image in a process that expects pixels of type <code>double</code>. You have the option of using and ImageFilter that convert the input <code>unsigned char </code> image into another of pixel type <code>double</code>. However this filter will allocate memory for this second image and will need to be executed. Image Adaptors allow to simulate that you have made the conversion but will avoid the overhead in memory. There is however a penalty in performance.</p>
-<p >The mechanism used by image adaptors is to provide a simple function that will be used by ImageIterator (see <a class="el" href="ImageIteratorsPage.html">Image Iterators</a>) to convert the value of a pixel, in a pixel-by-pixel basis. </p>
+<p >Image adaptors are an implementation of the <em>Adaptor Design Pattern</em>. They are designed to present an image of a particular type as being an image of a different type. Adaptors perform simple operations on pixel values for which is not easy to justify the use of an image filter.</p>
+<p >One of the principal tasks of Image adaptors is to perform casting.</p>
+<p >For example: you have an image whose pixels are of type <code>unsigned char</code> and you need to feed this image in a process that expects pixels of type <code>double</code>. You have the option of using an image filter (see <a class="el" href="group__ImageFilters.html">Image Filters</a>) that converts the <code>unsigned char</code> input image into another of <code>double</code> pixel type. However this filter will allocate memory for this second image and will need to be executed. Image adaptors allow to simulate that you have made the conversion but will avoid the overhead in memory. There is however a penalty in performance.</p>
+<p >The mechanism used by image adaptors is to provide a simple function that will be used by image iterators (see <a class="el" href="ImageIteratorsPage.html">Image Iterators</a>) to convert the value of a pixel, in a pixel-by-pixel basis. </p>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->

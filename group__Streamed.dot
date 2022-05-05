@@ -1,25 +1,23 @@
-digraph "Filters supporting Streaming"
+digraph "Streaming Filters"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=box];
   rankdir=LR;
-  Node7 [label="Geometric Transformation\l Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__GeometricTransform.html",tooltip=" "];
-  Node6 [label="Module ITKCurvatureFlow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKCurvatureFlow.html",tooltip=" "];
-  Node8 [label="Module ITKImageCompose",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKImageCompose.html",tooltip=" "];
+  Node6 [label="Geometric Transformation\l Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__GeometricTransform.html",tooltip=" "];
+  Node5 [label="Module ITKCurvatureFlow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKCurvatureFlow.html",tooltip=" "];
+  Node7 [label="Module ITKImageCompose",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKImageCompose.html",tooltip=" "];
   Node3 [label="Module ITKImageGrid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKImageGrid.html",tooltip=" "];
-  Node10 [label="Module ITKRegistrationCommon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKRegistrationCommon.html",tooltip=" "];
-  Node4 [label="Image Enhancement Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ImageEnhancement.html",tooltip=" "];
-  Node5 [label="MultiThreaded Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__MultiThreaded.html",tooltip=" "];
-  Node9 [label="Image Pyramid Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__PyramidImageFilter.html",tooltip=" "];
-  Node1 [label="Filters supporting\l Streaming",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node2 [label="Processing images region\l by region",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__StreamingGroup.html",tooltip=" "];
+  Node9 [label="Module ITKRegistrationCommon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__ITKRegistrationCommon.html",tooltip=" "];
+  Node4 [label="MultiThreaded Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__MultiThreaded.html",tooltip=" "];
+  Node8 [label="Image Pyramid Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__PyramidImageFilter.html",tooltip=" "];
+  Node1 [label="Streaming Filters",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="Region-wise Processing\l Objects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__StreamingGroup.html",tooltip=" "];
   Node2->Node1 [shape=plaintext, dir="back", style="solid"];
   Node1->Node3 [shape=plaintext, label="itk::BinShrinkImageFilter\nitk::FlipImageFilter\nitk::PermuteAxesImageFilter\nitk::ShrinkImageFilter\nitk::WarpImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node4 [shape=plaintext, label="itk::CurvatureFlowImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node5 [shape=plaintext, label="itk::CurvatureFlowImageFilter\nitk::FlipImageFilter\nitk::JoinSeriesImageFilter\nitk::MultiResolutionPyramid\lImageFilter\nitk::PermuteAxesImageFilter\nitk::RecursiveMultiResolution\lPyramidImageFilter\nitk::WarpImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node6 [shape=plaintext, label="itk::CurvatureFlowImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node7 [shape=plaintext, label="itk::FlipImageFilter\nitk::JoinSeriesImageFilter\nitk::PermuteAxesImageFilter\nitk::ShrinkImageFilter\nitk::WarpImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node8 [shape=plaintext, label="itk::JoinSeriesImageFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="itk::CurvatureFlowImageFilter\nitk::FlipImageFilter\nitk::JoinSeriesImageFilter\nitk::MultiResolutionPyramid\lImageFilter\nitk::PermuteAxesImageFilter\nitk::RecursiveMultiResolution\lPyramidImageFilter\nitk::WarpImageFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node5 [shape=plaintext, label="itk::CurvatureFlowImageFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node6 [shape=plaintext, label="itk::FlipImageFilter\nitk::JoinSeriesImageFilter\nitk::PermuteAxesImageFilter\nitk::ShrinkImageFilter\nitk::WarpImageFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node7 [shape=plaintext, label="itk::JoinSeriesImageFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node8 [shape=plaintext, label="itk::MultiResolutionPyramid\lImageFilter\nitk::RecursiveMultiResolution\lPyramidImageFilter", color="orange", dir="none", style="dashed"];
   Node1->Node9 [shape=plaintext, label="itk::MultiResolutionPyramid\lImageFilter\nitk::RecursiveMultiResolution\lPyramidImageFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node10 [shape=plaintext, label="itk::MultiResolutionPyramid\lImageFilter\nitk::RecursiveMultiResolution\lPyramidImageFilter", color="orange", dir="none", style="dashed"];
 }
