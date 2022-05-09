@@ -1392,7 +1392,7 @@ var searchData=
   ['_7esummercolormapfunction_1389',['~SummerColormapFunction',['../classitk_1_1Function_1_1SummerColormapFunction.html#aa64849f38eeef052913488b933f4f8cc',1,'itk::Function::SummerColormapFunction']]],
   ['_7esumofsquaresimagefunction_1390',['~SumOfSquaresImageFunction',['../classitk_1_1SumOfSquaresImageFunction.html#abe87da383a71e97e00d514dde160ccca',1,'itk::SumOfSquaresImageFunction']]],
   ['_7esumprojectionimagefilter_1391',['~SumProjectionImageFilter',['../classitk_1_1SumProjectionImageFilter.html#ae2bac32b454d77ccc78a540017d44d9f',1,'itk::SumProjectionImageFilter']]],
-  ['_7esurfacespatialobject_1392',['~SurfaceSpatialObject',['../classitk_1_1SurfaceSpatialObject.html#a0f459b5c34ef57fc8866bfcd1830196d',1,'itk::SurfaceSpatialObject']]],
+  ['_7esurfacespatialobject_1392',['~SurfaceSpatialObject',['../classitk_1_1SurfaceSpatialObject.html#af247d08dc41d0861b3194797cdf9f41b',1,'itk::SurfaceSpatialObject']]],
   ['_7esurfacespatialobjectpoint_1393',['~SurfaceSpatialObjectPoint',['../classitk_1_1SurfaceSpatialObjectPoint.html#a5f94a5ddc04b583c88fc8dde1666e452',1,'itk::SurfaceSpatialObjectPoint']]],
   ['_7esymmetriceigenanalysis_1394',['~SymmetricEigenAnalysis',['../classitk_1_1SymmetricEigenAnalysis.html#ad2e2e64f314cc7952ff347926cb01c2a',1,'itk::SymmetricEigenAnalysis']]],
   ['_7esymmetriceigenanalysisfixeddimension_1395',['~SymmetricEigenAnalysisFixedDimension',['../classitk_1_1SymmetricEigenAnalysisFixedDimension.html#a47f1cb93e2e38406ea3af911fa525687',1,'itk::SymmetricEigenAnalysisFixedDimension']]],
