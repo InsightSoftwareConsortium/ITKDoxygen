@@ -3,6 +3,8 @@ name: doxygen
 on:
   push:
     branches: master
+  pull_request:
+    branches: master
   schedule:
     - cron: '0 0 * * *'
 
@@ -22,15 +24,15 @@ jobs:
         run: |
           docker run --name itk-dox itk-doxygen
           mkdir -p artifacts
-          docker cp itk-dox:/ITKDoxygen.tar.gz artifacts/ITKDoxygen-${GITHUB_SHA}.tar.gz
-          docker cp itk-dox:/ITKDoxygenXML.tar.gz artifacts/ITKDoxygenXML-${GITHUB_SHA}.tar.gz
+          docker cp itk-dox:/ITKDoxygen.tar.gz artifacts/ITKDoxygen.tar.gz
+          docker cp itk-dox:/ITKDoxygenXML.tar.gz artifacts/ITKDoxygenXML.tar.gz
       - name: Archive Doxygen Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: doxygen
           path: |
-            artifacts/ITKDoxygenXML-*.tar.gz
-            artifacts/ITKDoxygen-*.tar.gz
+            artifacts/ITKDoxygenXML.tar.gz
+            artifacts/ITKDoxygen.tar.gz
       - name: Update gh-pages
         if: github.ref == 'refs/heads/master'
         run: |
@@ -43,5 +45,36 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
           TARGET_BRANCH: 'gh-pages'
-
-
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: nightly
+          release_name: nightly
+          draft: true
+          prerelease: false
+      - name: Upload Doxygen HTML
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: artifacts/ITKDoxygen.tar.gz
+          asset_name: artifacts/ITKDoxygen.tar.gz
+          asset_content_type: application/gzip
+      - name: Upload Doxygen XML
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: artifacts/ITKDoxygenXML.tar.gz
+          asset_name: artifacts/ITKDoxygenXML.tar.gz
+          asset_content_type: application/gzip
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
