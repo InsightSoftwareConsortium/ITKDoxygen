@@ -1,6 +1,6 @@
 <!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
@@ -910,7 +910,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 <p >2) Sparse threader: through its own <code>ProcessVirtualPoint</code>. <code>ThreadedExecution</code> still invokes (mostly) from the base class.</p>
 <p >In order to invoke different <code>ThreadedExecution</code> by different threader, we use function overloading techniques to resolve which version of <code>ThreadedExecution</code> and <code>ProcessVirtualPoint</code> by the type of the domain partitioner.</p>
 <p >Specifically, a helper class <code><a class="el" href="structitk_1_1IdentityHelper.html">IdentityHelper</a></code> is used as a function parameter, with the sole purpose to differentiate different types of domain partitioners: <code><a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a></code> for sparse or <code><a class="el" href="classitk_1_1ThreadedImageRegionPartitioner.html" title="Class for partitioning of an ImageRegion.">ThreadedImageRegionPartitioner</a></code> for dense. <code><a class="el" href="structitk_1_1IdentityHelper.html">IdentityHelper</a></code> is simply a class template, ie. a struct wrapper of type template arguments.</p>
-<p >This technique takes advantage of SFINAE (Substitution Failure Is Not An Error) in specializing function templates. The helper class <code><a class="el" href="structitk_1_1IdentityHelper.html">IdentityHelper</a></code> is used to overload w.r.t different partitioner types. More discussion can be found at: <a href="http://stackoverflow.com/questions/3052579/explicit-specialization-in-non-namespace-scope">http://stackoverflow.com/questions/3052579/explicit-specialization-in-non-namespace-scope</a> Method called by the threaders to process the given virtual point. This in turn calls <code>TransformAndEvaluateFixedPoint</code>, <code>TransformAndEvaluateMovingPoint</code>, and <code>ProcessPoint</code>. And adds entries to m_MeasurePerThread and m_LocalDerivativesPerThread, m_NumberOfValidPointsPerThread. </p>
+<p >This technique takes advantage of SFINAE (Substitution Failure Is Not An Error) in specializing function templates. The helper class <code><a class="el" href="structitk_1_1IdentityHelper.html">IdentityHelper</a></code> is used to overload w.r.t different partitioner types. More discussion can be found at: <a href="https://stackoverflow.com/questions/3052579/explicit-specialization-in-non-namespace-scope">https://stackoverflow.com/questions/3052579/explicit-specialization-in-non-namespace-scope</a> Method called by the threaders to process the given virtual point. This in turn calls <code>TransformAndEvaluateFixedPoint</code>, <code>TransformAndEvaluateMovingPoint</code>, and <code>ProcessPoint</code>. And adds entries to m_MeasurePerThread and m_LocalDerivativesPerThread, m_NumberOfValidPointsPerThread. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00188">188</a> of file <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
@@ -1373,7 +1373,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div>
 <address class="footer"><small>
 Generated on <span id="datetime">unknown</span> for ITK by &#160;
-<a href="http://www.doxygen.org/index.html">
+<a href="https://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.9.3
 </small></address>
