@@ -130,7 +130,7 @@ var searchData=
   ['evaluatevector_127',['EvaluateVector',['../classitk_1_1GaussianDerivativeSpatialFunction.html#ae4b94a39742abc1f953dd538ba77a6ed',1,'itk::GaussianDerivativeSpatialFunction']]],
   ['eventobject_128',['EventObject',['../classitk_1_1EventObject.html#a1afeb5dec95c60743f07f3169439b826',1,'itk::EventObject::EventObject(const EventObject &amp;)=default'],['../classitk_1_1EventObject.html#a5e983b3158331e6969ea40bcfb38e672',1,'itk::EventObject::EventObject()=default']]],
   ['evolve_129',['Evolve',['../classitk_1_1LevelSetEvolutionBase.html#aab24e854bbbfccd9ae4d0c37aa5aae53',1,'itk::LevelSetEvolutionBase']]],
-  ['evolvewithphasedpropagation_130',['EvolveWithPhasedPropagation',['../classitk_1_1UpdateMalcolmSparseLevelSet.html#a238577e5ddff4344bed9125fa33e6888',1,'itk::UpdateMalcolmSparseLevelSet']]],
+  ['evolvewithphasedpropagation_130',['EvolveWithPhasedPropagation',['../classitk_1_1UpdateMalcolmSparseLevelSet.html#a97e2d0c449eb4a0016999a23ddcf945b',1,'itk::UpdateMalcolmSparseLevelSet']]],
   ['evolvewithunphasedpropagation_131',['EvolveWithUnPhasedPropagation',['../classitk_1_1UpdateMalcolmSparseLevelSet.html#a12249be9e05b5f265a0c677f87fede67',1,'itk::UpdateMalcolmSparseLevelSet']]],
   ['exactlyequals_132',['ExactlyEquals',['../namespaceitk_1_1Math.html#a32b9ea67c77c95ec52dd9db9ef1268dc',1,'itk::Math']]],
   ['exceptionthrowingboundscheck_133',['ExceptionThrowingBoundsCheck',['../structitk_1_1Index.html#a488f5c58e320b2b657e29b36f56f2a78',1,'itk::Index::ExceptionThrowingBoundsCheck()'],['../structitk_1_1Offset.html#a8c7a3c0b9bf7ba9183ee8a518b4a18cf',1,'itk::Offset::ExceptionThrowingBoundsCheck()'],['../structitk_1_1Size.html#ac95360daa53b528e63f6b8e8b7f16568',1,'itk::Size::ExceptionThrowingBoundsCheck()']]],
