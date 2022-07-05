@@ -777,7 +777,7 @@ $(function() {
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span> </div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span><span class="comment">// end of Template Meta Programming helper macros</span></div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span> </div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="preprocessor">#if !defined(NDEBUG) &amp;&amp; !defined(ITK_WRAPPING)</span></div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span> </div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="preprocessor">#  ifdef __GLIBC__</span></div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="preprocessor">#    define itkAssertInDebugOrThrowInReleaseMacro(msg) __assert_fail(msg, __FILE__, __LINE__, __ASSERT_FUNCTION);</span></div>
@@ -798,7 +798,7 @@ $(function() {
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span><span class="preprocessor">  }                                                              \</span></div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="preprocessor">#if !defined(NDEBUG) &amp;&amp; !defined(ITK_WRAPPING)</span></div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="preprocessor">#  define itkAssertInDebugAndIgnoreInReleaseMacro(X) assert(X)</span></div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="preprocessor">#  define itkAssertInDebugAndIgnoreInReleaseMacro(X) ITK_NOOP_STATEMENT</span></div>
