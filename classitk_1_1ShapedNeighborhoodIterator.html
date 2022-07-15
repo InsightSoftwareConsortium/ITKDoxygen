@@ -332,11 +332,11 @@ class itk::ShapedNeighborhoodIterator&lt; TImage, TBoundaryCondition &gt;</div><
 <div class="ttc" id="aclassitk_1_1ConstNeighborhoodIterator_html_a05aa122e6502b781cb401189d926af25"><div class="ttname"><a href="classitk_1_1ConstNeighborhoodIterator.html#a05aa122e6502b781cb401189d926af25">itk::ConstNeighborhoodIterator&lt; TImage, ZeroFluxNeumannBoundaryCondition&lt; TImage &gt; &gt;::Iterator</a></div><div class="ttdeci">typename AllocatorType::iterator Iterator</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhood_8h_source.html#l00072">itkNeighborhood.h:75</a></div></div>
 </div><!-- fragment --><p >You can also iterate backward through the neighborhood active list.</p>
 <div class="fragment"><div class="line">i = it.End();</div>
-<div class="line">i--;</div>
+<div class="line">--i;</div>
 <div class="line"><span class="keywordflow">while</span> (i != it.Begin())</div>
 <div class="line">{</div>
 <div class="line">  i.Set(i.Get() + 1.0);</div>
-<div class="line">  i--;</div>
+<div class="line">  --i;</div>
 <div class="line">}</div>
 <div class="line"> i.Set(i.Get() + 1.0);</div>
 </div><!-- fragment --><p >The Get() Set() syntax was chosen versus defining operator* for these iterators because lvalue vs. rvalue context information is needed to determine whether bounds checking must take place.</p>

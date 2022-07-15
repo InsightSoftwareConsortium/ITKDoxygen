@@ -162,12 +162,12 @@ $(function() {
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// value</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">// or the iterator is invalidated.</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        TInputPixel toErase = mapIt-&gt;first;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        mapIt++;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        ++mapIt;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_variable" href="classitk_1_1Function_1_1MorphologicalGradientHistogram.html#a4402d6f4380ae844800e1ea3440bcdbc">m_Map</a>.erase(toErase);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        mapIt++;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        ++mapIt;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
@@ -225,23 +225,23 @@ $(function() {
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a0ccdf9a7ac41147a6eb64f02dc814a9c">m_Min</a> = p;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#ad9f4b8bd43deb0ddf7701e53f62451e5">m_Count</a>++;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    ++<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#ad9f4b8bd43deb0ddf7701e53f62451e5">m_Count</a>;</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a8144a1472ba045944431e45c8c1d7a91">  145</a></span>  <a class="code hl_function" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a8144a1472ba045944431e45c8c1d7a91">RemovePixel</a>(<span class="keyword">const</span> TInputPixel &amp; p)</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a1cea86b6220aba92b5259f890fb00d51">m_Vector</a>[p - <a class="code hl_function" href="classitk_1_1NumericTraits.html#a130b93e7399bc5e5d81614cdaf46e4f1">NumericTraits&lt;TInputPixel&gt;::NonpositiveMin</a>()]--;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#ad9f4b8bd43deb0ddf7701e53f62451e5">m_Count</a>--;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    --<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#ad9f4b8bd43deb0ddf7701e53f62451e5">m_Count</a>;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#ad9f4b8bd43deb0ddf7701e53f62451e5">m_Count</a> &gt; 0)</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">while</span> (<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a1cea86b6220aba92b5259f890fb00d51">m_Vector</a>[<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a79ddcf902656e56c991b2c9ed3dc34b9">m_Max</a> - <a class="code hl_class" href="classitk_1_1NumericTraits.html">NumericTraits&lt;TInputPixel&gt;::NonpositiveMin</a>()] == 0)</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a79ddcf902656e56c991b2c9ed3dc34b9">m_Max</a>--;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        --<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a79ddcf902656e56c991b2c9ed3dc34b9">m_Max</a>;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keywordflow">while</span> (<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a1cea86b6220aba92b5259f890fb00d51">m_Vector</a>[<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a0ccdf9a7ac41147a6eb64f02dc814a9c">m_Min</a> - <a class="code hl_class" href="classitk_1_1NumericTraits.html">NumericTraits&lt;TInputPixel&gt;::NonpositiveMin</a>()] == 0)</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a0ccdf9a7ac41147a6eb64f02dc814a9c">m_Min</a>++;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        ++<a class="code hl_variable" href="classitk_1_1Function_1_1VectorMorphologicalGradientHistogram.html#a0ccdf9a7ac41147a6eb64f02dc814a9c">m_Min</a>;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      }</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">else</span></div>
