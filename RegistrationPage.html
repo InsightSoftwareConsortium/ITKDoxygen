@@ -93,12 +93,12 @@ ITK Registration Framework</h1>
 <ul>
 <li><b>Target:</b> the object that is assumed to be static. </li>
 <li><b>Reference:</b> the object that will be transformed in order to be superimpossed to the <em>Target</em> </li>
-<li><b>Transform:</b> the mapping that will conver one point from the <em>Reference</em> object space to the <em>Target</em> object space. </li>
+<li><b>Transform:</b> the mapping that will convert one point from the <em>Reference</em> object space to the <em>Target</em> object space. </li>
 <li><b>Metric:</b> a measure that indicates how well the <em>Target</em> object matches the <em>Reference</em> object after transformation. </li>
 <li><b>Mapper:</b> the particular technique used for interpolating values when objects are resampled through the <em>Transform</em>. </li>
 <li><b>Optimizer:</b> the method used to find the <em>Transform</em> parameters that optimize the <em>Metric</em>.</li>
 </ul>
-<p>A particular registration method is defined by selecting specific implemementations of each one of these basic elements. In order to determine the registration method appropriated for a particular problem, is will be useful to answer the following questions:</p>
+<p>A particular registration method is defined by selecting specific implementations of each one of these basic elements. In order to determine the registration method appropriated for a particular problem, is will be useful to answer the following questions:</p>
 <h2><a class="anchor" id="TargetReference"></a>
 Target and Reference Objects</h2>
 <p >Currently the Target and Reference objects can be of type <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> and <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">itk::PointSet</a>. Methods have been instantiated for a variety of <em> Image to Image </em> and <em> PointSet to Image </em> registration cases.</p>
@@ -122,7 +122,7 @@ Transforms</h2>
 </ul>
 <h2><a class="anchor" id="RegistrationMetrics"></a>
 Similarity Metrics</h2>
-<p >Metrics are probably the most critical element of a registration problem. The metric defines what the goal of the process is, they measure how well the Target object is matched by the Reference object after the transform has been applied to it. The Metric should be selected in function of the types of objects to be registered and the expected kind of missalignment. Some metrics has a rather large capture region, which means that the optimizer will be able to find his way to a maximum even if the missalignment is high. Typicaly large capture regions are associated with low precision for the maximum. Other metrics can provide high precision for the final registration, but usually require to be initialized quite close to the optimal value.</p>
+<p >Metrics are probably the most critical element of a registration problem. The metric defines what the goal of the process is, they measure how well the Target object is matched by the Reference object after the transform has been applied to it. The Metric should be selected in function of the types of objects to be registered and the expected kind of missalignment. Some metrics has a rather large capture region, which means that the optimizer will be able to find his way to a maximum even if the missalignment is high. Typically large capture regions are associated with low precision for the maximum. Other metrics can provide high precision for the final registration, but usually require to be initialized quite close to the optimal value.</p>
 <p >Unfortunately there are no clear rules about how to select a metric, other that trying some of them in different conditions. In some cases could be and advantage to use a particular metric to get an initial approximation of the transformation, and then switch to another more sensitive metric to achieve better precision in the final result.</p>
 <p >Metrics are depend on the objects they compare. The toolkit currently offers <em> Image To Image </em> and <em> PointSet to Image </em> metrics as follows:</p>
 <ul>
@@ -157,7 +157,7 @@ Optimizers</h2>
 </ul>
 <h1><a class="anchor" id="MultiResolutionRegistration"></a>
 Multiresolution</h1>
-<p >The evaluation of a metric can be very expensive in computing time. An approach often used to improve performance is to register first reduced resolution versions of the target and reference objects. The resulting transform is used as the starting point for a second registration process performed in progresively higher resolution objects.</p>
+<p >The evaluation of a metric can be very expensive in computing time. An approach often used to improve performance is to register first reduced resolution versions of the target and reference objects. The resulting transform is used as the starting point for a second registration process performed in progressively higher resolution objects.</p>
 <p >It is usual to create first a sequence of reduced resolution version of the objects, this set of objects is called a <em> pryramid representation </em>. A Multiresolution method is basically a set of consecutive registration process, each one performed at a particular level of the pyramid, and using as initial transform the resulting transform of the previous process.</p>
 <p >Multiresolution offers the double advantage of increasing performance and at the same time improving the stability of the optimization by smoothing out local minima and increasing the capture region of the process. </p>
 </div></div><!-- contents -->
