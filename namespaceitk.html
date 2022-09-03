@@ -109,6 +109,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceitk_1_1ImageToImageFilterDetail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk_1_1ImageToImageFilterDetail.html">ImageToImageFilterDetail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceitk_1_1MakeUniqueForOverwriteImplDetail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk_1_1MakeUniqueForOverwriteImplDetail.html">MakeUniqueForOverwriteImplDetail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceitk_1_1Math"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk_1_1Math.html">Math</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceitk_1_1MeshIOTestHelper"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk_1_1MeshIOTestHelper.html">MeshIOTestHelper</a></td></tr>
@@ -4429,6 +4431,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a017babb2fa52e20add91475cc1f74bee"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
 <tr class="memitem:a017babb2fa52e20add91475cc1f74bee"><td class="memTemplItemLeft" align="right" valign="top">constexpr TContainer&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a017babb2fa52e20add91475cc1f74bee">MakeFilled</a> (typename TContainer::const_reference value)</td></tr>
 <tr class="separator:a017babb2fa52e20add91475cc1f74bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ae0b074a03ad751b9c7194305b9c2f439"><td class="memTemplParams" colspan="2">template&lt;typename TUnboundedArray &gt; </td></tr>
+<tr class="memitem:ae0b074a03ad751b9c7194305b9c2f439"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#ae0b074a03ad751b9c7194305b9c2f439">make_unique_for_overwrite</a> (const vcl_size_t numberOfElements)</td></tr>
+<tr class="separator:ae0b074a03ad751b9c7194305b9c2f439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a1700284ed21feefcb218d94c13497938"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1700284ed21feefcb218d94c13497938"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a1700284ed21feefcb218d94c13497938">EncapsulateMetaData</a> (<a class="el" href="classitk_1_1MetaDataDictionary.html">MetaDataDictionary</a> &amp;Dictionary, const std::string &amp;key, const T &amp;invalue)</td></tr>
@@ -8975,6 +8981,33 @@ template&lt;typename TLine &gt; </div>
       </table>
 </div><div class="memdoc">
 <p >Create a helper GPU Kernel class for <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html">GPUDenseFiniteDifferenceImageFilter</a> </p>
+
+</div>
+</div>
+<a id="ae0b074a03ad751b9c7194305b9c2f439" name="ae0b074a03ad751b9c7194305b9c2f439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b074a03ad751b9c7194305b9c2f439">&#9670;&nbsp;</a></span>make_unique_for_overwrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TUnboundedArray &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto itk::make_unique_for_overwrite </td>
+          <td>(</td>
+          <td class="paramtype">const vcl_size_t&#160;</td>
+          <td class="paramname"><em>numberOfElements</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p ><code>make_unique_for_overwrite</code> implementation for C++14/C++17, specifically for dynamically sized ("unbounded") arrays. From C++20, <code>std::make_unique_for_overwrite</code> is preferred.</p>
+<p >Example (mind the square brackets): </p><div class="fragment"><div class="line">     <span class="keyword">using</span> ElementType = int;</div>
+<div class="line">     <span class="keywordtype">size_t</span> numberOfElements{ 42 };</div>
+<div class="line">     <span class="comment">// Create a buffer that may be used to store the specified number of elements.</span></div>
+<div class="line">     <span class="keyword">auto</span> buffer = make_unique_for_overwrite&lt;ElementType[]&gt;(numberOfElements);</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="itkMakeUniqueForOverwrite_8h_source.html#l00063">63</a> of file <a class="el" href="itkMakeUniqueForOverwrite_8h_source.html">itkMakeUniqueForOverwrite.h</a>.</p>
 
 </div>
 </div>
