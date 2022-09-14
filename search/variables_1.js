@@ -9,5 +9,6 @@ var searchData=
   ['bounds_5fmin_6',['bounds_min',['../structitk_1_1watershed_1_1Boundary_1_1flat__region__t.html#a9b6dabe7e7f33168c828d28c45edd238',1,'itk::watershed::Boundary::flat_region_t::bounds_min()'],['../structitk_1_1watershed_1_1Segmenter_1_1flat__region__t.html#a79b249a35f61fd49183d4b279ba0ce59',1,'itk::watershed::Segmenter::flat_region_t::bounds_min()']]],
   ['brhca_7',['brhcA',['../structGEImageHeader.html#ac0818d129b522813a1d2ae3b03dcd0be',1,'GEImageHeader']]],
   ['brhcr_8',['brhcR',['../structGEImageHeader.html#a711710860879160a8165edefe66b6d33',1,'GEImageHeader']]],
-  ['brhcs_9',['brhcS',['../structGEImageHeader.html#a2f6bb5228a865df5ae11b5a32ac5dc85',1,'GEImageHeader']]]
+  ['brhcs_9',['brhcS',['../structGEImageHeader.html#a2f6bb5228a865df5ae11b5a32ac5dc85',1,'GEImageHeader']]],
+  ['buf_10',['buf',['../classitk_1_1AttributeMorphologyBaseImageFilter_1_1CompareOffsetType.html#a50d3b3bf201cdfd660f51c823b443104',1,'itk::AttributeMorphologyBaseImageFilter::CompareOffsetType']]]
 ];

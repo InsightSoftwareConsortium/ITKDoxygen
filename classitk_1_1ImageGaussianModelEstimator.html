@@ -351,8 +351,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a5d3798990b3ec988923c30c3ced898ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f945468f4f43ff96ab3c773d51aaec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a24f945468f4f43ff96ab3c773d51aaec">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
 <tr class="separator:a24f945468f4f43ff96ab3c773d51aaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a878b3cc19fbec454bdf62ef56f0ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a53a878b3cc19fbec454bdf62ef56f0ab">~ImageGaussianModelEstimator</a> () override</td></tr>
-<tr class="separator:a53a878b3cc19fbec454bdf62ef56f0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e213bf38a9e019bd9f2ac8f5a72b7d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a2e213bf38a9e019bd9f2ac8f5a72b7d1">~ImageGaussianModelEstimator</a> () override=default</td></tr>
+<tr class="separator:a2e213bf38a9e019bd9f2ac8f5a72b7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ImageModelEstimatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageModelEstimatorBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageModelEstimatorBase.html">itk::ImageModelEstimatorBase&lt; TInputImage, TMembershipFunction &gt;</a></td></tr>
 <tr class="memitem:abbbaa32259f9ff730300c47301fa1f6a inherit pro_methods_classitk_1_1ImageModelEstimatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abbbaa32259f9ff730300c47301fa1f6a">GenerateData</a> () override</td></tr>
 <tr class="separator:abbbaa32259f9ff730300c47301fa1f6a inherit pro_methods_classitk_1_1ImageModelEstimatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,8 +412,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a0698dc8c50db0e295d6d953fa9f1556e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a0698dc8c50db0e295d6d953fa9f1556e">m_Covariance</a> { nullptr }</td></tr>
-<tr class="separator:a0698dc8c50db0e295d6d953fa9f1556e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4f9edbe73dd4d432dadf5740d7c597"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#afc4f9edbe73dd4d432dadf5740d7c597">m_Covariance</a> { nullptr }</td></tr>
+<tr class="separator:afc4f9edbe73dd4d432dadf5740d7c597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169ebf3d4824c16fc686dcb0a4d472cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a169ebf3d4824c16fc686dcb0a4d472cd">m_Means</a></td></tr>
 <tr class="separator:a169ebf3d4824c16fc686dcb0a4d472cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad904a1fc3a33c6668fc731423551b51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#aad904a1fc3a33c6668fc731423551b51">m_NumberOfSamples</a></td></tr>
@@ -442,7 +442,7 @@ class itk::ImageGaussianModelEstimator&lt; TInputImage, TMembershipFunction, TTr
 <p >This function is templated over the type of input and output images. In addition, a third parameter for the MembershipFunction needs to be specified. In this case a Membership function that stores Gaussian models needs to be specified.</p>
 <p >The function <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a30e605239d527b40459135e51fc81c6e">EstimateModels()</a> calculates the various models, creates the membership function objects and populates them. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00076">76</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00077">77</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad1fe26b6513e4bda4db35cb25dfcb632" name="ad1fe26b6513e4bda4db35cb25dfcb632"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1fe26b6513e4bda4db35cb25dfcb632">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -458,7 +458,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00085">85</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00086">86</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +476,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00113">113</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00114">114</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -494,7 +494,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00096">96</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00097">97</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -513,7 +513,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definitions for the iterators for the input and training images. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00112">112</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00113">113</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -532,7 +532,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definition for the vector associated with input image pixel type. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00105">105</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00106">106</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -550,7 +550,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00095">95</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00096">96</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +576,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00139">139</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00140">140</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -595,7 +595,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definition for the input image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00094">94</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00095">95</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -621,7 +621,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00137">137</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00138">138</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -639,7 +639,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00119">119</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00120">120</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -658,7 +658,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definitions for the membership function . </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00118">118</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00119">119</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -676,7 +676,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00084">84</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00085">85</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -695,7 +695,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00082">82</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00083">83</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -713,7 +713,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00083">83</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00084">84</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -731,7 +731,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00115">115</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00116">116</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -749,7 +749,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00101">101</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00102">102</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -767,7 +767,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00114">114</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00115">115</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +786,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definitions for the vector holding training image pixel type. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00109">109</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00110">110</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -804,7 +804,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00100">100</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00101">101</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -823,7 +823,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Type definitions for the training image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00099">99</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00100">100</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -855,8 +855,8 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 
 </div>
 </div>
-<a id="a53a878b3cc19fbec454bdf62ef56f0ab" name="a53a878b3cc19fbec454bdf62ef56f0ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53a878b3cc19fbec454bdf62ef56f0ab">&#9670;&nbsp;</a></span>~ImageGaussianModelEstimator()</h2>
+<a id="a2e213bf38a9e019bd9f2ac8f5a72b7d1" name="a2e213bf38a9e019bd9f2ac8f5a72b7d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e213bf38a9e019bd9f2ac8f5a72b7d1">&#9670;&nbsp;</a></span>~ImageGaussianModelEstimator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -875,7 +875,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1128,8 +1128,8 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0698dc8c50db0e295d6d953fa9f1556e" name="a0698dc8c50db0e295d6d953fa9f1556e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0698dc8c50db0e295d6d953fa9f1556e">&#9670;&nbsp;</a></span>m_Covariance</h2>
+<a id="afc4f9edbe73dd4d432dadf5740d7c597" name="afc4f9edbe73dd4d432dadf5740d7c597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4f9edbe73dd4d432dadf5740d7c597">&#9670;&nbsp;</a></span>m_Covariance</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1140,7 +1140,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a>* <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html">itk::ImageGaussianModelEstimator</a>&lt; TInputImage, TMembershipFunction, TTrainingImage &gt;::m_Covariance { nullptr }</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#ae9a75fa120ca8fef8e3ed73b7f8d8c2c">MatrixType</a>[]&gt; <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html">itk::ImageGaussianModelEstimator</a>&lt; TInputImage, TMembershipFunction, TTrainingImage &gt;::m_Covariance { nullptr }</td>
         </tr>
       </table>
   </td>
@@ -1150,7 +1150,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00157">157</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00158">158</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -1176,7 +1176,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00156">156</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00157">157</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -1202,7 +1202,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00155">155</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00156">156</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -1228,7 +1228,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00159">159</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00160">160</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -1255,7 +1255,7 @@ template&lt;typename TInputImage , typename TMembershipFunction , typename TTrai
 </div><div class="memdoc">
 <p >Dimension of each individual pixel vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00142">142</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00143">143</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
 
 </div>
 </div>

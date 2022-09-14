@@ -226,7 +226,8 @@ var menudata={children:[
 {text:"u",url:"functions_type_u.html#index_u"},
 {text:"v",url:"functions_type_v.html#index_v"},
 {text:"w",url:"functions_type_w.html#index_w"},
-{text:"y",url:"functions_type_y.html#index_y"}]},
+{text:"y",url:"functions_type_y.html#index_y"},
+{text:"z",url:"functions_type_z.html#index_z"}]},
 {text:"Enumerations",url:"functions_enum.html",children:[
 {text:"a",url:"functions_enum.html#index_a"},
 {text:"b",url:"functions_enum.html#index_b"},

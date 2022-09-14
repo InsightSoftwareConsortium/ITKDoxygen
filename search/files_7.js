@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vnliterativesparsesolvertraits_2eh_0',['VNLIterativeSparseSolverTraits.h',['../VNLIterativeSparseSolverTraits_8h.html',1,'']]],
-  ['vnlsparselusolvertraits_2eh_1',['VNLSparseLUSolverTraits.h',['../VNLSparseLUSolverTraits_8h.html',1,'']]]
+  ['threading_2edox_0',['Threading.dox',['../Threading_8dox.html',1,'']]]
 ];
