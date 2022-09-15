@@ -189,13 +189,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ac6f188822e352af3acee3e9642698a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a6b9849450540a6925f1e13adb5569e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html#a4a6b9849450540a6925f1e13adb5569e">ProcessPoint</a> (const VirtualIndexType &amp;virtualIndex, const VirtualPointType &amp;virtualPoint, const FixedImagePointType &amp;mappedFixedPoint, const FixedImagePixelType &amp;fixedImageValue, const FixedImageGradientType &amp;mappedFixedImageGradient, const MovingImagePointType &amp;mappedMovingPoint, const MovingImagePixelType &amp;movingImageValue, const MovingImageGradientType &amp;movingImageGradient, MeasureType &amp;metricValueReturn, DerivativeType &amp;localDerivativeReturn, const <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const override</td></tr>
 <tr class="separator:a4a6b9849450540a6925f1e13adb5569e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8642d02e638b2b09a606b816c808450b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html#a8642d02e638b2b09a606b816c808450b">~JointHistogramMutualInformationGetValueAndDerivativeThreader</a> () override</td></tr>
-<tr class="separator:a8642d02e638b2b09a606b816c808450b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97be51549c9287762c55cddf6dcbbe9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html#a97be51549c9287762c55cddf6dcbbe9f">~JointHistogramMutualInformationGetValueAndDerivativeThreader</a> () override=default</td></tr>
+<tr class="separator:a97be51549c9287762c55cddf6dcbbe9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0972ca82fab768832babcc2841563135"><td class="memItemLeft" align="right" valign="top">AlignedJointHistogramMIPerThreadStruct *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html#a0972ca82fab768832babcc2841563135">m_JointHistogramMIPerThreadVariables</a></td></tr>
-<tr class="separator:a0972ca82fab768832babcc2841563135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5eb26553c856eda3e5027a76826a66"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; AlignedJointHistogramMIPerThreadStruct[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html#a4d5eb26553c856eda3e5027a76826a66">m_JointHistogramMIPerThreadVariables</a></td></tr>
+<tr class="separator:a4d5eb26553c856eda3e5027a76826a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -206,7 +206,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetric, typename TJointHistogramMetric&gt;<br />
 class itk::JointHistogramMutualInformationGetValueAndDerivativeThreader&lt; TDomainPartitioner, TImageToImageMetric, TJointHistogramMetric &gt;</div><p >Processes points for <a class="el" href="classitk_1_1JointHistogramMutualInformationImageToImageMetricv4.html" title="Computes the mutual information between two images to be registered using the method referenced below...">JointHistogramMutualInformationImageToImageMetricv4</a> <code>GetValueAndDerivative()</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00034">34</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00036">36</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a75877b5caa6f303aadf6f7267da20e14" name="a75877b5caa6f303aadf6f7267da20e14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75877b5caa6f303aadf6f7267da20e14">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -222,7 +222,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00044">44</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00046">46</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +240,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00068">68</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00070">70</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -258,7 +258,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00067">67</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00069">69</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -284,7 +284,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00084">84</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00086">86</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00071">71</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00073">73</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +320,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00069">69</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00071">71</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -338,7 +338,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00077">77</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00079">79</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -356,7 +356,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00074">74</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00076">76</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -374,7 +374,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00078">78</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00080">80</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -392,7 +392,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00072">72</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00074">74</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00070">70</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00072">72</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +428,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00076">76</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00078">78</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -446,7 +446,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00075">75</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00077">77</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -464,7 +464,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00073">73</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00075">75</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -482,7 +482,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00043">43</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00045">45</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -501,7 +501,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00041">41</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00043">43</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -519,7 +519,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00042">42</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00044">44</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -551,8 +551,8 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 
 </div>
 </div>
-<a id="a8642d02e638b2b09a606b816c808450b" name="a8642d02e638b2b09a606b816c808450b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8642d02e638b2b09a606b816c808450b">&#9670;&nbsp;</a></span>~JointHistogramMutualInformationGetValueAndDerivativeThreader()</h2>
+<a id="a97be51549c9287762c55cddf6dcbbe9f" name="a97be51549c9287762c55cddf6dcbbe9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97be51549c9287762c55cddf6dcbbe9f">&#9670;&nbsp;</a></span>~JointHistogramMutualInformationGetValueAndDerivativeThreader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -571,7 +571,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1011,12 +1011,12 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Internal pointer to the metric object in use by this threader. This will avoid costly dynamic casting in tight loops. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00130">130</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00132">132</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
-<a id="a0972ca82fab768832babcc2841563135" name="a0972ca82fab768832babcc2841563135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0972ca82fab768832babcc2841563135">&#9670;&nbsp;</a></span>m_JointHistogramMIPerThreadVariables</h2>
+<a id="a4d5eb26553c856eda3e5027a76826a66" name="a4d5eb26553c856eda3e5027a76826a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5eb26553c856eda3e5027a76826a66">&#9670;&nbsp;</a></span>m_JointHistogramMIPerThreadVariables</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1027,7 +1027,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AlignedJointHistogramMIPerThreadStruct* <a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html">itk::JointHistogramMutualInformationGetValueAndDerivativeThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TJointHistogramMetric &gt;::m_JointHistogramMIPerThreadVariables</td>
+          <td class="memname">std::unique_ptr&lt;AlignedJointHistogramMIPerThreadStruct[]&gt; <a class="el" href="classitk_1_1JointHistogramMutualInformationGetValueAndDerivativeThreader.html">itk::JointHistogramMutualInformationGetValueAndDerivativeThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TJointHistogramMetric &gt;::m_JointHistogramMIPerThreadVariables</td>
         </tr>
       </table>
   </td>
@@ -1037,7 +1037,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00125">125</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html#l00127">127</a> of file <a class="el" href="itkJointHistogramMutualInformationGetValueAndDerivativeThreader_8h_source.html">itkJointHistogramMutualInformationGetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>

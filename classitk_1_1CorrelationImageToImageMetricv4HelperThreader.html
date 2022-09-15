@@ -153,8 +153,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a5efaef3760800a64ea3895af763dd9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e089d1ceba2d9a1fbbff0e25829ff8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#ad3e089d1ceba2d9a1fbbff0e25829ff8">ProcessVirtualPoint</a> (const VirtualIndexType &amp;virtualIndex, const VirtualPointType &amp;virtualPoint, const <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) override</td></tr>
 <tr class="separator:ad3e089d1ceba2d9a1fbbff0e25829ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf376e1ecd6a064f9e434e4099171cd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#acf376e1ecd6a064f9e434e4099171cd0">~CorrelationImageToImageMetricv4HelperThreader</a> () override</td></tr>
-<tr class="separator:acf376e1ecd6a064f9e434e4099171cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af362af0719df672b18b773668883d0a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#af362af0719df672b18b773668883d0a8">~CorrelationImageToImageMetricv4HelperThreader</a> () override=default</td></tr>
+<tr class="separator:af362af0719df672b18b773668883d0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -167,13 +167,13 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af7bd824481ad2e535990cbdb12012bd8"><td class="memItemLeft" align="right" valign="top">TCorrelationMetric *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#af7bd824481ad2e535990cbdb12012bd8">m_CorrelationAssociate</a></td></tr>
 <tr class="separator:af7bd824481ad2e535990cbdb12012bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9882a14638d6d449a335f56119953a"><td class="memItemLeft" align="right" valign="top">AlignedCorrelationMetricPerThreadStruct *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#ade9882a14638d6d449a335f56119953a">m_CorrelationMetricPerThreadVariables</a></td></tr>
-<tr class="separator:ade9882a14638d6d449a335f56119953a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cec2c3a9090bb7c34694434db14fe5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; AlignedCorrelationMetricPerThreadStruct[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html#a74cec2c3a9090bb7c34694434db14fe5">m_CorrelationMetricPerThreadVariables</a></td></tr>
+<tr class="separator:a74cec2c3a9090bb7c34694434db14fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetric, typename TCorrelationMetric&gt;<br />
 class itk::CorrelationImageToImageMetricv4HelperThreader&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;</div>
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00036">36</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00038">38</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af21a66ded4d465c87c351dc1b25f3388" name="af21a66ded4d465c87c351dc1b25f3388"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af21a66ded4d465c87c351dc1b25f3388">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -189,7 +189,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00046">46</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00048">48</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -207,7 +207,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00055">55</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00057">57</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -225,7 +225,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00045">45</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00047">47</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00043">43</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00045">45</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00044">44</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00046">46</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -294,8 +294,8 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 
 </div>
 </div>
-<a id="acf376e1ecd6a064f9e434e4099171cd0" name="acf376e1ecd6a064f9e434e4099171cd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf376e1ecd6a064f9e434e4099171cd0">&#9670;&nbsp;</a></span>~CorrelationImageToImageMetricv4HelperThreader()</h2>
+<a id="af362af0719df672b18b773668883d0a8" name="af362af0719df672b18b773668883d0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af362af0719df672b18b773668883d0a8">&#9670;&nbsp;</a></span>~CorrelationImageToImageMetricv4HelperThreader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +314,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -612,7 +612,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Not using. All processing is done in ProcessVirtualPoint. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00109">109</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00111">111</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
@@ -684,12 +684,12 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Internal pointer to the metric object in use by this threader. This will avoid costly dynamic casting in tight loops. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00139">139</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00141">141</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>
-<a id="ade9882a14638d6d449a335f56119953a" name="ade9882a14638d6d449a335f56119953a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade9882a14638d6d449a335f56119953a">&#9670;&nbsp;</a></span>m_CorrelationMetricPerThreadVariables</h2>
+<a id="a74cec2c3a9090bb7c34694434db14fe5" name="a74cec2c3a9090bb7c34694434db14fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cec2c3a9090bb7c34694434db14fe5">&#9670;&nbsp;</a></span>m_CorrelationMetricPerThreadVariables</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -700,17 +700,17 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AlignedCorrelationMetricPerThreadStruct* <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html">itk::CorrelationImageToImageMetricv4HelperThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;::m_CorrelationMetricPerThreadVariables</td>
+          <td class="memname">std::unique_ptr&lt;AlignedCorrelationMetricPerThreadStruct[]&gt; <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4HelperThreader.html">itk::CorrelationImageToImageMetricv4HelperThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;::m_CorrelationMetricPerThreadVariables</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00135">135</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html#l00137">137</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4HelperThreader_8h_source.html">itkCorrelationImageToImageMetricv4HelperThreader.h</a>.</p>
 
 </div>
 </div>

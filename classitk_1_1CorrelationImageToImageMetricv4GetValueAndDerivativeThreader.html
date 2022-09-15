@@ -161,8 +161,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aa5b0c224a5c9789028f4e6b39b50c12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2125cab5d645f482157b3dde4cbdc03c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#a2125cab5d645f482157b3dde4cbdc03c">ProcessVirtualPoint</a> (const VirtualIndexType &amp;virtualIndex, const VirtualPointType &amp;virtualPoint, const <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) override</td></tr>
 <tr class="separator:a2125cab5d645f482157b3dde4cbdc03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b2fd1d467c46dc0aaa1c29cc9b5a697"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#a4b2fd1d467c46dc0aaa1c29cc9b5a697">~CorrelationImageToImageMetricv4GetValueAndDerivativeThreader</a> () override</td></tr>
-<tr class="separator:a4b2fd1d467c46dc0aaa1c29cc9b5a697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64c69261001ebf85eebfda1f3d02ae1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#ad64c69261001ebf85eebfda1f3d02ae1">~CorrelationImageToImageMetricv4GetValueAndDerivativeThreader</a> () override=default</td></tr>
+<tr class="separator:ad64c69261001ebf85eebfda1f3d02ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -175,15 +175,15 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac280bedaf3702fb71acb8cc56295c1a3"><td class="memItemLeft" align="right" valign="top">TCorrelationMetric *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#ac280bedaf3702fb71acb8cc56295c1a3">m_CorrelationAssociate</a></td></tr>
 <tr class="separator:ac280bedaf3702fb71acb8cc56295c1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725b0a73c67a62f9ad7e0a15ef34e069"><td class="memItemLeft" align="right" valign="top">AlignedCorrelationMetricValueDerivativePerThreadStruct *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#a725b0a73c67a62f9ad7e0a15ef34e069">m_CorrelationMetricValueDerivativePerThreadVariables</a></td></tr>
-<tr class="separator:a725b0a73c67a62f9ad7e0a15ef34e069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a923da43011d3a5a311e54c810dda2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; AlignedCorrelationMetricValueDerivativePerThreadStruct[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#a07a923da43011d3a5a311e54c810dda2">m_CorrelationMetricValueDerivativePerThreadVariables</a></td></tr>
+<tr class="separator:a07a923da43011d3a5a311e54c810dda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetric, typename TCorrelationMetric&gt;<br />
 class itk::CorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;</div><p >Processes points for <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4.html" title="Class implementing normalized cross correlation image metric.">CorrelationImageToImageMetricv4</a> <code>GetValueAndDerivative</code>. </p>
 <p >Helper class for <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4.html" title="Class implementing normalized cross correlation image metric.">CorrelationImageToImageMetricv4</a> <code>To</code> compute the average pixel intensities of the fixed image and the moving image on the sampled points or inside the virtual image region: \( \bar f (CorrelationImageToImageMetricv4::m_AverageFix ) \) \( \bar m (CorrelationImageToImageMetricv4::m_AverageMov ) \). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00033">33</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00035">35</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5347e7354a1c7f3b91d658e09ccc6282" name="a5347e7354a1c7f3b91d658e09ccc6282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5347e7354a1c7f3b91d658e09ccc6282">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -199,7 +199,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00043">43</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00045">45</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -217,7 +217,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00067">67</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00069">69</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +235,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00066">66</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00068">68</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +253,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00053">53</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00055">55</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -271,7 +271,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00069">69</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00071">71</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00068">68</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00070">70</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +307,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00042">42</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00044">44</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -326,7 +326,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00040">40</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00042">42</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00041">41</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00043">43</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
@@ -376,8 +376,8 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 
 </div>
 </div>
-<a id="a4b2fd1d467c46dc0aaa1c29cc9b5a697" name="a4b2fd1d467c46dc0aaa1c29cc9b5a697"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b2fd1d467c46dc0aaa1c29cc9b5a697">&#9670;&nbsp;</a></span>~CorrelationImageToImageMetricv4GetValueAndDerivativeThreader()</h2>
+<a id="ad64c69261001ebf85eebfda1f3d02ae1" name="ad64c69261001ebf85eebfda1f3d02ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64c69261001ebf85eebfda1f3d02ae1">&#9670;&nbsp;</a></span>~CorrelationImageToImageMetricv4GetValueAndDerivativeThreader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +396,7 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -765,12 +765,12 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
 </div><div class="memdoc">
 <p >Internal pointer to the metric object in use by this threader. This will avoid costly dynamic casting in tight loops. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00154">154</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00157">157</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
-<a id="a725b0a73c67a62f9ad7e0a15ef34e069" name="a725b0a73c67a62f9ad7e0a15ef34e069"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725b0a73c67a62f9ad7e0a15ef34e069">&#9670;&nbsp;</a></span>m_CorrelationMetricValueDerivativePerThreadVariables</h2>
+<a id="a07a923da43011d3a5a311e54c810dda2" name="a07a923da43011d3a5a311e54c810dda2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a923da43011d3a5a311e54c810dda2">&#9670;&nbsp;</a></span>m_CorrelationMetricValueDerivativePerThreadVariables</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -781,17 +781,17 @@ template&lt;typename TDomainPartitioner , typename TImageToImageMetric , typenam
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AlignedCorrelationMetricValueDerivativePerThreadStruct* <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html">itk::CorrelationImageToImageMetricv4GetValueAndDerivativeThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;::m_CorrelationMetricValueDerivativePerThreadVariables</td>
+          <td class="memname">std::unique_ptr&lt;AlignedCorrelationMetricValueDerivativePerThreadStruct[]&gt; <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html">itk::CorrelationImageToImageMetricv4GetValueAndDerivativeThreader</a>&lt; TDomainPartitioner, TImageToImageMetric, TCorrelationMetric &gt;::m_CorrelationMetricValueDerivativePerThreadVariables</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00150">150</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00153">153</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
 
 </div>
 </div>
