@@ -688,7 +688,7 @@ template&lt;typename TMetric &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Estimate the scales of local steps. </p>
+<p >Estimate the scales of local steps. For each voxel, computes the impact of a step on its location as in ::EstimateStepScale. Then this impact is attributed to the corresponding local parameters. </p>
 
 <p>Implements <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#ad0fb9e260f346690d519263f8e85e1ab">itk::RegistrationParameterScalesEstimator&lt; TMetric &gt;</a>.</p>
 
@@ -719,7 +719,7 @@ template&lt;typename TMetric &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Estimate parameter scales. </p>
+<p >Estimate parameter scales from average Jacobian norms. For each parameter, compute the squared norm of its transform Jacobian, then average the squared norm over the sample points. This average is used as the scale of this parameter. </p>
 
 <p>Implements <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#afb873ace50e3094de9e9980855e42530">itk::RegistrationParameterScalesEstimator&lt; TMetric &gt;</a>.</p>
 

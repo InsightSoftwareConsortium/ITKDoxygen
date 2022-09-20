@@ -820,7 +820,7 @@ template&lt;typename TInputImage , typename TFeatureImage , typename TSharedData
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classitk_1_1RegionBasedLevelSetFunction.html#ac0fba8a7862509880eefc3675b9fd6fa">ScalarValueType</a> &amp;&#160;</td>
-          <td class="paramname"><em>pr</em>&#160;</td>
+          <td class="paramname"><em>product</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -834,16 +834,7 @@ template&lt;typename TInputImage , typename TFeatureImage , typename TSharedData
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Compute the overlap term. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">featIndex</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">pr</td><td>= \( \prod_{i \neq j} H(\phi_i)\) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>OverlapTerm = \( \sum_{i \neq j} H(\phi_i)\) </dd></dl>
+<p >Compute the overlap multiplicative factors for the penalty term (sum) and the background intensity fitting terms in multiphase level-sets. </p>
 
 <p>Implements <a class="el" href="classitk_1_1RegionBasedLevelSetFunction.html#ae90b1ce86327a0d7bf105843412e1cd7">itk::RegionBasedLevelSetFunction&lt; TInputImage, TFeatureImage, TSharedData &gt;</a>.</p>
 
@@ -918,8 +909,7 @@ template&lt;typename TInputImage , typename TFeatureImage , typename TSharedData
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Performs the narrow-band update of the Heaviside function for each voxel. The characteristic function of each region is recomputed (note the shared data which contains information from the other level sets). Using the new H values, the previous c_i are updated. </p>
+<p >Performs the narrow-band update of the Heaviside function for each voxel. The characteristic function of each region is recomputed (note the shared data which contains information from the other level sets). Using the new $H$ values, the previous $c_i$ are updated. </p>
 
 </div>
 </div>
@@ -964,6 +954,7 @@ template&lt;typename TInputImage , typename TFeatureImage , typename TSharedData
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Update the background and foreground constants for pixel updates. Called only when sparse filters are used to prevent iteration through the entire image. </p>
 
 </div>
 </div>
