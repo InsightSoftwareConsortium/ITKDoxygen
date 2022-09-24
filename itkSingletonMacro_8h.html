@@ -189,11 +189,11 @@ Macros</h2></td></tr>
 <div class="line">  {                                                                                                 \</div>
 <div class="line">    if (m_##VarName == <span class="keyword">nullptr</span>)                                                                     \</div>
 <div class="line">    {                                                                                               \</div>
-<div class="line">      static <span class="keyword">auto</span> setLambda = [](<span class="keywordtype">void</span> * a) {                                                        \</div>
+<div class="line">      const <span class="keyword">auto</span> setLambda = [](<span class="keywordtype">void</span> * a) {                                                         \</div>
 <div class="line">        delete m_##VarName;                                                                         \</div>
 <div class="line">        m_##VarName = <span class="keyword">static_cast&lt;</span>Type *<span class="keyword">&gt;</span>(a);                                                       \</div>
 <div class="line">      };                                                                                            \</div>
-<div class="line">      static <span class="keyword">auto</span> deleteLambda = []() {                                                             \</div>
+<div class="line">      const <span class="keyword">auto</span> deleteLambda = []() {                                                              \</div>
 <div class="line">        delete m_##VarName;                                                                         \</div>
 <div class="line">        m_##VarName = <span class="keyword">nullptr</span>;                                                                      \</div>
 <div class="line">      };                                                                                            \</div>
