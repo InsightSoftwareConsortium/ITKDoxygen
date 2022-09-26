@@ -88,7 +88,7 @@ $(function() {
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classitk_1_1QuadEdgeMeshFunctionBase-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::QuadEdgeMeshFunctionBase&lt; TMesh, TOutput &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">itk::QuadEdgeMeshFunctionBase&lt; TMesh, TOutput &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &#124; <a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKQuadEdgeMesh.html">Module ITKQuadEdgeMesh</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -284,7 +284,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TMesh, typename TOutput&gt;<br />
-class itk::QuadEdgeMeshFunctionBase&lt; TMesh, TOutput &gt;</div>
+class itk::QuadEdgeMeshFunctionBase&lt; TMesh, TOutput &gt;</div><p >Base class for mesh function object modifiers. </p>
+<p ><a class="el" href="classitk_1_1QuadEdgeMeshFunctionBase.html" title="Base class for mesh function object modifiers.">QuadEdgeMeshFunctionBase</a> is the base class for itkQE function objects specialised in <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> "small" (reduced in range) modification. Subclasses of <a class="el" href="classitk_1_1FunctionBase.html" title="Base class for all ITK function objects.">itk::FunctionBase</a> cannot modify their InputType since the signature of their Evaluate( const InputType&amp; ) method guarantees it. Consider a method that modifies (the geometry, the connectivity or both) a mesh. For large modifications of this mesh we follow the classical itk Filter schema, which implies duplicating the mesh which can be space consuming. But for small modifications (think of the Euler operators) that an algorithm needs to apply many times, this systematic duplication can be daunting. <a class="el" href="classitk_1_1QuadEdgeMeshFunctionBase.html" title="Base class for mesh function object modifiers.">QuadEdgeMeshFunctionBase</a> thus offers a lightweight alternative to itk Filter. Subclasses of <a class="el" href="classitk_1_1QuadEdgeMeshFunctionBase.html" title="Base class for mesh function object modifiers.">QuadEdgeMeshFunctionBase</a>, which should override Evaluate(), are function objects that apply reduced and localised modifications (geometry, or connectivity) on the InputType mesh.</p>
+<p >This class is template over the mesh type (to be modified) and the output (usually a created/deleted vertex or face) type. </p>
+
 <p class="definition">Definition at line <a class="el" href="itkQuadEdgeMeshFunctionBase_8h_source.html#l00055">55</a> of file <a class="el" href="itkQuadEdgeMeshFunctionBase_8h_source.html">itkQuadEdgeMeshFunctionBase.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adef0e5da9d9fcbf26e87b576914bd425" name="adef0e5da9d9fcbf26e87b576914bd425"></a>
