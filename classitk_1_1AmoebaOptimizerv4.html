@@ -477,8 +477,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5b3d0005e8128997c5348172fc2ce67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3483cbbc3d073b5ed226ad43e6f2aa48"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a3483cbbc3d073b5ed226ad43e6f2aa48">m_StopConditionDescription</a></td></tr>
 <tr class="separator:a3483cbbc3d073b5ed226ad43e6f2aa48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58053c4518553dccd2b3c1b0ca0e1f57"><td class="memItemLeft" align="right" valign="top">vnl_amoeba *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a58053c4518553dccd2b3c1b0ca0e1f57">m_VnlOptimizer</a></td></tr>
-<tr class="separator:a58053c4518553dccd2b3c1b0ca0e1f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd6ff572c2d85c5dc457a32b365930d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; vnl_amoeba &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a6dd6ff572c2d85c5dc457a32b365930d">m_VnlOptimizer</a></td></tr>
+<tr class="separator:a6dd6ff572c2d85c5dc457a32b365930d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -515,7 +515,7 @@ Additional Inherited Members</h2></td></tr>
 <p >The methods AutomaticInitialSimplex() and <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a5b8dba797da8b8e0c0b4dfeed6ac7ac8">SetInitialSimplexDelta()</a> control whether the optimizer defines the initial simplex automatically (by constructing a very small simplex around the initial position) or uses a user supplied simplex size.</p>
 <p >The method <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#acd784ed8939b7a6e42dfe68262c6f023">SetOptimizeWithRestarts()</a> indicates that the amoeabe algorithm should be rerun after if converges. This heuristic increases the chances of escaping from a local optimum. Each time the simplex is initialized with the best solution obtained by the previous runs. The edge length is half of that from the previous iteration. The heuristic is terminated if the total number of iterations is greater-equal than the maximal number of iterations (SetNumberOfIterations) or the difference between the current function value and the best function value is less than a threshold (SetFunctionConvergenceTolerance) and max(|best_parameters_i - current_parameters_i|) is less than a threshold (SetParametersConvergenceTolerance). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00061">61</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00062">62</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4c87b722921a363c7c4389b21c981caa" name="a4c87b722921a363c7c4389b21c981caa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c87b722921a363c7c4389b21c981caa">&#9670;&nbsp;</a></span>ConstPointer</h2>
@@ -529,7 +529,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00070">70</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00071">71</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -553,7 +553,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00154">154</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00155">155</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -570,7 +570,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >InternalParameters type alias. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00083">83</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00084">84</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -587,7 +587,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Parameters type. It defines a position in the optimization search space. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00080">80</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00081">81</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +603,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00069">69</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00070">70</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -620,7 +620,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Standard "Self" type alias. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00067">67</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00068">68</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +636,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00068">68</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00069">69</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1257,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00163">163</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00164">164</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1281,7 +1281,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00162">162</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00163">163</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1305,7 +1305,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00164">164</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00165">165</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1329,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00165">165</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00166">166</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1353,7 +1353,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00161">161</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00162">162</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1377,12 +1377,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00168">168</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00169">169</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
-<a id="a58053c4518553dccd2b3c1b0ca0e1f57" name="a58053c4518553dccd2b3c1b0ca0e1f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58053c4518553dccd2b3c1b0ca0e1f57">&#9670;&nbsp;</a></span>m_VnlOptimizer</h2>
+<a id="a6dd6ff572c2d85c5dc457a32b365930d" name="a6dd6ff572c2d85c5dc457a32b365930d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd6ff572c2d85c5dc457a32b365930d">&#9670;&nbsp;</a></span>m_VnlOptimizer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1391,7 +1391,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vnl_amoeba* itk::AmoebaOptimizerv4::m_VnlOptimizer</td>
+          <td class="memname">std::unique_ptr&lt;vnl_amoeba&gt; itk::AmoebaOptimizerv4::m_VnlOptimizer</td>
         </tr>
       </table>
   </td>
@@ -1401,7 +1401,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00166">166</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00167">167</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
 
 </div>
 </div>
