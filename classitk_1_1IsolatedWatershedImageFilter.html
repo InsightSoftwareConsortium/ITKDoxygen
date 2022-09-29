@@ -1849,7 +1849,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 
 <p>Verifies that the input images occupy the same physical space and the each index is at the same physical location. </p>
-<p >The default implementation of the PropagateRequestedRegion methods copies the index and size from the output to the input. This makes an implicit assumption that the images occupy the same physical location at each voxel. This method enforces that they are the same.</p>
+<p >The default implementation of the <a class="el" href="classitk_1_1ProcessObject.html#ab0cc3a4eedea62c0d727ddd632352f98">PropagateRequestedRegion()</a> methods copies the index and size from the output to the input. This makes an implicit assumption that the images occupy the same physical location at each voxel. This method enforces that they are the same.</p>
 <p >This implementation verifies that all input images of InputImageDimensions have the same origin, spacing and direction.</p>
 <p >Filters which do not expect all input images to be at the same physical location should over-ride this method. Also filters whose inputs are different dimensions may need to override this method.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ProcessObject.html#a543bb8b3a5b3a5ed92de7dc8857cc64a" title="Verifies that the inputs meta-data is consistent and valid for continued execution of the pipeline,...">ProcessObject::VerifyInputInformation</a> </dd></dl>
