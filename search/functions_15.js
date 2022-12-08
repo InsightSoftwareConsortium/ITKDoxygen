@@ -80,7 +80,7 @@ var searchData=
   ['versortransform_77',['VersorTransform',['../classitk_1_1VersorTransform.html#a4c11dee65b31b5cc2e798fd34888cfed',1,'itk::VersorTransform::VersorTransform(const MatrixType &amp;matrix, const OutputVectorType &amp;offset)'],['../classitk_1_1VersorTransform.html#a1bee0729863eb875189348ce946e23ea',1,'itk::VersorTransform::VersorTransform(unsigned int parametersDimension)'],['../classitk_1_1VersorTransform.html#aeea78061277707283cdbd5a9e0b246ed',1,'itk::VersorTransform::VersorTransform()']]],
   ['versortransformoptimizer_78',['VersorTransformOptimizer',['../classitk_1_1VersorTransformOptimizer.html#a3523eaacc7ce151a680206f39544f1b3',1,'itk::VersorTransformOptimizer']]],
   ['vertexbegin_79',['VertexBegin',['../classitk_1_1VoronoiDiagram2D.html#a09efd0fcf0c66546a79dba14b8e2d2de',1,'itk::VoronoiDiagram2D']]],
-  ['vertexcell_80',['VertexCell',['../classitk_1_1VertexCell.html#a8244575db548517b8b261a61f13cf576',1,'itk::VertexCell']]],
+  ['vertexcell_80',['VertexCell',['../classitk_1_1VertexCell.html#a2c47bd8e410927f73d866416dfc7dc21',1,'itk::VertexCell']]],
   ['vertexconnecthighpixelson_81',['VertexConnectHighPixelsOn',['../classitk_1_1ContourExtractor2DImageFilter.html#a74ac24e2d6242a02c762145795ecca9c',1,'itk::ContourExtractor2DImageFilter']]],
   ['vertexend_82',['VertexEnd',['../classitk_1_1VoronoiDiagram2D.html#a59a318718f5a3276d9277655670ef346',1,'itk::VoronoiDiagram2D']]],
   ['vertexlistclear_83',['VertexListClear',['../classitk_1_1VoronoiDiagram2D.html#abf6fa58ec0aae69850d8ded595a332aa',1,'itk::VoronoiDiagram2D']]],

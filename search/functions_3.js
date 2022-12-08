@@ -132,7 +132,7 @@ var searchData=
   ['divideorzeroout_129',['DivideOrZeroOut',['../classitk_1_1Functor_1_1DivideOrZeroOut.html#a2d1eb8573eb055da1f36a9844861e622',1,'itk::Functor::DivideOrZeroOut']]],
   ['divideorzerooutimagefilter_130',['DivideOrZeroOutImageFilter',['../classitk_1_1DivideOrZeroOutImageFilter.html#a057886321d17ca7d3c84d8763b5c1ea6',1,'itk::DivideOrZeroOutImageFilter']]],
   ['doanchorface_131',['DoAnchorFace',['../namespaceitk.html#a6d28540ff2f91214577ae5859ea66ab5',1,'itk']]],
-  ['doconvertbuffer_132',['DoConvertBuffer',['../classitk_1_1ImageFileReader.html#a1f137411a1c1f46c834296bfba729560',1,'itk::ImageFileReader::DoConvertBuffer()'],['../classitk_1_1VideoFileReader.html#a40e272401ccd480dde5f2af518b4887c',1,'itk::VideoFileReader::DoConvertBuffer()']]],
+  ['doconvertbuffer_132',['DoConvertBuffer',['../classitk_1_1ImageFileReader.html#a580156c2b7e76395557265f20565c170',1,'itk::ImageFileReader::DoConvertBuffer()'],['../classitk_1_1VideoFileReader.html#a848ac8197aaf091b1c9f97dcb253b963',1,'itk::VideoFileReader::DoConvertBuffer()']]],
   ['doestimatelearningrateateachiterationon_133',['DoEstimateLearningRateAtEachIterationOn',['../classitk_1_1GradientDescentOptimizerv4Template.html#af3860509025a3a42678944153e53528d',1,'itk::GradientDescentOptimizerv4Template']]],
   ['doestimatelearningrateonceon_134',['DoEstimateLearningRateOnceOn',['../classitk_1_1GradientDescentOptimizerv4Template.html#ad026ee8b093f4fd727c8d43be445eadc',1,'itk::GradientDescentOptimizerv4Template']]],
   ['doestimatescaleson_135',['DoEstimateScalesOn',['../classitk_1_1ObjectToObjectOptimizerBaseTemplate.html#abe78585a6a3aa3ed8c25112d04244110',1,'itk::ObjectToObjectOptimizerBaseTemplate']]],
