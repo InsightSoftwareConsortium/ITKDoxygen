@@ -68,6 +68,5 @@ var searchData=
   ['outputdataobjectiterator_65',['OutputDataObjectIterator',['../classitk_1_1OutputDataObjectIterator.html',1,'itk']]],
   ['outputtypespecializationstructtype_66',['OutputTypeSpecializationStructType',['../structitk_1_1CentralDifferenceImageFunction_1_1OutputTypeSpecializationStructType.html',1,'itk::CentralDifferenceImageFunction']]],
   ['outputwindow_67',['OutputWindow',['../classitk_1_1OutputWindow.html',1,'itk']]],
-  ['overrideinformation_68',['OverrideInformation',['../structitk_1_1ObjectFactoryBase_1_1OverrideInformation.html',1,'itk::ObjectFactoryBase']]],
-  ['overundercolormapfunction_69',['OverUnderColormapFunction',['../classitk_1_1Function_1_1OverUnderColormapFunction.html',1,'itk::Function']]]
+  ['overundercolormapfunction_68',['OverUnderColormapFunction',['../classitk_1_1Function_1_1OverUnderColormapFunction.html',1,'itk::Function']]]
 ];
