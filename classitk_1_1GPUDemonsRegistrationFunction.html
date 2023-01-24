@@ -589,7 +589,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >FixedImage image neighborhood iterator type. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00236">236</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00243">243</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -979,7 +979,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >This method is called by a finite difference solver image filter at each pixel that does not lie on a data set boundary </p>
+<p >Compute update at the specified neighbourhood.</p>
+<p >Called by a finite difference solver image filter at each pixel that does not lie on a data set boundary. </p>
 
 <p>Implements <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#aa7c71d0dcc6f67de57c8f39737d106f5">itk::FiniteDifferenceFunction&lt; TDisplacementField &gt;</a>.</p>
 
@@ -1069,9 +1070,10 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Get the metric value. The metric value is the mean square difference in intensity between the fixed image and transforming moving image computed over the the overlapping region between the two images. </p>
+<p >Get the metric value.</p>
+<p >The metric value is the mean square difference in intensity between the fixed image and transforming moving image computed over the the overlapping region between the two images. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00191">191</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00198">198</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1161,7 +1163,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Get the rms change in deformation field. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00198">198</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00205">205</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1193,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Select if the fixed image or moving image gradient is used for computing the demon forces. The fixed image gradient is used by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00212">212</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00219">219</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1267,6 +1269,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Compute update at the specified neighbourhood. </p>
 
 </div>
 </div>
@@ -1294,7 +1297,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Release GPU buffers for computing metric statistics </p>
+<p >Release GPU buffers for computing metric statistics. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1GPUFiniteDifferenceFunction.html#a57f3b6a09b2eac3be39159d84617502c">itk::GPUFiniteDifferenceFunction&lt; TDisplacementField &gt;</a>.</p>
 
@@ -1446,7 +1449,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Release memory for global data structure. </p>
+<p >Release memory for global data structure.</p>
+<p >Updates the metric and releases the per-thread-global data. </p>
 
 <p>Implements <a class="el" href="classitk_1_1FiniteDifferenceFunction.html#a9a876853d3a8ec1e0993d539f587851d">itk::FiniteDifferenceFunction&lt; TDisplacementField &gt;</a>.</p>
 
@@ -1539,7 +1543,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Select if the fixed image or moving image gradient is used for computing the demon forces. The fixed image gradient is used by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00207">207</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00214">214</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1593,7 +1597,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00248">248</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00255">255</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1620,7 +1624,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Threshold below which the denominator term is considered zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00271">271</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00278">278</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1647,7 +1651,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p ><a class="el" href="namespaceitk_1_1Function.html">Function</a> to compute derivatives of the fixed image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00258">258</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00265">265</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1673,7 +1677,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00285">285</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00292">292</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1699,7 +1703,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00286">286</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00293">293</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1725,7 +1729,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00287">287</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00294">294</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1752,7 +1756,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Threshold below which two intensity value are assumed to match. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00274">274</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00281">281</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1779,7 +1783,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >The metric value is the mean square difference in intensity between the fixed image and transforming moving image computed over the the overlapping region between the two images. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00279">279</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00286">286</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1806,7 +1810,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Mutex lock to protect modification to metric. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00290">290</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00297">297</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1833,7 +1837,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p ><a class="el" href="namespaceitk_1_1Function.html">Function</a> to compute derivatives of the moving image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00261">261</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00268">268</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1860,7 +1864,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p ><a class="el" href="namespaceitk_1_1Function.html">Function</a> to interpolate the moving image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00265">265</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00272">272</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1886,7 +1890,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00255">255</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00262">262</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1912,7 +1916,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00281">281</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00288">288</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1938,7 +1942,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00282">282</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00289">289</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1964,7 +1968,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00283">283</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00290">290</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -1990,7 +1994,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00280">280</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00287">287</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -2017,7 +2021,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >The global timestep. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00268">268</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00275">275</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -2043,7 +2047,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00262">262</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00269">269</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>
@@ -2070,7 +2074,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Cache fixed image information. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00254">254</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html#l00261">261</a> of file <a class="el" href="itkGPUDemonsRegistrationFunction_8h_source.html">itkGPUDemonsRegistrationFunction.h</a>.</p>
 
 </div>
 </div>

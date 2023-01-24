@@ -89,8 +89,10 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ImageToImageMetric-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">itk::ImageToImageMetric&lt; TFixedImage, TMovingImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Filters.html">Filters</a> &raquo; <a class="el" href="group__RegistrationFilters.html">Registration Filters</a> &raquo; <a class="el" href="group__RegistrationComponents.html">Components of Registration Methods</a> &raquo; <a class="el" href="group__RegistrationMetrics.html">Similarity Metrics of Registration Methods</a> &#124; <a class="el" href="group__Group-Registration.html">Group Registration</a> &raquo; <a class="el" href="group__ITKRegistrationCommon.html">Module ITKRegistrationCommon</a></div></div></div>
 </div><!--header-->
@@ -500,6 +502,18 @@ Protected Types</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a63c0c845280ca6f921398a3c72bbf0bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a63c0c845280ca6f921398a3c72bbf0bb">ComputeImageDerivatives</a> (const <a class="el" href="classitk_1_1ImageToImageMetric.html#a7c3c4962190ef5bbafeedcb7016bc178">MovingImagePointType</a> &amp;mappedPoint, <a class="el" href="classitk_1_1ImageToImageMetric.html#a53c025d9244a30c0449a2adffaeeb320">ImageDerivativesType</a> &amp;gradient, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const</td></tr>
 <tr class="separator:a63c0c845280ca6f921398a3c72bbf0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8a2b37172e95b5b75003ca1c35ad6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a9f8a2b37172e95b5b75003ca1c35ad6b">GetValueAndDerivativeMultiThreadedInitiate</a> () const</td></tr>
+<tr class="separator:a9f8a2b37172e95b5b75003ca1c35ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7624ece18dbcfac2ebd5a3d99f3f91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7c7624ece18dbcfac2ebd5a3d99f3f91">GetValueAndDerivativeMultiThreadedPostProcessInitiate</a> () const</td></tr>
+<tr class="separator:a7c7624ece18dbcfac2ebd5a3d99f3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7754393002e73c1558b5c16d025d9b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#af7754393002e73c1558b5c16d025d9b6">GetValueAndDerivativeThread</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const</td></tr>
+<tr class="separator:af7754393002e73c1558b5c16d025d9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35664ac2a75e2bab9f836c9dbd2d55e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a35664ac2a75e2bab9f836c9dbd2d55e5">GetValueAndDerivativeThreadPostProcess</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, bool) const</td></tr>
+<tr class="separator:a35664ac2a75e2bab9f836c9dbd2d55e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5772201dcb38c7f3252b70ff310e356"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#af5772201dcb38c7f3252b70ff310e356">GetValueAndDerivativeThreadPreProcess</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, bool) const</td></tr>
+<tr class="separator:af5772201dcb38c7f3252b70ff310e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a566154bd928c2722b7a1ee6812dcd0cf"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a566154bd928c2722b7a1ee6812dcd0cf">GetValueAndDerivativeThreadProcessSample</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>, const <a class="el" href="classitk_1_1ImageToImageMetric.html#a7c3c4962190ef5bbafeedcb7016bc178">MovingImagePointType</a> &amp;, double, const <a class="el" href="classitk_1_1ImageToImageMetric.html#a53c025d9244a30c0449a2adffaeeb320">ImageDerivativesType</a> &amp;) const</td></tr>
+<tr class="separator:a566154bd928c2722b7a1ee6812dcd0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a454d8b0bf6bc55ec3e31c058a3d2ebe0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a454d8b0bf6bc55ec3e31c058a3d2ebe0">ImageToImageMetric</a> ()</td></tr>
 <tr class="separator:a454d8b0bf6bc55ec3e31c058a3d2ebe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff4206a6c95f19d25e09d4a4d38f012a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#aff4206a6c95f19d25e09d4a4d38f012a">PreComputeTransformValues</a> ()</td></tr>
@@ -512,6 +526,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a64cd37b658972625aa7563f846b70753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1808ea2a2c61644cced0fe122a9083a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#ae1808ea2a2c61644cced0fe122a9083a">SampleFullFixedImageRegion</a> (<a class="el" href="classitk_1_1ImageToImageMetric.html#aca6128efaee8b01a2a9a6404f3503231">FixedImageSampleContainer</a> &amp;samples) const</td></tr>
 <tr class="separator:ae1808ea2a2c61644cced0fe122a9083a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9384d777abd3652647ef8e5f87c828d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a9384d777abd3652647ef8e5f87c828d2">SynchronizeTransforms</a> () const</td></tr>
+<tr class="separator:a9384d777abd3652647ef8e5f87c828d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad469fbba2bc26dea9f794b6e0be41967"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#ad469fbba2bc26dea9f794b6e0be41967">TransformPoint</a> (unsigned int sampleNumber, <a class="el" href="classitk_1_1ImageToImageMetric.html#a7c3c4962190ef5bbafeedcb7016bc178">MovingImagePointType</a> &amp;mappedPoint, bool &amp;sampleOk, double &amp;movingImageValue, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const</td></tr>
 <tr class="separator:ad469fbba2bc26dea9f794b6e0be41967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a400e4e8f28962f32222ae9ef50be21e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a400e4e8f28962f32222ae9ef50be21e5">TransformPointWithDerivatives</a> (unsigned int sampleNumber, <a class="el" href="classitk_1_1ImageToImageMetric.html#a7c3c4962190ef5bbafeedcb7016bc178">MovingImagePointType</a> &amp;mappedPoint, bool &amp;sampleOk, double &amp;movingImageValue, <a class="el" href="classitk_1_1ImageToImageMetric.html#a53c025d9244a30c0449a2adffaeeb320">ImageDerivativesType</a> &amp;movingImageGradient, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const</td></tr>
@@ -554,6 +570,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a249b284b9ce35d6a6184915e15bc9cc7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a249b284b9ce35d6a6184915e15bc9cc7">GetValueAndDerivativeMultiThreaded</a> (void *workunitInfoAsVoid)</td></tr>
+<tr class="separator:a249b284b9ce35d6a6184915e15bc9cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41685a785754f9d994de6c618905c98"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#ab41685a785754f9d994de6c618905c98">GetValueAndDerivativeMultiThreadedPostProcess</a> (void *workunitInfoAsVoid)</td></tr>
+<tr class="separator:ab41685a785754f9d994de6c618905c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -641,6 +664,11 @@ Protected Attributes</h2></td></tr>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8ba240b35e1fcb25173131ce4141adb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageToImageMetric.html#a2656994606403b3b490326575ab9dd93">FixedImageRegionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a8ba240b35e1fcb25173131ce4141adb3">m_FixedImageRegion</a></td></tr>
+<tr class="separator:a8ba240b35e1fcb25173131ce4141adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ef98ba66c16a4de8c277725c19a527c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MultiThreaderBase.html#a4f9cba4bbab0cc40d96c955ea851e13e">MultiThreaderType::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a9ef98ba66c16a4de8c277725c19a527c">m_Threader</a></td></tr>
 <tr class="separator:a9ef98ba66c16a4de8c277725c19a527c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37af08e691c229e6d495b7ff8accd3b1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classitk_1_1ImageToImageMetric_1_1ConstantPointerWrapper.html">ConstantPointerWrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a37af08e691c229e6d495b7ff8accd3b1">m_ConstSelfWrapper</a></td></tr>
@@ -651,8 +679,6 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:a90e40cb1e9c51e7c390f017dba8b5fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f77f488213bfcab295537762e7dcbf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#ae8f77f488213bfcab295537762e7dcbf">m_WithinThreadPostProcess</a> { false }</td></tr>
 <tr class="separator:ae8f77f488213bfcab295537762e7dcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ba240b35e1fcb25173131ce4141adb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageToImageMetric.html#a2656994606403b3b490326575ab9dd93">FixedImageRegionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a8ba240b35e1fcb25173131ce4141adb3">m_FixedImageRegion</a></td></tr>
-<tr class="separator:a8ba240b35e1fcb25173131ce4141adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a648c39771d487ca12203505fa3aa36e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a648c39771d487ca12203505fa3aa36e0">GetValueMultiThreadedInitiate</a> () const</td></tr>
 <tr class="separator:a648c39771d487ca12203505fa3aa36e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3757633ee46d324ee92ad71be6703fb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a3757633ee46d324ee92ad71be6703fb4">GetValueMultiThreadedPostProcessInitiate</a> () const</td></tr>
@@ -665,28 +691,10 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:a6d3409d4019f36023468f25e4bc9e0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74bb3b480ac54492084fba9f476cf608"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a74bb3b480ac54492084fba9f476cf608">GetValueThreadPostProcess</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, bool) const</td></tr>
 <tr class="separator:a74bb3b480ac54492084fba9f476cf608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f8a2b37172e95b5b75003ca1c35ad6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a9f8a2b37172e95b5b75003ca1c35ad6b">GetValueAndDerivativeMultiThreadedInitiate</a> () const</td></tr>
-<tr class="separator:a9f8a2b37172e95b5b75003ca1c35ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7624ece18dbcfac2ebd5a3d99f3f91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7c7624ece18dbcfac2ebd5a3d99f3f91">GetValueAndDerivativeMultiThreadedPostProcessInitiate</a> () const</td></tr>
-<tr class="separator:a7c7624ece18dbcfac2ebd5a3d99f3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7754393002e73c1558b5c16d025d9b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#af7754393002e73c1558b5c16d025d9b6">GetValueAndDerivativeThread</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId) const</td></tr>
-<tr class="separator:af7754393002e73c1558b5c16d025d9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5772201dcb38c7f3252b70ff310e356"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#af5772201dcb38c7f3252b70ff310e356">GetValueAndDerivativeThreadPreProcess</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, bool) const</td></tr>
-<tr class="separator:af5772201dcb38c7f3252b70ff310e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a566154bd928c2722b7a1ee6812dcd0cf"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a566154bd928c2722b7a1ee6812dcd0cf">GetValueAndDerivativeThreadProcessSample</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>, const <a class="el" href="classitk_1_1ImageToImageMetric.html#a7c3c4962190ef5bbafeedcb7016bc178">MovingImagePointType</a> &amp;, double, const <a class="el" href="classitk_1_1ImageToImageMetric.html#a53c025d9244a30c0449a2adffaeeb320">ImageDerivativesType</a> &amp;) const</td></tr>
-<tr class="separator:a566154bd928c2722b7a1ee6812dcd0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35664ac2a75e2bab9f836c9dbd2d55e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a35664ac2a75e2bab9f836c9dbd2d55e5">GetValueAndDerivativeThreadPostProcess</a> (<a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>, bool) const</td></tr>
-<tr class="separator:a35664ac2a75e2bab9f836c9dbd2d55e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9384d777abd3652647ef8e5f87c828d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a9384d777abd3652647ef8e5f87c828d2">SynchronizeTransforms</a> () const</td></tr>
-<tr class="separator:a9384d777abd3652647ef8e5f87c828d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc87ef868ce08c1ef14809a4e95f3fd3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#adc87ef868ce08c1ef14809a4e95f3fd3">GetValueMultiThreaded</a> (void *workunitInfoAsVoid)</td></tr>
 <tr class="separator:adc87ef868ce08c1ef14809a4e95f3fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f85ef2ad9652b26d49fe353435b904"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a42f85ef2ad9652b26d49fe353435b904">GetValueMultiThreadedPostProcess</a> (void *workunitInfoAsVoid)</td></tr>
 <tr class="separator:a42f85ef2ad9652b26d49fe353435b904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a249b284b9ce35d6a6184915e15bc9cc7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a249b284b9ce35d6a6184915e15bc9cc7">GetValueAndDerivativeMultiThreaded</a> (void *workunitInfoAsVoid)</td></tr>
-<tr class="separator:a249b284b9ce35d6a6184915e15bc9cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab41685a785754f9d994de6c618905c98"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#ab41685a785754f9d994de6c618905c98">GetValueAndDerivativeMultiThreadedPostProcess</a> (void *workunitInfoAsVoid)</td></tr>
-<tr class="separator:ab41685a785754f9d994de6c618905c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -737,7 +745,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00460">460</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00468">468</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -764,7 +772,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >If a BSplineInterpolationFunction is used, this class obtain image derivatives from the BSpline interpolator. Otherwise, image derivatives are computed using central differencing. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00467">467</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00475">475</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -790,7 +798,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00461">461</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00469">469</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -816,7 +824,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00455">455</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00463">463</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -842,7 +850,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00457">457</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00465">465</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -868,7 +876,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00448">448</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00456">456</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -894,7 +902,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00453">453</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00461">461</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -920,7 +928,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00451">451</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00459">459</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -985,7 +993,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Typedefs for using central difference calculator. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00470">470</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00478">478</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1202,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1ImageToImageMetric_1_1FixedImageSamplePoint.html">FixedImageSamplePoint</a> type alias support </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00382">382</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00383">383</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1337,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00471">471</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00479">479</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1355,7 +1363,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00456">456</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00464">464</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1545,7 +1553,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00459">459</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00467">467</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1600,7 +1608,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00335">335</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00336">336</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1791,7 +1799,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00452">452</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00460">460</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -1950,7 +1958,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Compute image derivatives at a point. </p>
+<p >Compute image derivatives at a point using a central difference function if we are not using a BSplineInterpolator, which includes derivatives. </p>
 
 </div>
 </div>
@@ -2321,9 +2329,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Number of spatial samples to used to compute metric This sets the number of samples. <br  />
- </p>
-
+<p >Number of spatial samples to compute the metric. </p><pre class="fragment">Sets the number of samples.
+</pre> 
 </div>
 </div>
 <a id="a6ec743bd60d0ca5f4d8ac72e8fd93ab8" name="a6ec743bd60d0ca5f4d8ac72e8fd93ab8"></a>
@@ -2442,7 +2449,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00253">253</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00254">254</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -2500,7 +2507,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Get the <a class="el" href="classThreader.html">Threader</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00339">339</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00340">340</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -2665,7 +2672,6 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 </div>
 </div>
@@ -2693,7 +2699,6 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 </div>
 </div>
@@ -2722,7 +2727,6 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 </div>
 </div>
@@ -2750,7 +2754,6 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 </div>
 </div>
@@ -2779,7 +2782,6 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 </div>
 </div>
@@ -2818,11 +2820,10 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#af975b4794705983efbf167e99f5373a1">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00648">648</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00670">670</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -2861,11 +2862,10 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a7704b3f42502c09083fc1051b037b1ce">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00636">636</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00658">658</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -2922,11 +2922,10 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a5b5cb4b9bc01b68f232f2a1bd61468c1">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, and <a class="el" href="classitk_1_1MeanSquaresImageToImageMetric.html#af9de666c9ff0b2603f49a6b5b139f293">itk::MeanSquaresImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00639">639</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00661">661</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -2955,7 +2954,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measure. </p>
 
 </div>
 </div>
@@ -2983,7 +2982,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
 </div>
 </div>
@@ -3012,7 +3011,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measure. </p>
 
 </div>
 </div>
@@ -3040,7 +3039,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
 </div>
 </div>
@@ -3069,7 +3068,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
 </div>
 </div>
@@ -3108,11 +3107,11 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ad39a95d1e0b0244a4630e87ae577a65c">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00617">617</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00638">638</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -3151,11 +3150,11 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measure. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#adb269f00418ebcf8ad066127cce8e1b9">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00606">606</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00627">627</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -3206,11 +3205,11 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#af822052176ab6b44aa0ab0f47d63a2be">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, and <a class="el" href="classitk_1_1MeanSquaresImageToImageMetric.html#a5613ba7c7804ae038c46c0acacb233cb">itk::MeanSquaresImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00609">609</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00630">630</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -3238,8 +3237,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Initialize the Metric by making sure that all the components are present and plugged together correctly <br  />
- </p>
+<p >Initialize the Metric by making sure that all the components are present and plugged together correctly. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1CompareHistogramImageToImageMetric.html#aedd6c13bcd2cc998f353a91b6ad54359">itk::CompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, <a class="el" href="classitk_1_1GradientDifferenceImageToImageMetric.html#a31a1ddfcc7afee4ff2d515ece13eb918">itk::GradientDifferenceImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, <a class="el" href="classitk_1_1HistogramImageToImageMetric.html#aa7c3835e5dca16dcf03791ac3c4c25e1">itk::HistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, <a class="el" href="classitk_1_1KullbackLeiblerCompareHistogramImageToImageMetric.html#a833385af12104f499576c0229ee861a9">itk::KullbackLeiblerCompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a6e64561baff1464d7b71fcf14e3ac541">itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>, and <a class="el" href="classitk_1_1MeanSquaresImageToImageMetric.html#ab1de2e6900ace1094ca0e7f6c20949ae">itk::MeanSquaresImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</a>.</p>
 
@@ -3297,6 +3295,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Cache pre-transformed points, weights and indices. </p>
 
 </div>
 </div>
@@ -3410,6 +3409,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Use the indexes that have been passed to the metric. </p>
 
 </div>
 </div>
@@ -3438,7 +3438,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Uniformly select a sample set from the fixed image domain. </p>
+<p >Uniformly select a sample set from the fixed image domain.</p>
+<p >Samples the fixed image using a random walk. </p>
 
 </div>
 </div>
@@ -3467,7 +3468,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Gather all the pixels from the fixed image domain. </p>
+<p >Sample the fixed image domain using all pixels in the Fixed image region.</p>
+<p >Gathers all the pixels from the fixed image domain. </p>
 
 </div>
 </div>
@@ -3801,9 +3803,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Number of spatial samples to used to compute metric This sets the number of samples. <br  />
- </p>
-
+<p >Number of spatial samples to compute the metric. </p><pre class="fragment">Sets the number of samples.
+</pre> 
 </div>
 </div>
 <a id="a5ebef78234e8c4344d49dcd1c1883c02" name="a5ebef78234e8c4344d49dcd1c1883c02"></a>
@@ -3834,7 +3835,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 <p >Number of spatial samples to used to compute metric This sets the number of samples. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00247">247</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00248">248</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4046,7 +4047,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Synchronizes the threader transforms with the transform member variable.</p>
+<p >This method can be const because we are not altering the m_ThreaderTransform pointer. We are altering the object that m_ThreaderTransform[idx] points at.* This is allowed under C++ const rules. </p>
 
 </div>
 </div>
@@ -4103,7 +4105,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> a point from FixedImage domain to MovingImage domain. This function also checks if mapped point is within support region. </p>
+<p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> a point from FixedImage domain to MovingImage domain.</p>
+<p >This function also checks if mapped point is within support region. </p>
 
 </div>
 </div>
@@ -4166,6 +4169,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> a point from FixedImage domain to MovingImage domain.</p>
+<p >This function also checks if mapped point is within support region. </p>
 
 </div>
 </div>
@@ -4194,7 +4199,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00283">283</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00284">284</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4223,7 +4228,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00277">277</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00278">278</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4278,7 +4283,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00446">446</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00454">454</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4331,7 +4336,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Pointer to BSplineInterpolator. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00515">515</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00530">530</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4357,7 +4362,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00480">480</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00488">488</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4383,7 +4388,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00477">477</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00485">485</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4409,7 +4414,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00473">473</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00481">481</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4435,7 +4440,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00486">486</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00494">494</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4461,7 +4466,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00476">476</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00484">484</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4487,7 +4492,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00485">485</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00493">493</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4513,7 +4518,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00475">475</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00483">483</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4539,7 +4544,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00418">418</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00426">426</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4564,9 +4569,9 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00585">585</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00602">602</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4593,7 +4598,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Pointer to central difference calculator. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00518">518</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00533">533</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4619,7 +4624,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00406">406</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00414">414</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4645,7 +4650,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00376">376</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00377">377</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4671,7 +4676,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00421">421</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00429">429</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4696,9 +4701,8 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00658">658</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00682">682</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4725,7 +4729,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Container to store a set of points and fixed image values. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00396">396</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00404">404</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4751,7 +4755,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00379">379</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00380">380</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4777,7 +4781,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00419">419</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00427">427</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4803,7 +4807,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00416">416</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00424">424</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4830,7 +4834,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Boolean.html" title="An alternative to bool for additional thread safety.">Boolean</a> to indicate if the interpolator BSpline. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00512">512</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00527">527</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4856,7 +4860,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00407">407</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00415">415</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4882,7 +4886,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00422">422</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00430">430</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4908,7 +4912,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00400">400</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00408">408</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4934,7 +4938,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00398">398</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00406">406</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4960,7 +4964,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00404">404</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00412">412</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -4986,7 +4990,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00424">424</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00432">432</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5013,7 +5017,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >The number of BSpline transform weights is the number of of parameter in the support region (per dimension ). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00444">444</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00452">452</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5039,7 +5043,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00431">431</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00439">439</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5065,7 +5069,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00429">429</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00437">437</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5090,9 +5094,9 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00584">584</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00601">601</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5118,7 +5122,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00489">489</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00497">497</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5144,7 +5148,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00488">488</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00496">496</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5169,9 +5173,9 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00586">586</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00603">603</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5198,7 +5202,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Copies of <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> helpers per thread (N-1 of them, since m_Transform will do the work for thread=0. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00414">414</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00422">422</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5225,7 +5229,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </div><div class="memdoc">
 <p >Main transform to be used in thread = 0 </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00410">410</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00418">418</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5253,7 +5257,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 <p >Types and variables related to BSpline deformable transforms. If the transform is of type third order <a class="el" href="classitk_1_1BSplineBaseTransform.html" title="A base class with common elements of BSplineTransform and BSplineDeformableTransform.">BSplineBaseTransform</a>, then we can speed up the metric derivative calculation by only inspecting the parameters within the support region of a mapped point. <br  />
  <a class="el" href="classitk_1_1Boolean.html" title="An alternative to bool for additional thread safety.">Boolean</a> to indicate if the transform is BSpline deformable. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00440">440</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00448">448</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5279,7 +5283,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00426">426</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00434">434</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5305,7 +5309,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00484">484</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00492">492</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5331,7 +5335,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00375">375</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00376">376</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5357,7 +5361,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00378">378</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00379">379</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5383,7 +5387,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00427">427</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00435">435</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5409,7 +5413,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00478">478</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00486">486</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5434,9 +5438,9 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00588">588</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00605">605</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>
@@ -5461,9 +5465,9 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Synchronizes the threader transforms with the transform member variable. </p>
+<p >Get the match Measur.e </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00587">587</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetric_8h_source.html#l00604">604</a> of file <a class="el" href="itkImageToImageMetric_8h_source.html">itkImageToImageMetric.h</a>.</p>
 
 </div>
 </div>

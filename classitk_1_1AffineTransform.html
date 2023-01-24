@@ -1002,7 +1002,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Get an inverse of this transform. </p>
+<p >Get the inverse of the transform. </p>
 
 </div>
 </div>
@@ -1030,7 +1030,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Return an inverse of this transform. </p>
+<p >Get the inverse of the transform. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Transform.html#a44e0c7627b3e2188ea41bf071336f954">itk::Transform&lt; double, VInputDimension, VOutputDimension &gt;</a>.</p>
 
@@ -1108,7 +1108,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compute distance between two affine transformations</p>
+<p >Compute distance between two affine transformations.</p>
 <p >This method computes a "distance" between two affine transformations. This distance is guaranteed to be a metric, but not any particular metric. (At the moment, the algorithm is to collect all the elements of the matrix and offset into a vector, and compute the euclidean (L2) norm of that vector. Some metric which could be used to estimate the distance between two points transformed by the affine transformation would be more useful, but I don't have time right now to work out the mathematical details.) </p>
 
 </div>
@@ -1181,7 +1181,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compose affine transformation with an elementary rotation </p><pre class="fragment">This method composes self with a rotation that affects two
+<p >Compose affine transformation with an elementary rotation. </p><pre class="fragment">This method composes self with a rotation that affects two
 specified axes, replacing the current value of self.  The
 rotation angle is in radians.  The axis of rotation goes
 through the origin.  The transformation is given by
@@ -1224,7 +1224,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compose 2D affine transformation with a rotation</p>
+<p >Compose 2D affine transformation with a rotation.</p>
 <p >This method composes self, which must be a 2D affine transformation, with a clockwise rotation through a given angle in radians. The center of rotation is the origin. The rotation is precomposed with self if pre is true, and postcomposed otherwise. Note that the rotation is applied centered at the origin.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Only to be use in two dimensions</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Find a way to generate a compile-time error is this is used with VDimension != 2. </dd></dl>
@@ -1264,7 +1264,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compose 3D affine transformation with a rotation</p>
+<p >Compose 3D affine transformation with a rotation.</p>
 <p >This method composes self, which must be a 3D affine transformation, with a clockwise rotation around a specified axis. The rotation angle is in radians; the axis of rotation goes through the origin. The rotation is precomposed with self if pre is true, and postcomposed otherwise. Note that the rotation is applied centered at the origin.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Only to be used in dimension 3</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Find a way to generate a compile-time error is this is used with VDimension != 3. </dd></dl>
@@ -1298,7 +1298,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compose affine transformation with a scaling</p>
+<p >Compose affine transformation with a scaling.</p>
 <p >This method modifies self to magnify the source by a given factor along each axis. If all factors are the same, or only a single factor is given, then the scaling is isotropic; otherwise it is anisotropic. If an odd number of factors are negative, then the parity of the image changes. If any of the factors is zero, then the transformation becomes a projection and is not invertible. The scaling is precomposed with self if pre is true, and postcomposed otherwise. Note that the scaling is applied centered at the origin. </p>
 
 </div>
@@ -1406,7 +1406,7 @@ template&lt;typename TParametersValueType  = double, unsigned int VDimension = 3
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compose affine transformation with a translation</p>
+<p >Compose affine transformation with a translation.</p>
 <p >This method modifies self to include a translation of the origin. The translation is precomposed with self if pre is true, and postcomposed otherwise. This updates Translation based on current center. </p>
 
 </div>

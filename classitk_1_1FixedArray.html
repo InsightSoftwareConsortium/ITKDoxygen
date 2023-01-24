@@ -552,8 +552,10 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Conversion constructors </p>
-
+<p >Conversion constructors. </p><pre class="fragment">Constructor assumes input points to array of correct size.
+Values are copied individually instead of with a binary copy.  This
+allows the ValueType's assignment operator to be executed.
+</pre> 
 </div>
 </div>
 <a id="a3b408e62444b7176721bc6f01d0a00b5" name="a3b408e62444b7176721bc6f01d0a00b5"></a>
@@ -573,8 +575,10 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Conversion constructors </p>
-
+<p >Conversion constructors. </p><pre class="fragment">Constructor assumes input points to array of correct size.
+Values are copied individually instead of with a binary copy.  This
+allows the ValueType's assignment operator to be executed.
+</pre> 
 </div>
 </div>
 <a id="a4c53b3b43fdd5fd2214724352d3d7cde" name="a4c53b3b43fdd5fd2214724352d3d7cde"></a>
@@ -604,7 +608,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Explicit constructor for std::array. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00203">203</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00208">208</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -637,9 +641,9 @@ template&lt;typename TFixedArrayValueType &gt; </div>
 </div><div class="memdoc">
 <p >Constructor to initialize a fixed array from another of any data type </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00210">210</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00215">215</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00330">itk::FixedArray&lt; TValue, VLength &gt;::cbegin()</a>.</p>
+<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00347">itk::FixedArray&lt; TValue, VLength &gt;::cbegin()</a>.</p>
 
 </div>
 </div>
@@ -671,7 +675,7 @@ template&lt;typename TScalarValue &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00221">221</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00226">226</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -692,7 +696,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Get various iterators to the array. </p>
+<p >Get an Iterator for the beginning of the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>. </p>
 
 <p class="reference">Referenced by <a class="el" href="itkQuadEdgeMeshToQuadEdgeMeshFilter_8h_source.html#l00290">itk::CopyMeshToMeshPoints()</a>, and <a class="el" href="itkDTITubeSpatialObjectPoint_8h_source.html#l00095">itk::DTITubeSpatialObjectPoint&lt; TPointDimension &gt;::SetTensorMatrix()</a>.</p>
 
@@ -714,6 +718,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get a ConstIterator for the beginning of the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>. </p>
 
 </div>
 </div>
@@ -742,7 +747,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00342">342</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00359">359</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -771,7 +776,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00336">336</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00353">353</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -800,9 +805,9 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00330">330</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00347">347</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkFixedArray_8h_source.html#l00210">itk::FixedArray&lt; TValue, VLength &gt;::FixedArray()</a>, and <a class="el" href="itkFixedArray_8h_source.html#l00229">itk::FixedArray&lt; TValue, VLength &gt;::operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkFixedArray_8h_source.html#l00215">itk::FixedArray&lt; TValue, VLength &gt;::FixedArray()</a>, and <a class="el" href="itkFixedArray_8h_source.html#l00239">itk::FixedArray&lt; TValue, VLength &gt;::operator=()</a>.</p>
 
 </div>
 </div>
@@ -831,7 +836,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00348">348</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00365">365</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -860,7 +865,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00372">372</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00389">389</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -889,7 +894,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00390">390</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00407">407</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -918,7 +923,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00297">297</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00307">307</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -947,7 +952,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00303">303</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00313">313</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -967,6 +972,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get an Iterator for the end of the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>. </p>
 
 <p class="reference">Referenced by <a class="el" href="itkDTITubeSpatialObjectPoint_8h_source.html#l00095">itk::DTITubeSpatialObjectPoint&lt; TPointDimension &gt;::SetTensorMatrix()</a>.</p>
 
@@ -988,6 +994,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get a ConstIterator for the end of the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>. </p>
 
 </div>
 </div>
@@ -1016,7 +1023,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00360">360</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00377">377</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1045,7 +1052,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00354">354</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00371">371</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1099,7 +1106,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Return an <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a> with the given value assigned to all elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00428">428</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00445">445</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1129,9 +1136,9 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Return a pointer to the data. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00285">285</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00295">295</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkRGBToVectorPixelAccessor_8h_source.html#l00068">itk::Accessor::RGBToVectorPixelAccessor&lt; T &gt;::Get()</a>, <a class="el" href="itkVectorToRGBPixelAccessor_8h_source.html#l00068">itk::Accessor::VectorToRGBPixelAccessor&lt; T &gt;::Get()</a>, <a class="el" href="itkMetaArrayWriter_8h_source.html#l00079">itk::MetaArrayWriter::SetInput()</a>, <a class="el" href="itkGradientImageFilter_8h_source.html#l00195">itk::GradientImageFilter&lt; TInputImage, TOperatorValueType, TOutputValueType, TOutputImageType &gt;::SetOutputPixel()</a>, <a class="el" href="itkImageBase_8h_source.html#l00616">itk::ImageBase&lt; VImageDimension &gt;::TransformLocalVectorToPhysicalVector()</a>, <a class="el" href="itkGradientRecursiveGaussianImageFilter_8h_source.html#l00202">itk::GradientRecursiveGaussianImageFilter&lt; TInputImage, TOutputImage &gt;::TransformOutputPixel()</a>, and <a class="el" href="itkImageBase_8h_source.html#l00666">itk::ImageBase&lt; VImageDimension &gt;::TransformPhysicalVectorToLocalVector()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkRGBToVectorPixelAccessor_8h_source.html#l00068">itk::Accessor::RGBToVectorPixelAccessor&lt; T &gt;::Get()</a>, <a class="el" href="itkVectorToRGBPixelAccessor_8h_source.html#l00068">itk::Accessor::VectorToRGBPixelAccessor&lt; T &gt;::Get()</a>, <a class="el" href="itkMetaArrayWriter_8h_source.html#l00079">itk::MetaArrayWriter::SetInput()</a>, <a class="el" href="itkGradientImageFilter_8h_source.html#l00195">itk::GradientImageFilter&lt; TInputImage, TOperatorValueType, TOutputValueType, TOutputImageType &gt;::SetOutputPixel()</a>, <a class="el" href="itkImageBase_8h_source.html#l00616">itk::ImageBase&lt; VImageDimension &gt;::TransformLocalVectorToPhysicalVector()</a>, <a class="el" href="itkGradientRecursiveGaussianImageFilter_8h_source.html#l00204">itk::GradientRecursiveGaussianImageFilter&lt; TInputImage, TOutputImage &gt;::TransformOutputPixel()</a>, and <a class="el" href="itkImageBase_8h_source.html#l00666">itk::ImageBase&lt; VImageDimension &gt;::TransformPhysicalVectorToLocalVector()</a>.</p>
 
 </div>
 </div>
@@ -1160,7 +1167,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00291">291</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00301">301</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1198,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Set/Get element methods are more convenient in wrapping languages </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00277">277</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00287">287</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1232,6 +1239,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get a begin <a class="el" href="classitk_1_1FixedArray_1_1ConstReverseIterator.html" title="A const reverse iterator through an array.">ConstReverseIterator</a>. </p>
 
 </div>
 </div>
@@ -1252,6 +1260,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get an end <a class="el" href="classitk_1_1FixedArray_1_1ConstReverseIterator.html" title="A const reverse iterator through an array.">ConstReverseIterator</a>. </p>
 
 </div>
 </div>
@@ -1272,6 +1281,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get a begin <a class="el" href="classitk_1_1FixedArray_1_1ReverseIterator.html" title="A reverse iterator through an array.">ReverseIterator</a>. </p>
 
 </div>
 </div>
@@ -1292,6 +1302,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Get an end <a class="el" href="classitk_1_1FixedArray_1_1ReverseIterator.html" title="A reverse iterator through an array.">ReverseIterator</a>. </p>
 
 </div>
 </div>
@@ -1322,11 +1333,12 @@ template&lt;typename TFixedArrayValueType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Operator= defined for a variety of types. </p>
+<p >Operator= defined for a variety of types.</p>
+<p >The assignment operator assumes input points to array of correct size. Values are copied individually instead of with a binary copy. This allows the ValueType's assignment operator to be executed. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00229">229</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00239">239</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00330">itk::FixedArray&lt; TValue, VLength &gt;::cbegin()</a>.</p>
+<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00347">itk::FixedArray&lt; TValue, VLength &gt;::cbegin()</a>.</p>
 
 </div>
 </div>
@@ -1398,7 +1410,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Allow the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a> to be indexed normally. No bounds checking is done. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00261">261</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00271">271</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1429,7 +1441,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Allow the <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a> to be indexed normally. No bounds checking is done. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00262">262</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00272">272</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1458,7 +1470,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00366">366</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00383">383</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1487,7 +1499,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00378">378</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00395">395</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1528,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00384">384</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00401">401</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1545,7 +1557,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00396">396</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00413">413</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1586,7 +1598,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Set/Get element methods are more convenient in wrapping languages </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00272">272</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00282">282</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1606,7 +1618,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p ><a class="el" href="structitk_1_1Size.html" title="Represent a n-dimensional size (bounds) of a n-dimensional image.">Size</a> of the container </p>
+<p ><a class="el" href="structitk_1_1Size.html" title="Represent a n-dimensional size (bounds) of a n-dimensional image.">Size</a> of the container. </p>
 
 </div>
 </div>
@@ -1635,7 +1647,7 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00406">406</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00423">423</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
 </div>
 </div>
@@ -1665,9 +1677,9 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00416">416</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00433">433</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00423">itk::FixedArray&lt; TValue, VLength &gt;::m_InternalArray</a>, and <a class="el" href="itkFixedArray_8h_source.html#l00442">itk::swap()</a>.</p>
+<p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00440">itk::FixedArray&lt; TValue, VLength &gt;::m_InternalArray</a>, and <a class="el" href="itkFixedArray_8h_source.html#l00459">itk::swap()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="itkCovariantVector_8h_source.html#l00294">itk::swap()</a>.</p>
 
@@ -1751,9 +1763,9 @@ template&lt;typename TValue , unsigned int VLength = 3&gt; </div>
 </div><div class="memdoc">
 <p >Internal C array representation. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00423">423</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00440">440</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkFixedArray_8h_source.html#l00416">itk::FixedArray&lt; TValue, VLength &gt;::swap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkFixedArray_8h_source.html#l00433">itk::FixedArray&lt; TValue, VLength &gt;::swap()</a>.</p>
 
 </div>
 </div>

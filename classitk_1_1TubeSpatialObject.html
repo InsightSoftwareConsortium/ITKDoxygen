@@ -1023,7 +1023,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Calculate the normalized tangent </p>
+<p >Compute the tangents and normals of the centerline of the tube. </p>
 
 </div>
 </div>
@@ -1042,7 +1042,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
           <td class="memname">void <a class="el" href="classitk_1_1TubeSpatialObject.html">itk::TubeSpatialObject</a>&lt; TDimension, TSpatialObjectPointType &gt;::CopyInformation </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1052,7 +1052,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Copy information from the specified data set. This method is part of the pipeline execution model. By default, a <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> will copy meta-data from the first input to all of its outputs. See <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>. Each subclass of <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a> is responsible for being able to copy whatever meta-data it needs from from another <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>. The default implementation of this method is empty. If a subclass overrides this method, it should always call its superclass' version. </p>
+<p >Copy the information from another spatial object. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1DataObject.html#a7ecddcd695fddcd41132eade4233568d">itk::DataObject</a>.</p>
 
@@ -1259,7 +1259,8 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Returns true if the point is inside the tube, false otherwise. </p>
+<p >Test whether a point is inside the object: returns true if the point is inside the tube, false otherwise.</p>
+<p >For computational speed purposes, it is faster if the method does not check the name of the class and the current depth. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1SpatialObject.html#a47a7c8e61fcac6a7212ea1e12d181bba">itk::SpatialObject&lt; TDimension &gt;</a>.</p>
 
@@ -1351,7 +1352,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Remove duplicate points </p>
+<p >Remove duplicate points. </p>
 
 </div>
 </div>
@@ -1492,7 +1493,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00141">141</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00146">146</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1518,7 +1519,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00140">140</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00145">145</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1544,7 +1545,7 @@ template&lt;unsigned int TDimension = 3, class TSpatialObjectPointType  = TubeSp
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00142">142</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTubeSpatialObject_8h_source.html#l00147">147</a> of file <a class="el" href="itkTubeSpatialObject_8h_source.html">itkTubeSpatialObject.h</a>.</p>
 
 </div>
 </div>

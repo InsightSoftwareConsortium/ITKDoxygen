@@ -1379,7 +1379,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >A simple method to copy the data from the input to the output. If the input does not exist, a zero field is written to the output. </p>
+<p >Copy the data from the input to the output.</p>
+<p >When the input is not set, the output is filled with zero values. </p>
 
 <p>Implements <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a222701f9b1f9097b8683e5743f7ac491">itk::FiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField &gt;</a>.</p>
 
@@ -1770,7 +1771,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >This method is called before iterating the solution. </p>
+<p >Initialize flags.</p>
+<p >Called before iterating the solution. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a92547da8cbb19cacc22d8ead68245aa5">itk::FiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField &gt;</a>.</p>
 
@@ -2048,7 +2050,8 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >This method is called after the solution has been generated. In this case, the filter release the memory of the internal buffers. </p>
+<p >Release the memory of the internal buffers.</p>
+<p >Called after the solution has been generated. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#acfc8a4e780f9c56c3f0dc1583c918c1d">itk::FiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField &gt;</a>.</p>
 
@@ -2096,7 +2099,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#aef3453b86dd89913c90a0574d400ed48">itk::ProcessObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classitk_1_1GPUImageToImageFilter.html#ac1d379dc6711d2e15142d7267c495698">itk::GPUImageToImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUImageToImageFilter.html#ac1d379dc6711d2e15142d7267c495698">itk::GPUImageToImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUInPlaceImageFilter.html#a585607ae54b2df3991c45e5f031b10c0">itk::GPUInPlaceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUInPlaceImageFilter.html#a585607ae54b2df3991c45e5f031b10c0">itk::GPUInPlaceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a31a2ec2912ff214b5266f15aa9188a08">itk::GPUDenseFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a31a2ec2912ff214b5266f15aa9188a08">itk::GPUDenseFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#af712e7e503e3f72244d4a918365753b3">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#af712e7e503e3f72244d4a918365753b3">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDemonsRegistrationFilter.html#af68c261a8e76a9eff0871219b4cf7002">itk::GPUDemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a>, <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#a3620c37b9d708ca3d1bd53de680ba402">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a>, <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#a3620c37b9d708ca3d1bd53de680ba402">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, and <a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFilter.html#af23fc1a101c1929dbcd522a46f0c55a9">itk::SymmetricForcesDemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classitk_1_1GPUImageToImageFilter.html#ac1d379dc6711d2e15142d7267c495698">itk::GPUImageToImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUImageToImageFilter.html#ac1d379dc6711d2e15142d7267c495698">itk::GPUImageToImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUInPlaceImageFilter.html#a585607ae54b2df3991c45e5f031b10c0">itk::GPUInPlaceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUInPlaceImageFilter.html#a585607ae54b2df3991c45e5f031b10c0">itk::GPUInPlaceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a31a2ec2912ff214b5266f15aa9188a08">itk::GPUDenseFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a31a2ec2912ff214b5266f15aa9188a08">itk::GPUDenseFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#af712e7e503e3f72244d4a918365753b3">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUFiniteDifferenceImageFilter.html#af712e7e503e3f72244d4a918365753b3">itk::GPUFiniteDifferenceImageFilter&lt; TDisplacementField, TDisplacementField, PDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>, <a class="el" href="classitk_1_1GPUDemonsRegistrationFilter.html#af68c261a8e76a9eff0871219b4cf7002">itk::GPUDemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a>, and <a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFilter.html#af23fc1a101c1929dbcd522a46f0c55a9">itk::SymmetricForcesDemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</a>.</p>
 
 </div>
 </div>
@@ -2356,7 +2359,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Utility to smooth the displacement field (represented in the Output) using a Gaussian operator. The amount of smoothing can be specified by setting the StandardDeviations. </p>
+<p >Utility to smooth the displacement field (represented in the Output) using a separable Gaussian kernel. The amount of smoothing can be specified by setting the StandardDeviations. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#a7ef00eb9aa6e753df44b461de4982253">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a>, and <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#a7ef00eb9aa6e753df44b461de4982253">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>.</p>
 
@@ -2414,7 +2417,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Utility to smooth the UpdateBuffer using a Gaussian operator. The amount of smoothing can be specified by setting the UpdateFieldStandardDeviations. </p>
+<p >Utility to smooth the UpdateBuffer using a separable Gaussian kernel. The amount of smoothing can be specified by setting the UpdateFieldStandardDeviations. </p>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#af94138d6c919cb76161b2eecabea1f7d">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</a>, and <a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html#af94138d6c919cb76161b2eecabea1f7d">itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, itk::DemonsRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt; &gt;</a>.</p>
 
@@ -2529,7 +2532,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Maximum error for Gaussian operator approximation. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00296">296</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00302">302</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2556,7 +2559,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Limits of Gaussian kernel width. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00299">299</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00305">305</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2583,7 +2586,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Modes to control smoothing of the update and displacement fields </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00287">287</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00293">293</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2609,7 +2612,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00288">288</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00294">294</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2636,7 +2639,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Standard deviation for Gaussian smoothing </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00283">283</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00289">289</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2663,7 +2666,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Flag to indicate user stop registration request. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00302">302</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00308">308</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2690,7 +2693,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </div><div class="memdoc">
 <p >Temporary displacement field use for smoothing the the displacement field. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00292">292</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00298">298</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2716,7 +2719,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TDisplacemen
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00284">284</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html#l00290">290</a> of file <a class="el" href="itkPDEDeformableRegistrationFilter_8h_source.html">itkPDEDeformableRegistrationFilter.h</a>.</p>
 
 </div>
 </div>
