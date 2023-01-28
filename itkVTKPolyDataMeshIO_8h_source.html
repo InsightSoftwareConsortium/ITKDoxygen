@@ -478,7 +478,7 @@ $(function() {
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    {</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jj = 0; jj &lt; this-&gt;m_PointDimension - 1; ++jj)</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>      {</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        outputFile &lt;&lt; <a class="code hl_function" href="namespaceitk.html#a3a2fb4070b31f9a97180c784942f1b37">ConvertNumberToString</a>(buffer[ii * this-&gt;m_PointDimension + jj]) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        outputFile &lt;&lt; <a class="code hl_function" href="namespaceitk.html#a3a2fb4070b31f9a97180c784942f1b37">ConvertNumberToString</a>(buffer[ii * this-&gt;m_PointDimension + jj]) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>      }</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>      outputFile &lt;&lt; <a class="code hl_function" href="namespaceitk.html#a3a2fb4070b31f9a97180c784942f1b37">ConvertNumberToString</a>(buffer[ii * this-&gt;m_PointDimension + this-&gt;m_PointDimension - 1]) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
@@ -517,7 +517,7 @@ $(function() {
 <div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>    <span class="keywordflow">if</span> (numberOfVertices)</div>
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>    {</div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>      ExposeMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfVertexIndices&quot;</span>, numberOfVertexIndices);</div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;VERTICES &quot;</span> &lt;&lt; numberOfVertices &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfVertexIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;VERTICES &quot;</span> &lt;&lt; numberOfVertices &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfVertexIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>      <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classitk_1_1MeshIOBase.html#a425c59fa10e207170eaa943a019a7db7">SizeValueType</a> ii = 0; ii &lt; this-&gt;m_NumberOfCells; ++ii)</div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        <span class="keyword">auto</span> cellType = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a689d3fe0822471806a38161a1709399a">CellGeometryEnum</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(buffer[index++]));</div>
@@ -527,7 +527,7 @@ $(function() {
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>          outputFile &lt;&lt; nn;</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>          <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jj = 0; jj &lt; nn; ++jj)</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>          {</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>            outputFile &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; buffer[index++];</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>            outputFile &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; buffer[index++];</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>          }</div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>          outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>        }</div>
@@ -573,14 +573,14 @@ $(function() {
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>      numberOfLineIndices += numberOfLines;</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>      EncapsulateMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfLines&quot;</span>, numberOfLines);</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>      EncapsulateMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfLineIndices&quot;</span>, numberOfLineIndices);</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LINES &quot;</span> &lt;&lt; numberOfLines &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfLineIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LINES &quot;</span> &lt;&lt; numberOfLines &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfLineIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>      <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classitk_1_1MeshIOBase.html#a425c59fa10e207170eaa943a019a7db7">SizeValueType</a> ii = 0; ii &lt; polylines-&gt;Size(); ++ii)</div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>      {</div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        <span class="keyword">auto</span> nn = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(polylines-&gt;ElementAt(ii).size());</div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>        outputFile &lt;&lt; nn;</div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jj = 0; jj &lt; nn; ++jj)</div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        {</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>          outputFile &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; polylines-&gt;ElementAt(ii)[jj];</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>          outputFile &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; polylines-&gt;ElementAt(ii)[jj];</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>        }</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>      }</div>
@@ -591,7 +591,7 @@ $(function() {
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    <span class="keywordflow">if</span> (numberOfPolygons)</div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    {</div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>      ExposeMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfPolygonIndices&quot;</span>, numberOfPolygonIndices);</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;POLYGONS &quot;</span> &lt;&lt; numberOfPolygons &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfPolygonIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;POLYGONS &quot;</span> &lt;&lt; numberOfPolygons &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfPolygonIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>      <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classitk_1_1MeshIOBase.html#a425c59fa10e207170eaa943a019a7db7">SizeValueType</a> ii = 0; ii &lt; this-&gt;m_NumberOfCells; ++ii)</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>      {</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        <span class="keyword">auto</span> cellType = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a689d3fe0822471806a38161a1709399a">CellGeometryEnum</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(buffer[index++]));</div>
@@ -602,7 +602,7 @@ $(function() {
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>          outputFile &lt;&lt; nn;</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>          <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jj = 0; jj &lt; nn; ++jj)</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>          {</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>            outputFile &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; buffer[index++];</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>            outputFile &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; buffer[index++];</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>          }</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>          outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        }</div>
@@ -631,7 +631,7 @@ $(function() {
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="keywordflow">if</span> (numberOfVertices)</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    {</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>      ExposeMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfVertexIndices&quot;</span>, numberOfVertexIndices);</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;VERTICES &quot;</span> &lt;&lt; numberOfVertices &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfVertexIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;VERTICES &quot;</span> &lt;&lt; numberOfVertices &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfVertexIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>      <span class="keyword">const</span> <span class="keyword">auto</span> data = make_unique_for_overwrite&lt;unsigned int[]&gt;(numberOfVertexIndices);</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      ReadCellsBuffer(buffer, data.get());</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
@@ -674,7 +674,7 @@ $(function() {
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>      EncapsulateMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfLines&quot;</span>, numberOfLines);</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>      EncapsulateMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfLineIndices&quot;</span>, numberOfLineIndices);</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span> </div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LINES &quot;</span> &lt;&lt; numberOfLines &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfLineIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LINES &quot;</span> &lt;&lt; numberOfLines &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfLineIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      <span class="keyword">const</span> <span class="keyword">auto</span>    data = make_unique_for_overwrite&lt;unsigned int[]&gt;(numberOfLineIndices);</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> outputIndex = 0;</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classitk_1_1MeshIOBase.html#a425c59fa10e207170eaa943a019a7db7">SizeValueType</a> ii = 0; ii &lt; polylines-&gt;Size(); ++ii)</div>
@@ -696,7 +696,7 @@ $(function() {
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keywordflow">if</span> (numberOfPolygons)</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    {</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>      ExposeMetaData&lt;unsigned int&gt;(metaDic, <span class="stringliteral">&quot;numberOfPolygonIndices&quot;</span>, numberOfPolygonIndices);</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;POLYGONS &quot;</span> &lt;&lt; numberOfPolygons &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; numberOfPolygonIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;POLYGONS &quot;</span> &lt;&lt; numberOfPolygons &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfPolygonIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>      <span class="keyword">const</span> <span class="keyword">auto</span> data = make_unique_for_overwrite&lt;unsigned int[]&gt;(numberOfPolygonIndices);</div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>      ReadCellsBuffer(buffer, data.get());</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
