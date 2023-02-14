@@ -480,7 +480,7 @@ class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindo
 <dl class="section user"><dt></dt><dd>The first (TInputImage) is the image type, that's standard.</dd></dl>
 <dl class="section user"><dt></dt><dd>The second (VRadius) is the radius of the kernel, i.e., the \( m \) from the formula above.</dd></dl>
 <dl class="section user"><dt></dt><dd>The third (TWindowFunction) is the window function object, which you can choose from about five different functions defined in this header. The default is the Hamming window, which is commonly used but not optimal according to the cited paper.</dd></dl>
-<dl class="section user"><dt></dt><dd>The fourth (TBoundaryCondition) is the boundary condition class used to determine the values of pixels that fall off the image boundary. This class has the same meaning here as in the NeighborhoodItetator classes.</dd></dl>
+<dl class="section user"><dt></dt><dd>The fourth (TBoundaryCondition) is the boundary condition class used to determine the values of pixels that fall off the image boundary. This class has the same meaning here as in the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> classes.</dd></dl>
 <dl class="section user"><dt></dt><dd>The fifth (TCoordRep) is again standard for interpolating functions, and should be float or double.</dd></dl>
 <dl class="section user"><dt>CAVEATS</dt><dd></dd></dl>
 <p>There are a few improvements that an enthusiastic ITK developer could make to this filter. One issue is with the way that the kernel is applied. The computational expense comes from two sources: computing the kernel weights K(t) and multiplying the pixels in the window by the kernel weights. The first is done more or less efficiently in \( 2 m d \) operations (where d is the dimensionality of the image). The second can be done better. Presently, each pixel \( I(i,j,k) \) is multiplied by the weights \( K(x-i), K(y-j), K(z-k) \) and added to the running total. This results in \( d (2m)^d \) multiplication operations. However, by keeping intermediate sums, it would be possible to do the operation in \( O ( (2m)^d ) \) operations. This would require some creative coding. In addition, in the case when one of the coordinates is integer, the computation could be reduced by an order of magnitude.</p>
@@ -950,7 +950,7 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
   </tr>
 </table>
 </div><div class="memdoc">
-<p >The offset array, used to keep a list of relevant offsets in the neihborhoodIterator </p>
+<p >The offset array, used to keep a list of relevant offsets in the neighborhoodIterator </p>
 
 <p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00356">356</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
