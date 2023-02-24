@@ -76,7 +76,7 @@ var searchData=
   ['binarythresholdimagefilter_73',['BinaryThresholdImageFilter',['../classitk_1_1BinaryThresholdImageFilter.html#a1d36f17eab368b12a3e9011ff31050a7',1,'itk::BinaryThresholdImageFilter']]],
   ['binarythresholdimagefunction_74',['BinaryThresholdImageFunction',['../classitk_1_1BinaryThresholdImageFunction.html#a1750952b528dde8844274b1b84b605ea',1,'itk::BinaryThresholdImageFunction']]],
   ['binarythresholdprojectionimagefilter_75',['BinaryThresholdProjectionImageFilter',['../classitk_1_1BinaryThresholdProjectionImageFilter.html#a19ba76febe9321079e6161299e1b0955',1,'itk::BinaryThresholdProjectionImageFilter']]],
-  ['binarythresholdspatialfunction_76',['BinaryThresholdSpatialFunction',['../classitk_1_1BinaryThresholdSpatialFunction.html#a301e6dd5cf4b5af99a794570881a3e79',1,'itk::BinaryThresholdSpatialFunction']]],
+  ['binarythresholdspatialfunction_76',['BinaryThresholdSpatialFunction',['../classitk_1_1BinaryThresholdSpatialFunction.html#ab37cfdc58949eb098394af78e6256194',1,'itk::BinaryThresholdSpatialFunction']]],
   ['binomialblurimagefilter_77',['BinomialBlurImageFilter',['../classitk_1_1BinomialBlurImageFilter.html#a974a8afa9d2ce796c7defb4dfa4fae1b',1,'itk::BinomialBlurImageFilter']]],
   ['binshrinkimagefilter_78',['BinShrinkImageFilter',['../classitk_1_1BinShrinkImageFilter.html#acc59c0709b32cb557f96c4759659a3cd',1,'itk::BinShrinkImageFilter']]],
   ['bioradimageio_79',['BioRadImageIO',['../classitk_1_1BioRadImageIO.html#ab80c4136d6fa90205f90c895008ef45a',1,'itk::BioRadImageIO']]],

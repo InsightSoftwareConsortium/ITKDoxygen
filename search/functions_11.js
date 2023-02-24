@@ -132,7 +132,7 @@ var searchData=
   ['regressiontestbaselines_129',['RegressionTestBaselines',['../itkTestDriverInclude_8h.html#a7d92f4ecc3fe3b5ee5e4f44ebf769434',1,'itkTestDriverInclude.h']]],
   ['regressiontestimage_130',['RegressionTestImage',['../itkTestDriverInclude_8h.html#a006b5f80d2e488ac1d3d95142bfe5e40',1,'itkTestDriverInclude.h']]],
   ['regularexpressionseriesfilenames_131',['RegularExpressionSeriesFileNames',['../classitk_1_1RegularExpressionSeriesFileNames.html#a906acc6e8210dd6b977a8c9c1348f002',1,'itk::RegularExpressionSeriesFileNames']]],
-  ['regularizedheavisidestepfunction_132',['RegularizedHeavisideStepFunction',['../classitk_1_1RegularizedHeavisideStepFunction.html#a7b0c18cd823663febf53809f7836a1ee',1,'itk::RegularizedHeavisideStepFunction']]],
+  ['regularizedheavisidestepfunction_132',['RegularizedHeavisideStepFunction',['../classitk_1_1RegularizedHeavisideStepFunction.html#a6377f3f51112224efc9069f21d680772',1,'itk::RegularizedHeavisideStepFunction']]],
   ['regularspheremeshsource_133',['RegularSphereMeshSource',['../classitk_1_1RegularSphereMeshSource.html#af0b8c0fa22ad124264ed79f62d383d42',1,'itk::RegularSphereMeshSource']]],
   ['regularstepgradientdescentbaseoptimizer_134',['RegularStepGradientDescentBaseOptimizer',['../classitk_1_1RegularStepGradientDescentBaseOptimizer.html#aaf3d6be60214f94b004d8b9cc9e540a5',1,'itk::RegularStepGradientDescentBaseOptimizer']]],
   ['regularstepgradientdescentoptimizer_135',['RegularStepGradientDescentOptimizer',['../classitk_1_1RegularStepGradientDescentOptimizer.html#a791884a4e4134ee6b78f8a11065ec9b6',1,'itk::RegularStepGradientDescentOptimizer']]],
