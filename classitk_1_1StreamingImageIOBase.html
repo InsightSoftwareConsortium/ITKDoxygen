@@ -661,7 +661,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p >A base class for specific ImageIO file formats which support streaming. </p>
 <p >This class overloads the methods needed to enable streaming. These methods are utilized by the <a class="el" href="classitk_1_1ImageFileReader.html" title="Data source that reads image data from a single file.">ImageFileReader</a> and <a class="el" href="classitk_1_1ImageFileWriter.html" title="Writes image data to a single file.">ImageFileWriter</a>. The implementation supports streaming of an arbitrary sized region as well as pasting to new or existing file ( of the same name, size, and pixel type ). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1StreamingImageIOBase.html#afea2e81ac34612399a7c0e118c3bf473">CanStreamWrite</a> <a class="el" href="classitk_1_1StreamingImageIOBase.html#a78cfc7209e2f4131063ac7bfe6bf0d7e">CanStreamRead</a> <a class="el" href="classitk_1_1StreamingImageIOBase.html#ab43e00dcfe66438eddef07703d9ad8fc">GenerateStreamableReadRegionFromRequestedRegion</a> <a class="el" href="classitk_1_1StreamingImageIOBase.html#a6ba153052c3ffdf59249eb82382b9a4a">GetActualNumberOfSplitsForWriting</a></dd></dl>
 <p>Additionally low level IO methods are provided to read and write an IORegion from a file. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1StreamingImageIOBase.html#a0af39b4862eba9bee4ecbca4a23dd456" title="Reads the set IORegion from os into buffer.">StreamReadBufferAsBinary</a> <a class="el" href="classitk_1_1StreamingImageIOBase.html#a5d2448e0bc7774e02b3f63d7b97106de" title="Writes the set IORegion from buffer into os.">StreamWriteBufferAsBinary</a></dd></dl>
-<p>This implementation was taken fron the Insight Journal: <a href="https://www.insight-journal.org/browse/publication/729">https://www.insight-journal.org/browse/publication/729</a></p>
+<p>This implementation was taken from the Insight Journal: <a href="https://www.insight-journal.org/browse/publication/729">https://www.insight-journal.org/browse/publication/729</a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageFileReader.html" title="Data source that reads image data from a single file.">itk::ImageFileReader</a> <a class="el" href="classitk_1_1ImageFileWriter.html" title="Writes image data to a single file.">itk::ImageFileWriter</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="itkStreamingImageIOBase_8h_source.html#l00052">52</a> of file <a class="el" href="itkStreamingImageIOBase_8h_source.html">itkStreamingImageIOBase.h</a>.</p>
@@ -826,7 +826,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Method for supporting streaming. Given a requested region, determine what could be the region that we can read from the file. This is called the streamable region, which will be equal or smaller than the LargestPossibleRegion (unless it was dimensionaly clipped) and greater or equal to the RequestedRegion</p>
+<p >Method for supporting streaming. Given a requested region, determine what could be the region that we can read from the file. This is called the streamable region, which will be equal or smaller than the LargestPossibleRegion (unless it was dimensionally clipped) and greater or equal to the RequestedRegion</p>
 <p >the resulting IORegion may be a greater dimensions the the requested IORegion, if the the derived class is unable to read the requested region. For example if the file has a size of [ 10, 10, 10] but the requested region is [10, 10] the return may be 3 dimensions. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ImageIOBase.html#a860d97d3a722991db3900d3c6000da73">itk::ImageIOBase</a>.</p>
@@ -1081,7 +1081,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if <a class="el" href="classitk_1_1ImageIOBase.html#a81d7875242bd5ed85ff35e3ad199584e">GetIORegion()</a> is not the same size as the largest region give by <a class="el" href="classitk_1_1ImageIOBase.html#a45ebd980b723674c7b2e222e01c6fed3">GetNumberOfDimensions()</a>. </p>
-<p >This compares the IORegion to the size of the image in the file. With out regaurd to the dimensions of either, if the images represent the same region then false is returned. </p>
+<p >This compares the IORegion to the size of the image in the file. With out regard to the dimensions of either, if the images represent the same region then false is returned. </p>
 
 </div>
 </div>
