@@ -710,7 +710,7 @@ class itk::MultiResolutionImageRegistrationMethod&lt; TFixedImage, TMovingImage 
 <p >The number of resolution level to process can be set via <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a>. At each resolution level, the user specified registration components are used to register downsampled version of the images by computing the transform parameters that will map one image onto the other image.</p>
 <p >A user can specify schedules for the fixed and moving image using <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> method. However, <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a> and <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> should not be used together. An exception will be thrown if that happens.</p>
 <p >The downsampled images are provided by user specified MultiResolutionPyramidImageFilters. User must specify the schedule for each pyramid externally prior to calling <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>If there is discrepancy between the number of level requested and a pyramid schedule. The pyramid schedule will be overriden with a default one.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If there is discrepancy between the number of level requested and a pyramid schedule. The pyramid schedule will be overridden with a default one.</dd></dl>
 <p>Before each resolution level an IterationEvent is invoked providing an opportunity for a user interface to change any of the components, change component parameters, or stop the registration.</p>
 <p >This class is templated over the fixed image type and the moving image type.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegistrationMethod.html" title="Base class for Image Registration Methods.">ImageRegistrationMethod</a> </dd></dl>
@@ -1662,7 +1662,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Set/Get the Transfrom. </p>
+<p >Set/Get the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. </p>
 
 </div>
 </div>
@@ -2384,7 +2384,7 @@ template&lt;typename TFixedImage , typename TMovingImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Set/Get the Transfrom. </p>
+<p >Set/Get the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. </p>
 
 </div>
 </div>
