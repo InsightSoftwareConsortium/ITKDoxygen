@@ -365,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
 
            C.S.Wallace, Monash University, 1994
 </pre><p> To use this code, files needing to call the generator should include: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;FastNorm.h&quot;</span></div>
-</div><!-- fragment --><p> and be linked with the maths library (-lm) FastNorm.h contains declaration of the initialization routine 'initnorm()', definition of a macro 'FastGauss' used to generate variates, and three variables used in the macro. Read below for calling conventions.</p>
+</div><!-- fragment --><p> and be linked with the math library (-lm) FastNorm.h contains declaration of the initialization routine 'initnorm()', definition of a macro 'FastGauss' used to generate variates, and three variables used in the macro. Read below for calling conventions.</p>
 <p >THIS CODE ASSUMES TWO'S-COMPLEMENT 32-BIT INTEGER ARITHMETIC. IT ALSO ASSUMES THE 'C' COMPILER COMPILES THE LEFT-SHIFT OPERATOR "&lt;&lt;" AS A LOGICAL SHIFT, DISCARDING THE SIGN DIGIT AND SHIFTING IN ZEROS ON THE RIGHT, SO " X &lt;&lt; 1" IS EQUIVALENT TO " X+X ". IT ALSO ASSUMES THE RIGHT-SHIFT OPERATOR "&gt;&gt;" IS SIGN-PRESERVING, SO ( -2 &gt;&gt; 1) = -1, ( -1&gt;&gt;1) = -1.</p>
 <pre class="fragment">    A fast generator of pseudo-random variates from the unit Normal
 </pre><p> distribution. It keeps a pool of about 1000 variates, and generates new ones by picking 4 from the pool, rotating the 4-vector with these as its components, and replacing the old variates with the components of the rotated vector.</p>

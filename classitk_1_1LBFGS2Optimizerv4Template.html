@@ -704,7 +704,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
-class itk::LBFGS2Optimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Wrap of the libLBFGS[1] algorithm for use in ITKv4 registration framework. LibLBFGS is a translation of LBFGS code by Nocedal [2] and adds the orthantwise limited-memmory Quais-Newton method [3] for optimization with L1-norm on the parameters. </p>
+class itk::LBFGS2Optimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Wrap of the libLBFGS[1] algorithm for use in ITKv4 registration framework. LibLBFGS is a translation of LBFGS code by Nocedal [2] and adds the orthantwise limited-memory Quasi-Newton method [3] for optimization with L1-norm on the parameters. </p>
 <p >LBFGS is a quasi-Newton method uses an approximate estimate of the inverse Hessian \( (\nabla^2 f(x) )^-1 \) to scale the gradient step: </p><p class="formulaDsp">
 \[ x_{n+1} = x_n - s (\nabla^2 f(x_n) )^-1 \nabla f(x) \]
 </p>
@@ -1261,7 +1261,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Get stepsize of current iteration </p>
+<p >Get step size of current iteration </p>
 
 </div>
 </div>
@@ -1409,7 +1409,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >A parameter to control the gradient accuracy of the More-Thuente line search routine. The default value is <code>0.9</code>. If the function and gradient evaluations are inexpensive with respect to the cost of the iteration (which is sometimes the case when solving very large problems) it may be advantageous to set this parameter to a small value. A typical small value is <code>0.1</code>. This parameter shuold be greater than the <code>ftol</code> parameter (<code>1e-4</code>) and smaller than <code>1.0</code>. </p>
+<p >A parameter to control the gradient accuracy of the More-Thuente line search routine. The default value is <code>0.9</code>. If the function and gradient evaluations are inexpensive with respect to the cost of the iteration (which is sometimes the case when solving very large problems) it may be advantageous to set this parameter to a small value. A typical small value is <code>0.1</code>. This parameter should be greater than the <code>ftol</code> parameter (<code>1e-4</code>) and smaller than <code>1.0</code>. </p>
 
 </div>
 </div>
@@ -1591,7 +1591,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Coeefficient for the L1 norm of variables. This parameter should be set to zero for standard minimization problems. Setting this parameter to a positive value activates Orthant-Wise Limited-memory Quasi-Newton (OWL-QN) method, which minimizes the objective function F(x) combined with the L1 norm |x| of the variables, \(F(x) + C |x|}. \). This parameter is the coefficient for the |x|, i.e., C. As the L1 norm |x| is not differentiable at zero, the library modifies function and gradient evaluations from a client program suitably; a client program thus have only to return the function value F(x) and gradients G(x) as usual. The default value is zero. </p>
+<p >Coefficient for the L1 norm of variables. This parameter should be set to zero for standard minimization problems. Setting this parameter to a positive value activates Orthant-Wise Limited-memory Quasi-Newton (OWL-QN) method, which minimizes the objective function F(x) combined with the L1 norm |x| of the variables, \(F(x) + C |x|}. \). This parameter is the coefficient for the |x|, i.e., C. As the L1 norm |x| is not differentiable at zero, the library modifies function and gradient evaluations from a client program suitably; a client program thus have only to return the function value F(x) and gradients G(x) as usual. The default value is zero. </p>
 
 </div>
 </div>
@@ -1992,7 +1992,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >A parameter to control the gradient accuracy of the More-Thuente line search routine. The default value is <code>0.9</code>. If the function and gradient evaluations are inexpensive with respect to the cost of the iteration (which is sometimes the case when solving very large problems) it may be advantageous to set this parameter to a small value. A typical small value is <code>0.1</code>. This parameter shuold be greater than the <code>ftol</code> parameter (<code>1e-4</code>) and smaller than <code>1.0</code>. </p>
+<p >A parameter to control the gradient accuracy of the More-Thuente line search routine. The default value is <code>0.9</code>. If the function and gradient evaluations are inexpensive with respect to the cost of the iteration (which is sometimes the case when solving very large problems) it may be advantageous to set this parameter to a small value. A typical small value is <code>0.1</code>. This parameter should be greater than the <code>ftol</code> parameter (<code>1e-4</code>) and smaller than <code>1.0</code>. </p>
 
 </div>
 </div>
@@ -2182,7 +2182,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Coeefficient for the L1 norm of variables. This parameter should be set to zero for standard minimization problems. Setting this parameter to a positive value activates Orthant-Wise Limited-memory Quasi-Newton (OWL-QN) method, which minimizes the objective function F(x) combined with the L1 norm |x| of the variables, \(F(x) + C |x|}. \). This parameter is the coefficient for the |x|, i.e., C. As the L1 norm |x| is not differentiable at zero, the library modifies function and gradient evaluations from a client program suitably; a client program thus have only to return the function value F(x) and gradients G(x) as usual. The default value is zero. </p>
+<p >Coefficient for the L1 norm of variables. This parameter should be set to zero for standard minimization problems. Setting this parameter to a positive value activates Orthant-Wise Limited-memory Quasi-Newton (OWL-QN) method, which minimizes the objective function F(x) combined with the L1 norm |x| of the variables, \(F(x) + C |x|}. \). This parameter is the coefficient for the |x|, i.e., C. As the L1 norm |x| is not differentiable at zero, the library modifies function and gradient evaluations from a client program suitably; a client program thus have only to return the function value F(x) and gradients G(x) as usual. The default value is zero. </p>
 
 </div>
 </div>
