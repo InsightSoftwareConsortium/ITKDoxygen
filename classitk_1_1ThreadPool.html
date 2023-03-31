@@ -153,9 +153,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acdd5593cd881f6b3f15738e8800ee15a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThreadPool.html#acdd5593cd881f6b3f15738e8800ee15a">GetNumberOfCurrentlyIdleThreads</a> () const</td></tr>
 <tr class="separator:acdd5593cd881f6b3f15738e8800ee15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a1aa383eef101704b214de273a4e7b0cf"><td class="memTemplParams" colspan="2">template&lt;class Function , class... Arguments&gt; </td></tr>
-<tr class="memitem:a1aa383eef101704b214de273a4e7b0cf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ThreadPool.html#a1aa383eef101704b214de273a4e7b0cf">AddWork</a> (Function &amp;&amp;function, Arguments &amp;&amp;... arguments) -&gt; std::future&lt; std::result_of_t&lt; Function(Arguments...)&gt; &gt;</td></tr>
-<tr class="separator:a1aa383eef101704b214de273a4e7b0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9c9c58d88f6d988b0bc602fc54ba91"><td class="memTemplParams" colspan="2">template&lt;class Function , class... Arguments&gt; </td></tr>
+<tr class="memitem:aaa9c9c58d88f6d988b0bc602fc54ba91"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ThreadPool.html#aaa9c9c58d88f6d988b0bc602fc54ba91">AddWork</a> (Function &amp;&amp;function, Arguments &amp;&amp;... arguments) -&gt; std::future&lt; std::invoke_result_t&lt; Function, Arguments... &gt; &gt;</td></tr>
+<tr class="separator:aaa9c9c58d88f6d988b0bc602fc54ba91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
 <tr class="separator:a23703e82fa4a979fd512528f471606a0 inherit pub_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -478,8 +478,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1aa383eef101704b214de273a4e7b0cf" name="a1aa383eef101704b214de273a4e7b0cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aa383eef101704b214de273a4e7b0cf">&#9670;&nbsp;</a></span>AddWork()</h2>
+<a id="aaa9c9c58d88f6d988b0bc602fc54ba91" name="aaa9c9c58d88f6d988b0bc602fc54ba91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa9c9c58d88f6d988b0bc602fc54ba91">&#9670;&nbsp;</a></span>AddWork()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,7 +504,7 @@ template&lt;class Function , class... Arguments&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;std::result_of_t&lt;Function(Arguments...)&gt;&gt;
+          <td></td><td> -&gt; std::future&lt;std::invoke_result_t&lt;Function, Arguments...&gt;&gt;
   </td>
         </tr>
       </table>
