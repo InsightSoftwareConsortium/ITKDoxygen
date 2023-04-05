@@ -118,8 +118,8 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(TDestination) == <span class="keyword">sizeof</span>(TSource),</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="stringliteral">&quot;The destination type should have the same size as the source type.&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">static_assert</span>(std::is_trivially_copyable&lt;TDestination&gt;::value, <span class="stringliteral">&quot;The destination type should be trivially copyable&quot;</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">static_assert</span>(std::is_trivially_copyable&lt;TSource&gt;::value, <span class="stringliteral">&quot;The source type should be trivially copyable.&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">static_assert</span>(std::is_trivially_copyable_v&lt;TDestination&gt;, <span class="stringliteral">&quot;The destination type should be trivially copyable&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">static_assert</span>(std::is_trivially_copyable_v&lt;TSource&gt;, <span class="stringliteral">&quot;The source type should be trivially copyable.&quot;</span>);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  std::remove_const_t&lt;TDestination&gt; result;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  std::memcpy(&amp;result, &amp;source, <span class="keyword">sizeof</span>(TSource));</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">return</span> result;</div>

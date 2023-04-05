@@ -244,28 +244,27 @@ $(function() {
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="namespaceitk.html#a73c8aba19472c8eca81c9e9b2b01241d">  254</a></span><a class="code hl_function" href="namespaceitk.html#a73c8aba19472c8eca81c9e9b2b01241d">WriteImage</a>(TImagePointer &amp;&amp; image, <span class="keyword">const</span> std::string &amp; filename, <span class="keywordtype">bool</span> compress = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>{</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keyword">using</span> NonReferenceImagePointer = std::remove_reference_t&lt;TImagePointer&gt;;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keyword">static_assert</span>(std::is_pointer&lt;NonReferenceImagePointer&gt;::value ||</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                  mpl::IsSmartPointer&lt;NonReferenceImagePointer&gt;::Value,</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                <span class="stringliteral">&quot;WriteImage requires a raw pointer or SmartPointer.&quot;</span>);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keyword">using</span> ImageType = std::remove_const_t&lt;std::remove_reference_t&lt;<span class="keyword">decltype</span>(*image)&gt;&gt;;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <span class="keyword">auto</span> writer = <a class="code hl_function" href="classitk_1_1ImageFileWriter.html#a89941d8523b7e97f8d412703d8d68224">ImageFileWriter&lt;ImageType&gt;::New</a>();</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  writer-&gt;SetInput(image);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  writer-&gt;SetFileName(filename);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  writer-&gt;SetUseCompression(compress);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  writer-&gt;Update();</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>}</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#  include &quot;itkImageFileWriter.hxx&quot;</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#if defined ITK_IMAGEIO_FACTORY_REGISTER_MANAGER || defined ITK_IO_FACTORY_REGISTER_MANAGER</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#  include &quot;itkImageIOFactoryRegisterManager.h&quot;</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">#endif </span><span class="comment">// itkImageFileWriter_h</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keyword">static_assert</span>(std::is_pointer_v&lt;NonReferenceImagePointer&gt; || mpl::IsSmartPointer&lt;NonReferenceImagePointer&gt;::Value,</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                <span class="stringliteral">&quot;WriteImage requires a raw pointer or SmartPointer.&quot;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  <span class="keyword">using</span> ImageType = std::remove_const_t&lt;std::remove_reference_t&lt;<span class="keyword">decltype</span>(*image)&gt;&gt;;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keyword">auto</span> writer = <a class="code hl_function" href="classitk_1_1ImageFileWriter.html#a89941d8523b7e97f8d412703d8d68224">ImageFileWriter&lt;ImageType&gt;::New</a>();</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  writer-&gt;SetInput(image);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  writer-&gt;SetFileName(filename);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  writer-&gt;SetUseCompression(compress);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  writer-&gt;Update();</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>}</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#  include &quot;itkImageFileWriter.hxx&quot;</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#if defined ITK_IMAGEIO_FACTORY_REGISTER_MANAGER || defined ITK_IO_FACTORY_REGISTER_MANAGER</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#  include &quot;itkImageIOFactoryRegisterManager.h&quot;</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#endif </span><span class="comment">// itkImageFileWriter_h</span></div>
 <div class="ttc" id="aclassitk_1_1ImageFileWriterException_html"><div class="ttname"><a href="classitk_1_1ImageFileWriterException.html">itk::ImageFileWriterException</a></div><div class="ttdoc">Base exception class for IO problems during writing.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageFileWriter_8h_source.html#l00034">itkImageFileWriter.h:35</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageFileWriterException_html_a1fa4cb8349fdc4eab487db08079ef214"><div class="ttname"><a href="classitk_1_1ImageFileWriterException.html#a1fa4cb8349fdc4eab487db08079ef214">itk::ImageFileWriterException::~ImageFileWriterException</a></div><div class="ttdeci">~ImageFileWriterException() noexcept override</div></div>
 <div class="ttc" id="aclassitk_1_1ImageFileWriterException_html_a3238d2b4b7a400dfab9dec8eedc9b85f"><div class="ttname"><a href="classitk_1_1ImageFileWriterException.html#a3238d2b4b7a400dfab9dec8eedc9b85f">itk::ImageFileWriterException::ImageFileWriterException</a></div><div class="ttdeci">ImageFileWriterException(const std::string &amp;file, unsigned int line, const char *message=&quot;Error in IO&quot;, const char *loc=&quot;Unknown&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageFileWriter_8h_source.html#l00049">itkImageFileWriter.h:49</a></div></div>

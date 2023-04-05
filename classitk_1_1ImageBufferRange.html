@@ -181,7 +181,7 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a6f4167a177088f0f0b2f92446d9da212"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBufferRange.html#a6f4167a177088f0f0b2f92446d9da212">IsImageTypeConst</a> = std::is_const&lt;TImage&gt;::value</td></tr>
+<tr class="memitem:a6f4167a177088f0f0b2f92446d9da212"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBufferRange.html#a6f4167a177088f0f0b2f92446d9da212">IsImageTypeConst</a> = std::is_const_v&lt;TImage&gt;</td></tr>
 <tr class="separator:a6f4167a177088f0f0b2f92446d9da212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab89a7795e5d61ff3e8be38a6d5628b62"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBufferRange.html#ab89a7795e5d61ff3e8be38a6d5628b62">SupportsDirectPixelAccess</a></td></tr>
 <tr class="separator:ab89a7795e5d61ff3e8be38a6d5628b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,12 +191,13 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
 class itk::ImageBufferRange&lt; TImage &gt;</div><p >Modern C++11 range to iterate over the pixels of an image. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
-<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line">ImageBufferRange&lt;ImageType&gt; range{ *image };</div>
+<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">ImageBufferRange</a> range{ *image };</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; pixel : range)</div>
 <div class="line">{</div>
 <div class="line">  pixel = pixel + 42;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1ImageBufferRange_html_acb87dad747ff4d2732efc3b67d846ab7"><div class="ttname"><a href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">itk::ImageBufferRange::ImageBufferRange</a></div><div class="ttdeci">ImageBufferRange()=default</div></div>
 </div><!-- fragment --><p >The following example prints the values of the pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> pixel : range)</div>
 <div class="line">{</div>
 <div class="line">  std::cout &lt;&lt; pixel &lt;&lt; std::endl;</div>
@@ -877,7 +878,7 @@ template&lt;typename TImage &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="classitk_1_1ImageBufferRange.html">itk::ImageBufferRange</a>&lt; TImage &gt;::IsImageTypeConst = std::is_const&lt;TImage&gt;::value</td>
+          <td class="memname">constexpr bool <a class="el" href="classitk_1_1ImageBufferRange.html">itk::ImageBufferRange</a>&lt; TImage &gt;::IsImageTypeConst = std::is_const_v&lt;TImage&gt;</td>
         </tr>
       </table>
   </td>
@@ -997,9 +998,9 @@ template&lt;typename TImage &gt; </div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    std::is_same&lt;PixelType, InternalPixelType&gt;::value &amp;&amp;</div>
-<div class="line">    std::is_same&lt;typename TImage::AccessorType, DefaultPixelAccessor&lt;PixelType&gt;&gt;::value &amp;&amp;</div>
-<div class="line">    std::is_same&lt;AccessorFunctorType, DefaultPixelAccessorFunctor&lt;std::remove_const_t&lt;TImage&gt;&gt;&gt;::value</div>
+<div class="line">    std::is_same_v&lt;PixelType, InternalPixelType&gt; &amp;&amp;</div>
+<div class="line">    std::is_same_v&lt;typename TImage::AccessorType, DefaultPixelAccessor&lt;PixelType&gt;&gt; &amp;&amp;</div>
+<div class="line">    std::is_same_v&lt;AccessorFunctorType, DefaultPixelAccessorFunctor&lt;std::remove_const_t&lt;TImage&gt;&gt;&gt;</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="itkImageBufferRange_8h_source.html#l00085">85</a> of file <a class="el" href="itkImageBufferRange_8h_source.html">itkImageBufferRange.h</a>.</p>
 

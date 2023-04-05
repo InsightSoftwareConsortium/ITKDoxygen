@@ -216,9 +216,9 @@ $(function() {
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>{};</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TFromType, <span class="keyword">typename</span> TToType&gt;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">using</span> is_static_castable = std::integral_constant&lt;bool,</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                                                  std::is_constructible&lt;TToType, TFromType&gt;::value ||</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                                                    std::is_convertible&lt;TFromType, TToType&gt;::value&gt;;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">using</span> is_static_castable =</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  std::integral_constant&lt;bool,</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                         std::is_constructible_v&lt;TToType, TFromType&gt; || std::is_convertible_v&lt;TFromType, TToType&gt;&gt;;</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>} <span class="comment">// namespace mpl</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>

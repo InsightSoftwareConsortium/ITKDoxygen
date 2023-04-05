@@ -1863,7 +1863,7 @@ $(function() {
 <div class="line"><a id="l01926" name="l01926"></a><span class="lineno"> 1926</span>    <span class="keywordflow">return</span> val.real() &gt;= 0;</div>
 <div class="line"><a id="l01927" name="l01927"></a><span class="lineno"> 1927</span>  }</div>
 <div class="line"><a id="l01928" name="l01928"></a><span class="lineno"> 1928</span> </div>
-<div class="line"><a id="l01929" name="l01929"></a><span class="lineno"> 1929</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classitk_1_1NumericTraits.html#a09908545fae8f46994d415cf69e14c65">IsSigned</a> = std::is_signed&lt;ValueType&gt;::value;</div>
+<div class="line"><a id="l01929" name="l01929"></a><span class="lineno"> 1929</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classitk_1_1NumericTraits.html#a09908545fae8f46994d415cf69e14c65">IsSigned</a> = std::is_signed_v&lt;ValueType&gt;;</div>
 <div class="line"><a id="l01930" name="l01930"></a><span class="lineno"> 1930</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classitk_1_1NumericTraits.html#a0147e874d6a0b14f908e8c1b458b8d76">IsInteger</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l01931" name="l01931"></a><span class="lineno"> 1931</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classitk_1_1NumericTraits.html#ae15d09cd274f758f9505e35e891649ba">IsComplex</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l01932" name="l01932"></a><span class="lineno"> 1932</span>  <span class="keyword">static</span> <a class="code hl_class" href="classAddImageFilter.html">Self</a></div>
@@ -1920,7 +1920,7 @@ $(function() {
 <div class="line"><a id="l01983" name="l01983"></a><span class="lineno"> 1983</span>  }</div>
 <div class="line"><a id="l01984" name="l01984"></a><span class="lineno"> 1984</span> </div>
 <div class="line"><a id="l01985" name="l01985"></a><span class="lineno"> 1985</span><span class="preprocessor">#if defined(ITK_LEGACY_REMOVE)</span></div>
-<div class="line"><a id="l01986" name="l01986"></a><span class="lineno"> 1986</span>  <span class="keyword">static_assert</span>(std::is_floating_point&lt;TComponent&gt;::value,</div>
+<div class="line"><a id="l01986" name="l01986"></a><span class="lineno"> 1986</span>  <span class="keyword">static_assert</span>(std::is_floating_point_v&lt;TComponent&gt;,</div>
 <div class="line"><a id="l01987" name="l01987"></a><span class="lineno"> 1987</span>                <span class="stringliteral">&quot;As per https://en.cppreference.com/w/cpp/numeric/complex the behavior is unspecified and may fail to &quot;</span></div>
 <div class="line"><a id="l01988" name="l01988"></a><span class="lineno"> 1988</span>                <span class="stringliteral">&quot;compile if TComponent is not float, double, or long double and undefined if T is not NumericType.&quot;</span>);</div>
 <div class="line"><a id="l01989" name="l01989"></a><span class="lineno"> 1989</span><span class="preprocessor">#endif </span><span class="comment">// defined(ITK_LEGACY_REMOVE)</span></div>

@@ -656,12 +656,12 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
-<tr class="memitem:a0e50584b2c80774fc9588ba0d14fee94"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U  = void&gt; </td></tr>
-<tr class="memitem:a0e50584b2c80774fc9588ba0d14fee94"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a> = typename std::enable_if&lt; std::is_same&lt; T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; T &gt;::ValueType &gt;::value, U &gt;</td></tr>
-<tr class="separator:a0e50584b2c80774fc9588ba0d14fee94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3ec80266baa09a76bc209aface13a86"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U  = void&gt; </td></tr>
-<tr class="memitem:aa3ec80266baa09a76bc209aface13a86"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a> = typename std::enable_if&lt;!std::is_same&lt; T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; T &gt;::ValueType &gt;::value, U &gt;</td></tr>
-<tr class="separator:aa3ec80266baa09a76bc209aface13a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae17780c5f25b26b321599a6ceb9f4e6"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U  = void&gt; </td></tr>
+<tr class="memitem:aae17780c5f25b26b321599a6ceb9f4e6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a> = typename std::enable_if&lt; std::is_same_v&lt; T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; T &gt;::ValueType &gt;, U &gt;</td></tr>
+<tr class="separator:aae17780c5f25b26b321599a6ceb9f4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70bc3b23f56d68aefaee92214d89d484"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U  = void&gt; </td></tr>
+<tr class="memitem:a70bc3b23f56d68aefaee92214d89d484"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a> = typename std::enable_if&lt;!std::is_same_v&lt; T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; T &gt;::ValueType &gt;, U &gt;</td></tr>
+<tr class="separator:a70bc3b23f56d68aefaee92214d89d484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae052150189e0c19be8035e1814287f16">InputToOutputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#a7338e8222efda47b306d30a2820a6e59">Self::OutputImageDimension</a>, <a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">Self::InputImageDimension</a> &gt;</td></tr>
 <tr class="separator:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -689,10 +689,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a322d058caf28834577cbbd50e5bd5152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a322d058caf28834577cbbd50e5bd5152">ComputeMinMax</a> (const <a class="el" href="classitk_1_1Image.html">Image</a>&lt; <a class="el" href="classitk_1_1DiffusionTensor3D.html">DiffusionTensor3D</a>&lt; <a class="el" href="classitk_1_1PatchBasedDenoisingBaseImageFilter.html#a14e841a0a15cd1b877315126a8eae22d">PixelValueType</a> &gt;, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a7adce9db7bd6d8c59c9f070dabbf66c0">ImageDimension</a> &gt; *img)</td></tr>
 <tr class="separator:a322d058caf28834577cbbd50e5bd5152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d1c393594399cc60bc9e110f82f7b0a"><td class="memTemplParams" colspan="2">template&lt;typename TImageType &gt; </td></tr>
-<tr class="memitem:a2d1c393594399cc60bc9e110f82f7b0a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a2d1c393594399cc60bc9e110f82f7b0a">ComputeMinMax</a> (const TImageType *img)</td></tr>
+<tr class="memitem:a2d1c393594399cc60bc9e110f82f7b0a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a2d1c393594399cc60bc9e110f82f7b0a">ComputeMinMax</a> (const TImageType *img)</td></tr>
 <tr class="separator:a2d1c393594399cc60bc9e110f82f7b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3b1c7d40cc222023614f36d700594c"><td class="memTemplParams" colspan="2">template&lt;typename TImageType &gt; </td></tr>
-<tr class="memitem:acd3b1c7d40cc222023614f36d700594c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acd3b1c7d40cc222023614f36d700594c">ComputeMinMax</a> (const TImageType *img)</td></tr>
+<tr class="memitem:acd3b1c7d40cc222023614f36d700594c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acd3b1c7d40cc222023614f36d700594c">ComputeMinMax</a> (const TImageType *img)</td></tr>
 <tr class="separator:acd3b1c7d40cc222023614f36d700594c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c7845a122eec6a1378e3f27c3a3627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a84c7845a122eec6a1378e3f27c3a3627">CopyInputToOutput</a> () override</td></tr>
 <tr class="separator:a84c7845a122eec6a1378e3f27c3a3627"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -703,10 +703,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af74a64c0c7aa0cfd2febda38b4466ee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#af74a64c0c7aa0cfd2febda38b4466ee4">GenerateInputRequestedRegion</a> () override</td></tr>
 <tr class="separator:af74a64c0c7aa0cfd2febda38b4466ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac10d7b8ed6fc1329ee6390e5d505f996"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac10d7b8ed6fc1329ee6390e5d505f996"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; T, typenameNumericTraits&lt; T &gt;::ValueType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ac10d7b8ed6fc1329ee6390e5d505f996">GetComponent</a> (const T &amp;pix, unsigned int idx) const</td></tr>
+<tr class="memitem:ac10d7b8ed6fc1329ee6390e5d505f996"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; T, typenameNumericTraits&lt; T &gt;::ValueType &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ac10d7b8ed6fc1329ee6390e5d505f996">GetComponent</a> (const T &amp;pix, unsigned int idx) const</td></tr>
 <tr class="separator:ac10d7b8ed6fc1329ee6390e5d505f996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a444b2eb57123f091d558dc3ddc5a96cb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a444b2eb57123f091d558dc3ddc5a96cb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; T, T &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a444b2eb57123f091d558dc3ddc5a96cb">GetComponent</a> (const T pix, unsigned int) const</td></tr>
+<tr class="memitem:a444b2eb57123f091d558dc3ddc5a96cb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; T, T &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a444b2eb57123f091d558dc3ddc5a96cb">GetComponent</a> (const T pix, unsigned int) const</td></tr>
 <tr class="separator:a444b2eb57123f091d558dc3ddc5a96cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a865f5da04318852f33d78ef779a051f2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html">ThreadDataStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a865f5da04318852f33d78ef779a051f2">GetThreadData</a> (int threadId)</td></tr>
 <tr class="separator:a865f5da04318852f33d78ef779a051f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -729,10 +729,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae4b42b13ff3b5845f7ae36c7378da1d7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a1421b0e80d4e9c81e6b3b115fb7fd9b7">RealArrayType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ae4b42b13ff3b5845f7ae36c7378da1d7">ResolveSigmaUpdate</a> ()</td></tr>
 <tr class="separator:ae4b42b13ff3b5845f7ae36c7378da1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc7e68f75689448be9e33808f3cde69b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abc7e68f75689448be9e33808f3cde69b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#abc7e68f75689448be9e33808f3cde69b">SetComponent</a> (T &amp;pix, unsigned int idx, typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type val) const</td></tr>
+<tr class="memitem:abc7e68f75689448be9e33808f3cde69b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#abc7e68f75689448be9e33808f3cde69b">SetComponent</a> (T &amp;pix, unsigned int idx, typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type val) const</td></tr>
 <tr class="separator:abc7e68f75689448be9e33808f3cde69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1b111625fb72e1aa0cf636b8b632fb9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae1b111625fb72e1aa0cf636b8b632fb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ae1b111625fb72e1aa0cf636b8b632fb9">SetComponent</a> (T &amp;pix, unsigned int, typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type val) const</td></tr>
+<tr class="memitem:ae1b111625fb72e1aa0cf636b8b632fb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#ae1b111625fb72e1aa0cf636b8b632fb9">SetComponent</a> (T &amp;pix, unsigned int, typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type val) const</td></tr>
 <tr class="separator:ae1b111625fb72e1aa0cf636b8b632fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5112df8dacbdcc651e7b3f0feceb463f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a5112df8dacbdcc651e7b3f0feceb463f">SetThreadData</a> (int threadId, const <a class="el" href="structitk_1_1PatchBasedDenoisingImageFilter_1_1ThreadDataStruct.html">ThreadDataStruct</a> &amp;data)</td></tr>
 <tr class="separator:a5112df8dacbdcc651e7b3f0feceb463f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1199,8 +1199,8 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 
 </div>
 </div>
-<a id="a0e50584b2c80774fc9588ba0d14fee94" name="a0e50584b2c80774fc9588ba0d14fee94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e50584b2c80774fc9588ba0d14fee94">&#9670;&nbsp;</a></span>DisableIfMultiComponent</h2>
+<a id="aae17780c5f25b26b321599a6ceb9f4e6" name="aae17780c5f25b26b321599a6ceb9f4e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae17780c5f25b26b321599a6ceb9f4e6">&#9670;&nbsp;</a></span>DisableIfMultiComponent</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1213,7 +1213,7 @@ template&lt;typename T , typename U  = void&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::DisableIfMultiComponent =  typename std::enable_if&lt;std::is_same&lt;T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;T&gt;::ValueType&gt;::value, U&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::DisableIfMultiComponent =  typename std::enable_if&lt;std::is_same_v&lt;T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;T&gt;::ValueType&gt;, U&gt;</td>
         </tr>
       </table>
   </td>
@@ -1300,8 +1300,8 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 
 </div>
 </div>
-<a id="aa3ec80266baa09a76bc209aface13a86" name="aa3ec80266baa09a76bc209aface13a86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3ec80266baa09a76bc209aface13a86">&#9670;&nbsp;</a></span>EnableIfMultiComponent</h2>
+<a id="a70bc3b23f56d68aefaee92214d89d484" name="a70bc3b23f56d68aefaee92214d89d484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70bc3b23f56d68aefaee92214d89d484">&#9670;&nbsp;</a></span>EnableIfMultiComponent</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1314,7 +1314,7 @@ template&lt;typename T , typename U  = void&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::EnableIfMultiComponent =  typename std::enable_if&lt;!std::is_same&lt;T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;T&gt;::ValueType&gt;::value, U&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::EnableIfMultiComponent =  typename std::enable_if&lt;!std::is_same_v&lt;T, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;T&gt;::ValueType&gt;, U&gt;</td>
         </tr>
       </table>
   </td>
@@ -1324,7 +1324,7 @@ template&lt;typename T , typename U  = void&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00247">247</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00246">246</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1735,7 +1735,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p >Update a by adding b. In Riemannian space, b is in the tangent space of a. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00376">376</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00374">374</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1777,7 +1777,7 @@ template&lt;typename RealT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00391">391</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00389">389</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2022,7 +2022,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p >Compute the signed difference a-b and the weighted squared distance between a and b. Do the computation in either Euclidean or Riemannian space depending on pixel type. The cache is used when the first argument is repeatedly passed into ComputeLogMap since the eigen analysis will already have been computed for that pixel. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00333">333</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00331">331</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2106,7 +2106,7 @@ template&lt;typename PixelT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00358">358</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00356">356</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2357,7 +2357,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p >Compute the Minimum and Maximum pixel in the image for each independent component </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00298">298</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00296">296</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2375,7 +2375,7 @@ template&lt;typename TImageType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ComputeMinMax </td>
+          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ComputeMinMax </td>
           <td>(</td>
           <td class="paramtype">const TImageType *&#160;</td>
           <td class="paramname"><em>img</em></td><td>)</td>
@@ -2389,7 +2389,7 @@ template&lt;typename TImageType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00312">312</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00310">310</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2407,7 +2407,7 @@ template&lt;typename TImageType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ComputeMinMax </td>
+          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; typenameTImageType::PixelType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ComputeMinMax </td>
           <td>(</td>
           <td class="paramtype">const TImageType *&#160;</td>
           <td class="paramname"><em>img</em></td><td>)</td>
@@ -2421,7 +2421,7 @@ template&lt;typename TImageType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00319">319</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00317">317</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2784,7 +2784,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; T, typenameNumericTraits&lt; T &gt;::ValueType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetComponent </td>
+          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; T, typenameNumericTraits&lt; T &gt;::ValueType &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetComponent </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>pix</em>, </td>
@@ -2808,7 +2808,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00272">272</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00270">270</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -2826,7 +2826,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; T, T &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetComponent </td>
+          <td class="memname"><a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; T, T &gt;::type <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html">itk::PatchBasedDenoisingImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetComponent </td>
           <td>(</td>
           <td class="paramtype">const T&#160;</td>
           <td class="paramname"><em>pix</em>, </td>
@@ -2853,7 +2853,7 @@ template&lt;typename T &gt; </div>
 <p>A method to generically get a component. </p>
 <p >The same function name can be used to generically access for scalars and array-like types. For scalar types the idx parameter is ignored. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00259">259</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00257">257</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -3527,7 +3527,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aa3ec80266baa09a76bc209aface13a86">EnableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type&#160;</td>
+          <td class="paramtype">typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a70bc3b23f56d68aefaee92214d89d484">EnableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
@@ -3543,7 +3543,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00289">289</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00287">287</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -3575,7 +3575,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#a0e50584b2c80774fc9588ba0d14fee94">DisableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type&#160;</td>
+          <td class="paramtype">typename <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#aae17780c5f25b26b321599a6ceb9f4e6">DisableIfMultiComponent</a>&lt; T, <a class="el" href="classitk_1_1PatchBasedDenoisingImageFilter.html#acbc6427295f4d8fb8d2cf977bad3d96a">RealValueType</a> &gt;::type&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
@@ -3593,7 +3593,7 @@ template&lt;typename T &gt; </div>
 
 <p>A method to generically set a component. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00280">280</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00278">278</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4151,7 +4151,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00565">565</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00563">563</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4177,7 +4177,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00563">563</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00561">561</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4203,7 +4203,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00562">562</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00560">560</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4229,7 +4229,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00560">560</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00558">558</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4255,7 +4255,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00564">564</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00562">562</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4281,7 +4281,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00571">571</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00569">569</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4307,7 +4307,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00558">558</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00556">556</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4333,7 +4333,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00559">559</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00557">557</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4359,7 +4359,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00567">567</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00565">565</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4385,7 +4385,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00566">566</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00564">564</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4411,7 +4411,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00573">573</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00571">571</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4437,7 +4437,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00575">575</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00573">573</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4463,7 +4463,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00574">574</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00572">572</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4489,7 +4489,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00551">551</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00549">549</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4515,7 +4515,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00550">550</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00548">548</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4541,7 +4541,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00577">577</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00575">575</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4567,7 +4567,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00578">578</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00576">576</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4593,7 +4593,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00570">570</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00568">568</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4619,7 +4619,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00569">569</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00567">567</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4645,7 +4645,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00568">568</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00566">566</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4671,7 +4671,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00545">545</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00543">543</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4697,7 +4697,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00552">552</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00550">550</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4724,7 +4724,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p >The buffer that holds the updates for an iteration of the algorithm. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00548">548</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00546">546</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4750,7 +4750,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00556">556</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00554">554</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4776,7 +4776,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00554">554</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00552">552</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -4802,7 +4802,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00561">561</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html#l00559">559</a> of file <a class="el" href="itkPatchBasedDenoisingImageFilter_8h_source.html">itkPatchBasedDenoisingImageFilter.h</a>.</p>
 
 </div>
 </div>
