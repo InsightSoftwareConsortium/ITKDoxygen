@@ -2454,7 +2454,7 @@ template&lt;typename TCoordRep &gt; </div>
 </div><div class="memdoc">
 <p >Get a physical point (in the space which the origin and spacing information comes from) from a continuous index (in the index space) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00429">429</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00437">437</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2489,7 +2489,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 </div><div class="memdoc">
 <p >Returns a physical point from a continuous index (in the index space) </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00438">438</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00446">446</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2522,7 +2522,7 @@ template&lt;typename TCoordRep &gt; </div>
 </div><div class="memdoc">
 <p >Returns a physical point from a discrete index (in the index space) </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00458">458</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00466">466</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2566,7 +2566,7 @@ template&lt;typename TCoordRep &gt; </div>
 <p >Get a physical point (in the space which the origin and spacing information comes from) from a discrete index (in the index space)</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00450">450</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00458">458</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2610,7 +2610,7 @@ template&lt;typename TCoordRep &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00465">465</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00473">473</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2642,7 +2642,7 @@ template&lt;typename TVector &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00473">473</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00481">481</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2685,9 +2685,11 @@ template&lt;typename TCoordRep &gt; </div>
 </div><div class="memdoc">
 
 <p>Get the continuous index from a physical point. </p>
-<p >Returns true if the resulting index is within the image, false otherwise. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
+<p >Returns true if the resulting index is within the image, false otherwise.</p>
+<dl class="section note"><dt>Note</dt><dd>For performance reasons, if you do not need to use the <code>bool</code> return value, please call the corresponding overload instead, which has only one parameter (the point), and returns the continuous index.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00398">398</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00402">402</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2757,7 +2759,7 @@ template&lt;typename TCoordRep &gt; </div>
 </div><div class="memdoc">
 <p >Returns the index (discrete) of a voxel from a physical point. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00407">407</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00411">411</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2800,9 +2802,11 @@ template&lt;typename TCoordRep &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Get the index (discrete) from a physical point. Floating point index results are truncated to integers. Returns true if the resulting index is within the image, false otherwise </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
+<p >Get the index (discrete) from a physical point. Floating point index results are truncated to integers. Returns true if the resulting index is within the image, false otherwise</p>
+<dl class="section note"><dt>Note</dt><dd>For performance reasons, if you do not need to use the <code>bool</code> return value, please call the corresponding overload instead, which has only one parameter (the point), and returns the index.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00418">418</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00426">426</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2846,7 +2850,7 @@ template&lt;typename TCoordRep &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00482">482</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00490">490</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2878,7 +2882,7 @@ template&lt;typename TVector &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00490">490</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00498">498</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2940,7 +2944,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00519">519</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00527">527</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -2972,7 +2976,7 @@ template&lt;typename TPixelType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00511">511</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00519">519</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -3116,7 +3120,7 @@ template&lt;typename TImage , typename TAccessor &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00524">524</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00532">532</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
@@ -3142,7 +3146,7 @@ template&lt;typename TImage , typename TAccessor &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00528">528</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageAdaptor_8h_source.html#l00536">536</a> of file <a class="el" href="itkImageAdaptor_8h_source.html">itkImageAdaptor.h</a>.</p>
 
 </div>
 </div>
