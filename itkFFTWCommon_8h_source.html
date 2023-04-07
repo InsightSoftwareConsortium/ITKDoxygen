@@ -209,7 +209,7 @@ $(function() {
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>               <span class="keywordtype">bool</span>          canDestroyInput = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  {</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    fftwf_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    (void)threads;</div>
@@ -309,7 +309,7 @@ $(function() {
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  {</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    fftwf_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    (void)threads;</div>
@@ -411,7 +411,7 @@ $(function() {
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>           <span class="keywordtype">bool</span>          canDestroyInput = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  {</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    fftwf_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    (void)threads;</div>
@@ -464,7 +464,7 @@ $(function() {
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="classitk_1_1fftw_1_1Proxy_3_01float_01_4.html#aa8456293e999b9dd0b4a96a1b0471816">  388</a></span>  <a class="code hl_function" href="classitk_1_1fftw_1_1Proxy_3_01float_01_4.html#aa8456293e999b9dd0b4a96a1b0471816">DestroyPlan</a>(<a class="code hl_typedef" href="classitk_1_1fftw_1_1Proxy_3_01float_01_4.html#adde16212cbdfc8435be5a28c82cc7957">PlanType</a> p)</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>  {</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span><span class="preprocessor">#  endif</span></div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    fftwf_destroy_plan(p);</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>  }</div>
@@ -545,7 +545,7 @@ $(function() {
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>               <span class="keywordtype">bool</span>          canDestroyInput = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>  {</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    fftw_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    (void)threads;</div>
@@ -644,7 +644,7 @@ $(function() {
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>               <span class="keywordtype">bool</span>          canDestroyInput = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>  {</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    fftw_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    (void)threads;</div>
@@ -746,7 +746,7 @@ $(function() {
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>           <span class="keywordtype">bool</span>          canDestroyInput = <span class="keyword">false</span>)</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>  {</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    fftw_plan_with_nthreads(threads);</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="preprocessor">#  else</span></div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    (void)threads;</div>
@@ -799,7 +799,7 @@ $(function() {
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno"><a class="line" href="classitk_1_1fftw_1_1Proxy_3_01double_01_4.html#ac8d5dbce6147d10b4f7960b796a56461">  723</a></span>  <a class="code hl_function" href="classitk_1_1fftw_1_1Proxy_3_01double_01_4.html#ac8d5dbce6147d10b4f7960b796a56461">DestroyPlan</a>(<a class="code hl_typedef" href="classitk_1_1fftw_1_1Proxy_3_01double_01_4.html#a429c2f4e83c7a510934f0cdb62dd61e4">PlanType</a> p)</div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  {</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span><span class="preprocessor">#  ifndef ITK_USE_CUFFTW</span></div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keyword">const</span> std::lock_guard lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keyword">const</span> std::lock_guard&lt;FFTWGlobalConfiguration::MutexType&gt; lock(<a class="code hl_function" href="classitk_1_1FFTWGlobalConfiguration.html#ac06eb393e88fceaf4475c34695d04b7c">FFTWGlobalConfiguration::GetLockMutex</a>());</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="preprocessor">#  endif</span></div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    fftw_destroy_plan(p);</div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  }</div>
