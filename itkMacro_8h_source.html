@@ -1253,24 +1253,34 @@ $(function() {
 <div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TTarget<span class="keyword">&gt;</span>(x);</div>
 <div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>}</div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span><span class="preprocessor">#define ITK_ALIGNAS(X) alignas(X)</span></div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span><span class="preprocessor">#define ITK_ALIGNOF(X) alignof(X)</span></div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="preprocessor">#define ITK_DEPRECATED [[deprecated]]</span></div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span><span class="preprocessor">#define ITK_DEPRECATED_MSG(MSG) [[deprecated(MSG)]]</span></div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="preprocessor">#define ITK_CONSTEXPR constexpr</span></div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span><span class="preprocessor">#define ITK_DELETED_FUNCTION = delete</span></div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span><span class="preprocessor">#define ITK_EXTERN_TEMPLATE extern</span></div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span><span class="preprocessor">#define ITK_FINAL final</span></div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span><span class="preprocessor">#define ITK_NOEXCEPT noexcept</span></div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="preprocessor">#define ITK_NOEXCEPT_EXPR(X) noexcept(X)</span></div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="preprocessor">#define ITK_NULLPTR nullptr</span></div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="preprocessor">#define ITK_OVERRIDE override</span></div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="preprocessor">#define ITK_STATIC_ASSERT(X) static_assert(X, #X)</span></div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span><span class="preprocessor">#define ITK_STATIC_ASSERT_MSG(X, MSG) static_assert(X, MSG)</span></div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span><span class="preprocessor">#define ITK_THREAD_LOCAL thread_local</span></div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span> </div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span><span class="preprocessor">#endif </span><span class="comment">// end of itkMacro.h</span></div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span><span class="preprocessor">#ifdef ITK_LEGACY_REMOVE</span></div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span><span class="preprocessor">#  if __cplusplus &gt;= 202002L</span></div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span><span class="preprocessor">#    define ITK_NODISCARD(message) [[nodiscard(message)]]</span></div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span><span class="preprocessor">#    define ITK_NODISCARD(message) [[nodiscard]]</span></div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span><span class="preprocessor">#  define ITK_NODISCARD(message)</span></div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span> </div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="preprocessor">#define ITK_ALIGNAS(X) alignas(X)</span></div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="preprocessor">#define ITK_ALIGNOF(X) alignof(X)</span></div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="preprocessor">#define ITK_DEPRECATED [[deprecated]]</span></div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span><span class="preprocessor">#define ITK_DEPRECATED_MSG(MSG) [[deprecated(MSG)]]</span></div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span><span class="preprocessor">#define ITK_CONSTEXPR constexpr</span></div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span><span class="preprocessor">#define ITK_DELETED_FUNCTION = delete</span></div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span><span class="preprocessor">#define ITK_EXTERN_TEMPLATE extern</span></div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span><span class="preprocessor">#define ITK_FINAL final</span></div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span><span class="preprocessor">#define ITK_NOEXCEPT noexcept</span></div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span><span class="preprocessor">#define ITK_NOEXCEPT_EXPR(X) noexcept(X)</span></div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span><span class="preprocessor">#define ITK_NULLPTR nullptr</span></div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span><span class="preprocessor">#define ITK_OVERRIDE override</span></div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="preprocessor">#define ITK_STATIC_ASSERT(X) static_assert(X, #X)</span></div>
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span><span class="preprocessor">#define ITK_STATIC_ASSERT_MSG(X, MSG) static_assert(X, MSG)</span></div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span><span class="preprocessor">#define ITK_THREAD_LOCAL thread_local</span></div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span> </div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span><span class="preprocessor">#endif </span><span class="comment">// end of itkMacro.h</span></div>
 <div class="ttc" id="aitkExceptionObject_8h_html"><div class="ttname"><a href="itkExceptionObject_8h.html">itkExceptionObject.h</a></div></div>
 <div class="ttc" id="aitkWin32Header_8h_html"><div class="ttname"><a href="itkWin32Header_8h.html">itkWin32Header.h</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:25</a></div></div>
