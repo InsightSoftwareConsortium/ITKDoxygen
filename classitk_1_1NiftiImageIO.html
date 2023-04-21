@@ -215,6 +215,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abf0865956666119751ce045485ac8481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad39be24a832532735d613e1c2f160b98"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#ad39be24a832532735d613e1c2f160b98">ConvertRASDisplacementVectorsOn</a> ()</td></tr>
 <tr class="separator:ad39be24a832532735d613e1c2f160b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a3ffde89b54fcaa24094fbed9ef67048d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#a3ffde89b54fcaa24094fbed9ef67048d">SetSFORM_Permissive</a> (bool _arg)</td></tr>
+<tr class="separator:a3ffde89b54fcaa24094fbed9ef67048d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8c736b3e61d19c6bf0fd035b00538b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#adf8c736b3e61d19c6bf0fd035b00538b">GetSFORM_Permissive</a> () const</td></tr>
+<tr class="separator:adf8c736b3e61d19c6bf0fd035b00538b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13aa848063191dd233f262cb9595c5b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#a13aa848063191dd233f262cb9595c5b2">SFORM_PermissiveOn</a> ()</td></tr>
+<tr class="separator:a13aa848063191dd233f262cb9595c5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageIOBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageIOBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageIOBase.html">itk::ImageIOBase</a></td></tr>
 <tr class="memitem:a27341710c058fb3da4c73a0e52dc52d5 inherit pub_methods_classitk_1_1ImageIOBase"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageIOBase.html#a27341710c058fb3da4c73a0e52dc52d5">CanReadFile</a> (const char *)=0</td></tr>
 <tr class="separator:a27341710c058fb3da4c73a0e52dc52d5 inherit pub_methods_classitk_1_1ImageIOBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -671,6 +678,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9e379b2bdb4049b0a5b6accc95d66d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4e3945118ddf0e7e6238bd59cb97ff2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#aa4e3945118ddf0e7e6238bd59cb97ff2">m_RescaleSlope</a> { 1.0 }</td></tr>
 <tr class="separator:aa4e3945118ddf0e7e6238bd59cb97ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2782003949350c19f435c93da167e432"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#a2782003949350c19f435c93da167e432">m_SFORM_Corrected</a> { false }</td></tr>
+<tr class="separator:a2782003949350c19f435c93da167e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf53e91ea5c0ec5eea6deb35a1aae160"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NiftiImageIO.html#acf53e91ea5c0ec5eea6deb35a1aae160">m_SFORM_Permissive</a></td></tr>
+<tr class="separator:acf53e91ea5c0ec5eea6deb35a1aae160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1180,6 +1191,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="adf8c736b3e61d19c6bf0fd035b00538b" name="adf8c736b3e61d19c6bf0fd035b00538b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8c736b3e61d19c6bf0fd035b00538b">&#9670;&nbsp;</a></span>GetSFORM_Permissive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool itk::NiftiImageIO::GetSFORM_Permissive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Allow to read nifti files with non-orthogonal sform </p>
+
+</div>
+</div>
 <a id="add10796f5f28e4528c2b38942b85f42c" name="add10796f5f28e4528c2b38942b85f42c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add10796f5f28e4528c2b38942b85f42c">&#9670;&nbsp;</a></span>getSFormCodeFromDictionary()</h2>
 
@@ -1228,7 +1265,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00241">241</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00247">247</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1608,6 +1645,59 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a3ffde89b54fcaa24094fbed9ef67048d" name="a3ffde89b54fcaa24094fbed9ef67048d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ffde89b54fcaa24094fbed9ef67048d">&#9670;&nbsp;</a></span>SetSFORM_Permissive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void itk::NiftiImageIO::SetSFORM_Permissive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Allow to read nifti files with non-orthogonal sform </p>
+
+</div>
+</div>
+<a id="a13aa848063191dd233f262cb9595c5b2" name="a13aa848063191dd233f262cb9595c5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13aa848063191dd233f262cb9595c5b2">&#9670;&nbsp;</a></span>SFORM_PermissiveOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void itk::NiftiImageIO::SFORM_PermissiveOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Allow to read nifti files with non-orthogonal sform </p>
+
+</div>
+</div>
 <a id="ad8d0b4ae311abeef91e46315e24f0b52" name="ad8d0b4ae311abeef91e46315e24f0b52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8d0b4ae311abeef91e46315e24f0b52">&#9670;&nbsp;</a></span>Write()</h2>
 
@@ -1687,7 +1777,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00284">284</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00290">290</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1801,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00286">286</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00292">292</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1735,7 +1825,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00285">285</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00291">291</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1759,7 +1849,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00290">290</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00296">296</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1783,7 +1873,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00279">279</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00285">285</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1807,7 +1897,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00277">277</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00283">283</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1831,7 +1921,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00288">288</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00294">294</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1855,7 +1945,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00282">282</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00288">288</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
@@ -1879,7 +1969,55 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00281">281</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00287">287</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+
+</div>
+</div>
+<a id="a2782003949350c19f435c93da167e432" name="a2782003949350c19f435c93da167e432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2782003949350c19f435c93da167e432">&#9670;&nbsp;</a></span>m_SFORM_Corrected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool itk::NiftiImageIO::m_SFORM_Corrected { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00299">299</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
+
+</div>
+</div>
+<a id="acf53e91ea5c0ec5eea6deb35a1aae160" name="acf53e91ea5c0ec5eea6deb35a1aae160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf53e91ea5c0ec5eea6deb35a1aae160">&#9670;&nbsp;</a></span>m_SFORM_Permissive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool itk::NiftiImageIO::m_SFORM_Permissive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkNiftiImageIO_8h_source.html#l00298">298</a> of file <a class="el" href="itkNiftiImageIO_8h_source.html">itkNiftiImageIO.h</a>.</p>
 
 </div>
 </div>
