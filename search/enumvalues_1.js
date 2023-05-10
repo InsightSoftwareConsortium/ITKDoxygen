@@ -3,7 +3,7 @@ var searchData=
   ['b2_5fmaskfile_5fblack_0',['B2_MASKFILE_BLACK',['../namespaceitk.html#a20d296df846a449bbde0d681fa6dab9dabc3f092acf2e2bc2f0289e2f7e379c34',1,'itk']]],
   ['b2_5fmaskfile_5fgray_1',['B2_MASKFILE_GRAY',['../namespaceitk.html#a20d296df846a449bbde0d681fa6dab9daaca726e7383841552228d99903bfa671',1,'itk']]],
   ['b2_5fmaskfile_5fwhite_2',['B2_MASKFILE_WHITE',['../namespaceitk.html#a20d296df846a449bbde0d681fa6dab9dad251f447c401e8f483f2a15998a06dc9',1,'itk']]],
-  ['basic_3',['BASIC',['../classitk_1_1MathematicalMorphologyEnums.html#a712edd05b893b9192b295f08cf08ea06ae4ac03f6c9f00665644e868dd1fb9f1e',1,'itk::MathematicalMorphologyEnums']]],
+  ['basic_3',['BASIC',['../classitk_1_1MathematicalMorphologyEnums.html#aa012db1ee2ad9dbeade333e568968317ae4ac03f6c9f00665644e868dd1fb9f1e',1,'itk::MathematicalMorphologyEnums']]],
   ['belowtolerance_4',['BelowTolerance',['../classitk_1_1SPSAOptimizerEnums.html#aa116cbbd0a6638a0c09222720292d675a79b19e0bfc57397a6fa4260392688c33',1,'itk::SPSAOptimizerEnums']]],
   ['bezier_5finterpolation_5',['BEZIER_INTERPOLATION',['../classitk_1_1ContourSpatialObjectEnums.html#a7611bca541be796ef7838bd4d193fe39a2ca61b0530aaf4ddf95eef09e0db1ba6',1,'itk::ContourSpatialObjectEnums']]],
   ['bigendian_6',['BigEndian',['../classitk_1_1CommonEnums.html#a506a879e3ac4ba894511ac426ee768bea2ce7a92ae43763828ac4acb4560c2a5b',1,'itk::CommonEnums']]],
