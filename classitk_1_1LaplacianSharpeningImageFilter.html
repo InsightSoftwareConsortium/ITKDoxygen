@@ -220,8 +220,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acad2d7076ccba98dced13f7c985a67dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#acad2d7076ccba98dced13f7c985a67dc">GenerateInputRequestedRegion</a> () override</td></tr>
-<tr class="separator:acad2d7076ccba98dced13f7c985a67dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1095f25bbbacacabd6791280b8cb4f18"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#a1095f25bbbacacabd6791280b8cb4f18">GetNameOfClass</a> () const</td></tr>
 <tr class="separator:a1095f25bbbacacabd6791280b8cb4f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c87b04065d8231046cdcc0c10eaf529"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#a5c87b04065d8231046cdcc0c10eaf529">UseImageSpacingOn</a> ()</td></tr>
@@ -473,6 +471,8 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aab01d004a6911f9e16319804025ba8a9"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#aab01d004a6911f9e16319804025ba8a9">ImageDimension</a> = TOutputImage::ImageDimension</td></tr>
 <tr class="separator:aab01d004a6911f9e16319804025ba8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09975019e8bef105425f0a207caa3045"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#a09975019e8bef105425f0a207caa3045">InputImageDimension</a> = TInputImage::ImageDimension</td></tr>
+<tr class="separator:a09975019e8bef105425f0a207caa3045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">InputImageDimension</a> = TInputImage::ImageDimension</td></tr>
 <tr class="separator:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -484,6 +484,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a24e67ad8fac2b6f5f577b08d3784f7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#a24e67ad8fac2b6f5f577b08d3784f7e8">EnlargeOutputRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output) override</td></tr>
+<tr class="separator:a24e67ad8fac2b6f5f577b08d3784f7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26c9087022ec70f29f4467205963cf0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#a26c9087022ec70f29f4467205963cf0c">GenerateData</a> () override</td></tr>
 <tr class="separator:a26c9087022ec70f29f4467205963cf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0fbf51cb4056819f9a0704fdca422e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#afe0fbf51cb4056819f9a0704fdca422e">LaplacianSharpeningImageFilter</a> ()</td></tr>
@@ -772,7 +774,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00078">78</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00079">79</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -790,7 +792,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00074">74</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00075">75</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -809,7 +811,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> type alias support </p>
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00072">72</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -863,7 +865,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00074">74</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -920,7 +922,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <p >Smart pointer type alias support <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00078">78</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +1008,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00109">109</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00107">107</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1038,6 +1040,37 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a24e67ad8fac2b6f5f577b08d3784f7e8" name="a24e67ad8fac2b6f5f577b08d3784f7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e67ad8fac2b6f5f577b08d3784f7e8">&#9670;&nbsp;</a></span>EnlargeOutputRequestedRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html">itk::LaplacianSharpeningImageFilter</a>&lt; TInputImage, TOutputImage &gt;::EnlargeOutputRequestedRegion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >This filter must produce all of its output at once. </p>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#ac26647c13232381be4f6b1c63e2ec3c9">itk::ProcessObject</a>.</p>
+
+</div>
+</div>
 <a id="a26c9087022ec70f29f4467205963cf0c" name="a26c9087022ec70f29f4467205963cf0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26c9087022ec70f29f4467205963cf0c">&#9670;&nbsp;</a></span>GenerateData()</h2>
 
@@ -1066,38 +1099,6 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
  </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">itk::ImageSource&lt; TOutputImage &gt;</a>.</p>
-
-</div>
-</div>
-<a id="acad2d7076ccba98dced13f7c985a67dc" name="acad2d7076ccba98dced13f7c985a67dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad2d7076ccba98dced13f7c985a67dc">&#9670;&nbsp;</a></span>GenerateInputRequestedRegion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html">itk::LaplacianSharpeningImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GenerateInputRequestedRegion </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html" title="This filter sharpens an image using a Laplacian. LaplacianSharpening highlights regions of rapid inte...">LaplacianSharpeningImageFilter</a> needs a larger input requested region than the output requested region (larger in the direction of the derivative). As such, <a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html" title="This filter sharpens an image using a Laplacian. LaplacianSharpening highlights regions of rapid inte...">LaplacianSharpeningImageFilter</a> needs to provide an implementation for <a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html#acad2d7076ccba98dced13f7c985a67dc">GenerateInputRequestedRegion()</a> in order to inform the pipeline execution model.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html#a6983235b756f273551b95c174b314e67">ImageToImageFilter::GenerateInputRequestedRegion()</a> <br  />
- </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classitk_1_1ImageToImageFilter.html#a6983235b756f273551b95c174b314e67">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
@@ -1311,6 +1312,32 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00070">70</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a09975019e8bef105425f0a207caa3045" name="a09975019e8bef105425f0a207caa3045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09975019e8bef105425f0a207caa3045">&#9670;&nbsp;</a></span>InputImageDimension</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1LaplacianSharpeningImageFilter.html">itk::LaplacianSharpeningImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImageDimension = TInputImage::ImageDimension</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00069">69</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
@@ -1337,7 +1364,7 @@ template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00125">125</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html#l00127">127</a> of file <a class="el" href="itkLaplacianSharpeningImageFilter_8h_source.html">itkLaplacianSharpeningImageFilter.h</a>.</p>
 
 </div>
 </div>
