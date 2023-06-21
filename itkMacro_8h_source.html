@@ -934,14 +934,14 @@ $(function() {
 <div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span> </div>
 <div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span><span class="comment">// clang-format off</span></div>
 <div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="preprocessor">#define itkSetMacro(name, type)                     \</span></div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span><span class="preprocessor">  virtual void Set##name(const type _arg)           \</span></div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span><span class="preprocessor">  virtual void Set##name(type _arg)           \</span></div>
 <div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span><span class="preprocessor">  {                                                 \</span></div>
 <div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span><span class="preprocessor">    itkDebugMacro(&quot;setting &quot;</span> #name &quot; to &quot; &lt;&lt; _arg); \</div>
 <div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>    CLANG_PRAGMA_PUSH                               \</div>
 <div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>    CLANG_SUPPRESS_Wfloat_equal                     \</div>
 <div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>    if (this-&gt;m_##name != _arg)                     \</div>
 <div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>    {                                               \</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>      this-&gt;m_##name = _arg;                        \</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>      this-&gt;m_##name = std::move(_arg);                        \</div>
 <div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>      this-&gt;Modified();                             \</div>
 <div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>    }                                               \</div>
 <div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>    CLANG_PRAGMA_POP                                \</div>
