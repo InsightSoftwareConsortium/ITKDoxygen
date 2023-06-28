@@ -344,26 +344,26 @@ $(function() {
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="preprocessor">  itkCreateAnotherMacro(x); \</span></div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">  itkCloneMacro(x);         \</span></div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#define itkSimpleNewMacro(x)                            \</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">  static Pointer New()                                  \</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">  {                                                     \</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">    Pointer smartPtr = itk::ObjectFactory&lt;x&gt;::Create(); \</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">    if (smartPtr == nullptr)                            \</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">    {                                                   \</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">      smartPtr = new x;                                 \</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">    }                                                   \</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">    smartPtr-&gt;UnRegister();                             \</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    return smartPtr;                                    \</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">  }                                                     \</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#define itkSimpleNewMacro(x)                              \</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">  static Pointer New()                                    \</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">  {                                                       \</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">    Pointer smartPtr = ::itk::ObjectFactory&lt;x&gt;::Create(); \</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">    if (smartPtr == nullptr)                              \</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">    {                                                     \</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">      smartPtr = new x;                                   \</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">    }                                                     \</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">    smartPtr-&gt;UnRegister();                               \</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    return smartPtr;                                      \</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">  }                                                       \</span></div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#define itkCreateAnotherMacro(x)                           \</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">  itk::LightObject::Pointer CreateAnother() const override \</span></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">  {                                                        \</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">    itk::LightObject::Pointer smartPtr;                    \</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">    smartPtr = x::New().GetPointer();                      \</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">    return smartPtr;                                       \</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#define itkCreateAnotherMacro(x)                             \</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">  ::itk::LightObject::Pointer CreateAnother() const override \</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">  {                                                          \</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">    ::itk::LightObject::Pointer smartPtr;                    \</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">    smartPtr = x::New().GetPointer();                        \</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">    return smartPtr;                                         \</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">  }                                                          \</span></div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="preprocessor">#define itkCloneMacro(x)                                                  \</span></div>
@@ -382,7 +382,7 @@ $(function() {
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#define itkSimpleFactoryOnlyNewMacro(x)                                                                 \</span></div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">  static auto New()-&gt;Pointer                                                                            \</span></div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">  {                                                                                                     \</span></div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="preprocessor">    Pointer smartPtr = itk::ObjectFactory&lt;x&gt;::Create();                                                 \</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="preprocessor">    Pointer smartPtr = ::itk::ObjectFactory&lt;x&gt;::Create();                                               \</span></div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="preprocessor">    if (smartPtr == nullptr)                                                                            \</span></div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="preprocessor">    {                                                                                                   \</span></div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="preprocessor">      itkSpecializedMessageExceptionMacro(ExceptionObject,                                              \</span></div>
@@ -393,21 +393,21 @@ $(function() {
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  }                                                                                                     \</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  ITK_MACROEND_NOOP_STATEMENT</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">#define itkFactorylessNewMacro(x)                          \</span></div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="preprocessor">  static Pointer New()                                     \</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="preprocessor">  {                                                        \</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="preprocessor">    Pointer smartPtr;                                      \</span></div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="preprocessor">    x *     rawPtr = new x;                                \</span></div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">    smartPtr = rawPtr;                                     \</span></div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="preprocessor">    rawPtr-&gt;UnRegister();                                  \</span></div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="preprocessor">    return smartPtr;                                       \</span></div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="preprocessor">  }                                                        \</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="preprocessor">  itk::LightObject::Pointer CreateAnother() const override \</span></div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="preprocessor">  {                                                        \</span></div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="preprocessor">    itk::LightObject::Pointer smartPtr;                    \</span></div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="preprocessor">    smartPtr = x::New().GetPointer();                      \</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="preprocessor">    return smartPtr;                                       \</span></div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">#define itkFactorylessNewMacro(x)                            \</span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="preprocessor">  static Pointer New()                                       \</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="preprocessor">  {                                                          \</span></div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="preprocessor">    Pointer smartPtr;                                        \</span></div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="preprocessor">    x *     rawPtr = new x;                                  \</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">    smartPtr = rawPtr;                                       \</span></div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="preprocessor">    rawPtr-&gt;UnRegister();                                    \</span></div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="preprocessor">    return smartPtr;                                         \</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="preprocessor">  }                                                          \</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="preprocessor">  ::itk::LightObject::Pointer CreateAnother() const override \</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="preprocessor">  {                                                          \</span></div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="preprocessor">    ::itk::LightObject::Pointer smartPtr;                    \</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="preprocessor">    smartPtr = x::New().GetPointer();                        \</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="preprocessor">    return smartPtr;                                         \</span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="preprocessor">  }                                                          \</span></div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="comment">//</span></div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="comment">// A macro to disallow the copy constructor, copy assignment,</span></div>
@@ -488,12 +488,12 @@ $(function() {
 <div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span><span class="preprocessor">#  define itkDebugMacro(x)                                                     \</span></div>
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span><span class="preprocessor">    do                                                                         \</span></div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span><span class="preprocessor">    {                                                                          \</span></div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="preprocessor">      if (this-&gt;GetDebug() &amp;&amp; itk::Object::GetGlobalWarningDisplay())          \</span></div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="preprocessor">      if (this-&gt;GetDebug() &amp;&amp; ::itk::Object::GetGlobalWarningDisplay())        \</span></div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="preprocessor">      {                                                                        \</span></div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span><span class="preprocessor">        std::ostringstream itkmsg;                                             \</span></div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span><span class="preprocessor">        itkmsg &lt;&lt; &quot;Debug: In &quot;</span> __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; &#39;\n&#39;          \</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>               &lt;&lt; this-&gt;GetNameOfClass() &lt;&lt; &quot; (&quot; &lt;&lt; this &lt;&lt; &quot;): &quot; x &lt;&lt; &quot;\n\n&quot;; \</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        itk::OutputWindowDisplayDebugText(itkmsg.str().c_str());               \</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        ::itk::OutputWindowDisplayDebugText(itkmsg.str().c_str());             \</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>      }                                                                        \</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    } while (0)</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span><span class="comment">// The itkDebugStatement is to be used to protect code that is only</span></div>
@@ -504,12 +504,12 @@ $(function() {
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="preprocessor">#define itkWarningMacro(x)                                                   \</span></div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span><span class="preprocessor">  do                                                                         \</span></div>
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span><span class="preprocessor">  {                                                                          \</span></div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span><span class="preprocessor">    if (itk::Object::GetGlobalWarningDisplay())                              \</span></div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span><span class="preprocessor">    if (::itk::Object::GetGlobalWarningDisplay())                            \</span></div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><span class="preprocessor">    {                                                                        \</span></div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span><span class="preprocessor">      std::ostringstream itkmsg;                                             \</span></div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span><span class="preprocessor">      itkmsg &lt;&lt; &quot;WARNING: In &quot;</span> __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; &#39;\n&#39;        \</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>             &lt;&lt; this-&gt;GetNameOfClass() &lt;&lt; &quot; (&quot; &lt;&lt; this &lt;&lt; &quot;): &quot; x &lt;&lt; &quot;\n\n&quot;; \</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>      itk::OutputWindowDisplayWarningText(itkmsg.str().c_str());             \</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>      ::itk::OutputWindowDisplayWarningText(itkmsg.str().c_str());           \</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    }                                                                        \</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>  } while (0)</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="preprocessor">#define itkWarningStatement(x) x</span></div>
@@ -546,13 +546,13 @@ $(function() {
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="preprocessor">  {                                                                                                                  \</span></div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="preprocessor">    std::ostringstream exceptionDescriptionOutputStringStream;                                                       \</span></div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><span class="preprocessor">    exceptionDescriptionOutputStringStream &lt;&lt; &quot;ITK ERROR: &quot;</span> x;                                                       \</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    throw itk::ExceptionType(                                                                                        \</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    throw ::itk::ExceptionType(                                                                                      \</div>
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>      std::string{ __FILE__ }, __LINE__, exceptionDescriptionOutputStringStream.str(), std::string{ ITK_LOCATION }); \</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  }                                                                                                                  \</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>  ITK_MACROEND_NOOP_STATEMENT</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span> </div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span><span class="preprocessor">#define itkSpecializedExceptionMacro(ExceptionType) \</span></div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span><span class="preprocessor">  itkSpecializedMessageExceptionMacro(ExceptionType, &lt;&lt; itk::ExceptionType::default_exception_message)</span></div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span><span class="preprocessor">  itkSpecializedMessageExceptionMacro(ExceptionType, &lt;&lt; ::itk::ExceptionType::default_exception_message)</span></div>
 <div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span><span class="preprocessor">#define itkExceptionMacro(x) \</span></div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span><span class="preprocessor">  itkSpecializedMessageExceptionMacro(ExceptionObject, &lt;&lt; this-&gt;GetNameOfClass() &lt;&lt; &#39;(&#39; &lt;&lt; this &lt;&lt; &quot;): &quot;</span> x)</div>
@@ -561,11 +561,11 @@ $(function() {
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span> </div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span><span class="preprocessor">#define itkGenericOutputMacro(x)                                                   \</span></div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="preprocessor">  {                                                                                \</span></div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="preprocessor">    if (itk::Object::GetGlobalWarningDisplay())                                    \</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="preprocessor">    if (::itk::Object::GetGlobalWarningDisplay())                                  \</span></div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="preprocessor">    {                                                                              \</span></div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><span class="preprocessor">      std::ostringstream itkmsg;                                                   \</span></div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span><span class="preprocessor">      itkmsg &lt;&lt; &quot;WARNING: In &quot;</span> __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot;\n&quot; x &lt;&lt; &quot;\n\n&quot;; \</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>      itk::OutputWindowDisplayGenericOutputText(itkmsg.str().c_str());             \</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>      ::itk::OutputWindowDisplayGenericOutputText(itkmsg.str().c_str());           \</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    }                                                                              \</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  }                                                                                \</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  ITK_MACROEND_NOOP_STATEMENT</div>
@@ -573,22 +573,22 @@ $(function() {
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="comment">//----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="comment">// Macros for simplifying the use of logging</span></div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span><span class="comment">//</span></div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#define itkLogMacro(x, y)                              \</span></div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="preprocessor">  {                                                    \</span></div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">    if (this-&gt;GetLogger())                             \</span></div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="preprocessor">    {                                                  \</span></div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">      this-&gt;GetLogger()-&gt;Write(itk::LoggerBase::x, y); \</span></div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="preprocessor">    }                                                  \</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="preprocessor">  }                                                    \</span></div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#define itkLogMacro(x, y)                                \</span></div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="preprocessor">  {                                                      \</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">    if (this-&gt;GetLogger())                               \</span></div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="preprocessor">    {                                                    \</span></div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">      this-&gt;GetLogger()-&gt;Write(::itk::LoggerBase::x, y); \</span></div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="preprocessor">    }                                                    \</span></div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="preprocessor">  }                                                      \</span></div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="preprocessor">#define itkLogMacroStatic(obj, x, y)                  \</span></div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="preprocessor">  {                                                   \</span></div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="preprocessor">    if (obj-&gt;GetLogger())                             \</span></div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="preprocessor">    {                                                 \</span></div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="preprocessor">      obj-&gt;GetLogger()-&gt;Write(itk::LoggerBase::x, y); \</span></div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span><span class="preprocessor">    }                                                 \</span></div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span><span class="preprocessor">  }                                                   \</span></div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="preprocessor">#define itkLogMacroStatic(obj, x, y)                    \</span></div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="preprocessor">  {                                                     \</span></div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="preprocessor">    if (obj-&gt;GetLogger())                               \</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="preprocessor">    {                                                   \</span></div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="preprocessor">      obj-&gt;GetLogger()-&gt;Write(::itk::LoggerBase::x, y); \</span></div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span><span class="preprocessor">    }                                                   \</span></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span><span class="preprocessor">  }                                                     \</span></div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span><span class="comment">//----------------------------------------------------------------------------</span></div>
@@ -763,7 +763,7 @@ $(function() {
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span><span class="preprocessor">  DestinationType, Sourcrnd_halfintup, DestinationElementType, DestinationArray, SourceArray, NumberOfIterations) \</span></div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span><span class="preprocessor">  for (unsigned int i = 0; i &lt; NumberOfIterations; ++i)                                                           \</span></div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span><span class="preprocessor">  {                                                                                                               \</span></div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="preprocessor">    DestinationArray[i] = itk::Math::Round&lt;DestinationElementType&gt;(SourceArray[i]);                               \</span></div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="preprocessor">    DestinationArray[i] = ::itk::Math::Round&lt;DestinationElementType&gt;(SourceArray[i]);                             \</span></div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span><span class="preprocessor">  }</span></div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
 <div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span><span class="comment">// end of Template Meta Programming helper macros</span></div>
