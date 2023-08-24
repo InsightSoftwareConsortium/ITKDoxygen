@@ -152,7 +152,7 @@ $(function() {
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      std::unique_lock&lt;std::mutex&gt; lock(this-&gt;GetMutex());</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lockGuard(this-&gt;GetMutex());</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      m_WorkQueue.emplace_back([task]() { (*task)(); });</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    m_Condition.notify_one();</div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_typedef" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classitk_1_1ThreadPool.html#a518a320bcdcbf2d495a2547659240db2">  109</a></span>  <a class="code hl_function" href="classitk_1_1ThreadPool.html#a518a320bcdcbf2d495a2547659240db2">GetMaximumNumberOfThreads</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    std::unique_lock&lt;std::mutex&gt; lock(this-&gt;GetMutex());</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lockGuard(this-&gt;GetMutex());</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a><span class="keyword">&gt;</span>(m_Threads.size());</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
