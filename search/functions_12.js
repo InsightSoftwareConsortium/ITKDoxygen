@@ -651,7 +651,7 @@ var searchData=
   ['setglobaldefaultthreader_648',['SetGlobalDefaultThreader',['../classitk_1_1MultiThreaderBase.html#a4e0e23ac5172f1564bab53029fb806a1',1,'itk::MultiThreaderBase']]],
   ['setglobaldefaultthreaderprivate_649',['SetGlobalDefaultThreaderPrivate',['../classitk_1_1MultiThreaderBase.html#a423873b44851667f32e2edc6f5e996f6',1,'itk::MultiThreaderBase']]],
   ['setglobalinstance_650',['SetGlobalInstance',['../classitk_1_1SingletonIndex.html#ac1c9ebd50b7c739a7c3557784fbe87c7',1,'itk::SingletonIndex']]],
-  ['setglobalinstanceprivate_651',['SetGlobalInstancePrivate',['../classitk_1_1SingletonIndex.html#ae3a0810b0e0a9fa83d196adc319a52bf',1,'itk::SingletonIndex']]],
+  ['setglobalinstanceprivate_651',['SetGlobalInstancePrivate',['../classitk_1_1SingletonIndex.html#acd6df82a71dd831fc86f00647fc3acab',1,'itk::SingletonIndex']]],
   ['setglobalmaximumnumberofthreads_652',['SetGlobalMaximumNumberOfThreads',['../classitk_1_1MultiThreaderBase.html#ae23c34538cbad485e586182b420e99ca',1,'itk::MultiThreaderBase']]],
   ['setglobalreleasedataflag_653',['SetGlobalReleaseDataFlag',['../classitk_1_1DataObject.html#a6ed96cc6ac7c1b4d20afb1087d976f46',1,'itk::DataObject']]],
   ['setglobalwarningdisplay_654',['SetGlobalWarningDisplay',['../classitk_1_1Object.html#a6a45f7507401b719a7de0c29375f5c5d',1,'itk::Object']]],
