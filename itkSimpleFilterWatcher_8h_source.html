@@ -206,7 +206,7 @@ $(function() {
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  {</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">if</span> (m_Process)</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; outputSerializer(m_ProgressOutput);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lockGuard(m_ProgressOutput);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      ++m_Steps;</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      <span class="keywordflow">if</span> (!m_Quiet)</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      {</div>
