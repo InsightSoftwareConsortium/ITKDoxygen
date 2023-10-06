@@ -92,7 +92,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSTLContainerAdaptor_8h_source.html">itkSTLContainerAdaptor.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TContainer&gt;<br />
+class itk::STLContainerAdaptor&lt; TContainer &gt;</div><p >An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying data structure. </p>
+<p >When the <a class="el" href="classitk_1_1STLContainerAdaptor.html" title="An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...">STLContainerAdaptor</a> is destroyed, it automatically calls XxxContainer::Modified().</p>
+<p >Here's a usage example of <a class="el" href="classitk_1_1STLContainerAdaptor.html" title="An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...">STLContainerAdaptor</a>:</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classitk_1_1STLContainerAdaptor.html">itk::STLContainerAdaptor&lt;itk::VectorContainer&lt;size_t, ElementType&gt;</a>&gt; vecAdaptor(aContainer);</div>
+<div class="line">std::vector&lt;ElementType&gt; &amp; vec = vecAdaptor.GetSTLContainerRef();</div>
+<div class="line"><span class="comment">// do things with vec ...</span></div>
+<div class="line"><span class="comment">// upon return from function, vecAdaptor is destroyed and aContainer is Modified()</span></div>
+<div class="ttc" id="aclassitk_1_1STLContainerAdaptor_html"><div class="ttname"><a href="classitk_1_1STLContainerAdaptor.html">itk::STLContainerAdaptor</a></div><div class="ttdoc">An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...</div><div class="ttdef"><b>Definition:</b> <a href="itkSTLContainerAdaptor_8h_source.html#l00045">itkSTLContainerAdaptor.h:46</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="itkSTLContainerAdaptor_8h_source.html#l00045">45</a> of file <a class="el" href="itkSTLContainerAdaptor_8h_source.html">itkSTLContainerAdaptor.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ababd21d0b09c213180e829f64c66c3db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1STLContainerAdaptor.html#ababd21d0b09c213180e829f64c66c3db">AdapteeType</a> = TContainer</td></tr>
@@ -118,19 +130,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a04fa1ad62d52d60729942d0fde8b7f8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1STLContainerAdaptor.html#ababd21d0b09c213180e829f64c66c3db">AdapteeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1STLContainerAdaptor.html#a04fa1ad62d52d60729942d0fde8b7f8c">m_AdapteeRef</a></td></tr>
 <tr class="separator:a04fa1ad62d52d60729942d0fde8b7f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TContainer&gt;<br />
-class itk::STLContainerAdaptor&lt; TContainer &gt;</div><p >An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying data structure. </p>
-<p >When the <a class="el" href="classitk_1_1STLContainerAdaptor.html" title="An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...">STLContainerAdaptor</a> is destroyed, it automatically calls XxxContainer::Modified().</p>
-<p >Here's a usage example of <a class="el" href="classitk_1_1STLContainerAdaptor.html" title="An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...">STLContainerAdaptor</a>:</p>
-<div class="fragment"><div class="line"><a class="code hl_class" href="classitk_1_1STLContainerAdaptor.html">itk::STLContainerAdaptor&lt;itk::VectorContainer&lt;size_t, ElementType&gt;</a>&gt; vecAdaptor(aContainer);</div>
-<div class="line">std::vector&lt;ElementType&gt; &amp; vec = vecAdaptor.GetSTLContainerRef();</div>
-<div class="line"><span class="comment">// do things with vec ...</span></div>
-<div class="line"><span class="comment">// upon return from function, vecAdaptor is destroyed and aContainer is Modified()</span></div>
-<div class="ttc" id="aclassitk_1_1STLContainerAdaptor_html"><div class="ttname"><a href="classitk_1_1STLContainerAdaptor.html">itk::STLContainerAdaptor</a></div><div class="ttdoc">An adapter object that casts a itk::XxxContainer into std::xxx and enables access to the underlying d...</div><div class="ttdef"><b>Definition:</b> <a href="itkSTLContainerAdaptor_8h_source.html#l00045">itkSTLContainerAdaptor.h:46</a></div></div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="itkSTLContainerAdaptor_8h_source.html#l00045">45</a> of file <a class="el" href="itkSTLContainerAdaptor_8h_source.html">itkSTLContainerAdaptor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ababd21d0b09c213180e829f64c66c3db" name="ababd21d0b09c213180e829f64c66c3db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ababd21d0b09c213180e829f64c66c3db">&#9670;&nbsp;</a></span>AdapteeType</h2>
 

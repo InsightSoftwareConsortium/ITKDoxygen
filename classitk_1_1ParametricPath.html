@@ -92,7 +92,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkParametricPath_8h_source.html">itkParametricPath.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension&gt;<br />
+class itk::ParametricPath&lt; VDimension &gt;</div><p >Represent a parametric path through ND Space. </p>
+<p >This virtual class is intended to represent a parametric path through an image. A parametric path maps a single floating-point 1D parameter (usually designated as either time or arc-length) to a floating-point ND point in continuous image index space. This mapping is done via the abstract <a class="el" href="classitk_1_1Path.html#ac75f626987c7db4a39dc31f0b13cf319">Evaluate()</a> method, which must be overridden in all instantiable subclasses. Parametric paths are required to be continuous. They may be open or form a closed loop. A parametric path may cross itself several times, although the end point is constrained to have a unique spatial location unless it is shared with and only with the starting point (a path tracing the number "9," starting at the bottom and ending in the middle of the right side, would therefore be illegal). Classic applications of this class include the representation of contours in 2D images and path smoothing. Another use of a path is to guide the movement of an iterator through an image.</p>
+<dl class="section see"><dt>See also</dt><dd>EllipseParametricPath </dd>
+<dd>
+<a class="el" href="classitk_1_1PolyLineParametricPath.html" title="Represent a path of line segments through ND Space.">PolyLineParametricPath</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FourierSeriesPath.html" title="Represent a closed path through ND Space by its frequency components.">FourierSeriesPath</a> </dd>
+<dd>
+OrthogonallyCorrectedParametricPath </dd>
+<dd>
+<a class="el" href="classitk_1_1ChainCodePath.html" title="Represent a path as a sequence of connected image index offsets.">ChainCodePath</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Path.html" title="Represent a path through ND Space.">Path</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> </dd>
+<dd>
+<a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> </dd>
+<dd>
+<a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkParametricPath_8h_source.html#l00062">62</a> of file <a class="el" href="itkParametricPath_8h_source.html">itkParametricPath.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ParametricPath&lt; VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -434,32 +459,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a90f672e0ce9077ac531c712fff8a187a inherit pub_static_attribs_classitk_1_1Path"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Path.html#a90f672e0ce9077ac531c712fff8a187a">PathDimension</a></td></tr>
 <tr class="separator:a90f672e0ce9077ac531c712fff8a187a inherit pub_static_attribs_classitk_1_1Path"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension&gt;<br />
-class itk::ParametricPath&lt; VDimension &gt;</div><p >Represent a parametric path through ND Space. </p>
-<p >This virtual class is intended to represent a parametric path through an image. A parametric path maps a single floating-point 1D parameter (usually designated as either time or arc-length) to a floating-point ND point in continuous image index space. This mapping is done via the abstract <a class="el" href="classitk_1_1Path.html#ac75f626987c7db4a39dc31f0b13cf319">Evaluate()</a> method, which must be overridden in all instantiable subclasses. Parametric paths are required to be continuous. They may be open or form a closed loop. A parametric path may cross itself several times, although the end point is constrained to have a unique spatial location unless it is shared with and only with the starting point (a path tracing the number "9," starting at the bottom and ending in the middle of the right side, would therefore be illegal). Classic applications of this class include the representation of contours in 2D images and path smoothing. Another use of a path is to guide the movement of an iterator through an image.</p>
-<dl class="section see"><dt>See also</dt><dd>EllipseParametricPath </dd>
-<dd>
-<a class="el" href="classitk_1_1PolyLineParametricPath.html" title="Represent a path of line segments through ND Space.">PolyLineParametricPath</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FourierSeriesPath.html" title="Represent a closed path through ND Space by its frequency components.">FourierSeriesPath</a> </dd>
-<dd>
-OrthogonallyCorrectedParametricPath </dd>
-<dd>
-<a class="el" href="classitk_1_1ChainCodePath.html" title="Represent a path as a sequence of connected image index offsets.">ChainCodePath</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Path.html" title="Represent a path through ND Space.">Path</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> </dd>
-<dd>
-<a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> </dd>
-<dd>
-<a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkParametricPath_8h_source.html#l00062">62</a> of file <a class="el" href="itkParametricPath_8h_source.html">itkParametricPath.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acafc36c5b9c2114efbff7c20d70d28e5" name="acafc36c5b9c2114efbff7c20d70d28e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acafc36c5b9c2114efbff7c20d70d28e5">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

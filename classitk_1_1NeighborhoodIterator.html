@@ -91,7 +91,160 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNeighborhoodIterator_8h_source.html">itkNeighborhoodIterator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TImage&gt;&gt;<br />
+class itk::NeighborhoodIterator&lt; TImage, TBoundaryCondition &gt;</div><p >Defines iteration of a local N-dimensional neighborhood of pixels across an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. </p>
+<p >This class is a loose extension of the Standard Template Library (STL) bi-directional iterator concept to <em>masks</em> of pixel neighborhoods within <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> objects. This <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> base class defines simple forward and reverse iteration of an N-dimensional neighborhood mask across an image. Elements within the mask can be accessed like elements within an array.</p>
+<p >NeighborhoodIterators are designed to encapsulate some of the complexity of working with image neighborhoods, complexity that would otherwise have to be managed at the algorithmic level. Use NeighborhoodIterators to simplify writing algorithms that perform geometrically localized operations on images (for example, convolution and morphological operations).</p>
+<p >To motivate the discussion of NeighborhoodIterators and their use in Itk, consider the following code that takes directional derivatives at each point in an image.</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classitk_1_1NeighborhoodInnerProduct.html">itk::NeighborhoodInnerProduct&lt;ImageType&gt;</a> innerProduct;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator&lt;ImageType&gt;</a> <span class="keyword">operator</span>;</div>
+<div class="line"> <span class="keyword">operator</span>-&gt;<a class="code hl_function" href="classitk_1_1DerivativeOperator.html#a89e159d5646bf3a619caace37456b537">SetOrder</a>(1);</div>
+<div class="line"> <span class="keyword">operator</span>-&gt;SetDirection(0);</div>
+<div class="line"> <span class="keyword">operator</span>-&gt;CreateDirectional();</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classitk_1_1NeighborhoodIterator.html">itk::NeighborhoodIterator&lt;ImageType&gt;</a></div>
+<div class="line">  iterator(operator-&gt;GetRadius(), myImage, myImage-&gt;GetRequestedRegion());</div>
+<div class="line"> </div>
+<div class="line">iterator.SetToBegin();</div>
+<div class="line"><span class="keywordflow">while</span> ( ! iterator.IsAtEnd() )</div>
+<div class="line">{</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative at index &quot;</span> &lt;&lt; iterator.GetIndex() &lt;&lt; is &lt;&lt;</div>
+<div class="line">    innerProduct(iterator, <span class="keyword">operator</span>) &lt;&lt; std::endl;</div>
+<div class="line">  ++iterator;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1DerivativeOperator_html"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator</a></div><div class="ttdoc">A NeighborhoodOperator for taking an n-th order derivative at a pixel.</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00069">itkDerivativeOperator.h:70</a></div></div>
+<div class="ttc" id="aclassitk_1_1DerivativeOperator_html_a89e159d5646bf3a619caace37456b537"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html#a89e159d5646bf3a619caace37456b537">itk::DerivativeOperator::SetOrder</a></div><div class="ttdeci">void SetOrder(const unsigned int order)</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00085">itkDerivativeOperator.h:85</a></div></div>
+<div class="ttc" id="aclassitk_1_1NeighborhoodInnerProduct_html"><div class="ttname"><a href="classitk_1_1NeighborhoodInnerProduct.html">itk::NeighborhoodInnerProduct&lt; ImageType &gt;</a></div></div>
+<div class="ttc" id="aclassitk_1_1NeighborhoodIterator_html"><div class="ttname"><a href="classitk_1_1NeighborhoodIterator.html">itk::NeighborhoodIterator</a></div><div class="ttdoc">Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodIterator_8h_source.html#l00212">itkNeighborhoodIterator.h:213</a></div></div>
+</div><!-- fragment --><p >Most of the work for the programmer in the code above is in setting up for the iteration. There are three steps. First an inner product function object is created which will be used to effect convolution with the derivative kernel. Setting up the derivative kernel, <a class="el" href="classitk_1_1DerivativeOperator.html" title="A NeighborhoodOperator for taking an n-th order derivative at a pixel.">DerivativeOperator</a>, involves setting the order and direction of the derivative. Finally, we create an iterator over the RequestedRegion of the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> (see <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>) using the radius of the derivative kernel as the size.</p>
+<p >Itk iterators only loosely follow STL conventions. Notice that instead of asking myImage for myImage.begin() and myImage.end(), iterator.SetToBegin() and iterator.IsAtEnd() are called. Itk iterators are typically more complex objects than traditional, pointer-style STL iterators, and the increased overhead required to conform to the complete STL API is not always justified.</p>
+<p >The API for creating and manipulating a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> mimics that of the itk::ImageIterators. Like the <a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">itk::ImageIterator</a>, a <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> is defined on a region of interest in an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Iteration is constrained within that region of interest.</p>
+<p >A <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> is constructed as a container of pointers (offsets) to a geometric neighborhood of image pixels. As the central pixel position in the mask is moved around the image, the neighboring pixel pointers (offsets) are moved accordingly.</p>
+<p >A <em>pixel</em> <em>neighborhood</em> is defined as a central pixel location and an N-dimensional radius extending outward from that location.</p>
+<p >Pixels in a neighborhood can be accessed through a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> like elements in an array. For example, a 2D neighborhood with radius 2x1 has indices:</p>
+<div class="fragment"><div class="line">0  1  2  3  4</div>
+<div class="line">5  6  7  8  9</div>
+<div class="line">10 11 12 13 14</div>
+</div><!-- fragment --><p >Now suppose a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> with the above dimensions is constructed and positioned over a neighborhood of values in an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>:</p>
+<div class="fragment"><div class="line">1.2 1.3 1.8 1.4 1.1</div>
+<div class="line">1.8 1.1 0.7 1.0 1.0</div>
+<div class="line">2.1 1.9 1.7 1.4 2.0</div>
+</div><!-- fragment --><p >Shown below is some sample pixel access code and the values that it returns.</p>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a> c = (<a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a>) (iterator.Size() / 2); <span class="comment">// get offset of center pixel</span></div>
+<div class="line"><a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a> s = iterator.GetStride(1);            <span class="comment">// y-dimension step size</span></div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; iterator.GetPixel(7)      &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; iterator.GetCenterPixel() &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; iterator.GetPixel(c)      &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-1)    &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-s)    &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-s-1)  &lt;&lt; std::endl;</div>
+<div class="line">std::cout &lt;&lt; *iterator[c]              &lt;&lt; std::endl;</div>
+<div class="ttc" id="aclassitk_1_1Neighborhood_html_adb304a69d576bc7d972c033eeda72374"><div class="ttname"><a href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">itk::Neighborhood&lt; TImage::InternalPixelType *, TImage::ImageDimension &gt;::SizeValueType</a></div><div class="ttdeci">typename SizeType::SizeValueType SizeValueType</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhood_8h_source.html#l00080">itkNeighborhood.h:80</a></div></div>
+</div><!-- fragment --><p >Results:</p>
+<div class="fragment"><div class="line">0.7</div>
+<div class="line">0.7</div>
+<div class="line">0.7</div>
+<div class="line">1.1</div>
+<div class="line">1.8</div>
+<div class="line">1.3</div>
+<div class="line">0.7</div>
+</div><!-- fragment --><p >Use of <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html#a250f487bef74288e1c1ed95f42a6deba">GetPixel()</a> is preferred over the *iterator[] form, and can be used without loss of efficiency in most cases. Some variations (subclasses) of NeighborhoodIterators may exist which do not support the latter API. Corresponding <a class="el" href="classitk_1_1NeighborhoodIterator.html#ac19ef8376aa4f7cfc4357f36590b229f">SetPixel()</a> methods exist to modify pixel values in non-const NeighborhoodIterators.</p>
+<p >NeighborhoodIterators are "bidirectional iterators". They move only in two directions through the data set. These directions correspond to the layout of the image data in memory and not to spatial directions of the N-dimensional <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Iteration always proceeds along the fastest increasing dimension (as defined by the layout of the image data). For <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> this is the first dimension specified (i.e. for 3-dimensional (x,y,z) <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> proceeds along the x-dimension) (For random access iteration through N-dimensional indices, use RandomAccessNeighborhoodIterator).</p>
+<p >Each subclass of a <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> may also define its own mechanism for iteration through an image. In general, the Iterator does not directly keep track of its spatial location in the image, but uses a set of internal loop variables and offsets to trigger wraps at <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> region boundaries, and to identify the end of the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> region.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">Better support for regions with negative indices. </p>
+<p class="enddd">Add <a class="el" href="classitk_1_1Neighborhood.html#aca476f769d8de82470b90cbeed5e43cf">Begin()</a> and <a class="el" href="classitk_1_1Neighborhood.html#a56965dceb4c4f0b7fbc711852a6d94de">End()</a> methods?</p>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DerivativeOperator.html" title="A NeighborhoodOperator for taking an n-th order derivative at a pixel.">DerivativeOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodInnerProduct.html" title="Defines the inner product operation between an Neighborhood and a NeighborhoodOperator.">NeighborhoodInnerProduct</a></dd></dl>
+<dl class="section user"><dt>MORE INFORMATION</dt><dd>For a complete description of the ITK <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Iterators and their API, please see the Iterators chapter in the ITK Software Guide. The ITK Software Guide is available in print and as a free .pdf download from <a href="https://www.itk.org">https://www.itk.org</a>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConditionalConstIterator.html" title="A base class for other iterators where membership in the set of output pixels is conditional upon som...">ConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstShapedNeighborhoodIterator.html" title="Const version of ShapedNeighborhoodIterator, defining iteration of a local N-dimensional neighborhood...">ConstShapedNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstSliceIterator.html" title="A flexible iterator for ITK containers(i.e. itk::Neighborhood) that support pixel access through oper...">ConstSliceIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1CorrespondenceDataStructureIterator.html" title="An iterator designed to easily traverse an CorrespondenceDataStructure.">CorrespondenceDataStructureIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function.">FloodFilledFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalConstIterator.html" title="Iterates over a flood-filled image function with read-only access to pixels.">FloodFilledImageFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalIterator.html" title="Iterates over a flood-filled image function with write access to pixels.">FloodFilledImageFunctionConditionalIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function with read-only access to pixels.">FloodFilledSpatialFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalIterator.html" title="Iterates over a flood-filled spatial function with write access to pixels.">FloodFilledSpatialFunctionConditionalIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageLinearConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageLinearIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRandomConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRandomIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks an image region and is specialized ...">ImageRegionConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionExclusionConstIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region that may par...">ImageRegionExclusionConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionExclusionIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region contained wi...">ImageRegionExclusionIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">ImageRegionIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionReverseConstIterator.html" title="A multi-dimensional image iterator designed to walk a specified image region in reverse.">ImageRegionReverseConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionReverseIterator.html" title="A multi-dimensional image iterator which only walks a region.">ImageRegionReverseIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageReverseConstIterator.html" title="Multi-dimensional image iterator.">ImageReverseConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageReverseIterator.html" title="A multi-dimensional image iterator designed to walk a specified region in reverse.">ImageReverseIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageSliceConstIteratorWithIndex.html" title="Multi-dimensional image iterator which only walks a region.">ImageSliceConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageSliceIteratorWithIndex.html" title="A multi-dimensional image iterator that extends the ImageLinearIteratorWithIndex from iteration along...">ImageSliceIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1PathConstIterator.html" title="PathConstIterator iterates (traces) over a path through an image.">PathConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SliceIterator.html" title="A flexible iterator for itk containers(i.e. itk::Neighborhood) that support pixel access through oper...">SliceIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNeighborhoodIterator_8h_source.html#l00212">212</a> of file <a class="el" href="itkNeighborhoodIterator_8h_source.html">itkNeighborhoodIterator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NeighborhoodIterator&lt; TImage, TBoundaryCondition &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -473,160 +626,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1bb8837056d746fa9bce4078edd5ff09 inherit pro_attribs_classitk_1_1ConstNeighborhoodIterator"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ConstNeighborhoodIterator.html#ae1f52d953024abd4f13df12ba2469a53">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ConstNeighborhoodIterator.html#a1bb8837056d746fa9bce4078edd5ff09">m_WrapOffset</a></td></tr>
 <tr class="separator:a1bb8837056d746fa9bce4078edd5ff09 inherit pro_attribs_classitk_1_1ConstNeighborhoodIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TImage&gt;&gt;<br />
-class itk::NeighborhoodIterator&lt; TImage, TBoundaryCondition &gt;</div><p >Defines iteration of a local N-dimensional neighborhood of pixels across an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. </p>
-<p >This class is a loose extension of the Standard Template Library (STL) bi-directional iterator concept to <em>masks</em> of pixel neighborhoods within <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> objects. This <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> base class defines simple forward and reverse iteration of an N-dimensional neighborhood mask across an image. Elements within the mask can be accessed like elements within an array.</p>
-<p >NeighborhoodIterators are designed to encapsulate some of the complexity of working with image neighborhoods, complexity that would otherwise have to be managed at the algorithmic level. Use NeighborhoodIterators to simplify writing algorithms that perform geometrically localized operations on images (for example, convolution and morphological operations).</p>
-<p >To motivate the discussion of NeighborhoodIterators and their use in Itk, consider the following code that takes directional derivatives at each point in an image.</p>
-<div class="fragment"><div class="line"><a class="code hl_class" href="classitk_1_1NeighborhoodInnerProduct.html">itk::NeighborhoodInnerProduct&lt;ImageType&gt;</a> innerProduct;</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator&lt;ImageType&gt;</a> <span class="keyword">operator</span>;</div>
-<div class="line"> <span class="keyword">operator</span>-&gt;<a class="code hl_function" href="classitk_1_1DerivativeOperator.html#a89e159d5646bf3a619caace37456b537">SetOrder</a>(1);</div>
-<div class="line"> <span class="keyword">operator</span>-&gt;SetDirection(0);</div>
-<div class="line"> <span class="keyword">operator</span>-&gt;CreateDirectional();</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classitk_1_1NeighborhoodIterator.html">itk::NeighborhoodIterator&lt;ImageType&gt;</a></div>
-<div class="line">  iterator(operator-&gt;GetRadius(), myImage, myImage-&gt;GetRequestedRegion());</div>
-<div class="line"> </div>
-<div class="line">iterator.SetToBegin();</div>
-<div class="line"><span class="keywordflow">while</span> ( ! iterator.IsAtEnd() )</div>
-<div class="line">{</div>
-<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative at index &quot;</span> &lt;&lt; iterator.GetIndex() &lt;&lt; is &lt;&lt;</div>
-<div class="line">    innerProduct(iterator, <span class="keyword">operator</span>) &lt;&lt; std::endl;</div>
-<div class="line">  ++iterator;</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassitk_1_1DerivativeOperator_html"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator</a></div><div class="ttdoc">A NeighborhoodOperator for taking an n-th order derivative at a pixel.</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00069">itkDerivativeOperator.h:70</a></div></div>
-<div class="ttc" id="aclassitk_1_1DerivativeOperator_html_a89e159d5646bf3a619caace37456b537"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html#a89e159d5646bf3a619caace37456b537">itk::DerivativeOperator::SetOrder</a></div><div class="ttdeci">void SetOrder(const unsigned int order)</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00085">itkDerivativeOperator.h:85</a></div></div>
-<div class="ttc" id="aclassitk_1_1NeighborhoodInnerProduct_html"><div class="ttname"><a href="classitk_1_1NeighborhoodInnerProduct.html">itk::NeighborhoodInnerProduct&lt; ImageType &gt;</a></div></div>
-<div class="ttc" id="aclassitk_1_1NeighborhoodIterator_html"><div class="ttname"><a href="classitk_1_1NeighborhoodIterator.html">itk::NeighborhoodIterator</a></div><div class="ttdoc">Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodIterator_8h_source.html#l00212">itkNeighborhoodIterator.h:213</a></div></div>
-</div><!-- fragment --><p >Most of the work for the programmer in the code above is in setting up for the iteration. There are three steps. First an inner product function object is created which will be used to effect convolution with the derivative kernel. Setting up the derivative kernel, <a class="el" href="classitk_1_1DerivativeOperator.html" title="A NeighborhoodOperator for taking an n-th order derivative at a pixel.">DerivativeOperator</a>, involves setting the order and direction of the derivative. Finally, we create an iterator over the RequestedRegion of the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> (see <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>) using the radius of the derivative kernel as the size.</p>
-<p >Itk iterators only loosely follow STL conventions. Notice that instead of asking myImage for myImage.begin() and myImage.end(), iterator.SetToBegin() and iterator.IsAtEnd() are called. Itk iterators are typically more complex objects than traditional, pointer-style STL iterators, and the increased overhead required to conform to the complete STL API is not always justified.</p>
-<p >The API for creating and manipulating a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> mimics that of the itk::ImageIterators. Like the <a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">itk::ImageIterator</a>, a <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> is defined on a region of interest in an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Iteration is constrained within that region of interest.</p>
-<p >A <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> is constructed as a container of pointers (offsets) to a geometric neighborhood of image pixels. As the central pixel position in the mask is moved around the image, the neighboring pixel pointers (offsets) are moved accordingly.</p>
-<p >A <em>pixel</em> <em>neighborhood</em> is defined as a central pixel location and an N-dimensional radius extending outward from that location.</p>
-<p >Pixels in a neighborhood can be accessed through a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> like elements in an array. For example, a 2D neighborhood with radius 2x1 has indices:</p>
-<div class="fragment"><div class="line">0  1  2  3  4</div>
-<div class="line">5  6  7  8  9</div>
-<div class="line">10 11 12 13 14</div>
-</div><!-- fragment --><p >Now suppose a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> with the above dimensions is constructed and positioned over a neighborhood of values in an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>:</p>
-<div class="fragment"><div class="line">1.2 1.3 1.8 1.4 1.1</div>
-<div class="line">1.8 1.1 0.7 1.0 1.0</div>
-<div class="line">2.1 1.9 1.7 1.4 2.0</div>
-</div><!-- fragment --><p >Shown below is some sample pixel access code and the values that it returns.</p>
-<div class="fragment"><div class="line"><a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a> c = (<a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a>) (iterator.Size() / 2); <span class="comment">// get offset of center pixel</span></div>
-<div class="line"><a class="code hl_typedef" href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">SizeValueType</a> s = iterator.GetStride(1);            <span class="comment">// y-dimension step size</span></div>
-<div class="line"> </div>
-<div class="line">std::cout &lt;&lt; iterator.GetPixel(7)      &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; iterator.GetCenterPixel() &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; iterator.GetPixel(c)      &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-1)    &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-s)    &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; iterator.GetPixel(c-s-1)  &lt;&lt; std::endl;</div>
-<div class="line">std::cout &lt;&lt; *iterator[c]              &lt;&lt; std::endl;</div>
-<div class="ttc" id="aclassitk_1_1Neighborhood_html_adb304a69d576bc7d972c033eeda72374"><div class="ttname"><a href="classitk_1_1Neighborhood.html#adb304a69d576bc7d972c033eeda72374">itk::Neighborhood&lt; TImage::InternalPixelType *, TImage::ImageDimension &gt;::SizeValueType</a></div><div class="ttdeci">typename SizeType::SizeValueType SizeValueType</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhood_8h_source.html#l00080">itkNeighborhood.h:80</a></div></div>
-</div><!-- fragment --><p >Results:</p>
-<div class="fragment"><div class="line">0.7</div>
-<div class="line">0.7</div>
-<div class="line">0.7</div>
-<div class="line">1.1</div>
-<div class="line">1.8</div>
-<div class="line">1.3</div>
-<div class="line">0.7</div>
-</div><!-- fragment --><p >Use of <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html#a250f487bef74288e1c1ed95f42a6deba">GetPixel()</a> is preferred over the *iterator[] form, and can be used without loss of efficiency in most cases. Some variations (subclasses) of NeighborhoodIterators may exist which do not support the latter API. Corresponding <a class="el" href="classitk_1_1NeighborhoodIterator.html#ac19ef8376aa4f7cfc4357f36590b229f">SetPixel()</a> methods exist to modify pixel values in non-const NeighborhoodIterators.</p>
-<p >NeighborhoodIterators are "bidirectional iterators". They move only in two directions through the data set. These directions correspond to the layout of the image data in memory and not to spatial directions of the N-dimensional <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Iteration always proceeds along the fastest increasing dimension (as defined by the layout of the image data). For <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> this is the first dimension specified (i.e. for 3-dimensional (x,y,z) <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> proceeds along the x-dimension) (For random access iteration through N-dimensional indices, use RandomAccessNeighborhoodIterator).</p>
-<p >Each subclass of a <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> may also define its own mechanism for iteration through an image. In general, the Iterator does not directly keep track of its spatial location in the image, but uses a set of internal loop variables and offsets to trigger wraps at <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> region boundaries, and to identify the end of the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> region.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd><p class="startdd">Better support for regions with negative indices. </p>
-<p class="enddd">Add <a class="el" href="classitk_1_1Neighborhood.html#aca476f769d8de82470b90cbeed5e43cf">Begin()</a> and <a class="el" href="classitk_1_1Neighborhood.html#a56965dceb4c4f0b7fbc711852a6d94de">End()</a> methods?</p>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DerivativeOperator.html" title="A NeighborhoodOperator for taking an n-th order derivative at a pixel.">DerivativeOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodInnerProduct.html" title="Defines the inner product operation between an Neighborhood and a NeighborhoodOperator.">NeighborhoodInnerProduct</a></dd></dl>
-<dl class="section user"><dt>MORE INFORMATION</dt><dd>For a complete description of the ITK <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Iterators and their API, please see the Iterators chapter in the ITK Software Guide. The ITK Software Guide is available in print and as a free .pdf download from <a href="https://www.itk.org">https://www.itk.org</a>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConditionalConstIterator.html" title="A base class for other iterators where membership in the set of output pixels is conditional upon som...">ConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstShapedNeighborhoodIterator.html" title="Const version of ShapedNeighborhoodIterator, defining iteration of a local N-dimensional neighborhood...">ConstShapedNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstSliceIterator.html" title="A flexible iterator for ITK containers(i.e. itk::Neighborhood) that support pixel access through oper...">ConstSliceIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1CorrespondenceDataStructureIterator.html" title="An iterator designed to easily traverse an CorrespondenceDataStructure.">CorrespondenceDataStructureIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function.">FloodFilledFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalConstIterator.html" title="Iterates over a flood-filled image function with read-only access to pixels.">FloodFilledImageFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalIterator.html" title="Iterates over a flood-filled image function with write access to pixels.">FloodFilledImageFunctionConditionalIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function with read-only access to pixels.">FloodFilledSpatialFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalIterator.html" title="Iterates over a flood-filled spatial function with write access to pixels.">FloodFilledSpatialFunctionConditionalIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageLinearConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageLinearIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRandomConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRandomIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks an image region and is specialized ...">ImageRegionConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionExclusionConstIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region that may par...">ImageRegionExclusionConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionExclusionIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region contained wi...">ImageRegionExclusionIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">ImageRegionIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionReverseConstIterator.html" title="A multi-dimensional image iterator designed to walk a specified image region in reverse.">ImageRegionReverseConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionReverseIterator.html" title="A multi-dimensional image iterator which only walks a region.">ImageRegionReverseIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageReverseConstIterator.html" title="Multi-dimensional image iterator.">ImageReverseConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageReverseIterator.html" title="A multi-dimensional image iterator designed to walk a specified region in reverse.">ImageReverseIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageSliceConstIteratorWithIndex.html" title="Multi-dimensional image iterator which only walks a region.">ImageSliceConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageSliceIteratorWithIndex.html" title="A multi-dimensional image iterator that extends the ImageLinearIteratorWithIndex from iteration along...">ImageSliceIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1PathConstIterator.html" title="PathConstIterator iterates (traces) over a path through an image.">PathConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SliceIterator.html" title="A flexible iterator for itk containers(i.e. itk::Neighborhood) that support pixel access through oper...">SliceIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNeighborhoodIterator_8h_source.html#l00212">212</a> of file <a class="el" href="itkNeighborhoodIterator_8h_source.html">itkNeighborhoodIterator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5482056584561c22c20c2d56da1dea24" name="a5482056584561c22c20c2d56da1dea24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5482056584561c22c20c2d56da1dea24">&#9670;&nbsp;</a></span>Self</h2>
 

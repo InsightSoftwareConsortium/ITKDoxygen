@@ -93,7 +93,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkThreadedIteratorRangePartitioner_8h_source.html">itkThreadedIteratorRangePartitioner.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TIterator&gt;<br />
+class itk::ThreadedIteratorRangePartitioner&lt; TIterator &gt;</div><p >Partitions an iterator range for threading. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TIterator</td><td>The type of the iterator.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The <code>DomainType</code> is defined to be an <a class="el" href="classitk_1_1ThreadedIteratorRangePartitionerDomain.html" title="Domain type for the ThreadedIteratorRangePartitioner.">itk::ThreadedIteratorRangePartitionerDomain</a>, a two component struct of iterators: the first iterator, <code>Begin</code>, defines the start of the domain, and the second iterator, <code>End</code>, defines one element past the end of the domain.</p>
+<p >The class assumes that iterating through the domain will be a repeatable process.</p>
+<p >While this class will work for most containers that use iterators, indexed containers such as std::vector or <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> will be partitioned much more efficiently with a <a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a>.</p>
+<p >This class is typically used as a template argument to a <a class="el" href="classitk_1_1DomainThreader.html" title="Multi-threaded processing on a domain by processing sub-domains per thread.">DomainThreader</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DomainThreader.html" title="Multi-threaded processing on a domain by processing sub-domains per thread.">DomainThreader</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkThreadedIteratorRangePartitioner_8h_source.html#l00112">112</a> of file <a class="el" href="itkThreadedIteratorRangePartitioner_8h_source.html">itkThreadedIteratorRangePartitioner.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ThreadedIteratorRangePartitioner&lt; TIterator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -298,27 +318,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TIterator&gt;<br />
-class itk::ThreadedIteratorRangePartitioner&lt; TIterator &gt;</div><p >Partitions an iterator range for threading. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TIterator</td><td>The type of the iterator.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The <code>DomainType</code> is defined to be an <a class="el" href="classitk_1_1ThreadedIteratorRangePartitionerDomain.html" title="Domain type for the ThreadedIteratorRangePartitioner.">itk::ThreadedIteratorRangePartitionerDomain</a>, a two component struct of iterators: the first iterator, <code>Begin</code>, defines the start of the domain, and the second iterator, <code>End</code>, defines one element past the end of the domain.</p>
-<p >The class assumes that iterating through the domain will be a repeatable process.</p>
-<p >While this class will work for most containers that use iterators, indexed containers such as std::vector or <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> will be partitioned much more efficiently with a <a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a>.</p>
-<p >This class is typically used as a template argument to a <a class="el" href="classitk_1_1DomainThreader.html" title="Multi-threaded processing on a domain by processing sub-domains per thread.">DomainThreader</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DomainThreader.html" title="Multi-threaded processing on a domain by processing sub-domains per thread.">DomainThreader</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkThreadedIteratorRangePartitioner_8h_source.html#l00112">112</a> of file <a class="el" href="itkThreadedIteratorRangePartitioner_8h_source.html">itkThreadedIteratorRangePartitioner.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8f224fbd6de43c7b222b65d850833f73" name="a8f224fbd6de43c7b222b65d850833f73"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f224fbd6de43c7b222b65d850833f73">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

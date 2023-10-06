@@ -97,7 +97,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImagePCAShapeModelEstimator_8h_source.html">itkImagePCAShapeModelEstimator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = Image&lt;double, TInputImage::ImageDimension&gt;&gt;<br />
+class itk::ImagePCAShapeModelEstimator&lt; TInputImage, TOutputImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImagePCAShapeModelEstimator.html" title="Base class for ImagePCAShapeModelEstimator object.">ImagePCAShapeModelEstimator</a> object. </p>
+<p >itkImagePCAShapeModelEstimator performs a principal component analysis (PCA) on a set of images. The user specifies the number of training images and also the number of desired largest principal components needed. The ITK pipeline mechanism sets up the storage for both input and output images. The number of output images are the user specified number of desired largest principal components plus 1 (for the mean image).</p>
+<p >The algorithm uses the VNL library to perform the eigen analysis. To speed the computation of the instead of performing the eigen analysis of the covariance vector A*A' where A is a matrix with p x t, p = number of pixels or voxels in each images and t = number of training images, we calculate the eigen vectors of the inner product matrix A'*A. The resulting eigen vectors (E) are then multiplied with the the matrix A to get the principal components. The covariance matrix has a dimension of p x p. Since number of pixels in any image being typically very high the eigen decomposition becomes computationally expensive. The inner product on the other hand has the dimension of t x t, where t is typically much smaller that p. Hence the eigen decomposition (most compute intensive part) is an orders of magnitude faster.</p>
+<p >The <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> function enables the calculation of the various models, creates the membership function objects and populates them.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImagePCAShapeModelEstimator_8h_source.html#l00076">76</a> of file <a class="el" href="itkImagePCAShapeModelEstimator_8h_source.html">itkImagePCAShapeModelEstimator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImagePCAShapeModelEstimator&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -813,20 +826,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = Image&lt;double, TInputImage::ImageDimension&gt;&gt;<br />
-class itk::ImagePCAShapeModelEstimator&lt; TInputImage, TOutputImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImagePCAShapeModelEstimator.html" title="Base class for ImagePCAShapeModelEstimator object.">ImagePCAShapeModelEstimator</a> object. </p>
-<p >itkImagePCAShapeModelEstimator performs a principal component analysis (PCA) on a set of images. The user specifies the number of training images and also the number of desired largest principal components needed. The ITK pipeline mechanism sets up the storage for both input and output images. The number of output images are the user specified number of desired largest principal components plus 1 (for the mean image).</p>
-<p >The algorithm uses the VNL library to perform the eigen analysis. To speed the computation of the instead of performing the eigen analysis of the covariance vector A*A' where A is a matrix with p x t, p = number of pixels or voxels in each images and t = number of training images, we calculate the eigen vectors of the inner product matrix A'*A. The resulting eigen vectors (E) are then multiplied with the the matrix A to get the principal components. The covariance matrix has a dimension of p x p. Since number of pixels in any image being typically very high the eigen decomposition becomes computationally expensive. The inner product on the other hand has the dimension of t x t, where t is typically much smaller that p. Hence the eigen decomposition (most compute intensive part) is an orders of magnitude faster.</p>
-<p >The <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> function enables the calculation of the various models, creates the membership function objects and populates them.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImagePCAShapeModelEstimator_8h_source.html#l00076">76</a> of file <a class="el" href="itkImagePCAShapeModelEstimator_8h_source.html">itkImagePCAShapeModelEstimator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aac31922bfdbeeb484f8082d2b930d36f" name="aac31922bfdbeeb484f8082d2b930d36f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac31922bfdbeeb484f8082d2b930d36f">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

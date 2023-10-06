@@ -93,7 +93,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkExpectationMaximizationMixtureModelEstimator_8h_source.html">itkExpectationMaximizationMixtureModelEstimator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
+class itk::Statistics::ExpectationMaximizationMixtureModelEstimator&lt; TSample &gt;</div><p >This class generates the parameter estimates for a mixture model using expectation maximization strategy. </p>
+<p >The first template argument is the type of the target sample data. This estimator expects one or more mixture model component objects of the classes derived from the <a class="el" href="classitk_1_1Statistics_1_1MixtureModelComponentBase.html" title="base class for distribution modules that supports analytical way to update the distribution parameter...">MixtureModelComponentBase</a>. The actual component (or module) parameters are updated by each component. Users can think this class as a strategy or a integration point for the EM procedure. The initial proportion (SetInitialProportions), the input sample (SetSample), the mixture model components (AddComponent), and the maximum iteration (SetMaximumIteration) are required. The EM procedure terminates when the current iteration reaches the maximum iteration or the model parameters converge.</p>
+<p ><b>Recent API changes:</b> The static const macro to get the length of a measurement vector, <code>MeasurementVectorSize</code> has been removed to allow the length of a measurement vector to be specified at run time. It is now obtained at run time from the sample set as input. Please use the function GetMeasurementVectorSize() to get the length.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1MixtureModelComponentBase.html" title="base class for distribution modules that supports analytical way to update the distribution parameter...">MixtureModelComponentBase</a>, <a class="el" href="classitk_1_1Statistics_1_1GaussianMixtureModelComponent.html" title="is a component (derived from MixtureModelComponentBase) for Gaussian class. This class is used in Exp...">GaussianMixtureModelComponent</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkExpectationMaximizationMixtureModelEstimator_8h_source.html#l00086">86</a> of file <a class="el" href="itkExpectationMaximizationMixtureModelEstimator_8h_source.html">itkExpectationMaximizationMixtureModelEstimator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::ExpectationMaximizationMixtureModelEstimator&lt; TSample &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -368,22 +383,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
-class itk::Statistics::ExpectationMaximizationMixtureModelEstimator&lt; TSample &gt;</div><p >This class generates the parameter estimates for a mixture model using expectation maximization strategy. </p>
-<p >The first template argument is the type of the target sample data. This estimator expects one or more mixture model component objects of the classes derived from the <a class="el" href="classitk_1_1Statistics_1_1MixtureModelComponentBase.html" title="base class for distribution modules that supports analytical way to update the distribution parameter...">MixtureModelComponentBase</a>. The actual component (or module) parameters are updated by each component. Users can think this class as a strategy or a integration point for the EM procedure. The initial proportion (SetInitialProportions), the input sample (SetSample), the mixture model components (AddComponent), and the maximum iteration (SetMaximumIteration) are required. The EM procedure terminates when the current iteration reaches the maximum iteration or the model parameters converge.</p>
-<p ><b>Recent API changes:</b> The static const macro to get the length of a measurement vector, <code>MeasurementVectorSize</code> has been removed to allow the length of a measurement vector to be specified at run time. It is now obtained at run time from the sample set as input. Please use the function GetMeasurementVectorSize() to get the length.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1MixtureModelComponentBase.html" title="base class for distribution modules that supports analytical way to update the distribution parameter...">MixtureModelComponentBase</a>, <a class="el" href="classitk_1_1Statistics_1_1GaussianMixtureModelComponent.html" title="is a component (derived from MixtureModelComponentBase) for Gaussian class. This class is used in Exp...">GaussianMixtureModelComponent</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkExpectationMaximizationMixtureModelEstimator_8h_source.html#l00086">86</a> of file <a class="el" href="itkExpectationMaximizationMixtureModelEstimator_8h_source.html">itkExpectationMaximizationMixtureModelEstimator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab4caf2fc9aaa95c1f9b4ff60ab8f33c8" name="ab4caf2fc9aaa95c1f9b4ff60ab8f33c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4caf2fc9aaa95c1f9b4ff60ab8f33c8">&#9670;&nbsp;</a></span>ComponentMembershipFunctionType</h2>
 

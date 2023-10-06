@@ -96,7 +96,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkInterpolateImagePointsFilter_8h_source.html">itkInterpolateImagePointsFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TCoordType = typename TInputImage::PixelType, typename InterpolatorType = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt;<br />
+class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;</div><p >Resamples an image at the coordinates specified by the user. </p>
+<p >This class may be templated over the Interpolate <a class="el" href="namespaceitk_1_1Function.html">Function</a> but defaults to the <a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> for cubic interpolation. The user must set the image using the SetInputImage function and they must set the coordinates (one coordinate "image" for each dimension) using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a60ec74e2e8132f5203a8fc5732e4c0ac">SetInterpolationCoordinate()</a>. The coordinates may be any number of points and can be randomly organized. The interpolated output will correspond to the ordering of the coordinate points. The coordinates must be of type ContinuousIndexType and not of PointType.</p>
+<p >This function is different from the resampleImageFilter class in that the resampleImageFilter applies a transform to the original input image coordinates. This function takes an arbitrary set of point coordinates and applies the transform at these locations.</p>
+<p >Limitations: The coordinates must be in an image of the same dimension as the input image. There is no reason why this should be the case and future revisions should look at eliminating this limitation. Currently TCoordType must be the same as the input pixel type (TInputImage). Again future revisions should look at eliminating this limitation. Though the output generation may be streamed the entire input image, must be supplied. The coordinates may be streamed in smaller blocks. The coordinates are specified as separate images for each dimension. The coordinates are treated as Continuous Indices. If coordinates are supplied as Points then they must be converted to an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> before passing to this class.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html">itkInterpolateImagePointsFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -751,18 +762,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TCoordType = typename TInputImage::PixelType, typename InterpolatorType = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt;<br />
-class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;</div><p >Resamples an image at the coordinates specified by the user. </p>
-<p >This class may be templated over the Interpolate <a class="el" href="namespaceitk_1_1Function.html">Function</a> but defaults to the <a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> for cubic interpolation. The user must set the image using the SetInputImage function and they must set the coordinates (one coordinate "image" for each dimension) using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a60ec74e2e8132f5203a8fc5732e4c0ac">SetInterpolationCoordinate()</a>. The coordinates may be any number of points and can be randomly organized. The interpolated output will correspond to the ordering of the coordinate points. The coordinates must be of type ContinuousIndexType and not of PointType.</p>
-<p >This function is different from the resampleImageFilter class in that the resampleImageFilter applies a transform to the original input image coordinates. This function takes an arbitrary set of point coordinates and applies the transform at these locations.</p>
-<p >Limitations: The coordinates must be in an image of the same dimension as the input image. There is no reason why this should be the case and future revisions should look at eliminating this limitation. Currently TCoordType must be the same as the input pixel type (TInputImage). Again future revisions should look at eliminating this limitation. Though the output generation may be streamed the entire input image, must be supplied. The coordinates may be streamed in smaller blocks. The coordinates are specified as separate images for each dimension. The coordinates are treated as Continuous Indices. If coordinates are supplied as Points then they must be converted to an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> before passing to this class.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html">itkInterpolateImagePointsFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a56038e2ede3e60937b72d2c9e4e05a24" name="a56038e2ede3e60937b72d2c9e4e05a24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56038e2ede3e60937b72d2c9e4e05a24">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

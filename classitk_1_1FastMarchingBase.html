@@ -94,7 +94,50 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFastMarchingBase_8h_source.html">itkFastMarchingBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TOutput&gt;<br />
+class itk::FastMarchingBase&lt; TInput, TOutput &gt;</div><p >Abstract class to solve an Eikonal based-equation using Fast Marching Method. </p>
+<p >Fast marching solves an Eikonal equation where the speed is always non-negative and depends on the position only. Starting from an initial position on the front, fast marching systematically moves the front forward one node at a time.</p>
+<p >Updates are performed using an entropy satisfy scheme where only "upwind" neighborhoods are used. This implementation of Fast Marching uses a std::priority_queue to locate the next proper node to update.</p>
+<p >Fast Marching sweeps through N points in (N log N) steps to obtain the arrival time value as the front propagates through the domain.</p>
+<p >The initial front is specified by two containers: </p><ul>
+<li>one containing the known nodes (Alive Nodes: nodes that are already part of the object), </li>
+<li>one containing the trial nodes (Trial Nodes: nodes that are considered for inclusion).</li>
+</ul>
+<p>In order for the filter to evolve, at least some trial nodes must be specified. These can for instance be specified as the layer of nodes around the alive ones.</p>
+<p >The algorithm is terminated early by setting an appropriate stopping criterion, or if there are no more nodes to process.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TTraits</td><td>traits which includes definition such as: <ul>
+<li>InputDomainType (<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> or <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">itk::QuadEdgeMesh</a>) </li>
+<li>OutputDomainType (similar to InputDomainType) </li>
+<li>NodeType (<a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">itk::Index</a> if <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> and PointIdentifier if <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">itk::QuadEdgeMesh</a>) </li>
+<li>NodePairType std::pair&lt; NodeType, OutputPixelType &gt; </li>
+<li>Superclass (<a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">itk::ImageToImageFilter</a> or <a class="el" href="classitk_1_1QuadEdgeMeshToQuadEdgeMeshFilter.html" title="Duplicates the content of a Mesh.">itk::QuadEdgeMeshToQuadEdgeMeshFilter</a> )</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>In the current implementation, std::priority_queue only allows taking nodes out from the front and putting nodes in from the back. Use <a class="el" href="classitk_1_1PriorityQueueContainer.html">itk::PriorityQueueContainer</a> instead.</dd></dl>
+<dl class="section user"><dt>Topology constraints:</dt><dd>Additional flexibility in this class includes the implementation of topology constraints for image-based fast marching. Further details can be found in the paper</dd></dl>
+<p>NJ Tustison, BA Avants, MF Siqueira, JC Gee. "Topological Well-
+Composedness and Glamorous Glue: A Digital Gluing Algorithm for
+Topologically Constrained Front Propagation, IEEE Transactions on
+Image Processing, 20(6):1756-1761, June 2011.
+
+Essentially, one can constrain the propagating front(s) such that
+they either:
+ 1. don't merge (using the "Strict" option)
+ 2. don't create handles (using the "NoHandles" option)
+
+Whereas the majority of related work uses the digital topological
+concept of "simple points" to constrain the evolving front, this
+filter uses the concept of "well-composedness". Advantages of the latter over the former includes being able to use the standard marching cubes algorithm to produce a mesh whose genus is identical to that of the evolved front(s).</p>
+<dl class="section see"><dt>See also</dt><dd>FastMarchingStoppingCriterionBase </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFastMarchingBase_8h_source.html#l00126">126</a> of file <a class="el" href="itkFastMarchingBase_8h_source.html">itkFastMarchingBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FastMarchingBase&lt; TInput, TOutput &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -278,50 +321,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ad5c314a81bc11231405eed1618cabf07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FastMarchingBase.html#a7c2c845cf625dd336f7c59369833bb60">NodePairContainerPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FastMarchingBase.html#ad5c314a81bc11231405eed1618cabf07">m_TrialPoints</a> {}</td></tr>
 <tr class="separator:ad5c314a81bc11231405eed1618cabf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TOutput&gt;<br />
-class itk::FastMarchingBase&lt; TInput, TOutput &gt;</div><p >Abstract class to solve an Eikonal based-equation using Fast Marching Method. </p>
-<p >Fast marching solves an Eikonal equation where the speed is always non-negative and depends on the position only. Starting from an initial position on the front, fast marching systematically moves the front forward one node at a time.</p>
-<p >Updates are performed using an entropy satisfy scheme where only "upwind" neighborhoods are used. This implementation of Fast Marching uses a std::priority_queue to locate the next proper node to update.</p>
-<p >Fast Marching sweeps through N points in (N log N) steps to obtain the arrival time value as the front propagates through the domain.</p>
-<p >The initial front is specified by two containers: </p><ul>
-<li>one containing the known nodes (Alive Nodes: nodes that are already part of the object), </li>
-<li>one containing the trial nodes (Trial Nodes: nodes that are considered for inclusion).</li>
-</ul>
-<p>In order for the filter to evolve, at least some trial nodes must be specified. These can for instance be specified as the layer of nodes around the alive ones.</p>
-<p >The algorithm is terminated early by setting an appropriate stopping criterion, or if there are no more nodes to process.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TTraits</td><td>traits which includes definition such as: <ul>
-<li>InputDomainType (<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> or <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">itk::QuadEdgeMesh</a>) </li>
-<li>OutputDomainType (similar to InputDomainType) </li>
-<li>NodeType (<a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">itk::Index</a> if <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> and PointIdentifier if <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">itk::QuadEdgeMesh</a>) </li>
-<li>NodePairType std::pair&lt; NodeType, OutputPixelType &gt; </li>
-<li>Superclass (<a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">itk::ImageToImageFilter</a> or <a class="el" href="classitk_1_1QuadEdgeMeshToQuadEdgeMeshFilter.html" title="Duplicates the content of a Mesh.">itk::QuadEdgeMeshToQuadEdgeMeshFilter</a> )</li>
-</ul>
-</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>In the current implementation, std::priority_queue only allows taking nodes out from the front and putting nodes in from the back. Use <a class="el" href="classitk_1_1PriorityQueueContainer.html">itk::PriorityQueueContainer</a> instead.</dd></dl>
-<dl class="section user"><dt>Topology constraints:</dt><dd>Additional flexibility in this class includes the implementation of topology constraints for image-based fast marching. Further details can be found in the paper</dd></dl>
-<p>NJ Tustison, BA Avants, MF Siqueira, JC Gee. "Topological Well-
-Composedness and Glamorous Glue: A Digital Gluing Algorithm for
-Topologically Constrained Front Propagation, IEEE Transactions on
-Image Processing, 20(6):1756-1761, June 2011.
-
-Essentially, one can constrain the propagating front(s) such that
-they either:
- 1. don't merge (using the "Strict" option)
- 2. don't create handles (using the "NoHandles" option)
-
-Whereas the majority of related work uses the digital topological
-concept of "simple points" to constrain the evolving front, this
-filter uses the concept of "well-composedness". Advantages of the latter over the former includes being able to use the standard marching cubes algorithm to produce a mesh whose genus is identical to that of the evolved front(s).</p>
-<dl class="section see"><dt>See also</dt><dd>FastMarchingStoppingCriterionBase </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFastMarchingBase_8h_source.html#l00126">126</a> of file <a class="el" href="itkFastMarchingBase_8h_source.html">itkFastMarchingBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a85b52507dd5fbe860cd8033edf646762" name="a85b52507dd5fbe860cd8033edf646762"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85b52507dd5fbe860cd8033edf646762">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

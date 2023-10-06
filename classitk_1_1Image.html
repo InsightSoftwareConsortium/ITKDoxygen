@@ -96,7 +96,37 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImage_8h_source.html">itkImage.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VImageDimension = 2&gt;<br />
+class itk::Image&lt; TPixel, VImageDimension &gt;</div><p >Templated n-dimensional image class. </p>
+<p >Images are templated over a pixel type (modeling the dependent variables), and a dimension (number of independent variables). The container for the pixel data is the <a class="el" href="classitk_1_1ImportImageContainer.html" title="Defines an itk::Image front-end to a standard C-array.">ImportImageContainer</a>.</p>
+<p >Within the pixel container, images are modeled as arrays, defined by a start index and a size.</p>
+<p >The superclass of <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>, <a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a>, defines the geometry of the image in terms of where the image sits in physical space, how the image is oriented in physical space, the size of a pixel, and the extent of the image itself. <a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> provides the methods to convert between the index and physical space coordinate frames.</p>
+<p >Pixels can be accessed directly using the <a class="el" href="classitk_1_1Image.html#a56643f723aec193bba0b7a780736d073" title="Set a pixel value.">SetPixel()</a> and <a class="el" href="classitk_1_1Image.html#aea56bb01b2af79a7436036bf97c2c39d" title="Get a pixel (read only version).">GetPixel()</a> methods or can be accessed via iterators that define the region of the image they traverse.</p>
+<p >The pixel type may be one of the native types; a Insight-defined class type such as <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a>; or a user-defined type. Note that depending on the type of pixel that you use, the process objects (i.e., those filters processing data objects) may not operate on the image and/or pixel type. This becomes apparent at compile-time because operator overloading (for the pixel type) is not supported.</p>
+<p >The data in an image is arranged in a 1D array as [][][][slice][row][col] with the column index varying most rapidly. The <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> type reverses the order so that with <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[0] = col, <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[1] = row, <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[2] = slice, ...</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageContainerInterface.html" title="Used for reference when writing containers conforming to this interface.">ImageContainerInterface</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImage_8h_source.html#l00088">88</a> of file <a class="el" href="itkImage_8h_source.html">itkImage.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Image&lt; TPixel, VImageDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -630,37 +660,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VImageDimension = 2&gt;<br />
-class itk::Image&lt; TPixel, VImageDimension &gt;</div><p >Templated n-dimensional image class. </p>
-<p >Images are templated over a pixel type (modeling the dependent variables), and a dimension (number of independent variables). The container for the pixel data is the <a class="el" href="classitk_1_1ImportImageContainer.html" title="Defines an itk::Image front-end to a standard C-array.">ImportImageContainer</a>.</p>
-<p >Within the pixel container, images are modeled as arrays, defined by a start index and a size.</p>
-<p >The superclass of <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>, <a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a>, defines the geometry of the image in terms of where the image sits in physical space, how the image is oriented in physical space, the size of a pixel, and the extent of the image itself. <a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> provides the methods to convert between the index and physical space coordinate frames.</p>
-<p >Pixels can be accessed directly using the <a class="el" href="classitk_1_1Image.html#a56643f723aec193bba0b7a780736d073" title="Set a pixel value.">SetPixel()</a> and <a class="el" href="classitk_1_1Image.html#aea56bb01b2af79a7436036bf97c2c39d" title="Get a pixel (read only version).">GetPixel()</a> methods or can be accessed via iterators that define the region of the image they traverse.</p>
-<p >The pixel type may be one of the native types; a Insight-defined class type such as <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a>; or a user-defined type. Note that depending on the type of pixel that you use, the process objects (i.e., those filters processing data objects) may not operate on the image and/or pixel type. This becomes apparent at compile-time because operator overloading (for the pixel type) is not supported.</p>
-<p >The data in an image is arranged in a 1D array as [][][][slice][row][col] with the column index varying most rapidly. The <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> type reverses the order so that with <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[0] = col, <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[1] = row, <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>[2] = slice, ...</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageContainerInterface.html" title="Used for reference when writing containers conforming to this interface.">ImageContainerInterface</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImage_8h_source.html#l00088">88</a> of file <a class="el" href="itkImage_8h_source.html">itkImage.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adc07d670fc6e1ddb08f510ca1b26b3ab" name="adc07d670fc6e1ddb08f510ca1b26b3ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc07d670fc6e1ddb08f510ca1b26b3ab">&#9670;&nbsp;</a></span>AccessorFunctorType</h2>
 

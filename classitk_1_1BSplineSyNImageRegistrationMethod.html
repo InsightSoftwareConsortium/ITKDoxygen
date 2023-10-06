@@ -94,7 +94,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineSyNImageRegistrationMethod_8h_source.html">itkBSplineSyNImageRegistrationMethod.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TOutputTransform = BSplineSmoothingOnUpdateDisplacementFieldTransform&lt;double, TFixedImage::ImageDimension&gt;, typename TVirtualImage = TFixedImage, typename TPointSet = PointSet&lt;unsigned int, TFixedImage::ImageDimension&gt;&gt;<br />
+class itk::BSplineSyNImageRegistrationMethod&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;</div><p ><a class="el" href="classInterface.html" title="Wrapper for FFTW API.">Interface</a> method for the performing greedy B-spline SyN image registration. </p>
+<p >For greedy SyN we use <code>m_Transform</code> to map the time-parameterized middle image to the fixed image (and vice versa using <code>m_Transform-&gt;GetInverseDisplacementField()</code> ). We employ another ivar, <code>m_InverseTransform</code>, to map the time-parameterized middle image to the moving image.</p>
+<p >Output: The output is the updated transform which has been added to the composite transform.</p>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineSyNImageRegistrationMethod_8h_source.html#l00051">51</a> of file <a class="el" href="itkBSplineSyNImageRegistrationMethod_8h_source.html">itkBSplineSyNImageRegistrationMethod.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineSyNImageRegistrationMethod&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1071,17 +1081,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TOutputTransform = BSplineSmoothingOnUpdateDisplacementFieldTransform&lt;double, TFixedImage::ImageDimension&gt;, typename TVirtualImage = TFixedImage, typename TPointSet = PointSet&lt;unsigned int, TFixedImage::ImageDimension&gt;&gt;<br />
-class itk::BSplineSyNImageRegistrationMethod&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;</div><p ><a class="el" href="classInterface.html" title="Wrapper for FFTW API.">Interface</a> method for the performing greedy B-spline SyN image registration. </p>
-<p >For greedy SyN we use <code>m_Transform</code> to map the time-parameterized middle image to the fixed image (and vice versa using <code>m_Transform-&gt;GetInverseDisplacementField()</code> ). We employ another ivar, <code>m_InverseTransform</code>, to map the time-parameterized middle image to the moving image.</p>
-<p >Output: The output is the updated transform which has been added to the composite transform.</p>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineSyNImageRegistrationMethod_8h_source.html#l00051">51</a> of file <a class="el" href="itkBSplineSyNImageRegistrationMethod_8h_source.html">itkBSplineSyNImageRegistrationMethod.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa50e75290c1b6fce3cc5e8297cda87f1" name="aa50e75290c1b6fce3cc5e8297cda87f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa50e75290c1b6fce3cc5e8297cda87f1">&#9670;&nbsp;</a></span>ArrayType</h2>
 

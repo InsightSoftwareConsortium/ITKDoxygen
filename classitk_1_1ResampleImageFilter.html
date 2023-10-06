@@ -97,7 +97,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkResampleImageFilter_8h_source.html">itkResampleImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TInterpolatorPrecisionType = double, typename TTransformPrecisionType = TInterpolatorPrecisionType&gt;<br />
+class itk::ResampleImageFilter&lt; TInputImage, TOutputImage, TInterpolatorPrecisionType, TTransformPrecisionType &gt;</div><p >Resample an image via a coordinate transform. </p>
+<p ><a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> resamples an existing image through some coordinate transform, interpolating via some image function. The class is templated over the types of the input and output images.</p>
+<p >Note that the choice of interpolator function can be important. This function is set via <a class="el" href="classitk_1_1ResampleImageFilter.html#ac2d2efedb7d195170b2d8d424b2690c4">SetInterpolator()</a>. The default is <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>&lt;InputImageType, TInterpolatorPrecisionType&gt;, which is reasonable for ordinary medical images. However, some synthetic images have pixels drawn from a finite prescribed set. An example would be a mask indicating the segmentation of a brain into a small number of tissue types. For such an image, one does not want to interpolate between different pixel values, and so <a class="el" href="classitk_1_1NearestNeighborInterpolateImageFunction.html" title="Nearest neighbor interpolation of a scalar image.">NearestNeighborInterpolateImageFunction</a>&lt; InputImageType, TCoordRep &gt; would be a better choice.</p>
+<p >If an sample is taken from outside the image domain, the default behavior is to use a default pixel value. If different behavior is desired, an extrapolator function can be set with <a class="el" href="classitk_1_1ResampleImageFilter.html#a89d912b5608fbe73a9a2ca0ebcfebb69">SetExtrapolator()</a>.</p>
+<p >Output information (spacing, size and direction) for the output image should be set. This information has the normal defaults of unit spacing, zero origin and identity direction. Optionally, the output information can be obtained from a reference image. If the reference image is provided and UseReferenceImage is On, then the spacing, origin and direction of the reference image will be used.</p>
+<p >Since this filter produces an image which is a different size than its input, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#ade67a54c973bfaf739184c906da7c77a">ProcessObject::GenerateInputRequestedRegion()</a> and <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
+<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ResampleImageFilter.html#a908c62d1ea8838e9f28a69586fe7a2f5">DynamicThreadedGenerateData()</a> method for its implementation. </p><dl class="section warning"><dt>Warning</dt><dd>For multithreading, the TransformPoint method of the user-designated coordinate transform must be threadsafe.</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkResampleImageFilter_8h_source.html#l00090">90</a> of file <a class="el" href="itkResampleImageFilter_8h_source.html">itkResampleImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ResampleImageFilter&lt; TInputImage, TOutputImage, TInterpolatorPrecisionType, TTransformPrecisionType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -893,25 +911,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TInterpolatorPrecisionType = double, typename TTransformPrecisionType = TInterpolatorPrecisionType&gt;<br />
-class itk::ResampleImageFilter&lt; TInputImage, TOutputImage, TInterpolatorPrecisionType, TTransformPrecisionType &gt;</div><p >Resample an image via a coordinate transform. </p>
-<p ><a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> resamples an existing image through some coordinate transform, interpolating via some image function. The class is templated over the types of the input and output images.</p>
-<p >Note that the choice of interpolator function can be important. This function is set via <a class="el" href="classitk_1_1ResampleImageFilter.html#ac2d2efedb7d195170b2d8d424b2690c4">SetInterpolator()</a>. The default is <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>&lt;InputImageType, TInterpolatorPrecisionType&gt;, which is reasonable for ordinary medical images. However, some synthetic images have pixels drawn from a finite prescribed set. An example would be a mask indicating the segmentation of a brain into a small number of tissue types. For such an image, one does not want to interpolate between different pixel values, and so <a class="el" href="classitk_1_1NearestNeighborInterpolateImageFunction.html" title="Nearest neighbor interpolation of a scalar image.">NearestNeighborInterpolateImageFunction</a>&lt; InputImageType, TCoordRep &gt; would be a better choice.</p>
-<p >If an sample is taken from outside the image domain, the default behavior is to use a default pixel value. If different behavior is desired, an extrapolator function can be set with <a class="el" href="classitk_1_1ResampleImageFilter.html#a89d912b5608fbe73a9a2ca0ebcfebb69">SetExtrapolator()</a>.</p>
-<p >Output information (spacing, size and direction) for the output image should be set. This information has the normal defaults of unit spacing, zero origin and identity direction. Optionally, the output information can be obtained from a reference image. If the reference image is provided and UseReferenceImage is On, then the spacing, origin and direction of the reference image will be used.</p>
-<p >Since this filter produces an image which is a different size than its input, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#ade67a54c973bfaf739184c906da7c77a">ProcessObject::GenerateInputRequestedRegion()</a> and <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
-<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ResampleImageFilter.html#a908c62d1ea8838e9f28a69586fe7a2f5">DynamicThreadedGenerateData()</a> method for its implementation. </p><dl class="section warning"><dt>Warning</dt><dd>For multithreading, the TransformPoint method of the user-designated coordinate transform must be threadsafe.</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkResampleImageFilter_8h_source.html#l00090">90</a> of file <a class="el" href="itkResampleImageFilter_8h_source.html">itkResampleImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a366b9b3f7c80871f673c870eb39cd990" name="a366b9b3f7c80871f673c870eb39cd990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a366b9b3f7c80871f673c870eb39cd990">&#9670;&nbsp;</a></span>ComponentType</h2>
 
@@ -961,7 +961,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TInterpolato
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Input pixel continuous index typdef </p>
+<p >Input pixel continuous index typedef </p>
 
 <p class="definition">Definition at line <a class="el" href="itkResampleImageFilter_8h_source.html#l00173">173</a> of file <a class="el" href="itkResampleImageFilter_8h_source.html">itkResampleImageFilter.h</a>.</p>
 

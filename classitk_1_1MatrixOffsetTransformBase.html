@@ -96,7 +96,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMatrixOffsetTransformBase_8h_source.html">itkMatrixOffsetTransformBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VInputDimension = 3, unsigned int VOutputDimension = 3&gt;<br />
+class itk::MatrixOffsetTransformBase&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;</div><p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> and <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> transformation of a vector space (e.g. space coordinates) </p>
+<p >This class serves as a base class for transforms that can be expressed as a linear transformation plus a constant offset (e.g., affine, similarity and rigid transforms). This base class also provides the concept of using a center of rotation and a translation instead of an offset.</p>
+<p >As derived instances of this class are specializations of an affine transform, any two of these transformations may be composed and the result is an affine transformation. However, the order is important. Given two affine transformations T1 and T2, we will say that "precomposing T1 with T2" yields the transformation which applies T1 to the source, and then applies T2 to that result to obtain the target. Conversely, we will say that "postcomposing T1 with T2" yields the transformation which applies T2 to the source, and then applies T1 to that result to obtain the target. (Whether T1 or T2 comes first lexicographically depends on whether you choose to write mappings from right-to-left or vice versa; we avoid the whole problem by referring to the order of application rather than the textual order.)</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TParametersValueType</td><td>The type to be used for scalar numeric values. Either float or double.</td></tr>
+    <tr><td class="paramname">VInputDimension</td><td>The number of dimensions of the input vector space.</td></tr>
+    <tr><td class="paramname">VOutputDimension</td><td>The number of dimensions of the output vector space.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This class provides several methods for setting the matrix and offset defining the transform. To support the registration framework, the transform parameters can also be set as an <a class="el" href="classitk_1_1Array.html">Array&lt;TParametersValueType&gt;</a> of size (VInputDimension + 1) * VOutputDimension using method <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#a14d6017219484a608eafd438fd64dc34">SetParameters()</a>. The first (VOutputDimension x VInputDimension) parameters defines the matrix in row-major order (where the column index varies the fastest). The last VOutputDimension parameters defines the translation in each dimensions. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMatrixOffsetTransformBase_8h_source.html#l00106">106</a> of file <a class="el" href="itkMatrixOffsetTransformBase_8h_source.html">itkMatrixOffsetTransformBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MatrixOffsetTransformBase&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -689,23 +705,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VInputDimension = 3, unsigned int VOutputDimension = 3&gt;<br />
-class itk::MatrixOffsetTransformBase&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;</div><p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> and <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> transformation of a vector space (e.g. space coordinates) </p>
-<p >This class serves as a base class for transforms that can be expressed as a linear transformation plus a constant offset (e.g., affine, similarity and rigid transforms). This base class also provides the concept of using a center of rotation and a translation instead of an offset.</p>
-<p >As derived instances of this class are specializations of an affine transform, any two of these transformations may be composed and the result is an affine transformation. However, the order is important. Given two affine transformations T1 and T2, we will say that "precomposing T1 with T2" yields the transformation which applies T1 to the source, and then applies T2 to that result to obtain the target. Conversely, we will say that "postcomposing T1 with T2" yields the transformation which applies T2 to the source, and then applies T1 to that result to obtain the target. (Whether T1 or T2 comes first lexicographically depends on whether you choose to write mappings from right-to-left or vice versa; we avoid the whole problem by referring to the order of application rather than the textual order.)</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TParametersValueType</td><td>The type to be used for scalar numeric values. Either float or double.</td></tr>
-    <tr><td class="paramname">VInputDimension</td><td>The number of dimensions of the input vector space.</td></tr>
-    <tr><td class="paramname">VOutputDimension</td><td>The number of dimensions of the output vector space.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This class provides several methods for setting the matrix and offset defining the transform. To support the registration framework, the transform parameters can also be set as an <a class="el" href="classitk_1_1Array.html">Array&lt;TParametersValueType&gt;</a> of size (VInputDimension + 1) * VOutputDimension using method <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#a14d6017219484a608eafd438fd64dc34">SetParameters()</a>. The first (VOutputDimension x VInputDimension) parameters defines the matrix in row-major order (where the column index varies the fastest). The last VOutputDimension parameters defines the translation in each dimensions. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMatrixOffsetTransformBase_8h_source.html#l00106">106</a> of file <a class="el" href="itkMatrixOffsetTransformBase_8h_source.html">itkMatrixOffsetTransformBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5a9323107e4d0ae282b7ac36177cef79" name="a5a9323107e4d0ae282b7ac36177cef79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a9323107e4d0ae282b7ac36177cef79">&#9670;&nbsp;</a></span>CenterType</h2>
 

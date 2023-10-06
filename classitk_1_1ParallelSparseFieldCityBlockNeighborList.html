@@ -93,7 +93,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkParallelSparseFieldLevelSetImageFilter_8h_source.html">itkParallelSparseFieldLevelSetImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TNeighborhoodType&gt;<br />
+class itk::ParallelSparseFieldCityBlockNeighborList&lt; TNeighborhoodType &gt;</div><p >A convenience class for storing indices which reference neighbor pixels within a neighborhood. </p>
+<dl class="section user"><dt></dt><dd>This class creates and stores indices for use in finding neighbors within an <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">itk::NeighborhoodIterator</a> object. Both an array of unsigned integer indices and an array of N dimensional offsets (from the center of the neighborhood) are created and stored. The indices and offsets correspond to the "city-block" neighbors, that is, 4-neighbors in 2d, 6-neighbors in 3d, etc.</dd></dl>
+<dl class="section user"><dt></dt><dd>Order of reference is lowest index to highest index in the neighborhood. For example, for 4 connectivity, the indices refer to the following neighbors: <div class="fragment"><div class="line">  1 *</div>
+<div class="line">2 * 3</div>
+<div class="line">  4 *</div>
+</div><!-- fragment --> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkParallelSparseFieldLevelSetImageFilter_8h_source.html#l00076">76</a> of file <a class="el" href="itkParallelSparseFieldLevelSetImageFilter_8h_source.html">itkParallelSparseFieldLevelSetImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::ParallelSparseFieldCityBlockNeighborList&lt; TNeighborhoodType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -152,17 +162,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a57954315502dce5ca5d3574b38f9a9c1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ParallelSparseFieldCityBlockNeighborList.html#a57954315502dce5ca5d3574b38f9a9c1">m_StrideTable</a> [<a class="el" href="classitk_1_1ParallelSparseFieldCityBlockNeighborList.html#abfe7790ec538727ccac6569390928996">Dimension</a>] {}</td></tr>
 <tr class="separator:a57954315502dce5ca5d3574b38f9a9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TNeighborhoodType&gt;<br />
-class itk::ParallelSparseFieldCityBlockNeighborList&lt; TNeighborhoodType &gt;</div><p >A convenience class for storing indices which reference neighbor pixels within a neighborhood. </p>
-<dl class="section user"><dt></dt><dd>This class creates and stores indices for use in finding neighbors within an <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">itk::NeighborhoodIterator</a> object. Both an array of unsigned integer indices and an array of N dimensional offsets (from the center of the neighborhood) are created and stored. The indices and offsets correspond to the "city-block" neighbors, that is, 4-neighbors in 2d, 6-neighbors in 3d, etc.</dd></dl>
-<dl class="section user"><dt></dt><dd>Order of reference is lowest index to highest index in the neighborhood. For example, for 4 connectivity, the indices refer to the following neighbors: <div class="fragment"><div class="line">  1 *</div>
-<div class="line">2 * 3</div>
-<div class="line">  4 *</div>
-</div><!-- fragment --> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkParallelSparseFieldLevelSetImageFilter_8h_source.html#l00076">76</a> of file <a class="el" href="itkParallelSparseFieldLevelSetImageFilter_8h_source.html">itkParallelSparseFieldLevelSetImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aadf69cd29678e314f8ba5cd03d854200" name="aadf69cd29678e314f8ba5cd03d854200"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadf69cd29678e314f8ba5cd03d854200">&#9670;&nbsp;</a></span>NeighborhoodType</h2>
 

@@ -95,7 +95,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLabeledPointSetToPointSetMetricv4_8h_source.html">itkLabeledPointSetToPointSetMetricv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedPointSet, typename TMovingPointSet = TFixedPointSet, class TInternalComputationValueType = double&gt;<br />
+class itk::LabeledPointSetToPointSetMetricv4&lt; TFixedPointSet, TMovingPointSet, TInternalComputationValueType &gt;</div><p >Computes the distance metric and gradient between two labeled point sets. </p>
+<p >This class is generic in that it takes an unlabeled point set metric, such as one of the following options</p>
+<ul>
+<li><code><a class="el" href="classitk_1_1EuclideanDistancePointSetToPointSetMetricv4.html" title="Computes the Euclidan distance metric between two point sets.">EuclideanDistancePointSetToPointSetMetricv4</a></code> (default) </li>
+<li><code><a class="el" href="classitk_1_1ExpectationBasedPointSetToPointSetMetricv4.html" title="Computes an expectation-based metric between two point sets.">ExpectationBasedPointSetToPointSetMetricv4</a></code> </li>
+<li><code><a class="el" href="classitk_1_1JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4.html" title="Implementation of the Jensen Havrda Charvat Tsallis Point Set metric.">JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4</a></code> </li>
+</ul>
+<p>where it is assumed that the point set <code>PixelType</code> associated with each point is a label (i.e. <code>LabelEnum</code>). This class is used to find the total metric and total derivative based on the matching between the separate fixed and moving labeled point sets. This class first determines the common label set between the fixed and moving point sets. For each common label, the specified unlabeled point set metric is cloned and the fixed and moving point subset associated with that common label is specified as the fixed and moving point set input. Functionality in the base class (<code><a class="el" href="classitk_1_1PointSetToPointSetMetric.html" title="Computes similarity between two point sets.">PointSetToPointSetMetric</a></code>) is used to accumulated the value and gradient.</p>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLabeledPointSetToPointSetMetricv4_8h_source.html#l00055">55</a> of file <a class="el" href="itkLabeledPointSetToPointSetMetricv4_8h_source.html">itkLabeledPointSetToPointSetMetricv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LabeledPointSetToPointSetMetricv4&lt; TFixedPointSet, TMovingPointSet, TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -851,20 +864,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedPointSet, typename TMovingPointSet = TFixedPointSet, class TInternalComputationValueType = double&gt;<br />
-class itk::LabeledPointSetToPointSetMetricv4&lt; TFixedPointSet, TMovingPointSet, TInternalComputationValueType &gt;</div><p >Computes the distance metric and gradient between two labeled point sets. </p>
-<p >This class is generic in that it takes an unlabeled point set metric, such as one of the following options</p>
-<ul>
-<li><code><a class="el" href="classitk_1_1EuclideanDistancePointSetToPointSetMetricv4.html" title="Computes the Euclidan distance metric between two point sets.">EuclideanDistancePointSetToPointSetMetricv4</a></code> (default) </li>
-<li><code><a class="el" href="classitk_1_1ExpectationBasedPointSetToPointSetMetricv4.html" title="Computes an expectation-based metric between two point sets.">ExpectationBasedPointSetToPointSetMetricv4</a></code> </li>
-<li><code><a class="el" href="classitk_1_1JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4.html" title="Implementation of the Jensen Havrda Charvat Tsallis Point Set metric.">JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4</a></code> </li>
-</ul>
-<p>where it is assumed that the point set <code>PixelType</code> associated with each point is a label (i.e. <code>LabelEnum</code>). This class is used to find the total metric and total derivative based on the matching between the separate fixed and moving labeled point sets. This class first determines the common label set between the fixed and moving point sets. For each common label, the specified unlabeled point set metric is cloned and the fixed and moving point subset associated with that common label is specified as the fixed and moving point set input. Functionality in the base class (<code><a class="el" href="classitk_1_1PointSetToPointSetMetric.html" title="Computes similarity between two point sets.">PointSetToPointSetMetric</a></code>) is used to accumulated the value and gradient.</p>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLabeledPointSetToPointSetMetricv4_8h_source.html#l00055">55</a> of file <a class="el" href="itkLabeledPointSetToPointSetMetricv4_8h_source.html">itkLabeledPointSetToPointSetMetricv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4003ae4e654c7270e24fc61cb3bd1a4b" name="a4003ae4e654c7270e24fc61cb3bd1a4b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4003ae4e654c7270e24fc61cb3bd1a4b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

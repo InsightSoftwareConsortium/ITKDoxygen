@@ -90,19 +90,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPixelTraits_8h_source.html">itkPixelTraits.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:adb1aa7262ad410d22c76db3b471082c1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JoinTraits.html#adb1aa7262ad410d22c76db3b471082c1">ValueType</a> = TValue1</td></tr>
-<tr class="separator:adb1aa7262ad410d22c76db3b471082c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TValue1, typename TValue2&gt;<br />
 class itk::JoinTraits&lt; TValue1, TValue2 &gt;</div><p >Trait to determine what datatype is needed if the specified pixel types are "joined" into a single vector. </p>
 <p ><a class="el" href="classitk_1_1JoinTraits.html" title="Trait to determine what datatype is needed if the specified pixel types are &quot;joined&quot; into a single ve...">JoinTraits</a> defines the value type needed to combine the specified pixel types into a single vector. The data type selected is the smallest data type that can represent the dynamic range of both input pixel types. For example, if a char and unsigned short are "joined", the resulting data type must be a vector of int. In some cases, like joining a unsigned int and a char, the join value type is promoted all the way to a float. This provides consistent behavior on both 32 and 64 bit systems (on 64 bit systems, we could have promoted to a long which is distinct from an int but this is not the case for 32 bit systems, so we promote to float). There are several combinations similar to this. Most of the <a class="el" href="classitk_1_1JoinTraits.html" title="Trait to determine what datatype is needed if the specified pixel types are &quot;joined&quot; into a single ve...">JoinTraits</a> are specializations of the base template. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPixelTraits_8h_source.html#l00195">195</a> of file <a class="el" href="itkPixelTraits_8h_source.html">itkPixelTraits.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:adb1aa7262ad410d22c76db3b471082c1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1JoinTraits.html#adb1aa7262ad410d22c76db3b471082c1">ValueType</a> = TValue1</td></tr>
+<tr class="separator:adb1aa7262ad410d22c76db3b471082c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adb1aa7262ad410d22c76db3b471082c1" name="adb1aa7262ad410d22c76db3b471082c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb1aa7262ad410d22c76db3b471082c1">&#9670;&nbsp;</a></span>ValueType</h2>
 

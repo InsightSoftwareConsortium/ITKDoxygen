@@ -96,7 +96,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkN4BiasFieldCorrectionImageFilter_8h_source.html">itkN4BiasFieldCorrectionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMaskImage = Image&lt;unsigned char, TInputImage::ImageDimension&gt;, class TOutputImage = TInputImage&gt;<br />
+class itk::N4BiasFieldCorrectionImageFilter&lt; TInputImage, TMaskImage, TOutputImage &gt;</div><p >Implementation of the N4 bias field correction algorithm. </p>
+<p >The nonparametric nonuniform intensity normalization (N3) algorithm, as introduced by Sled et al. in 1998 is a method for correcting nonuniformity associated with MR images. The algorithm assumes a simple parametric model (Gaussian) for the bias field and does not require tissue class segmentation. In addition, there are only a couple of parameters to tune with the default values performing quite well. N3 has been publicly available as a set of perl scripts (<a href="https://www.bic.mni.mcgill.ca/ServicesSoftwareAdvancedImageProcessingTools/HomePage">https://www.bic.mni.mcgill.ca/ServicesSoftwareAdvancedImageProcessingTools/HomePage</a>)</p>
+<p >The N4 algorithm, encapsulated with this class, is a variation of the original N3 algorithm with the additional benefits of an improved B-spline fitting routine which allows for multiple resolutions to be used during the correction process. We also modify the iterative update component of algorithm such that the residual bias field is continually updated</p>
+<p >Notes for the user:</p><ol type="1">
+<li>Since much of the image manipulation is done in the log space of the intensities, input images with negative and small values (&lt; 1) can produce poor results.</li>
+<li>The original authors recommend performing the bias field correction on a downsampled version of the original image.</li>
+<li>A binary mask or a weighted image can be supplied. If a binary mask is specified, those voxels in the input image which correspond to the voxels in the mask image are used to estimate the bias field. If a UseMaskLabel value is set to false (the default), all non-zero voxels in the MaskImage will be masked; otherwise only voxels in the MaskImage that match the MaskLabel will be used. If a confidence image is specified, the input voxels are weighted in the b-spline fitting routine according to the confidence voxel values.</li>
+<li>The filter returns the corrected image. If the bias field is wanted, one can reconstruct it using the class itkBSplineControlPointImageFilter. See the IJ article and the test file for an example.</li>
+<li>The 'Z' parameter in Sled's 1998 paper is the square root of the class variable 'm_WienerFilterNoise'.</li>
+</ol>
+<p >The basic algorithm iterates between sharpening the intensity histogram of the corrected input image and spatially smoothing those results with a B-spline scalar field estimate of the bias field.</p>
+<dl class="section author"><dt>Author</dt><dd>Nicholas J. Tustison</dd></dl>
+<p>Contributed by Nicholas J. Tustison, James C. Gee in the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/640">https://www.insight-journal.org/browse/publication/640</a></p>
+<dl class="section user"><dt>REFERENCE</dt><dd></dd></dl>
+<p>J.G. Sled, A.P. Zijdenbos and A.C. Evans. "A Nonparametric Method for
+Automatic Correction of Intensity Nonuniformity in  Data" IEEE Transactions on Medical Imaging, Vol 17, No 1. Feb 1998.</p>
+<p >N.J. Tustison, B.B. Avants, P.A. Cook, Y. Zheng, A. Egan, P.A. Yushkevich, and J.C. Gee. "N4ITK:  Improved N3 Bias Correction" IEEE Transactions on Medical Imaging, 29(6):1310-1320, June 2010. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkN4BiasFieldCorrectionImageFilter_8h_source.html#l00096">96</a> of file <a class="el" href="itkN4BiasFieldCorrectionImageFilter_8h_source.html">itkN4BiasFieldCorrectionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::N4BiasFieldCorrectionImageFilter&lt; TInputImage, TMaskImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -853,28 +874,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMaskImage = Image&lt;unsigned char, TInputImage::ImageDimension&gt;, class TOutputImage = TInputImage&gt;<br />
-class itk::N4BiasFieldCorrectionImageFilter&lt; TInputImage, TMaskImage, TOutputImage &gt;</div><p >Implementation of the N4 bias field correction algorithm. </p>
-<p >The nonparametric nonuniform intensity normalization (N3) algorithm, as introduced by Sled et al. in 1998 is a method for correcting nonuniformity associated with MR images. The algorithm assumes a simple parametric model (Gaussian) for the bias field and does not require tissue class segmentation. In addition, there are only a couple of parameters to tune with the default values performing quite well. N3 has been publicly available as a set of perl scripts (<a href="https://www.bic.mni.mcgill.ca/ServicesSoftwareAdvancedImageProcessingTools/HomePage">https://www.bic.mni.mcgill.ca/ServicesSoftwareAdvancedImageProcessingTools/HomePage</a>)</p>
-<p >The N4 algorithm, encapsulated with this class, is a variation of the original N3 algorithm with the additional benefits of an improved B-spline fitting routine which allows for multiple resolutions to be used during the correction process. We also modify the iterative update component of algorithm such that the residual bias field is continually updated</p>
-<p >Notes for the user:</p><ol type="1">
-<li>Since much of the image manipulation is done in the log space of the intensities, input images with negative and small values (&lt; 1) can produce poor results.</li>
-<li>The original authors recommend performing the bias field correction on a downsampled version of the original image.</li>
-<li>A binary mask or a weighted image can be supplied. If a binary mask is specified, those voxels in the input image which correspond to the voxels in the mask image are used to estimate the bias field. If a UseMaskLabel value is set to false (the default), all non-zero voxels in the MaskImage will be masked; otherwise only voxels in the MaskImage that match the MaskLabel will be used. If a confidence image is specified, the input voxels are weighted in the b-spline fitting routine according to the confidence voxel values.</li>
-<li>The filter returns the corrected image. If the bias field is wanted, one can reconstruct it using the class itkBSplineControlPointImageFilter. See the IJ article and the test file for an example.</li>
-<li>The 'Z' parameter in Sled's 1998 paper is the square root of the class variable 'm_WienerFilterNoise'.</li>
-</ol>
-<p >The basic algorithm iterates between sharpening the intensity histogram of the corrected input image and spatially smoothing those results with a B-spline scalar field estimate of the bias field.</p>
-<dl class="section author"><dt>Author</dt><dd>Nicholas J. Tustison</dd></dl>
-<p>Contributed by Nicholas J. Tustison, James C. Gee in the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/640">https://www.insight-journal.org/browse/publication/640</a></p>
-<dl class="section user"><dt>REFERENCE</dt><dd></dd></dl>
-<p>J.G. Sled, A.P. Zijdenbos and A.C. Evans. "A Nonparametric Method for
-Automatic Correction of Intensity Nonuniformity in  Data" IEEE Transactions on Medical Imaging, Vol 17, No 1. Feb 1998.</p>
-<p >N.J. Tustison, B.B. Avants, P.A. Cook, Y. Zheng, A. Egan, P.A. Yushkevich, and J.C. Gee. "N4ITK:  Improved N3 Bias Correction" IEEE Transactions on Medical Imaging, 29(6):1310-1320, June 2010. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkN4BiasFieldCorrectionImageFilter_8h_source.html#l00096">96</a> of file <a class="el" href="itkN4BiasFieldCorrectionImageFilter_8h_source.html">itkN4BiasFieldCorrectionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acba17b3ae044eabe6e55f7bf454ec4cd" name="acba17b3ae044eabe6e55f7bf454ec4cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acba17b3ae044eabe6e55f7bf454ec4cd">&#9670;&nbsp;</a></span>ArrayType</h2>
 

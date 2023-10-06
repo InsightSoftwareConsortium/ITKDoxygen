@@ -98,7 +98,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLabelMap_8h_source.html">itkLabelMap.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLabelObject&gt;<br />
+class itk::LabelMap&lt; TLabelObject &gt;</div><p >Templated n-dimensional image to store labeled objects. </p>
+<p ><a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a> is an image class specialized in storing the labeled images. It represent the image in a different way than <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Instead of storing the content of the image in an array of pixels values, it store the a collection of labeled objects, and a background value. This way of storing the content of the image allow an easy and efficient manipulation of the objects in the image.</p>
+<p >The <a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a> shares a lot of methods with the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> class. it make it usable as input or output of the <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">itk::ImageToImageFilter</a> for example. However the methods don't have the same complexity in the 2 classes, because of the different way to store the data. <a class="el" href="classitk_1_1LabelMap.html#a75c41718daecac4687dc74932d9fc273">GetPixel()</a> is run in constant time for example in <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>, but have a worst case complexity of O(L), where L is the number of lines in the image (imageSize[1] * imageSize[2] for a 3D image).</p>
+<p >To iterate over the LabelObjects in the map, use: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; filter-&gt;GetOutput()-&gt;<a class="code hl_function" href="classitk_1_1LabelMap.html#a953a9cdd072e4f1a890e96c8515b528e">GetNumberOfLabelObjects</a>(); ++i)</div>
+<div class="line">  {</div>
+<div class="line">  FilterType::OutputImageType::LabelObjectType* labelObject =</div>
+<div class="line">    filter-&gt;GetOutput()-&gt;GetNthLabelObject(i);</div>
+<div class="line">  }</div>
+<div class="ttc" id="aclassitk_1_1LabelMap_html_a953a9cdd072e4f1a890e96c8515b528e"><div class="ttname"><a href="classitk_1_1LabelMap.html#a953a9cdd072e4f1a890e96c8515b528e">itk::LabelMap::GetNumberOfLabelObjects</a></div><div class="ttdeci">Self::SizeValueType GetNumberOfLabelObjects() const</div></div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
+<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLabelMap_8h_source.html#l00070">70</a> of file <a class="el" href="itkLabelMap_8h_source.html">itkLabelMap.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LabelMap&lt; TLabelObject &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -657,27 +677,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLabelObject&gt;<br />
-class itk::LabelMap&lt; TLabelObject &gt;</div><p >Templated n-dimensional image to store labeled objects. </p>
-<p ><a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a> is an image class specialized in storing the labeled images. It represent the image in a different way than <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. Instead of storing the content of the image in an array of pixels values, it store the a collection of labeled objects, and a background value. This way of storing the content of the image allow an easy and efficient manipulation of the objects in the image.</p>
-<p >The <a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a> shares a lot of methods with the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> class. it make it usable as input or output of the <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">itk::ImageToImageFilter</a> for example. However the methods don't have the same complexity in the 2 classes, because of the different way to store the data. <a class="el" href="classitk_1_1LabelMap.html#a75c41718daecac4687dc74932d9fc273">GetPixel()</a> is run in constant time for example in <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>, but have a worst case complexity of O(L), where L is the number of lines in the image (imageSize[1] * imageSize[2] for a 3D image).</p>
-<p >To iterate over the LabelObjects in the map, use: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; filter-&gt;GetOutput()-&gt;<a class="code hl_function" href="classitk_1_1LabelMap.html#a953a9cdd072e4f1a890e96c8515b528e">GetNumberOfLabelObjects</a>(); ++i)</div>
-<div class="line">  {</div>
-<div class="line">  FilterType::OutputImageType::LabelObjectType* labelObject =</div>
-<div class="line">    filter-&gt;GetOutput()-&gt;GetNthLabelObject(i);</div>
-<div class="line">  }</div>
-<div class="ttc" id="aclassitk_1_1LabelMap_html_a953a9cdd072e4f1a890e96c8515b528e"><div class="ttname"><a href="classitk_1_1LabelMap.html#a953a9cdd072e4f1a890e96c8515b528e">itk::LabelMap::GetNumberOfLabelObjects</a></div><div class="ttdeci">Self::SizeValueType GetNumberOfLabelObjects() const</div></div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
-<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLabelMap_8h_source.html#l00070">70</a> of file <a class="el" href="itkLabelMap_8h_source.html">itkLabelMap.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac587b1210d5a51911bc15e1017b29e03" name="ac587b1210d5a51911bc15e1017b29e03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac587b1210d5a51911bc15e1017b29e03">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

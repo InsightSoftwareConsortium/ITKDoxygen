@@ -93,7 +93,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkQuaternionRigidTransformGradientDescentOptimizer_8h_source.html">itkQuaternionRigidTransformGradientDescentOptimizer.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Implement a gradient descent optimizer. </p>
+<p ><a class="el" href="classitk_1_1QuaternionRigidTransformGradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">QuaternionRigidTransformGradientDescentOptimizer</a> is an extension to the simple gradient descent optimizer implemented in <a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a>. At each iteration the current position is updated according to</p>
+<p >p(n+1) = p(n) + learningRate * d f(p(n)) / d p(n)</p>
+<p class="formulaDsp">
+\[ p_{n+1} = p_n + \mbox{learningRate} \, \frac{\partial f(p_n) }{\partial p_n} \]
+</p>
+<p >The learning rate is a fixed scalar defined via <a class="el" href="classitk_1_1GradientDescentOptimizer.html#a64adaaf85be4219058446a400790214f">SetLearningRate()</a>. The optimizer steps through a user defined number of iterations; no convergence checking is done. The first four components of p are assumed to be the four components of the quaternion. After each update, the quaternion is normalized to have a magnitude of one. This ensures the the transform is purely rigid.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkQuaternionRigidTransformGradientDescentOptimizer_8h_source.html#l00052">52</a> of file <a class="el" href="itkQuaternionRigidTransformGradientDescentOptimizer_8h_source.html">itkQuaternionRigidTransformGradientDescentOptimizer.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::QuaternionRigidTransformGradientDescentOptimizer:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -462,18 +473,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Implement a gradient descent optimizer. </p>
-<p ><a class="el" href="classitk_1_1QuaternionRigidTransformGradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">QuaternionRigidTransformGradientDescentOptimizer</a> is an extension to the simple gradient descent optimizer implemented in <a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a>. At each iteration the current position is updated according to</p>
-<p >p(n+1) = p(n) + learningRate * d f(p(n)) / d p(n)</p>
-<p class="formulaDsp">
-\[ p_{n+1} = p_n + \mbox{learningRate} \, \frac{\partial f(p_n) }{\partial p_n} \]
-</p>
-<p >The learning rate is a fixed scalar defined via <a class="el" href="classitk_1_1GradientDescentOptimizer.html#a64adaaf85be4219058446a400790214f">SetLearningRate()</a>. The optimizer steps through a user defined number of iterations; no convergence checking is done. The first four components of p are assumed to be the four components of the quaternion. After each update, the quaternion is normalized to have a magnitude of one. This ensures the the transform is purely rigid.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkQuaternionRigidTransformGradientDescentOptimizer_8h_source.html#l00052">52</a> of file <a class="el" href="itkQuaternionRigidTransformGradientDescentOptimizer_8h_source.html">itkQuaternionRigidTransformGradientDescentOptimizer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aeece71d842e71ea9f74a2ae1dc1f5d71" name="aeece71d842e71ea9f74a2ae1dc1f5d71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeece71d842e71ea9f74a2ae1dc1f5d71">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

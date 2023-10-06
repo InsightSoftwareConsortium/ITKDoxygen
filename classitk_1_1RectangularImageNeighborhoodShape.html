@@ -93,7 +93,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkRectangularImageNeighborhoodShape_8h_source.html">itkRectangularImageNeighborhoodShape.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VImageDimension&gt;<br />
+class itk::RectangularImageNeighborhoodShape&lt; VImageDimension &gt;</div><p >Rectangular (or hyperrectangular) image-neighborhood shape. Eases creating a sequence of offsets for <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a>. Can also be used for <a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a>.</p>
+<p >The following example creates a 3 x 5 rectangular neighborhood around pixel location [10, 20], and generates the offsets for a neighborhood range: </p><div class="fragment"><div class="line"><span class="keyword">const</span> Index&lt;&gt; location = { 10, 20 };</div>
+<div class="line"><span class="keyword">const</span> Size&lt;&gt; radius = { { 1, 2 } };</div>
+<div class="line"><span class="keyword">const</span> RectangularImageNeighborhoodShape&lt;2&gt; shape{ radius };</div>
+<div class="line"><span class="keyword">const</span> std::vector&lt;Offset&lt;&gt;&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">GenerateImageNeighborhoodOffsets</a>(shape);</div>
+<div class="line">ShapedImageNeighborhoodRange&lt;ImageType&gt; neighborhoodRange{ *image, location, offsets };</div>
+<div class="ttc" id="anamespaceitk_html_a3fd7c11aaf6dadd27f2dbdb9d17be651"><div class="ttname"><a href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">itk::GenerateImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; TImageNeighborhoodShape::ImageDimension &gt; &gt; GenerateImageNeighborhoodOffsets(const TImageNeighborhoodShape &amp;shape)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00031">itkImageNeighborhoodOffsets.h:31</a></div></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkRectangularImageNeighborhoodShape_8h_source.html#l00053">53</a> of file <a class="el" href="itkRectangularImageNeighborhoodShape_8h_source.html">itkRectangularImageNeighborhoodShape.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::RectangularImageNeighborhoodShape&lt; VImageDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -129,21 +143,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abe499abf622e09da60a58f720cbc9812"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structitk_1_1Size.html">Size</a>&lt; <a class="el" href="classitk_1_1RectangularImageNeighborhoodShape.html#aff78e50aff05791ed4caae5bc69de09a">ImageDimension</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1RectangularImageNeighborhoodShape.html#abe499abf622e09da60a58f720cbc9812">m_Radius</a></td></tr>
 <tr class="separator:abe499abf622e09da60a58f720cbc9812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VImageDimension&gt;<br />
-class itk::RectangularImageNeighborhoodShape&lt; VImageDimension &gt;</div><p >Rectangular (or hyperrectangular) image-neighborhood shape. Eases creating a sequence of offsets for <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a>. Can also be used for <a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a>.</p>
-<p >The following example creates a 3 x 5 rectangular neighborhood around pixel location [10, 20], and generates the offsets for a neighborhood range: </p><div class="fragment"><div class="line"><span class="keyword">const</span> Index&lt;&gt; location = { 10, 20 };</div>
-<div class="line"><span class="keyword">const</span> Size&lt;&gt; radius = { { 1, 2 } };</div>
-<div class="line"><span class="keyword">const</span> RectangularImageNeighborhoodShape&lt;2&gt; shape{ radius };</div>
-<div class="line"><span class="keyword">const</span> std::vector&lt;Offset&lt;&gt;&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">GenerateImageNeighborhoodOffsets</a>(shape);</div>
-<div class="line">ShapedImageNeighborhoodRange&lt;ImageType&gt; neighborhoodRange{ *image, location, offsets };</div>
-<div class="ttc" id="anamespaceitk_html_a3fd7c11aaf6dadd27f2dbdb9d17be651"><div class="ttname"><a href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">itk::GenerateImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; TImageNeighborhoodShape::ImageDimension &gt; &gt; GenerateImageNeighborhoodOffsets(const TImageNeighborhoodShape &amp;shape)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00031">itkImageNeighborhoodOffsets.h:31</a></div></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkRectangularImageNeighborhoodShape_8h_source.html#l00053">53</a> of file <a class="el" href="itkRectangularImageNeighborhoodShape_8h_source.html">itkRectangularImageNeighborhoodShape.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0196f601536355ceee59aa37b2a8606c" name="a0196f601536355ceee59aa37b2a8606c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0196f601536355ceee59aa37b2a8606c">&#9670;&nbsp;</a></span>RectangularImageNeighborhoodShape()</h2>
 

@@ -96,7 +96,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkObjectByObjectLabelMapFilter_8h_source.html">itkObjectByObjectLabelMapFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage, typename TInputFilter = ImageToImageFilter&lt;Image&lt;unsigned char, TInputImage::ImageDimension&gt;,                                                     Image&lt;unsigned char, TOutputImage::ImageDimension&gt;&gt;, class TOutputFilter = typename TInputFilter::Superclass, class TInternalInputImage = typename TInputFilter::InputImageType, class TInternalOutputImage = typename TOutputFilter::OutputImageType&gt;<br />
+class itk::ObjectByObjectLabelMapFilter&lt; TInputImage, TOutputImage, TInputFilter, TOutputFilter, TInternalInputImage, TInternalOutputImage &gt;</div><p ><a class="el" href="classitk_1_1ObjectByObjectLabelMapFilter.html" title="ObjectByObjectLabelMapFilter applies an image pipeline to all the objects of a label map and produce ...">ObjectByObjectLabelMapFilter</a> applies an image pipeline to all the objects of a label map and produce a new label map. </p>
+<p >The image pipeline can simply produce a modified object or produce several objects from the single input object. Several options are provided to handle the different cases.</p>
+<p >KeepLabel, which defaults to true, makes the filter try to keep as much as possible the labels of the original objects. If an image pipeline produce several objects the label of the input object is assigned to the first output object. The other output objects get another label not present in the input image. When KeepLabel is set to false, all the objects are relabeled in the order of apparition during the filter process.</p>
+<p >BinaryInternalOutput can be set to true if the image pipeline produce binary output image. In that case, the objects produced are identified with a connected component algorithm before being reinserted in the output label map. InternalForegroundValue can be set to a specific value which represent the foreground value in the binary image.</p>
+<p >PadSize and ConstrainPaddingToImage can be used to extend the size of the image to process passed to the image pipeline. This is useful if the image pipeline is known to be able to enlarge the object. The padding can be constrained to the input label map region by setting ConstrainPaddingToImage to true - this parameter can make a difference for the algorithm with a different behavior on the border of the image. By default, the image is padded by 1 pixel and constrained to the image region.</p>
+<dl class="section note"><dt>Note</dt><dd>: When applying a single filter, input and output filters are the same; while applying a pipeline, input and output filters are different, may not even be of the same type. It is the responsibility of the user to connect the pipeline properly outside of this filter.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
+<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkObjectByObjectLabelMapFilter_8h_source.html#l00085">85</a> of file <a class="el" href="itkObjectByObjectLabelMapFilter_8h_source.html">itkObjectByObjectLabelMapFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ObjectByObjectLabelMapFilter&lt; TInputImage, TOutputImage, TInputFilter, TOutputFilter, TInternalInputImage, TInternalOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -902,24 +919,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage, typename TInputFilter = ImageToImageFilter&lt;Image&lt;unsigned char, TInputImage::ImageDimension&gt;,                                                     Image&lt;unsigned char, TOutputImage::ImageDimension&gt;&gt;, class TOutputFilter = typename TInputFilter::Superclass, class TInternalInputImage = typename TInputFilter::InputImageType, class TInternalOutputImage = typename TOutputFilter::OutputImageType&gt;<br />
-class itk::ObjectByObjectLabelMapFilter&lt; TInputImage, TOutputImage, TInputFilter, TOutputFilter, TInternalInputImage, TInternalOutputImage &gt;</div><p ><a class="el" href="classitk_1_1ObjectByObjectLabelMapFilter.html" title="ObjectByObjectLabelMapFilter applies an image pipeline to all the objects of a label map and produce ...">ObjectByObjectLabelMapFilter</a> applies an image pipeline to all the objects of a label map and produce a new label map. </p>
-<p >The image pipeline can simply produce a modified object or produce several objects from the single input object. Several options are provided to handle the different cases.</p>
-<p >KeepLabel, which defaults to true, makes the filter try to keep as much as possible the labels of the original objects. If an image pipeline produce several objects the label of the input object is assigned to the first output object. The other output objects get another label not present in the input image. When KeepLabel is set to false, all the objects are relabeled in the order of apparition during the filter process.</p>
-<p >BinaryInternalOutput can be set to true if the image pipeline produce binary output image. In that case, the objects produced are identified with a connected component algorithm before being reinserted in the output label map. InternalForegroundValue can be set to a specific value which represent the foreground value in the binary image.</p>
-<p >PadSize and ConstrainPaddingToImage can be used to extend the size of the image to process passed to the image pipeline. This is useful if the image pipeline is known to be able to enlarge the object. The padding can be constrained to the input label map region by setting ConstrainPaddingToImage to true - this parameter can make a difference for the algorithm with a different behavior on the border of the image. By default, the image is padded by 1 pixel and constrained to the image region.</p>
-<dl class="section note"><dt>Note</dt><dd>: When applying a single filter, input and output filters are the same; while applying a pipeline, input and output filters are different, may not even be of the same type. It is the responsibility of the user to connect the pipeline properly outside of this filter.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
-<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkObjectByObjectLabelMapFilter_8h_source.html#l00085">85</a> of file <a class="el" href="itkObjectByObjectLabelMapFilter_8h_source.html">itkObjectByObjectLabelMapFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a03e9d24fe75f92818a7b50b29c1c65f3" name="a03e9d24fe75f92818a7b50b29c1c65f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03e9d24fe75f92818a7b50b29c1c65f3">&#9670;&nbsp;</a></span>BI2LMType</h2>
 

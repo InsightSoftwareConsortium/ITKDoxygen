@@ -92,7 +92,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLogicOpsFunctors_8h_source.html">itkLogicOpsFunctors.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput1, typename TInput2 = TInput1, typename TOutput = TInput1&gt;<br />
+class itk::Functor::LogicOpBase&lt; TInput1, TInput2, TOutput &gt;</div><p >Base class for some logic functors. Provides the Foreground and background setting methods. </p>
+<p >The derived classes can be used as follows:</p>
+<p >using myFilterType = <a class="el" href="classitk_1_1BinaryFunctorImageFilter.html" title="Implements pixel-wise generic operation of two images, or of an image and a constant.">itk::BinaryFunctorImageFilter</a>&lt; myImageType1, myImageType2, myImageType3, itk::Functor::Equal2&lt;myImageType1::PixelType, myImageType2::PixelType, myImageType3::PixelType&gt; &gt;;</p>
+<p >using myFilterTypePointer = myFilterType::Pointer;</p>
+<p >myFilterTypePointer filter = myFilterType::New();</p>
+<p >filter-&gt;SetInput1( inputImageA ); filter-&gt;SetInput2( inputImageB );</p>
+<p >filter-&gt;SetConstant1(3.0); filter-&gt;SetInput2(inputImageB); </p>
+
+<p class="definition">Definition at line <a class="el" href="itkLogicOpsFunctors_8h_source.html#l00059">59</a> of file <a class="el" href="itkLogicOpsFunctors_8h_source.html">itkLogicOpsFunctors.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aca23c727795340f992a9e6d61a938550"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Functor_1_1LogicOpBase.html#aca23c727795340f992a9e6d61a938550">Self</a> = <a class="el" href="classitk_1_1Functor_1_1LogicOpBase.html">LogicOpBase</a></td></tr>
@@ -124,18 +135,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a377a93bbe6489368ba3374ca8bfb8751"><td class="memItemLeft" align="right" valign="top">TOutput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Functor_1_1LogicOpBase.html#a377a93bbe6489368ba3374ca8bfb8751">m_ForegroundValue</a></td></tr>
 <tr class="separator:a377a93bbe6489368ba3374ca8bfb8751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput1, typename TInput2 = TInput1, typename TOutput = TInput1&gt;<br />
-class itk::Functor::LogicOpBase&lt; TInput1, TInput2, TOutput &gt;</div><p >Base class for some logic functors. Provides the Foreground and background setting methods. </p>
-<p >The derived classes can be used as follows:</p>
-<p >using myFilterType = <a class="el" href="classitk_1_1BinaryFunctorImageFilter.html" title="Implements pixel-wise generic operation of two images, or of an image and a constant.">itk::BinaryFunctorImageFilter</a>&lt; myImageType1, myImageType2, myImageType3, itk::Functor::Equal2&lt;myImageType1::PixelType, myImageType2::PixelType, myImageType3::PixelType&gt; &gt;;</p>
-<p >using myFilterTypePointer = myFilterType::Pointer;</p>
-<p >myFilterTypePointer filter = myFilterType::New();</p>
-<p >filter-&gt;SetInput1( inputImageA ); filter-&gt;SetInput2( inputImageB );</p>
-<p >filter-&gt;SetConstant1(3.0); filter-&gt;SetInput2(inputImageB); </p>
-
-<p class="definition">Definition at line <a class="el" href="itkLogicOpsFunctors_8h_source.html#l00059">59</a> of file <a class="el" href="itkLogicOpsFunctors_8h_source.html">itkLogicOpsFunctors.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aca23c727795340f992a9e6d61a938550" name="aca23c727795340f992a9e6d61a938550"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca23c727795340f992a9e6d61a938550">&#9670;&nbsp;</a></span>Self</h2>
 

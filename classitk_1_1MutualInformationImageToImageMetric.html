@@ -98,7 +98,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMutualInformationImageToImageMetric_8h_source.html">itkMutualInformationImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::MutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the mutual information between two images to be registered. </p>
+<p ><a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html" title="Computes the mutual information between two images to be registered.">MutualInformationImageToImageMetric</a> computes the mutual information between a fixed and moving image to be registered.</p>
+<p >This class is templated over the FixedImage type and the MovingImage type.</p>
+<p >The fixed and moving images are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a7beef269c1be904bca4c048735d955f5">SetFixedImage()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#a5d660a8540927d8072c54f23c4d675df">SetMovingImage()</a>. This metric makes use of user specified <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used to map points from the fixed image to the moving image domain. The Interpolator is used to evaluate the image intensity at user specified geometric points in the moving image. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a20cc79cb7538bdf35458d090b29bcddc">SetTransform()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#aedb5fab99ec6a0d71d90e653469285b3">SetInterpolator()</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This metric assumes that the moving image has already been connected to the interpolator outside of this class.</dd></dl>
+<p>The method <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a60a21bf88978ecaa5cb2e52308dbb9d2">GetValue()</a> computes of the mutual information while method <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a7f8e33e55c006065ec21e9b7a98b5097">GetValueAndDerivative()</a> computes both the mutual information and its derivatives with respect to the transform parameters.</p>
+<p >The calculations are based on the method of Viola and Wells where the probability density distributions are estimated using Parzen windows.</p>
+<p >By default a Gaussian kernel is used in the density estimation. Other option include Cauchy and spline-based. A user can specify the kernel passing in a pointer a <a class="el" href="classitk_1_1KernelFunctionBase.html" title="Kernel used for density estimation and nonparametric regression.">KernelFunctionBase</a> using the <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a8123e37f5ab4b85daed1bc2b3871f8a2">SetKernelFunction()</a> method.</p>
+<p >Mutual information is estimated using two sample sets: one to calculate the singular and joint pdf's and one to calculate the entropy integral. By default 50 samples points are used in each set. Other values can be set via the <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#aae190d7e7cbda07988819582197570df">SetNumberOfSpatialSamples()</a> method.</p>
+<p >Quality of the density estimate depends on the choice of the kernel's standard deviation. Optimal choice will depend on the images. It is can be shown that around the optimal variance, the mutual information estimate is relatively insensitive to small changes of the standard deviation. In our experiments, we have found that a standard deviation of 0.4 works well for images normalized to have a mean of zero and standard deviation of 1.0. The variance can be set via methods <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a9c405cd4a3a100644648519a4ba163a5">SetFixedImageStandardDeviation()</a> and <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a02ee5b82f489c6beb43888764e754965">SetMovingImageStandardDeviation()</a>.</p>
+<p >Implementation of this class is based on: Viola, P. and Wells III, W. (1997). "Alignment by Maximization of Mutual Information" International Journal of Computer Vision, 24(2):137-154</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1KernelFunctionBase.html" title="Kernel used for density estimation and nonparametric regression.">KernelFunctionBase</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1GaussianKernelFunction.html" title="Gaussian kernel used for density estimation and nonparametric regression.">GaussianKernelFunction</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMutualInformationImageToImageMetric_8h_source.html#l00094">94</a> of file <a class="el" href="itkMutualInformationImageToImageMetric_8h_source.html">itkMutualInformationImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -785,31 +809,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::MutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the mutual information between two images to be registered. </p>
-<p ><a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html" title="Computes the mutual information between two images to be registered.">MutualInformationImageToImageMetric</a> computes the mutual information between a fixed and moving image to be registered.</p>
-<p >This class is templated over the FixedImage type and the MovingImage type.</p>
-<p >The fixed and moving images are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a7beef269c1be904bca4c048735d955f5">SetFixedImage()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#a5d660a8540927d8072c54f23c4d675df">SetMovingImage()</a>. This metric makes use of user specified <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used to map points from the fixed image to the moving image domain. The Interpolator is used to evaluate the image intensity at user specified geometric points in the moving image. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a20cc79cb7538bdf35458d090b29bcddc">SetTransform()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#aedb5fab99ec6a0d71d90e653469285b3">SetInterpolator()</a>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This metric assumes that the moving image has already been connected to the interpolator outside of this class.</dd></dl>
-<p>The method <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a60a21bf88978ecaa5cb2e52308dbb9d2">GetValue()</a> computes of the mutual information while method <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a7f8e33e55c006065ec21e9b7a98b5097">GetValueAndDerivative()</a> computes both the mutual information and its derivatives with respect to the transform parameters.</p>
-<p >The calculations are based on the method of Viola and Wells where the probability density distributions are estimated using Parzen windows.</p>
-<p >By default a Gaussian kernel is used in the density estimation. Other option include Cauchy and spline-based. A user can specify the kernel passing in a pointer a <a class="el" href="classitk_1_1KernelFunctionBase.html" title="Kernel used for density estimation and nonparametric regression.">KernelFunctionBase</a> using the <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a8123e37f5ab4b85daed1bc2b3871f8a2">SetKernelFunction()</a> method.</p>
-<p >Mutual information is estimated using two sample sets: one to calculate the singular and joint pdf's and one to calculate the entropy integral. By default 50 samples points are used in each set. Other values can be set via the <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#aae190d7e7cbda07988819582197570df">SetNumberOfSpatialSamples()</a> method.</p>
-<p >Quality of the density estimate depends on the choice of the kernel's standard deviation. Optimal choice will depend on the images. It is can be shown that around the optimal variance, the mutual information estimate is relatively insensitive to small changes of the standard deviation. In our experiments, we have found that a standard deviation of 0.4 works well for images normalized to have a mean of zero and standard deviation of 1.0. The variance can be set via methods <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a9c405cd4a3a100644648519a4ba163a5">SetFixedImageStandardDeviation()</a> and <a class="el" href="classitk_1_1MutualInformationImageToImageMetric.html#a02ee5b82f489c6beb43888764e754965">SetMovingImageStandardDeviation()</a>.</p>
-<p >Implementation of this class is based on: Viola, P. and Wells III, W. (1997). "Alignment by Maximization of Mutual Information" International Journal of Computer Vision, 24(2):137-154</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1KernelFunctionBase.html" title="Kernel used for density estimation and nonparametric regression.">KernelFunctionBase</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1GaussianKernelFunction.html" title="Gaussian kernel used for density estimation and nonparametric regression.">GaussianKernelFunction</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMutualInformationImageToImageMetric_8h_source.html#l00094">94</a> of file <a class="el" href="itkMutualInformationImageToImageMetric_8h_source.html">itkMutualInformationImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae0665f6836de9059e96f67155993cb4c" name="ae0665f6836de9059e96f67155993cb4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0665f6836de9059e96f67155993cb4c">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -97,7 +97,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCannyEdgeDetectionImageFilter_8h_source.html">itkCannyEdgeDetectionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::CannyEdgeDetectionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter is an implementation of a Canny edge detector for scalar-valued images. </p>
+<p >Based on John Canny's paper "A Computational Approach
+to Edge Detection"(IEEE Transactions on Pattern Analysis and Machine Intelligence, Vol. PAMI-8, No.6, November 1986), there are four major steps used in the edge-detection scheme: (1) Smooth the input image with Gaussian filter. (2) Calculate the second directional derivatives of the smoothed image. (3) Non-Maximum Suppression: the zero-crossings of 2nd derivative are found, and the sign of third derivative is used to find the correct extrema. (4) The hysteresis thresholding is applied to the gradient magnitude (multiplied with zero-crossings) of the smoothed image to find and link edges.</p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter should be a scalar, real-valued Itk image of arbitrary dimension. The output should also be a scalar, real-value Itk image of the same dimensionality.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>There are four parameters for this filter that control the sub-filters used by the algorithm.</dd></dl>
+<dl class="section user"><dt></dt><dd>Variance and Maximum error are used in the Gaussian smoothing of the input image. See itkDiscreteGaussianImageFilter for information on these parameters.</dd></dl>
+<dl class="section user"><dt></dt><dd>Threshold is the lowest allowed value in the output image. Its data type is the same as the data type of the output image. Any values below the Threshold level will be replaced with the OutsideValue parameter value, whose default is zero.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>Edge-linking will be added when an itk connected component labeling algorithm is available.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ZeroCrossingImageFilter.html" title="This filter finds the closest pixel to the zero-crossings (sign changes) in a signed itk::Image.">ZeroCrossingImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or between simple threshold valu...">ThresholdImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCannyEdgeDetectionImageFilter_8h_source.html#l00088">88</a> of file <a class="el" href="itkCannyEdgeDetectionImageFilter_8h_source.html">itkCannyEdgeDetectionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CannyEdgeDetectionImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -821,24 +838,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::CannyEdgeDetectionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter is an implementation of a Canny edge detector for scalar-valued images. </p>
-<p >Based on John Canny's paper "A Computational Approach
-to Edge Detection"(IEEE Transactions on Pattern Analysis and Machine Intelligence, Vol. PAMI-8, No.6, November 1986), there are four major steps used in the edge-detection scheme: (1) Smooth the input image with Gaussian filter. (2) Calculate the second directional derivatives of the smoothed image. (3) Non-Maximum Suppression: the zero-crossings of 2nd derivative are found, and the sign of third derivative is used to find the correct extrema. (4) The hysteresis thresholding is applied to the gradient magnitude (multiplied with zero-crossings) of the smoothed image to find and link edges.</p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter should be a scalar, real-valued Itk image of arbitrary dimension. The output should also be a scalar, real-value Itk image of the same dimensionality.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>There are four parameters for this filter that control the sub-filters used by the algorithm.</dd></dl>
-<dl class="section user"><dt></dt><dd>Variance and Maximum error are used in the Gaussian smoothing of the input image. See itkDiscreteGaussianImageFilter for information on these parameters.</dd></dl>
-<dl class="section user"><dt></dt><dd>Threshold is the lowest allowed value in the output image. Its data type is the same as the data type of the output image. Any values below the Threshold level will be replaced with the OutsideValue parameter value, whose default is zero.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>Edge-linking will be added when an itk connected component labeling algorithm is available.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ZeroCrossingImageFilter.html" title="This filter finds the closest pixel to the zero-crossings (sign changes) in a signed itk::Image.">ZeroCrossingImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or between simple threshold valu...">ThresholdImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCannyEdgeDetectionImageFilter_8h_source.html#l00088">88</a> of file <a class="el" href="itkCannyEdgeDetectionImageFilter_8h_source.html">itkCannyEdgeDetectionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5a4575b79dcd046333eac2b21b673454" name="a5a4575b79dcd046333eac2b21b673454"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a4575b79dcd046333eac2b21b673454">&#9670;&nbsp;</a></span>ArrayType</h2>
 

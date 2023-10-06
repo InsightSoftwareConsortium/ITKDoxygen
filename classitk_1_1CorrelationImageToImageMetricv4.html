@@ -97,7 +97,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCorrelationImageToImageMetricv4_8h_source.html">itkCorrelationImageToImageMetricv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TVirtualImage = TFixedImage, typename TInternalComputationValueType = double, typename TMetricTraits = DefaultImageToImageMetricTraitsv4&lt;TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType&gt;&gt;<br />
+class itk::CorrelationImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;</div><p >Class implementing normalized cross correlation image metric. </p>
+<p >Definition of the normalized cross correlation metric used here:</p>
+<p >negative square of normalized cross correlation</p>
+<p class="formulaDsp">
+\[ C(f, m) = -\frac{&lt;f-\bar{f}, m-\bar{m} &gt;^2}{|f-\bar{f}|^2 |m-\bar{m}|^2} \]
+</p>
+<p >in which, f, m are the vectors of image pixel intensities, \(\bar{f}\) and \(\bar{m}\) are the mean values of f and m. &lt;,&gt; denotes inner product, \(|\cdot|\) denotes the 2-norm of the vector. The minus sign makes the metric to optimize towards its minimal value. Note that this uses the <em>square</em> of the mathematical notion of normalized cross correlation to avoid the square root computation in practice.</p>
+<p >Moving image (m) is a function of the parameters (p) of the moving transforms. So \( C(f, m) = C(f, m(p)) \) GetValueAndDerivative will return the value as \( C(f,m) \) and the derivative as</p>
+<p class="formulaDsp">
+\[ \frac{d}{dp} C = 2 \frac{&lt;f1, m1&gt;}{|f1|^2 |m1|^2} * ( &lt;f1, \frac{dm}{dp}&gt; - \frac{&lt;f1, m1&gt;}{|m1|^2} &lt; m1, \frac{dm}{dp} &gt; ) \]
+</p>
+<p >in which, \( f1 = f - \bar{f} \), \( m1 = m - \bar{m} \) (Note: there should be a minus sign of \( \frac{d}{dp} \) mathematically, which is not in the implementation to match the requirement of the metricv4 optimization framework.</p>
+<p >See <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#aa5b0c224a5c9789028f4e6b39b50c12b">CorrelationImageToImageMetricv4GetValueAndDerivativeThreader::ProcessPoint</a> for algorithm implementation.</p>
+<p >This metric only works with the global transform. It throws an exception if the transform has local support. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4_8h_source.html#l00078">78</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4_8h_source.html">itkCorrelationImageToImageMetricv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CorrelationImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -984,25 +1002,7 @@ Friends</h2></td></tr>
 <tr class="memitem:a6abc62a7a9b750f21a25bcf48d833a55"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CorrelationImageToImageMetricv4.html#a6abc62a7a9b750f21a25bcf48d833a55">ImageToImageMetricv4GetValueAndDerivativeThreaderBase&lt; ThreadedIndexedContainerPartitioner, Self &gt;</a></td></tr>
 <tr class="separator:a6abc62a7a9b750f21a25bcf48d833a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TVirtualImage = TFixedImage, typename TInternalComputationValueType = double, typename TMetricTraits = DefaultImageToImageMetricTraitsv4&lt;TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType&gt;&gt;<br />
-class itk::CorrelationImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;</div><p >Class implementing normalized cross correlation image metric. </p>
-<p >Definition of the normalized cross correlation metric used here:</p>
-<p >negative square of normalized cross correlation</p>
-<p class="formulaDsp">
-\[ C(f, m) = -\frac{&lt;f-\bar{f}, m-\bar{m} &gt;^2}{|f-\bar{f}|^2 |m-\bar{m}|^2} \]
-</p>
-<p >in which, f, m are the vectors of image pixel intensities, \(\bar{f}\) and \(\bar{m}\) are the mean values of f and m. &lt;,&gt; denotes inner product, \(|\cdot|\) denotes the 2-norm of the vector. The minus sign makes the metric to optimize towards its minimal value. Note that this uses the <em>square</em> of the mathematical notion of normalized cross correlation to avoid the square root computation in practice.</p>
-<p >Moving image (m) is a function of the parameters (p) of the moving transforms. So \( C(f, m) = C(f, m(p)) \) GetValueAndDerivative will return the value as \( C(f,m) \) and the derivative as</p>
-<p class="formulaDsp">
-\[ \frac{d}{dp} C = 2 \frac{&lt;f1, m1&gt;}{|f1|^2 |m1|^2} * ( &lt;f1, \frac{dm}{dp}&gt; - \frac{&lt;f1, m1&gt;}{|m1|^2} &lt; m1, \frac{dm}{dp} &gt; ) \]
-</p>
-<p >in which, \( f1 = f - \bar{f} \), \( m1 = m - \bar{m} \) (Note: there should be a minus sign of \( \frac{d}{dp} \) mathematically, which is not in the implementation to match the requirement of the metricv4 optimization framework.</p>
-<p >See <a class="el" href="classitk_1_1CorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#aa5b0c224a5c9789028f4e6b39b50c12b">CorrelationImageToImageMetricv4GetValueAndDerivativeThreader::ProcessPoint</a> for algorithm implementation.</p>
-<p >This metric only works with the global transform. It throws an exception if the transform has local support. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCorrelationImageToImageMetricv4_8h_source.html#l00078">78</a> of file <a class="el" href="itkCorrelationImageToImageMetricv4_8h_source.html">itkCorrelationImageToImageMetricv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a897592bab0ba3c738c292f45eb9aac41" name="a897592bab0ba3c738c292f45eb9aac41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a897592bab0ba3c738c292f45eb9aac41">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

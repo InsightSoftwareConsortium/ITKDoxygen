@@ -93,7 +93,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkRegionConstrainedSubsampler_8h_source.html">itkRegionConstrainedSubsampler.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample, typename TRegion&gt;<br />
+class itk::Statistics::RegionConstrainedSubsampler&lt; TSample, TRegion &gt;</div><p >This an abstract subsampler that constrains subsamples to be contained within a given image region. </p>
+<p >This is an Abstract class that can not be instantiated. There are multiple subsamplers that derive from this class and provide specific implementations of subsampling strategies.</p>
+<p >This class is templatized over both the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> and the <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> with an assumed consistency between the <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> and the way the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> is generated.</p>
+<p >Use SetRegionConstraint(region) to provide the region constraint. All returned subsamples will be contained within this region. This assumes that the instance identifiers in the sample correspond to an offset computed with the provided region.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1SubsamplerBase.html" title="This is the base subsampler class which defines the subsampler API.">SubsamplerBase</a>, <a class="el" href="classitk_1_1Statistics_1_1SpatialNeighborSubsampler.html" title="A subsampler that selects all points within the specified radius of the query point.">SpatialNeighborSubsampler</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Statistics_1_1GaussianRandomSpatialNeighborSubsampler.html" title="A subsampler that randomly selects points according to a gaussian distribution within the specified r...">GaussianRandomSpatialNeighborSubsampler</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Statistics_1_1UniformRandomSpatialNeighborSubsampler.html" title="A subsampler that uniformly randomly selects points within the specified radius of the query point.">UniformRandomSpatialNeighborSubsampler</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkRegionConstrainedSubsampler_8h_source.html#l00054">54</a> of file <a class="el" href="itkRegionConstrainedSubsampler_8h_source.html">itkRegionConstrainedSubsampler.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::RegionConstrainedSubsampler&lt; TSample, TRegion &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -394,20 +407,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample, typename TRegion&gt;<br />
-class itk::Statistics::RegionConstrainedSubsampler&lt; TSample, TRegion &gt;</div><p >This an abstract subsampler that constrains subsamples to be contained within a given image region. </p>
-<p >This is an Abstract class that can not be instantiated. There are multiple subsamplers that derive from this class and provide specific implementations of subsampling strategies.</p>
-<p >This class is templatized over both the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> and the <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> with an assumed consistency between the <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> and the way the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> is generated.</p>
-<p >Use SetRegionConstraint(region) to provide the region constraint. All returned subsamples will be contained within this region. This assumes that the instance identifiers in the sample correspond to an offset computed with the provided region.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1SubsamplerBase.html" title="This is the base subsampler class which defines the subsampler API.">SubsamplerBase</a>, <a class="el" href="classitk_1_1Statistics_1_1SpatialNeighborSubsampler.html" title="A subsampler that selects all points within the specified radius of the query point.">SpatialNeighborSubsampler</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Statistics_1_1GaussianRandomSpatialNeighborSubsampler.html" title="A subsampler that randomly selects points according to a gaussian distribution within the specified r...">GaussianRandomSpatialNeighborSubsampler</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Statistics_1_1UniformRandomSpatialNeighborSubsampler.html" title="A subsampler that uniformly randomly selects points within the specified radius of the query point.">UniformRandomSpatialNeighborSubsampler</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkRegionConstrainedSubsampler_8h_source.html#l00054">54</a> of file <a class="el" href="itkRegionConstrainedSubsampler_8h_source.html">itkRegionConstrainedSubsampler.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a652ff345e2b3c6d605c416efc04f3cdd" name="a652ff345e2b3c6d605c416efc04f3cdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a652ff345e2b3c6d605c416efc04f3cdd">&#9670;&nbsp;</a></span>Baseclass</h2>
 

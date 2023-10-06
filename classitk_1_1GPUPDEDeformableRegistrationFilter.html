@@ -95,7 +95,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html">itkGPUPDEDeformableRegistrationFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TParentImageFilter = PDEDeformableRegistrationFilter&lt;TFixedImage, TMovingImage, TDisplacementField&gt;&gt;<br />
+class itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</div><p >Deformably register two images using a PDE algorithm. </p>
+<p ><a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">GPUPDEDeformableRegistrationFilter</a> is a base case for filter implementing a PDE deformable algorithm that register two images by computing the deformation field which will map a moving image onto a fixed image.</p>
+<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
+<p >This class is templated over the fixed image type, moving image type and the deformation Field type.</p>
+<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
+<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
+<p >The PDE algorithm is run for a user defined number of iterations. Typically the PDE algorithm requires period Gaussian smoothing of the deformation field to enforce an elastic-like condition. The amount of smoothing is governed by a set of user defined standard deviations (one for each dimension).</p>
+<p >In terms of memory, this filter keeps two internal buffers: one for storing the intermediate updates to the field and one for double-buffering when smoothing the deformation field. Both buffers are the same type and size as the output deformation field.</p>
+<p >This class make use of the finite difference solver hierarchy. Update for each iteration is computed using a <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">PDEDeformableRegistrationFunction</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">PDEDeformableRegistrationFunction</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html#l00082">82</a> of file <a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html">itkGPUPDEDeformableRegistrationFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1356,22 +1371,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TParentImageFilter = PDEDeformableRegistrationFilter&lt;TFixedImage, TMovingImage, TDisplacementField&gt;&gt;<br />
-class itk::GPUPDEDeformableRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TParentImageFilter &gt;</div><p >Deformably register two images using a PDE algorithm. </p>
-<p ><a class="el" href="classitk_1_1GPUPDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">GPUPDEDeformableRegistrationFilter</a> is a base case for filter implementing a PDE deformable algorithm that register two images by computing the deformation field which will map a moving image onto a fixed image.</p>
-<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
-<p >This class is templated over the fixed image type, moving image type and the deformation Field type.</p>
-<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
-<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
-<p >The PDE algorithm is run for a user defined number of iterations. Typically the PDE algorithm requires period Gaussian smoothing of the deformation field to enforce an elastic-like condition. The amount of smoothing is governed by a set of user defined standard deviations (one for each dimension).</p>
-<p >In terms of memory, this filter keeps two internal buffers: one for storing the intermediate updates to the field and one for double-buffering when smoothing the deformation field. Both buffers are the same type and size as the output deformation field.</p>
-<p >This class make use of the finite difference solver hierarchy. Update for each iteration is computed using a <a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">PDEDeformableRegistrationFunction</a>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PDEDeformableRegistrationFunction.html">PDEDeformableRegistrationFunction</a>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html#l00082">82</a> of file <a class="el" href="itkGPUPDEDeformableRegistrationFilter_8h_source.html">itkGPUPDEDeformableRegistrationFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af58a914681d16771002a6236bf702b8b" name="af58a914681d16771002a6236bf702b8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af58a914681d16771002a6236bf702b8b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -93,7 +93,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFiniteDifferenceSparseImageFunction_8h_source.html">itkFiniteDifferenceSparseImageFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSparseImageType&gt;<br />
+class itk::FiniteDifferenceSparseImageFunction&lt; TSparseImageType &gt;</div><p >This is the base class for function classes that can be used with filters derived from <a class="el" href="classitk_1_1FiniteDifferenceSparseImageFilter.html" title="This class implements a multi-threaded base class for Image to SparseImage finite difference processe...">FiniteDifferenceSparseImageFilter</a>. </p>
+<dl class="section user"><dt>This class is derived from FiniteDifferenceFunction. It is designed to</dt><dd>work with neighborhoods of pointers instead of actual data. Towards this purpose ComputeUpdate method is no longer used and is replaced by the ComputeSparseUpdate method. ComputeSparseUpdate assumes that the pointers are associated with structures that have the member variable m_Data. The pointers would normally originate from a <a class="el" href="classitk_1_1SparseImage.html" title="A storage type for sparse image data.">SparseImage</a> object.</dd></dl>
+<dl class="section user"><dt>The PrecomputeSparseUpdate method can be defined to do a first pass of</dt><dd>computations which then can be used by ComputeSparseUpdate. If PrecomputeSparseUpdate is used then the m_PrecomputeFlag should be set in the <a class="el" href="classitk_1_1FiniteDifferenceSparseImageFilter.html" title="This class implements a multi-threaded base class for Image to SparseImage finite difference processe...">FiniteDifferenceSparseImageFilter</a> class. The precomputation step can be used to speed up computation by avoiding repetitions. See the <a class="el" href="classitk_1_1NormalVectorDiffusionFunction.html" title="This class defines all the necessary functionality for performing isotropic and anisotropic diffusion...">NormalVectorDiffusionFunction</a> for an example. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFiniteDifferenceSparseImageFunction_8h_source.html#l00047">47</a> of file <a class="el" href="itkFiniteDifferenceSparseImageFunction_8h_source.html">itkFiniteDifferenceSparseImageFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FiniteDifferenceSparseImageFunction&lt; TSparseImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -269,14 +276,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSparseImageType&gt;<br />
-class itk::FiniteDifferenceSparseImageFunction&lt; TSparseImageType &gt;</div><p >This is the base class for function classes that can be used with filters derived from <a class="el" href="classitk_1_1FiniteDifferenceSparseImageFilter.html" title="This class implements a multi-threaded base class for Image to SparseImage finite difference processe...">FiniteDifferenceSparseImageFilter</a>. </p>
-<dl class="section user"><dt>This class is derived from FiniteDifferenceFunction. It is designed to</dt><dd>work with neighborhoods of pointers instead of actual data. Towards this purpose ComputeUpdate method is no longer used and is replaced by the ComputeSparseUpdate method. ComputeSparseUpdate assumes that the pointers are associated with structures that have the member variable m_Data. The pointers would normally originate from a <a class="el" href="classitk_1_1SparseImage.html" title="A storage type for sparse image data.">SparseImage</a> object.</dd></dl>
-<dl class="section user"><dt>The PrecomputeSparseUpdate method can be defined to do a first pass of</dt><dd>computations which then can be used by ComputeSparseUpdate. If PrecomputeSparseUpdate is used then the m_PrecomputeFlag should be set in the <a class="el" href="classitk_1_1FiniteDifferenceSparseImageFilter.html" title="This class implements a multi-threaded base class for Image to SparseImage finite difference processe...">FiniteDifferenceSparseImageFilter</a> class. The precomputation step can be used to speed up computation by avoiding repetitions. See the <a class="el" href="classitk_1_1NormalVectorDiffusionFunction.html" title="This class defines all the necessary functionality for performing isotropic and anisotropic diffusion...">NormalVectorDiffusionFunction</a> for an example. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFiniteDifferenceSparseImageFunction_8h_source.html#l00047">47</a> of file <a class="el" href="itkFiniteDifferenceSparseImageFunction_8h_source.html">itkFiniteDifferenceSparseImageFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3a9f79c97bac51f7554fe83dc24679e8" name="a3a9f79c97bac51f7554fe83dc24679e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a9f79c97bac51f7554fe83dc24679e8">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

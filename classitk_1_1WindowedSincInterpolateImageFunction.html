@@ -98,7 +98,48 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, unsigned int VRadius, typename TWindowFunction = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep = double&gt;<br />
+class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;</div><p >Use the windowed sinc function to interpolate. </p>
+<dl class="section author"><dt>Author</dt><dd>Paul A. Yushkevich</dd></dl>
+<dl class="section user"><dt>THEORY</dt><dd></dd></dl>
+<p>This function is intended to provide an interpolation function that has minimum aliasing artifacts, in contrast to linear interpolation. According to sampling theory, the infinite-support sinc filter, whose Fourier transform is the box filter, is optimal for resampling a function. In practice, the infinite support sinc filter is approximated using a limited support 'windowed' sinc filter.</p>
+<dl class="section user"><dt></dt><dd>This function is based on the following publication:</dd></dl>
+<dl class="section user"><dt></dt><dd>Erik H. W. Meijering, Wiro J. Niessen, Josien P. W. Pluim, Max A. Viergever: Quantitative Comparison of Sinc-Approximating Kernels for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Interpolation. MICCAI 1999, pp. 210-217</dd></dl>
+<dl class="section user"><dt></dt><dd>In this work, several 'windows' are estimated. In two dimensions, the interpolation at a position (x,y) is given by the following expression:</dd></dl>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[ I(x,y) = \sum_{i = \lfloor x \rfloor + 1 - m}^{\lfloor x \rfloor + m} \sum_{j = \lfloor y \rfloor + 1 - m}^{\lfloor y \rfloor + m} I_{i,j} K(x-i) K(y-j), \]
+</p>
+</dd></dl>
+<dl class="section user"><dt></dt><dd>where m is the 'radius' of the window, (3,4 are reasonable numbers), and K(t) is the kernel function, composed of the sinc function and one of several possible window functions:</dd></dl>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[ K(t) = w(t) \textrm{sinc}(t) = w(t) \frac{\sin(\pi t)}{\pi t} \]
+</p>
+</dd></dl>
+<dl class="section user"><dt></dt><dd>Several window functions are provided here in the <a class="el" href="namespaceitk_1_1Function.html">itk::Function</a> namespace. The conclusions of the referenced paper suggest to use the Welch, Cosine, Kaiser, and Lanczos windows for m = 4,5. These are based on error in rotating medical images w.r.t. the linear interpolation method. In some cases the results achieve a 20-fold improvement in accuracy.</dd></dl>
+<dl class="section user"><dt>USING THIS FILTER</dt><dd></dd></dl>
+<p>Use this filter the way you would use any ImageInterpolationFunction, so for instance, you can plug it into the <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> class. In order to initialize the filter you must choose several template parameters.</p>
+<dl class="section user"><dt></dt><dd>The first (TInputImage) is the image type, that's standard.</dd></dl>
+<dl class="section user"><dt></dt><dd>The second (VRadius) is the radius of the kernel, i.e., the \( m \) from the formula above.</dd></dl>
+<dl class="section user"><dt></dt><dd>The third (TWindowFunction) is the window function object, which you can choose from about five different functions defined in this header. The default is the Hamming window, which is commonly used but not optimal according to the cited paper.</dd></dl>
+<dl class="section user"><dt></dt><dd>The fourth (TBoundaryCondition) is the boundary condition class used to determine the values of pixels that fall off the image boundary. This class has the same meaning here as in the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> classes.</dd></dl>
+<dl class="section user"><dt></dt><dd>The fifth (TCoordRep) is again standard for interpolating functions, and should be float or double.</dd></dl>
+<dl class="section user"><dt>CAVEATS</dt><dd></dd></dl>
+<p>There are a few improvements that an enthusiastic ITK developer could make to this filter. One issue is with the way that the kernel is applied. The computational expense comes from two sources: computing the kernel weights K(t) and multiplying the pixels in the window by the kernel weights. The first is done more or less efficiently in \( 2 m d \) operations (where d is the dimensionality of the image). The second can be done better. Presently, each pixel \( I(i,j,k) \) is multiplied by the weights \( K(x-i), K(y-j), K(z-k) \) and added to the running total. This results in \( d (2m)^d \) multiplication operations. However, by keeping intermediate sums, it would be possible to do the operation in \( O ( (2m)^d ) \) operations. This would require some creative coding. In addition, in the case when one of the coordinates is integer, the computation could be reduced by an order of magnitude.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a> <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Function_1_1HammingWindowFunction.html" title="Window function for sinc interpolation.">Function::HammingWindowFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Function_1_1CosineWindowFunction.html" title="Window function for sinc interpolation.">Function::CosineWindowFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Function_1_1WelchWindowFunction.html" title="Window function for sinc interpolation.">Function::WelchWindowFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Function_1_1LanczosWindowFunction.html" title="Window function for sinc interpolation.">Function::LanczosWindowFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Function_1_1BlackmanWindowFunction.html" title="Window function for sinc interpolation.">Function::BlackmanWindowFunction</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00271">271</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -456,48 +497,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, unsigned int VRadius, typename TWindowFunction = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep = double&gt;<br />
-class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;</div><p >Use the windowed sinc function to interpolate. </p>
-<dl class="section author"><dt>Author</dt><dd>Paul A. Yushkevich</dd></dl>
-<dl class="section user"><dt>THEORY</dt><dd></dd></dl>
-<p>This function is intended to provide an interpolation function that has minimum aliasing artifacts, in contrast to linear interpolation. According to sampling theory, the infinite-support sinc filter, whose Fourier transform is the box filter, is optimal for resampling a function. In practice, the infinite support sinc filter is approximated using a limited support 'windowed' sinc filter.</p>
-<dl class="section user"><dt></dt><dd>This function is based on the following publication:</dd></dl>
-<dl class="section user"><dt></dt><dd>Erik H. W. Meijering, Wiro J. Niessen, Josien P. W. Pluim, Max A. Viergever: Quantitative Comparison of Sinc-Approximating Kernels for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Interpolation. MICCAI 1999, pp. 210-217</dd></dl>
-<dl class="section user"><dt></dt><dd>In this work, several 'windows' are estimated. In two dimensions, the interpolation at a position (x,y) is given by the following expression:</dd></dl>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[ I(x,y) = \sum_{i = \lfloor x \rfloor + 1 - m}^{\lfloor x \rfloor + m} \sum_{j = \lfloor y \rfloor + 1 - m}^{\lfloor y \rfloor + m} I_{i,j} K(x-i) K(y-j), \]
-</p>
-</dd></dl>
-<dl class="section user"><dt></dt><dd>where m is the 'radius' of the window, (3,4 are reasonable numbers), and K(t) is the kernel function, composed of the sinc function and one of several possible window functions:</dd></dl>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[ K(t) = w(t) \textrm{sinc}(t) = w(t) \frac{\sin(\pi t)}{\pi t} \]
-</p>
-</dd></dl>
-<dl class="section user"><dt></dt><dd>Several window functions are provided here in the <a class="el" href="namespaceitk_1_1Function.html">itk::Function</a> namespace. The conclusions of the referenced paper suggest to use the Welch, Cosine, Kaiser, and Lanczos windows for m = 4,5. These are based on error in rotating medical images w.r.t. the linear interpolation method. In some cases the results achieve a 20-fold improvement in accuracy.</dd></dl>
-<dl class="section user"><dt>USING THIS FILTER</dt><dd></dd></dl>
-<p>Use this filter the way you would use any ImageInterpolationFunction, so for instance, you can plug it into the <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> class. In order to initialize the filter you must choose several template parameters.</p>
-<dl class="section user"><dt></dt><dd>The first (TInputImage) is the image type, that's standard.</dd></dl>
-<dl class="section user"><dt></dt><dd>The second (VRadius) is the radius of the kernel, i.e., the \( m \) from the formula above.</dd></dl>
-<dl class="section user"><dt></dt><dd>The third (TWindowFunction) is the window function object, which you can choose from about five different functions defined in this header. The default is the Hamming window, which is commonly used but not optimal according to the cited paper.</dd></dl>
-<dl class="section user"><dt></dt><dd>The fourth (TBoundaryCondition) is the boundary condition class used to determine the values of pixels that fall off the image boundary. This class has the same meaning here as in the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> classes.</dd></dl>
-<dl class="section user"><dt></dt><dd>The fifth (TCoordRep) is again standard for interpolating functions, and should be float or double.</dd></dl>
-<dl class="section user"><dt>CAVEATS</dt><dd></dd></dl>
-<p>There are a few improvements that an enthusiastic ITK developer could make to this filter. One issue is with the way that the kernel is applied. The computational expense comes from two sources: computing the kernel weights K(t) and multiplying the pixels in the window by the kernel weights. The first is done more or less efficiently in \( 2 m d \) operations (where d is the dimensionality of the image). The second can be done better. Presently, each pixel \( I(i,j,k) \) is multiplied by the weights \( K(x-i), K(y-j), K(z-k) \) and added to the running total. This results in \( d (2m)^d \) multiplication operations. However, by keeping intermediate sums, it would be possible to do the operation in \( O ( (2m)^d ) \) operations. This would require some creative coding. In addition, in the case when one of the coordinates is integer, the computation could be reduced by an order of magnitude.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a> <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Function_1_1HammingWindowFunction.html" title="Window function for sinc interpolation.">Function::HammingWindowFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Function_1_1CosineWindowFunction.html" title="Window function for sinc interpolation.">Function::CosineWindowFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Function_1_1WelchWindowFunction.html" title="Window function for sinc interpolation.">Function::WelchWindowFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Function_1_1LanczosWindowFunction.html" title="Window function for sinc interpolation.">Function::LanczosWindowFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Function_1_1BlackmanWindowFunction.html" title="Window function for sinc interpolation.">Function::BlackmanWindowFunction</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00271">271</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a555deb2e9b5226f43e66e042ee0a5e93" name="a555deb2e9b5226f43e66e042ee0a5e93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a555deb2e9b5226f43e66e042ee0a5e93">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -92,7 +92,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkForwardFFTImageFilter_8h_source.html">itkForwardFFTImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = Image&lt;std::complex&lt;typename TInputImage::PixelType&gt;, TInputImage::ImageDimension&gt;&gt;<br />
+class itk::ForwardFFTImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for forward Fast Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. </p>
+<p >This is a base class for the "forward" or "direct" discrete Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. This is an abstract base class: the actual implementation is provided by the best child class available on the system when the object is created via the object factory system.</p>
+<p >This class transforms a real input image into its full complex Fourier transform. The Fourier transform of a real input image has Hermitian symmetry: \( f(\mathbf{x}) = f^*(-\mathbf{x}) \). That is, when the result of the transform is split in half along the x-dimension, the values in the second half of the transform are the complex conjugates of values in the first half reflected about the center of the image in each dimension.</p>
+<p >This filter works only for real single-component input image types.</p>
+<p >The output generated from a <a class="el" href="classitk_1_1ForwardFFTImageFilter.html" title="Base class for forward Fast Fourier Transform.">ForwardFFTImageFilter</a> is in the dual space or frequency domain. Refer to <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">FrequencyFFTLayoutImageRegionConstIteratorWithIndex</a> for a description of the layout of frequencies generated after a forward FFT. Also see ITKImageFrequency for a set of filters requiring input images in the frequency domain.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Forward1DFFTImageFilter.html" title="Perform the Fast Fourier Transform, in the forward direction, with real inputs, but only along one di...">Forward1DFFTImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1InverseFFTImageFilter.html" title="Base class for inverse Fast Fourier Transform.">InverseFFTImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html" title="Implements an API to enable the Fourier transform or the inverse Fourier transform of images with com...">ComplexToComplexFFTImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkForwardFFTImageFilter_8h_source.html#l00065">65</a> of file <a class="el" href="itkForwardFFTImageFilter_8h_source.html">itkForwardFFTImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ForwardFFTImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -713,26 +732,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = Image&lt;std::complex&lt;typename TInputImage::PixelType&gt;, TInputImage::ImageDimension&gt;&gt;<br />
-class itk::ForwardFFTImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for forward Fast Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. </p>
-<p >This is a base class for the "forward" or "direct" discrete Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. This is an abstract base class: the actual implementation is provided by the best child class available on the system when the object is created via the object factory system.</p>
-<p >This class transforms a real input image into its full complex Fourier transform. The Fourier transform of a real input image has Hermitian symmetry: \( f(\mathbf{x}) = f^*(-\mathbf{x}) \). That is, when the result of the transform is split in half along the x-dimension, the values in the second half of the transform are the complex conjugates of values in the first half reflected about the center of the image in each dimension.</p>
-<p >This filter works only for real single-component input image types.</p>
-<p >The output generated from a <a class="el" href="classitk_1_1ForwardFFTImageFilter.html" title="Base class for forward Fast Fourier Transform.">ForwardFFTImageFilter</a> is in the dual space or frequency domain. Refer to <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">FrequencyFFTLayoutImageRegionConstIteratorWithIndex</a> for a description of the layout of frequencies generated after a forward FFT. Also see ITKImageFrequency for a set of filters requiring input images in the frequency domain.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Forward1DFFTImageFilter.html" title="Perform the Fast Fourier Transform, in the forward direction, with real inputs, but only along one di...">Forward1DFFTImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1InverseFFTImageFilter.html" title="Base class for inverse Fast Fourier Transform.">InverseFFTImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html" title="Implements an API to enable the Fourier transform or the inverse Fourier transform of images with com...">ComplexToComplexFFTImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkForwardFFTImageFilter_8h_source.html#l00065">65</a> of file <a class="el" href="itkForwardFFTImageFilter_8h_source.html">itkForwardFFTImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a95e5ffcfc191b39d9bcb08afa3636927" name="a95e5ffcfc191b39d9bcb08afa3636927"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95e5ffcfc191b39d9bcb08afa3636927">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

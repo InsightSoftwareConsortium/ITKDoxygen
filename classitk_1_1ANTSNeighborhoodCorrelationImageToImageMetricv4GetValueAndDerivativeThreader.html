@@ -95,7 +95,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetric, typename TNeighborhoodCorrelationMetric&gt;<br />
+class itk::ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; TDomainPartitioner, TImageToImageMetric, TNeighborhoodCorrelationMetric &gt;</div><p >Threading implementation for ANTS CC metric <code><a class="el" href="classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4.html" title="Computes normalized cross correlation using a small neighborhood for each voxel between two images,...">ANTSNeighborhoodCorrelationImageToImageMetricv4</a></code> . Supports both dense and sparse threading ways. The dense threader iterates over the whole image domain in order and use a neighborhood scanning window to compute the local cross correlation metric and its derivative incrementally inside the window. The sparse threader uses a sampled point set partitioner to computer local cross correlation only at the sampled positions. </p>
+<p >This threader class is designed to host the dense and sparse threader under the same name so most computation routine functions and interior member variables can be shared. This eliminates the need to duplicate codes for two threaders. This is made by using function overloading and a helper class to identify different types of domain partitioners. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00058">58</a> of file <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; TDomainPartitioner, TImageToImageMetric, TNeighborhoodCorrelationMetric &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -206,13 +212,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af64ef34613e93ffc4a69934806c2fc64"><td class="memItemLeft" align="right" valign="top">std::once_flag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.html#af64ef34613e93ffc4a69934806c2fc64">m_ANTSAssociateOnceFlag</a> {}</td></tr>
 <tr class="separator:af64ef34613e93ffc4a69934806c2fc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetric, typename TNeighborhoodCorrelationMetric&gt;<br />
-class itk::ANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader&lt; TDomainPartitioner, TImageToImageMetric, TNeighborhoodCorrelationMetric &gt;</div><p >Threading implementation for ANTS CC metric <code><a class="el" href="classitk_1_1ANTSNeighborhoodCorrelationImageToImageMetricv4.html" title="Computes normalized cross correlation using a small neighborhood for each voxel between two images,...">ANTSNeighborhoodCorrelationImageToImageMetricv4</a></code> . Supports both dense and sparse threading ways. The dense threader iterates over the whole image domain in order and use a neighborhood scanning window to compute the local cross correlation metric and its derivative incrementally inside the window. The sparse threader uses a sampled point set partitioner to computer local cross correlation only at the sampled positions. </p>
-<p >This threader class is designed to host the dense and sparse threader under the same name so most computation routine functions and interior member variables can be shared. This eliminates the need to duplicate codes for two threaders. This is made by using function overloading and a helper class to identify different types of domain partitioners. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html#l00058">58</a> of file <a class="el" href="itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader_8h_source.html">itkANTSNeighborhoodCorrelationImageToImageMetricv4GetValueAndDerivativeThreader.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a24bbfd7bd68b20b7f2a54e5fe9f9bad3" name="a24bbfd7bd68b20b7f2a54e5fe9f9bad3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24bbfd7bd68b20b7f2a54e5fe9f9bad3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -93,7 +93,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDOMReader_8h_source.html">itkDOMReader.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutput&gt;<br />
+class itk::DOMReader&lt; TOutput &gt;</div><p >Class to read an ITK object from an XML file or a DOM object, using the DOM APIs. </p>
+<p >End-users need to derive from this class to implement readers for user objects. In subclasses, users need to provide an implementation for the virtual functions GenerateData(-,-).</p>
+<p >This class performs similar functions as the <a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> - both provide the base for handling object reading from an XML source. The difference is that, readers derived from this class perform object reading using the easy-to-use DOM APIs, while XMLReader-based readers use the more error-prone SAX (Simple API for XML) APIs.</p>
+<p >Internally, this class first implicitly creates an intermediate DOM object from the input XML file using the <a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a>, then performs output object generation by pulling information from the DOM object.</p>
+<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because many user objects to be read, e.g., registrations, transforms, optimizers, and so on, are not objects of type <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
+<p >The following code snippet demonstrates how to use a DOM-based reader that is derived from this class:</p>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">itk::MyObjectType::Pointer</a> output_object;</div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* input_xml_file_name = ...</div>
+<div class="line">itk::MyObjectDOMReader::Pointer reader = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">itk::MyObjectDOMReader::New</a>();</div>
+<div class="line">reader-&gt;SetFileName( input_xml_file_name );</div>
+<div class="line">reader-&gt;Update();</div>
+<div class="line">output_object = reader-&gt;GetOutput();</div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDOMReader_8h_source.html#l00065">65</a> of file <a class="el" href="itkDOMReader_8h_source.html">itkDOMReader.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DOMReader&lt; TOutput &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -310,30 +333,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutput&gt;<br />
-class itk::DOMReader&lt; TOutput &gt;</div><p >Class to read an ITK object from an XML file or a DOM object, using the DOM APIs. </p>
-<p >End-users need to derive from this class to implement readers for user objects. In subclasses, users need to provide an implementation for the virtual functions GenerateData(-,-).</p>
-<p >This class performs similar functions as the <a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> - both provide the base for handling object reading from an XML source. The difference is that, readers derived from this class perform object reading using the easy-to-use DOM APIs, while XMLReader-based readers use the more error-prone SAX (Simple API for XML) APIs.</p>
-<p >Internally, this class first implicitly creates an intermediate DOM object from the input XML file using the <a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a>, then performs output object generation by pulling information from the DOM object.</p>
-<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because many user objects to be read, e.g., registrations, transforms, optimizers, and so on, are not objects of type <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
-<p >The following code snippet demonstrates how to use a DOM-based reader that is derived from this class:</p>
-<div class="fragment"><div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">itk::MyObjectType::Pointer</a> output_object;</div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* input_xml_file_name = ...</div>
-<div class="line">itk::MyObjectDOMReader::Pointer reader = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">itk::MyObjectDOMReader::New</a>();</div>
-<div class="line">reader-&gt;SetFileName( input_xml_file_name );</div>
-<div class="line">reader-&gt;Update();</div>
-<div class="line">output_object = reader-&gt;GetOutput();</div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1XMLReader.html" title="template base class for an XMLReader Its purpose really is just to define the simple interface for ex...">XMLReader</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DOMNodeXMLReader.html" title="Class to read a DOM object from an XML file or an input stream.">DOMNodeXMLReader</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDOMReader_8h_source.html#l00065">65</a> of file <a class="el" href="itkDOMReader_8h_source.html">itkDOMReader.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8886f73ee0cbf17f1579cf3366eab4a9" name="a8886f73ee0cbf17f1579cf3366eab4a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8886f73ee0cbf17f1579cf3366eab4a9">&#9670;&nbsp;</a></span>DOMNodePointer</h2>
 

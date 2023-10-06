@@ -95,7 +95,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkUnaryFrequencyDomainFilter_8h_source.html">itkUnaryFrequencyDomainFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFrequencyIterator = FrequencyFFTLayoutImageRegionIteratorWithIndex&lt;TImageType&gt;&gt;<br />
+class itk::UnaryFrequencyDomainFilter&lt; TImageType, TFrequencyIterator &gt;</div><p >Performs a unary operation on a frequency domain image. </p>
+<p >A frequency filtering functor needs to be supplied via one of <a class="el" href="classitk_1_1UnaryFrequencyDomainFilter.html#ac9c3f637ee6a4cb504b06aa92a2117c9">SetFunctor()</a> overloads. The functor should take FrequencyIteratorType reference as its only parameter. If functor configurability is required, those parameters should be passed directly to the functor at the place of definition.</p>
+<p >Filters in the module ITKImageFrequency work with input images in the frequency domain. This filter is templated over a TFrequencyIterator depending on the frequency layout of the input image.</p>
+<p >Images in the dual space can be acquired experimentally, from scattering experiments or other techniques. In that case use <a class="el" href="classitk_1_1FrequencyImageRegionIteratorWithIndex.html">FrequencyImageRegionIteratorWithIndex</a> because the layout of dual space images is the same as spatial domain images.</p>
+<p >Frequency-domain images can be computed from any spatial-domain applying a Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. If <a class="el" href="classitk_1_1ForwardFFTImageFilter.html" title="Base class for forward Fast Fourier Transform.">ForwardFFTImageFilter</a> was used, template this filter with the <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionIteratorWithIndex.html">FrequencyFFTLayoutImageRegionIteratorWithIndex</a>. Please note that <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionIteratorWithIndex.html">FrequencyFFTLayoutImageRegionIteratorWithIndex</a> requires a full FFT, and is not compatible with the Hermitian optimization.</p>
+<p >To use this filter with Hermitian (halved-frequency) FFTs, use <a class="el" href="classitk_1_1FrequencyHalfHermitianFFTLayoutImageRegionIteratorWithIndex.html">FrequencyHalfHermitianFFTLayoutImageRegionIteratorWithIndex</a> or its const version.</p>
+<p >If the output of the FFT is shifted, for example after applying <a class="el" href="classitk_1_1FFTShiftImageFilter.html" title="Shift the zero-frequency components of a Fourier transform to the center of the image.">FFTShiftImageFilter</a>, use <a class="el" href="classitk_1_1FrequencyShiftedFFTLayoutImageRegionIteratorWithIndex.html">FrequencyShiftedFFTLayoutImageRegionIteratorWithIndex</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1UnaryGeneratorImageFilter.html" title="Implements pixel-wise generic &quot;operation&quot; on one image.">UnaryGeneratorImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkUnaryFrequencyDomainFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkUnaryFrequencyDomainFilter_8h_source.html">itkUnaryFrequencyDomainFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::UnaryFrequencyDomainFilter&lt; TImageType, TFrequencyIterator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -804,19 +816,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFrequencyIterator = FrequencyFFTLayoutImageRegionIteratorWithIndex&lt;TImageType&gt;&gt;<br />
-class itk::UnaryFrequencyDomainFilter&lt; TImageType, TFrequencyIterator &gt;</div><p >Performs a unary operation on a frequency domain image. </p>
-<p >A frequency filtering functor needs to be supplied via one of <a class="el" href="classitk_1_1UnaryFrequencyDomainFilter.html#ac9c3f637ee6a4cb504b06aa92a2117c9">SetFunctor()</a> overloads. The functor should take FrequencyIteratorType reference as its only parameter. If functor configurability is required, those parameters should be passed directly to the functor at the place of definition.</p>
-<p >Filters in the module ITKImageFrequency work with input images in the frequency domain. This filter is templated over a TFrequencyIterator depending on the frequency layout of the input image.</p>
-<p >Images in the dual space can be acquired experimentally, from scattering experiments or other techniques. In that case use <a class="el" href="classitk_1_1FrequencyImageRegionIteratorWithIndex.html">FrequencyImageRegionIteratorWithIndex</a> because the layout of dual space images is the same as spatial domain images.</p>
-<p >Frequency-domain images can be computed from any spatial-domain applying a Fourier <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. If <a class="el" href="classitk_1_1ForwardFFTImageFilter.html" title="Base class for forward Fast Fourier Transform.">ForwardFFTImageFilter</a> was used, template this filter with the <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionIteratorWithIndex.html">FrequencyFFTLayoutImageRegionIteratorWithIndex</a>. Please note that <a class="el" href="classitk_1_1FrequencyFFTLayoutImageRegionIteratorWithIndex.html">FrequencyFFTLayoutImageRegionIteratorWithIndex</a> requires a full FFT, and is not compatible with the Hermitian optimization.</p>
-<p >To use this filter with Hermitian (halved-frequency) FFTs, use <a class="el" href="classitk_1_1FrequencyHalfHermitianFFTLayoutImageRegionIteratorWithIndex.html">FrequencyHalfHermitianFFTLayoutImageRegionIteratorWithIndex</a> or its const version.</p>
-<p >If the output of the FFT is shifted, for example after applying <a class="el" href="classitk_1_1FFTShiftImageFilter.html" title="Shift the zero-frequency components of a Fourier transform to the center of the image.">FFTShiftImageFilter</a>, use <a class="el" href="classitk_1_1FrequencyShiftedFFTLayoutImageRegionIteratorWithIndex.html">FrequencyShiftedFFTLayoutImageRegionIteratorWithIndex</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1UnaryGeneratorImageFilter.html" title="Implements pixel-wise generic &quot;operation&quot; on one image.">UnaryGeneratorImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkUnaryFrequencyDomainFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkUnaryFrequencyDomainFilter_8h_source.html">itkUnaryFrequencyDomainFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1b3b60568fd252d957dbb6cfb735467c" name="a1b3b60568fd252d957dbb6cfb735467c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b3b60568fd252d957dbb6cfb735467c">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

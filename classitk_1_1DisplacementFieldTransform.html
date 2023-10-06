@@ -97,7 +97,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDisplacementFieldTransform_8h_source.html">itkDisplacementFieldTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
+class itk::DisplacementFieldTransform&lt; TParametersValueType, VDimension &gt;</div><p >Provides local/dense/high-dimensionality transformation via a a displacement field. </p>
+<p >The displacement field stores vectors of displacements, with dimension <code>VDimension</code>. Transformation is performed at a given point by adding the displacement at that point to the input point.</p>
+<p >T(x, p), x is the position, p is the local parameter at position x. For a 2D example:</p>
+<p >x = (x0, x1), p = (p0, p1)</p>
+<p >then T(x, p) is defined as:</p>
+<p >T(x, p) = (T0, T1) = (x0+p0, x1+p1)</p>
+<p >During transformation, out-of-bounds input points are returned with zero displacement.</p>
+<p >The displacement field is defined using an itkImage, and must be set before use by the user, using <code>SetDisplacementField</code>. The image has the same dimensionality as the input and output spaces, defined by template parameter <code>VDimension</code>, and is an image of vectors of type <code>OutputVectorType</code>, with dimensionality VDimension as well.</p>
+<p >An interpolator of type <code><a class="el" href="classitk_1_1VectorInterpolateImageFunction.html" title="Base class for all vector image interpolators.">VectorInterpolateImageFunction</a></code> is used with the displacement field image. By default, <a class="el" href="classitk_1_1VectorLinearInterpolateImageFunction.html" title="Linearly interpolate a vector image at specified positions.">VectorLinearInterpolateImageFunction</a> is used, and the user can override using SetInterpolator.</p>
+<p >The displacement field data is stored using the common <code><a class="el" href="classitk_1_1OptimizerParameters.html" title="Class to hold and manage different parameter types used during optimization.">OptimizerParameters</a></code> type in conjunction with the <code><a class="el" href="classitk_1_1ImageVectorOptimizerParametersHelper.html" title="Class to hold and manage parameters of type Image&lt;Vector&lt;...&gt;,...&gt;, used in Transforms,...">ImageVectorOptimizerParametersHelper</a></code> class. This allows access of the displacement field image as if it were an itkArray, allowing transparent use with other classes. </p><dl class="section warning"><dt>Warning</dt><dd>The <code>SetParameters</code> method will copy the passed parameters, which can be costly since displacement fields are dense and thus potentially very large.</dd></dl>
+<p>The <code>UpdateTransformParameters</code> method simply adds the provided update array, applying the usual optional scaling factor. Derived classes may provide different behavior.</p>
+<p >Because this is a local transform, methods that have a version that takes a point must be used, such as <code>TransformVector</code>, <code>TransformCovariantVector</code>, and <code>TransformDiffusionTensor</code>. Also, <code>ComputeJacobianWithRespectToParameters</code> simply returns an identity matrix (see method documentation), and <code>ComputeJacobianWithRespectToPosition</code> should be used. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDisplacementFieldTransform_8h_source.html#l00087">87</a> of file <a class="el" href="itkDisplacementFieldTransform_8h_source.html">itkDisplacementFieldTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DisplacementFieldTransform&lt; TParametersValueType, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -659,23 +675,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a40db7cbd57b71dc5d15e3ffb4192cae4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DisplacementFieldTransform.html#a40db7cbd57b71dc5d15e3ffb4192cae4">m_DirectionTolerance</a> {}</td></tr>
 <tr class="separator:a40db7cbd57b71dc5d15e3ffb4192cae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
-class itk::DisplacementFieldTransform&lt; TParametersValueType, VDimension &gt;</div><p >Provides local/dense/high-dimensionality transformation via a a displacement field. </p>
-<p >The displacement field stores vectors of displacements, with dimension <code>VDimension</code>. Transformation is performed at a given point by adding the displacement at that point to the input point.</p>
-<p >T(x, p), x is the position, p is the local parameter at position x. For a 2D example:</p>
-<p >x = (x0, x1), p = (p0, p1)</p>
-<p >then T(x, p) is defined as:</p>
-<p >T(x, p) = (T0, T1) = (x0+p0, x1+p1)</p>
-<p >During transformation, out-of-bounds input points are returned with zero displacement.</p>
-<p >The displacement field is defined using an itkImage, and must be set before use by the user, using <code>SetDisplacementField</code>. The image has the same dimensionality as the input and output spaces, defined by template parameter <code>VDimension</code>, and is an image of vectors of type <code>OutputVectorType</code>, with dimensionality VDimension as well.</p>
-<p >An interpolator of type <code><a class="el" href="classitk_1_1VectorInterpolateImageFunction.html" title="Base class for all vector image interpolators.">VectorInterpolateImageFunction</a></code> is used with the displacement field image. By default, <a class="el" href="classitk_1_1VectorLinearInterpolateImageFunction.html" title="Linearly interpolate a vector image at specified positions.">VectorLinearInterpolateImageFunction</a> is used, and the user can override using SetInterpolator.</p>
-<p >The displacement field data is stored using the common <code><a class="el" href="classitk_1_1OptimizerParameters.html" title="Class to hold and manage different parameter types used during optimization.">OptimizerParameters</a></code> type in conjunction with the <code><a class="el" href="classitk_1_1ImageVectorOptimizerParametersHelper.html" title="Class to hold and manage parameters of type Image&lt;Vector&lt;...&gt;,...&gt;, used in Transforms,...">ImageVectorOptimizerParametersHelper</a></code> class. This allows access of the displacement field image as if it were an itkArray, allowing transparent use with other classes. </p><dl class="section warning"><dt>Warning</dt><dd>The <code>SetParameters</code> method will copy the passed parameters, which can be costly since displacement fields are dense and thus potentially very large.</dd></dl>
-<p>The <code>UpdateTransformParameters</code> method simply adds the provided update array, applying the usual optional scaling factor. Derived classes may provide different behavior.</p>
-<p >Because this is a local transform, methods that have a version that takes a point must be used, such as <code>TransformVector</code>, <code>TransformCovariantVector</code>, and <code>TransformDiffusionTensor</code>. Also, <code>ComputeJacobianWithRespectToParameters</code> simply returns an identity matrix (see method documentation), and <code>ComputeJacobianWithRespectToPosition</code> should be used. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDisplacementFieldTransform_8h_source.html#l00087">87</a> of file <a class="el" href="itkDisplacementFieldTransform_8h_source.html">itkDisplacementFieldTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="add8742adb6c085492cd8e1f170a9c539" name="add8742adb6c085492cd8e1f170a9c539"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add8742adb6c085492cd8e1f170a9c539">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

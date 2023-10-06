@@ -94,7 +94,34 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFFTNormalizedCorrelationImageFilter_8h_source.html">itkFFTNormalizedCorrelationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::FFTNormalizedCorrelationImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Calculate normalized cross correlation using FFTs. </p>
+<p >This filter calculates the normalized cross correlation (NCC) of two images using FFTs instead of spatial correlation. It is much faster than spatial correlation for reasonably large structuring elements. This filter is a subclass of the more general <a class="el" href="classitk_1_1MaskedFFTNormalizedCorrelationImageFilter.html" title="Calculate masked normalized cross correlation using FFTs.">MaskedFFTNormalizedCorrelationImageFilter</a> and operates by essentially setting the masks in that algorithm to images of ones. As described in detail in the references below, there is no computational overhead to utilizing the more general masked algorithm because the FFTs of the images of ones are still necessary for the computations.</p>
+<p >Inputs: Two images are required as inputs, fixedImage and movingImage. In the context of correlation, inputs are often defined as: "image" and "template". In this filter, the fixedImage plays the role of the image, and the movingImage plays the role of the template. However, this filter is capable of correlating any two images and is not restricted to small movingImages (templates).</p>
+<p >Optional parameters: The RequiredNumberOfOverlappingPixels enables the user to specify how many voxels of the two images must overlap; any location in the correlation map that results from fewer than this number of voxels will be set to zero. Larger values zero-out pixels on a larger border around the correlation image. Thus, larger values remove less stable computations but also limit the capture range. If RequiredNumberOfOverlappingPixels is set to 0, the default, no zeroing will take place.</p>
+<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> size: fixedImage and movingImage need not be the same size. Furthermore, whereas some algorithms require that the "template" be smaller than the "image" because of errors in the regions where the two are not fully overlapping, this filter has no such restriction.</p>
+<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> spacing: Since the computations are done in the pixel domain, all input images must have the same spacing.</p>
+<p >Outputs; The output is an image of RealPixelType that is the NCC of the two images and its values range from -1.0 to 1.0. The size of this NCC image is, by definition, size(fixedImage) + size(movingImage) - 1.</p>
+<p >Example filter usage: </p><div class="fragment"><div class="line"><span class="keyword">using</span> FilterType = <a class="code hl_class" href="classitk_1_1FFTNormalizedCorrelationImageFilter.html">itk::FFTNormalizedCorrelationImageFilter&lt; ShortImageType, DoubleImageType &gt;</a>;</div>
+<div class="line"><span class="keyword">auto</span> filter = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FilterType::New</a>();</div>
+<div class="line">filter-&gt;SetFixedImage( fixedImage );</div>
+<div class="line">filter-&gt;SetMovingImage( movingImage );</div>
+<div class="line">filter-&gt;SetRequiredNumberOfOverlappingPixels(20);</div>
+<div class="line">filter-&gt;Update();</div>
+<div class="ttc" id="aclassitk_1_1FFTNormalizedCorrelationImageFilter_html"><div class="ttname"><a href="classitk_1_1FFTNormalizedCorrelationImageFilter.html">itk::FFTNormalizedCorrelationImageFilter</a></div><div class="ttdoc">Calculate normalized cross correlation using FFTs.</div><div class="ttdef"><b>Definition:</b> <a href="itkFFTNormalizedCorrelationImageFilter_8h_source.html#l00103">itkFFTNormalizedCorrelationImageFilter.h:105</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>The pixel type of the output image must be of real type (float or double). ConceptChecking is used to enforce the output pixel type. You will get a compilation error if the pixel type of the output image is not float or double.</dd></dl>
+<p>References: 1) D. Padfield. "Masked object registration in the Fourier domain." Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing. 2) D. Padfield. "Masked FFT registration". In Proc. Computer Vision and Pattern Recognition, 2010.</p>
+<dl class="section author"><dt>Author</dt><dd>: Dirk Padfield, GE Global Research, padfield@research.ge.com</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFFTNormalizedCorrelationImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkFFTNormalizedCorrelationImageFilter_8h_source.html">itkFFTNormalizedCorrelationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FFTNormalizedCorrelationImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -857,34 +884,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::FFTNormalizedCorrelationImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Calculate normalized cross correlation using FFTs. </p>
-<p >This filter calculates the normalized cross correlation (NCC) of two images using FFTs instead of spatial correlation. It is much faster than spatial correlation for reasonably large structuring elements. This filter is a subclass of the more general <a class="el" href="classitk_1_1MaskedFFTNormalizedCorrelationImageFilter.html" title="Calculate masked normalized cross correlation using FFTs.">MaskedFFTNormalizedCorrelationImageFilter</a> and operates by essentially setting the masks in that algorithm to images of ones. As described in detail in the references below, there is no computational overhead to utilizing the more general masked algorithm because the FFTs of the images of ones are still necessary for the computations.</p>
-<p >Inputs: Two images are required as inputs, fixedImage and movingImage. In the context of correlation, inputs are often defined as: "image" and "template". In this filter, the fixedImage plays the role of the image, and the movingImage plays the role of the template. However, this filter is capable of correlating any two images and is not restricted to small movingImages (templates).</p>
-<p >Optional parameters: The RequiredNumberOfOverlappingPixels enables the user to specify how many voxels of the two images must overlap; any location in the correlation map that results from fewer than this number of voxels will be set to zero. Larger values zero-out pixels on a larger border around the correlation image. Thus, larger values remove less stable computations but also limit the capture range. If RequiredNumberOfOverlappingPixels is set to 0, the default, no zeroing will take place.</p>
-<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> size: fixedImage and movingImage need not be the same size. Furthermore, whereas some algorithms require that the "template" be smaller than the "image" because of errors in the regions where the two are not fully overlapping, this filter has no such restriction.</p>
-<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> spacing: Since the computations are done in the pixel domain, all input images must have the same spacing.</p>
-<p >Outputs; The output is an image of RealPixelType that is the NCC of the two images and its values range from -1.0 to 1.0. The size of this NCC image is, by definition, size(fixedImage) + size(movingImage) - 1.</p>
-<p >Example filter usage: </p><div class="fragment"><div class="line"><span class="keyword">using</span> FilterType = <a class="code hl_class" href="classitk_1_1FFTNormalizedCorrelationImageFilter.html">itk::FFTNormalizedCorrelationImageFilter&lt; ShortImageType, DoubleImageType &gt;</a>;</div>
-<div class="line"><span class="keyword">auto</span> filter = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">FilterType::New</a>();</div>
-<div class="line">filter-&gt;SetFixedImage( fixedImage );</div>
-<div class="line">filter-&gt;SetMovingImage( movingImage );</div>
-<div class="line">filter-&gt;SetRequiredNumberOfOverlappingPixels(20);</div>
-<div class="line">filter-&gt;Update();</div>
-<div class="ttc" id="aclassitk_1_1FFTNormalizedCorrelationImageFilter_html"><div class="ttname"><a href="classitk_1_1FFTNormalizedCorrelationImageFilter.html">itk::FFTNormalizedCorrelationImageFilter</a></div><div class="ttdoc">Calculate normalized cross correlation using FFTs.</div><div class="ttdef"><b>Definition:</b> <a href="itkFFTNormalizedCorrelationImageFilter_8h_source.html#l00103">itkFFTNormalizedCorrelationImageFilter.h:105</a></div></div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>The pixel type of the output image must be of real type (float or double). ConceptChecking is used to enforce the output pixel type. You will get a compilation error if the pixel type of the output image is not float or double.</dd></dl>
-<p>References: 1) D. Padfield. "Masked object registration in the Fourier domain." Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing. 2) D. Padfield. "Masked FFT registration". In Proc. Computer Vision and Pattern Recognition, 2010.</p>
-<dl class="section author"><dt>Author</dt><dd>: Dirk Padfield, GE Global Research, padfield@research.ge.com</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFFTNormalizedCorrelationImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkFFTNormalizedCorrelationImageFilter_8h_source.html">itkFFTNormalizedCorrelationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac9867959a5db7a159ac439fde2349c80" name="ac9867959a5db7a159ac439fde2349c80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9867959a5db7a159ac439fde2349c80">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

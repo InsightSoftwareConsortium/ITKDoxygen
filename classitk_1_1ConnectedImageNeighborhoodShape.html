@@ -93,7 +93,40 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkConnectedImageNeighborhoodShape_8h_source.html">itkConnectedImageNeighborhoodShape.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VImageDimension&gt;<br />
+class itk::ConnectedImageNeighborhoodShape&lt; VImageDimension &gt;</div><p >Connected image-neighborhood shape, based on the topological property of pixel connectivity. Eases creating a sequence of offsets to construct a <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> object. Can also be used to specify the shape of a <a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a>, using its ActivateOffset member function.</p>
+<p >This shape class supports generating offsets in colexicographic order. Which means that, for example, a sequence of generated offsets for a 2-dimensional shape will have offset {1, 0} before offset {0, 1}. This order was chosen because it is usually in agreement with the order of the corresponding neighbor pixels, as stored in the internal image buffer.</p>
+<p >The following example generates the offsets for a 3-dimensional 18-connected neighborhood shape, including the center pixel, and asserts that the result is as expected: </p><div class="fragment"><div class="line"><span class="keywordtype">size_t</span> maximumCityblockDistance = 2;</div>
+<div class="line"><span class="keywordtype">bool</span> includeCenterPixel = <span class="keyword">true</span>;</div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; shape{ maximumCityblockDistance, includeCenterPixel };</div>
+<div class="line">std::vector&lt;Offset&lt;3&gt;&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">GenerateImageNeighborhoodOffsets</a>(shape);</div>
+<div class="line">assert(offsets.size() == 19);</div>
+<div class="line">assert(offsets == std::vector&lt;Offset&lt;3&gt;&gt;(</div>
+<div class="line">{</div>
+<div class="line">  {{0, -1, -1}}, {{-1, 0, -1}}, {{0, 0, -1}},</div>
+<div class="line">  {{1, 0, -1}}, {{0, 1, -1}}, {{-1, -1, 0}},</div>
+<div class="line">  {{0, -1, 0}}, {{1, -1, 0}}, {{-1, 0, 0}},</div>
+<div class="line">  {{0, 0, 0}},</div>
+<div class="line">  {{1, 0, 0}}, {{-1, 1, 0}}, {{0, 1, 0}},</div>
+<div class="line">  {{1, 1, 0}}, {{0, -1, 1}}, {{-1, 0, 1}},</div>
+<div class="line">  {{0, 0, 1}}, {{1, 0, 1}}, {{0, 1, 1}}</div>
+<div class="line">}));</div>
+<div class="ttc" id="anamespaceitk_html_a3fd7c11aaf6dadd27f2dbdb9d17be651"><div class="ttname"><a href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">itk::GenerateImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; TImageNeighborhoodShape::ImageDimension &gt; &gt; GenerateImageNeighborhoodOffsets(const TImageNeighborhoodShape &amp;shape)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00031">itkImageNeighborhoodOffsets.h:31</a></div></div>
+</div><!-- fragment --><p >The following code shows how to create 4-connected, 8-connected, 6-connected, 18-connected, and 26-connected neighborhood shapes: </p><div class="fragment"><div class="line"><span class="comment">// 2-dimensional:</span></div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;2&gt; _4_connectedShape{ 1, includeCenterPixel };</div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;2&gt; _8_connectedShape{ 2, includeCenterPixel };</div>
+<div class="line"><span class="comment">// 3-dimensional:</span></div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _6_connectedShape{ 1, includeCenterPixel };</div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _18_connectedShape{ 2, includeCenterPixel };</div>
+<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _26_connectedShape{ 3, includeCenterPixel };</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkConnectedImageNeighborhoodShape_8h_source.html#l00087">87</a> of file <a class="el" href="itkConnectedImageNeighborhoodShape_8h_source.html">itkConnectedImageNeighborhoodShape.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a603987af8ac13a0302f5800b344c0e2d"><td class="memItemLeft" align="right" valign="top">constexpr vcl_size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ConnectedImageNeighborhoodShape.html#a603987af8ac13a0302f5800b344c0e2d">GetNumberOfOffsets</a> () const noexcept</td></tr>
@@ -137,40 +170,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a55f631b3b3f819704c0aa26c4cf9bee5"><td class="memItemLeft" align="right" valign="top">vcl_size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ConnectedImageNeighborhoodShape.html#a55f631b3b3f819704c0aa26c4cf9bee5">m_NumberOfOffsets</a></td></tr>
 <tr class="separator:a55f631b3b3f819704c0aa26c4cf9bee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VImageDimension&gt;<br />
-class itk::ConnectedImageNeighborhoodShape&lt; VImageDimension &gt;</div><p >Connected image-neighborhood shape, based on the topological property of pixel connectivity. Eases creating a sequence of offsets to construct a <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> object. Can also be used to specify the shape of a <a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a>, using its ActivateOffset member function.</p>
-<p >This shape class supports generating offsets in colexicographic order. Which means that, for example, a sequence of generated offsets for a 2-dimensional shape will have offset {1, 0} before offset {0, 1}. This order was chosen because it is usually in agreement with the order of the corresponding neighbor pixels, as stored in the internal image buffer.</p>
-<p >The following example generates the offsets for a 3-dimensional 18-connected neighborhood shape, including the center pixel, and asserts that the result is as expected: </p><div class="fragment"><div class="line"><span class="keywordtype">size_t</span> maximumCityblockDistance = 2;</div>
-<div class="line"><span class="keywordtype">bool</span> includeCenterPixel = <span class="keyword">true</span>;</div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; shape{ maximumCityblockDistance, includeCenterPixel };</div>
-<div class="line">std::vector&lt;Offset&lt;3&gt;&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">GenerateImageNeighborhoodOffsets</a>(shape);</div>
-<div class="line">assert(offsets.size() == 19);</div>
-<div class="line">assert(offsets == std::vector&lt;Offset&lt;3&gt;&gt;(</div>
-<div class="line">{</div>
-<div class="line">  {{0, -1, -1}}, {{-1, 0, -1}}, {{0, 0, -1}},</div>
-<div class="line">  {{1, 0, -1}}, {{0, 1, -1}}, {{-1, -1, 0}},</div>
-<div class="line">  {{0, -1, 0}}, {{1, -1, 0}}, {{-1, 0, 0}},</div>
-<div class="line">  {{0, 0, 0}},</div>
-<div class="line">  {{1, 0, 0}}, {{-1, 1, 0}}, {{0, 1, 0}},</div>
-<div class="line">  {{1, 1, 0}}, {{0, -1, 1}}, {{-1, 0, 1}},</div>
-<div class="line">  {{0, 0, 1}}, {{1, 0, 1}}, {{0, 1, 1}}</div>
-<div class="line">}));</div>
-<div class="ttc" id="anamespaceitk_html_a3fd7c11aaf6dadd27f2dbdb9d17be651"><div class="ttname"><a href="namespaceitk.html#a3fd7c11aaf6dadd27f2dbdb9d17be651">itk::GenerateImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; TImageNeighborhoodShape::ImageDimension &gt; &gt; GenerateImageNeighborhoodOffsets(const TImageNeighborhoodShape &amp;shape)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00031">itkImageNeighborhoodOffsets.h:31</a></div></div>
-</div><!-- fragment --><p >The following code shows how to create 4-connected, 8-connected, 6-connected, 18-connected, and 26-connected neighborhood shapes: </p><div class="fragment"><div class="line"><span class="comment">// 2-dimensional:</span></div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;2&gt; _4_connectedShape{ 1, includeCenterPixel };</div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;2&gt; _8_connectedShape{ 2, includeCenterPixel };</div>
-<div class="line"><span class="comment">// 3-dimensional:</span></div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _6_connectedShape{ 1, includeCenterPixel };</div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _18_connectedShape{ 2, includeCenterPixel };</div>
-<div class="line">ConnectedImageNeighborhoodShape&lt;3&gt; _26_connectedShape{ 3, includeCenterPixel };</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkConnectedImageNeighborhoodShape_8h_source.html#l00087">87</a> of file <a class="el" href="itkConnectedImageNeighborhoodShape_8h_source.html">itkConnectedImageNeighborhoodShape.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adf198520a4d7b4c51ca93e1186ce2d61" name="adf198520a4d7b4c51ca93e1186ce2d61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf198520a4d7b4c51ca93e1186ce2d61">&#9670;&nbsp;</a></span>ConnectedImageNeighborhoodShape()</h2>
 

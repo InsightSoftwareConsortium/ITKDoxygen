@@ -92,7 +92,15 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSingleValuedCostFunctionv4_8h_source.html">itkSingleValuedCostFunctionv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
+class itk::SingleValuedCostFunctionv4Template&lt; TInternalComputationValueType &gt;</div><p >This class is a base for a <a class="el" href="classCostFunction.html" title="Base class for cost functions intended to be used with Optimizers.">CostFunction</a> that returns a single value. </p>
+<p >This class differs from the <a class="el" href="classitk_1_1SingleValuedCostFunction.html" title="This class is a base for the CostFunctions returning a single value.">SingleValuedCostFunction</a> in that it is fine- tuned for managing very large numbers of parameters. For example, to be used in conditions where the number of parameters is in the range of thousands or even millions. Due to the large number of parameters, the API of this class avoids any copying of the parameters array, and of the classes that have dimensionality related to the size of the parameters array.</p>
+<p >As you look at the code of this class, keep in mind that the types ParametersType and DerivativeType will be some sort of array-like type with millions of elements.</p>
+<p >Derived classes must provide implementations for: GetValue GetValueAndDerivative </p>
+
+<p class="definition">Definition at line <a class="el" href="itkSingleValuedCostFunctionv4_8h_source.html#l00050">50</a> of file <a class="el" href="itkSingleValuedCostFunctionv4_8h_source.html">itkSingleValuedCostFunctionv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SingleValuedCostFunctionv4Template&lt; TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -301,15 +309,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
-class itk::SingleValuedCostFunctionv4Template&lt; TInternalComputationValueType &gt;</div><p >This class is a base for a <a class="el" href="classCostFunction.html" title="Base class for cost functions intended to be used with Optimizers.">CostFunction</a> that returns a single value. </p>
-<p >This class differs from the <a class="el" href="classitk_1_1SingleValuedCostFunction.html" title="This class is a base for the CostFunctions returning a single value.">SingleValuedCostFunction</a> in that it is fine- tuned for managing very large numbers of parameters. For example, to be used in conditions where the number of parameters is in the range of thousands or even millions. Due to the large number of parameters, the API of this class avoids any copying of the parameters array, and of the classes that have dimensionality related to the size of the parameters array.</p>
-<p >As you look at the code of this class, keep in mind that the types ParametersType and DerivativeType will be some sort of array-like type with millions of elements.</p>
-<p >Derived classes must provide implementations for: GetValue GetValueAndDerivative </p>
-
-<p class="definition">Definition at line <a class="el" href="itkSingleValuedCostFunctionv4_8h_source.html#l00050">50</a> of file <a class="el" href="itkSingleValuedCostFunctionv4_8h_source.html">itkSingleValuedCostFunctionv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a00d660454eb90f5ce60da3ff734351e3" name="a00d660454eb90f5ce60da3ff734351e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00d660454eb90f5ce60da3ff734351e3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

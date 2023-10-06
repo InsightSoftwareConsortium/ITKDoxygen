@@ -96,7 +96,38 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLBFGS2Optimizerv4_8h_source.html">itkLBFGS2Optimizerv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
+class itk::LBFGS2Optimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Wrap of the libLBFGS[1] algorithm for use in ITKv4 registration framework. LibLBFGS is a translation of LBFGS code by Nocedal [2] and adds the orthantwise limited-memory Quasi-Newton method [3] for optimization with L1-norm on the parameters. </p>
+<p >LBFGS is a quasi-Newton method uses an approximate estimate of the inverse Hessian \( (\nabla^2 f(x) )^-1 \) to scale the gradient step: </p><p class="formulaDsp">
+\[ x_{n+1} = x_n - s (\nabla^2 f(x_n) )^-1 \nabla f(x) \]
+</p>
+<p> with \( s \) the step size.</p>
+<p >The inverse Hessian is approximated from the gradients of previous iteration and thus only the gradient of the objective function is required.</p>
+<p >The step size \( s \) is determined through line search which defaults to the approach by More and Thuente [4]. This line search approach finds a step size such that </p><p class="formulaDsp">
+\[ \lVert \nabla f(x + s (\nabla^2 f(x_n) )^{-1} \nabla f(x) ) \rVert \le \nu \lVert \nabla f(x) \rVert \]
+</p>
+<p> The parameter \(\nu\) is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#a707a19457e6c8ea53b032cbb9d3e339a">SetLineSearchAccuracy()</a> (default 0.9) and SetGradientLineSearchAccuracy()</p>
+<p >Instead of the More-Tunete method, backtracking with three different conditions [7] are available and can be set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae1a7111a7daafbb49edf626d0d5ff1b0">SetLineSearch()</a>:</p><ul>
+<li>LINESEARCH_BACKTRACKING_ARMIJO</li>
+<li>LINESEARCH_BACKTRACKING_WOLFE</li>
+<li>LINESEARCH_BACKTRACKING_STRONG_WOLFE</li>
+</ul>
+<p >The optimization stops when either the gradient satisfies the condition </p><p class="formulaDsp">
+\[ \lVert \nabla f(x) \rVert \le \epsilon \max(1, \lVert X \rVert) \]
+</p>
+<p> or a maximum number of function evaluations has been reached. The tolerance \(\epsilon\) is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae6e4f17e590612a1a39a065760e97c8a">SetSolutionAccuracy()</a> (default 1e-5) and the maximum number of function evaluations is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae25cd69e74362c4f05a45ffa6d60c235">SetMaximumIterations()</a> (default 0 = no maximum).</p>
+<p >References:</p>
+<p >[1] <a href="https://www.chokkan.org/software/liblbfgs/">libLBFGS</a></p>
+<p >[2] <a href="http://users.iems.northwestern.edu/~nocedal/lbfgs.html">NETLIB lbfgs</a></p>
+<p >[3] Galen Andrew and Jianfeng Gao. Scalable training of L1-regularized log-linear models. 24th International Conference on Machine Learning, pp. 33-40, 2007.</p>
+<p >[4] Jorge Nocedal. Updating Quasi-Newton Matrices with Limited Storage. Mathematics of Computation, Vol. 35, No. 151, pp. 773-782, 1980.</p>
+<p >[5] Dong C. Liu and Jorge Nocedal. On the limited memory BFGS method for large scale optimization. Mathematical Programming B, Vol. 45, No. 3, pp. 503-528, 1989.</p>
+<p >[6] More, J. J. and D. J. Thuente. Line Search Algorithms with Guaranteed Sufficient Decrease. ACM Transactions on Mathematical Software 20, no. 3 (1994): 286-307.</p>
+<p >[7] John E. Dennis and Robert B. Schnabel. Numerical Methods for Unconstrained <a class="el" href="classOptimization.html">Optimization</a> and Nonlinear Equations, Englewood Cliffs, 1983. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkLBFGS2Optimizerv4_8h_source.html#l00165">165</a> of file <a class="el" href="itkLBFGS2Optimizerv4_8h_source.html">itkLBFGS2Optimizerv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LBFGS2Optimizerv4Template&lt; TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -702,38 +733,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
-class itk::LBFGS2Optimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Wrap of the libLBFGS[1] algorithm for use in ITKv4 registration framework. LibLBFGS is a translation of LBFGS code by Nocedal [2] and adds the orthantwise limited-memory Quasi-Newton method [3] for optimization with L1-norm on the parameters. </p>
-<p >LBFGS is a quasi-Newton method uses an approximate estimate of the inverse Hessian \( (\nabla^2 f(x) )^-1 \) to scale the gradient step: </p><p class="formulaDsp">
-\[ x_{n+1} = x_n - s (\nabla^2 f(x_n) )^-1 \nabla f(x) \]
-</p>
-<p> with \( s \) the step size.</p>
-<p >The inverse Hessian is approximated from the gradients of previous iteration and thus only the gradient of the objective function is required.</p>
-<p >The step size \( s \) is determined through line search which defaults to the approach by More and Thuente [4]. This line search approach finds a step size such that </p><p class="formulaDsp">
-\[ \lVert \nabla f(x + s (\nabla^2 f(x_n) )^{-1} \nabla f(x) ) \rVert \le \nu \lVert \nabla f(x) \rVert \]
-</p>
-<p> The parameter \(\nu\) is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#a707a19457e6c8ea53b032cbb9d3e339a">SetLineSearchAccuracy()</a> (default 0.9) and SetGradientLineSearchAccuracy()</p>
-<p >Instead of the More-Tunete method, backtracking with three different conditions [7] are available and can be set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae1a7111a7daafbb49edf626d0d5ff1b0">SetLineSearch()</a>:</p><ul>
-<li>LINESEARCH_BACKTRACKING_ARMIJO</li>
-<li>LINESEARCH_BACKTRACKING_WOLFE</li>
-<li>LINESEARCH_BACKTRACKING_STRONG_WOLFE</li>
-</ul>
-<p >The optimization stops when either the gradient satisfies the condition </p><p class="formulaDsp">
-\[ \lVert \nabla f(x) \rVert \le \epsilon \max(1, \lVert X \rVert) \]
-</p>
-<p> or a maximum number of function evaluations has been reached. The tolerance \(\epsilon\) is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae6e4f17e590612a1a39a065760e97c8a">SetSolutionAccuracy()</a> (default 1e-5) and the maximum number of function evaluations is set through <a class="el" href="classitk_1_1LBFGS2Optimizerv4Template.html#ae25cd69e74362c4f05a45ffa6d60c235">SetMaximumIterations()</a> (default 0 = no maximum).</p>
-<p >References:</p>
-<p >[1] <a href="https://www.chokkan.org/software/liblbfgs/">libLBFGS</a></p>
-<p >[2] <a href="http://users.iems.northwestern.edu/~nocedal/lbfgs.html">NETLIB lbfgs</a></p>
-<p >[3] Galen Andrew and Jianfeng Gao. Scalable training of L1-regularized log-linear models. 24th International Conference on Machine Learning, pp. 33-40, 2007.</p>
-<p >[4] Jorge Nocedal. Updating Quasi-Newton Matrices with Limited Storage. Mathematics of Computation, Vol. 35, No. 151, pp. 773-782, 1980.</p>
-<p >[5] Dong C. Liu and Jorge Nocedal. On the limited memory BFGS method for large scale optimization. Mathematical Programming B, Vol. 45, No. 3, pp. 503-528, 1989.</p>
-<p >[6] More, J. J. and D. J. Thuente. Line Search Algorithms with Guaranteed Sufficient Decrease. ACM Transactions on Mathematical Software 20, no. 3 (1994): 286-307.</p>
-<p >[7] John E. Dennis and Robert B. Schnabel. Numerical Methods for Unconstrained <a class="el" href="classOptimization.html">Optimization</a> and Nonlinear Equations, Englewood Cliffs, 1983. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkLBFGS2Optimizerv4_8h_source.html#l00165">165</a> of file <a class="el" href="itkLBFGS2Optimizerv4_8h_source.html">itkLBFGS2Optimizerv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acbcd2fcb6dfc0d3761bcb71f86ffa2e6" name="acbcd2fcb6dfc0d3761bcb71f86ffa2e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbcd2fcb6dfc0d3761bcb71f86ffa2e6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -96,7 +96,35 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkIndexRange_8h_source.html">itkIndexRange.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension, bool VBeginAtZero&gt;<br />
+class itk::IndexRange&lt; VDimension, VBeginAtZero &gt;</div><p >Modern C++11 range, supporting efficient iteration over the indices of an image grid space.</p>
+<p >The following example prints all indices of an 2-D grid space of size 2x3. </p><div class="fragment"><div class="line"><span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classitk_1_1IndexRange.html#a9cf0bf91aed12e5000c4430026a29c15">Dimension</a> = 2;</div>
+<div class="line"><span class="keyword">const</span> Size&lt;Dimension&gt; <a class="code hl_function" href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">size</a> = { {2, 3} };</div>
+<div class="line"><span class="keyword">const</span> ZeroBasedIndexRange&lt;Dimension&gt; indexRange{ <a class="code hl_function" href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">size</a> };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> Index&lt;Dimension&gt; index : indexRange)</div>
+<div class="line">{</div>
+<div class="line">  std::cout &lt;&lt; index;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Output: &quot;[0, 0][1, 0][0, 1][1, 1][0, 2][1, 2]&quot;</span></div>
+<div class="ttc" id="aclassitk_1_1IndexRange_html_a76979f7d92c5423b3149183158560963"><div class="ttname"><a href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">itk::IndexRange::size</a></div><div class="ttdeci">vcl_size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="itkIndexRange_8h_source.html#l00397">itkIndexRange.h:397</a></div></div>
+<div class="ttc" id="aclassitk_1_1IndexRange_html_a9cf0bf91aed12e5000c4430026a29c15"><div class="ttname"><a href="classitk_1_1IndexRange.html#a9cf0bf91aed12e5000c4430026a29c15">itk::IndexRange::Dimension</a></div><div class="ttdeci">static constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkIndexRange_8h_source.html#l00081">itkIndexRange.h:81</a></div></div>
+</div><!-- fragment --><p >The indices from <a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> can also be used as consecutive locations of a <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a>, for example: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> index : indexRange)</div>
+<div class="line">{</div>
+<div class="line">  shapedImageNeighborhoodRange.SetLocation(index);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> PixelType neighborPixel : shapedImageNeighborhoodRange)</div>
+<div class="line">  {</div>
+<div class="line">    <span class="comment">// Process neighbor pixel...</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> is designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and its iterators can be passed to Standard C++ algorithms.</p>
+<dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkIndexRange_8h_source.html#l00078">78</a> of file <a class="el" href="itkIndexRange_8h_source.html">itkIndexRange.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::IndexRange&lt; VDimension, VBeginAtZero &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -177,35 +205,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a3acf4879d8e1f8486614af647fb90868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1IndexRange.html#a478106af807302561c0c225a8d58e8eb">MinIndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1IndexRange.html#a3acf4879d8e1f8486614af647fb90868">m_MinIndex</a> {}</td></tr>
 <tr class="separator:a3acf4879d8e1f8486614af647fb90868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension, bool VBeginAtZero&gt;<br />
-class itk::IndexRange&lt; VDimension, VBeginAtZero &gt;</div><p >Modern C++11 range, supporting efficient iteration over the indices of an image grid space.</p>
-<p >The following example prints all indices of an 2-D grid space of size 2x3. </p><div class="fragment"><div class="line"><span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classitk_1_1IndexRange.html#a9cf0bf91aed12e5000c4430026a29c15">Dimension</a> = 2;</div>
-<div class="line"><span class="keyword">const</span> Size&lt;Dimension&gt; <a class="code hl_function" href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">size</a> = { {2, 3} };</div>
-<div class="line"><span class="keyword">const</span> ZeroBasedIndexRange&lt;Dimension&gt; indexRange{ <a class="code hl_function" href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">size</a> };</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> Index&lt;Dimension&gt; index : indexRange)</div>
-<div class="line">{</div>
-<div class="line">  std::cout &lt;&lt; index;</div>
-<div class="line">}</div>
-<div class="line"><span class="comment">// Output: &quot;[0, 0][1, 0][0, 1][1, 1][0, 2][1, 2]&quot;</span></div>
-<div class="ttc" id="aclassitk_1_1IndexRange_html_a76979f7d92c5423b3149183158560963"><div class="ttname"><a href="classitk_1_1IndexRange.html#a76979f7d92c5423b3149183158560963">itk::IndexRange::size</a></div><div class="ttdeci">vcl_size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="itkIndexRange_8h_source.html#l00397">itkIndexRange.h:397</a></div></div>
-<div class="ttc" id="aclassitk_1_1IndexRange_html_a9cf0bf91aed12e5000c4430026a29c15"><div class="ttname"><a href="classitk_1_1IndexRange.html#a9cf0bf91aed12e5000c4430026a29c15">itk::IndexRange::Dimension</a></div><div class="ttdeci">static constexpr unsigned int Dimension</div><div class="ttdef"><b>Definition:</b> <a href="itkIndexRange_8h_source.html#l00081">itkIndexRange.h:81</a></div></div>
-</div><!-- fragment --><p >The indices from <a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> can also be used as consecutive locations of a <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a>, for example: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> index : indexRange)</div>
-<div class="line">{</div>
-<div class="line">  shapedImageNeighborhoodRange.SetLocation(index);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> PixelType neighborPixel : shapedImageNeighborhoodRange)</div>
-<div class="line">  {</div>
-<div class="line">    <span class="comment">// Process neighbor pixel...</span></div>
-<div class="line">  }</div>
-<div class="line">}</div>
-</div><!-- fragment --><p ><a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> is designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and its iterators can be passed to Standard C++ algorithms.</p>
-<dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkIndexRange_8h_source.html#l00078">78</a> of file <a class="el" href="itkIndexRange_8h_source.html">itkIndexRange.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a33d92ae492a92b7928362a3f3d5affa5" name="a33d92ae492a92b7928362a3f3d5affa5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33d92ae492a92b7928362a3f3d5affa5">&#9670;&nbsp;</a></span>const_reverse_iterator</h2>
 

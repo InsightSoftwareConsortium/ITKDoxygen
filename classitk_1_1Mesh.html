@@ -98,7 +98,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMesh_8h_source.html">itkMesh.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VDimension = 3, typename TMeshTraits = DefaultStaticMeshTraits&lt;TPixelType, VDimension, VDimension&gt;&gt;<br />
+class itk::Mesh&lt; TPixelType, VDimension, TMeshTraits &gt;</div><p >Implements the N-dimensional mesh structure. </p>
+<dl class="section user"><dt>Overview</dt><dd><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> implements the N-dimensional mesh structure for ITK. It provides an API to perform operations on points, cells, boundaries, etc., but does not tie down the underlying implementation and storage. A "MeshTraits" structure is used to define the container and identifier types that will be used to access the mesh. See <a class="el" href="classitk_1_1DefaultStaticMeshTraits.html">DefaultStaticMeshTraits</a> for the set of type definitions needed. All types that are defined in the "MeshTraits" structure will have duplicate type alias in the resulting mesh itself.</dd></dl>
+<p><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> is an adaptive, evolving structure. Typically points and cells are created, with the cells referring to their defining points. If additional topological information is required, then <a class="el" href="classitk_1_1Mesh.html#a61fc489e16da27646a1020e2abd9492a">BuildCellLinks()</a> is called and links from the points back to the cells that use them are created. This allows implicit topological information about the faces and edges of the cells to be determined. (For example, a "face" neighbor to a cell can be determined by intersection the sets of cells that use the points defining the face. This is an inherent assumption on the manifold relationship of the cells in the mesh.) In some cases, either because the mesh is non-manifold, because we wish to explicitly store information with the faces and edges of the mesh, or because performance requirements demand that boundaries are explicitly represented (the set intersection does not need to be performed); then <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> can be further extended by adding explicit boundary assignments.</p>
+<dl class="section user"><dt>Usage</dt><dd><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> has three template parameters. The first is the pixel type, or the type of data stored (optionally) with points, cells, and/or boundaries. The second is the geometric dimension of the points defining the mesh. This also limits the maximum topological dimension of the cells that can be inserted. The third template parameter is the "MeshTraits" structure controlling type information for the mesh. Most users will be happy with the defaults, and will not have to worry about this third argument.</dd></dl>
+<p>One of the most important parts of using this mesh is how to create cells to insert into it. The cells for the mesh take two template parameters. The first is the pixel type, and should correspond exactly to that type given to the mesh. The second is a "CellTraits" which holds a sub-set of the "MeshTraits" structure definitions, and is also a member of them. Any cell which is to be inserted to a mesh should have MeshTraits::CellTraits as its second template parameter.</p>
+<p >Template parameters for <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a>:</p>
+<p >TPixelType = The type stored as data for an entity (cell, point, or boundary).</p>
+<p >TMeshTraits = Type information structure for the mesh.</p>
+<dl class="section user"><dt>References</dt><dd>No reference information is available.</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMesh_8h_source.html#l00126">126</a> of file <a class="el" href="itkMesh_8h_source.html">itkMesh.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Mesh&lt; TPixelType, VDimension, TMeshTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -729,27 +749,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2429be4077588a48bbe5fb96f05c25d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1MeshEnums.html#ae02f4d2dad51ba63d281fa29a8b6dfa7">MeshClassCellsAllocationMethodEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Mesh.html#a2429be4077588a48bbe5fb96f05c25d7">m_CellsAllocationMethod</a> {}</td></tr>
 <tr class="separator:a2429be4077588a48bbe5fb96f05c25d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VDimension = 3, typename TMeshTraits = DefaultStaticMeshTraits&lt;TPixelType, VDimension, VDimension&gt;&gt;<br />
-class itk::Mesh&lt; TPixelType, VDimension, TMeshTraits &gt;</div><p >Implements the N-dimensional mesh structure. </p>
-<dl class="section user"><dt>Overview</dt><dd><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> implements the N-dimensional mesh structure for ITK. It provides an API to perform operations on points, cells, boundaries, etc., but does not tie down the underlying implementation and storage. A "MeshTraits" structure is used to define the container and identifier types that will be used to access the mesh. See <a class="el" href="classitk_1_1DefaultStaticMeshTraits.html">DefaultStaticMeshTraits</a> for the set of type definitions needed. All types that are defined in the "MeshTraits" structure will have duplicate type alias in the resulting mesh itself.</dd></dl>
-<p><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> is an adaptive, evolving structure. Typically points and cells are created, with the cells referring to their defining points. If additional topological information is required, then <a class="el" href="classitk_1_1Mesh.html#a61fc489e16da27646a1020e2abd9492a">BuildCellLinks()</a> is called and links from the points back to the cells that use them are created. This allows implicit topological information about the faces and edges of the cells to be determined. (For example, a "face" neighbor to a cell can be determined by intersection the sets of cells that use the points defining the face. This is an inherent assumption on the manifold relationship of the cells in the mesh.) In some cases, either because the mesh is non-manifold, because we wish to explicitly store information with the faces and edges of the mesh, or because performance requirements demand that boundaries are explicitly represented (the set intersection does not need to be performed); then <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> can be further extended by adding explicit boundary assignments.</p>
-<dl class="section user"><dt>Usage</dt><dd><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> has three template parameters. The first is the pixel type, or the type of data stored (optionally) with points, cells, and/or boundaries. The second is the geometric dimension of the points defining the mesh. This also limits the maximum topological dimension of the cells that can be inserted. The third template parameter is the "MeshTraits" structure controlling type information for the mesh. Most users will be happy with the defaults, and will not have to worry about this third argument.</dd></dl>
-<p>One of the most important parts of using this mesh is how to create cells to insert into it. The cells for the mesh take two template parameters. The first is the pixel type, and should correspond exactly to that type given to the mesh. The second is a "CellTraits" which holds a sub-set of the "MeshTraits" structure definitions, and is also a member of them. Any cell which is to be inserted to a mesh should have MeshTraits::CellTraits as its second template parameter.</p>
-<p >Template parameters for <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a>:</p>
-<p >TPixelType = The type stored as data for an entity (cell, point, or boundary).</p>
-<p >TMeshTraits = Type information structure for the mesh.</p>
-<dl class="section user"><dt>References</dt><dd>No reference information is available.</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMesh_8h_source.html#l00126">126</a> of file <a class="el" href="itkMesh_8h_source.html">itkMesh.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5589f77bf3258e9ecfb7d1f7608c47d8" name="a5589f77bf3258e9ecfb7d1f7608c47d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5589f77bf3258e9ecfb7d1f7608c47d8">&#9670;&nbsp;</a></span>BoundaryAssignmentsContainer</h2>
 

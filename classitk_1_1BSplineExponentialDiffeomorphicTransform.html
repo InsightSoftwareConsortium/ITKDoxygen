@@ -95,7 +95,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineExponentialDiffeomorphicTransform_8h_source.html">itkBSplineExponentialDiffeomorphicTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
+class itk::BSplineExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;</div><p >Exponential transform using B-splines as the smoothing kernel. </p>
+<p >Exponential transform inspired by the work of J. Ashburner (see reference below). Assuming a constant velocity field, the transform takes as input the update field at time point t = 1, \(u\) and smooths it using a B-spline smoothing (i.e. fitting) operation, \(S_{update}\) defined by <code>SplineOrder</code> and <code>NumberOfControlPointsForTheUpdateField</code>. We add that the current estimate of the velocity field and then perform a second smoothing step such that the new velocity field is</p>
+<p class="formulaDsp">
+\begin{eqnarray*} v_{new} = S_{velocity}( v_{old} + S_{update}( u ) ). \end{eqnarray*}
+</p>
+<p >We then exponentiate \(v_{new}\) using the class <code>ExponentialDisplacementImageFilter</code> to yield both the forward and inverse displacement fields.</p>
+<ul>
+<li>J. Ashburner. A Fast Diffeomorphic <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration <a class="el" href="classAlgorithm.html" title="Algorithm or implementation used in the dilation/erosion operations.">Algorithm</a>. NeuroImage, 38(1):95-113, 2007.</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineExponentialDiffeomorphicTransform_8h_source.html#l00056">56</a> of file <a class="el" href="itkBSplineExponentialDiffeomorphicTransform_8h_source.html">itkBSplineExponentialDiffeomorphicTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -818,23 +834,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
-class itk::BSplineExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;</div><p >Exponential transform using B-splines as the smoothing kernel. </p>
-<p >Exponential transform inspired by the work of J. Ashburner (see reference below). Assuming a constant velocity field, the transform takes as input the update field at time point t = 1, \(u\) and smooths it using a B-spline smoothing (i.e. fitting) operation, \(S_{update}\) defined by <code>SplineOrder</code> and <code>NumberOfControlPointsForTheUpdateField</code>. We add that the current estimate of the velocity field and then perform a second smoothing step such that the new velocity field is</p>
-<p class="formulaDsp">
-\begin{eqnarray*} v_{new} = S_{velocity}( v_{old} + S_{update}( u ) ). \end{eqnarray*}
-</p>
-<p >We then exponentiate \(v_{new}\) using the class <code>ExponentialDisplacementImageFilter</code> to yield both the forward and inverse displacement fields.</p>
-<ul>
-<li>J. Ashburner. A Fast Diffeomorphic <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration <a class="el" href="classAlgorithm.html" title="Algorithm or implementation used in the dilation/erosion operations.">Algorithm</a>. NeuroImage, 38(1):95-113, 2007.</li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineExponentialDiffeomorphicTransform_8h_source.html#l00056">56</a> of file <a class="el" href="itkBSplineExponentialDiffeomorphicTransform_8h_source.html">itkBSplineExponentialDiffeomorphicTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a257a81d5a11342273fd8934baff4b4df" name="a257a81d5a11342273fd8934baff4b4df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a257a81d5a11342273fd8934baff4b4df">&#9670;&nbsp;</a></span>ArrayType</h2>
 

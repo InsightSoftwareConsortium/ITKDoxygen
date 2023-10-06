@@ -95,7 +95,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBayesianClassifierInitializationImageFilter_8h_source.html">itkBayesianClassifierInitializationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TProbabilityPrecisionType = float&gt;<br />
+class itk::BayesianClassifierInitializationImageFilter&lt; TInputImage, TProbabilityPrecisionType &gt;</div><p >This filter is intended to be used as a helper class to initialize the <a class="el" href="classitk_1_1BayesianClassifierImageFilter.html" title="Performs Bayesian Classification on an image.">BayesianClassifierImageFilter</a>. </p>
+<dl class="section user"><dt></dt><dd>The goal of this filter is to generate a membership image that indicates the membership of each pixel to each class. These membership images are fed as input to the Bayesian classifier filter.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>Number of classes: This defines the number of classes, which will determine the number of membership images that will be generated. The user must specify this.</dd></dl>
+<dl class="section user"><dt></dt><dd>Membership functions: The user can optionally plugin in any membership function. The number of membership functions plugged in should be the same as the number of classes. If the user does not supply membership functions, the filter will generate membership functions for you. These functions are Gaussian density functions centered around 'n' pixel intensity values, \( I_k \). These 'n' values are obtained by running K-means on the image. In other words, the default behaviour of the filter is to generate Gaussian mixture model for the input image.</dd></dl>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>The filter takes a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> as input and generates a <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a>, each component \( c \) of which represents memberships of each pixel to the class \( c \).</dd></dl>
+<dl class="section user"><dt>Template parameters</dt><dd>This filter is templated over the input image type and the data type used to represent the probabilities (defaults to float).</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>John Melonakos, Georgia Tech</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This work is part of the National Alliance for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing (NAMIC), funded by the National Institutes of Health through the NIH Roadmap for Medical Research, Grant U54 EB005149.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BayesianClassifierImageFilter.html" title="Performs Bayesian Classification on an image.">BayesianClassifierImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBayesianClassifierInitializationImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkBayesianClassifierInitializationImageFilter_8h_source.html">itkBayesianClassifierInitializationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BayesianClassifierInitializationImageFilter&lt; TInputImage, TProbabilityPrecisionType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -759,22 +774,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TProbabilityPrecisionType = float&gt;<br />
-class itk::BayesianClassifierInitializationImageFilter&lt; TInputImage, TProbabilityPrecisionType &gt;</div><p >This filter is intended to be used as a helper class to initialize the <a class="el" href="classitk_1_1BayesianClassifierImageFilter.html" title="Performs Bayesian Classification on an image.">BayesianClassifierImageFilter</a>. </p>
-<dl class="section user"><dt></dt><dd>The goal of this filter is to generate a membership image that indicates the membership of each pixel to each class. These membership images are fed as input to the Bayesian classifier filter.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>Number of classes: This defines the number of classes, which will determine the number of membership images that will be generated. The user must specify this.</dd></dl>
-<dl class="section user"><dt></dt><dd>Membership functions: The user can optionally plugin in any membership function. The number of membership functions plugged in should be the same as the number of classes. If the user does not supply membership functions, the filter will generate membership functions for you. These functions are Gaussian density functions centered around 'n' pixel intensity values, \( I_k \). These 'n' values are obtained by running K-means on the image. In other words, the default behaviour of the filter is to generate Gaussian mixture model for the input image.</dd></dl>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>The filter takes a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> as input and generates a <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a>, each component \( c \) of which represents memberships of each pixel to the class \( c \).</dd></dl>
-<dl class="section user"><dt>Template parameters</dt><dd>This filter is templated over the input image type and the data type used to represent the probabilities (defaults to float).</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>John Melonakos, Georgia Tech</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This work is part of the National Alliance for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing (NAMIC), funded by the National Institutes of Health through the NIH Roadmap for Medical Research, Grant U54 EB005149.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BayesianClassifierImageFilter.html" title="Performs Bayesian Classification on an image.">BayesianClassifierImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBayesianClassifierInitializationImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkBayesianClassifierInitializationImageFilter_8h_source.html">itkBayesianClassifierInitializationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a97d91c7120fedf4b11933d0d8eade6f4" name="a97d91c7120fedf4b11933d0d8eade6f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97d91c7120fedf4b11933d0d8eade6f4">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

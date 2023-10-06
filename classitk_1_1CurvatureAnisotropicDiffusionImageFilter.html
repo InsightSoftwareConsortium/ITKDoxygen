@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCurvatureAnisotropicDiffusionImageFilter_8h_source.html">itkCurvatureAnisotropicDiffusionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::CurvatureAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs anisotropic diffusion on a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> using the modified curvature diffusion equation (MCDE). </p>
+<p >For detailed information on anisotropic diffusion and the MCDE see itkAnisotropicDiffusionFunction and itkCurvatureNDAnisotropicDiffusionFunction.</p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input and output to this filter must be a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> with numerical pixel types (float or double). A user defined type which correctly defines arithmetic operations with floating point accuracy should also give correct results.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>Please first read all the documentation found in <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Also see <a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a>.</dd></dl>
+<p>The default time step for this filter is set to the maximum theoretically stable value: 0.5 / 2^N, where N is the dimensionality of the image. For a 2D image, this means valid time steps are below 0.1250. For a 3D image, valid time steps are below 0.0625.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCurvatureAnisotropicDiffusionImageFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkCurvatureAnisotropicDiffusionImageFilter_8h_source.html">itkCurvatureAnisotropicDiffusionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CurvatureAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -959,21 +973,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::CurvatureAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs anisotropic diffusion on a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> using the modified curvature diffusion equation (MCDE). </p>
-<p >For detailed information on anisotropic diffusion and the MCDE see itkAnisotropicDiffusionFunction and itkCurvatureNDAnisotropicDiffusionFunction.</p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input and output to this filter must be a scalar <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> with numerical pixel types (float or double). A user defined type which correctly defines arithmetic operations with floating point accuracy should also give correct results.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>Please first read all the documentation found in <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Also see <a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a>.</dd></dl>
-<p>The default time step for this filter is set to the maximum theoretically stable value: 0.5 / 2^N, where N is the dimensionality of the image. For a 2D image, this means valid time steps are below 0.1250. For a 3D image, valid time steps are below 0.0625.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCurvatureAnisotropicDiffusionImageFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkCurvatureAnisotropicDiffusionImageFilter_8h_source.html">itkCurvatureAnisotropicDiffusionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae8d8a562afe37e7fac1bf494bc6f9cf5" name="ae8d8a562afe37e7fac1bf494bc6f9cf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8d8a562afe37e7fac1bf494bc6f9cf5">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

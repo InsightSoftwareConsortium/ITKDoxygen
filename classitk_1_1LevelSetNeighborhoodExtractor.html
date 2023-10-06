@@ -96,7 +96,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetNeighborhoodExtractor_8h_source.html">itkLevelSetNeighborhoodExtractor.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLevelSet&gt;<br />
+class itk::LevelSetNeighborhoodExtractor&lt; TLevelSet &gt;</div><p >Locate pixels of a particular level set. </p>
+<p ><a class="el" href="classitk_1_1LevelSetNeighborhoodExtractor.html" title="Locate pixels of a particular level set.">LevelSetNeighborhoodExtractor</a> locates a particular level set in the input level set. Specifically, the method <a class="el" href="classitk_1_1LevelSetNeighborhoodExtractor.html#ae6cafdc2a0ef5f94fed6e31631efb8ab">Locate()</a> fills two containers: one containing pixels immediately inside the contour defined by the level set and the other containing pixels immediately outside. For each located pixel, an estimated distance to the particular level set is also calculated.</p>
+<p >The containers InsidePoints and OutsidePoints can then be used in <a class="el" href="classitk_1_1FastMarchingImageFilter.html" title="Solve an Eikonal equation using Fast Marching.">FastMarchingImageFilter</a> to produce a signed distance map from the specified level set.</p>
+<p >This class is templated over the image type representing the level set.</p>
+<p >This class supports narrowbanding. If a input narrowband is provided, the algorithm will only search pixels within the narrowband.</p>
+<p >Implementation of this class is based on Chapter 11 of "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Second edition, 1999. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetNeighborhoodExtractor_8h_source.html#l00057">57</a> of file <a class="el" href="itkLevelSetNeighborhoodExtractor_8h_source.html">itkLevelSetNeighborhoodExtractor.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetNeighborhoodExtractor&lt; TLevelSet &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -415,17 +425,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLevelSet&gt;<br />
-class itk::LevelSetNeighborhoodExtractor&lt; TLevelSet &gt;</div><p >Locate pixels of a particular level set. </p>
-<p ><a class="el" href="classitk_1_1LevelSetNeighborhoodExtractor.html" title="Locate pixels of a particular level set.">LevelSetNeighborhoodExtractor</a> locates a particular level set in the input level set. Specifically, the method <a class="el" href="classitk_1_1LevelSetNeighborhoodExtractor.html#ae6cafdc2a0ef5f94fed6e31631efb8ab">Locate()</a> fills two containers: one containing pixels immediately inside the contour defined by the level set and the other containing pixels immediately outside. For each located pixel, an estimated distance to the particular level set is also calculated.</p>
-<p >The containers InsidePoints and OutsidePoints can then be used in <a class="el" href="classitk_1_1FastMarchingImageFilter.html" title="Solve an Eikonal equation using Fast Marching.">FastMarchingImageFilter</a> to produce a signed distance map from the specified level set.</p>
-<p >This class is templated over the image type representing the level set.</p>
-<p >This class supports narrowbanding. If a input narrowband is provided, the algorithm will only search pixels within the narrowband.</p>
-<p >Implementation of this class is based on Chapter 11 of "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Second edition, 1999. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetNeighborhoodExtractor_8h_source.html#l00057">57</a> of file <a class="el" href="itkLevelSetNeighborhoodExtractor_8h_source.html">itkLevelSetNeighborhoodExtractor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af4cc7301f7165bbe86dd9960edc68d37" name="af4cc7301f7165bbe86dd9960edc68d37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4cc7301f7165bbe86dd9960edc68d37">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

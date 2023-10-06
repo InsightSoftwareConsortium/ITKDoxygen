@@ -97,7 +97,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGaussianExponentialDiffeomorphicTransform_8h_source.html">itkGaussianExponentialDiffeomorphicTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
+class itk::GaussianExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;</div><p >Exponential transform using a Gaussian smoothing kernel. </p>
+<p >Exponential transform inspired by the work of J. Ashburner (see reference below). Assuming a constant velocity field, the transform takes as input the update field at time point t = 1, \(u\) and smooths it using Gaussian smoothing, \(S_{update}\) defined by <code>GaussianSmoothingVarianceForTheUpdateField</code> We add that the current estimate of the velocity field and then perform a second smoothing step such that the new velocity field is</p>
+<p class="formulaDsp">
+\begin{eqnarray*} v_{new} = S_{velocity}( v_{old} + S_{update}( u ) ). \end{eqnarray*}
+</p>
+<p >We then exponentiate \(v_{new}\) using the class <code>ExponentialDisplacementImageFilter</code> to yield both the forward and inverse displacement fields.</p>
+<ul>
+<li>J. Ashburner. A Fast Diffeomorphic <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration <a class="el" href="classAlgorithm.html" title="Algorithm or implementation used in the dilation/erosion operations.">Algorithm</a>. NeuroImage, 38(1):95-113, 2007.</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGaussianExponentialDiffeomorphicTransform_8h_source.html#l00056">56</a> of file <a class="el" href="itkGaussianExponentialDiffeomorphicTransform_8h_source.html">itkGaussianExponentialDiffeomorphicTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GaussianExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -806,23 +822,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a29674d51c8788082894161ee309946c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Transform.html#adc5a4b50e6e4c5fa57123dd7ab373b42">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GaussianExponentialDiffeomorphicTransform.html#a29674d51c8788082894161ee309946c7">m_GaussianSmoothingVarianceForTheUpdateField</a> {}</td></tr>
 <tr class="separator:a29674d51c8788082894161ee309946c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
-class itk::GaussianExponentialDiffeomorphicTransform&lt; TParametersValueType, VDimension &gt;</div><p >Exponential transform using a Gaussian smoothing kernel. </p>
-<p >Exponential transform inspired by the work of J. Ashburner (see reference below). Assuming a constant velocity field, the transform takes as input the update field at time point t = 1, \(u\) and smooths it using Gaussian smoothing, \(S_{update}\) defined by <code>GaussianSmoothingVarianceForTheUpdateField</code> We add that the current estimate of the velocity field and then perform a second smoothing step such that the new velocity field is</p>
-<p class="formulaDsp">
-\begin{eqnarray*} v_{new} = S_{velocity}( v_{old} + S_{update}( u ) ). \end{eqnarray*}
-</p>
-<p >We then exponentiate \(v_{new}\) using the class <code>ExponentialDisplacementImageFilter</code> to yield both the forward and inverse displacement fields.</p>
-<ul>
-<li>J. Ashburner. A Fast Diffeomorphic <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration <a class="el" href="classAlgorithm.html" title="Algorithm or implementation used in the dilation/erosion operations.">Algorithm</a>. NeuroImage, 38(1):95-113, 2007.</li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGaussianExponentialDiffeomorphicTransform_8h_source.html#l00056">56</a> of file <a class="el" href="itkGaussianExponentialDiffeomorphicTransform_8h_source.html">itkGaussianExponentialDiffeomorphicTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a758054c73a13304f881cf4595d5941b6" name="a758054c73a13304f881cf4595d5941b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a758054c73a13304f881cf4595d5941b6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

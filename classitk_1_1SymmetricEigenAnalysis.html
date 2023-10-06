@@ -93,7 +93,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSymmetricEigenAnalysis_8h_source.html">itkSymmetricEigenAnalysis.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TMatrix, typename TVector, typename TEigenMatrix = TMatrix&gt;<br />
+class itk::SymmetricEigenAnalysis&lt; TMatrix, TVector, TEigenMatrix &gt;</div><p >Find Eigen values of a real 2D symmetric matrix. It serves as a thread-safe alternative to the class: vnl_symmetric_eigensystem, which uses netlib routines. </p>
+<p >The class is templated over the input matrix (which is expected to provide access to its elements with the [][] operator), matrix to store eigen values (must provide write operations on its elements with the [] operator), and EigenMatrix to store eigen vectors (must provide write access to its elements with the [][] operator).</p>
+<p >The <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a7940261268fb1ec182b94a5e4eebb345">SetOrderEigenValues()</a> method can be used to order eigen values (and their corresponding eigen vectors if computed) in ascending order. This is the default ordering scheme. Eigen vectors and values can be obtained without ordering by calling SetOrderEigenValues(false).</p>
+<p >The <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a01cf8d66b94ed4992154de9ec297e6ee">SetOrderEigenMagnitudes()</a> method can be used to order eigen values (and their corresponding eigen vectors if computed) by magnitude in ascending order.</p>
+<p >The user of this class is explicitly supposed to set the dimension of the 2D matrix using the <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a0e491bba952259d5f0f06fd1f5965959">SetDimension()</a> method.</p>
+<p >The class contains routines taken from netlib sources (www.netlib.org). netlib/tql1.c netlib/tql2.c netlib/tred1.c netlib/tred2.c</p>
+<p >Reference: num. math. 11, 293-306(1968) by bowdler, martin, reinsch, and wilkinson. handbook for auto. comp., vol.ii-linear algebra, 227-240(1971). </p>
+
+<p class="definition">Definition at line <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html#l00204">204</a> of file <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html">itkSymmetricEigenAnalysis.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ae9947646dd63b64b445defcb1ca72b93"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#ae9947646dd63b64b445defcb1ca72b93">EigenMatrixType</a> = TEigenMatrix</td></tr>
@@ -194,18 +205,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a825051ab00b9b7808dd04b673d36c757"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a825051ab00b9b7808dd04b673d36c757">m_UseEigenLibrary</a> { false }</td></tr>
 <tr class="separator:a825051ab00b9b7808dd04b673d36c757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TMatrix, typename TVector, typename TEigenMatrix = TMatrix&gt;<br />
-class itk::SymmetricEigenAnalysis&lt; TMatrix, TVector, TEigenMatrix &gt;</div><p >Find Eigen values of a real 2D symmetric matrix. It serves as a thread-safe alternative to the class: vnl_symmetric_eigensystem, which uses netlib routines. </p>
-<p >The class is templated over the input matrix (which is expected to provide access to its elements with the [][] operator), matrix to store eigen values (must provide write operations on its elements with the [] operator), and EigenMatrix to store eigen vectors (must provide write access to its elements with the [][] operator).</p>
-<p >The <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a7940261268fb1ec182b94a5e4eebb345">SetOrderEigenValues()</a> method can be used to order eigen values (and their corresponding eigen vectors if computed) in ascending order. This is the default ordering scheme. Eigen vectors and values can be obtained without ordering by calling SetOrderEigenValues(false).</p>
-<p >The <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a01cf8d66b94ed4992154de9ec297e6ee">SetOrderEigenMagnitudes()</a> method can be used to order eigen values (and their corresponding eigen vectors if computed) by magnitude in ascending order.</p>
-<p >The user of this class is explicitly supposed to set the dimension of the 2D matrix using the <a class="el" href="classitk_1_1SymmetricEigenAnalysis.html#a0e491bba952259d5f0f06fd1f5965959">SetDimension()</a> method.</p>
-<p >The class contains routines taken from netlib sources (www.netlib.org). netlib/tql1.c netlib/tql2.c netlib/tred1.c netlib/tred2.c</p>
-<p >Reference: num. math. 11, 293-306(1968) by bowdler, martin, reinsch, and wilkinson. handbook for auto. comp., vol.ii-linear algebra, 227-240(1971). </p>
-
-<p class="definition">Definition at line <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html#l00204">204</a> of file <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html">itkSymmetricEigenAnalysis.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae9947646dd63b64b445defcb1ca72b93" name="ae9947646dd63b64b445defcb1ca72b93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9947646dd63b64b445defcb1ca72b93">&#9670;&nbsp;</a></span>EigenMatrixType</h2>
 

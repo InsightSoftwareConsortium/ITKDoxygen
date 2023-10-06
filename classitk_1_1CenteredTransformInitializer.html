@@ -95,7 +95,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCenteredTransformInitializer_8h_source.html">itkCenteredTransformInitializer.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform, typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::CenteredTransformInitializer&lt; TTransform, TFixedImage, TMovingImage &gt;</div><p ><a class="el" href="classitk_1_1CenteredTransformInitializer.html" title="CenteredTransformInitializer is a helper class intended to initialize the center of rotation and the ...">CenteredTransformInitializer</a> is a helper class intended to initialize the center of rotation and the translation of Transforms having the center of rotation among their parameters. </p>
+<p >This class is connected to the fixed image, moving image and transform involved in the registration. Two modes of operation are possible:</p>
+<ul>
+<li>Geometrical,</li>
+<li>Center of mass</li>
+</ul>
+<p >In the first mode, the geometrical center of the moving image is passed as initial center of rotation to the transform and the vector from the center of the fixed image to the center of the moving image is passed as the initial translation. This mode basically assumes that the anatomical objects to be registered are centered in their respective images. Hence the best initial guess for the registration is the one that superimposes those two centers.</p>
+<p >In the second mode, the moments of gray level values are computed for both images. The center of mass of the moving image is then used as center of rotation. The vector between the two centers of mass is passes as the initial translation to the transform. This second approach assumes that the moments of the anatomical objects are similar for both images and hence the best initial guess for registration is to superimpose both mass centers. Note that this assumption will probably not hold in multi-modality registration. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCenteredTransformInitializer_8h_source.html#l00061">61</a> of file <a class="el" href="itkCenteredTransformInitializer_8h_source.html">itkCenteredTransformInitializer.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CenteredTransformInitializer&lt; TTransform, TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -346,19 +358,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform, typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::CenteredTransformInitializer&lt; TTransform, TFixedImage, TMovingImage &gt;</div><p ><a class="el" href="classitk_1_1CenteredTransformInitializer.html" title="CenteredTransformInitializer is a helper class intended to initialize the center of rotation and the ...">CenteredTransformInitializer</a> is a helper class intended to initialize the center of rotation and the translation of Transforms having the center of rotation among their parameters. </p>
-<p >This class is connected to the fixed image, moving image and transform involved in the registration. Two modes of operation are possible:</p>
-<ul>
-<li>Geometrical,</li>
-<li>Center of mass</li>
-</ul>
-<p >In the first mode, the geometrical center of the moving image is passed as initial center of rotation to the transform and the vector from the center of the fixed image to the center of the moving image is passed as the initial translation. This mode basically assumes that the anatomical objects to be registered are centered in their respective images. Hence the best initial guess for the registration is the one that superimposes those two centers.</p>
-<p >In the second mode, the moments of gray level values are computed for both images. The center of mass of the moving image is then used as center of rotation. The vector between the two centers of mass is passes as the initial translation to the transform. This second approach assumes that the moments of the anatomical objects are similar for both images and hence the best initial guess for registration is to superimpose both mass centers. Note that this assumption will probably not hold in multi-modality registration. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCenteredTransformInitializer_8h_source.html#l00061">61</a> of file <a class="el" href="itkCenteredTransformInitializer_8h_source.html">itkCenteredTransformInitializer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a55b04e1065677b65e51d81f64bc3732b" name="a55b04e1065677b65e51d81f64bc3732b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55b04e1065677b65e51d81f64bc3732b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

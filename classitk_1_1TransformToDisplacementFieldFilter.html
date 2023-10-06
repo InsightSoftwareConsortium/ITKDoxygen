@@ -95,7 +95,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTransformToDisplacementFieldFilter_8h_source.html">itkTransformToDisplacementFieldFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputImage, typename TParametersValueType = double&gt;<br />
+class itk::TransformToDisplacementFieldFilter&lt; TOutputImage, TParametersValueType &gt;</div><p >Generate a displacement field from a coordinate transform. </p>
+<p >Output information (spacing, size and direction) for the output image should be set. This information has the normal defaults of unit spacing, zero origin and identity direction. Optionally, the output information can be obtained from a reference image. If the reference image is provided and UseReferenceImage is On, then the spacing, origin and direction of the reference image will be used.</p>
+<p >Since this filter produces an image which is a different size than its input, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
+<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> method for its implementation.</p>
+<dl class="section author"><dt>Author</dt><dd>Marius Staring, Leiden University Medical Center, The Netherlands.</dd></dl>
+<p>This class was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/240">https://www.insight-journal.org/browse/publication/240</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkTransformToDisplacementFieldFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkTransformToDisplacementFieldFilter_8h_source.html">itkTransformToDisplacementFieldFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TransformToDisplacementFieldFilter&lt; TOutputImage, TParametersValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -718,17 +728,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputImage, typename TParametersValueType = double&gt;<br />
-class itk::TransformToDisplacementFieldFilter&lt; TOutputImage, TParametersValueType &gt;</div><p >Generate a displacement field from a coordinate transform. </p>
-<p >Output information (spacing, size and direction) for the output image should be set. This information has the normal defaults of unit spacing, zero origin and identity direction. Optionally, the output information can be obtained from a reference image. If the reference image is provided and UseReferenceImage is On, then the spacing, origin and direction of the reference image will be used.</p>
-<p >Since this filter produces an image which is a different size than its input, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
-<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> method for its implementation.</p>
-<dl class="section author"><dt>Author</dt><dd>Marius Staring, Leiden University Medical Center, The Netherlands.</dd></dl>
-<p>This class was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/240">https://www.insight-journal.org/browse/publication/240</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkTransformToDisplacementFieldFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkTransformToDisplacementFieldFilter_8h_source.html">itkTransformToDisplacementFieldFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abebb2b0142b888044d2716b8f8cbcfce" name="abebb2b0142b888044d2716b8f8cbcfce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abebb2b0142b888044d2716b8f8cbcfce">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

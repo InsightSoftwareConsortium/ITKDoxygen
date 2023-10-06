@@ -93,7 +93,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageScanlineConstIterator_8h_source.html">itkImageScanlineConstIterator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::ImageScanlineConstIterator&lt; TImage &gt;</div><p >A multi-dimensional iterator templated over image type that walks a region of pixels, scanline by scanline or in the direction of the fastest axis. </p>
+<p >The <a class="el" href="classitk_1_1ImageScanlineConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels,...">itk::ImageScanlineConstIterator</a> is optimized for iteration speed and is the first choice for pixel-wise operations on an image. This iterator is preferred over the older <a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> even when knowledge of the current line state is not desired because of its speed.</p>
+<p >The following is sample usage:</p>
+<div class="fragment"><div class="line">it = <a class="code hl_function" href="classitk_1_1ImageScanlineConstIterator.html#a6934985a679abaabdd0d90faf65464fb">ImageScanlineConstIterator</a>()</div>
+<div class="line">while ( !it.<a class="code hl_function" href="classitk_1_1ImageConstIterator.html#a8c3a49445f2382a81df29d1647a15662">IsAtEnd</a>() )</div>
+<div class="line">  {</div>
+<div class="line">  <span class="keywordflow">while</span> ( !it.IsAtEndOfLine() )</div>
+<div class="line">    {</div>
+<div class="line">    *it += 100.0;</div>
+<div class="line">    ++it;</div>
+<div class="line">    }</div>
+<div class="line">   it.NextLine();</div>
+<div class="line">   }</div>
+<div class="ttc" id="aclassitk_1_1ImageConstIterator_html_a8c3a49445f2382a81df29d1647a15662"><div class="ttname"><a href="classitk_1_1ImageConstIterator.html#a8c3a49445f2382a81df29d1647a15662">itk::ImageConstIterator::IsAtEnd</a></div><div class="ttdeci">bool IsAtEnd() const</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIterator_8h_source.html#l00377">itkImageConstIterator.h:377</a></div></div>
+<div class="ttc" id="aclassitk_1_1ImageScanlineConstIterator_html_a6934985a679abaabdd0d90faf65464fb"><div class="ttname"><a href="classitk_1_1ImageScanlineConstIterator.html#a6934985a679abaabdd0d90faf65464fb">itk::ImageScanlineConstIterator::ImageScanlineConstIterator</a></div><div class="ttdeci">ImageScanlineConstIterator()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageScanlineConstIterator_8h_source.html#l00098">itkImageScanlineConstIterator.h:98</a></div></div>
+</div><!-- fragment --><p >Iterating beyond the end of a line results it undefined behavior.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageScanlineIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels,...">ImageScanlineIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageScanlineConstIterator_8h_source.html#l00064">64</a> of file <a class="el" href="itkImageScanlineConstIterator_8h_source.html">itkImageScanlineConstIterator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageScanlineConstIterator&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -283,32 +308,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac03c7998a048cb73e8d881010418c30c inherit pub_static_methods_classitk_1_1ImageConstIterator"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageConstIterator.html#ac03c7998a048cb73e8d881010418c30c">GetImageIteratorDimension</a> ()</td></tr>
 <tr class="separator:ac03c7998a048cb73e8d881010418c30c inherit pub_static_methods_classitk_1_1ImageConstIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::ImageScanlineConstIterator&lt; TImage &gt;</div><p >A multi-dimensional iterator templated over image type that walks a region of pixels, scanline by scanline or in the direction of the fastest axis. </p>
-<p >The <a class="el" href="classitk_1_1ImageScanlineConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels,...">itk::ImageScanlineConstIterator</a> is optimized for iteration speed and is the first choice for pixel-wise operations on an image. This iterator is preferred over the older <a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> even when knowledge of the current line state is not desired because of its speed.</p>
-<p >The following is sample usage:</p>
-<div class="fragment"><div class="line">it = <a class="code hl_function" href="classitk_1_1ImageScanlineConstIterator.html#a6934985a679abaabdd0d90faf65464fb">ImageScanlineConstIterator</a>()</div>
-<div class="line">while ( !it.<a class="code hl_function" href="classitk_1_1ImageConstIterator.html#a8c3a49445f2382a81df29d1647a15662">IsAtEnd</a>() )</div>
-<div class="line">  {</div>
-<div class="line">  <span class="keywordflow">while</span> ( !it.IsAtEndOfLine() )</div>
-<div class="line">    {</div>
-<div class="line">    *it += 100.0;</div>
-<div class="line">    ++it;</div>
-<div class="line">    }</div>
-<div class="line">   it.NextLine();</div>
-<div class="line">   }</div>
-<div class="ttc" id="aclassitk_1_1ImageConstIterator_html_a8c3a49445f2382a81df29d1647a15662"><div class="ttname"><a href="classitk_1_1ImageConstIterator.html#a8c3a49445f2382a81df29d1647a15662">itk::ImageConstIterator::IsAtEnd</a></div><div class="ttdeci">bool IsAtEnd() const</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIterator_8h_source.html#l00377">itkImageConstIterator.h:377</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageScanlineConstIterator_html_a6934985a679abaabdd0d90faf65464fb"><div class="ttname"><a href="classitk_1_1ImageScanlineConstIterator.html#a6934985a679abaabdd0d90faf65464fb">itk::ImageScanlineConstIterator::ImageScanlineConstIterator</a></div><div class="ttdeci">ImageScanlineConstIterator()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageScanlineConstIterator_8h_source.html#l00098">itkImageScanlineConstIterator.h:98</a></div></div>
-</div><!-- fragment --><p >Iterating beyond the end of a line results it undefined behavior.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageScanlineIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels,...">ImageScanlineIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageScanlineConstIterator_8h_source.html#l00064">64</a> of file <a class="el" href="itkImageScanlineConstIterator_8h_source.html">itkImageScanlineConstIterator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9edac4c7d462edf1dfbd0ddb56d68a89" name="a9edac4c7d462edf1dfbd0ddb56d68a89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9edac4c7d462edf1dfbd0ddb56d68a89">&#9670;&nbsp;</a></span>AccessorType</h2>
 
@@ -417,7 +417,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >PixelContainer type alias support. Used to refer to the container for the pixel data. While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
+<p >PixelContainer type alias support. Used to refer to the container for the pixel data. While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageConstIterator_8h_source.html#l00117">117</a> of file <a class="el" href="itkImageConstIterator_8h_source.html">itkImageConstIterator.h</a>.</p>
 

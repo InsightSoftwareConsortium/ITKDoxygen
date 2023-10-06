@@ -95,7 +95,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAdaptiveHistogramEqualizationImageFilter_8h_source.html">itkAdaptiveHistogramEqualizationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TKernel = Neighborhood&lt;bool, TImageType::ImageDimension&gt;&gt;<br />
+class itk::AdaptiveHistogramEqualizationImageFilter&lt; TImageType, TKernel &gt;</div><p >Power Law Adaptive Histogram Equalization. </p>
+<p >Histogram equalization modifies the contrast in an image. The <a class="el" href="classitk_1_1AdaptiveHistogramEqualizationImageFilter.html" title="Power Law Adaptive Histogram Equalization.">AdaptiveHistogramEqualizationImageFilter</a> is a superset of many contrast enhancing filters. By modifying its parameters (alpha, beta, and window), the <a class="el" href="classitk_1_1AdaptiveHistogramEqualizationImageFilter.html" title="Power Law Adaptive Histogram Equalization.">AdaptiveHistogramEqualizationImageFilter</a> can produce an adaptively equalized histogram or a version of unsharp mask (local mean subtraction). Instead of applying a strict histogram equalization in a window about a pixel, this filter prescribes a mapping function (power law) controlled by the parameters alpha and beta.</p>
+<p >The parameter alpha controls how much the filter acts like the classical histogram equalization method (alpha=0) to how much the filter acts like an unsharp mask (alpha=1).</p>
+<p >The parameter beta controls how much the filter acts like an unsharp mask (beta=0) to much the filter acts like pass through (beta=1, with alpha=1).</p>
+<p >The parameter window controls the size of the region over which local statistics are calculated. The size of the window is controlled by SetRadius &ndash; the default Radius is 5 in all directions.</p>
+<p >By altering alpha, beta and window, a host of equalization and unsharp masking filters is available.</p>
+<p >The boundary condition ignores the part of the neighborhood outside the image, and over-weights the valid part of the neighborhood.</p>
+<p >For detail description, reference "Adaptive Image Contrast
+Enhancement using Generalizations of Histogram Equalization." J.Alex Stark. IEEE Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, May 2000.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkAdaptiveHistogramEqualizationImageFilter_8h_source.html#l00071">71</a> of file <a class="el" href="itkAdaptiveHistogramEqualizationImageFilter_8h_source.html">itkAdaptiveHistogramEqualizationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AdaptiveHistogramEqualizationImageFilter&lt; TImageType, TKernel &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -972,25 +990,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TKernel = Neighborhood&lt;bool, TImageType::ImageDimension&gt;&gt;<br />
-class itk::AdaptiveHistogramEqualizationImageFilter&lt; TImageType, TKernel &gt;</div><p >Power Law Adaptive Histogram Equalization. </p>
-<p >Histogram equalization modifies the contrast in an image. The <a class="el" href="classitk_1_1AdaptiveHistogramEqualizationImageFilter.html" title="Power Law Adaptive Histogram Equalization.">AdaptiveHistogramEqualizationImageFilter</a> is a superset of many contrast enhancing filters. By modifying its parameters (alpha, beta, and window), the <a class="el" href="classitk_1_1AdaptiveHistogramEqualizationImageFilter.html" title="Power Law Adaptive Histogram Equalization.">AdaptiveHistogramEqualizationImageFilter</a> can produce an adaptively equalized histogram or a version of unsharp mask (local mean subtraction). Instead of applying a strict histogram equalization in a window about a pixel, this filter prescribes a mapping function (power law) controlled by the parameters alpha and beta.</p>
-<p >The parameter alpha controls how much the filter acts like the classical histogram equalization method (alpha=0) to how much the filter acts like an unsharp mask (alpha=1).</p>
-<p >The parameter beta controls how much the filter acts like an unsharp mask (beta=0) to much the filter acts like pass through (beta=1, with alpha=1).</p>
-<p >The parameter window controls the size of the region over which local statistics are calculated. The size of the window is controlled by SetRadius &ndash; the default Radius is 5 in all directions.</p>
-<p >By altering alpha, beta and window, a host of equalization and unsharp masking filters is available.</p>
-<p >The boundary condition ignores the part of the neighborhood outside the image, and over-weights the valid part of the neighborhood.</p>
-<p >For detail description, reference "Adaptive Image Contrast
-Enhancement using Generalizations of Histogram Equalization." J.Alex Stark. IEEE Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, May 2000.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkAdaptiveHistogramEqualizationImageFilter_8h_source.html#l00071">71</a> of file <a class="el" href="itkAdaptiveHistogramEqualizationImageFilter_8h_source.html">itkAdaptiveHistogramEqualizationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af75466e3d4dcab0837fdc15053423e85" name="af75466e3d4dcab0837fdc15053423e85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af75466e3d4dcab0837fdc15053423e85">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

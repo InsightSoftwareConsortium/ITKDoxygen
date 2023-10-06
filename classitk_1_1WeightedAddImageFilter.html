@@ -95,7 +95,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWeightedAddImageFilter_8h_source.html">itkWeightedAddImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2, typename TOutputImage&gt;<br />
+class itk::WeightedAddImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;</div><p >Computes a weighted sum of two images pixel-wise. </p>
+<p >This class is templated over the types of the two input images and the type of the output image. Numeric conversions (castings) are done by the C++ defaults.</p>
+<p >The pixel type of the input 1 image must have a valid definition of the operator+ with a pixel type of the image 2. This condition is required because internally this filter will perform the operation</p>
+<div class="fragment"><div class="line">pixel_from_image_1 * alpha +  pixel_from_image_2 * (1.0 - alpha)</div>
+</div><!-- fragment --><p >Additionally the type resulting from the sum will be cast to the pixel type of the output image.</p>
+<p >The total operation over one pixel will be</p>
+<div class="fragment"><div class="line">output_pixel = <span class="keyword">static_cast&lt;</span>OutputPixelType<span class="keyword">&gt;</span>(</div>
+<div class="line">    input1_pixel * alpha + input2_pixel * (1-alpha) )</div>
+</div><!-- fragment --><p >The alpha parameter is set using SetAlpha.</p>
+<dl class="section warning"><dt>Warning</dt><dd>No numeric overflow checking is performed in this filter. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkWeightedAddImageFilter_8h_source.html#l00117">117</a> of file <a class="el" href="itkWeightedAddImageFilter_8h_source.html">itkWeightedAddImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::WeightedAddImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -871,21 +885,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2, typename TOutputImage&gt;<br />
-class itk::WeightedAddImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;</div><p >Computes a weighted sum of two images pixel-wise. </p>
-<p >This class is templated over the types of the two input images and the type of the output image. Numeric conversions (castings) are done by the C++ defaults.</p>
-<p >The pixel type of the input 1 image must have a valid definition of the operator+ with a pixel type of the image 2. This condition is required because internally this filter will perform the operation</p>
-<div class="fragment"><div class="line">pixel_from_image_1 * alpha +  pixel_from_image_2 * (1.0 - alpha)</div>
-</div><!-- fragment --><p >Additionally the type resulting from the sum will be cast to the pixel type of the output image.</p>
-<p >The total operation over one pixel will be</p>
-<div class="fragment"><div class="line">output_pixel = <span class="keyword">static_cast&lt;</span>OutputPixelType<span class="keyword">&gt;</span>(</div>
-<div class="line">    input1_pixel * alpha + input2_pixel * (1-alpha) )</div>
-</div><!-- fragment --><p >The alpha parameter is set using SetAlpha.</p>
-<dl class="section warning"><dt>Warning</dt><dd>No numeric overflow checking is performed in this filter. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkWeightedAddImageFilter_8h_source.html#l00117">117</a> of file <a class="el" href="itkWeightedAddImageFilter_8h_source.html">itkWeightedAddImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad5316d357b971714e8f5536f1b6e9f75" name="ad5316d357b971714e8f5536f1b6e9f75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5316d357b971714e8f5536f1b6e9f75">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

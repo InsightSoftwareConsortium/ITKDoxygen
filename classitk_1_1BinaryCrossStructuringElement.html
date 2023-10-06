@@ -92,7 +92,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBinaryCrossStructuringElement_8h_source.html">itkBinaryCrossStructuringElement.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
+class itk::BinaryCrossStructuringElement&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> that represents a cross structuring element with binary elements. </p>
+<p >This class defines a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> whose elements are either on or off depending on whether they are the face connected neighbors of the neighborhood center when the radii are all 1. The neighborhood is a cross for any size radius. By default, the <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> is defined to be of radii 1 (i.e. 3x3x...). This can be changed explicitly using the <a class="el" href="classitk_1_1Neighborhood.html#aaaca932400993b5d5faf6448dfd856bf">SetRadius()</a> method.</p>
+<p >Internally, this class carries out all of its computations using the <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. It is preferable to use that class instead of this one because <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a> is more flexible.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBinaryCrossStructuringElement_8h_source.html#l00052">52</a> of file <a class="el" href="itkBinaryCrossStructuringElement_8h_source.html">itkBinaryCrossStructuringElement.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BinaryCrossStructuringElement&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -269,21 +283,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3d1399473e4315314191cbdd12e0fc7e inherit pro_methods_classitk_1_1Neighborhood"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Neighborhood.html#a3d1399473e4315314191cbdd12e0fc7e">SetSize</a> ()</td></tr>
 <tr class="separator:a3d1399473e4315314191cbdd12e0fc7e inherit pro_methods_classitk_1_1Neighborhood"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
-class itk::BinaryCrossStructuringElement&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> that represents a cross structuring element with binary elements. </p>
-<p >This class defines a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> whose elements are either on or off depending on whether they are the face connected neighbors of the neighborhood center when the radii are all 1. The neighborhood is a cross for any size radius. By default, the <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> is defined to be of radii 1 (i.e. 3x3x...). This can be changed explicitly using the <a class="el" href="classitk_1_1Neighborhood.html#aaaca932400993b5d5faf6448dfd856bf">SetRadius()</a> method.</p>
-<p >Internally, this class carries out all of its computations using the <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. It is preferable to use that class instead of this one because <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a> is more flexible.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBinaryCrossStructuringElement_8h_source.html#l00052">52</a> of file <a class="el" href="itkBinaryCrossStructuringElement_8h_source.html">itkBinaryCrossStructuringElement.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae5886f0ce4e10aee5584084b8348c64d" name="ae5886f0ce4e10aee5584084b8348c64d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5886f0ce4e10aee5584084b8348c64d">&#9670;&nbsp;</a></span>AllocatorType</h2>
 

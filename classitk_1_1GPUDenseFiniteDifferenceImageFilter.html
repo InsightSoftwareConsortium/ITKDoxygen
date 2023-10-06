@@ -94,7 +94,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGPUDenseFiniteDifferenceImageFilter_8h_source.html">itkGPUDenseFiniteDifferenceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TParentImageFilter = DenseFiniteDifferenceImageFilter&lt;TInputImage, TOutputImage&gt;&gt;<br />
+class itk::GPUDenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, TParentImageFilter &gt;</div><p >This is the GPU version of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> class. Currently only single-threaded, single GPU version is implemented. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
+<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
+<dl class="section user"><dt></dt><dd>This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#af37df94eedd61eabf8b5970f0fdbfc70">GPUCalculateChange()</a> and <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a1364c63b629269412d7b157e119e11d3">GPUApplyUpdate()</a>, which are GPU version of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a771aa6ee570baf00b4af42e19a260da5">ApplyUpdate()</a>.</dd></dl>
+<p>Use m_UpdateBuffer defined in CPU superclass (<a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>).</p>
+<dl class="section user"><dt>How to use this class</dt><dd>This filter can be used as a base class for GPU implementation of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGPUDenseFiniteDifferenceImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkGPUDenseFiniteDifferenceImageFilter_8h_source.html">itkGPUDenseFiniteDifferenceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GPUDenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, TParentImageFilter &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1140,16 +1149,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TParentImageFilter = DenseFiniteDifferenceImageFilter&lt;TInputImage, TOutputImage&gt;&gt;<br />
-class itk::GPUDenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage, TParentImageFilter &gt;</div><p >This is the GPU version of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> class. Currently only single-threaded, single GPU version is implemented. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
-<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
-<dl class="section user"><dt></dt><dd>This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#af37df94eedd61eabf8b5970f0fdbfc70">GPUCalculateChange()</a> and <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a1364c63b629269412d7b157e119e11d3">GPUApplyUpdate()</a>, which are GPU version of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and <a class="el" href="classitk_1_1GPUDenseFiniteDifferenceImageFilter.html#a771aa6ee570baf00b4af42e19a260da5">ApplyUpdate()</a>.</dd></dl>
-<p>Use m_UpdateBuffer defined in CPU superclass (<a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>).</p>
-<dl class="section user"><dt>How to use this class</dt><dd>This filter can be used as a base class for GPU implementation of <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGPUDenseFiniteDifferenceImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkGPUDenseFiniteDifferenceImageFilter_8h_source.html">itkGPUDenseFiniteDifferenceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4264e0b4ddbd4399c08f274ae3559b0e" name="a4264e0b4ddbd4399c08f274ae3559b0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4264e0b4ddbd4399c08f274ae3559b0e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

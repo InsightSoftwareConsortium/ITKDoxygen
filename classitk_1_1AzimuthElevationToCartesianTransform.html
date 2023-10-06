@@ -95,7 +95,33 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAzimuthElevationToCartesianTransform_8h_source.html">itkAzimuthElevationToCartesianTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VDimension = 3&gt;<br />
+class itk::AzimuthElevationToCartesianTransform&lt; TParametersValueType, VDimension &gt;</div><p >Transforms from an azimuth, elevation, radius coordinate system to a Cartesian coordinate system, or vice versa. </p>
+<p >The three coordinate axis are azimuth, elevation, and range.</p>
+<p >The azimuth elevation coordinate system is defined similarly to spherical coordinates but is slightly different in that the azimuth and elevation are measured in degrees between the r-axis (i.e z axis) and the projection on the x-z and y-z planes, respectively. Range, or r, is the distance from the origin.</p>
+<p >The equations form performing the conversion from azimuth-elevation coordinates to cartesian coordinates are as follows: </p><div class="fragment"><div class="line">z = std::sqrt((r^2*(cos(azimuth))^2)/(1 + (cos(azimuth))^2 * (tan(elevation))^2);</div>
+<div class="line">x = z * std::tan(azimuth)</div>
+<div class="line">y = z * std::tan(elevation)</div>
+</div><!-- fragment --><p >The reversed transforms are: </p><div class="fragment"><div class="line">azimuth = arctan(x/y)</div>
+<div class="line">elevation = arctan(y/z)</div>
+<div class="line">r = std::sqrt(x^2 + y^2 + z^2)</div>
+</div><!-- fragment --><p >In this class, we can also set what a "forward" transform means. If we call <a class="el" href="classitk_1_1AzimuthElevationToCartesianTransform.html#aac55bd5672cf00465dee0460679c5fe3">SetForwardAzimuthElevationToCartesian()</a>, a forward transform will return cartesian coordinates when passed azimuth,elevation,r coordinates. Calling <a class="el" href="classitk_1_1AzimuthElevationToCartesianTransform.html#aa3399d32a75bc562551db99303f3da06">SetForwardCartesianToAzimuthElevation()</a> will cause the forward transform to return azimuth,elevation,r coordinates from cartesian coordinates.</p>
+<p >Setting the FirstSampleDistance to a non-zero value means that a r value of 12 is actually (12 + FirstSampleDistance) distance from the origin.</p>
+<p >There are two template parameters for this class:</p>
+<p >TParametersValueType The type to be used for scalar numeric values. Either float or double.</p>
+<p >VDimension The number of dimensions of the vector space (must be &gt;=3).</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Is there any real value in allowing the user to template over the scalar type? Perhaps it should always be double, unless there's a compatibility problem with the <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> class.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>Derive this class from TransformBase class. Currently, this class derives from <a class="el" href="classitk_1_1AffineTransform.html">AffineTransform</a>, although it is not an affine transform.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>Add a figure in the documentation that informs the formulas used in this class that are used to transform Cartesian to azimuth-elevation-radius</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkAzimuthElevationToCartesianTransform_8h_source.html#l00088">88</a> of file <a class="el" href="itkAzimuthElevationToCartesianTransform_8h_source.html">itkAzimuthElevationToCartesianTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AzimuthElevationToCartesianTransform&lt; TParametersValueType, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -813,33 +839,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VDimension = 3&gt;<br />
-class itk::AzimuthElevationToCartesianTransform&lt; TParametersValueType, VDimension &gt;</div><p >Transforms from an azimuth, elevation, radius coordinate system to a Cartesian coordinate system, or vice versa. </p>
-<p >The three coordinate axis are azimuth, elevation, and range.</p>
-<p >The azimuth elevation coordinate system is defined similarly to spherical coordinates but is slightly different in that the azimuth and elevation are measured in degrees between the r-axis (i.e z axis) and the projection on the x-z and y-z planes, respectively. Range, or r, is the distance from the origin.</p>
-<p >The equations form performing the conversion from azimuth-elevation coordinates to cartesian coordinates are as follows: </p><div class="fragment"><div class="line">z = std::sqrt((r^2*(cos(azimuth))^2)/(1 + (cos(azimuth))^2 * (tan(elevation))^2);</div>
-<div class="line">x = z * std::tan(azimuth)</div>
-<div class="line">y = z * std::tan(elevation)</div>
-</div><!-- fragment --><p >The reversed transforms are: </p><div class="fragment"><div class="line">azimuth = arctan(x/y)</div>
-<div class="line">elevation = arctan(y/z)</div>
-<div class="line">r = std::sqrt(x^2 + y^2 + z^2)</div>
-</div><!-- fragment --><p >In this class, we can also set what a "forward" transform means. If we call <a class="el" href="classitk_1_1AzimuthElevationToCartesianTransform.html#aac55bd5672cf00465dee0460679c5fe3">SetForwardAzimuthElevationToCartesian()</a>, a forward transform will return cartesian coordinates when passed azimuth,elevation,r coordinates. Calling <a class="el" href="classitk_1_1AzimuthElevationToCartesianTransform.html#aa3399d32a75bc562551db99303f3da06">SetForwardCartesianToAzimuthElevation()</a> will cause the forward transform to return azimuth,elevation,r coordinates from cartesian coordinates.</p>
-<p >Setting the FirstSampleDistance to a non-zero value means that a r value of 12 is actually (12 + FirstSampleDistance) distance from the origin.</p>
-<p >There are two template parameters for this class:</p>
-<p >TParametersValueType The type to be used for scalar numeric values. Either float or double.</p>
-<p >VDimension The number of dimensions of the vector space (must be &gt;=3).</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Is there any real value in allowing the user to template over the scalar type? Perhaps it should always be double, unless there's a compatibility problem with the <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> class.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>Derive this class from TransformBase class. Currently, this class derives from <a class="el" href="classitk_1_1AffineTransform.html">AffineTransform</a>, although it is not an affine transform.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>Add a figure in the documentation that informs the formulas used in this class that are used to transform Cartesian to azimuth-elevation-radius</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkAzimuthElevationToCartesianTransform_8h_source.html#l00088">88</a> of file <a class="el" href="itkAzimuthElevationToCartesianTransform_8h_source.html">itkAzimuthElevationToCartesianTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2c5dd8cb08b93004b449db189b527416" name="a2c5dd8cb08b93004b449db189b527416"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c5dd8cb08b93004b449db189b527416">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

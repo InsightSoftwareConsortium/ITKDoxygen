@@ -98,7 +98,33 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMattesMutualInformationImageToImageMetric_8h_source.html">itkMattesMutualInformationImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the mutual information between two images to be registered using the method of Mattes et al. </p>
+<p ><a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html" title="Computes the mutual information between two images to be registered using the method of Mattes et al.">MattesMutualInformationImageToImageMetric</a> computes the mutual information between a fixed and moving image to be registered.</p>
+<p >This class is templated over the FixedImage type and the MovingImage type.</p>
+<p >The fixed and moving images are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a7beef269c1be904bca4c048735d955f5">SetFixedImage()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#a5d660a8540927d8072c54f23c4d675df">SetMovingImage()</a>. This metric makes use of user specified <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used to map points from the fixed image to the moving image domain. The Interpolator is used to evaluate the image intensity at user specified geometric points in the moving image. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a20cc79cb7538bdf35458d090b29bcddc">SetTransform()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#aedb5fab99ec6a0d71d90e653469285b3">SetInterpolator()</a>.</p>
+<p >If a BSplineInterpolationFunction is used, this class obtain image derivatives from the BSpline interpolator. Otherwise, image derivatives are computed using central differencing.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This metric assumes that the moving image has already been connected to the interpolator outside of this class.</dd></dl>
+<p>The method <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ae4afdb6fa616b4b4aa201a36b879c072">GetValue()</a> computes of the mutual information while method <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a2d21c6a964c34c81b0a88babcf245e10">GetValueAndDerivative()</a> computes both the mutual information and its derivatives with respect to the transform parameters.</p>
+<p >The calculations are based on the method of Mattes et al [1,2] where the probability density distribution are estimated using Parzen histograms. Since the fixed image PDF does not contribute to the derivatives, it does not need to be smooth. Hence, a zero order (box car) BSpline kernel is used for the fixed image intensity PDF. On the other hand, to ensure smoothness a third order BSpline kernel is used for the moving image intensity PDF.</p>
+<p >On <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a6e64561baff1464d7b71fcf14e3ac541">Initialize()</a>, the FixedImage is uniformly sampled within the FixedImageRegion. The number of samples used can be set via <a class="el" href="classitk_1_1ImageToImageMetric.html#a5ebef78234e8c4344d49dcd1c1883c02">SetNumberOfSpatialSamples()</a>. Typically, the number of spatial samples used should increase with the image size.</p>
+<p >The option UseAllPixelOn() disables the random sampling and uses all the pixels of the FixedImageRegion in order to estimate the joint intensity PDF.</p>
+<p >During each call of <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ae4afdb6fa616b4b4aa201a36b879c072">GetValue()</a>, GetDerivatives(), GetValueAndDerivatives(), marginal and joint intensity PDF's values are estimated at discrete position or bins. The number of bins used can be set via <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ab54745141e07f416a48c5da8100186ae">SetNumberOfHistogramBins()</a>. To handle data with arbitrary magnitude and dynamic range, the image intensity is scale such that any contribution to the histogram will fall into a valid bin.</p>
+<p >One the PDF's have been constructed, the mutual information is obtained by doubling summing over the discrete PDF values.</p>
+<p >Notes:</p><ol type="1">
+<li>This class returns the negative mutual information value.</li>
+</ol>
+<p >References: [1] "Nonrigid multimodality image registration" D. Mattes, D. R. Haynor, H. Vesselle, T. Lewellen and W. Eubank Medical Imaging 2001: <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 2001, pp. 1609-1620. [2] "PET-CT Image Registration in the Chest Using Free-form Deformations" D. Mattes, D. R. Haynor, H. Vesselle, T. Lewellen and W. Eubank IEEE Transactions in Medical Imaging. Vol.22, No.1, January 2003. pp.120-128. [3] "Optimization of Mutual Information for MultiResolution Image
+     Registration" P. Thevenaz and M. Unser IEEE Transactions in <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 9(12) December 2000.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMattesMutualInformationImageToImageMetric_8h_source.html#l00117">117</a> of file <a class="el" href="itkMattesMutualInformationImageToImageMetric_8h_source.html">itkMattesMutualInformationImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -826,33 +852,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::MattesMutualInformationImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the mutual information between two images to be registered using the method of Mattes et al. </p>
-<p ><a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html" title="Computes the mutual information between two images to be registered using the method of Mattes et al.">MattesMutualInformationImageToImageMetric</a> computes the mutual information between a fixed and moving image to be registered.</p>
-<p >This class is templated over the FixedImage type and the MovingImage type.</p>
-<p >The fixed and moving images are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a7beef269c1be904bca4c048735d955f5">SetFixedImage()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#a5d660a8540927d8072c54f23c4d675df">SetMovingImage()</a>. This metric makes use of user specified <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used to map points from the fixed image to the moving image domain. The Interpolator is used to evaluate the image intensity at user specified geometric points in the moving image. The <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> and Interpolator are set via methods <a class="el" href="classitk_1_1ImageToImageMetric.html#a20cc79cb7538bdf35458d090b29bcddc">SetTransform()</a> and <a class="el" href="classitk_1_1ImageToImageMetric.html#aedb5fab99ec6a0d71d90e653469285b3">SetInterpolator()</a>.</p>
-<p >If a BSplineInterpolationFunction is used, this class obtain image derivatives from the BSpline interpolator. Otherwise, image derivatives are computed using central differencing.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This metric assumes that the moving image has already been connected to the interpolator outside of this class.</dd></dl>
-<p>The method <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ae4afdb6fa616b4b4aa201a36b879c072">GetValue()</a> computes of the mutual information while method <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a2d21c6a964c34c81b0a88babcf245e10">GetValueAndDerivative()</a> computes both the mutual information and its derivatives with respect to the transform parameters.</p>
-<p >The calculations are based on the method of Mattes et al [1,2] where the probability density distribution are estimated using Parzen histograms. Since the fixed image PDF does not contribute to the derivatives, it does not need to be smooth. Hence, a zero order (box car) BSpline kernel is used for the fixed image intensity PDF. On the other hand, to ensure smoothness a third order BSpline kernel is used for the moving image intensity PDF.</p>
-<p >On <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#a6e64561baff1464d7b71fcf14e3ac541">Initialize()</a>, the FixedImage is uniformly sampled within the FixedImageRegion. The number of samples used can be set via <a class="el" href="classitk_1_1ImageToImageMetric.html#a5ebef78234e8c4344d49dcd1c1883c02">SetNumberOfSpatialSamples()</a>. Typically, the number of spatial samples used should increase with the image size.</p>
-<p >The option UseAllPixelOn() disables the random sampling and uses all the pixels of the FixedImageRegion in order to estimate the joint intensity PDF.</p>
-<p >During each call of <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ae4afdb6fa616b4b4aa201a36b879c072">GetValue()</a>, GetDerivatives(), GetValueAndDerivatives(), marginal and joint intensity PDF's values are estimated at discrete position or bins. The number of bins used can be set via <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetric.html#ab54745141e07f416a48c5da8100186ae">SetNumberOfHistogramBins()</a>. To handle data with arbitrary magnitude and dynamic range, the image intensity is scale such that any contribution to the histogram will fall into a valid bin.</p>
-<p >One the PDF's have been constructed, the mutual information is obtained by doubling summing over the discrete PDF values.</p>
-<p >Notes:</p><ol type="1">
-<li>This class returns the negative mutual information value.</li>
-</ol>
-<p >References: [1] "Nonrigid multimodality image registration" D. Mattes, D. R. Haynor, H. Vesselle, T. Lewellen and W. Eubank Medical Imaging 2001: <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 2001, pp. 1609-1620. [2] "PET-CT Image Registration in the Chest Using Free-form Deformations" D. Mattes, D. R. Haynor, H. Vesselle, T. Lewellen and W. Eubank IEEE Transactions in Medical Imaging. Vol.22, No.1, January 2003. pp.120-128. [3] "Optimization of Mutual Information for MultiResolution Image
-     Registration" P. Thevenaz and M. Unser IEEE Transactions in <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 9(12) December 2000.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMattesMutualInformationImageToImageMetric_8h_source.html#l00117">117</a> of file <a class="el" href="itkMattesMutualInformationImageToImageMetric_8h_source.html">itkMattesMutualInformationImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa9e8bda0f01f5c3c9bfafe70ac86bc8a" name="aa9e8bda0f01f5c3c9bfafe70ac86bc8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9e8bda0f01f5c3c9bfafe70ac86bc8a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

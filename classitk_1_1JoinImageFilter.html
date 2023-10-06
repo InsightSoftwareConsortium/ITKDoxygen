@@ -94,7 +94,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
+class itk::JoinImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Join two images, resulting in an image where each pixel has the components of the first image followed by the components of the second image. </p>
+<p ><a class="el" href="classitk_1_1JoinImageFilter.html" title="Join two images, resulting in an image where each pixel has the components of the first image followe...">JoinImageFilter</a> combines two images by appending the components of one image to the components of another image. The output image type is always a <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a> image and the vector value type will the smallest type that can represent the dynamic range of both the input value types. Hence, joining an image of char and unsigned char results in an image of shorts since that is the smallest datatype with a large enough dynamic range. To define a consistent behavior across different architectures, the join of an int and an unsigned int is float. On a 64 bit architecture, this join could be represented in a long. But on 32 bit architectures, the only safe join value type is a float. For this and similar ambiguous cases, the join value type is promoted to a float.</p>
+<p >Note that this filter is not templated over its output image type. Rather the filter determines what its output image type is based on the input data types. To determine the output type, use <a class="el" href="classitk_1_1JoinImageFilter.html#a8546a11874a9b1148e14fa3908f830ef">JoinImageFilter&lt;Image1, Image2&gt;::OutputImageType</a></p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkJoinImageFilter_8h_source.html#l00209">209</a> of file <a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::JoinImageFilter&lt; TInputImage1, TInputImage2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -856,19 +868,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
-class itk::JoinImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Join two images, resulting in an image where each pixel has the components of the first image followed by the components of the second image. </p>
-<p ><a class="el" href="classitk_1_1JoinImageFilter.html" title="Join two images, resulting in an image where each pixel has the components of the first image followe...">JoinImageFilter</a> combines two images by appending the components of one image to the components of another image. The output image type is always a <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a> image and the vector value type will the smallest type that can represent the dynamic range of both the input value types. Hence, joining an image of char and unsigned char results in an image of shorts since that is the smallest datatype with a large enough dynamic range. To define a consistent behavior across different architectures, the join of an int and an unsigned int is float. On a 64 bit architecture, this join could be represented in a long. But on 32 bit architectures, the only safe join value type is a float. For this and similar ambiguous cases, the join value type is promoted to a float.</p>
-<p >Note that this filter is not templated over its output image type. Rather the filter determines what its output image type is based on the input data types. To determine the output type, use <a class="el" href="classitk_1_1JoinImageFilter.html#a8546a11874a9b1148e14fa3908f830ef">JoinImageFilter&lt;Image1, Image2&gt;::OutputImageType</a></p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkJoinImageFilter_8h_source.html#l00209">209</a> of file <a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a95a4c6aed3bfb3d59ef23c473aee377c" name="a95a4c6aed3bfb3d59ef23c473aee377c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95a4c6aed3bfb3d59ef23c473aee377c">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

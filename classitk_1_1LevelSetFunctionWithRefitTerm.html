@@ -96,7 +96,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetFunctionWithRefitTerm_8h_source.html">itkLevelSetFunctionWithRefitTerm.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TSparseImageType&gt;<br />
+class itk::LevelSetFunctionWithRefitTerm&lt; TImageType, TSparseImageType &gt;</div><p >This class extends the <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class by adding a grow term based on a target curvature stored in a sparse image. </p>
+<dl class="section user"><dt></dt><dd>We extend the <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class to add a refitting term. This refitting term forces the curvature of the level set interface to match a prescribed curvature. The prescribed curvature is provided in a sparse image format. The NodeType for the sparse image should contain the member variables m_Curvature and m_CurvatureFlag. The refitting term is defined as part of the propagation term of the original <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a>. To this purpose we defined the PropagationSpeed method which computes the refitting term and also adds to this term the value returned by the new virtual OtherPropagationSpeed. Therefore, classes derived from this class MUST NOT overwrite the PropagationSpeed method. Instead classes wishing to define a propagation term must define OtherPropagationSpeed.</dd></dl>
+<dl class="section user"><dt>IMPORTANT</dt><dd>Subclasses MUST NOT overwrite the PropagationSpeed method. Define OtherPropagationSpeed instead. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetFunctionWithRefitTerm_8h_source.html#l00052">52</a> of file <a class="el" href="itkLevelSetFunctionWithRefitTerm_8h_source.html">itkLevelSetFunctionWithRefitTerm.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetFunctionWithRefitTerm&lt; TImageType, TSparseImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -425,14 +432,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LevelSetFunction.html#a452b4d55467fc7acbedc5108388b6418">VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetFunction.html#a9dd8eb1a6b865d296f361554dd997a42">m_ZeroVectorConstant</a></td></tr>
 <tr class="separator:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TSparseImageType&gt;<br />
-class itk::LevelSetFunctionWithRefitTerm&lt; TImageType, TSparseImageType &gt;</div><p >This class extends the <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class by adding a grow term based on a target curvature stored in a sparse image. </p>
-<dl class="section user"><dt></dt><dd>We extend the <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class to add a refitting term. This refitting term forces the curvature of the level set interface to match a prescribed curvature. The prescribed curvature is provided in a sparse image format. The NodeType for the sparse image should contain the member variables m_Curvature and m_CurvatureFlag. The refitting term is defined as part of the propagation term of the original <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a>. To this purpose we defined the PropagationSpeed method which computes the refitting term and also adds to this term the value returned by the new virtual OtherPropagationSpeed. Therefore, classes derived from this class MUST NOT overwrite the PropagationSpeed method. Instead classes wishing to define a propagation term must define OtherPropagationSpeed.</dd></dl>
-<dl class="section user"><dt>IMPORTANT</dt><dd>Subclasses MUST NOT overwrite the PropagationSpeed method. Define OtherPropagationSpeed instead. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetFunctionWithRefitTerm_8h_source.html#l00052">52</a> of file <a class="el" href="itkLevelSetFunctionWithRefitTerm_8h_source.html">itkLevelSetFunctionWithRefitTerm.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a0a2bdc03a3cac803592b2a350c5541e6" name="a0a2bdc03a3cac803592b2a350c5541e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a2bdc03a3cac803592b2a350c5541e6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

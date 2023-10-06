@@ -95,7 +95,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkChangeInformationImageFilter_8h_source.html">itkChangeInformationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
+class itk::ChangeInformationImageFilter&lt; TInputImage &gt;</div><p >Change the origin, spacing and/or region of an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. </p>
+<p >Change the origin, spacing, direction and/or buffered region of an itkImage. This "Information" along with an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>'s container comprise the itkImage. By default, the output's information is set to the input's information. The methods ChangeSpacingOn/Off, ChangeOriginOn/Off, ChangeDirectionOn/Off and ChangeRegionOn/Off control whether the default origin, spacing, direction or buffered region should be changed. If On, the associated information will be replaced with either the ReferenceImage information (if UseReferenceImage is true) or the ivars OutputSpacing, OutputOrigin, OutputDirection, OutputOffset.</p>
+<p >In addition, the method CenterImageOn will recompute the output image origin (using the selected output spacing) the align the center of the image with the coordinate 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkChangeInformationImageFilter_8h_source.html#l00049">49</a> of file <a class="el" href="itkChangeInformationImageFilter_8h_source.html">itkChangeInformationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ChangeInformationImageFilter&lt; TInputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -849,14 +856,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
-class itk::ChangeInformationImageFilter&lt; TInputImage &gt;</div><p >Change the origin, spacing and/or region of an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>. </p>
-<p >Change the origin, spacing, direction and/or buffered region of an itkImage. This "Information" along with an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a>'s container comprise the itkImage. By default, the output's information is set to the input's information. The methods ChangeSpacingOn/Off, ChangeOriginOn/Off, ChangeDirectionOn/Off and ChangeRegionOn/Off control whether the default origin, spacing, direction or buffered region should be changed. If On, the associated information will be replaced with either the ReferenceImage information (if UseReferenceImage is true) or the ivars OutputSpacing, OutputOrigin, OutputDirection, OutputOffset.</p>
-<p >In addition, the method CenterImageOn will recompute the output image origin (using the selected output spacing) the align the center of the image with the coordinate 0. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkChangeInformationImageFilter_8h_source.html#l00049">49</a> of file <a class="el" href="itkChangeInformationImageFilter_8h_source.html">itkChangeInformationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa7b402635acfdff22a019a74b24937c3" name="aa7b402635acfdff22a019a74b24937c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7b402635acfdff22a019a74b24937c3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

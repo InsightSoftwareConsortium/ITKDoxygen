@@ -96,7 +96,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCurvatureNDAnisotropicDiffusionFunction_8h_source.html">itkCurvatureNDAnisotropicDiffusionFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::CurvatureNDAnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class implements a variation on the classic, Perona-Malik anisotropic image diffusion equation as described in itkGradientNDAnisotropicDiffusionFunction. This object is a level-set analog of that equation and will be referred to below as the <em>modified</em> <em>curvature</em> <em>diffusion</em> <em>equation</em> (MCDE). MCDE does not exhibit the edge enhancing properties of classic anisotropic diffusion, which can under certain conditions undergo a "negative" diffusion,which enhances the contrast of edges. Equations of the form of MCDE always undergo positive diffusion, with the conductance term only varying the strength of that diffusion.</p>
+<dl class="section user"><dt></dt><dd>Qualitatively, MCDE compares well with other non-linear diffusion techniques. It is less sensitive to contrast than classic Perona-Malik style diffusion, and preserves finer detailed structures in images. There is a potential speed trade-off for using this function in place of itkGradientNDAnisotropicDiffusionFunction. Each iteration of the solution takes roughly twice as long. Fewer iterations, however, may be required to reach an acceptable solution.</dd></dl>
+<dl class="section user"><dt></dt><dd>The MCDE equation is given as:</dd></dl>
+<p class="formulaDsp">
+\[ f_t = \mid \nabla f \mid \nabla \cdot c( \mid \nabla f \mid ) \frac{ \nabla f }{ \mid \nabla f \mid } \]
+</p>
+<p> ,</p>
+<dl class="section user"><dt></dt><dd>where the conductance modified curvature term is</dd></dl>
+<p class="formulaDsp">
+\[ \nabla \cdot \frac{\nabla f}{\mid \nabla f \mid} \]
+</p>
+<p> .</p>
+<dl class="section user"><dt>References</dt><dd>R. Whitaker and X. Xue. Variable-Conductance, Level-Set Curvature for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Denoising, International Conference on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 2001 pp. 142-145, Vol.3.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Todo:</a></b></dt><dd>References</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCurvatureNDAnisotropicDiffusionFunction_8h_source.html#l00075">75</a> of file <a class="el" href="itkCurvatureNDAnisotropicDiffusionFunction_8h_source.html">itkCurvatureNDAnisotropicDiffusionFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CurvatureNDAnisotropicDiffusionFunction&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -357,26 +376,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::CurvatureNDAnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class implements a variation on the classic, Perona-Malik anisotropic image diffusion equation as described in itkGradientNDAnisotropicDiffusionFunction. This object is a level-set analog of that equation and will be referred to below as the <em>modified</em> <em>curvature</em> <em>diffusion</em> <em>equation</em> (MCDE). MCDE does not exhibit the edge enhancing properties of classic anisotropic diffusion, which can under certain conditions undergo a "negative" diffusion,which enhances the contrast of edges. Equations of the form of MCDE always undergo positive diffusion, with the conductance term only varying the strength of that diffusion.</p>
-<dl class="section user"><dt></dt><dd>Qualitatively, MCDE compares well with other non-linear diffusion techniques. It is less sensitive to contrast than classic Perona-Malik style diffusion, and preserves finer detailed structures in images. There is a potential speed trade-off for using this function in place of itkGradientNDAnisotropicDiffusionFunction. Each iteration of the solution takes roughly twice as long. Fewer iterations, however, may be required to reach an acceptable solution.</dd></dl>
-<dl class="section user"><dt></dt><dd>The MCDE equation is given as:</dd></dl>
-<p class="formulaDsp">
-\[ f_t = \mid \nabla f \mid \nabla \cdot c( \mid \nabla f \mid ) \frac{ \nabla f }{ \mid \nabla f \mid } \]
-</p>
-<p> ,</p>
-<dl class="section user"><dt></dt><dd>where the conductance modified curvature term is</dd></dl>
-<p class="formulaDsp">
-\[ \nabla \cdot \frac{\nabla f}{\mid \nabla f \mid} \]
-</p>
-<p> .</p>
-<dl class="section user"><dt>References</dt><dd>R. Whitaker and X. Xue. Variable-Conductance, Level-Set Curvature for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Denoising, International Conference on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 2001 pp. 142-145, Vol.3.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Todo:</a></b></dt><dd>References</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCurvatureNDAnisotropicDiffusionFunction_8h_source.html#l00075">75</a> of file <a class="el" href="itkCurvatureNDAnisotropicDiffusionFunction_8h_source.html">itkCurvatureNDAnisotropicDiffusionFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae5a36b9a88776ae2e0d33e40a80860c5" name="ae5a36b9a88776ae2e0d33e40a80860c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5a36b9a88776ae2e0d33e40a80860c5">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

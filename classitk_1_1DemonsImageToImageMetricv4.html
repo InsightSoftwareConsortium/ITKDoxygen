@@ -97,7 +97,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDemonsImageToImageMetricv4_8h_source.html">itkDemonsImageToImageMetricv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TVirtualImage = TFixedImage, typename TInternalComputationValueType = double, typename TMetricTraits = DefaultImageToImageMetricTraitsv4&lt;TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType&gt;&gt;<br />
+class itk::DemonsImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;</div><p >Class implementing demons metric. </p>
+<p >The implementation is taken from itkDemonsRegistrationFunction.</p>
+<p >The metric derivative can be calculated using image derivatives either from the fixed or moving images. The default is to use fixed-image gradients. See <a class="el" href="classitk_1_1ObjectToObjectMetricBaseTemplate.html#acf5a7da7abe3b07cd1ccd3a71e444c3e">ObjectToObjectMetric::SetGradientSource</a> to change this behavior.</p>
+<p >An intensity threshold is used, below which image pixels are considered equal for the purpose of derivative calculation. The threshold can be changed by calling SetIntensityDifferenceThreshold.</p>
+<dl class="section note"><dt>Note</dt><dd>This metric supports only moving transforms with local support and with a number of local parameters that matches the moving image dimension. In particular, it's meant to be used with itkDisplacementFieldTransform and derived classes.</dd></dl>
+<p>See <a class="el" href="classitk_1_1DemonsImageToImageMetricv4GetValueAndDerivativeThreader.html#af40609a61822d7096c7ce3d56e7085dd">DemonsImageToImageMetricv4GetValueAndDerivativeThreader::ProcessPoint</a> for algorithm implementation.</p>
+<dl class="section see"><dt>See also</dt><dd>itkImageToImageMetricv4 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDemonsImageToImageMetricv4_8h_source.html#l00060">60</a> of file <a class="el" href="itkDemonsImageToImageMetricv4_8h_source.html">itkDemonsImageToImageMetricv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DemonsImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -982,18 +993,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TVirtualImage = TFixedImage, typename TInternalComputationValueType = double, typename TMetricTraits = DefaultImageToImageMetricTraitsv4&lt;TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType&gt;&gt;<br />
-class itk::DemonsImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;</div><p >Class implementing demons metric. </p>
-<p >The implementation is taken from itkDemonsRegistrationFunction.</p>
-<p >The metric derivative can be calculated using image derivatives either from the fixed or moving images. The default is to use fixed-image gradients. See <a class="el" href="classitk_1_1ObjectToObjectMetricBaseTemplate.html#acf5a7da7abe3b07cd1ccd3a71e444c3e">ObjectToObjectMetric::SetGradientSource</a> to change this behavior.</p>
-<p >An intensity threshold is used, below which image pixels are considered equal for the purpose of derivative calculation. The threshold can be changed by calling SetIntensityDifferenceThreshold.</p>
-<dl class="section note"><dt>Note</dt><dd>This metric supports only moving transforms with local support and with a number of local parameters that matches the moving image dimension. In particular, it's meant to be used with itkDisplacementFieldTransform and derived classes.</dd></dl>
-<p>See <a class="el" href="classitk_1_1DemonsImageToImageMetricv4GetValueAndDerivativeThreader.html#af40609a61822d7096c7ce3d56e7085dd">DemonsImageToImageMetricv4GetValueAndDerivativeThreader::ProcessPoint</a> for algorithm implementation.</p>
-<dl class="section see"><dt>See also</dt><dd>itkImageToImageMetricv4 </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDemonsImageToImageMetricv4_8h_source.html#l00060">60</a> of file <a class="el" href="itkDemonsImageToImageMetricv4_8h_source.html">itkDemonsImageToImageMetricv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae7f84d4ec3eed489fbe793ef9e8e8a1f" name="ae7f84d4ec3eed489fbe793ef9e8e8a1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7f84d4ec3eed489fbe793ef9e8e8a1f">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

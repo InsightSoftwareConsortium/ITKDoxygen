@@ -96,7 +96,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMultiphaseDenseFiniteDifferenceImageFilter_8h_source.html">itkMultiphaseDenseFiniteDifferenceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TFeatureImage, typename TOutputImage, typename TFunction, typename TIdCell = unsigned int&gt;<br />
+class itk::MultiphaseDenseFiniteDifferenceImageFilter&lt; TInputImage, TFeatureImage, TOutputImage, TFunction, TIdCell &gt;</div><p >This filter implements a layer of the finite difference solver hierarchy that performs "dense" iteration, ie. iteration over all pixels in the input and output at each change calculation and update step. Dense iteration is in contrast to a "sparse" iteration over a subset of the pixels. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
+<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
+<dl class="section user"><dt></dt><dd>The generic code for performing iterations and updates at each time step is inherited from the parent class. This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#ab26224d7394f1be4ae2194e36fe6d850">CalculateChange()</a> and <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#a389048b5c792ef0d0ad0b36b6360c2ae">ApplyUpdate()</a>. These methods are designed to automatically thread their execution. \( \Delta \) is defined as an image of identical size and type as the output image.</dd></dl>
+<dl class="section user"><dt></dt><dd>As we descend through each layer in the hierarchy, we know more and more about the specific application of our filter. At this level, we have committed to iteration over each pixel in an image. We take advantage of that knowledge to multithread the iteration and update methods.</dd></dl>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image to image filter. The specific types of the images are not fixed at this level in the hierarchy.</dd></dl>
+<dl class="section user"><dt>How to use this class</dt><dd>This filter is only one layer in a branch the finite difference solver hierarchy. It does not define the function used in the <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#ab26224d7394f1be4ae2194e36fe6d850">CalculateChange()</a> and it does not define the stopping criteria (Halt method). To use this class, subclass it to a specific instance that supplies a function and <a class="el" href="classitk_1_1MultiphaseFiniteDifferenceImageFilter.html#a66e778c2dde8748c458f574b624efd9f">Halt()</a> method.</dd></dl>
+<p>Based on the paper: </p><pre class="fragment">   "An active contour model without edges"
+    T. Chan and L. Vese.
+    In Scale-Space Theories in Computer Vision, pages 141-151, 1999.
+</pre> <dl class="section author"><dt>Author</dt><dd>Mosaliganti K., Smith B., Gelas A., Gouaillard A., Megason S.</dd></dl>
+<p>This code was taken from the Insight Journal paper: </p><pre class="fragment">"Cell Tracking using Coupled Active Surfaces for Nuclei and Membranes"
+https://www.insight-journal.org/browse/publication/642
+</pre><p> That is based on the papers: </p><pre class="fragment">"Level Set Segmentation: Active Contours without edge"
+https://www.insight-journal.org/browse/publication/322
+
+and
+
+"Level set segmentation using coupled active surfaces"
+https://www.insight-journal.org/browse/publication/323
+</pre><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMultiphaseDenseFiniteDifferenceImageFilter_8h_source.html#l00102">102</a> of file <a class="el" href="itkMultiphaseDenseFiniteDifferenceImageFilter_8h_source.html">itkMultiphaseDenseFiniteDifferenceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MultiphaseDenseFiniteDifferenceImageFilter&lt; TInputImage, TFeatureImage, TOutputImage, TFunction, TIdCell &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -992,31 +1016,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TFeatureImage, typename TOutputImage, typename TFunction, typename TIdCell = unsigned int&gt;<br />
-class itk::MultiphaseDenseFiniteDifferenceImageFilter&lt; TInputImage, TFeatureImage, TOutputImage, TFunction, TIdCell &gt;</div><p >This filter implements a layer of the finite difference solver hierarchy that performs "dense" iteration, ie. iteration over all pixels in the input and output at each change calculation and update step. Dense iteration is in contrast to a "sparse" iteration over a subset of the pixels. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
-<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
-<dl class="section user"><dt></dt><dd>The generic code for performing iterations and updates at each time step is inherited from the parent class. This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#ab26224d7394f1be4ae2194e36fe6d850">CalculateChange()</a> and <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#a389048b5c792ef0d0ad0b36b6360c2ae">ApplyUpdate()</a>. These methods are designed to automatically thread their execution. \( \Delta \) is defined as an image of identical size and type as the output image.</dd></dl>
-<dl class="section user"><dt></dt><dd>As we descend through each layer in the hierarchy, we know more and more about the specific application of our filter. At this level, we have committed to iteration over each pixel in an image. We take advantage of that knowledge to multithread the iteration and update methods.</dd></dl>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image to image filter. The specific types of the images are not fixed at this level in the hierarchy.</dd></dl>
-<dl class="section user"><dt>How to use this class</dt><dd>This filter is only one layer in a branch the finite difference solver hierarchy. It does not define the function used in the <a class="el" href="classitk_1_1MultiphaseDenseFiniteDifferenceImageFilter.html#ab26224d7394f1be4ae2194e36fe6d850">CalculateChange()</a> and it does not define the stopping criteria (Halt method). To use this class, subclass it to a specific instance that supplies a function and <a class="el" href="classitk_1_1MultiphaseFiniteDifferenceImageFilter.html#a66e778c2dde8748c458f574b624efd9f">Halt()</a> method.</dd></dl>
-<p>Based on the paper: </p><pre class="fragment">   "An active contour model without edges"
-    T. Chan and L. Vese.
-    In Scale-Space Theories in Computer Vision, pages 141-151, 1999.
-</pre> <dl class="section author"><dt>Author</dt><dd>Mosaliganti K., Smith B., Gelas A., Gouaillard A., Megason S.</dd></dl>
-<p>This code was taken from the Insight Journal paper: </p><pre class="fragment">"Cell Tracking using Coupled Active Surfaces for Nuclei and Membranes"
-https://www.insight-journal.org/browse/publication/642
-</pre><p> That is based on the papers: </p><pre class="fragment">"Level Set Segmentation: Active Contours without edge"
-https://www.insight-journal.org/browse/publication/322
-
-and
-
-"Level set segmentation using coupled active surfaces"
-https://www.insight-journal.org/browse/publication/323
-</pre><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMultiphaseDenseFiniteDifferenceImageFilter_8h_source.html#l00102">102</a> of file <a class="el" href="itkMultiphaseDenseFiniteDifferenceImageFilter_8h_source.html">itkMultiphaseDenseFiniteDifferenceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3e39c89198b934ddff7a21a030a233c9" name="a3e39c89198b934ddff7a21a030a233c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e39c89198b934ddff7a21a030a233c9">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

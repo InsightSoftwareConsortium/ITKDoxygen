@@ -94,7 +94,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCSVNumericObjectFileWriter_8h_source.html">itkCSVNumericObjectFileWriter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TValue, unsigned int VRows = 0, unsigned int VColumns = 0&gt;<br />
+class itk::CSVNumericObjectFileWriter&lt; TValue, VRows, VColumns &gt;</div><p >Writes out numeric itk data objects to a csv file. </p>
+<p ><a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html" title="Writes out numeric itk data objects to a csv file.">CSVNumericObjectFileWriter</a> writes numeric data from an itk object into a csv file. It is templated over the type of data being written, the number of rows and the number of columns. The writer uses the datablock member from vnl_matrix or vnl_matrix_fixed. As of now the objects itkMatrix, itkArray2D, and any vnl_matrix based objects are supported.</p>
+<p >The user specifies the file name and the field delimiter character using the Set macro method for each. The user can also write out row and column headers. The methods <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#abfc3b943c8a77d97a37b2f0346c9705e">ColumnHeadersPushBack()</a> and <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#ac4f5c7cbf9e57f4f31022191203e557e">RowHeadersPushBack()</a> can be used to push strings into the vectors for row and column headers. The row and column headers can also be set using the Set macro methods for each if vectors for the headers are already set. The <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#a4f95b469153d74eb4393fc95e6e260c6">SetInput()</a> method is overloaded to allow various itk objects to be set as input.</p>
+<p >The method <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#acde8efda8d64eac3d6eb95525a525677">Write()</a> is used to output the object data to a csv file.</p>
+<p >The writer will output a warning if the number of row headers is not consistent with the number of rows in the input object or if the number of column headers is not consistent with the number of columns in the input object. It is up to the user to check this. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCSVNumericObjectFileWriter_8h_source.html#l00062">62</a> of file <a class="el" href="itkCSVNumericObjectFileWriter_8h_source.html">itkCSVNumericObjectFileWriter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CSVNumericObjectFileWriter&lt; TValue, VRows, VColumns &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -366,16 +375,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TValue, unsigned int VRows = 0, unsigned int VColumns = 0&gt;<br />
-class itk::CSVNumericObjectFileWriter&lt; TValue, VRows, VColumns &gt;</div><p >Writes out numeric itk data objects to a csv file. </p>
-<p ><a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html" title="Writes out numeric itk data objects to a csv file.">CSVNumericObjectFileWriter</a> writes numeric data from an itk object into a csv file. It is templated over the type of data being written, the number of rows and the number of columns. The writer uses the datablock member from vnl_matrix or vnl_matrix_fixed. As of now the objects itkMatrix, itkArray2D, and any vnl_matrix based objects are supported.</p>
-<p >The user specifies the file name and the field delimiter character using the Set macro method for each. The user can also write out row and column headers. The methods <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#abfc3b943c8a77d97a37b2f0346c9705e">ColumnHeadersPushBack()</a> and <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#ac4f5c7cbf9e57f4f31022191203e557e">RowHeadersPushBack()</a> can be used to push strings into the vectors for row and column headers. The row and column headers can also be set using the Set macro methods for each if vectors for the headers are already set. The <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#a4f95b469153d74eb4393fc95e6e260c6">SetInput()</a> method is overloaded to allow various itk objects to be set as input.</p>
-<p >The method <a class="el" href="classitk_1_1CSVNumericObjectFileWriter.html#acde8efda8d64eac3d6eb95525a525677">Write()</a> is used to output the object data to a csv file.</p>
-<p >The writer will output a warning if the number of row headers is not consistent with the number of rows in the input object or if the number of column headers is not consistent with the number of columns in the input object. It is up to the user to check this. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCSVNumericObjectFileWriter_8h_source.html#l00062">62</a> of file <a class="el" href="itkCSVNumericObjectFileWriter_8h_source.html">itkCSVNumericObjectFileWriter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a70d74c9a5c1cae789bb46390ac5e2f2a" name="a70d74c9a5c1cae789bb46390ac5e2f2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70d74c9a5c1cae789bb46390ac5e2f2a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

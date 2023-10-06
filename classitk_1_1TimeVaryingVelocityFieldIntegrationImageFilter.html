@@ -96,7 +96,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTimeVaryingVelocityFieldIntegrationImageFilter_8h_source.html">itkTimeVaryingVelocityFieldIntegrationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTimeVaryingVelocityField, typename TDisplacementField = Image&lt;typename TTimeVaryingVelocityField::PixelType, TTimeVaryingVelocityField::ImageDimension - 1&gt;&gt;<br />
+class itk::TimeVaryingVelocityFieldIntegrationImageFilter&lt; TTimeVaryingVelocityField, TDisplacementField &gt;</div><p >Integrate a time-varying velocity field using 4th order Runge-Kutta. </p>
+<p >Diffeomorphisms are topology-preserving mappings that are useful for describing biologically plausible deformations. Mathematically, a diffeomorphism, \( \phi \), is generated from a time-varying velocity field, v, as described by the integral equation:</p>
+<p class="formulaDsp">
+\[ \phi(t_b) = \phi(t_a) + \int_{t_a}^{t_b} v(\phi(t),t) dt \]
+</p>
+<p >In this class, the input is the time-varying velocity field and an initial diffeomorphism. The output diffeomorphism is produced using fourth order Runge-Kutta.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The output deformation field needs to have dimensionality of 1 less than the input time-varying velocity field.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkTimeVaryingVelocityFieldIntegrationImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkTimeVaryingVelocityFieldIntegrationImageFilter_8h_source.html">itkTimeVaryingVelocityFieldIntegrationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TimeVaryingVelocityFieldIntegrationImageFilter&lt; TTimeVaryingVelocityField, TDisplacementField &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -795,21 +809,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTimeVaryingVelocityField, typename TDisplacementField = Image&lt;typename TTimeVaryingVelocityField::PixelType, TTimeVaryingVelocityField::ImageDimension - 1&gt;&gt;<br />
-class itk::TimeVaryingVelocityFieldIntegrationImageFilter&lt; TTimeVaryingVelocityField, TDisplacementField &gt;</div><p >Integrate a time-varying velocity field using 4th order Runge-Kutta. </p>
-<p >Diffeomorphisms are topology-preserving mappings that are useful for describing biologically plausible deformations. Mathematically, a diffeomorphism, \( \phi \), is generated from a time-varying velocity field, v, as described by the integral equation:</p>
-<p class="formulaDsp">
-\[ \phi(t_b) = \phi(t_a) + \int_{t_a}^{t_b} v(\phi(t),t) dt \]
-</p>
-<p >In this class, the input is the time-varying velocity field and an initial diffeomorphism. The output diffeomorphism is produced using fourth order Runge-Kutta.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The output deformation field needs to have dimensionality of 1 less than the input time-varying velocity field.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkTimeVaryingVelocityFieldIntegrationImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkTimeVaryingVelocityFieldIntegrationImageFilter_8h_source.html">itkTimeVaryingVelocityFieldIntegrationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abea153da95b9f44bc9e01794a6940938" name="abea153da95b9f44bc9e01794a6940938"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abea153da95b9f44bc9e01794a6940938">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

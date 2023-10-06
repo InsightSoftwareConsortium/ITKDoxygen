@@ -94,7 +94,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VDimension = 3, typename TMeshTraits = DefaultStaticMeshTraits&lt;TPixelType, VDimension, VDimension&gt;&gt;<br />
+class itk::PointSet&lt; TPixelType, VDimension, TMeshTraits &gt;</div><p >A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute) definition. </p>
+<p ><a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> is a superclass of the N-dimensional mesh structure (<a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">itk::Mesh</a>). It provides the portion of the mesh definition for geometric coordinates (and associated attribute or pixel information). The defined API provides operations on points but does not tie down the underlying implementation and storage. A "MeshTraits" structure is used to define the container and identifier to access the points. See <a class="el" href="classitk_1_1DefaultStaticMeshTraits.html">DefaultStaticMeshTraits</a> for the set of type definitions needed. All types that are defined in the "MeshTraits" structure will have duplicate type alias in the resulting mesh itself.</p>
+<p ><a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> has two template parameters. The first is the pixel type, or the type of data stored (optionally) with the points. The second is the "MeshTraits" structure controlling type information characterizing the point set. Most users will be happy with the defaults, and will not have to worry about this second argument.</p>
+<p >Template parameters for <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a>:</p>
+<p >TPixelType = The type stored as data for the point.</p>
+<p >TMeshTraits = Type information structure for the point set.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00082">82</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PointSet&lt; TPixelType, VDimension, TMeshTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -481,25 +499,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VDimension = 3, typename TMeshTraits = DefaultStaticMeshTraits&lt;TPixelType, VDimension, VDimension&gt;&gt;<br />
-class itk::PointSet&lt; TPixelType, VDimension, TMeshTraits &gt;</div><p >A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute) definition. </p>
-<p ><a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> is a superclass of the N-dimensional mesh structure (<a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">itk::Mesh</a>). It provides the portion of the mesh definition for geometric coordinates (and associated attribute or pixel information). The defined API provides operations on points but does not tie down the underlying implementation and storage. A "MeshTraits" structure is used to define the container and identifier to access the points. See <a class="el" href="classitk_1_1DefaultStaticMeshTraits.html">DefaultStaticMeshTraits</a> for the set of type definitions needed. All types that are defined in the "MeshTraits" structure will have duplicate type alias in the resulting mesh itself.</p>
-<p ><a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> has two template parameters. The first is the pixel type, or the type of data stored (optionally) with the points. The second is the "MeshTraits" structure controlling type information characterizing the point set. Most users will be happy with the defaults, and will not have to worry about this second argument.</p>
-<p >Template parameters for <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a>:</p>
-<p >TPixelType = The type stored as data for the point.</p>
-<p >TMeshTraits = Type information structure for the point set.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00082">82</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad9506d6391e1a58ecf0a0aadf45c9e1f" name="ad9506d6391e1a58ecf0a0aadf45c9e1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9506d6391e1a58ecf0a0aadf45c9e1f">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

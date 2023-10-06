@@ -97,7 +97,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMeshFileReader_8h_source.html">itkMeshFileReader.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputMesh, typename ConvertPointPixelTraits = MeshConvertPixelTraits&lt;typename TOutputMesh::PixelType&gt;, typename ConvertCellPixelTraits = MeshConvertPixelTraits&lt;typename TOutputMesh::CellPixelType&gt;&gt;<br />
+class itk::MeshFileReader&lt; TOutputMesh, ConvertPointPixelTraits, ConvertCellPixelTraits &gt;</div><p ><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> source that reads mesh data from a single file. </p>
+<p >This source object is a general filter to read data from a variety of file formats. It works with a <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a> subclass to actually do the reading of the data. <a class="el" href="classitk_1_1Object.html" title="Base class for most ITK classes.">Object</a> factory machinery can be used to automatically create the <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a>, or the <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a> can be manually created and set.</p>
+<p >TOutputMesh is the type expected by the external users of the filter. If data stored in the file is stored in a different format then specified by TOutputMesh, than this filter converts data between the file type and the external expected type. The ConvertTraits template argument is used to do the conversion.</p>
+<p >A Pluggable factory pattern is used this allows different kinds of readers to be registered (even at run time) without having to modify the code in this class. Normally just setting the FileName with the appropriate suffix is enough to get the reader to instantiate the correct MeshIO and read the file properly. However, some files have no accepted suffix, so you will have to manually create the MeshIO instance of the write type.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Wanlin Zhu. University of New South Wales, Australia.</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMeshFileReader_8h_source.html#l00081">81</a> of file <a class="el" href="itkMeshFileReader_8h_source.html">itkMeshFileReader.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MeshFileReader&lt; TOutputMesh, ConvertPointPixelTraits, ConvertCellPixelTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -679,22 +694,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputMesh, typename ConvertPointPixelTraits = MeshConvertPixelTraits&lt;typename TOutputMesh::PixelType&gt;, typename ConvertCellPixelTraits = MeshConvertPixelTraits&lt;typename TOutputMesh::CellPixelType&gt;&gt;<br />
-class itk::MeshFileReader&lt; TOutputMesh, ConvertPointPixelTraits, ConvertCellPixelTraits &gt;</div><p ><a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> source that reads mesh data from a single file. </p>
-<p >This source object is a general filter to read data from a variety of file formats. It works with a <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a> subclass to actually do the reading of the data. <a class="el" href="classitk_1_1Object.html" title="Base class for most ITK classes.">Object</a> factory machinery can be used to automatically create the <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a>, or the <a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a> can be manually created and set.</p>
-<p >TOutputMesh is the type expected by the external users of the filter. If data stored in the file is stored in a different format then specified by TOutputMesh, than this filter converts data between the file type and the external expected type. The ConvertTraits template argument is used to do the conversion.</p>
-<p >A Pluggable factory pattern is used this allows different kinds of readers to be registered (even at run time) without having to modify the code in this class. Normally just setting the FileName with the appropriate suffix is enough to get the reader to instantiate the correct MeshIO and read the file properly. However, some files have no accepted suffix, so you will have to manually create the MeshIO instance of the write type.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1MeshIOBase.html" title="Abstract superclass defines mesh IO interface.">MeshIOBase</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Wanlin Zhu. University of New South Wales, Australia.</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMeshFileReader_8h_source.html#l00081">81</a> of file <a class="el" href="itkMeshFileReader_8h_source.html">itkMeshFileReader.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a53d81f7d155da88bac442964d3e060e8" name="a53d81f7d155da88bac442964d3e060e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53d81f7d155da88bac442964d3e060e8">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

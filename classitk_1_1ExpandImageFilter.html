@@ -95,7 +95,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkExpandImageFilter_8h_source.html">itkExpandImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::ExpandImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Expand the size of an image by an integer factor in each dimension. </p>
+<p ><a class="el" href="classitk_1_1ExpandImageFilter.html" title="Expand the size of an image by an integer factor in each dimension.">ExpandImageFilter</a> increases the size of an image by an integer factor in each dimension using a interpolation method. The output image size in each dimension is given by:</p>
+<p >OutputSize[j] = InputSize[j] * ExpandFactors[j]</p>
+<p >The output values are obtained by interpolating the input image. The default interpolation type used is the <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user can specify a particular interpolation function via <a class="el" href="classitk_1_1ExpandImageFilter.html#af2f64556a86ddf0f00bd80142b082dcd">SetInterpolator()</a>. Note that the input interpolator must derive from base class <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
+<p >This filter will produce an output with different pixel spacing that its input image such that:</p>
+<p >OutputSpacing[j] = InputSpacing[j] / ExpandFactors[j]</p>
+<p >The filter is templated over the input image type and the output image type.</p>
+<p >This filter is implemented as a multithreaded filter and supports streaming.</p>
+<p >This filter assumes that the input and output image has the same number of dimensions.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a> </dd>
+<dd>
+LinearInterpolationImageFunction </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkExpandImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkExpandImageFilter_8h_source.html">itkExpandImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ExpandImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -747,23 +763,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::ExpandImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Expand the size of an image by an integer factor in each dimension. </p>
-<p ><a class="el" href="classitk_1_1ExpandImageFilter.html" title="Expand the size of an image by an integer factor in each dimension.">ExpandImageFilter</a> increases the size of an image by an integer factor in each dimension using a interpolation method. The output image size in each dimension is given by:</p>
-<p >OutputSize[j] = InputSize[j] * ExpandFactors[j]</p>
-<p >The output values are obtained by interpolating the input image. The default interpolation type used is the <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user can specify a particular interpolation function via <a class="el" href="classitk_1_1ExpandImageFilter.html#af2f64556a86ddf0f00bd80142b082dcd">SetInterpolator()</a>. Note that the input interpolator must derive from base class <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
-<p >This filter will produce an output with different pixel spacing that its input image such that:</p>
-<p >OutputSpacing[j] = InputSpacing[j] / ExpandFactors[j]</p>
-<p >The filter is templated over the input image type and the output image type.</p>
-<p >This filter is implemented as a multithreaded filter and supports streaming.</p>
-<p >This filter assumes that the input and output image has the same number of dimensions.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a> </dd>
-<dd>
-LinearInterpolationImageFunction </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkExpandImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkExpandImageFilter_8h_source.html">itkExpandImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5f7b92b658b321bd7c69a6101751826d" name="a5f7b92b658b321bd7c69a6101751826d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f7b92b658b321bd7c69a6101751826d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

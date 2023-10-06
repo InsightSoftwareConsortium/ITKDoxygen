@@ -94,7 +94,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPath_8h_source.html">itkPath.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TOutput, unsigned int VDimension&gt;<br />
+class itk::Path&lt; TInput, TOutput, VDimension &gt;</div><p >Represent a path through ND Space. </p>
+<p >This base class is intended to represent a path through an image. As a path, it maps a 1D parameter (such as time or arc length, etc) to an index (or possibly an offset or a point) in ND space. This mapping is done via the abstract <a class="el" href="classitk_1_1Path.html#ac75f626987c7db4a39dc31f0b13cf319">Evaluate()</a> method, which must be overridden in all instantiable subclasses. The only geometric requirement for a general path is that it be continuous. A path may be open or closed, and may cross itself several times. A classic application of this class is the representation of contours in 2D images using chaincodes or freeman codes. Another use of a path is to guide the movement of an iterator through an image.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TInput</td><td>Type of the 1D parameter of the path, e.g. unsigned int or double. </td></tr>
+    <tr><td class="paramname">TOutput</td><td>Type of the path location at the given input, e.g. itk::Offset&lt; VDimension &gt; or itk::ContinuousIndex&lt; VDimension &gt; </td></tr>
+    <tr><td class="paramname">VDimension</td><td>Dimension of the path.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkPath_8h_source.html#l00054">54</a> of file <a class="el" href="itkPath_8h_source.html">itkPath.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Path&lt; TInput, TOutput, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -402,26 +421,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TOutput, unsigned int VDimension&gt;<br />
-class itk::Path&lt; TInput, TOutput, VDimension &gt;</div><p >Represent a path through ND Space. </p>
-<p >This base class is intended to represent a path through an image. As a path, it maps a 1D parameter (such as time or arc length, etc) to an index (or possibly an offset or a point) in ND space. This mapping is done via the abstract <a class="el" href="classitk_1_1Path.html#ac75f626987c7db4a39dc31f0b13cf319">Evaluate()</a> method, which must be overridden in all instantiable subclasses. The only geometric requirement for a general path is that it be continuous. A path may be open or closed, and may cross itself several times. A classic application of this class is the representation of contours in 2D images using chaincodes or freeman codes. Another use of a path is to guide the movement of an iterator through an image.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TInput</td><td>Type of the 1D parameter of the path, e.g. unsigned int or double. </td></tr>
-    <tr><td class="paramname">TOutput</td><td>Type of the path location at the given input, e.g. itk::Offset&lt; VDimension &gt; or itk::ContinuousIndex&lt; VDimension &gt; </td></tr>
-    <tr><td class="paramname">VDimension</td><td>Dimension of the path.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkPath_8h_source.html#l00054">54</a> of file <a class="el" href="itkPath_8h_source.html">itkPath.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae1741f5f1f35bff012c0e3107ca361b6" name="ae1741f5f1f35bff012c0e3107ca361b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1741f5f1f35bff012c0e3107ca361b6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

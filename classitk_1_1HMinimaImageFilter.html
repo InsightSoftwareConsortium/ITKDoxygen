@@ -95,7 +95,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkHMinimaImageFilter_8h_source.html">itkHMinimaImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::HMinimaImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Suppress local minima whose depth below the baseline is less than h. </p>
+<p ><a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a> suppresses local minima that are less than h intensity units below the (local) background. This has the effect of smoothing over the "low" parts of the noise in the image without smoothing over large changes in intensity (region boundaries). See the <a class="el" href="classitk_1_1HMaximaImageFilter.html" title="Suppress local maxima whose height above the baseline is less than h.">HMaximaImageFilter</a> to suppress the local maxima whose height is less than h intensity units above the (local) background.</p>
+<p >If original image is subtracted from the output of <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>, the significant "valleys" in the image can be identified. This is what the <a class="el" href="classitk_1_1HConcaveImageFilter.html" title="Identify local minima whose depth below the baseline is greater than h.">HConcaveImageFilter</a> provides.</p>
+<p >This filter uses the <a class="el" href="classitk_1_1GrayscaleGeodesicErodeImageFilter.html" title="geodesic gray scale erosion of an image">GrayscaleGeodesicErodeImageFilter</a>. It provides its own input as the "mask" input to the geodesic dilation. The "marker" image for the geodesic dilation is the input image plus the height parameter h.</p>
+<p >Geodesic morphology and the H-Minima algorithm is described in Chapter 6 of Pierre Soille's book "Morphological Image Analysis:
+Principles and Applications", Second Edition, Springer, 2003.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GrayscaleGeodesicDilateImageFilter.html" title="Geodesic grayscale dilation of an image.">GrayscaleGeodesicDilateImageFilter</a>, <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>, <a class="el" href="classitk_1_1HConvexImageFilter.html" title="Identify local maxima whose height above the baseline is greater than h.">HConvexImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleDilateImageFilter.html" title="Grayscale dilation of an image.">GrayscaleDilateImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleFunctionDilateImageFilter.html" title="Grayscale function dilation of an image.">GrayscaleFunctionDilateImageFilter</a>, <a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkHMinimaImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkHMinimaImageFilter_8h_source.html">itkHMinimaImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::HMinimaImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -753,20 +766,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::HMinimaImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Suppress local minima whose depth below the baseline is less than h. </p>
-<p ><a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a> suppresses local minima that are less than h intensity units below the (local) background. This has the effect of smoothing over the "low" parts of the noise in the image without smoothing over large changes in intensity (region boundaries). See the <a class="el" href="classitk_1_1HMaximaImageFilter.html" title="Suppress local maxima whose height above the baseline is less than h.">HMaximaImageFilter</a> to suppress the local maxima whose height is less than h intensity units above the (local) background.</p>
-<p >If original image is subtracted from the output of <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>, the significant "valleys" in the image can be identified. This is what the <a class="el" href="classitk_1_1HConcaveImageFilter.html" title="Identify local minima whose depth below the baseline is greater than h.">HConcaveImageFilter</a> provides.</p>
-<p >This filter uses the <a class="el" href="classitk_1_1GrayscaleGeodesicErodeImageFilter.html" title="geodesic gray scale erosion of an image">GrayscaleGeodesicErodeImageFilter</a>. It provides its own input as the "mask" input to the geodesic dilation. The "marker" image for the geodesic dilation is the input image plus the height parameter h.</p>
-<p >Geodesic morphology and the H-Minima algorithm is described in Chapter 6 of Pierre Soille's book "Morphological Image Analysis:
-Principles and Applications", Second Edition, Springer, 2003.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GrayscaleGeodesicDilateImageFilter.html" title="Geodesic grayscale dilation of an image.">GrayscaleGeodesicDilateImageFilter</a>, <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>, <a class="el" href="classitk_1_1HConvexImageFilter.html" title="Identify local maxima whose height above the baseline is greater than h.">HConvexImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleDilateImageFilter.html" title="Grayscale dilation of an image.">GrayscaleDilateImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleFunctionDilateImageFilter.html" title="Grayscale function dilation of an image.">GrayscaleFunctionDilateImageFilter</a>, <a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkHMinimaImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkHMinimaImageFilter_8h_source.html">itkHMinimaImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a44bb7140e39f83c90ebd9ff9f9f512ec" name="a44bb7140e39f83c90ebd9ff9f9f512ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44bb7140e39f83c90ebd9ff9f9f512ec">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

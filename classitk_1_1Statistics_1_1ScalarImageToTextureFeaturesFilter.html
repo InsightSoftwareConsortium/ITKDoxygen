@@ -95,7 +95,41 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkScalarImageToTextureFeaturesFilter_8h_source.html">itkScalarImageToTextureFeaturesFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename THistogramFrequencyContainer = DenseFrequencyContainer2, typename TMaskImageType = TImageType&gt;<br />
+class itk::Statistics::ScalarImageToTextureFeaturesFilter&lt; TImageType, THistogramFrequencyContainer, TMaskImageType &gt;</div><p >This class computes texture descriptions from an image. </p>
+<p >This class computes features that summarize the texture of a given image. The texture features are computed a la Haralick, and have proven to be useful in image classification for biological and medical imaging. This class computes the texture features of an image (optionally in a masked region), averaged across several spatial directions so that they are invariant to rotation.</p>
+<p >By default, texture features are computed for each spatial direction and then averaged afterward, so it is possible to access the standard deviations of the texture features. These values give a clue as to texture anisotropy. However, doing this is much more work, because it involved computing one GLCM for each offset given. To compute a single GLCM using the first offset , call <a class="el" href="classitk_1_1Statistics_1_1ScalarImageToTextureFeaturesFilter.html#ac2333178703784b55e6301f50474c017">FastCalculationsOn()</a>. If this is called, then the texture standard deviations will not be computed (and will be set to zero), but texture computation will be much faster.</p>
+<p >This class is templated over the input image type.</p>
+<p >Template Parameters: The image type, and the type of histogram frequency container. If you are using a large number of bins per axis, a sparse frequency container may be advisable. The default is to use a dense frequency container.</p>
+<p >Inputs and parameters:</p><ol type="1">
+<li>An image</li>
+<li>A mask defining the region over which texture features will be calculated. (Optional)</li>
+<li>The pixel value that defines the "inside" of the mask. (Optional, defaults to 1 if a mask is set.)</li>
+<li>The set of features to be calculated. These features are defined in the GreyLevelCooccurrenceMatrixTextureCoefficientsCalculator class. (Optional, defaults to {Energy, Entropy, InverseDifferenceMoment, Inertia, ClusterShade, ClusterProminence}, as in Conners, Trivedi and Harlow.)</li>
+<li>The number of intensity bins. (Optional, defaults to 256.)</li>
+<li>The set of directions (offsets) to average across. (Optional, defaults to {(-1, 0), (-1, -1), (0, -1), (1, -1)} for 2D images and scales analogously for ND images.)</li>
+<li>The pixel intensity range over which the features will be calculated. (Optional, defaults to the full dynamic range of the pixel type.)</li>
+</ol>
+<p >In general, the default parameter values should be sufficient.</p>
+<p >Outputs: (1) The average value of each feature. (2) The standard deviation in the values of each feature.</p>
+<p >Web reference: <a href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></p>
+<p >Print references: Haralick, R.M., K. Shanmugam and I. Dinstein. 1973. Textural Features for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Classification. IEEE Transactions on Systems, Man and Cybernetics. SMC-3(6):610-620.</p>
+<p >Haralick, R.M. 1979. Statistical and Structural Approaches to Texture. Proceedings of the IEEE, 67:786-804.</p>
+<p >R.W. Conners and C.A. Harlow. A Theoretical Comparison of Texture Algorithms. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2:204-222, 1980.</p>
+<p >R.W. Conners, M.M. Trivedi, and C.A. Harlow. Segmentation of a High-Resolution Urban Scene using Texture Operators. Computer Vision, Graphics and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 25:273-310, 1984.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1ScalarImageToCooccurrenceMatrixFilter.html" title="This class computes a co-occurrence matrix (histogram) from a given image and a mask image if provide...">ScalarImageToCooccurrenceMatrixFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Statistics_1_1HistogramToTextureFeaturesFilter.html" title="This class computes texture feature coefficients from a grey level co-occurrence matrix.">HistogramToTextureFeaturesFilter</a></dd></dl>
+<p>Author: Zachary Pincus</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkScalarImageToTextureFeaturesFilter_8h_source.html#l00111">111</a> of file <a class="el" href="itkScalarImageToTextureFeaturesFilter_8h_source.html">itkScalarImageToTextureFeaturesFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::ScalarImageToTextureFeaturesFilter&lt; TImageType, THistogramFrequencyContainer, TMaskImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -643,41 +677,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename THistogramFrequencyContainer = DenseFrequencyContainer2, typename TMaskImageType = TImageType&gt;<br />
-class itk::Statistics::ScalarImageToTextureFeaturesFilter&lt; TImageType, THistogramFrequencyContainer, TMaskImageType &gt;</div><p >This class computes texture descriptions from an image. </p>
-<p >This class computes features that summarize the texture of a given image. The texture features are computed a la Haralick, and have proven to be useful in image classification for biological and medical imaging. This class computes the texture features of an image (optionally in a masked region), averaged across several spatial directions so that they are invariant to rotation.</p>
-<p >By default, texture features are computed for each spatial direction and then averaged afterward, so it is possible to access the standard deviations of the texture features. These values give a clue as to texture anisotropy. However, doing this is much more work, because it involved computing one GLCM for each offset given. To compute a single GLCM using the first offset , call <a class="el" href="classitk_1_1Statistics_1_1ScalarImageToTextureFeaturesFilter.html#ac2333178703784b55e6301f50474c017">FastCalculationsOn()</a>. If this is called, then the texture standard deviations will not be computed (and will be set to zero), but texture computation will be much faster.</p>
-<p >This class is templated over the input image type.</p>
-<p >Template Parameters: The image type, and the type of histogram frequency container. If you are using a large number of bins per axis, a sparse frequency container may be advisable. The default is to use a dense frequency container.</p>
-<p >Inputs and parameters:</p><ol type="1">
-<li>An image</li>
-<li>A mask defining the region over which texture features will be calculated. (Optional)</li>
-<li>The pixel value that defines the "inside" of the mask. (Optional, defaults to 1 if a mask is set.)</li>
-<li>The set of features to be calculated. These features are defined in the GreyLevelCooccurrenceMatrixTextureCoefficientsCalculator class. (Optional, defaults to {Energy, Entropy, InverseDifferenceMoment, Inertia, ClusterShade, ClusterProminence}, as in Conners, Trivedi and Harlow.)</li>
-<li>The number of intensity bins. (Optional, defaults to 256.)</li>
-<li>The set of directions (offsets) to average across. (Optional, defaults to {(-1, 0), (-1, -1), (0, -1), (1, -1)} for 2D images and scales analogously for ND images.)</li>
-<li>The pixel intensity range over which the features will be calculated. (Optional, defaults to the full dynamic range of the pixel type.)</li>
-</ol>
-<p >In general, the default parameter values should be sufficient.</p>
-<p >Outputs: (1) The average value of each feature. (2) The standard deviation in the values of each feature.</p>
-<p >Web reference: <a href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></p>
-<p >Print references: Haralick, R.M., K. Shanmugam and I. Dinstein. 1973. Textural Features for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Classification. IEEE Transactions on Systems, Man and Cybernetics. SMC-3(6):610-620.</p>
-<p >Haralick, R.M. 1979. Statistical and Structural Approaches to Texture. Proceedings of the IEEE, 67:786-804.</p>
-<p >R.W. Conners and C.A. Harlow. A Theoretical Comparison of Texture Algorithms. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2:204-222, 1980.</p>
-<p >R.W. Conners, M.M. Trivedi, and C.A. Harlow. Segmentation of a High-Resolution Urban Scene using Texture Operators. Computer Vision, Graphics and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing, 25:273-310, 1984.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1ScalarImageToCooccurrenceMatrixFilter.html" title="This class computes a co-occurrence matrix (histogram) from a given image and a mask image if provide...">ScalarImageToCooccurrenceMatrixFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Statistics_1_1HistogramToTextureFeaturesFilter.html" title="This class computes texture feature coefficients from a grey level co-occurrence matrix.">HistogramToTextureFeaturesFilter</a></dd></dl>
-<p>Author: Zachary Pincus</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkScalarImageToTextureFeaturesFilter_8h_source.html#l00111">111</a> of file <a class="el" href="itkScalarImageToTextureFeaturesFilter_8h_source.html">itkScalarImageToTextureFeaturesFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a87f08b75e2a03a85118070cb4ad8e7c6" name="a87f08b75e2a03a85118070cb4ad8e7c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87f08b75e2a03a85118070cb4ad8e7c6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

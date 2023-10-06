@@ -94,7 +94,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPolylineMask2DImageFilter_8h_source.html">itkPolylineMask2DImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TPolyline, typename TOutputImage&gt;<br />
+class itk::PolylineMask2DImageFilter&lt; TInputImage, TPolyline, TOutputImage &gt;</div><p >Implements 2D image masking operation constrained by a contour. </p>
+<p >This class is parameterized over input image type, contour defined by a polyline, and output image type. If the input image is three dimensional, the masking operation is performed on each slice (2D image). The output image will have two regions demarcated by the contour i.e inside(masked) and outside region. The pixels in the masked region will keep their original intensity values. Whereas, intensity value of pixels outside the masked region will be set to zero.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The Polygon represented by the input Polyline must be a convex polygon. </dd>
+<dd>
+The Polygon's inside is defined by the standard clock-wise convention. That is, when walking along the polygon, the inside of the polygon is at the right-hand side. Note also that this must be interpreted in the natural coordinate system used by ITK, not the one used in computer graphics.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PolylineMaskImageFilter.html" title="Implements image masking operation constrained by a polyline on a plane perpendicular to certain view...">PolylineMaskImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkPolylineMask2DImageFilter_8h_source.html#l00049">49</a> of file <a class="el" href="itkPolylineMask2DImageFilter_8h_source.html">itkPolylineMask2DImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PolylineMask2DImageFilter&lt; TInputImage, TPolyline, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -729,17 +739,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TPolyline, typename TOutputImage&gt;<br />
-class itk::PolylineMask2DImageFilter&lt; TInputImage, TPolyline, TOutputImage &gt;</div><p >Implements 2D image masking operation constrained by a contour. </p>
-<p >This class is parameterized over input image type, contour defined by a polyline, and output image type. If the input image is three dimensional, the masking operation is performed on each slice (2D image). The output image will have two regions demarcated by the contour i.e inside(masked) and outside region. The pixels in the masked region will keep their original intensity values. Whereas, intensity value of pixels outside the masked region will be set to zero.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The Polygon represented by the input Polyline must be a convex polygon. </dd>
-<dd>
-The Polygon's inside is defined by the standard clock-wise convention. That is, when walking along the polygon, the inside of the polygon is at the right-hand side. Note also that this must be interpreted in the natural coordinate system used by ITK, not the one used in computer graphics.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PolylineMaskImageFilter.html" title="Implements image masking operation constrained by a polyline on a plane perpendicular to certain view...">PolylineMaskImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkPolylineMask2DImageFilter_8h_source.html#l00049">49</a> of file <a class="el" href="itkPolylineMask2DImageFilter_8h_source.html">itkPolylineMask2DImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ada1c9a485716bfed6e27d71f05148697" name="ada1c9a485716bfed6e27d71f05148697"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada1c9a485716bfed6e27d71f05148697">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

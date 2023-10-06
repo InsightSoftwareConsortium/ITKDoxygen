@@ -97,7 +97,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLabelObject_8h_source.html">itkLabelObject.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLabel, unsigned int VImageDimension&gt;<br />
+class itk::LabelObject&lt; TLabel, VImageDimension &gt;</div><p >The base class for the representation of a labeled binary object in an image. </p>
+<p ><a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> is the base class to represent a labeled object in an image. It should be used associated with the <a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a>.</p>
+<p ><a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> store mainly 2 things: the label of the object, and a set of lines which are part of the object. No attribute is available in that class, so this class can be used as a base class to implement a label object with attribute, or when no attribute is needed (see the reconstruction filters for an example. If a simple attribute is needed, <a class="el" href="classitk_1_1AttributeLabelObject.html" title="A LabelObject with a generic attribute.">AttributeLabelObject</a> can be used directly.</p>
+<p >All the subclasses of <a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> have to reimplement the <a class="el" href="classitk_1_1LabelObject.html#ac48ef33463c06f9ae53d007fc50ae2a4">CopyAttributesFrom()</a> and <a class="el" href="classitk_1_1LabelObject.html#a5170ccea2c23daa61d01ca1e4973fc5d">CopyAllFrom()</a> method. No need to reimplement <a class="el" href="classitk_1_1LabelObject.html#ac14a4d8092503057ecb8d92eaa771007">CopyLinesFrom()</a> since all derived class share the same type line data members.</p>
+<p >The pixels locations belonging to the <a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> can be obtained using: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pixelId = 0; pixelId &lt; labelObject-&gt;Size(); pixelId++)</div>
+<div class="line">  {</div>
+<div class="line">  std::cout &lt;&lt; labelObject-&gt;GetIndex(pixelId);</div>
+<div class="line">  }</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
+<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LabelMapFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">LabelMapFilter</a>, <a class="el" href="classitk_1_1AttributeLabelObject.html" title="A LabelObject with a generic attribute.">AttributeLabelObject</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLabelObject_8h_source.html#l00065">65</a> of file <a class="el" href="itkLabelObject_8h_source.html">itkLabelObject.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LabelObject&lt; TLabel, VImageDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -281,22 +296,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLabel, unsigned int VImageDimension&gt;<br />
-class itk::LabelObject&lt; TLabel, VImageDimension &gt;</div><p >The base class for the representation of a labeled binary object in an image. </p>
-<p ><a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> is the base class to represent a labeled object in an image. It should be used associated with the <a class="el" href="classitk_1_1LabelMap.html" title="Templated n-dimensional image to store labeled objects.">LabelMap</a>.</p>
-<p ><a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> store mainly 2 things: the label of the object, and a set of lines which are part of the object. No attribute is available in that class, so this class can be used as a base class to implement a label object with attribute, or when no attribute is needed (see the reconstruction filters for an example. If a simple attribute is needed, <a class="el" href="classitk_1_1AttributeLabelObject.html" title="A LabelObject with a generic attribute.">AttributeLabelObject</a> can be used directly.</p>
-<p >All the subclasses of <a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> have to reimplement the <a class="el" href="classitk_1_1LabelObject.html#ac48ef33463c06f9ae53d007fc50ae2a4">CopyAttributesFrom()</a> and <a class="el" href="classitk_1_1LabelObject.html#a5170ccea2c23daa61d01ca1e4973fc5d">CopyAllFrom()</a> method. No need to reimplement <a class="el" href="classitk_1_1LabelObject.html#ac14a4d8092503057ecb8d92eaa771007">CopyLinesFrom()</a> since all derived class share the same type line data members.</p>
-<p >The pixels locations belonging to the <a class="el" href="classitk_1_1LabelObject.html" title="The base class for the representation of a labeled binary object in an image.">LabelObject</a> can be obtained using: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pixelId = 0; pixelId &lt; labelObject-&gt;Size(); pixelId++)</div>
-<div class="line">  {</div>
-<div class="line">  std::cout &lt;&lt; labelObject-&gt;GetIndex(pixelId);</div>
-<div class="line">  }</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
-<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/176">https://www.insight-journal.org/browse/publication/176</a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LabelMapFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">LabelMapFilter</a>, <a class="el" href="classitk_1_1AttributeLabelObject.html" title="A LabelObject with a generic attribute.">AttributeLabelObject</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLabelObject_8h_source.html#l00065">65</a> of file <a class="el" href="itkLabelObject_8h_source.html">itkLabelObject.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aacfc32d07e5a1d73497c73fc4ee5a362" name="aacfc32d07e5a1d73497c73fc4ee5a362"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aacfc32d07e5a1d73497c73fc4ee5a362">&#9670;&nbsp;</a></span>AttributeType</h2>
 

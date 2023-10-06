@@ -95,7 +95,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCurvatureRegistrationFilter_8h_source.html">itkCurvatureRegistrationFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TImageForceFunction = MeanSquareRegistrationFunction&lt;TFixedImage, TMovingImage, TDisplacementField&gt;&gt;<br />
+class itk::CurvatureRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TImageForceFunction &gt;</div><p >Deformably register two images using the fast curvature algorithm. </p>
+<p ><a class="el" href="classitk_1_1CurvatureRegistrationFilter.html" title="Deformably register two images using the fast curvature algorithm.">CurvatureRegistrationFilter</a> implements the fast (i.e., O(n log n) ) registration method described in B. Fischer and J. Modersitzki, "A unified approach to fast image registration and a new curvature
+based registration technique," Linear Algebra and its Applications, vol. 380, pp. 107-124, 2004.</p>
+<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
+<p >This class is templated over the fixed image type, moving image type, the deformation field type, and the images forces function. Fundamentally, any image force function in the PDE framework should work (e.g., mean squares, demons, correlation, mutual information, etc.).</p>
+<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
+<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
+<p >This class makes use of the finite difference solver hierarchy. Update for each iteration is computed in the function class defined by the template parameter TImageForceFunction.</p>
+<p >The algorithm has three parameters: the number of iteration to be performed, the time step, and the weight of the curvature regularization term in the overall cost function.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The algorithm parameters (time step and constraint weight) as given by F&amp;M (dt=100; alpha=0.01) do not seem to work with this implementation. In fact, they seem to be off by orders of magnitude. This may be an effect of different normalization of the image forces, or this implementation may be incorrect. Be aware.</dd>
+<dd>
+This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd>
+<dd>
+There is something sketchy going on with the DCT (see FFTW documentation) regarding numerical stability of the "ordinary" DCT. Also, F&amp;M are slightly ambiguous in their use of the DCT operator. So it is quite possible that the implementation of their algorithm is not quite correct. Ultimately, they are saying that the curvature smoother is equivalent to a special low-pass filter that is applied to the DCT coefficients.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This class was developed with funding from:</dd></dl>
+<p>"CNS Deficits: Interaction of Age and Alcoholism" NIAAA AA05965, PI: A. Pfefferbaum</p>
+<p >"INIA: Imaging Core" NIAAA AA13521, PI: A. Pfefferbaum</p>
+<dl class="section see"><dt>See also</dt><dd>CurvatureRegistrationFunction</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Torsten Rohlfing, SRI International, Neuroscience Program </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCurvatureRegistrationFilter_8h_source.html#l00101">101</a> of file <a class="el" href="itkCurvatureRegistrationFilter_8h_source.html">itkCurvatureRegistrationFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CurvatureRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TImageForceFunction &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1069,30 +1092,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TImageForceFunction = MeanSquareRegistrationFunction&lt;TFixedImage, TMovingImage, TDisplacementField&gt;&gt;<br />
-class itk::CurvatureRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField, TImageForceFunction &gt;</div><p >Deformably register two images using the fast curvature algorithm. </p>
-<p ><a class="el" href="classitk_1_1CurvatureRegistrationFilter.html" title="Deformably register two images using the fast curvature algorithm.">CurvatureRegistrationFilter</a> implements the fast (i.e., O(n log n) ) registration method described in B. Fischer and J. Modersitzki, "A unified approach to fast image registration and a new curvature
-based registration technique," Linear Algebra and its Applications, vol. 380, pp. 107-124, 2004.</p>
-<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
-<p >This class is templated over the fixed image type, moving image type, the deformation field type, and the images forces function. Fundamentally, any image force function in the PDE framework should work (e.g., mean squares, demons, correlation, mutual information, etc.).</p>
-<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
-<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
-<p >This class makes use of the finite difference solver hierarchy. Update for each iteration is computed in the function class defined by the template parameter TImageForceFunction.</p>
-<p >The algorithm has three parameters: the number of iteration to be performed, the time step, and the weight of the curvature regularization term in the overall cost function.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The algorithm parameters (time step and constraint weight) as given by F&amp;M (dt=100; alpha=0.01) do not seem to work with this implementation. In fact, they seem to be off by orders of magnitude. This may be an effect of different normalization of the image forces, or this implementation may be incorrect. Be aware.</dd>
-<dd>
-This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd>
-<dd>
-There is something sketchy going on with the DCT (see FFTW documentation) regarding numerical stability of the "ordinary" DCT. Also, F&amp;M are slightly ambiguous in their use of the DCT operator. So it is quite possible that the implementation of their algorithm is not quite correct. Ultimately, they are saying that the curvature smoother is equivalent to a special low-pass filter that is applied to the DCT coefficients.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This class was developed with funding from:</dd></dl>
-<p>"CNS Deficits: Interaction of Age and Alcoholism" NIAAA AA05965, PI: A. Pfefferbaum</p>
-<p >"INIA: Imaging Core" NIAAA AA13521, PI: A. Pfefferbaum</p>
-<dl class="section see"><dt>See also</dt><dd>CurvatureRegistrationFunction</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Torsten Rohlfing, SRI International, Neuroscience Program </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCurvatureRegistrationFilter_8h_source.html#l00101">101</a> of file <a class="el" href="itkCurvatureRegistrationFilter_8h_source.html">itkCurvatureRegistrationFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af73e8e59ebb5156dd96ff157c56ad045" name="af73e8e59ebb5156dd96ff157c56ad045"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af73e8e59ebb5156dd96ff157c56ad045">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

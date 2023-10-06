@@ -93,7 +93,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSimpleFilterWatcher_8h_source.html">itkSimpleFilterWatcher.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::cout. </p>
+<p ><a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> provides a simple mechanism for monitoring the execution of filter. <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> is a stack-based object which takes a pointer to a <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> at constructor time. <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> creates a series of commands that are registered as observers to the specified <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. The events monitored are: </p><pre class="fragment"> StartEvent
+ EndEvent
+ ProgressEvent
+ IterationEvent
+ AbortEvent
+</pre><p> The callbacks routines registered for these events emit a simple message to std::cout.</p>
+<p >Example of use:</p>
+<p >using FilterType = itk::BinaryThresholdImageFilter&lt;ImageType&gt;; auto thresholdFilter = FilterType::New();</p>
+<p ><a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> watcher(thresholdFilter, "Threshold");</p>
+<p >The second argument to the constructor to <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> is an optional string that is prepended to the event messages. This allows the user to associate the emitted messages to a particular filter/variable.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Allow any stream object to be used for the output (not just std::cout)</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSimpleFilterWatcher_8h_source.html#l00068">68</a> of file <a class="el" href="itkSimpleFilterWatcher_8h_source.html">itkSimpleFilterWatcher.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SimpleFilterWatcher:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -222,27 +242,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aecedd5856384c94b0726a944ab50951f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TimeProbe.html">TimeProbe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SimpleFilterWatcher.html#aecedd5856384c94b0726a944ab50951f">m_TimeProbe</a> {}</td></tr>
 <tr class="separator:aecedd5856384c94b0726a944ab50951f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::cout. </p>
-<p ><a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> provides a simple mechanism for monitoring the execution of filter. <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> is a stack-based object which takes a pointer to a <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> at constructor time. <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> creates a series of commands that are registered as observers to the specified <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. The events monitored are: </p><pre class="fragment"> StartEvent
- EndEvent
- ProgressEvent
- IterationEvent
- AbortEvent
-</pre><p> The callbacks routines registered for these events emit a simple message to std::cout.</p>
-<p >Example of use:</p>
-<p >using FilterType = itk::BinaryThresholdImageFilter&lt;ImageType&gt;; auto thresholdFilter = FilterType::New();</p>
-<p ><a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> watcher(thresholdFilter, "Threshold");</p>
-<p >The second argument to the constructor to <a class="el" href="classitk_1_1SimpleFilterWatcher.html" title="Simple mechanism for monitoring the pipeline events of a filter and reporting these events to std::co...">SimpleFilterWatcher</a> is an optional string that is prepended to the event messages. This allows the user to associate the emitted messages to a particular filter/variable.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Allow any stream object to be used for the output (not just std::cout)</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSimpleFilterWatcher_8h_source.html#l00068">68</a> of file <a class="el" href="itkSimpleFilterWatcher_8h_source.html">itkSimpleFilterWatcher.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aeb9f957ea5c64d0603ed45f639bc8436" name="aeb9f957ea5c64d0603ed45f639bc8436"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb9f957ea5c64d0603ed45f639bc8436">&#9670;&nbsp;</a></span>CommandType</h2>
 

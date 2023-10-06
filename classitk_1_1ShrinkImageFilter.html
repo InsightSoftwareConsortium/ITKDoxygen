@@ -95,7 +95,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkShrinkImageFilter_8h_source.html">itkShrinkImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::ShrinkImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Reduce the size of an image by an integer factor in each dimension. </p>
+<p ><a class="el" href="classitk_1_1ShrinkImageFilter.html" title="Reduce the size of an image by an integer factor in each dimension.">ShrinkImageFilter</a> reduces the size of an image by an integer factor in each dimension. The algorithm implemented is a simple subsample. The output image size in each dimension is given by:</p>
+<p >outputSize[j] = max( std::floor(inputSize[j]/shrinkFactor[j]), 1 );</p>
+<p >NOTE: The physical centers of the input and output will be the same. Because of this, the Origin of the output may not be the same as the Origin of the input. Since this filter produces an image which is a different resolution, origin and with different pixel spacing than its input image, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#ade67a54c973bfaf739184c906da7c77a">ProcessObject::GenerateInputRequestedRegion()</a> and <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
+<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ShrinkImageFilter.html#afd12fe8a40df21112df364066ab2a3ce">DynamicThreadedGenerateData()</a> method for its implementation.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkShrinkImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkShrinkImageFilter_8h_source.html">itkShrinkImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ShrinkImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -744,21 +758,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::ShrinkImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Reduce the size of an image by an integer factor in each dimension. </p>
-<p ><a class="el" href="classitk_1_1ShrinkImageFilter.html" title="Reduce the size of an image by an integer factor in each dimension.">ShrinkImageFilter</a> reduces the size of an image by an integer factor in each dimension. The algorithm implemented is a simple subsample. The output image size in each dimension is given by:</p>
-<p >outputSize[j] = max( std::floor(inputSize[j]/shrinkFactor[j]), 1 );</p>
-<p >NOTE: The physical centers of the input and output will be the same. Because of this, the Origin of the output may not be the same as the Origin of the input. Since this filter produces an image which is a different resolution, origin and with different pixel spacing than its input image, it needs to override several of the methods defined in <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> in order to properly manage the pipeline execution model. In particular, this filter overrides <a class="el" href="classitk_1_1ProcessObject.html#ade67a54c973bfaf739184c906da7c77a">ProcessObject::GenerateInputRequestedRegion()</a> and <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a>.</p>
-<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1ShrinkImageFilter.html#afd12fe8a40df21112df364066ab2a3ce">DynamicThreadedGenerateData()</a> method for its implementation.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkShrinkImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkShrinkImageFilter_8h_source.html">itkShrinkImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6f25df6e47dc1a971fde2d7e7f364e7e" name="a6f25df6e47dc1a971fde2d7e7f364e7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f25df6e47dc1a971fde2d7e7f364e7e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

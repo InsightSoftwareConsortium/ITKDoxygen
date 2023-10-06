@@ -96,7 +96,34 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTransform_8h_source.html">itkTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VInputDimension = 3, unsigned int VOutputDimension = 3&gt;<br />
+class itk::Transform&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> points and vectors from an input space to an output space. </p>
+<p >This abstract class defines the generic interface for a geometric transformation from one space to another. The class provides methods for mapping points, vectors and covariant vectors from the input space to the output space.</p>
+<p >Given that transformations are not necessarily invertible, this basic class does not provide the methods for back transformation. Back transform methods are implemented in derived classes where appropriate.</p>
+<dl class="section user"><dt>Registration Framework Support</dt><dd>Typically a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> class has several methods for setting its parameters. For use in the registration framework, the parameters must also be represented by an array of doubles to allow communication with generic optimizers. The <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> of transformation parameters is set using the <a class="el" href="classitk_1_1Transform.html#a10d3d757ca8f3193afd76bc9fd970840">SetParameters()</a> method.</dd></dl>
+<p>Another requirement of the registration framework is the computation of the transform Jacobian. In general, an <a class="el" href="classitk_1_1ImageToImageMetric.html" title="Computes similarity between regions of two images.">ImageToImageMetric</a> requires the knowledge of the Jacobian in order to compute the metric derivatives. The Jacobian is a matrix whose element are the partial derivatives of the output point with respect to the array of parameters that defines the transform.</p>
+<p >Subclasses must provide implementations for:<br  />
+ virtual OutputPointType <a class="el" href="classitk_1_1Transform.html#a76d429aaf8c0b0dcb251b69d7b593fb2">TransformPoint(const InputPointType  &amp;) const</a><br  />
+ virtual OutputVectorType <a class="el" href="classitk_1_1Transform.html#a7cada47d468ab32308b79efa6bb00d9c">TransformVector(const InputVectorType &amp;) const</a><br  />
+ virtual OutputVnlVectorType <a class="el" href="classitk_1_1Transform.html#a59b751efe31415027f6a1434285a00aa">TransformVector(const InputVnlVectorType &amp;) const</a><br  />
+ virtual OutputCovariantVectorType <a class="el" href="classitk_1_1Transform.html#aec197e5e007265ff093fd2e9e7f71294">TransformCovariantVector(const InputCovariantVectorType &amp;) const</a><br  />
+ virtual void <a class="el" href="classitk_1_1Transform.html#a10d3d757ca8f3193afd76bc9fd970840">SetParameters(const ParametersType &amp;)</a><br  />
+ virtual void <a class="el" href="classitk_1_1Transform.html#a10b7616f9ff6be892eda3fb8cef2e763">SetFixedParameters(const FixedParametersType &amp;)</a><br  />
+ virtual void <a class="el" href="classitk_1_1Transform.html#a4eddbc04b2432c5c05fb4d082da0cea7">ComputeJacobianWithRespectToParameters(
+                                                            const InputPointType &amp;,
+                                                            JacobianType &amp;) const</a><br  />
+ virtual void <a class="el" href="classitk_1_1Transform.html#a5ab9edff9fce8d62f7b3915c9b1587d3">ComputeJacobianWithRespectToPosition(
+                                                            const InputPointType &amp; x,
+                                                            JacobianPositionType &amp;jacobian ) const</a>;<br  />
+</p>
+<p >Since TransformVector and TransformCovariantVector have multiple overloaded methods from the base class, subclasses must specify:<br  />
+ using Superclass::TransformVector;<br  />
+ using Superclass::TransformCovariantVector;<br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="itkTransform_8h_source.html#l00083">83</a> of file <a class="el" href="itkTransform_8h_source.html">itkTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Transform&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -517,34 +544,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VInputDimension = 3, unsigned int VOutputDimension = 3&gt;<br />
-class itk::Transform&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> points and vectors from an input space to an output space. </p>
-<p >This abstract class defines the generic interface for a geometric transformation from one space to another. The class provides methods for mapping points, vectors and covariant vectors from the input space to the output space.</p>
-<p >Given that transformations are not necessarily invertible, this basic class does not provide the methods for back transformation. Back transform methods are implemented in derived classes where appropriate.</p>
-<dl class="section user"><dt>Registration Framework Support</dt><dd>Typically a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> class has several methods for setting its parameters. For use in the registration framework, the parameters must also be represented by an array of doubles to allow communication with generic optimizers. The <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> of transformation parameters is set using the <a class="el" href="classitk_1_1Transform.html#a10d3d757ca8f3193afd76bc9fd970840">SetParameters()</a> method.</dd></dl>
-<p>Another requirement of the registration framework is the computation of the transform Jacobian. In general, an <a class="el" href="classitk_1_1ImageToImageMetric.html" title="Computes similarity between regions of two images.">ImageToImageMetric</a> requires the knowledge of the Jacobian in order to compute the metric derivatives. The Jacobian is a matrix whose element are the partial derivatives of the output point with respect to the array of parameters that defines the transform.</p>
-<p >Subclasses must provide implementations for:<br  />
- virtual OutputPointType <a class="el" href="classitk_1_1Transform.html#a76d429aaf8c0b0dcb251b69d7b593fb2">TransformPoint(const InputPointType  &amp;) const</a><br  />
- virtual OutputVectorType <a class="el" href="classitk_1_1Transform.html#a7cada47d468ab32308b79efa6bb00d9c">TransformVector(const InputVectorType &amp;) const</a><br  />
- virtual OutputVnlVectorType <a class="el" href="classitk_1_1Transform.html#a59b751efe31415027f6a1434285a00aa">TransformVector(const InputVnlVectorType &amp;) const</a><br  />
- virtual OutputCovariantVectorType <a class="el" href="classitk_1_1Transform.html#aec197e5e007265ff093fd2e9e7f71294">TransformCovariantVector(const InputCovariantVectorType &amp;) const</a><br  />
- virtual void <a class="el" href="classitk_1_1Transform.html#a10d3d757ca8f3193afd76bc9fd970840">SetParameters(const ParametersType &amp;)</a><br  />
- virtual void <a class="el" href="classitk_1_1Transform.html#a10b7616f9ff6be892eda3fb8cef2e763">SetFixedParameters(const FixedParametersType &amp;)</a><br  />
- virtual void <a class="el" href="classitk_1_1Transform.html#a4eddbc04b2432c5c05fb4d082da0cea7">ComputeJacobianWithRespectToParameters(
-                                                            const InputPointType &amp;,
-                                                            JacobianType &amp;) const</a><br  />
- virtual void <a class="el" href="classitk_1_1Transform.html#a5ab9edff9fce8d62f7b3915c9b1587d3">ComputeJacobianWithRespectToPosition(
-                                                            const InputPointType &amp; x,
-                                                            JacobianPositionType &amp;jacobian ) const</a>;<br  />
-</p>
-<p >Since TransformVector and TransformCovariantVector have multiple overloaded methods from the base class, subclasses must specify:<br  />
- using Superclass::TransformVector;<br  />
- using Superclass::TransformCovariantVector;<br  />
- </p>
-
-<p class="definition">Definition at line <a class="el" href="itkTransform_8h_source.html#l00083">83</a> of file <a class="el" href="itkTransform_8h_source.html">itkTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a93b311d0b8cab8438a894359eefe4f77" name="a93b311d0b8cab8438a894359eefe4f77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93b311d0b8cab8438a894359eefe4f77">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

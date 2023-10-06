@@ -96,7 +96,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkIntermodesThresholdCalculator_8h_source.html">itkIntermodesThresholdCalculator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename THistogram, typename TOutput = double&gt;<br />
+class itk::IntermodesThresholdCalculator&lt; THistogram, TOutput &gt;</div><p >Computes the Intermodes's threshold for an image. </p>
+<p >J. M. S. Prewitt and M. L. Mendelsohn, "The analysis of cell images," in Annals of the New York Academy of Sciences, vol. 128, pp. 1035-1053, 1966.</p><ul>
+<li>Assumes a bimodal histogram. The histogram needs is smoothed (using a running average of size 3, iteratively) until there are only two local maxima. j and k Threshold t is (j+k)/2. Images with histograms having extremely unequal peaks or a broad and flat valley are unsuitable for this method.</li>
+</ul>
+<p >This class is templated over the input histogram type. </p><dl class="section warning"><dt>Warning</dt><dd>This calculator assumes that the input histogram has only one dimension.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd>
+<dd>
+Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
+<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/811">https://www.insight-journal.org/browse/publication/811</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkIntermodesThresholdCalculator_8h_source.html#l00056">56</a> of file <a class="el" href="itkIntermodesThresholdCalculator_8h_source.html">itkIntermodesThresholdCalculator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::IntermodesThresholdCalculator&lt; THistogram, TOutput &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -606,20 +619,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename THistogram, typename TOutput = double&gt;<br />
-class itk::IntermodesThresholdCalculator&lt; THistogram, TOutput &gt;</div><p >Computes the Intermodes's threshold for an image. </p>
-<p >J. M. S. Prewitt and M. L. Mendelsohn, "The analysis of cell images," in Annals of the New York Academy of Sciences, vol. 128, pp. 1035-1053, 1966.</p><ul>
-<li>Assumes a bimodal histogram. The histogram needs is smoothed (using a running average of size 3, iteratively) until there are only two local maxima. j and k Threshold t is (j+k)/2. Images with histograms having extremely unequal peaks or a broad and flat valley are unsuitable for this method.</li>
-</ul>
-<p >This class is templated over the input histogram type. </p><dl class="section warning"><dt>Warning</dt><dd>This calculator assumes that the input histogram has only one dimension.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd>
-<dd>
-Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
-<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/811">https://www.insight-journal.org/browse/publication/811</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkIntermodesThresholdCalculator_8h_source.html#l00056">56</a> of file <a class="el" href="itkIntermodesThresholdCalculator_8h_source.html">itkIntermodesThresholdCalculator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae171da31b855cc9c36dd42aadb11a3b3" name="ae171da31b855cc9c36dd42aadb11a3b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae171da31b855cc9c36dd42aadb11a3b3">&#9670;&nbsp;</a></span>AbsoluteFrequencyType</h2>
 

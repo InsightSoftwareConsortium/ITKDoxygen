@@ -94,7 +94,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMRASlabIdentifier_8h_source.html">itkMRASlabIdentifier.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
+class itk::MRASlabIdentifier&lt; TInputImage &gt;</div><p >Identifies slabs in MR images comparing minimum intensity averages. </p>
+<p >This class is templated over the type of image. In many cases, a 3D MR image is constructed by merging smaller 3D blocks (slabs) which were acquired with different settings such as magnetic settings and patient positions. Therefore, stripe like patterns with slabs can be present in the resulting image. Such artifacts are called "slab
+boundary" artifacts or "venetian blind" artifacts.</p>
+<p >Due to the slab boundary artifacts in an image, even same tissue class' intensity values might vary significantly along the borders of slabs. Such rough value changes are not appropriate for some image processing methods. For example, <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> assumes a smooth bias field. However, with the slab boundary artifacts, the bias field estimation scheme that <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> uses might not adapt well. The <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> creates regions for slabs using the <a class="el" href="classitk_1_1MRASlabIdentifier.html" title="Identifies slabs in MR images comparing minimum intensity averages.">MRASlabIdentifier</a> and then applies its bias correction scheme to each slab.</p>
+<p >For this identifier, a slice means 2D image data which is extracted from the input image along one of three axes \((x, y, z)\). Users can specify the slicing axis using the <a class="el" href="classitk_1_1MRASlabIdentifier.html#afaef60133d4018080e6b17302ec61868">SetSlicingDirection(int dimension)</a> member, where the <code>dimension</code> variable follows the convention \({X, Y, Z} : {0, 1, 2}\).</p>
+<p >The identification scheme used works according to the following steps:</p><ol type="1">
+<li>Users should specify how many pixels per slice the identifier will sample.</li>
+<li>For each slice, the identifier searches the specified number of pixels of which intensity values are greater than 0 and less than those of the other pixels in the slice.</li>
+<li>The identifier calculates the average for each slice and the overall average using the search results.</li>
+<li>For each slice, it subtracts the overall average from the slice average. If the sign of the subtraction result changes, then it assumes that a slab ends and another slab begins. </li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="itkMRASlabIdentifier_8h_source.html#l00067">67</a> of file <a class="el" href="itkMRASlabIdentifier_8h_source.html">itkMRASlabIdentifier.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MRASlabIdentifier&lt; TInputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -337,22 +352,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
-class itk::MRASlabIdentifier&lt; TInputImage &gt;</div><p >Identifies slabs in MR images comparing minimum intensity averages. </p>
-<p >This class is templated over the type of image. In many cases, a 3D MR image is constructed by merging smaller 3D blocks (slabs) which were acquired with different settings such as magnetic settings and patient positions. Therefore, stripe like patterns with slabs can be present in the resulting image. Such artifacts are called "slab
-boundary" artifacts or "venetian blind" artifacts.</p>
-<p >Due to the slab boundary artifacts in an image, even same tissue class' intensity values might vary significantly along the borders of slabs. Such rough value changes are not appropriate for some image processing methods. For example, <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> assumes a smooth bias field. However, with the slab boundary artifacts, the bias field estimation scheme that <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> uses might not adapt well. The <a class="el" href="classitk_1_1MRIBiasFieldCorrectionFilter.html" title="Corrects 3D MRI bias field.">MRIBiasFieldCorrectionFilter</a> creates regions for slabs using the <a class="el" href="classitk_1_1MRASlabIdentifier.html" title="Identifies slabs in MR images comparing minimum intensity averages.">MRASlabIdentifier</a> and then applies its bias correction scheme to each slab.</p>
-<p >For this identifier, a slice means 2D image data which is extracted from the input image along one of three axes \((x, y, z)\). Users can specify the slicing axis using the <a class="el" href="classitk_1_1MRASlabIdentifier.html#afaef60133d4018080e6b17302ec61868">SetSlicingDirection(int dimension)</a> member, where the <code>dimension</code> variable follows the convention \({X, Y, Z} : {0, 1, 2}\).</p>
-<p >The identification scheme used works according to the following steps:</p><ol type="1">
-<li>Users should specify how many pixels per slice the identifier will sample.</li>
-<li>For each slice, the identifier searches the specified number of pixels of which intensity values are greater than 0 and less than those of the other pixels in the slice.</li>
-<li>The identifier calculates the average for each slice and the overall average using the search results.</li>
-<li>For each slice, it subtracts the overall average from the slice average. If the sign of the subtraction result changes, then it assumes that a slab ends and another slab begins. </li>
-</ol>
-
-<p class="definition">Definition at line <a class="el" href="itkMRASlabIdentifier_8h_source.html#l00067">67</a> of file <a class="el" href="itkMRASlabIdentifier_8h_source.html">itkMRASlabIdentifier.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab7cfbefee7758fb4c705d39be8aa43d9" name="ab7cfbefee7758fb4c705d39be8aa43d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7cfbefee7758fb4c705d39be8aa43d9">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

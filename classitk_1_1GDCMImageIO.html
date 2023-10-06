@@ -95,7 +95,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGDCMImageIO_8h_source.html">itkGDCMImageIO.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >ImageIO class for reading and writing DICOM V3.0 and ACR/NEMA 1&amp;2 uncompressed images. This class is only an adaptor to the GDCM library. </p>
+<p >GDCM can be found at: <a href="https://sourceforge.net/projects/gdcm">https://sourceforge.net/projects/gdcm</a></p>
+<p >To learn more about the revision shipped with ITK, call</p>
+<p >git log &ndash; Modules/ThirdParty/GDCM/src/</p>
+<p >from an ITK Git checkout.</p>
+<p >The compressors supported include "JPEG2000" (default), and "JPEG". The compression level parameter is not supported.</p>
+<dl class="section warning"><dt>Warning</dt><dd>There are several restrictions to this current writer:<ul>
+<li>Even though during the writing process you pass in a DICOM file as input The output file may not contains ALL DICOM field from the input file. In particular:<ul>
+<li>The SeQuence DICOM field (SQ).</li>
+<li>Fields from Private Dictionary.</li>
+</ul>
+</li>
+<li>Some very long (&gt;0xfff) binary fields are not loaded (typically 0029|0010), you need to explicitly set the maximum length of elements to load to be bigger (see Get/SetMaxSizeLoadEntry).</li>
+<li>In DICOM some fields are stored directly using their binary representation. When loaded into the <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a> some fields are converted to ASCII (only VR: OB/OW/OF and UN are encoded as mime64).</li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGDCMImageIO_8h_source.html#l00109">109</a> of file <a class="el" href="itkGDCMImageIO_8h_source.html">itkGDCMImageIO.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GDCMImageIO:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -745,32 +770,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6c8d9348bcc7102bddbca45b115888dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GDCMImageIO.html#a6c8d9348bcc7102bddbca45b115888dc">m_SingleBit</a> {}</td></tr>
 <tr class="separator:a6c8d9348bcc7102bddbca45b115888dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >ImageIO class for reading and writing DICOM V3.0 and ACR/NEMA 1&amp;2 uncompressed images. This class is only an adaptor to the GDCM library. </p>
-<p >GDCM can be found at: <a href="https://sourceforge.net/projects/gdcm">https://sourceforge.net/projects/gdcm</a></p>
-<p >To learn more about the revision shipped with ITK, call</p>
-<p >git log &ndash; Modules/ThirdParty/GDCM/src/</p>
-<p >from an ITK Git checkout.</p>
-<p >The compressors supported include "JPEG2000" (default), and "JPEG". The compression level parameter is not supported.</p>
-<dl class="section warning"><dt>Warning</dt><dd>There are several restrictions to this current writer:<ul>
-<li>Even though during the writing process you pass in a DICOM file as input The output file may not contains ALL DICOM field from the input file. In particular:<ul>
-<li>The SeQuence DICOM field (SQ).</li>
-<li>Fields from Private Dictionary.</li>
-</ul>
-</li>
-<li>Some very long (&gt;0xfff) binary fields are not loaded (typically 0029|0010), you need to explicitly set the maximum length of elements to load to be bigger (see Get/SetMaxSizeLoadEntry).</li>
-<li>In DICOM some fields are stored directly using their binary representation. When loaded into the <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a> some fields are converted to ASCII (only VR: OB/OW/OF and UN are encoded as mime64).</li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGDCMImageIO_8h_source.html#l00109">109</a> of file <a class="el" href="itkGDCMImageIO_8h_source.html">itkGDCMImageIO.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6cab6d15bb8fff6dbc6c9f6f40e03ff8" name="a6cab6d15bb8fff6dbc6c9f6f40e03ff8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cab6d15bb8fff6dbc6c9f6f40e03ff8">&#9670;&nbsp;</a></span>CompressionEnum</h2>
 

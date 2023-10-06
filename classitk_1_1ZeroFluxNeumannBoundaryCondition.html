@@ -92,7 +92,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkZeroFluxNeumannBoundaryCondition_8h_source.html">itkZeroFluxNeumannBoundaryCondition.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::ZeroFluxNeumannBoundaryCondition&lt; TInputImage, TOutputImage &gt;</div><p >A function object that determines a neighborhood of values at an image boundary according to a Neumann boundary condition where first, upwind derivatives on the boundary are zero. This is a useful condition in solving some classes of differential equations. </p>
+<p >For example, invoking this function object on a 7x5 iterator that masks a region at an image corner (iterator is centered on the 2): </p><div class="fragment"><div class="line">* * * * * *</div>
+<div class="line">* * * * * *</div>
+<div class="line">* 1 2 3 4 5  (where * denotes pixels that lie</div>
+<div class="line">* 3 3 5 5 6          outside of the image boundary)</div>
+<div class="line">* 4 4 6 7 8</div>
+</div><!-- fragment --><p> returns the following neighborhood of values: </p><div class="fragment"><div class="line">1 1 1 2 3 4 5</div>
+<div class="line">1 1 1 2 3 4 5</div>
+<div class="line">1 1 1 2 3 4 5</div>
+<div class="line">3 3 3 3 5 5 6   (note the corner values)</div>
+<div class="line">4 4 4 4 6 7 8</div>
+</div><!-- fragment --><p> The input to this function object is a neighborhood iterator. This boundary condition object is designed to be given as a template argument to a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> or any of the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> subclasses. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkZeroFluxNeumannBoundaryCondition_8h_source.html#l00058">58</a> of file <a class="el" href="itkZeroFluxNeumannBoundaryCondition_8h_source.html">itkZeroFluxNeumannBoundaryCondition.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ZeroFluxNeumannBoundaryCondition&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -181,23 +197,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a50ab0f3a080f2b790b9aeaf86704eda7 inherit pub_static_attribs_classitk_1_1ImageBoundaryCondition"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBoundaryCondition.html#a50ab0f3a080f2b790b9aeaf86704eda7">ImageDimension</a></td></tr>
 <tr class="separator:a50ab0f3a080f2b790b9aeaf86704eda7 inherit pub_static_attribs_classitk_1_1ImageBoundaryCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::ZeroFluxNeumannBoundaryCondition&lt; TInputImage, TOutputImage &gt;</div><p >A function object that determines a neighborhood of values at an image boundary according to a Neumann boundary condition where first, upwind derivatives on the boundary are zero. This is a useful condition in solving some classes of differential equations. </p>
-<p >For example, invoking this function object on a 7x5 iterator that masks a region at an image corner (iterator is centered on the 2): </p><div class="fragment"><div class="line">* * * * * *</div>
-<div class="line">* * * * * *</div>
-<div class="line">* 1 2 3 4 5  (where * denotes pixels that lie</div>
-<div class="line">* 3 3 5 5 6          outside of the image boundary)</div>
-<div class="line">* 4 4 6 7 8</div>
-</div><!-- fragment --><p> returns the following neighborhood of values: </p><div class="fragment"><div class="line">1 1 1 2 3 4 5</div>
-<div class="line">1 1 1 2 3 4 5</div>
-<div class="line">1 1 1 2 3 4 5</div>
-<div class="line">3 3 3 3 5 5 6   (note the corner values)</div>
-<div class="line">4 4 4 4 6 7 8</div>
-</div><!-- fragment --><p> The input to this function object is a neighborhood iterator. This boundary condition object is designed to be given as a template argument to a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> or any of the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> subclasses. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkZeroFluxNeumannBoundaryCondition_8h_source.html#l00058">58</a> of file <a class="el" href="itkZeroFluxNeumannBoundaryCondition_8h_source.html">itkZeroFluxNeumannBoundaryCondition.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a42fd8b16ae20f0e576b4d092539accde" name="a42fd8b16ae20f0e576b4d092539accde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42fd8b16ae20f0e576b4d092539accde">&#9670;&nbsp;</a></span>Self</h2>
 

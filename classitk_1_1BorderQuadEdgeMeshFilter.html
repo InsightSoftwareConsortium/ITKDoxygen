@@ -95,7 +95,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBorderQuadEdgeMeshFilter_8h_source.html">itkBorderQuadEdgeMeshFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh = TInputMesh&gt;<br />
+class itk::BorderQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> one border of a <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">QuadEdgeMesh</a> into either a circle (conformal) or a square (arclength-wise). </p>
+<p >This class is one important step when computing a planar parameterization of one mesh.</p>
+<p >If the input mesh has several boundaries, one can choose the one which would be transformed via the variable m_BorderPick.</p>
+<ul>
+<li><code>m_BorderPick == Self::LONGEST</code> refers to the boundary \( b \) which satisfies: <p class="formulaDsp">
+\[ b = \arg \max_{b^k} \sum_{i=1}^{N^k} \left\| x_{i}^k - x_{i+1}^k \right\| \]
+</p>
+</li>
+</ul>
+<ul>
+<li><code>m_BorderPick == Self::LARGEST</code> refers to the boundary \( b \) which satisfies: <p class="formulaDsp">
+\[ b = \arg \max_{b^k} N^k \]
+</p>
+</li>
+</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ParameterizationQuadEdgeMeshFilter.html" title="Compute a planar parameterization of the input mesh.">ParameterizationQuadEdgeMeshFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBorderQuadEdgeMeshFilter_8h_source.html#l00082">82</a> of file <a class="el" href="itkBorderQuadEdgeMeshFilter_8h_source.html">itkBorderQuadEdgeMeshFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BorderQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -858,27 +878,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh = TInputMesh&gt;<br />
-class itk::BorderQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> one border of a <a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">QuadEdgeMesh</a> into either a circle (conformal) or a square (arclength-wise). </p>
-<p >This class is one important step when computing a planar parameterization of one mesh.</p>
-<p >If the input mesh has several boundaries, one can choose the one which would be transformed via the variable m_BorderPick.</p>
-<ul>
-<li><code>m_BorderPick == Self::LONGEST</code> refers to the boundary \( b \) which satisfies: <p class="formulaDsp">
-\[ b = \arg \max_{b^k} \sum_{i=1}^{N^k} \left\| x_{i}^k - x_{i+1}^k \right\| \]
-</p>
-</li>
-</ul>
-<ul>
-<li><code>m_BorderPick == Self::LARGEST</code> refers to the boundary \( b \) which satisfies: <p class="formulaDsp">
-\[ b = \arg \max_{b^k} N^k \]
-</p>
-</li>
-</ul>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ParameterizationQuadEdgeMeshFilter.html" title="Compute a planar parameterization of the input mesh.">ParameterizationQuadEdgeMeshFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBorderQuadEdgeMeshFilter_8h_source.html#l00082">82</a> of file <a class="el" href="itkBorderQuadEdgeMeshFilter_8h_source.html">itkBorderQuadEdgeMeshFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a055de5153fee12bb02dddbebafbc91b4" name="a055de5153fee12bb02dddbebafbc91b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a055de5153fee12bb02dddbebafbc91b4">&#9670;&nbsp;</a></span>BorderPickEnum</h2>
 

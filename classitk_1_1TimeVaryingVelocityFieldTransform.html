@@ -93,7 +93,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTimeVaryingVelocityFieldTransform_8h_source.html">itkTimeVaryingVelocityFieldTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
+class itk::TimeVaryingVelocityFieldTransform&lt; TParametersValueType, VDimension &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> objects based on integration of a time-varying velocity field. </p>
+<p >Diffeomorphisms are topology-preserving mappings that are useful for describing biologically plausible deformations. Mathematically, a diffeomorphism, \(\phi\), is generated from a time-varying velocity field, v, as described by the first-order differential equation:</p>
+<p class="formulaDsp">
+\[ v(\phi(x,t), t) = \frac{d\phi(x, t)}{dt}, \phi(x, 0) = x \]
+</p>
+<p >In this class, the input is the time-varying velocity field. The output diffeomorphism is produced using fourth order Runge-Kutta.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The output deformation field needs to have dimensionality of 1 less than the input time-varying velocity field. It is assumed that the last dimension of the time-varying velocity field corresponds to Time, and the other dimensions represent Space.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkTimeVaryingVelocityFieldTransform_8h_source.html#l00054">54</a> of file <a class="el" href="itkTimeVaryingVelocityFieldTransform_8h_source.html">itkTimeVaryingVelocityFieldTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TimeVaryingVelocityFieldTransform&lt; TParametersValueType, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -770,21 +784,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType, unsigned int VDimension&gt;<br />
-class itk::TimeVaryingVelocityFieldTransform&lt; TParametersValueType, VDimension &gt;</div><p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> objects based on integration of a time-varying velocity field. </p>
-<p >Diffeomorphisms are topology-preserving mappings that are useful for describing biologically plausible deformations. Mathematically, a diffeomorphism, \(\phi\), is generated from a time-varying velocity field, v, as described by the first-order differential equation:</p>
-<p class="formulaDsp">
-\[ v(\phi(x,t), t) = \frac{d\phi(x, t)}{dt}, \phi(x, 0) = x \]
-</p>
-<p >In this class, the input is the time-varying velocity field. The output diffeomorphism is produced using fourth order Runge-Kutta.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The output deformation field needs to have dimensionality of 1 less than the input time-varying velocity field. It is assumed that the last dimension of the time-varying velocity field corresponds to Time, and the other dimensions represent Space.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkTimeVaryingVelocityFieldTransform_8h_source.html#l00054">54</a> of file <a class="el" href="itkTimeVaryingVelocityFieldTransform_8h_source.html">itkTimeVaryingVelocityFieldTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5c944bf4ec83be651582201aac72c5da" name="a5c944bf4ec83be651582201aac72c5da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c944bf4ec83be651582201aac72c5da">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

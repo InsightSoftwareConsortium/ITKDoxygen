@@ -94,7 +94,85 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPathConstIterator_8h_source.html">itkPathConstIterator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TPath&gt;<br />
+class itk::PathConstIterator&lt; TImage, TPath &gt;</div><p ><a class="el" href="classitk_1_1PathConstIterator.html" title="PathConstIterator iterates (traces) over a path through an image.">PathConstIterator</a> iterates (traces) over a path through an image. </p>
+<p >This iterator visits only those indices of the image that are overlapped by a specified 1D path. All indices are visited in path order. If a path crosses itself at an index, that index of the image will be visited twice. An exception to this rule is that if the path is closed, i.e. its starting and ending indices are coincident. When starting and ending indices are coincident, <a class="el" href="classitk_1_1PathConstIterator.html#a36de7b011392d99ce22fe23585b90f16">GoToBegin()</a> will go to the second index, since the "first" index will be visited later as the "last" index. This is so that paths (especially parametric paths) can be properly closed, without double-visiting the starting/ending point. This behavior can be overridden by calling VisitStartIndexAsLastIndexIfClosed(false) before calling <a class="el" href="classitk_1_1PathConstIterator.html#a36de7b011392d99ce22fe23585b90f16">GoToBegin()</a>. This class is the const version of the <a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a>, and for this reason it doesn't support the Set() method.</p>
+<dl class="section user"><dt>MORE INFORMATION</dt><dd>For a complete description of the ITK <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Iterators and their API, please see the Iterators chapter in the ITK Software Guide. The ITK Software Guide is available in print and as a free .pdf download from <a href="https://www.itk.org">https://www.itk.org</a>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConditionalConstIterator.html" title="A base class for other iterators where membership in the set of output pixels is conditional upon som...">ConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstShapedNeighborhoodIterator.html" title="Const version of ShapedNeighborhoodIterator, defining iteration of a local N-dimensional neighborhood...">ConstShapedNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ConstSliceIterator.html" title="A flexible iterator for ITK containers(i.e. itk::Neighborhood) that support pixel access through oper...">ConstSliceIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1CorrespondenceDataStructureIterator.html" title="An iterator designed to easily traverse an CorrespondenceDataStructure.">CorrespondenceDataStructureIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function.">FloodFilledFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalConstIterator.html" title="Iterates over a flood-filled image function with read-only access to pixels.">FloodFilledImageFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalIterator.html" title="Iterates over a flood-filled image function with write access to pixels.">FloodFilledImageFunctionConditionalIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function with read-only access to pixels.">FloodFilledSpatialFunctionConditionalConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalIterator.html" title="Iterates over a flood-filled spatial function with write access to pixels.">FloodFilledSpatialFunctionConditionalIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageLinearConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageLinearIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRandomConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRandomIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks an image region and is specialized ...">ImageRegionConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionExclusionConstIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region that may par...">ImageRegionExclusionConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionExclusionIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region contained wi...">ImageRegionExclusionIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">ImageRegionIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionReverseConstIterator.html" title="A multi-dimensional image iterator designed to walk a specified image region in reverse.">ImageRegionReverseConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageRegionReverseIterator.html" title="A multi-dimensional image iterator which only walks a region.">ImageRegionReverseIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageReverseConstIterator.html" title="Multi-dimensional image iterator.">ImageReverseConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageReverseIterator.html" title="A multi-dimensional image iterator designed to walk a specified region in reverse.">ImageReverseIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageSliceConstIteratorWithIndex.html" title="Multi-dimensional image iterator which only walks a region.">ImageSliceConstIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageSliceIteratorWithIndex.html" title="A multi-dimensional image iterator that extends the ImageLinearIteratorWithIndex from iteration along...">ImageSliceIteratorWithIndex</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SliceIterator.html" title="A flexible iterator for itk containers(i.e. itk::Neighborhood) that support pixel access through oper...">SliceIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkPathConstIterator_8h_source.html#l00075">75</a> of file <a class="el" href="itkPathConstIterator_8h_source.html">itkPathConstIterator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PathConstIterator&lt; TImage, TPath &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -198,85 +276,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4a4f26abc244ff950e3a906ec3a5fde7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1PathConstIterator.html#ac5d5a1c9d014b81511a315efb40bff58">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PathConstIterator.html#a4a4f26abc244ff950e3a906ec3a5fde7">m_ZeroOffset</a> {}</td></tr>
 <tr class="separator:a4a4f26abc244ff950e3a906ec3a5fde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TPath&gt;<br />
-class itk::PathConstIterator&lt; TImage, TPath &gt;</div><p ><a class="el" href="classitk_1_1PathConstIterator.html" title="PathConstIterator iterates (traces) over a path through an image.">PathConstIterator</a> iterates (traces) over a path through an image. </p>
-<p >This iterator visits only those indices of the image that are overlapped by a specified 1D path. All indices are visited in path order. If a path crosses itself at an index, that index of the image will be visited twice. An exception to this rule is that if the path is closed, i.e. its starting and ending indices are coincident. When starting and ending indices are coincident, <a class="el" href="classitk_1_1PathConstIterator.html#a36de7b011392d99ce22fe23585b90f16">GoToBegin()</a> will go to the second index, since the "first" index will be visited later as the "last" index. This is so that paths (especially parametric paths) can be properly closed, without double-visiting the starting/ending point. This behavior can be overridden by calling VisitStartIndexAsLastIndexIfClosed(false) before calling <a class="el" href="classitk_1_1PathConstIterator.html#a36de7b011392d99ce22fe23585b90f16">GoToBegin()</a>. This class is the const version of the <a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a>, and for this reason it doesn't support the Set() method.</p>
-<dl class="section user"><dt>MORE INFORMATION</dt><dd>For a complete description of the ITK <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Iterators and their API, please see the Iterators chapter in the ITK Software Guide. The ITK Software Guide is available in print and as a free .pdf download from <a href="https://www.itk.org">https://www.itk.org</a>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConditionalConstIterator.html" title="A base class for other iterators where membership in the set of output pixels is conditional upon som...">ConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstNeighborhoodIterator.html" title="Const version of NeighborhoodIterator, defining iteration of a local N-dimensional neighborhood of pi...">ConstNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstShapedNeighborhoodIterator.html" title="Const version of ShapedNeighborhoodIterator, defining iteration of a local N-dimensional neighborhood...">ConstShapedNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ConstSliceIterator.html" title="A flexible iterator for ITK containers(i.e. itk::Neighborhood) that support pixel access through oper...">ConstSliceIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1CorrespondenceDataStructureIterator.html" title="An iterator designed to easily traverse an CorrespondenceDataStructure.">CorrespondenceDataStructureIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function.">FloodFilledFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalConstIterator.html" title="Iterates over a flood-filled image function with read-only access to pixels.">FloodFilledImageFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledImageFunctionConditionalIterator.html" title="Iterates over a flood-filled image function with write access to pixels.">FloodFilledImageFunctionConditionalIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalConstIterator.html" title="Iterates over a flood-filled spatial function with read-only access to pixels.">FloodFilledSpatialFunctionConditionalConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FloodFilledSpatialFunctionConditionalIterator.html" title="Iterates over a flood-filled spatial function with write access to pixels.">FloodFilledSpatialFunctionConditionalIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageLinearConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageLinearIteratorWithIndex.html" title="A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.">ImageLinearIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRandomConstIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRandomIteratorWithIndex.html" title="A multi-dimensional image iterator that visits a random set of pixels within an image region.">ImageRandomIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionConstIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionConstIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks an image region and is specialized ...">ImageRegionConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionExclusionConstIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region that may par...">ImageRegionExclusionConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionExclusionIteratorWithIndex.html" title="A multi-dimensional image iterator that walks an image region, excluding a second region contained wi...">ImageRegionExclusionIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionIteratorWithIndex.html" title="A multi-dimensional iterator templated over image type that walks pixels within a region and is speci...">ImageRegionIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionReverseConstIterator.html" title="A multi-dimensional image iterator designed to walk a specified image region in reverse.">ImageRegionReverseConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageRegionReverseIterator.html" title="A multi-dimensional image iterator which only walks a region.">ImageRegionReverseIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageReverseConstIterator.html" title="Multi-dimensional image iterator.">ImageReverseConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageReverseIterator.html" title="A multi-dimensional image iterator designed to walk a specified region in reverse.">ImageReverseIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageSliceConstIteratorWithIndex.html" title="Multi-dimensional image iterator which only walks a region.">ImageSliceConstIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageSliceIteratorWithIndex.html" title="A multi-dimensional image iterator that extends the ImageLinearIteratorWithIndex from iteration along...">ImageSliceIteratorWithIndex</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1PathIterator.html" title="PathIterator iterates (traces) over a path through an image.">PathIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SliceIterator.html" title="A flexible iterator for itk containers(i.e. itk::Neighborhood) that support pixel access through oper...">SliceIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html" title="A base class for multi-dimensional iterators templated over image type that are designed to efficient...">ImageConstIteratorWithIndex</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkPathConstIterator_8h_source.html#l00075">75</a> of file <a class="el" href="itkPathConstIterator_8h_source.html">itkPathConstIterator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad97be43ca153db70a66014432b010c79" name="ad97be43ca153db70a66014432b010c79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad97be43ca153db70a66014432b010c79">&#9670;&nbsp;</a></span>AccessorType</h2>
 
@@ -442,7 +442,7 @@ template&lt;typename TImage , typename TPath &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >PixelContainer type alias support Used to refer to the container for the pixel data. While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
+<p >PixelContainer type alias support Used to refer to the container for the pixel data. While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkPathConstIterator_8h_source.html#l00112">112</a> of file <a class="el" href="itkPathConstIterator_8h_source.html">itkPathConstIterator.h</a>.</p>
 

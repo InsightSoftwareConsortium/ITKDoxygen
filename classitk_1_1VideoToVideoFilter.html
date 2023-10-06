@@ -93,7 +93,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkVideoToVideoFilter_8h_source.html">itkVideoToVideoFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputVideoStream, typename TOutputVideoStream&gt;<br />
+class itk::VideoToVideoFilter&lt; TInputVideoStream, TOutputVideoStream &gt;</div><p >Base class for filters that use a <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> as input and output. </p>
+<p ><a class="el" href="classitk_1_1VideoToVideoFilter.html" title="Base class for filters that use a VideoStream as input and output.">VideoToVideoFilter</a> is the base class for all process objects that output <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> data and require <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> data as input. This class defines the <a class="el" href="classitk_1_1VideoToVideoFilter.html#aebc3fbd0383c9380849f51f174f3c551">SetInput()</a> method for setting the input to a filter.</p>
+<p >An implementation of <a class="el" href="classitk_1_1VideoToVideoFilter.html#a84bad8e8248c3933d12913da1c8c1be6">GenerateInputRequestedRegion()</a> is provided here that uses the implementation from <a class="el" href="classitk_1_1TemporalProcessObject.html" title="TemporalProcessObject implements a ProcessObject for the itk pipeline with the notion of a temporal r...">TemporalProcessObject</a> to generate input temporal regions and then provides its own mechanism for generating input spatial regions. The default implementation simply takes the requested spatial region from the first frame of output and uses that as the requested region for each of the input frames. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkVideoToVideoFilter_8h_source.html#l00045">45</a> of file <a class="el" href="itkVideoToVideoFilter_8h_source.html">itkVideoToVideoFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::VideoToVideoFilter&lt; TInputVideoStream, TOutputVideoStream &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -715,14 +722,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputVideoStream, typename TOutputVideoStream&gt;<br />
-class itk::VideoToVideoFilter&lt; TInputVideoStream, TOutputVideoStream &gt;</div><p >Base class for filters that use a <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> as input and output. </p>
-<p ><a class="el" href="classitk_1_1VideoToVideoFilter.html" title="Base class for filters that use a VideoStream as input and output.">VideoToVideoFilter</a> is the base class for all process objects that output <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> data and require <a class="el" href="classitk_1_1VideoStream.html" title="A DataObject that holds a buffered portion of a video.">VideoStream</a> data as input. This class defines the <a class="el" href="classitk_1_1VideoToVideoFilter.html#aebc3fbd0383c9380849f51f174f3c551">SetInput()</a> method for setting the input to a filter.</p>
-<p >An implementation of <a class="el" href="classitk_1_1VideoToVideoFilter.html#a84bad8e8248c3933d12913da1c8c1be6">GenerateInputRequestedRegion()</a> is provided here that uses the implementation from <a class="el" href="classitk_1_1TemporalProcessObject.html" title="TemporalProcessObject implements a ProcessObject for the itk pipeline with the notion of a temporal r...">TemporalProcessObject</a> to generate input temporal regions and then provides its own mechanism for generating input spatial regions. The default implementation simply takes the requested spatial region from the first frame of output and uses that as the requested region for each of the input frames. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkVideoToVideoFilter_8h_source.html#l00045">45</a> of file <a class="el" href="itkVideoToVideoFilter_8h_source.html">itkVideoToVideoFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7a97881e306569dec46387c8876ba1a4" name="a7a97881e306569dec46387c8876ba1a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a97881e306569dec46387c8876ba1a4">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

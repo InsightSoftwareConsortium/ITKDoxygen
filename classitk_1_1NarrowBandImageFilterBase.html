@@ -96,7 +96,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNarrowBandImageFilterBase_8h_source.html">itkNarrowBandImageFilterBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::NarrowBandImageFilterBase&lt; TInputImage, TOutputImage &gt;</div><p >This class implements a multi-threaded finite difference image to image solver that can be applied to an arbitrary list of pixels. </p>
+<dl class="section user"><dt></dt><dd>This class is intended as a common base class for classical narrowband solvers and manifold solvers. This base class implements a common memory management and multi-threaded architecture for applying a finite difference function to a list of pixels in an image. The specifics of narrowband solvers such as re-initialization and the use of land-mines are not implemented.</dd></dl>
+<dl class="section user"><dt>INPUTS</dt><dd>This filter takes an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> as input. The appropriate type of input image is entirely determined by the application. As a rule, however, the input type is immediately converted to the output type before processing. This is because the input is not assumed to be a real value type and must be converted to signed, real values for the calculations.</dd></dl>
+<dl class="section user"><dt>OUTPUTS</dt><dd>The output is an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> and is the solution of the pde. The embedding of the interface may vary with the application, but the usual ITK convention is that it is the zero level set in the output image.</dd></dl>
+<dl class="section user"><dt>IMPORTANT!</dt><dd>Read the documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> before attempting to use this filter. The solver requires that you specify a <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> to use for calculations. This is set using the method SetDifferenceFunction in the parent class.</dd></dl>
+<dl class="section user"><dt>REFERENCES</dt><dd>Sethian, J.A. Level Set Methods. Cambridge University Press. 1996. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNarrowBandImageFilterBase_8h_source.html#l00070">70</a> of file <a class="el" href="itkNarrowBandImageFilterBase_8h_source.html">itkNarrowBandImageFilterBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NarrowBandImageFilterBase&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -958,17 +968,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::NarrowBandImageFilterBase&lt; TInputImage, TOutputImage &gt;</div><p >This class implements a multi-threaded finite difference image to image solver that can be applied to an arbitrary list of pixels. </p>
-<dl class="section user"><dt></dt><dd>This class is intended as a common base class for classical narrowband solvers and manifold solvers. This base class implements a common memory management and multi-threaded architecture for applying a finite difference function to a list of pixels in an image. The specifics of narrowband solvers such as re-initialization and the use of land-mines are not implemented.</dd></dl>
-<dl class="section user"><dt>INPUTS</dt><dd>This filter takes an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> as input. The appropriate type of input image is entirely determined by the application. As a rule, however, the input type is immediately converted to the output type before processing. This is because the input is not assumed to be a real value type and must be converted to signed, real values for the calculations.</dd></dl>
-<dl class="section user"><dt>OUTPUTS</dt><dd>The output is an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> and is the solution of the pde. The embedding of the interface may vary with the application, but the usual ITK convention is that it is the zero level set in the output image.</dd></dl>
-<dl class="section user"><dt>IMPORTANT!</dt><dd>Read the documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> before attempting to use this filter. The solver requires that you specify a <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> to use for calculations. This is set using the method SetDifferenceFunction in the parent class.</dd></dl>
-<dl class="section user"><dt>REFERENCES</dt><dd>Sethian, J.A. Level Set Methods. Cambridge University Press. 1996. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNarrowBandImageFilterBase_8h_source.html#l00070">70</a> of file <a class="el" href="itkNarrowBandImageFilterBase_8h_source.html">itkNarrowBandImageFilterBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a136568ed2bde2782645d0246de31075d" name="a136568ed2bde2782645d0246de31075d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a136568ed2bde2782645d0246de31075d">&#9670;&nbsp;</a></span>BandNodeType</h2>
 

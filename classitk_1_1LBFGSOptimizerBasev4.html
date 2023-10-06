@@ -95,7 +95,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLBFGSOptimizerBasev4_8h_source.html">itkLBFGSOptimizerBasev4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalVnlOptimizerType&gt;<br />
+class itk::LBFGSOptimizerBasev4&lt; TInternalVnlOptimizerType &gt;</div><p >Abstract base for vnl lbfgs algorithm optimizers in ITKv4 registration framework. </p>
+<dl class="section note"><dt>Note</dt><dd>The StopConditionDescription returned by this class is directly from the vnl optimizer by calling <code> m_VnlOptimizer-&gt;get_failure_code() </code>. This seems to return "Failure" even when no error has occurred. The same behavior is observed in the ITKv3 version of this optimizer.</dd>
+<dd>
+Local-support (high-density) transforms. Local-support transforms are not supported. To add support for these, the class must be modified thusly:</dd>
+<dd>
+1) Parameter updates: In SingleValuedNonLinearCostFunctionAdaptor, the handling of the gradient must be changed to accommodate the fact that local-support transforms expect a gradient to be added to the transform parameters using the UpdateTransformParameters method of the local support transform. Other optimizers in the v4 framework use this method, but the use of the vnl optimizers here complicates it.</dd>
+<dd>
+2) Efficiency To work efficiently with local-support transforms, this class should be modified to use a single parameter object to avoid the multiple parameter copies that are currently performed. It should work to use the transform parameters pointer.</dd></dl>
+<p>This code has been adapted for the ITKv4 registration framework from the <a class="el" href="namespaceitk_1_1v3.html">v3</a> version, itkLBFGSOptimizer. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkLBFGSOptimizerBasev4_8h_source.html#l00076">76</a> of file <a class="el" href="itkLBFGSOptimizerBasev4_8h_source.html">itkLBFGSOptimizerBasev4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LBFGSOptimizerBasev4&lt; TInternalVnlOptimizerType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -504,20 +517,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalVnlOptimizerType&gt;<br />
-class itk::LBFGSOptimizerBasev4&lt; TInternalVnlOptimizerType &gt;</div><p >Abstract base for vnl lbfgs algorithm optimizers in ITKv4 registration framework. </p>
-<dl class="section note"><dt>Note</dt><dd>The StopConditionDescription returned by this class is directly from the vnl optimizer by calling <code> m_VnlOptimizer-&gt;get_failure_code() </code>. This seems to return "Failure" even when no error has occurred. The same behavior is observed in the ITKv3 version of this optimizer.</dd>
-<dd>
-Local-support (high-density) transforms. Local-support transforms are not supported. To add support for these, the class must be modified thusly:</dd>
-<dd>
-1) Parameter updates: In SingleValuedNonLinearCostFunctionAdaptor, the handling of the gradient must be changed to accommodate the fact that local-support transforms expect a gradient to be added to the transform parameters using the UpdateTransformParameters method of the local support transform. Other optimizers in the v4 framework use this method, but the use of the vnl optimizers here complicates it.</dd>
-<dd>
-2) Efficiency To work efficiently with local-support transforms, this class should be modified to use a single parameter object to avoid the multiple parameter copies that are currently performed. It should work to use the transform parameters pointer.</dd></dl>
-<p>This code has been adapted for the ITKv4 registration framework from the <a class="el" href="namespaceitk_1_1v3.html">v3</a> version, itkLBFGSOptimizer. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkLBFGSOptimizerBasev4_8h_source.html#l00076">76</a> of file <a class="el" href="itkLBFGSOptimizerBasev4_8h_source.html">itkLBFGSOptimizerBasev4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9d8c8f26298ea4829c2d4f1418d4ebf3" name="a9d8c8f26298ea4829c2d4f1418d4ebf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d8c8f26298ea4829c2d4f1418d4ebf3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

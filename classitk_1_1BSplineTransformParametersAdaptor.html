@@ -96,7 +96,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineTransformParametersAdaptor_8h_source.html">itkBSplineTransformParametersAdaptor.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
+class itk::BSplineTransformParametersAdaptor&lt; TTransform &gt;</div><p ><a class="el" href="classitk_1_1BSplineTransformParametersAdaptor.html" title="BSplineTransformParametersAdaptor adapts a BSplineTransform to the new specified fixed parameters.">BSplineTransformParametersAdaptor</a> adapts a <a class="el" href="classitk_1_1BSplineTransform.html" title="Deformable transform using a BSpline representation.">BSplineTransform</a> to the new specified fixed parameters. </p>
+<p >The fixed parameters of the <a class="el" href="classitk_1_1BSplineTransform.html" title="Deformable transform using a BSpline representation.">BSplineTransform</a> store the following information (in order as they appear in m_FixedParameters): grid size grid origin grid spacing grid direction</p>
+<p >During multiresolution image registration it is often desired to also increase the B-spline grid resolution for greater flexibility in optimizing the transform. As defined in the base class, the user can change the resolution via</p>
+<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
+<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
+</div><!-- fragment --><p >or the user can use the more intuitive API for setting the fixed parameters. E.g., often the user will want to maintain the same transform domain spatial extent but only increase the mesh size. This can be done as follows:</p>
+<div class="fragment"><div class="line">    transformAdaptor-&gt;SetTransform( transform );</div>
+<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainOrigin( transform-&gt;GetTransformDomainOrigin() );</div>
+<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainDirection( transform-&gt;GetTransformDomainDirection() );</div>
+<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainPhysicalDimensions( transform-&gt;GetTransformDomainPhysicalDimensions()</div>
+<div class="line">); transformAdaptor-&gt;SetRequiredTransformDomainMeshSize( newMeshSize ); transformAdaptor-&gt;AdaptTransformParameters();</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Marius Staring </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineTransformParametersAdaptor_8h_source.html#l00064">64</a> of file <a class="el" href="itkBSplineTransformParametersAdaptor_8h_source.html">itkBSplineTransformParametersAdaptor.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineTransformParametersAdaptor&lt; TTransform &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -423,26 +442,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
-class itk::BSplineTransformParametersAdaptor&lt; TTransform &gt;</div><p ><a class="el" href="classitk_1_1BSplineTransformParametersAdaptor.html" title="BSplineTransformParametersAdaptor adapts a BSplineTransform to the new specified fixed parameters.">BSplineTransformParametersAdaptor</a> adapts a <a class="el" href="classitk_1_1BSplineTransform.html" title="Deformable transform using a BSpline representation.">BSplineTransform</a> to the new specified fixed parameters. </p>
-<p >The fixed parameters of the <a class="el" href="classitk_1_1BSplineTransform.html" title="Deformable transform using a BSpline representation.">BSplineTransform</a> store the following information (in order as they appear in m_FixedParameters): grid size grid origin grid spacing grid direction</p>
-<p >During multiresolution image registration it is often desired to also increase the B-spline grid resolution for greater flexibility in optimizing the transform. As defined in the base class, the user can change the resolution via</p>
-<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
-<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
-</div><!-- fragment --><p >or the user can use the more intuitive API for setting the fixed parameters. E.g., often the user will want to maintain the same transform domain spatial extent but only increase the mesh size. This can be done as follows:</p>
-<div class="fragment"><div class="line">    transformAdaptor-&gt;SetTransform( transform );</div>
-<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainOrigin( transform-&gt;GetTransformDomainOrigin() );</div>
-<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainDirection( transform-&gt;GetTransformDomainDirection() );</div>
-<div class="line">    transformAdaptor-&gt;SetRequiredTransformDomainPhysicalDimensions( transform-&gt;GetTransformDomainPhysicalDimensions()</div>
-<div class="line">); transformAdaptor-&gt;SetRequiredTransformDomainMeshSize( newMeshSize ); transformAdaptor-&gt;AdaptTransformParameters();</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Marius Staring </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineTransformParametersAdaptor_8h_source.html#l00064">64</a> of file <a class="el" href="itkBSplineTransformParametersAdaptor_8h_source.html">itkBSplineTransformParametersAdaptor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a381bf58798207636717ecc41c6b78a59" name="a381bf58798207636717ecc41c6b78a59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a381bf58798207636717ecc41c6b78a59">&#9670;&nbsp;</a></span>CoefficientImageArray</h2>
 

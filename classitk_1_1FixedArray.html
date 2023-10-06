@@ -94,7 +94,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TValue, unsigned int VLength = 3&gt;<br />
+class itk::FixedArray&lt; TValue, VLength &gt;</div><p >Simulate a standard C array with copy semantics. </p>
+<p >Simulates a standard C array, except that copy semantics are used instead of reference semantics. Also, arrays of different sizes cannot be assigned to one another, and size information is known for function returns.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TValue</td><td>Element type stored at each location in the array. </td></tr>
+    <tr><td class="paramname">VLength</td><td>= Length of the array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The length of the array is fixed at compile time. If you wish to specify the length of the array at run-time, use the class <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">itk::Array</a>. If you wish to change to change the length of the array at run-time, you're best off using std::vector&lt;&gt;.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00053">53</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FixedArray_1_1ConstReverseIterator.html">ConstReverseIterator</a></td></tr>
@@ -242,26 +261,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abff0d84b2aa09958d7cf6195c0fe302e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FixedArray.html#a51a9ee33960e4401c35410ebc15ddb90">CArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FixedArray.html#abff0d84b2aa09958d7cf6195c0fe302e">m_InternalArray</a></td></tr>
 <tr class="separator:abff0d84b2aa09958d7cf6195c0fe302e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TValue, unsigned int VLength = 3&gt;<br />
-class itk::FixedArray&lt; TValue, VLength &gt;</div><p >Simulate a standard C array with copy semantics. </p>
-<p >Simulates a standard C array, except that copy semantics are used instead of reference semantics. Also, arrays of different sizes cannot be assigned to one another, and size information is known for function returns.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TValue</td><td>Element type stored at each location in the array. </td></tr>
-    <tr><td class="paramname">VLength</td><td>= Length of the array.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The length of the array is fixed at compile time. If you wish to specify the length of the array at run-time, use the class <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">itk::Array</a>. If you wish to change to change the length of the array at run-time, you're best off using std::vector&lt;&gt;.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFixedArray_8h_source.html#l00053">53</a> of file <a class="el" href="itkFixedArray_8h_source.html">itkFixedArray.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a51a9ee33960e4401c35410ebc15ddb90" name="a51a9ee33960e4401c35410ebc15ddb90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51a9ee33960e4401c35410ebc15ddb90">&#9670;&nbsp;</a></span>CArray</h2>
 

@@ -94,7 +94,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkVectorGradientAnisotropicDiffusionImageFilter_8h_source.html">itkVectorGradientAnisotropicDiffusionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::VectorGradientAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs anisotropic diffusion on a vector <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> using the anisotropic diffusion function implemented implemented in itkVectorGradientNDAnisotropicDiffusionFunction. For detailed information on anisotropic diffusion see itkAnisotropicDiffusionFunction, itkVectorGradientNDAnisotropicDiffusionFunction, and itkGradientAnisotropicDiffusionFunction.</p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter must be an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> with pixel type which is either an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>, or a subclass of an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>. Additionally, the component type of the vector should be a numerical type (float or double, or a user defined type which correctly defines arithmetic operations with floating point accuracy). The output image type also has these requirements.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>Please read all the documentation found in <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Also see <a class="el" href="classitk_1_1VectorGradientNDAnisotropicDiffusionFunction.html">VectorGradientNDAnisotropicDiffusionFunction</a>.</dd></dl>
+<p>The maximum allowable time step for this filter is 1/2^N, where N is the dimensionality of the image. For 2D images any value below 0.250 is stable, and for 3D images, any value below 0.125 is stable.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkVectorGradientAnisotropicDiffusionImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkVectorGradientAnisotropicDiffusionImageFilter_8h_source.html">itkVectorGradientAnisotropicDiffusionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::VectorGradientAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -957,20 +970,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::VectorGradientAnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs anisotropic diffusion on a vector <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> using the anisotropic diffusion function implemented implemented in itkVectorGradientNDAnisotropicDiffusionFunction. For detailed information on anisotropic diffusion see itkAnisotropicDiffusionFunction, itkVectorGradientNDAnisotropicDiffusionFunction, and itkGradientAnisotropicDiffusionFunction.</p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter must be an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> with pixel type which is either an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>, or a subclass of an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>. Additionally, the component type of the vector should be a numerical type (float or double, or a user defined type which correctly defines arithmetic operations with floating point accuracy). The output image type also has these requirements.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>Please read all the documentation found in <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Also see <a class="el" href="classitk_1_1VectorGradientNDAnisotropicDiffusionFunction.html">VectorGradientNDAnisotropicDiffusionFunction</a>.</dd></dl>
-<p>The maximum allowable time step for this filter is 1/2^N, where N is the dimensionality of the image. For 2D images any value below 0.250 is stable, and for 3D images, any value below 0.125 is stable.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkVectorGradientAnisotropicDiffusionImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkVectorGradientAnisotropicDiffusionImageFilter_8h_source.html">itkVectorGradientAnisotropicDiffusionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab23c5b6581e545dac45380e3379d4525" name="ab23c5b6581e545dac45380e3379d4525"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab23c5b6581e545dac45380e3379d4525">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

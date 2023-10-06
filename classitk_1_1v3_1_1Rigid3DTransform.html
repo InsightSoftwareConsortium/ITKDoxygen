@@ -94,7 +94,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkv3Rigid3DTransform_8h_source.html">itkv3Rigid3DTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double&gt;<br />
+class itk::v3::Rigid3DTransform&lt; TParametersValueType &gt;</div><p >ITK3.x compatible <a class="el" href="classitk_1_1v3_1_1Rigid3DTransform.html" title="ITK3.x compatible Rigid3DTransform of a vector space (e.g. space coordinates)">Rigid3DTransform</a> of a vector space (e.g. space coordinates) </p>
+<p >NOTE: In ITK4, the itkNewMacro() was removed from <a class="el" href="classitk_1_1Rigid3DTransform.html" title="Rigid3DTransform of a vector space (e.g. space coordinates)">itk::Rigid3DTransform</a>. This class, itkv3::Rigid3DTransform provides the ITK3.x functionality. The purpose of the class is provide ITKv3 functionality with backward compatibility after ITK 5.0 removal of ITKV3_COMPATIBILITY support.</p>
+<p >Even though the name <a class="el" href="classitk_1_1v3_1_1Rigid3DTransform.html" title="ITK3.x compatible Rigid3DTransform of a vector space (e.g. space coordinates)">Rigid3DTransform</a> is conceptually closer to what a user may expect, the <a class="el" href="classitk_1_1VersorRigid3DTransform.html" title="VersorRigid3DTransform of a vector space (e.g. space coordinates)">VersorRigid3DTransform</a> is often a much better transform to use during optimization procedures from both a speed perspective (lower dimensional parameter space), and stability standpoint (versors do not suffer from rotational gimble lock).</p>
+<p >This transform applies a rotation and translation in 3D space. The transform is specified as a rotation matrix around a arbitrary center and is followed by a translation.</p>
+<p >The parameters for this transform can be set either using individual Set methods or in serialized form using <a class="el" href="classitk_1_1Rigid3DTransform.html#a9a90834c6158e18dbb7f68ab4c089a20">SetParameters()</a> and <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#abd5b7498bad800b572119bfeda6036c5">SetFixedParameters()</a>.</p>
+<p >The serialization of the optimizable parameters is an array of 12 elements. The first 9 parameters represents the rotation matrix in row-major order (where the column index varies the fastest). The last 3 parameters defines the translation in each dimension.</p>
+<p >The serialization of the fixed parameters is an array of 3 elements defining the center of rotation in each dimension. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkv3Rigid3DTransform_8h_source.html#l00063">63</a> of file <a class="el" href="itkv3Rigid3DTransform_8h_source.html">itkv3Rigid3DTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::v3::Rigid3DTransform&lt; TParametersValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -740,18 +751,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double&gt;<br />
-class itk::v3::Rigid3DTransform&lt; TParametersValueType &gt;</div><p >ITK3.x compatible <a class="el" href="classitk_1_1v3_1_1Rigid3DTransform.html" title="ITK3.x compatible Rigid3DTransform of a vector space (e.g. space coordinates)">Rigid3DTransform</a> of a vector space (e.g. space coordinates) </p>
-<p >NOTE: In ITK4, the itkNewMacro() was removed from <a class="el" href="classitk_1_1Rigid3DTransform.html" title="Rigid3DTransform of a vector space (e.g. space coordinates)">itk::Rigid3DTransform</a>. This class, itkv3::Rigid3DTransform provides the ITK3.x functionality. The purpose of the class is provide ITKv3 functionality with backward compatibility after ITK 5.0 removal of ITKV3_COMPATIBILITY support.</p>
-<p >Even though the name <a class="el" href="classitk_1_1v3_1_1Rigid3DTransform.html" title="ITK3.x compatible Rigid3DTransform of a vector space (e.g. space coordinates)">Rigid3DTransform</a> is conceptually closer to what a user may expect, the <a class="el" href="classitk_1_1VersorRigid3DTransform.html" title="VersorRigid3DTransform of a vector space (e.g. space coordinates)">VersorRigid3DTransform</a> is often a much better transform to use during optimization procedures from both a speed perspective (lower dimensional parameter space), and stability standpoint (versors do not suffer from rotational gimble lock).</p>
-<p >This transform applies a rotation and translation in 3D space. The transform is specified as a rotation matrix around a arbitrary center and is followed by a translation.</p>
-<p >The parameters for this transform can be set either using individual Set methods or in serialized form using <a class="el" href="classitk_1_1Rigid3DTransform.html#a9a90834c6158e18dbb7f68ab4c089a20">SetParameters()</a> and <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#abd5b7498bad800b572119bfeda6036c5">SetFixedParameters()</a>.</p>
-<p >The serialization of the optimizable parameters is an array of 12 elements. The first 9 parameters represents the rotation matrix in row-major order (where the column index varies the fastest). The last 3 parameters defines the translation in each dimension.</p>
-<p >The serialization of the fixed parameters is an array of 3 elements defining the center of rotation in each dimension. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkv3Rigid3DTransform_8h_source.html#l00063">63</a> of file <a class="el" href="itkv3Rigid3DTransform_8h_source.html">itkv3Rigid3DTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5e2810c04a592deedbaf203e0de4dd40" name="a5e2810c04a592deedbaf203e0de4dd40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e2810c04a592deedbaf203e0de4dd40">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

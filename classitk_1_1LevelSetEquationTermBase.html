@@ -93,7 +93,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetEquationTermBase_8h_source.html">itkLevelSetEquationTermBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TLevelSetContainer&gt;<br />
+class itk::LevelSetEquationTermBase&lt; TInputImage, TLevelSetContainer &gt;</div><p >Abstract class to represents a term in the level-set evolution PDE. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TInput</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
+    <tr><td class="paramname">TLevelSetContainer</td><td>Level set function container type</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Evolving single level-set function \( \phi \) can be expressed as follows: </p><p class="formulaDsp">
+\[ \frac{\partial \phi(p)}{\partial \tau} = \sum\limits_{i=1}^{N} \alpha_{i} \cdot \omega_i(p) \]
+</p>
+<p> where \(\omega_i\) is a term which could depend on the level-set function, the input image; and \(\alpha_i\) is a weight to balance the contribution of each term in the PDE.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetEquationContainer.html" title="Class for holding a set of level set equations (PDEs).">LevelSetEquationContainer</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermBase_8h_source.html#l00049">49</a> of file <a class="el" href="itkLevelSetEquationTermBase_8h_source.html">itkLevelSetEquationTermBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetEquationTermBase&lt; TInputImage, TLevelSetContainer &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -376,24 +393,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TLevelSetContainer&gt;<br />
-class itk::LevelSetEquationTermBase&lt; TInputImage, TLevelSetContainer &gt;</div><p >Abstract class to represents a term in the level-set evolution PDE. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TInput</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
-    <tr><td class="paramname">TLevelSetContainer</td><td>Level set function container type</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Evolving single level-set function \( \phi \) can be expressed as follows: </p><p class="formulaDsp">
-\[ \frac{\partial \phi(p)}{\partial \tau} = \sum\limits_{i=1}^{N} \alpha_{i} \cdot \omega_i(p) \]
-</p>
-<p> where \(\omega_i\) is a term which could depend on the level-set function, the input image; and \(\alpha_i\) is a weight to balance the contribution of each term in the PDE.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetEquationContainer.html" title="Class for holding a set of level set equations (PDEs).">LevelSetEquationContainer</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationTermBase_8h_source.html#l00049">49</a> of file <a class="el" href="itkLevelSetEquationTermBase_8h_source.html">itkLevelSetEquationTermBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="affa9d47189e1a8da8fcce9daf16fb7c2" name="affa9d47189e1a8da8fcce9daf16fb7c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affa9d47189e1a8da8fcce9daf16fb7c2">&#9670;&nbsp;</a></span>CacheImageType</h2>
 

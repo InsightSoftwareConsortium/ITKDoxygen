@@ -95,7 +95,29 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDiscreteGaussianImageFilter_8h_source.html">itkDiscreteGaussianImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::DiscreteGaussianImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian blurring by separable convolution of an image and a discrete Gaussian operator (kernel). </p>
+<p >The Gaussian operator used here was described by Tony Lindeberg (Discrete Scale-Space Theory and the Scale-Space Primal Sketch. Dissertation. Royal Institute of Technology, Stockholm, Sweden. May 1991.) The Gaussian kernel used here was designed so that smoothing and derivative operations commute after discretization.</p>
+<p >The variance or standard deviation (sigma) will be evaluated as pixel units if SetUseImageSpacing is off (false) or as physical units if SetUseImageSpacing is on (true, default). The variance can be set independently in each dimension.</p>
+<p >When the Gaussian kernel is small, this filter tends to run faster than <a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">itk::RecursiveGaussianImageFilter</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDiscreteGaussianImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkDiscreteGaussianImageFilter_8h_source.html">itkDiscreteGaussianImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DiscreteGaussianImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -846,29 +868,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::DiscreteGaussianImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian blurring by separable convolution of an image and a discrete Gaussian operator (kernel). </p>
-<p >The Gaussian operator used here was described by Tony Lindeberg (Discrete Scale-Space Theory and the Scale-Space Primal Sketch. Dissertation. Royal Institute of Technology, Stockholm, Sweden. May 1991.) The Gaussian kernel used here was designed so that smoothing and derivative operations commute after discretization.</p>
-<p >The variance or standard deviation (sigma) will be evaluated as pixel units if SetUseImageSpacing is off (false) or as physical units if SetUseImageSpacing is on (true, default). The variance can be set independently in each dimension.</p>
-<p >When the Gaussian kernel is small, this filter tends to run faster than <a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">itk::RecursiveGaussianImageFilter</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDiscreteGaussianImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkDiscreteGaussianImageFilter_8h_source.html">itkDiscreteGaussianImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7ce4fe4f3726bb7d1e99eddb29c65a2e" name="a7ce4fe4f3726bb7d1e99eddb29c65a2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ce4fe4f3726bb7d1e99eddb29c65a2e">&#9670;&nbsp;</a></span>ArrayType</h2>
 

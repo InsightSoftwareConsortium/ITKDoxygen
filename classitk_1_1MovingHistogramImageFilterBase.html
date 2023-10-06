@@ -96,7 +96,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMovingHistogramImageFilterBase_8h_source.html">itkMovingHistogramImageFilterBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
+class itk::MovingHistogramImageFilterBase&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Implements a generic moving histogram algorithm. </p>
+<p >This filter is a base class to implement efficiently many neighborhood filters. Instead of visiting all the neighbors of a pixel, the set of pixels in the neighborhood is updated when the filter is moving to a new pixel. The number of pixels read for each pixel can be very smaller than the number of pixels read by a basic algorithm.</p>
+<p >This filter moves the neighborhood over all the pixels of the output requested region, and pass the pixel added and removed of the neighborhood to the an histogram class. This filter doesn't implement the histogram class - it must be implement and passed as template parameter. The histogram class is not necessary a real histogram. It can be implemented in many ways, and only has to provide the methods described below.</p>
+<p >This filter takes 4 template parameters: the input and output image type, the structuring element (or kernel) type, and the histogram type. The input and output image must have the same number of dimension.</p>
+<p >The histogram type is a class which has to implements seven methods:</p><ul>
+<li>a default constructor which takes no parameter.</li>
+<li>void AddPixel( const InputPixelType &amp;p ) is called when a new pixel is added to the histogram.</li>
+<li>void RemovePixel( const InputPixelType &amp;p ) is called when a pixel is removed of the histogram.</li>
+<li>void AddBoundary() is called when a pixel outside the image is added. No value is provided: it's the responsibility to the histogram class to get it if needed. This method can be kept empty to ignore the boundary pixels.</li>
+<li>void RemoveBoundary() is called to when a pixel outside the image is removed. No value is provided: it's the responsibility to the histogram class to get it if needed. This method can be kept empty to ignore the boundary pixels.</li>
+<li>AType GetValue() is called to set the value of the output image. AType must be the output pixel type, or a type castable to the output pixel type.</li>
+</ul>
+<p ><a class="el" href="classitk_1_1MovingHistogramImageFilterBase.html" title="Implements a generic moving histogram algorithm.">MovingHistogramImageFilterBase</a> add the new pixels before removing the old ones, so, if AddBoundary() is implemented and/or the kernel is symmetric, it is safe to consider that the histogram will never be empty.</p>
+<p >One histogram is created for each thread by the method NewHistogram(). The NewHistogram() method can be overridden to pass some parameters to the histogram.</p>
+<p >The neighborhood is defined by a structuring element, and must a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">itk::Neighborhood</a> object or a subclass. The structuring element is assumed to be composed of binary values (zero or one). Only elements of the structuring element having values &gt; 0 are candidates for affecting the center pixel.</p>
+<dl class="section see"><dt>See also</dt><dd>MovingWindowMeanImageFilter, <a class="el" href="classitk_1_1RankImageFilter.html" title="Rank filter of a greyscale image.">RankImageFilter</a>, <a class="el" href="classitk_1_1MaskedMovingHistogramImageFilter.html">MaskedMovingHistogramImageFilter</a>, </dd>
+<dd>
+<a class="el" href="classitk_1_1MovingHistogramMorphologicalGradientImageFilter.html" title="Morphological gradients enhance the variation of pixel intensity in a given neighborhood.">MovingHistogramMorphologicalGradientImageFilter</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann </dd>
+<dd>
+Richard Beare </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMovingHistogramImageFilterBase_8h_source.html#l00091">91</a> of file <a class="el" href="itkMovingHistogramImageFilterBase_8h_source.html">itkMovingHistogramImageFilterBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MovingHistogramImageFilterBase&lt; TInputImage, TOutputImage, TKernel &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -866,32 +891,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
-class itk::MovingHistogramImageFilterBase&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Implements a generic moving histogram algorithm. </p>
-<p >This filter is a base class to implement efficiently many neighborhood filters. Instead of visiting all the neighbors of a pixel, the set of pixels in the neighborhood is updated when the filter is moving to a new pixel. The number of pixels read for each pixel can be very smaller than the number of pixels read by a basic algorithm.</p>
-<p >This filter moves the neighborhood over all the pixels of the output requested region, and pass the pixel added and removed of the neighborhood to the an histogram class. This filter doesn't implement the histogram class - it must be implement and passed as template parameter. The histogram class is not necessary a real histogram. It can be implemented in many ways, and only has to provide the methods described below.</p>
-<p >This filter takes 4 template parameters: the input and output image type, the structuring element (or kernel) type, and the histogram type. The input and output image must have the same number of dimension.</p>
-<p >The histogram type is a class which has to implements seven methods:</p><ul>
-<li>a default constructor which takes no parameter.</li>
-<li>void AddPixel( const InputPixelType &amp;p ) is called when a new pixel is added to the histogram.</li>
-<li>void RemovePixel( const InputPixelType &amp;p ) is called when a pixel is removed of the histogram.</li>
-<li>void AddBoundary() is called when a pixel outside the image is added. No value is provided: it's the responsibility to the histogram class to get it if needed. This method can be kept empty to ignore the boundary pixels.</li>
-<li>void RemoveBoundary() is called to when a pixel outside the image is removed. No value is provided: it's the responsibility to the histogram class to get it if needed. This method can be kept empty to ignore the boundary pixels.</li>
-<li>AType GetValue() is called to set the value of the output image. AType must be the output pixel type, or a type castable to the output pixel type.</li>
-</ul>
-<p ><a class="el" href="classitk_1_1MovingHistogramImageFilterBase.html" title="Implements a generic moving histogram algorithm.">MovingHistogramImageFilterBase</a> add the new pixels before removing the old ones, so, if AddBoundary() is implemented and/or the kernel is symmetric, it is safe to consider that the histogram will never be empty.</p>
-<p >One histogram is created for each thread by the method NewHistogram(). The NewHistogram() method can be overridden to pass some parameters to the histogram.</p>
-<p >The neighborhood is defined by a structuring element, and must a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">itk::Neighborhood</a> object or a subclass. The structuring element is assumed to be composed of binary values (zero or one). Only elements of the structuring element having values &gt; 0 are candidates for affecting the center pixel.</p>
-<dl class="section see"><dt>See also</dt><dd>MovingWindowMeanImageFilter, <a class="el" href="classitk_1_1RankImageFilter.html" title="Rank filter of a greyscale image.">RankImageFilter</a>, <a class="el" href="classitk_1_1MaskedMovingHistogramImageFilter.html">MaskedMovingHistogramImageFilter</a>, </dd>
-<dd>
-<a class="el" href="classitk_1_1MovingHistogramMorphologicalGradientImageFilter.html" title="Morphological gradients enhance the variation of pixel intensity in a given neighborhood.">MovingHistogramMorphologicalGradientImageFilter</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann </dd>
-<dd>
-Richard Beare </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMovingHistogramImageFilterBase_8h_source.html#l00091">91</a> of file <a class="el" href="itkMovingHistogramImageFilterBase_8h_source.html">itkMovingHistogramImageFilterBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9248f9a47e6100e8084629fdb7248f74" name="a9248f9a47e6100e8084629fdb7248f74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9248f9a47e6100e8084629fdb7248f74">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

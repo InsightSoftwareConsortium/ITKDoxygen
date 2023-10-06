@@ -97,7 +97,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDenseFiniteDifferenceImageFilter_8h_source.html">itkDenseFiniteDifferenceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::DenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter implements a layer of the finite difference solver hierarchy that performs "dense" iteration, ie. iteration over all pixels in the input and output at each change calculation and update step. Dense iteration is in contrast to a "sparse" iteration over a subset of the pixels. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
+<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
+<dl class="section user"><dt></dt><dd>The generic code for performing iterations and updates at each time step is inherited from the parent class. This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a037d80bb4417a051d011945ff299e8ef">ApplyUpdate()</a>. These methods are designed to automatically thread their execution. \( \Delta \) is defined as an image of identical size and type as the output image.</dd></dl>
+<dl class="section user"><dt></dt><dd>As we descend through each layer in the hierarchy, we know more and more about the specific application of our filter. At this level, we have committed to iteration over each pixel in an image. We take advantage of that knowledge to multithread the iteration and update methods.</dd></dl>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image to image filter. The specific types of the images are not fixed at this level in the hierarchy.</dd></dl>
+<dl class="section user"><dt>How to use this class</dt><dd>This filter is only one layer in a branch the finite difference solver hierarchy. It does not define the function used in the <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and it does not define the stopping criteria (Halt method). To use this class, subclass it to a specific instance that supplies a function and <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a> method.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDenseFiniteDifferenceImageFilter_8h_source.html#l00070">70</a> of file <a class="el" href="itkDenseFiniteDifferenceImageFilter_8h_source.html">itkDenseFiniteDifferenceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -908,18 +919,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::DenseFiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter implements a layer of the finite difference solver hierarchy that performs "dense" iteration, ie. iteration over all pixels in the input and output at each change calculation and update step. Dense iteration is in contrast to a "sparse" iteration over a subset of the pixels. See documentation for <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> for an overview of the iterative finite difference algorithm:</p>
-<dl class="section user"><dt></dt><dd>\(u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t\)</dd></dl>
-<dl class="section user"><dt></dt><dd>The generic code for performing iterations and updates at each time step is inherited from the parent class. This class defines an update buffer for \( \Delta \) and the methods <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a037d80bb4417a051d011945ff299e8ef">ApplyUpdate()</a>. These methods are designed to automatically thread their execution. \( \Delta \) is defined as an image of identical size and type as the output image.</dd></dl>
-<dl class="section user"><dt></dt><dd>As we descend through each layer in the hierarchy, we know more and more about the specific application of our filter. At this level, we have committed to iteration over each pixel in an image. We take advantage of that knowledge to multithread the iteration and update methods.</dd></dl>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image to image filter. The specific types of the images are not fixed at this level in the hierarchy.</dd></dl>
-<dl class="section user"><dt>How to use this class</dt><dd>This filter is only one layer in a branch the finite difference solver hierarchy. It does not define the function used in the <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html#a6c8153da009cc303db3f34e29ce242f4">CalculateChange()</a> and it does not define the stopping criteria (Halt method). To use this class, subclass it to a specific instance that supplies a function and <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a> method.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDenseFiniteDifferenceImageFilter_8h_source.html#l00070">70</a> of file <a class="el" href="itkDenseFiniteDifferenceImageFilter_8h_source.html">itkDenseFiniteDifferenceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abd0bc96c0ea6016fef0048f73d9c1d27" name="abd0bc96c0ea6016fef0048f73d9c1d27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd0bc96c0ea6016fef0048f73d9c1d27">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

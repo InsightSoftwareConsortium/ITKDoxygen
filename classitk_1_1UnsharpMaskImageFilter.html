@@ -96,7 +96,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkUnsharpMaskImageFilter_8h_source.html">itkUnsharpMaskImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = float&gt;<br />
+class itk::UnsharpMaskImageFilter&lt; TInputImage, TOutputImage, TInternalPrecision &gt;</div><p >Edge enhancement filter. </p>
+<p >This filter subtracts a smoothed version of the image from the image to achieve the edge enhancing effect. <a href="https://en.wikipedia.org/w/index.php?title=Unsharp_masking&oldid=750486803#Photographic_unsharp_masking">https://en.wikipedia.org/w/index.php?title=Unsharp_masking&amp;oldid=750486803#Photographic_unsharp_masking</a></p>
+<p >It has configurable amount, radius (sigma) and threshold, and whether to clamp the resulting values to the range of output type.</p>
+<p >Formula: sharpened=original+[<a class="el" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">itk::Math::abs</a>(original-blurred)-threshold]*amount</p>
+<p >If clamping is turned off (it is on by default), casting to output pixel format is done using C++ defaults, meaning that values are not clamped but rather wrap around e.g. 260 -&gt; 4 (unsigned char).</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SmoothingRecursiveGaussianImageFilter.html" title="Computes the smoothing of an image by convolution with the Gaussian kernels implemented as IIR filter...">SmoothingRecursiveGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1RescaleIntensityImageFilter.html" title="Applies a linear transformation to the intensity levels of the input Image.">RescaleIntensityImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkUnsharpMaskImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkUnsharpMaskImageFilter_8h_source.html">itkUnsharpMaskImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::UnsharpMaskImageFilter&lt; TInputImage, TOutputImage, TInternalPrecision &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -778,21 +792,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = float&gt;<br />
-class itk::UnsharpMaskImageFilter&lt; TInputImage, TOutputImage, TInternalPrecision &gt;</div><p >Edge enhancement filter. </p>
-<p >This filter subtracts a smoothed version of the image from the image to achieve the edge enhancing effect. <a href="https://en.wikipedia.org/w/index.php?title=Unsharp_masking&oldid=750486803#Photographic_unsharp_masking">https://en.wikipedia.org/w/index.php?title=Unsharp_masking&amp;oldid=750486803#Photographic_unsharp_masking</a></p>
-<p >It has configurable amount, radius (sigma) and threshold, and whether to clamp the resulting values to the range of output type.</p>
-<p >Formula: sharpened=original+[<a class="el" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">itk::Math::abs</a>(original-blurred)-threshold]*amount</p>
-<p >If clamping is turned off (it is on by default), casting to output pixel format is done using C++ defaults, meaning that values are not clamped but rather wrap around e.g. 260 -&gt; 4 (unsigned char).</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SmoothingRecursiveGaussianImageFilter.html" title="Computes the smoothing of an image by convolution with the Gaussian kernels implemented as IIR filter...">SmoothingRecursiveGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1RescaleIntensityImageFilter.html" title="Applies a linear transformation to the intensity levels of the input Image.">RescaleIntensityImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkUnsharpMaskImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkUnsharpMaskImageFilter_8h_source.html">itkUnsharpMaskImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa62676b4ff6cd77f38808598729642fd" name="aa62676b4ff6cd77f38808598729642fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa62676b4ff6cd77f38808598729642fd">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

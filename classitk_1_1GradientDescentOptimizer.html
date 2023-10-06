@@ -95,7 +95,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGradientDescentOptimizer_8h_source.html">itkGradientDescentOptimizer.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Implement a gradient descent optimizer. </p>
+<p ><a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a> implements a simple gradient descent optimizer. At each iteration the current position is updated according to</p>
+<p class="formulaDsp">
+\[ p_{n+1} = p_n + \mbox{learningRate} \, \frac{\partial f(p_n) }{\partial p_n} \]
+</p>
+<p >The learning rate is a fixed scalar defined via <a class="el" href="classitk_1_1GradientDescentOptimizer.html#a64adaaf85be4219058446a400790214f">SetLearningRate()</a>. The optimizer steps through a user defined number of iterations; no convergence checking is done.</p>
+<p >Additionally, user can scale each component, \( \partial f / \partial p \), by setting a scaling vector using method SetScale().</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1RegularStepGradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">RegularStepGradientDescentOptimizer</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGradientDescentOptimizer_8h_source.html#l00072">72</a> of file <a class="el" href="itkGradientDescentOptimizer_8h_source.html">itkGradientDescentOptimizer.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GradientDescentOptimizer:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -456,18 +467,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ab0bc18c49e9790c8a5110289fc04d891"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GradientDescentOptimizer.html#ab0bc18c49e9790c8a5110289fc04d891">m_Value</a> { 0.0 }</td></tr>
 <tr class="separator:ab0bc18c49e9790c8a5110289fc04d891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Implement a gradient descent optimizer. </p>
-<p ><a class="el" href="classitk_1_1GradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">GradientDescentOptimizer</a> implements a simple gradient descent optimizer. At each iteration the current position is updated according to</p>
-<p class="formulaDsp">
-\[ p_{n+1} = p_n + \mbox{learningRate} \, \frac{\partial f(p_n) }{\partial p_n} \]
-</p>
-<p >The learning rate is a fixed scalar defined via <a class="el" href="classitk_1_1GradientDescentOptimizer.html#a64adaaf85be4219058446a400790214f">SetLearningRate()</a>. The optimizer steps through a user defined number of iterations; no convergence checking is done.</p>
-<p >Additionally, user can scale each component, \( \partial f / \partial p \), by setting a scaling vector using method SetScale().</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1RegularStepGradientDescentOptimizer.html" title="Implement a gradient descent optimizer.">RegularStepGradientDescentOptimizer</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGradientDescentOptimizer_8h_source.html#l00072">72</a> of file <a class="el" href="itkGradientDescentOptimizer_8h_source.html">itkGradientDescentOptimizer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1281bae3e1e2dab5ca10cd2cc9570e19" name="a1281bae3e1e2dab5ca10cd2cc9570e19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1281bae3e1e2dab5ca10cd2cc9570e19">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

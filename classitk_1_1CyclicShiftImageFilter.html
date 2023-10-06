@@ -95,7 +95,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCyclicShiftImageFilter_8h_source.html">itkCyclicShiftImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::CyclicShiftImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Perform a cyclic spatial shift of image intensities on the image grid. </p>
+<p >This filter supports arbitrary cyclic shifts of pixel values on the image grid. If the Shift is set to [xOff, yOff], the value of the pixel at [0, 0] in the input image will be the value of the pixel in the output image at index [xOff modulo xSize, yOff modulo ySize] where xSize and ySize are the sizes of the image in the x and y dimensions, respectively. If a pixel value is moved across a boundary, the pixel value is wrapped around that boundary. For example, if the image is 40-by-40 and the Shift is [13, 47], then the value of the pixel at [0, 0] in the input image will be the value of the pixel in the output image at index [13, 7].</p>
+<p >Negative Shifts are supported. This filter also works with images whose largest possible region starts at a non-zero index. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCyclicShiftImageFilter_8h_source.html#l00046">46</a> of file <a class="el" href="itkCyclicShiftImageFilter_8h_source.html">itkCyclicShiftImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CyclicShiftImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -744,14 +751,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::CyclicShiftImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Perform a cyclic spatial shift of image intensities on the image grid. </p>
-<p >This filter supports arbitrary cyclic shifts of pixel values on the image grid. If the Shift is set to [xOff, yOff], the value of the pixel at [0, 0] in the input image will be the value of the pixel in the output image at index [xOff modulo xSize, yOff modulo ySize] where xSize and ySize are the sizes of the image in the x and y dimensions, respectively. If a pixel value is moved across a boundary, the pixel value is wrapped around that boundary. For example, if the image is 40-by-40 and the Shift is [13, 47], then the value of the pixel at [0, 0] in the input image will be the value of the pixel in the output image at index [13, 7].</p>
-<p >Negative Shifts are supported. This filter also works with images whose largest possible region starts at a non-zero index. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCyclicShiftImageFilter_8h_source.html#l00046">46</a> of file <a class="el" href="itkCyclicShiftImageFilter_8h_source.html">itkCyclicShiftImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6bf55d0f5fdcebdb6cf08318e4a3f31b" name="a6bf55d0f5fdcebdb6cf08318e4a3f31b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bf55d0f5fdcebdb6cf08318e4a3f31b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

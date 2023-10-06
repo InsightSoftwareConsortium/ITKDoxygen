@@ -97,7 +97,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineInterpolateImageFunction_8h_source.html">itkBSplineInterpolateImageFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TCoordRep = double, typename TCoefficientType = double&gt;<br />
+class itk::BSplineInterpolateImageFunction&lt; TImageType, TCoordRep, TCoefficientType &gt;</div><p >Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5. </p>
+<p >This class defines N-Dimension B-Spline transformation. It is based on: </p><pre class="fragment">[1] M. Unser,
+    "Splines: A Perfect Fit for Signal and Image Processing,"
+    IEEE Signal Processing Magazine, vol. 16, no. 6, pp. 22-38,
+    November 1999.
+[2] M. Unser, A. Aldroubi and M. Eden,
+    "B-Spline Signal Processing: Part I--Theory,"
+    IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 821-832,
+    February 1993.
+[3] M. Unser, A. Aldroubi and M. Eden,
+    "B-Spline Signal Processing: Part II--Efficient Design and Applications,"
+     IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 834-848,
+     February 1993.
+</pre><p> And code obtained from bigwww.epfl.ch by Philippe Thevenaz</p>
+<p >The B spline coefficients are calculated through the <a class="el" href="classitk_1_1BSplineDecompositionImageFilter.html" title="Calculates the B-Spline coefficients of an image. Spline order may be from 0 to 5.">BSplineDecompositionImageFilter</a></p>
+<p >Limitations: Spline order must be between 0 and 5. Spline order must be set before setting the image. Uses mirror boundary conditions. Requires the same order of Spline for each dimension. Spline is determined in all dimensions, cannot selectively pick dimension for calculating spline.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BSplineDecompositionImageFilter.html" title="Calculates the B-Spline coefficients of an image. Spline order may be from 0 to 5.">BSplineDecompositionImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineInterpolateImageFunction_8h_source.html#l00083">83</a> of file <a class="el" href="itkBSplineInterpolateImageFunction_8h_source.html">itkBSplineInterpolateImageFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineInterpolateImageFunction&lt; TImageType, TCoordRep, TCoefficientType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -525,28 +546,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ace5fff10411868546dbc5adbe5b6933c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html#ace5fff10411868546dbc5adbe5b6933c">m_UseImageDirection</a> {}</td></tr>
 <tr class="separator:ace5fff10411868546dbc5adbe5b6933c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TCoordRep = double, typename TCoefficientType = double&gt;<br />
-class itk::BSplineInterpolateImageFunction&lt; TImageType, TCoordRep, TCoefficientType &gt;</div><p >Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5. </p>
-<p >This class defines N-Dimension B-Spline transformation. It is based on: </p><pre class="fragment">[1] M. Unser,
-    "Splines: A Perfect Fit for Signal and Image Processing,"
-    IEEE Signal Processing Magazine, vol. 16, no. 6, pp. 22-38,
-    November 1999.
-[2] M. Unser, A. Aldroubi and M. Eden,
-    "B-Spline Signal Processing: Part I--Theory,"
-    IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 821-832,
-    February 1993.
-[3] M. Unser, A. Aldroubi and M. Eden,
-    "B-Spline Signal Processing: Part II--Efficient Design and Applications,"
-     IEEE Transactions on Signal Processing, vol. 41, no. 2, pp. 834-848,
-     February 1993.
-</pre><p> And code obtained from bigwww.epfl.ch by Philippe Thevenaz</p>
-<p >The B spline coefficients are calculated through the <a class="el" href="classitk_1_1BSplineDecompositionImageFilter.html" title="Calculates the B-Spline coefficients of an image. Spline order may be from 0 to 5.">BSplineDecompositionImageFilter</a></p>
-<p >Limitations: Spline order must be between 0 and 5. Spline order must be set before setting the image. Uses mirror boundary conditions. Requires the same order of Spline for each dimension. Spline is determined in all dimensions, cannot selectively pick dimension for calculating spline.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BSplineDecompositionImageFilter.html" title="Calculates the B-Spline coefficients of an image. Spline order may be from 0 to 5.">BSplineDecompositionImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineInterpolateImageFunction_8h_source.html#l00083">83</a> of file <a class="el" href="itkBSplineInterpolateImageFunction_8h_source.html">itkBSplineInterpolateImageFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a55825d00595bebcdab5bbaaeaf5ca8f4" name="a55825d00595bebcdab5bbaaeaf5ca8f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55825d00595bebcdab5bbaaeaf5ca8f4">&#9670;&nbsp;</a></span>CoefficientDataType</h2>
 

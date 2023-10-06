@@ -93,7 +93,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSubsamplerBase_8h_source.html">itkSubsamplerBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
+class itk::Statistics::SubsamplerBase&lt; TSample &gt;</div><p >This is the base subsampler class which defines the subsampler API. </p>
+<p >This class will search a <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> provided by SetSample and return a <a class="el" href="classitk_1_1Statistics_1_1Subsample.html" title="This class stores a subset of instance identifiers from another sample object. You can create a subsa...">Subsample</a> that are related in some way to the queried value. Some examples of subsampling strategies include uniform random selection, selection based on <a class="el" href="classitk_1_1Statistics_1_1KdTree.html" title="This class provides methods for k-nearest neighbor search and related data structures for a k-d tree.">KdTree</a>, and selection based on spatial proximity.</p>
+<p >This is an Abstract class that can not be instantiated. There are multiple subsamplers that derive from this class and provide specific implementations of subsampling strategies.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html" title="This an abstract subsampler that constrains subsamples to be contained within a given image region.">RegionConstrainedSubsampler</a>, <a class="el" href="classitk_1_1Statistics_1_1SpatialNeighborSubsampler.html" title="A subsampler that selects all points within the specified radius of the query point.">SpatialNeighborSubsampler</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Statistics_1_1GaussianRandomSpatialNeighborSubsampler.html" title="A subsampler that randomly selects points according to a gaussian distribution within the specified r...">GaussianRandomSpatialNeighborSubsampler</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Statistics_1_1UniformRandomSpatialNeighborSubsampler.html" title="A subsampler that uniformly randomly selects points within the specified radius of the query point.">UniformRandomSpatialNeighborSubsampler</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSubsamplerBase_8h_source.html#l00049">49</a> of file <a class="el" href="itkSubsamplerBase_8h_source.html">itkSubsamplerBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::SubsamplerBase&lt; TSample &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -328,19 +340,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
-class itk::Statistics::SubsamplerBase&lt; TSample &gt;</div><p >This is the base subsampler class which defines the subsampler API. </p>
-<p >This class will search a <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> provided by SetSample and return a <a class="el" href="classitk_1_1Statistics_1_1Subsample.html" title="This class stores a subset of instance identifiers from another sample object. You can create a subsa...">Subsample</a> that are related in some way to the queried value. Some examples of subsampling strategies include uniform random selection, selection based on <a class="el" href="classitk_1_1Statistics_1_1KdTree.html" title="This class provides methods for k-nearest neighbor search and related data structures for a k-d tree.">KdTree</a>, and selection based on spatial proximity.</p>
-<p >This is an Abstract class that can not be instantiated. There are multiple subsamplers that derive from this class and provide specific implementations of subsampling strategies.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1RegionConstrainedSubsampler.html" title="This an abstract subsampler that constrains subsamples to be contained within a given image region.">RegionConstrainedSubsampler</a>, <a class="el" href="classitk_1_1Statistics_1_1SpatialNeighborSubsampler.html" title="A subsampler that selects all points within the specified radius of the query point.">SpatialNeighborSubsampler</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Statistics_1_1GaussianRandomSpatialNeighborSubsampler.html" title="A subsampler that randomly selects points according to a gaussian distribution within the specified r...">GaussianRandomSpatialNeighborSubsampler</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Statistics_1_1UniformRandomSpatialNeighborSubsampler.html" title="A subsampler that uniformly randomly selects points within the specified radius of the query point.">UniformRandomSpatialNeighborSubsampler</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSubsamplerBase_8h_source.html#l00049">49</a> of file <a class="el" href="itkSubsamplerBase_8h_source.html">itkSubsamplerBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3f6dc445419433deca7a7be567beda8f" name="a3f6dc445419433deca7a7be567beda8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f6dc445419433deca7a7be567beda8f">&#9670;&nbsp;</a></span>Baseclass</h2>
 

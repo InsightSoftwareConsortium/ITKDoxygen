@@ -95,7 +95,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4_8h_source.html">itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPointSet, class TInternalComputationValueType = double&gt;<br />
+class itk::JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4&lt; TPointSet, TInternalComputationValueType &gt;</div><p >Implementation of the Jensen Havrda Charvat Tsallis <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> Set metric. </p>
+<p >Given a specified transform and direction, this class calculates the value and derivative between a "fixed" and "moving" point set pair using the Havrda-Charvat-Tsallis entropy family, a generalization of the well-known Shannon entropy, and the Jensen divergence. Another way to look at the family of information-theoretic measures is that the points are used to construct the corresponding probably density functions.</p>
+<p >In addition, we allow the user to invoke a manifold parzen windowing of the data. Instead of an isotropic Gaussian being associated with each point, we can actually calculate the covariance matrix for each point such that it reflects the locate point set structure.</p>
+<p >To speed up the metric calculation, we use ITK's K-d tree to query the metric value only for a given neighborhood. Considering that probably only a small subset of points is needed to get a good approximation of the metric value for a single point, this is probably warranted. So what we do is transform each point (with the specified transform) and construct the k-d tree from the transformed points.</p>
+<p >Contributed by Nicholas J. Tustison, James C. Gee in the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/317">https://www.insight-journal.org/browse/publication/317</a></p>
+<dl class="section note"><dt>Note</dt><dd>The original work reported in Tustison et al. 2011 optionally employed a regularization term to prevent the moving point set(s) from coalescing to a single point location. However, within the registration framework, this term is of limited utility as such regularization is dictated by the transform and any explicit regularization terms. Also note that the published work applies to multiple points sets each of which could be considered "moving" but this is also not applicable for this particular implementation.</dd></dl>
+<dl class="section user"><dt>REFERENCE</dt><dd></dd></dl>
+<p>N.J. Tustison, S. P. Awate, G. Song, T. S. Cook, and J. C. Gee. "Point set registration using Havrda-Charvat-Tsallis entropy measures" IEEE Transactions on Medical Imaging, 30(2):451-60, 2011. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4_8h_source.html#l00072">72</a> of file <a class="el" href="itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4_8h_source.html">itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4&lt; TPointSet, TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -884,19 +896,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPointSet, class TInternalComputationValueType = double&gt;<br />
-class itk::JensenHavrdaCharvatTsallisPointSetToPointSetMetricv4&lt; TPointSet, TInternalComputationValueType &gt;</div><p >Implementation of the Jensen Havrda Charvat Tsallis <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> Set metric. </p>
-<p >Given a specified transform and direction, this class calculates the value and derivative between a "fixed" and "moving" point set pair using the Havrda-Charvat-Tsallis entropy family, a generalization of the well-known Shannon entropy, and the Jensen divergence. Another way to look at the family of information-theoretic measures is that the points are used to construct the corresponding probably density functions.</p>
-<p >In addition, we allow the user to invoke a manifold parzen windowing of the data. Instead of an isotropic Gaussian being associated with each point, we can actually calculate the covariance matrix for each point such that it reflects the locate point set structure.</p>
-<p >To speed up the metric calculation, we use ITK's K-d tree to query the metric value only for a given neighborhood. Considering that probably only a small subset of points is needed to get a good approximation of the metric value for a single point, this is probably warranted. So what we do is transform each point (with the specified transform) and construct the k-d tree from the transformed points.</p>
-<p >Contributed by Nicholas J. Tustison, James C. Gee in the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/317">https://www.insight-journal.org/browse/publication/317</a></p>
-<dl class="section note"><dt>Note</dt><dd>The original work reported in Tustison et al. 2011 optionally employed a regularization term to prevent the moving point set(s) from coalescing to a single point location. However, within the registration framework, this term is of limited utility as such regularization is dictated by the transform and any explicit regularization terms. Also note that the published work applies to multiple points sets each of which could be considered "moving" but this is also not applicable for this particular implementation.</dd></dl>
-<dl class="section user"><dt>REFERENCE</dt><dd></dd></dl>
-<p>N.J. Tustison, S. P. Awate, G. Song, T. S. Cook, and J. C. Gee. "Point set registration using Havrda-Charvat-Tsallis entropy measures" IEEE Transactions on Medical Imaging, 30(2):451-60, 2011. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4_8h_source.html#l00072">72</a> of file <a class="el" href="itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4_8h_source.html">itkJensenHavrdaCharvatTsallisPointSetToPointSetMetricv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="afc69ebdfda95323d1f5fd725d81a8d83" name="afc69ebdfda95323d1f5fd725d81a8d83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc69ebdfda95323d1f5fd725d81a8d83">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

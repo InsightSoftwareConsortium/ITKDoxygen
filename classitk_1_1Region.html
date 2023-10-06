@@ -92,7 +92,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkRegion_8h_source.html">itkRegion.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A region represents some portion or piece of data. </p>
+<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> is an abstract class that represents some portion or piece of a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>. A region is used by the pipeline when processing just a portion of the data, either because 1) memory limits dictate that the pipeline cannot fit the entire dataset into memory; 2) the user has requested that only a piece of the dataset is to be processed; or 3) parallel (multi-threaded) processing of the data is required.</p>
+<p >There are two types of regions in itk: a structured region that specifies a rectangular piece of an image (<a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>), and a unstructured region that specifies piece i of N total pieces (<a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a>). Depending on the filter (its input and output types, and its position in the pipeline), <a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a> or <a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a> will be used to describe the region.</p>
+<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> is a light-weight object and not reference counted. This means that is behaves differently than ITK classes that are reference counted. For example, smart pointer access is not provided, and the (subclasses') constructor, destructor, copy constructor and operator= are all public.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkRegion_8h_source.html#l00065">65</a> of file <a class="el" href="itkRegion_8h_source.html">itkRegion.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Region:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -130,17 +140,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8e6906b72390ff21e47c80b5ca385a36"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Region.html#a8e6906b72390ff21e47c80b5ca385a36">PrintTrailer</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const</td></tr>
 <tr class="separator:a8e6906b72390ff21e47c80b5ca385a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >A region represents some portion or piece of data. </p>
-<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> is an abstract class that represents some portion or piece of a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>. A region is used by the pipeline when processing just a portion of the data, either because 1) memory limits dictate that the pipeline cannot fit the entire dataset into memory; 2) the user has requested that only a piece of the dataset is to be processed; or 3) parallel (multi-threaded) processing of the data is required.</p>
-<p >There are two types of regions in itk: a structured region that specifies a rectangular piece of an image (<a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>), and a unstructured region that specifies piece i of N total pieces (<a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a>). Depending on the filter (its input and output types, and its position in the pipeline), <a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a> or <a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a> will be used to describe the region.</p>
-<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> is a light-weight object and not reference counted. This means that is behaves differently than ITK classes that are reference counted. For example, smart pointer access is not provided, and the (subclasses') constructor, destructor, copy constructor and operator= are all public.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MeshRegion.html" title="A mesh region represents an unstructured region of data.">MeshRegion</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkRegion_8h_source.html#l00065">65</a> of file <a class="el" href="itkRegion_8h_source.html">itkRegion.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a0280ff67070e5095309e2687675ccd10" name="a0280ff67070e5095309e2687675ccd10"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0280ff67070e5095309e2687675ccd10">&#9670;&nbsp;</a></span>RegionEnum</h2>
 

@@ -93,7 +93,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNeighborhoodInnerProduct_8h_source.html">itkNeighborhoodInnerProduct.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TOperator = typename TImage::PixelType, typename TComputation = TOperator&gt;<br />
+class itk::NeighborhoodInnerProduct&lt; TImage, TOperator, TComputation &gt;</div><p >Defines the inner product operation between an <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> and a <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a>. </p>
+<p >This class defines the inner product operation between an <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">itk::Neighborhood</a> and an <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">itk::NeighborhoodOperator</a>. The operator() method is overloaded to support various types of neighborhoods as well as inner products with slices of neighborhoods.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TImage</td><td>Type of image on which the class operates. </td></tr>
+    <tr><td class="paramname">TOperator</td><td>The value type of the operator (defaults to the image pixel type). </td></tr>
+    <tr><td class="paramname">TComputation</td><td>The value type used as the return type of the inner product calculation (defaults to the operator type). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNeighborhoodInnerProduct_8h_source.html#l00048">48</a> of file <a class="el" href="itkNeighborhoodInnerProduct_8h_source.html">itkNeighborhoodInnerProduct.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a4db97effa7d154e07d7fb4949414d806"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NeighborhoodInnerProduct.html#a4db97effa7d154e07d7fb4949414d806">ImagePixelType</a> = typename TImage::PixelType</td></tr>
@@ -132,21 +146,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:abc8348226fdb9d455becd131ee3ed96f"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NeighborhoodInnerProduct.html#abc8348226fdb9d455becd131ee3ed96f">ImageDimension</a> = TImage::ImageDimension</td></tr>
 <tr class="separator:abc8348226fdb9d455becd131ee3ed96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TOperator = typename TImage::PixelType, typename TComputation = TOperator&gt;<br />
-class itk::NeighborhoodInnerProduct&lt; TImage, TOperator, TComputation &gt;</div><p >Defines the inner product operation between an <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> and a <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a>. </p>
-<p >This class defines the inner product operation between an <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">itk::Neighborhood</a> and an <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">itk::NeighborhoodOperator</a>. The operator() method is overloaded to support various types of neighborhoods as well as inner products with slices of neighborhoods.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TImage</td><td>Type of image on which the class operates. </td></tr>
-    <tr><td class="paramname">TOperator</td><td>The value type of the operator (defaults to the image pixel type). </td></tr>
-    <tr><td class="paramname">TComputation</td><td>The value type used as the return type of the inner product calculation (defaults to the operator type). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNeighborhoodInnerProduct_8h_source.html#l00048">48</a> of file <a class="el" href="itkNeighborhoodInnerProduct_8h_source.html">itkNeighborhoodInnerProduct.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4db97effa7d154e07d7fb4949414d806" name="a4db97effa7d154e07d7fb4949414d806"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4db97effa7d154e07d7fb4949414d806">&#9670;&nbsp;</a></span>ImagePixelType</h2>
 

@@ -93,7 +93,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkClassifierBase_8h_source.html">itkClassifierBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDataContainer&gt;<br />
+class itk::ClassifierBase&lt; TDataContainer &gt;</div><p >Base class for classifier objects. </p>
+<p ><a class="el" href="classitk_1_1ClassifierBase.html" title="Base class for classifier objects.">ClassifierBase</a> is the base class for classifier objects. It provides the basic function definitions that are inherent to classifier objects.</p>
+<p >This is the Superclass for the classifier framework. This is an abstract class defining an interface for all the classification objects available through the classifier framework in the ITK toolkit.</p>
+<p >The basic functionality of the classifier framework base class is to classify each data point in given a data set to one of the N classes where N is either specified by the user or automatically determined using methods such as k-means clustering techniques.</p>
+<p >The classifier framework supports two types of data where (1) The input is a series of data points that needs to be classified. These points may be in the form of images where the pixels can be viewed as a list and the spatial location of the pixels in not of a concern. This classification can be carried out via the use of SampleClassifier.</p>
+<p >(2)The input is specifically an image and the pixels cannot be viewed as a list of pixels since the spatial location of the pixel in needed for various algorithmic implementations (such as the Markov Random Field based approached). This type of data can be classified via the use of GeneralImageClassifierBase.</p>
+<p >The user will call the <a class="el" href="classitk_1_1ClassifierBase.html#afec3d0272a360deb32fa5c60fe7460f1">Update()</a> function to run the classification process.</p>
+<p >The user must generate the membership function before asking for data to be classified. One can automatically generate the membership function from the training data via the use of itkImageModelEstimator class. The membership functions have to be populated by using the AddMembershipFunction. If membership functions are not set prior to calling for classification, an exception in thrown.</p>
+<p >The user can have more than one membership function, and can have one for each class. The order of the membership calculator becomes the class label for the class that is represented by the membership calculator.</p>
+<p >The fourth argument is the type of decision rule. The main role of a decision rule is comparing the return values of the membership calculators. However, decision rules can include some prior knowledge that can improve the result. To plug in the decision rule, use SetDecisionRule method.</p>
+<p >Before the Update method is called to start the classification process, plug in all necessary parts (one or more membership functions, a decision rule, and the unclassified data).</p>
+<p >This class is templated over the container type. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkClassifierBase_8h_source.html#l00087">87</a> of file <a class="el" href="itkClassifierBase_8h_source.html">itkClassifierBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ClassifierBase&lt; TDataContainer &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -342,23 +358,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDataContainer&gt;<br />
-class itk::ClassifierBase&lt; TDataContainer &gt;</div><p >Base class for classifier objects. </p>
-<p ><a class="el" href="classitk_1_1ClassifierBase.html" title="Base class for classifier objects.">ClassifierBase</a> is the base class for classifier objects. It provides the basic function definitions that are inherent to classifier objects.</p>
-<p >This is the Superclass for the classifier framework. This is an abstract class defining an interface for all the classification objects available through the classifier framework in the ITK toolkit.</p>
-<p >The basic functionality of the classifier framework base class is to classify each data point in given a data set to one of the N classes where N is either specified by the user or automatically determined using methods such as k-means clustering techniques.</p>
-<p >The classifier framework supports two types of data where (1) The input is a series of data points that needs to be classified. These points may be in the form of images where the pixels can be viewed as a list and the spatial location of the pixels in not of a concern. This classification can be carried out via the use of SampleClassifier.</p>
-<p >(2)The input is specifically an image and the pixels cannot be viewed as a list of pixels since the spatial location of the pixel in needed for various algorithmic implementations (such as the Markov Random Field based approached). This type of data can be classified via the use of GeneralImageClassifierBase.</p>
-<p >The user will call the <a class="el" href="classitk_1_1ClassifierBase.html#afec3d0272a360deb32fa5c60fe7460f1">Update()</a> function to run the classification process.</p>
-<p >The user must generate the membership function before asking for data to be classified. One can automatically generate the membership function from the training data via the use of itkImageModelEstimator class. The membership functions have to be populated by using the AddMembershipFunction. If membership functions are not set prior to calling for classification, an exception in thrown.</p>
-<p >The user can have more than one membership function, and can have one for each class. The order of the membership calculator becomes the class label for the class that is represented by the membership calculator.</p>
-<p >The fourth argument is the type of decision rule. The main role of a decision rule is comparing the return values of the membership calculators. However, decision rules can include some prior knowledge that can improve the result. To plug in the decision rule, use SetDecisionRule method.</p>
-<p >Before the Update method is called to start the classification process, plug in all necessary parts (one or more membership functions, a decision rule, and the unclassified data).</p>
-<p >This class is templated over the container type. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkClassifierBase_8h_source.html#l00087">87</a> of file <a class="el" href="itkClassifierBase_8h_source.html">itkClassifierBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a836e15d9ac7e28dbb5dcf382d696a706" name="a836e15d9ac7e28dbb5dcf382d696a706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a836e15d9ac7e28dbb5dcf382d696a706">&#9670;&nbsp;</a></span>DecisionRuleType</h2>
 

@@ -94,7 +94,46 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAnisotropicDiffusionFunction_8h_source.html">itkAnisotropicDiffusionFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::AnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class is a virtual base for anisotropic diffusion function objects. It is a component object in the finite difference solver hierarchy (see itkFiniteDifferenceImageFilter for an overview). <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> objects are used by <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> objects to perform non-linear diffusion on itk::Images.</p>
+<dl class="section user"><dt>Overview of anisotropic diffusion</dt><dd></dd></dl>
+<p>Anisotropic diffusion methods are formulated to reduce noise (or unwanted detail) in images while preserving specific image features. For many applications, there is an assumption that light-dark transitions (edges) are interesting. Standard isotropic diffusion methods move and blur light-dark boundaries. Anisotropic diffusion methods are formulated to specifically preserve edges.</p>
+<p >Anisotropic diffusion methods can be thought of as tools for calculating multi-scale descriptions of images. Embed an image \(U(\mathbf{x})\) in a higher dimensional function of derived images, \(U(\mathbf{x}, t)\). This higher dimensional function represents the solution of the heat diffusion equation,</p>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[\frac{d U(\mathbf{x})}{d t} = \nabla \cdot c \nabla U(\mathbf{x})\]
+</p>
+</dd></dl>
+<dl class="section user"><dt></dt><dd>with constant \(c\) and initial condition \(U(\mathbf{x}, 0) = U_0(\mathbf{x})\), the original image.</dd></dl>
+<dl class="section user"><dt></dt><dd>Extending to the case where \(c\) is not a constant, but a function of \(\mathbf{x}\), gives</dd></dl>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[\frac{d U(\mathbf{x})}{d t} = C(\mathbf{x})\Delta U(\mathbf{x}) + \nabla C(\mathbf{x}) \nabla U(\mathbf{x})\]
+</p>
+</dd></dl>
+<dl class="section user"><dt></dt><dd>Our choice of \(C\) now varies the strength of diffusion anisotropically. Typically, \(C\) is chosen as some function of image features to selectively preserve or remove those features. For example, edges tend to be preserved over smoother regions where \(C\) is inversely scaled according to gradient magnitude as in</dd></dl>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[C(\mathbf{x}) = e^{-(\frac{\parallel \nabla U(\mathbf{x}) \parallel}{K})^2}\]
+</p>
+.</dd></dl>
+<dl class="section user"><dt></dt><dd>Several variations on the scheme presented above are implemented in Itk as subclasses of this equation. The equations are solved using an iterative, finite forward difference technique (see the <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> class).</dd></dl>
+<dl class="section user"><dt>How to use this class</dt><dd>This class must be subclassed to provide the CalculateUpdate() methods of <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> and the function <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html#a604c5048cde7e8ff4a4cf468cd17504a">CalculateAverageGradientMagnitudeSquared()</a>, which is called before each iteration to recalibrate the conductance term.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>The parameters defined in this class apply to the basic anisotropic diffusion equation described in <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Variations on the basic equation will be more or less sensitive to these parameters. For example, functions that perform higher-order derivative calculations may require smaller time-steps than those that only do first-derivative calculations. Wherever possible, reasonable parameters settings are suggested in the documentation of a specific equation implementation.</dd></dl>
+<dl class="section user"><dt>TimeStep</dt><dd>In the anisotropic diffusion filter hierarchy, the time step is set explicitly by the user. The time step referred to here corresponds exactly to \( \Delta t \) in the finite difference update equation described in <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> (see itkFiniteDifferenceImageFilter for more information). Appropriate time steps for solving this type of p.d.e. depend on the dimensionality of the image and the order of the equation. Stable values for most 2D and 3D functions are 0.125 and 0.0625, respectively, when the pixel spacing is unity or is turned off. In general, you should keep the time step below \((PixelSpacing)/2^{N+1}\), where \(N\) is the number of image dimensions. A filter will automatically attempt to constrain its time step to a stable value and generate a run-time warning if the time step is set too high.</dd></dl>
+<dl class="section user"><dt>Conductance Parameter</dt><dd>The conductance parameter controls the sensitivity of the conductance term in the basic anisotropic diffusion equation. It affects the conductance term in different ways depending on the particular variation on the basic equation. As a general rule, the lower the value, the more strongly the diffusion equation preserves image features (such as high gradients or curvature). A high value for conductance will cause the filter to diffuse image features more readily. Typical values range from 0.5 to 2.0 for data like the Visible Human color data, but the correct value for your application is wholly dependent on the results you want from a specific data set and the number or iterations you perform.</dd></dl>
+<dl class="section user"><dt>References</dt><dd>Pietro Perona and Jitendra Malik, `&lsquo;Scale-space and edge detection using anisotropic diffusion,&rsquo;' IEEE Transactions on Pattern Analysis Machine Intelligence, vol. 12, pp. 629-639, 1990.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1VectorAnisotropicDiffusionFunction.html">VectorAnisotropicDiffusionFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ScalarAnisotropicDiffusionFunction.html">ScalarAnisotropicDiffusionFunction</a> </dd>
+<dd>
+GradientAnisotropicDiffusionFunction </dd>
+<dd>
+CurvatureAnisotropicDiffusionFunction </dd>
+<dd>
+VectorGradientAnisotropicDiffusionFunction</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd>Automatically generate the time step value from image dimensionality and order of the equations</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkAnisotropicDiffusionFunction_8h_source.html#l00139">139</a> of file <a class="el" href="itkAnisotropicDiffusionFunction_8h_source.html">itkAnisotropicDiffusionFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AnisotropicDiffusionFunction&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -287,46 +326,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::AnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class is a virtual base for anisotropic diffusion function objects. It is a component object in the finite difference solver hierarchy (see itkFiniteDifferenceImageFilter for an overview). <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> objects are used by <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> objects to perform non-linear diffusion on itk::Images.</p>
-<dl class="section user"><dt>Overview of anisotropic diffusion</dt><dd></dd></dl>
-<p>Anisotropic diffusion methods are formulated to reduce noise (or unwanted detail) in images while preserving specific image features. For many applications, there is an assumption that light-dark transitions (edges) are interesting. Standard isotropic diffusion methods move and blur light-dark boundaries. Anisotropic diffusion methods are formulated to specifically preserve edges.</p>
-<p >Anisotropic diffusion methods can be thought of as tools for calculating multi-scale descriptions of images. Embed an image \(U(\mathbf{x})\) in a higher dimensional function of derived images, \(U(\mathbf{x}, t)\). This higher dimensional function represents the solution of the heat diffusion equation,</p>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[\frac{d U(\mathbf{x})}{d t} = \nabla \cdot c \nabla U(\mathbf{x})\]
-</p>
-</dd></dl>
-<dl class="section user"><dt></dt><dd>with constant \(c\) and initial condition \(U(\mathbf{x}, 0) = U_0(\mathbf{x})\), the original image.</dd></dl>
-<dl class="section user"><dt></dt><dd>Extending to the case where \(c\) is not a constant, but a function of \(\mathbf{x}\), gives</dd></dl>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[\frac{d U(\mathbf{x})}{d t} = C(\mathbf{x})\Delta U(\mathbf{x}) + \nabla C(\mathbf{x}) \nabla U(\mathbf{x})\]
-</p>
-</dd></dl>
-<dl class="section user"><dt></dt><dd>Our choice of \(C\) now varies the strength of diffusion anisotropically. Typically, \(C\) is chosen as some function of image features to selectively preserve or remove those features. For example, edges tend to be preserved over smoother regions where \(C\) is inversely scaled according to gradient magnitude as in</dd></dl>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[C(\mathbf{x}) = e^{-(\frac{\parallel \nabla U(\mathbf{x}) \parallel}{K})^2}\]
-</p>
-.</dd></dl>
-<dl class="section user"><dt></dt><dd>Several variations on the scheme presented above are implemented in Itk as subclasses of this equation. The equations are solved using an iterative, finite forward difference technique (see the <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> class).</dd></dl>
-<dl class="section user"><dt>How to use this class</dt><dd>This class must be subclassed to provide the CalculateUpdate() methods of <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> and the function <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html#a604c5048cde7e8ff4a4cf468cd17504a">CalculateAverageGradientMagnitudeSquared()</a>, which is called before each iteration to recalibrate the conductance term.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>The parameters defined in this class apply to the basic anisotropic diffusion equation described in <a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a>. Variations on the basic equation will be more or less sensitive to these parameters. For example, functions that perform higher-order derivative calculations may require smaller time-steps than those that only do first-derivative calculations. Wherever possible, reasonable parameters settings are suggested in the documentation of a specific equation implementation.</dd></dl>
-<dl class="section user"><dt>TimeStep</dt><dd>In the anisotropic diffusion filter hierarchy, the time step is set explicitly by the user. The time step referred to here corresponds exactly to \( \Delta t \) in the finite difference update equation described in <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> (see itkFiniteDifferenceImageFilter for more information). Appropriate time steps for solving this type of p.d.e. depend on the dimensionality of the image and the order of the equation. Stable values for most 2D and 3D functions are 0.125 and 0.0625, respectively, when the pixel spacing is unity or is turned off. In general, you should keep the time step below \((PixelSpacing)/2^{N+1}\), where \(N\) is the number of image dimensions. A filter will automatically attempt to constrain its time step to a stable value and generate a run-time warning if the time step is set too high.</dd></dl>
-<dl class="section user"><dt>Conductance Parameter</dt><dd>The conductance parameter controls the sensitivity of the conductance term in the basic anisotropic diffusion equation. It affects the conductance term in different ways depending on the particular variation on the basic equation. As a general rule, the lower the value, the more strongly the diffusion equation preserves image features (such as high gradients or curvature). A high value for conductance will cause the filter to diffuse image features more readily. Typical values range from 0.5 to 2.0 for data like the Visible Human color data, but the correct value for your application is wholly dependent on the results you want from a specific data set and the number or iterations you perform.</dd></dl>
-<dl class="section user"><dt>References</dt><dd>Pietro Perona and Jitendra Malik, `&lsquo;Scale-space and edge detection using anisotropic diffusion,&rsquo;' IEEE Transactions on Pattern Analysis Machine Intelligence, vol. 12, pp. 629-639, 1990.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1VectorAnisotropicDiffusionFunction.html">VectorAnisotropicDiffusionFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ScalarAnisotropicDiffusionFunction.html">ScalarAnisotropicDiffusionFunction</a> </dd>
-<dd>
-GradientAnisotropicDiffusionFunction </dd>
-<dd>
-CurvatureAnisotropicDiffusionFunction </dd>
-<dd>
-VectorGradientAnisotropicDiffusionFunction</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd>Automatically generate the time step value from image dimensionality and order of the equations</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkAnisotropicDiffusionFunction_8h_source.html#l00139">139</a> of file <a class="el" href="itkAnisotropicDiffusionFunction_8h_source.html">itkAnisotropicDiffusionFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6b3556c46d9fd8b0840f3e7b466e3cff" name="a6b3556c46d9fd8b0840f3e7b466e3cff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b3556c46d9fd8b0840f3e7b466e3cff">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

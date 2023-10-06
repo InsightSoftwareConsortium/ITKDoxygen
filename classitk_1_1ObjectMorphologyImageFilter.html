@@ -94,7 +94,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkObjectMorphologyImageFilter_8h_source.html">itkObjectMorphologyImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
+class itk::ObjectMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Base class for the morphological operations being applied to isolated objects in an image. </p>
+<p >This class provides the infrastructure to support of morphological operations being applied to images in which the foreground and background intensities are fixed. This filter operates significantly faster than itkBinaryMorphologicalImageFilters; however itkBinaryMorphologicalImageFilters preserve background pixels based on values of neighboring background pixels - potentially important during erosion.</p>
+<p >The "kernel" specified represents a morphology structuring element. The structuring element is a small <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> with values indicating an element is "on" (value &gt; 0) or "off" (value &lt;=0). Morphological operations are defined by placing the structuring element over a pixel, and calculating a nonlinear function (min, max) over the pixels of the image that are under pixels in the structuring element that are "on". The result of this calculation is the value of the pixel in the output image. Under most circumstances, the "center pixel" of the structuring element &ndash; or structuring element pixel over the input pixel under consideration &ndash; is prescribed to be "on". This is not a strict requirement but the subclasses of this filter are not guaranteed to produce the correct result if the "center pixel" is not part of the structuring element.</p>
+<p >Subclasses of this class can define their own operations by simply providing their own <a class="el" href="classitk_1_1ObjectMorphologyImageFilter.html#a0ac64a79f8bb97087de744d2f7bdb4da">Evaluate()</a> protected member functions - one that operates using a smart neighborhood operator for edge faces and one that operates using a standard neighborhood operator..</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ErodeObjectMorphologyImageFilter.html" title="Erosion of an object in an image.">ErodeObjectMorphologyImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DilateObjectMorphologyImageFilter.html" title="dilation of an object in an image">DilateObjectMorphologyImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1GrayscaleErodeImageFilter.html" title="Grayscale erosion of an image.">GrayscaleErodeImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1GrayscaleDilateImageFilter.html" title="Grayscale dilation of an image.">GrayscaleDilateImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkObjectMorphologyImageFilter_8h_source.html#l00074">74</a> of file <a class="el" href="itkObjectMorphologyImageFilter_8h_source.html">itkObjectMorphologyImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ObjectMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -769,30 +792,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
-class itk::ObjectMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Base class for the morphological operations being applied to isolated objects in an image. </p>
-<p >This class provides the infrastructure to support of morphological operations being applied to images in which the foreground and background intensities are fixed. This filter operates significantly faster than itkBinaryMorphologicalImageFilters; however itkBinaryMorphologicalImageFilters preserve background pixels based on values of neighboring background pixels - potentially important during erosion.</p>
-<p >The "kernel" specified represents a morphology structuring element. The structuring element is a small <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> with values indicating an element is "on" (value &gt; 0) or "off" (value &lt;=0). Morphological operations are defined by placing the structuring element over a pixel, and calculating a nonlinear function (min, max) over the pixels of the image that are under pixels in the structuring element that are "on". The result of this calculation is the value of the pixel in the output image. Under most circumstances, the "center pixel" of the structuring element &ndash; or structuring element pixel over the input pixel under consideration &ndash; is prescribed to be "on". This is not a strict requirement but the subclasses of this filter are not guaranteed to produce the correct result if the "center pixel" is not part of the structuring element.</p>
-<p >Subclasses of this class can define their own operations by simply providing their own <a class="el" href="classitk_1_1ObjectMorphologyImageFilter.html#a0ac64a79f8bb97087de744d2f7bdb4da">Evaluate()</a> protected member functions - one that operates using a smart neighborhood operator for edge faces and one that operates using a standard neighborhood operator..</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ErodeObjectMorphologyImageFilter.html" title="Erosion of an object in an image.">ErodeObjectMorphologyImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DilateObjectMorphologyImageFilter.html" title="dilation of an object in an image">DilateObjectMorphologyImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1GrayscaleErodeImageFilter.html" title="Grayscale erosion of an image.">GrayscaleErodeImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1GrayscaleDilateImageFilter.html" title="Grayscale dilation of an image.">GrayscaleDilateImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkObjectMorphologyImageFilter_8h_source.html#l00074">74</a> of file <a class="el" href="itkObjectMorphologyImageFilter_8h_source.html">itkObjectMorphologyImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abe35f6b77981660548885b6a7c9a46d0" name="abe35f6b77981660548885b6a7c9a46d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe35f6b77981660548885b6a7c9a46d0">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -97,7 +97,40 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAutomaticTopologyMeshSource_8h_source.html">itkAutomaticTopologyMeshSource.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputMesh&gt;<br />
+class itk::AutomaticTopologyMeshSource&lt; TOutputMesh &gt;</div><p >Convenience class for generating meshes. </p>
+<p >This generates an N-dimensional mesh consisting of some combination of vertices, line segments, triangles, quadrilaterals, tetrahedra, and hexahedra. Identifiers for the cells are automatically added, and topological connectivity is automatically computed. When a cell is added, all of its boundary features are determined and added as well.</p>
+<p >The main methods are of the form Add<em>Thing</em>, where <em>Thing</em> can be <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a>, Vertex, Triangle, Quadrilateral, Tetrahedron, or Hexahedron. Each of these methods has several overloaded forms, permitting multiple ways to specify the object being added. When called, each of these methods first checks to see if the object has already been added. If it has not, then a new identifier is generated (the smallest one so far unused), the object is added with that identifier, and the ID is returned. If the object has already been added, then the ID it already has is returned and nothing else is done.</p>
+<p >When a cell is added, all of its boundary elements are also added, and boundary assignments are set. A cell can be specified using IDs of points already added, or using <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> objects that may or may not already be in the mesh. If a cell is specified using <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> objects, then the points are added to the mesh if necessary.</p>
+<p >The different ways of specifying a cell are</p>
+<ul>
+<li>An IdentifierArrayType (= itk::Array&lt;IdentifierType&gt;) of point identifiers. These point identifiers are the ones returned by calls to <a class="el" href="classitk_1_1AutomaticTopologyMeshSource.html#a234741b9fe73c84eb18dd84af6da287b">AddPoint()</a>. </li>
+<li>A parameter list of point identifiers (for instance, <code>this-&gt;AddLine(0, 1)</code>, if 0 and 1 are point identifiers). </li>
+<li>A parameter list of <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">itk::Point</a> objects (the function then generates the identifiers). </li>
+<li>A parameter list of C-style arrays, with each such array giving the coordinates of one point. This form is useful for copying in geometry from foreign data structures.</li>
+</ul>
+<p>For meshes generated using this filter, only one cell can be added for any given set of vertices. If a, b, c, and d are identifiers for four points in R^3, then (a, b, c, d) and (a, c, d, b) determine two different quadrilaterals (at least one of which is either degenerate or nonplanar). If you call </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">AddQuadrilateral</a>(a, b, c, d);</div>
+<div class="line"><a class="code hl_function" href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">AddQuadrilateral</a>(a, c, d, b);</div>
+<div class="ttc" id="aclassitk_1_1AutomaticTopologyMeshSource_html_afa41bd1a453340b6cdd9a78cde488780"><div class="ttname"><a href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">itk::AutomaticTopologyMeshSource::AddQuadrilateral</a></div><div class="ttdeci">IdentifierType AddQuadrilateral(const IdentifierArrayType &amp;pointIDs)</div></div>
+</div><!-- fragment --><p> then only the first quadrilateral will actually be added.</p>
+<p >To add the topological information to an already constructed mesh (for efficiency of traversal), use this class to generate a copy of the original mesh.</p>
+<p ><b>Example:</b> The following code generates a mesh consisting of two triangles sharing an edge. </p><div class="fragment"><div class="line"><span class="keyword">using</span> MeshSourceType = <a class="code hl_class" href="classitk_1_1AutomaticTopologyMeshSource.html">itk::AutomaticTopologyMeshSource&lt; MeshType &gt;</a>;</div>
+<div class="line"><span class="keyword">auto</span> meshSource = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">MeshSourceType::New</a>();</div>
+<div class="line">meshSource-&gt;AddTriangle(</div>
+<div class="line">  meshSource-&gt;AddPoint(0, 0, 0),</div>
+<div class="line">  meshSource-&gt;AddPoint(1, 0, 0),</div>
+<div class="line">  meshSource-&gt;AddPoint(0, 1, 0) );</div>
+<div class="line">meshSource-&gt;AddTriangle(</div>
+<div class="line">  meshSource-&gt;AddPoint(0, 0, 0),</div>
+<div class="line">  meshSource-&gt;AddPoint(1, 0, 0),</div>
+<div class="line">  meshSource-&gt;AddPoint(0, 0, 1) );</div>
+<div class="ttc" id="aclassitk_1_1AutomaticTopologyMeshSource_html"><div class="ttname"><a href="classitk_1_1AutomaticTopologyMeshSource.html">itk::AutomaticTopologyMeshSource</a></div><div class="ttdoc">Convenience class for generating meshes.</div><div class="ttdef"><b>Definition:</b> <a href="itkAutomaticTopologyMeshSource_8h_source.html#l00111">itkAutomaticTopologyMeshSource.h:112</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+</div><!-- fragment --><p >This class inherits from <a class="el" href="classitk_1_1MeshSource.html" title="Base class for all process objects that output mesh data.">itk::MeshSource</a> so it fits conveniently into a pipeline, but <a class="el" href="classitk_1_1MeshSource.html#a9de0191dfc723ea9bcdc711e4901809f">GetOutput()</a> is always valid after every Add[Something]() call, and <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> is a no-op. It is <b>not thread safe</b>. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAutomaticTopologyMeshSource_8h_source.html#l00111">111</a> of file <a class="el" href="itkAutomaticTopologyMeshSource_8h_source.html">itkAutomaticTopologyMeshSource.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AutomaticTopologyMeshSource&lt; TOutputMesh &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -693,40 +726,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputMesh&gt;<br />
-class itk::AutomaticTopologyMeshSource&lt; TOutputMesh &gt;</div><p >Convenience class for generating meshes. </p>
-<p >This generates an N-dimensional mesh consisting of some combination of vertices, line segments, triangles, quadrilaterals, tetrahedra, and hexahedra. Identifiers for the cells are automatically added, and topological connectivity is automatically computed. When a cell is added, all of its boundary features are determined and added as well.</p>
-<p >The main methods are of the form Add<em>Thing</em>, where <em>Thing</em> can be <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a>, Vertex, Triangle, Quadrilateral, Tetrahedron, or Hexahedron. Each of these methods has several overloaded forms, permitting multiple ways to specify the object being added. When called, each of these methods first checks to see if the object has already been added. If it has not, then a new identifier is generated (the smallest one so far unused), the object is added with that identifier, and the ID is returned. If the object has already been added, then the ID it already has is returned and nothing else is done.</p>
-<p >When a cell is added, all of its boundary elements are also added, and boundary assignments are set. A cell can be specified using IDs of points already added, or using <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> objects that may or may not already be in the mesh. If a cell is specified using <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> objects, then the points are added to the mesh if necessary.</p>
-<p >The different ways of specifying a cell are</p>
-<ul>
-<li>An IdentifierArrayType (= itk::Array&lt;IdentifierType&gt;) of point identifiers. These point identifiers are the ones returned by calls to <a class="el" href="classitk_1_1AutomaticTopologyMeshSource.html#a234741b9fe73c84eb18dd84af6da287b">AddPoint()</a>. </li>
-<li>A parameter list of point identifiers (for instance, <code>this-&gt;AddLine(0, 1)</code>, if 0 and 1 are point identifiers). </li>
-<li>A parameter list of <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">itk::Point</a> objects (the function then generates the identifiers). </li>
-<li>A parameter list of C-style arrays, with each such array giving the coordinates of one point. This form is useful for copying in geometry from foreign data structures.</li>
-</ul>
-<p>For meshes generated using this filter, only one cell can be added for any given set of vertices. If a, b, c, and d are identifiers for four points in R^3, then (a, b, c, d) and (a, c, d, b) determine two different quadrilaterals (at least one of which is either degenerate or nonplanar). If you call </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">AddQuadrilateral</a>(a, b, c, d);</div>
-<div class="line"><a class="code hl_function" href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">AddQuadrilateral</a>(a, c, d, b);</div>
-<div class="ttc" id="aclassitk_1_1AutomaticTopologyMeshSource_html_afa41bd1a453340b6cdd9a78cde488780"><div class="ttname"><a href="classitk_1_1AutomaticTopologyMeshSource.html#afa41bd1a453340b6cdd9a78cde488780">itk::AutomaticTopologyMeshSource::AddQuadrilateral</a></div><div class="ttdeci">IdentifierType AddQuadrilateral(const IdentifierArrayType &amp;pointIDs)</div></div>
-</div><!-- fragment --><p> then only the first quadrilateral will actually be added.</p>
-<p >To add the topological information to an already constructed mesh (for efficiency of traversal), use this class to generate a copy of the original mesh.</p>
-<p ><b>Example:</b> The following code generates a mesh consisting of two triangles sharing an edge. </p><div class="fragment"><div class="line"><span class="keyword">using</span> MeshSourceType = <a class="code hl_class" href="classitk_1_1AutomaticTopologyMeshSource.html">itk::AutomaticTopologyMeshSource&lt; MeshType &gt;</a>;</div>
-<div class="line"><span class="keyword">auto</span> meshSource = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">MeshSourceType::New</a>();</div>
-<div class="line">meshSource-&gt;AddTriangle(</div>
-<div class="line">  meshSource-&gt;AddPoint(0, 0, 0),</div>
-<div class="line">  meshSource-&gt;AddPoint(1, 0, 0),</div>
-<div class="line">  meshSource-&gt;AddPoint(0, 1, 0) );</div>
-<div class="line">meshSource-&gt;AddTriangle(</div>
-<div class="line">  meshSource-&gt;AddPoint(0, 0, 0),</div>
-<div class="line">  meshSource-&gt;AddPoint(1, 0, 0),</div>
-<div class="line">  meshSource-&gt;AddPoint(0, 0, 1) );</div>
-<div class="ttc" id="aclassitk_1_1AutomaticTopologyMeshSource_html"><div class="ttname"><a href="classitk_1_1AutomaticTopologyMeshSource.html">itk::AutomaticTopologyMeshSource</a></div><div class="ttdoc">Convenience class for generating meshes.</div><div class="ttdef"><b>Definition:</b> <a href="itkAutomaticTopologyMeshSource_8h_source.html#l00111">itkAutomaticTopologyMeshSource.h:112</a></div></div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-</div><!-- fragment --><p >This class inherits from <a class="el" href="classitk_1_1MeshSource.html" title="Base class for all process objects that output mesh data.">itk::MeshSource</a> so it fits conveniently into a pipeline, but <a class="el" href="classitk_1_1MeshSource.html#a9de0191dfc723ea9bcdc711e4901809f">GetOutput()</a> is always valid after every Add[Something]() call, and <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> is a no-op. It is <b>not thread safe</b>. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAutomaticTopologyMeshSource_8h_source.html#l00111">111</a> of file <a class="el" href="itkAutomaticTopologyMeshSource_8h_source.html">itkAutomaticTopologyMeshSource.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae0686983ff72a33da45bb71a04612822" name="ae0686983ff72a33da45bb71a04612822"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0686983ff72a33da45bb71a04612822">&#9670;&nbsp;</a></span>CellAutoPointer</h2>
 

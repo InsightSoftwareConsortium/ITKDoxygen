@@ -95,7 +95,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html">itkQuasiNewtonOptimizerv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
+class itk::QuasiNewtonOptimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Implement a Quasi-Newton optimizer with BFGS Hessian estimation. </p>
+<p >Second order approximation of the cost function is usually more efficient since it estimates the descent or ascent direction more precisely. However, computation of Hessian is usually expensive or unavailable. Alternatively Quasi-Newton methods can estimate a Hessian from the gradients in previous steps. Here a specific Quasi-Newton method, BFGS, is used to compute the Quasi-Newton steps.</p>
+<p >The Quasi-Newton method doesn't produce a valid step sometimes, ex. when the metric function is not a convex locally. In this scenario, the gradient step is used after being scaled properly.</p>
+<p >A helper member object, m_ScalesEstimator may be set to estimate parameter scales and step scales. A step scale measures the magnitude of a step and is used for learning rate computation.</p>
+<p >When m_ScalesEstimator is set, <a class="el" href="classitk_1_1QuasiNewtonOptimizerv4Template.html#adbb54ea02c0315a8d560182f38b84b0d">SetMaximumNewtonStepSizeInPhysicalUnits()</a> may be called to set the maximum step size. If it is not called, m_MaximumNewtonStepSizeInPhysicalUnits defaults to lambda * <a class="el" href="classitk_1_1OptimizerParameterScalesEstimatorTemplate.html#a62e7e75e33c48da04721a8323f97c5d3">OptimizerParameterScalesEstimatorTemplate::EstimateMaximumStepSize()</a>, where lambda is in [1,5].</p>
+<p >When m_ScalesEstimator is not set, the parameter scales and learning rates defaults to ones, or can be set by users manually. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html#l00061">61</a> of file <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html">itkQuasiNewtonOptimizerv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::QuasiNewtonOptimizerv4Template&lt; TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -604,17 +614,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a85129c4367854f7c41408ba542fd9826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1DomainThreader.html">DomainThreader</a>&lt; <a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html">ThreadedIndexedContainerPartitioner</a>, <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1QuasiNewtonOptimizerv4Template.html#a85129c4367854f7c41408ba542fd9826">m_EstimateNewtonStepThreader</a> {}</td></tr>
 <tr class="separator:a85129c4367854f7c41408ba542fd9826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
-class itk::QuasiNewtonOptimizerv4Template&lt; TInternalComputationValueType &gt;</div><p >Implement a Quasi-Newton optimizer with BFGS Hessian estimation. </p>
-<p >Second order approximation of the cost function is usually more efficient since it estimates the descent or ascent direction more precisely. However, computation of Hessian is usually expensive or unavailable. Alternatively Quasi-Newton methods can estimate a Hessian from the gradients in previous steps. Here a specific Quasi-Newton method, BFGS, is used to compute the Quasi-Newton steps.</p>
-<p >The Quasi-Newton method doesn't produce a valid step sometimes, ex. when the metric function is not a convex locally. In this scenario, the gradient step is used after being scaled properly.</p>
-<p >A helper member object, m_ScalesEstimator may be set to estimate parameter scales and step scales. A step scale measures the magnitude of a step and is used for learning rate computation.</p>
-<p >When m_ScalesEstimator is set, <a class="el" href="classitk_1_1QuasiNewtonOptimizerv4Template.html#adbb54ea02c0315a8d560182f38b84b0d">SetMaximumNewtonStepSizeInPhysicalUnits()</a> may be called to set the maximum step size. If it is not called, m_MaximumNewtonStepSizeInPhysicalUnits defaults to lambda * <a class="el" href="classitk_1_1OptimizerParameterScalesEstimatorTemplate.html#a62e7e75e33c48da04721a8323f97c5d3">OptimizerParameterScalesEstimatorTemplate::EstimateMaximumStepSize()</a>, where lambda is in [1,5].</p>
-<p >When m_ScalesEstimator is not set, the parameter scales and learning rates defaults to ones, or can be set by users manually. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html#l00061">61</a> of file <a class="el" href="itkQuasiNewtonOptimizerv4_8h_source.html">itkQuasiNewtonOptimizerv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3d554bc864edc5c1db0fccd61fcca795" name="a3d554bc864edc5c1db0fccd61fcca795"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d554bc864edc5c1db0fccd61fcca795">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

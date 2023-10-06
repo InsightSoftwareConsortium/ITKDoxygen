@@ -93,7 +93,55 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSobelOperator_8h_source.html">itkSobelOperator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
+class itk::SobelOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for performing a directional Sobel edge-detection operation at a pixel location. </p>
+<p ><a class="el" href="classitk_1_1SobelOperator.html" title="A NeighborhoodOperator for performing a directional Sobel edge-detection operation at a pixel locatio...">SobelOperator</a> is a directional <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> that should be applied a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> using the <a class="el" href="classitk_1_1NeighborhoodInnerProduct.html" title="Defines the inner product operation between an Neighborhood and a NeighborhoodOperator.">NeighborhoodInnerProduct</a> method. To create the operator:</p>
+<p >1) Set the direction by calling </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">SetDirection</a> </div>
+<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_a305ac4aad44dd6c52298a8b830078fec"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::SetDirection</a></div><div class="ttdeci">void SetDirection(const unsigned long direction)</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodOperator_8h_source.html#l00094">itkNeighborhoodOperator.h:94</a></div></div>
+</div><!-- fragment --><p> 2) call </p><div class="fragment"><div class="line"><a class="code hl_class" href="structitk_1_1Size.html">itk::Size&lt;2&gt;</a> radius;</div>
+<div class="line">radius.<a class="code hl_function" href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">Fill</a>(1);</div>
+<div class="line">sobelOperator.CreateToRadius(radius);</div>
+<div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size&lt; 2 &gt;</a></div></div>
+<div class="ttc" id="astructitk_1_1Size_html_a7a81d513733bd5cdeaecc2c132541c76"><div class="ttname"><a href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">itk::Size::Fill</a></div><div class="ttdeci">void Fill(SizeValueType value)</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00213">itkSize.h:213</a></div></div>
+</div><!-- fragment --><p> 3) You may optionally scale the coefficients of this operator using the </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#a9c80dcf78c61d8e58a29e631ebe4ca8a">ScaleCoefficients</a> </div>
+<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_a9c80dcf78c61d8e58a29e631ebe4ca8a"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#a9c80dcf78c61d8e58a29e631ebe4ca8a">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::ScaleCoefficients</a></div><div class="ttdeci">void ScaleCoefficients(PixelRealType)</div></div>
+</div><!-- fragment --><p> method. This is useful if you want to take the spacing of the image into account when computing the edge strength. Apply the scaling only after calling to </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#ae6a04afb708654508d1ebf30234fdbb6">CreateToRadius</a> </div>
+<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_ae6a04afb708654508d1ebf30234fdbb6"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#ae6a04afb708654508d1ebf30234fdbb6">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::CreateToRadius</a></div><div class="ttdeci">virtual void CreateToRadius(const SizeType &amp;)</div></div>
+</div><!-- fragment --><p>.</p>
+<p >The Sobel Operator in vertical direction for 2 dimensions is </p><pre class="fragment">*             -1  -2  -1
+*             0    0   0
+*             1    2   1
+*
+* </pre><p> The Sobel Operator in horizontal direction is for 2 dimensions is </p><pre class="fragment">*             -1   0   1
+*             -2   0   2
+*             -1   0   1
+* </pre><p >The current implementation of the Sobel operator is for 2 and 3 dimensions only. The ND version is planned for future releases.</p>
+<p >The extension to 3D is from the publication "Irwin Sobel. An Isotropic 3x3x3 Volume Gradient Operator.
+  Technical report, Hewlett-Packard Laboratories, April 1995."</p>
+<p >The Sobel operator in 3D has the kernel</p>
+<pre class="fragment">* -1 -3 -1   0 0 0  1 3 1
+* -3 -6 -3   0 0 0  3 6 3
+* -1 -3 -1   0 0 0  1 3 1
+*
+*    x-1       x     x+1
+* </pre><p >The <code>x</code> kernel is just rotated as required to obtain the kernel in the <code>y</code> and <code>z</code> directions.</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1SobelOperator.html" title="A NeighborhoodOperator for performing a directional Sobel edge-detection operation at a pixel locatio...">SobelOperator</a> does not have any user-declared "special member function", following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ForwardDifferenceOperator.html" title="Operator whose inner product with a neighborhood returns a &quot;half&quot; derivative at the center of the nei...">ForwardDifferenceOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BackwardDifferenceOperator.html" title="Operator whose inner product with a neighborhood returns a &quot;half&quot; derivative at the center of the nei...">BackwardDifferenceOperator</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSobelOperator_8h_source.html#l00098">98</a> of file <a class="el" href="itkSobelOperator_8h_source.html">itkSobelOperator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SobelOperator&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -293,55 +341,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Neighborhood.html#a10fd20cdc4fd2931b696f00f2c28f757">NeighborhoodDimension</a></td></tr>
 <tr class="separator:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
-class itk::SobelOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for performing a directional Sobel edge-detection operation at a pixel location. </p>
-<p ><a class="el" href="classitk_1_1SobelOperator.html" title="A NeighborhoodOperator for performing a directional Sobel edge-detection operation at a pixel locatio...">SobelOperator</a> is a directional <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> that should be applied a <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> using the <a class="el" href="classitk_1_1NeighborhoodInnerProduct.html" title="Defines the inner product operation between an Neighborhood and a NeighborhoodOperator.">NeighborhoodInnerProduct</a> method. To create the operator:</p>
-<p >1) Set the direction by calling </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">SetDirection</a> </div>
-<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_a305ac4aad44dd6c52298a8b830078fec"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::SetDirection</a></div><div class="ttdeci">void SetDirection(const unsigned long direction)</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodOperator_8h_source.html#l00094">itkNeighborhoodOperator.h:94</a></div></div>
-</div><!-- fragment --><p> 2) call </p><div class="fragment"><div class="line"><a class="code hl_class" href="structitk_1_1Size.html">itk::Size&lt;2&gt;</a> radius;</div>
-<div class="line">radius.<a class="code hl_function" href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">Fill</a>(1);</div>
-<div class="line">sobelOperator.CreateToRadius(radius);</div>
-<div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size&lt; 2 &gt;</a></div></div>
-<div class="ttc" id="astructitk_1_1Size_html_a7a81d513733bd5cdeaecc2c132541c76"><div class="ttname"><a href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">itk::Size::Fill</a></div><div class="ttdeci">void Fill(SizeValueType value)</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00213">itkSize.h:213</a></div></div>
-</div><!-- fragment --><p> 3) You may optionally scale the coefficients of this operator using the </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#a9c80dcf78c61d8e58a29e631ebe4ca8a">ScaleCoefficients</a> </div>
-<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_a9c80dcf78c61d8e58a29e631ebe4ca8a"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#a9c80dcf78c61d8e58a29e631ebe4ca8a">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::ScaleCoefficients</a></div><div class="ttdeci">void ScaleCoefficients(PixelRealType)</div></div>
-</div><!-- fragment --><p> method. This is useful if you want to take the spacing of the image into account when computing the edge strength. Apply the scaling only after calling to </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#ae6a04afb708654508d1ebf30234fdbb6">CreateToRadius</a> </div>
-<div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_ae6a04afb708654508d1ebf30234fdbb6"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#ae6a04afb708654508d1ebf30234fdbb6">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;::CreateToRadius</a></div><div class="ttdeci">virtual void CreateToRadius(const SizeType &amp;)</div></div>
-</div><!-- fragment --><p>.</p>
-<p >The Sobel Operator in vertical direction for 2 dimensions is </p><pre class="fragment">*             -1  -2  -1
-*             0    0   0
-*             1    2   1
-*
-* </pre><p> The Sobel Operator in horizontal direction is for 2 dimensions is </p><pre class="fragment">*             -1   0   1
-*             -2   0   2
-*             -1   0   1
-* </pre><p >The current implementation of the Sobel operator is for 2 and 3 dimensions only. The ND version is planned for future releases.</p>
-<p >The extension to 3D is from the publication "Irwin Sobel. An Isotropic 3x3x3 Volume Gradient Operator.
-  Technical report, Hewlett-Packard Laboratories, April 1995."</p>
-<p >The Sobel operator in 3D has the kernel</p>
-<pre class="fragment">* -1 -3 -1   0 0 0  1 3 1
-* -3 -6 -3   0 0 0  3 6 3
-* -1 -3 -1   0 0 0  1 3 1
-*
-*    x-1       x     x+1
-* </pre><p >The <code>x</code> kernel is just rotated as required to obtain the kernel in the <code>y</code> and <code>z</code> directions.</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1SobelOperator.html" title="A NeighborhoodOperator for performing a directional Sobel edge-detection operation at a pixel locatio...">SobelOperator</a> does not have any user-declared "special member function", following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ForwardDifferenceOperator.html" title="Operator whose inner product with a neighborhood returns a &quot;half&quot; derivative at the center of the nei...">ForwardDifferenceOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BackwardDifferenceOperator.html" title="Operator whose inner product with a neighborhood returns a &quot;half&quot; derivative at the center of the nei...">BackwardDifferenceOperator</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSobelOperator_8h_source.html#l00098">98</a> of file <a class="el" href="itkSobelOperator_8h_source.html">itkSobelOperator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab43ef8e6bf0e8492b6f8730fe2f7f2d1" name="ab43ef8e6bf0e8492b6f8730fe2f7f2d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab43ef8e6bf0e8492b6f8730fe2f7f2d1">&#9670;&nbsp;</a></span>CoefficientVector</h2>
 

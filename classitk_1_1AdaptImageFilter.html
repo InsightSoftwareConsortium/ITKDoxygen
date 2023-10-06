@@ -93,7 +93,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TAccessor&gt;<br />
+class itk::AdaptImageFilter&lt; TInputImage, TOutputImage, TAccessor &gt;</div><p >Convert an image to another pixel type using the specified data accessor. </p>
+<p ><a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> converts an image to another pixel type using a data accessor. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> can perform simple cast operations (i.e. short to float) or can extract a subcomponent of a pixel (i.e. extract the green component of an RGB pixel. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> could also be used for performing simple arithmetic operations at a pixel (i.e. taking the std::sqrt() or std::sin() of a pixel); however, these types of operations could also be accomplished using the itk::UnaryImageFilter.</p>
+<p >The third template parameter for this filter is a DataAccessor which performs the adaption or conversion of a pixel. The DataAccessor must provide a method called Get() which takes an input pixel and returns an output pixel. The input pixel can be passed by reference but the output pixel is frequently returned by value. However, a data accessor that returns a subcomponent of a pixel will usually return that subcomponent by reference. For instance, a data accessor that returns the green component of a RGB pixel will simply return a reference to the proper element of the RGB vector. See itk::DataAccessor for performing simple cast operations. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00131">131</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AdaptImageFilter&lt; TInputImage, TOutputImage, TAccessor &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -795,14 +802,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TAccessor&gt;<br />
-class itk::AdaptImageFilter&lt; TInputImage, TOutputImage, TAccessor &gt;</div><p >Convert an image to another pixel type using the specified data accessor. </p>
-<p ><a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> converts an image to another pixel type using a data accessor. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> can perform simple cast operations (i.e. short to float) or can extract a subcomponent of a pixel (i.e. extract the green component of an RGB pixel. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> could also be used for performing simple arithmetic operations at a pixel (i.e. taking the std::sqrt() or std::sin() of a pixel); however, these types of operations could also be accomplished using the itk::UnaryImageFilter.</p>
-<p >The third template parameter for this filter is a DataAccessor which performs the adaption or conversion of a pixel. The DataAccessor must provide a method called Get() which takes an input pixel and returns an output pixel. The input pixel can be passed by reference but the output pixel is frequently returned by value. However, a data accessor that returns a subcomponent of a pixel will usually return that subcomponent by reference. For instance, a data accessor that returns the green component of a RGB pixel will simply return a reference to the proper element of the RGB vector. See itk::DataAccessor for performing simple cast operations. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00131">131</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab731aeb6093e2f9800df6beb5f057fdf" name="ab731aeb6093e2f9800df6beb5f057fdf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab731aeb6093e2f9800df6beb5f057fdf">&#9670;&nbsp;</a></span>AccessorType</h2>
 

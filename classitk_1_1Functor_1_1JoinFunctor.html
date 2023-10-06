@@ -94,7 +94,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel1, typename TPixel2&gt;<br />
+class itk::Functor::JoinFunctor&lt; TPixel1, TPixel2 &gt;</div><p >Join the components of two pixel types into a single pixel type. </p>
+<p ><a class="el" href="classitk_1_1Functor_1_1JoinFunctor.html" title="Join the components of two pixel types into a single pixel type.">JoinFunctor</a> combines the components of two pixel types into a single pixel type. The components of one pixel are appended to the components of the other pixel. The output pixel type is an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>. The ValueType of the vector is the smallest scalar type that can represent the dynamic range of the both the input pixel value types. Hence, joining a char and unsigned char results in a short since that is the smallest datatype with a large enough dynamic range. To define a consistent behavior across different architectures, the join of an int and an unsigned int is float. On a 64 bit architecture, this join could be represented in a long. But on 32 bit architectures, the only safe join value type is a float. For this and similar ambiguous cases, the join value type is promoted to a float. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkJoinImageFilter_8h_source.html#l00048">48</a> of file <a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Functor_1_1JoinFunctor_1_1CopierDispatch.html">CopierDispatch</a></td></tr>
@@ -155,13 +161,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a2647075090c34dbc8a58d84f0943c1e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Functor_1_1JoinFunctor.html#a2647075090c34dbc8a58d84f0943c1e3">SecondCopier</a> (<a class="el" href="structitk_1_1Functor_1_1JoinFunctor_1_1CopierDispatch.html">CopierDispatch</a>&lt; 1 &gt;, <a class="el" href="classitk_1_1Functor_1_1JoinFunctor.html#a24ca0e589e880809275da872e061193c">JoinType</a> &amp;out, unsigned int idx, const TPixel2 &amp;B) const</td></tr>
 <tr class="separator:a2647075090c34dbc8a58d84f0943c1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel1, typename TPixel2&gt;<br />
-class itk::Functor::JoinFunctor&lt; TPixel1, TPixel2 &gt;</div><p >Join the components of two pixel types into a single pixel type. </p>
-<p ><a class="el" href="classitk_1_1Functor_1_1JoinFunctor.html" title="Join the components of two pixel types into a single pixel type.">JoinFunctor</a> combines the components of two pixel types into a single pixel type. The components of one pixel are appended to the components of the other pixel. The output pixel type is an <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>. The ValueType of the vector is the smallest scalar type that can represent the dynamic range of the both the input pixel value types. Hence, joining a char and unsigned char results in a short since that is the smallest datatype with a large enough dynamic range. To define a consistent behavior across different architectures, the join of an int and an unsigned int is float. On a 64 bit architecture, this join could be represented in a long. But on 32 bit architectures, the only safe join value type is a float. For this and similar ambiguous cases, the join value type is promoted to a float. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkJoinImageFilter_8h_source.html#l00048">48</a> of file <a class="el" href="itkJoinImageFilter_8h_source.html">itkJoinImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a24ca0e589e880809275da872e061193c" name="a24ca0e589e880809275da872e061193c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24ca0e589e880809275da872e061193c">&#9670;&nbsp;</a></span>JoinType</h2>
 

@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMultiResolutionImageRegistrationMethod_8h_source.html">itkMultiResolutionImageRegistrationMethod.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::MultiResolutionImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;</div><p >Base class for multi-resolution image registration methods. </p>
+<p >This class provides a generic interface for multi-resolution registration using components of the registration framework. See documentation for <a class="el" href="classitk_1_1ImageRegistrationMethod.html" title="Base class for Image Registration Methods.">ImageRegistrationMethod</a> for a description of the registration framework components.</p>
+<p >The registration process is initiated by method <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>. The user must set the parameters of each component before calling this method.</p>
+<p >The number of resolution level to process can be set via <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a>. At each resolution level, the user specified registration components are used to register downsampled version of the images by computing the transform parameters that will map one image onto the other image.</p>
+<p >A user can specify schedules for the fixed and moving image using <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> method. However, <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a> and <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> should not be used together. An exception will be thrown if that happens.</p>
+<p >The downsampled images are provided by user specified MultiResolutionPyramidImageFilters. User must specify the schedule for each pyramid externally prior to calling <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If there is discrepancy between the number of level requested and a pyramid schedule. The pyramid schedule will be overridden with a default one.</dd></dl>
+<p>Before each resolution level an IterationEvent is invoked providing an opportunity for a user interface to change any of the components, change component parameters, or stop the registration.</p>
+<p >This class is templated over the fixed image type and the moving image type.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegistrationMethod.html" title="Base class for Image Registration Methods.">ImageRegistrationMethod</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMultiResolutionImageRegistrationMethod_8h_source.html#l00072">72</a> of file <a class="el" href="itkMultiResolutionImageRegistrationMethod_8h_source.html">itkMultiResolutionImageRegistrationMethod.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MultiResolutionImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -702,21 +716,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::MultiResolutionImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;</div><p >Base class for multi-resolution image registration methods. </p>
-<p >This class provides a generic interface for multi-resolution registration using components of the registration framework. See documentation for <a class="el" href="classitk_1_1ImageRegistrationMethod.html" title="Base class for Image Registration Methods.">ImageRegistrationMethod</a> for a description of the registration framework components.</p>
-<p >The registration process is initiated by method <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>. The user must set the parameters of each component before calling this method.</p>
-<p >The number of resolution level to process can be set via <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a>. At each resolution level, the user specified registration components are used to register downsampled version of the images by computing the transform parameters that will map one image onto the other image.</p>
-<p >A user can specify schedules for the fixed and moving image using <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> method. However, <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#a54c7ef6e372051b90a059d6fe56002ac">SetNumberOfLevels()</a> and <a class="el" href="classitk_1_1MultiResolutionImageRegistrationMethod.html#ae9da99d26d9b5cadbddbde7cc692ee49">SetSchedules()</a> should not be used together. An exception will be thrown if that happens.</p>
-<p >The downsampled images are provided by user specified MultiResolutionPyramidImageFilters. User must specify the schedule for each pyramid externally prior to calling <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>If there is discrepancy between the number of level requested and a pyramid schedule. The pyramid schedule will be overridden with a default one.</dd></dl>
-<p>Before each resolution level an IterationEvent is invoked providing an opportunity for a user interface to change any of the components, change component parameters, or stop the registration.</p>
-<p >This class is templated over the fixed image type and the moving image type.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegistrationMethod.html" title="Base class for Image Registration Methods.">ImageRegistrationMethod</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMultiResolutionImageRegistrationMethod_8h_source.html#l00072">72</a> of file <a class="el" href="itkMultiResolutionImageRegistrationMethod_8h_source.html">itkMultiResolutionImageRegistrationMethod.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a70be6996d1fcbecbcf7243aa1c8fa118" name="a70be6996d1fcbecbcf7243aa1c8fa118"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70be6996d1fcbecbcf7243aa1c8fa118">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

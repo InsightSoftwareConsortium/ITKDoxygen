@@ -95,7 +95,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageSink_8h_source.html">itkImageSink.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
+class itk::ImageSink&lt; TInputImage &gt;</div><p ><a class="el" href="classitk_1_1ImageSink.html">ImageSink</a> is the base class for process objects which consume image data. This class defaults to having at least one input of the templated image type. The framework enables derived algorithms to stream the input image as it's being consumed by the algorithm.</p>
+<p >The framework provides multi-threading of the streamed image regions. The input image's pipeline is updated multiple times with the streaming requested regions, then the fulfilled requested region are split again for multi-threading.</p>
+<p >By default, the NumberOfStreamDivisions is 1 (no streaming). Derived implementations must change the access specification for this method to be public to expose the streaming feature. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkImageSink_8h_source.html#l00053">53</a> of file <a class="el" href="itkImageSink_8h_source.html">itkImageSink.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageSink&lt; TInputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -661,14 +668,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilterCommon"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilterCommon.html#a7440de754357373eb6f137df1b803ed9">SetGlobalDefaultDirectionTolerance</a> (double)</td></tr>
 <tr class="separator:a7440de754357373eb6f137df1b803ed9 inherit pub_static_methods_classitk_1_1ImageToImageFilterCommon"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
-class itk::ImageSink&lt; TInputImage &gt;</div><p ><a class="el" href="classitk_1_1ImageSink.html">ImageSink</a> is the base class for process objects which consume image data. This class defaults to having at least one input of the templated image type. The framework enables derived algorithms to stream the input image as it's being consumed by the algorithm.</p>
-<p >The framework provides multi-threading of the streamed image regions. The input image's pipeline is updated multiple times with the streaming requested regions, then the fulfilled requested region are split again for multi-threading.</p>
-<p >By default, the NumberOfStreamDivisions is 1 (no streaming). Derived implementations must change the access specification for this method to be public to expose the streaming feature. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkImageSink_8h_source.html#l00053">53</a> of file <a class="el" href="itkImageSink_8h_source.html">itkImageSink.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a265a8255b803985dc925a5b5cb5d12a8" name="a265a8255b803985dc925a5b5cb5d12a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a265a8255b803985dc925a5b5cb5d12a8">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

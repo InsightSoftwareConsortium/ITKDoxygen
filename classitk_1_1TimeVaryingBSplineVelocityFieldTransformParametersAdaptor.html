@@ -96,7 +96,33 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_8h_source.html">itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
+class itk::TimeVaryingBSplineVelocityFieldTransformParametersAdaptor&lt; TTransform &gt;</div><p ><a class="el" href="classitk_1_1TimeVaryingBSplineVelocityFieldTransformParametersAdaptor.html" title="TimeVaryingBSplineVelocityFieldTransformParametersAdaptor is a helper class intended to definition.">TimeVaryingBSplineVelocityFieldTransformParametersAdaptor</a> is a helper class intended to definition. </p>
+<p >The fixed parameters store the following information: </p><ul>
+<li>B-spline mesh size </li>
+<li>field origin </li>
+<li>domain spacing </li>
+<li>domain size (note that domain_spacing * (domain_size - 1) = physical dimensions of transform domain) </li>
+<li>field direction During multiresolution image registration it is often desired to also increase the displacement field resolution for greater flexibility in optimizing the transform. As defined in the base class, the user can change the resolution via</li>
+</ul>
+<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
+<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
+</div><!-- fragment --><p >or the user can use the more intuitive API for setting the fixed parameters. E.g., often the user will want to maintain the same transform domain spatial extent but only increase the field size and decrease the spacing. This can be done as follows:</p>
+<div class="fragment"><div class="line">transformAdaptor-&gt;SetRequiredTransformDomainOrigin( displacementField-&gt;GetOrigin() );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainDirection( displacementField-&gt;GetDirection() );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainSize( requiredSize );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainSpacing( requiredSpacing );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainMeshSize( requiredMeshSize );</div>
+<div class="line">transformAdaptor-&gt;SetSplineOrder( transform-&gt;GetSplineOrder() );</div>
+<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_8h_source.html#l00066">66</a> of file <a class="el" href="itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_8h_source.html">itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TimeVaryingBSplineVelocityFieldTransformParametersAdaptor&lt; TTransform &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -456,33 +482,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
-class itk::TimeVaryingBSplineVelocityFieldTransformParametersAdaptor&lt; TTransform &gt;</div><p ><a class="el" href="classitk_1_1TimeVaryingBSplineVelocityFieldTransformParametersAdaptor.html" title="TimeVaryingBSplineVelocityFieldTransformParametersAdaptor is a helper class intended to definition.">TimeVaryingBSplineVelocityFieldTransformParametersAdaptor</a> is a helper class intended to definition. </p>
-<p >The fixed parameters store the following information: </p><ul>
-<li>B-spline mesh size </li>
-<li>field origin </li>
-<li>domain spacing </li>
-<li>domain size (note that domain_spacing * (domain_size - 1) = physical dimensions of transform domain) </li>
-<li>field direction During multiresolution image registration it is often desired to also increase the displacement field resolution for greater flexibility in optimizing the transform. As defined in the base class, the user can change the resolution via</li>
-</ul>
-<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
-<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
-</div><!-- fragment --><p >or the user can use the more intuitive API for setting the fixed parameters. E.g., often the user will want to maintain the same transform domain spatial extent but only increase the field size and decrease the spacing. This can be done as follows:</p>
-<div class="fragment"><div class="line">transformAdaptor-&gt;SetRequiredTransformDomainOrigin( displacementField-&gt;GetOrigin() );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainDirection( displacementField-&gt;GetDirection() );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainSize( requiredSize );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainSpacing( requiredSpacing );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredTransformDomainMeshSize( requiredMeshSize );</div>
-<div class="line">transformAdaptor-&gt;SetSplineOrder( transform-&gt;GetSplineOrder() );</div>
-<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_8h_source.html#l00066">66</a> of file <a class="el" href="itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor_8h_source.html">itkTimeVaryingBSplineVelocityFieldTransformParametersAdaptor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6bbd62515c7fc0e820256eba73f4a31b" name="a6bbd62515c7fc0e820256eba73f4a31b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bbd62515c7fc0e820256eba73f4a31b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

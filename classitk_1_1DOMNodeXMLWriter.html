@@ -94,7 +94,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDOMNodeXMLWriter_8h_source.html">itkDOMNodeXMLWriter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class to write a DOM object to an XML file or an output stream. </p>
+<p >This class takes a user DOM object and write it to a destination such as file, string, console, etc. Before using this class, the DOM object should have been generated from a user object.</p>
+<p >We do not recommend to directly use this class for user object writing, because the user has to handle both DOM object generation from the user object and XML output from the intermediate DOM object. Users should derive from the <a class="el" href="classitk_1_1DOMWriter.html" title="Class to write an ITK object to an XML file or a DOM object, using the DOM APIs.">DOMWriter</a>, because it performs the latter step automatically and lets the users concentrate on the former step, thus implementation of such a writer is simplified.</p>
+<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because the input of this class, i.e. a <a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> object, is not a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
+<p >The following code snippet demonstrates how to write a DOM object to an XML file: </p><pre class="fragment">itk::DOMNode::Pointer input_dom_object = ...
+const char* output_xml_file_name = ...
+itk::DOMNodeXMLWriter::Pointer writer = itk::DOMNodeXMLWriter::New();
+writer-&gt;SetInput( input_dom_object );
+writer-&gt;SetFileName( output_xml_file_name );
+writer-&gt;Update();
+</pre> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DOMWriter.html" title="Class to write an ITK object to an XML file or a DOM object, using the DOM APIs.">DOMWriter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDOMNodeXMLWriter_8h_source.html#l00061">61</a> of file <a class="el" href="itkDOMNodeXMLWriter_8h_source.html">itkDOMNodeXMLWriter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DOMNodeXMLWriter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -299,23 +315,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class to write a DOM object to an XML file or an output stream. </p>
-<p >This class takes a user DOM object and write it to a destination such as file, string, console, etc. Before using this class, the DOM object should have been generated from a user object.</p>
-<p >We do not recommend to directly use this class for user object writing, because the user has to handle both DOM object generation from the user object and XML output from the intermediate DOM object. Users should derive from the <a class="el" href="classitk_1_1DOMWriter.html" title="Class to write an ITK object to an XML file or a DOM object, using the DOM APIs.">DOMWriter</a>, because it performs the latter step automatically and lets the users concentrate on the former step, thus implementation of such a writer is simplified.</p>
-<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because the input of this class, i.e. a <a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> object, is not a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
-<p >The following code snippet demonstrates how to write a DOM object to an XML file: </p><pre class="fragment">itk::DOMNode::Pointer input_dom_object = ...
-const char* output_xml_file_name = ...
-itk::DOMNodeXMLWriter::Pointer writer = itk::DOMNodeXMLWriter::New();
-writer-&gt;SetInput( input_dom_object );
-writer-&gt;SetFileName( output_xml_file_name );
-writer-&gt;Update();
-</pre> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DOMWriter.html" title="Class to write an ITK object to an XML file or a DOM object, using the DOM APIs.">DOMWriter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDOMNodeXMLWriter_8h_source.html#l00061">61</a> of file <a class="el" href="itkDOMNodeXMLWriter_8h_source.html">itkDOMNodeXMLWriter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac82ca97b8a571723227cc1f5413ef7ea" name="ac82ca97b8a571723227cc1f5413ef7ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac82ca97b8a571723227cc1f5413ef7ea">&#9670;&nbsp;</a></span>ConstInputPointer</h2>
 

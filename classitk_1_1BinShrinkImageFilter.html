@@ -96,7 +96,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBinShrinkImageFilter_8h_source.html">itkBinShrinkImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::BinShrinkImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Reduce the size of an image by an integer factor in each dimension while performing averaging of an input neighborhood. </p>
+<p >The output image size in each dimension is given by:</p>
+<p >outputSize[j] = max( std::floor(inputSize[j]/shrinkFactor[j]), 1 );</p>
+<p >The algorithm implemented can be describe with the following equation for 2D: </p><p class="formulaDsp">
+\[ \mathsf{I}_{out}(x_o,x_1) = \frac{\sum_{i=0}^{f_0}\sum_{j=0}^{f_1}\mathsf{I}_{in}(f_0 x_o+i,f_1 x_1+j)}{f_0 f_1} \]
+</p>
+<p >This filter is implemented so that the starting extent of the first pixel of the output matches that of the input.</p>
+<div class="image">
+<img src="BinShrinkGrid.png" alt=""/>
+<div class="caption">
+The change in image geometry from a 5x5 image binned by a factor of 2x2.</div></div>
+<p >This code was contributed in the Insight Journal paper: "BinShrink: A multi-resolution filter with cache efficient averaging" by Lowekamp B., Chen D. <a href="https://www.insight-journal.org/browse/publication/912">https://www.insight-journal.org/browse/publication/912</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkBinShrinkImageFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkBinShrinkImageFilter_8h_source.html">itkBinShrinkImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BinShrinkImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -752,23 +768,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::BinShrinkImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Reduce the size of an image by an integer factor in each dimension while performing averaging of an input neighborhood. </p>
-<p >The output image size in each dimension is given by:</p>
-<p >outputSize[j] = max( std::floor(inputSize[j]/shrinkFactor[j]), 1 );</p>
-<p >The algorithm implemented can be describe with the following equation for 2D: </p><p class="formulaDsp">
-\[ \mathsf{I}_{out}(x_o,x_1) = \frac{\sum_{i=0}^{f_0}\sum_{j=0}^{f_1}\mathsf{I}_{in}(f_0 x_o+i,f_1 x_1+j)}{f_0 f_1} \]
-</p>
-<p >This filter is implemented so that the starting extent of the first pixel of the output matches that of the input.</p>
-<div class="image">
-<img src="BinShrinkGrid.png" alt=""/>
-<div class="caption">
-The change in image geometry from a 5x5 image binned by a factor of 2x2.</div></div>
-<p >This code was contributed in the Insight Journal paper: "BinShrink: A multi-resolution filter with cache efficient averaging" by Lowekamp B., Chen D. <a href="https://www.insight-journal.org/browse/publication/912">https://www.insight-journal.org/browse/publication/912</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkBinShrinkImageFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkBinShrinkImageFilter_8h_source.html">itkBinShrinkImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="afc0e4e45c394a5dca353fdd8f96f699d" name="afc0e4e45c394a5dca353fdd8f96f699d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc0e4e45c394a5dca353fdd8f96f699d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

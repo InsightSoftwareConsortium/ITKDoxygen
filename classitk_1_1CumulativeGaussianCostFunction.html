@@ -94,7 +94,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCumulativeGaussianCostFunction_8h_source.html">itkCumulativeGaussianCostFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Cost function for the Cumulative Gaussian <a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a>. </p>
+<p >The Cumulative Gaussian is defined as the integral of a normalized Gaussian over the domain \( [-\infty, \infty] \).</p>
+<dl class="section user"><dt>Let G(x) be the normalized Gaussian defined as</dt><dd>\( G(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{ - \frac{{\left( {x - \mu } \right)^2 }}{{2\sigma ^2 }}} \). The Cumulative Gaussian, is acquired by integrating G(x) then scaling and offsetting it by the lower asymptotes \( I_1 \) and upper \( I_2 \): \( C\left( x \right) = I_1 + \frac{{I_2 - I_1 }}{2}\left( {1 + erf\left( {\frac{{x - \mu }}{{\sigma \sqrt 2 }}} \right)} \right) \), where \( C\left( { - \infty } \right) = I_1 \) and \( C\left( \infty \right) = I_2 \).</dd></dl>
+<dl class="section user"><dt>C(x) can only be tabulated since it's a variation of the</dt><dd>error function. It is included in this class as the function EvaluateCumulativeGaussian, where the argument of the function is \( {\frac{{x - \mu }}{{\sigma \sqrt 2 }}} \). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCumulativeGaussianCostFunction_8h_source.html#l00051">51</a> of file <a class="el" href="itkCumulativeGaussianCostFunction_8h_source.html">itkCumulativeGaussianCostFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CumulativeGaussianCostFunction:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -370,14 +377,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Cost function for the Cumulative Gaussian <a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a>. </p>
-<p >The Cumulative Gaussian is defined as the integral of a normalized Gaussian over the domain \( [-\infty, \infty] \).</p>
-<dl class="section user"><dt>Let G(x) be the normalized Gaussian defined as</dt><dd>\( G(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{ - \frac{{\left( {x - \mu } \right)^2 }}{{2\sigma ^2 }}} \). The Cumulative Gaussian, is acquired by integrating G(x) then scaling and offsetting it by the lower asymptotes \( I_1 \) and upper \( I_2 \): \( C\left( x \right) = I_1 + \frac{{I_2 - I_1 }}{2}\left( {1 + erf\left( {\frac{{x - \mu }}{{\sigma \sqrt 2 }}} \right)} \right) \), where \( C\left( { - \infty } \right) = I_1 \) and \( C\left( \infty \right) = I_2 \).</dd></dl>
-<dl class="section user"><dt>C(x) can only be tabulated since it's a variation of the</dt><dd>error function. It is included in this class as the function EvaluateCumulativeGaussian, where the argument of the function is \( {\frac{{x - \mu }}{{\sigma \sqrt 2 }}} \). </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCumulativeGaussianCostFunction_8h_source.html#l00051">51</a> of file <a class="el" href="itkCumulativeGaussianCostFunction_8h_source.html">itkCumulativeGaussianCostFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a83ae668586f26de68c30e40d126f0170" name="a83ae668586f26de68c30e40d126f0170"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83ae668586f26de68c30e40d126f0170">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

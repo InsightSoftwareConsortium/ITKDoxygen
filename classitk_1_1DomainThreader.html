@@ -97,7 +97,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDomainThreader_8h_source.html">itkDomainThreader.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TAssociate&gt;<br />
+class itk::DomainThreader&lt; TDomainPartitioner, TAssociate &gt;</div><p >Multi-threaded processing on a domain by processing sub-domains per thread. </p>
+<p >This class uses a <a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a> as a helper to split the domain into subdomains. Each subdomain is then processed in the <code>ThreadedExecution</code> method.</p>
+<p >The data on which to perform the processing is assumed to be members of an associating class. Therefore, to perform a threaded operation in a class, the associating class usually will declare derived versions of this class as a friend class.</p>
+<p >To use this class, at a minimum, </p><ul>
+<li>Inherit from it. </li>
+<li>Implement ThreadedExecution. </li>
+<li>Create a member instance. </li>
+<li>Run with m_DomainThreader-&gt;Execute( this, domain );</li>
+</ul>
+<p>If a 'threaded method' is desired to perform some data processing in a class, a derived version of this class can be defined to perform the threaded operation. Since a threaded operation is relatively complex compared to a simple serial operation, a class instead of a simple method is required. Inside this class, the method to partition the data is handled, the logic for deciding the number of work units is determined, and operations surrounding the threading are encapsulated into the class with the <code>DetermineNumberOfWorkUnitsToUse</code>, <code>BeforeThreadedExecution</code>, <code>ThreadedExecution</code>, and <code>AfterThreadedExecution</code> virtual methods.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TDomainPartitioner</td><td>A class that inherits from <a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a>. </td></tr>
+    <tr><td class="paramname">TAssociate</td><td>The associated class that uses a derived version of this class as a "threaded method". The associated class usually declares derived version of this class as nested classes so there is easy access to its protected and private members in ThreadedExecution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDomainThreader_8h_source.html#l00066">66</a> of file <a class="el" href="itkDomainThreader_8h_source.html">itkDomainThreader.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DomainThreader&lt; TDomainPartitioner, TAssociate &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -343,28 +364,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#aaf0e448ff0aff533e90ed749a126dbe5">New</a> ()</td></tr>
 <tr class="separator:aaf0e448ff0aff533e90ed749a126dbe5 inherit pub_static_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TAssociate&gt;<br />
-class itk::DomainThreader&lt; TDomainPartitioner, TAssociate &gt;</div><p >Multi-threaded processing on a domain by processing sub-domains per thread. </p>
-<p >This class uses a <a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a> as a helper to split the domain into subdomains. Each subdomain is then processed in the <code>ThreadedExecution</code> method.</p>
-<p >The data on which to perform the processing is assumed to be members of an associating class. Therefore, to perform a threaded operation in a class, the associating class usually will declare derived versions of this class as a friend class.</p>
-<p >To use this class, at a minimum, </p><ul>
-<li>Inherit from it. </li>
-<li>Implement ThreadedExecution. </li>
-<li>Create a member instance. </li>
-<li>Run with m_DomainThreader-&gt;Execute( this, domain );</li>
-</ul>
-<p>If a 'threaded method' is desired to perform some data processing in a class, a derived version of this class can be defined to perform the threaded operation. Since a threaded operation is relatively complex compared to a simple serial operation, a class instead of a simple method is required. Inside this class, the method to partition the data is handled, the logic for deciding the number of work units is determined, and operations surrounding the threading are encapsulated into the class with the <code>DetermineNumberOfWorkUnitsToUse</code>, <code>BeforeThreadedExecution</code>, <code>ThreadedExecution</code>, and <code>AfterThreadedExecution</code> virtual methods.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TDomainPartitioner</td><td>A class that inherits from <a class="el" href="classitk_1_1ThreadedDomainPartitioner.html" title="Virtual base class for partitioning a domain into subsets to be processed per thread when parallel pr...">ThreadedDomainPartitioner</a>. </td></tr>
-    <tr><td class="paramname">TAssociate</td><td>The associated class that uses a derived version of this class as a "threaded method". The associated class usually declares derived version of this class as nested classes so there is easy access to its protected and private members in ThreadedExecution. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDomainThreader_8h_source.html#l00066">66</a> of file <a class="el" href="itkDomainThreader_8h_source.html">itkDomainThreader.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7a28b29cb490a49bb955c0b45f1647b9" name="a7a28b29cb490a49bb955c0b45f1647b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a28b29cb490a49bb955c0b45f1647b9">&#9670;&nbsp;</a></span>AssociateType</h2>
 

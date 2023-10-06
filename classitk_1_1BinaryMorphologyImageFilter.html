@@ -97,7 +97,33 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBinaryMorphologyImageFilter_8h_source.html">itkBinaryMorphologyImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
+class itk::BinaryMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Base class for fast binary dilation and erosion. </p>
+<p ><a class="el" href="classitk_1_1BinaryMorphologyImageFilter.html" title="Base class for fast binary dilation and erosion.">BinaryMorphologyImageFilter</a> is a base class for fast binary morphological operations. The implementation of this class and its subclasses are based on the papers:</p>
+<p >L.Vincent "Morphological transformations of binary images with
+arbitrary structuring elements", and</p>
+<p >N.Nikopoulos et al. "An efficient algorithm for 3d binary
+morphological transformations with 3d structuring elements
+for arbitrary size and shape". IEEE Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing. Vol. 9. No. 3. 2000. pp. 283-286.</p>
+<p >Grayscale images can be processed as binary images by selecting a "ForegroundValued" (which subclasses may alias as "DilateValue" or "ErodeValue"). Pixel not matching the foreground value are considered "background". This is useful in processing segmented images where all pixels in segment #1 have value 1 and pixels in segment #2 have value 2, etc. A particular "segment number" can be processed. ForegroundValue defaults to the maximum possible value of the PixelType.</p>
+<p >The structuring element is assumed to be composed of binary values (zero or one). Only elements of the structuring element having values &gt; 0 are candidates for affecting the center pixel. A reasonable choice of structuring element is <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">itk::BinaryBallStructuringElement</a>.</p>
+<h2>Description of the algorithm: </h2>
+<p >Let's consider the set of the ON elements of the input image as X.</p>
+<p >Let's consider the structuring element as B = {B0, B1, ..., Bn}, where Bi denotes a connected component of B.</p>
+<p >Let's consider bi, i in [0,n], an arbitrary point of Bi.</p>
+<p >We use hence the next property in order to compute minkoswki addition ( which will be written (+) ):</p>
+<p >X (+) B = ( Xb0 UNION Xb1 UNION ... Xbn ) UNION ( BORDER(X) (+) B ),</p>
+<p >where Xbi is the set X translated with respect to vector bi :</p>
+<p >Xbi ={ x + bi, x belongs to X }</p>
+<p >where BORDER(X) is the extracted border of X ( 8 connectivity in 2D, 26 in 3D )</p>
+<p >Our implementation for dilation is defined as: </p><pre class="fragment">X (+) SYM(B) = DILATION(X)_B
+</pre><p> Where DILATION(X)_B is the dilation of set with structuring element B. Where SYM(B) is the symmetric of the structuring element relatively to its center.</p>
+<p >This code was contributed by Jerome Schmid from the University of Strasbourg who provided a fast dilation implementation. Gaetan Lehmann from INRA de Jouy-en-Josas then provided a fast erosion implementation based on Jerome's implementation. The common portions of these two implementations were then placed in this superclass.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> <a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> <a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBinaryMorphologyImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkBinaryMorphologyImageFilter_8h_source.html">itkBinaryMorphologyImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BinaryMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -901,33 +927,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TKernel&gt;<br />
-class itk::BinaryMorphologyImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;</div><p >Base class for fast binary dilation and erosion. </p>
-<p ><a class="el" href="classitk_1_1BinaryMorphologyImageFilter.html" title="Base class for fast binary dilation and erosion.">BinaryMorphologyImageFilter</a> is a base class for fast binary morphological operations. The implementation of this class and its subclasses are based on the papers:</p>
-<p >L.Vincent "Morphological transformations of binary images with
-arbitrary structuring elements", and</p>
-<p >N.Nikopoulos et al. "An efficient algorithm for 3d binary
-morphological transformations with 3d structuring elements
-for arbitrary size and shape". IEEE Transactions on <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing. Vol. 9. No. 3. 2000. pp. 283-286.</p>
-<p >Grayscale images can be processed as binary images by selecting a "ForegroundValued" (which subclasses may alias as "DilateValue" or "ErodeValue"). Pixel not matching the foreground value are considered "background". This is useful in processing segmented images where all pixels in segment #1 have value 1 and pixels in segment #2 have value 2, etc. A particular "segment number" can be processed. ForegroundValue defaults to the maximum possible value of the PixelType.</p>
-<p >The structuring element is assumed to be composed of binary values (zero or one). Only elements of the structuring element having values &gt; 0 are candidates for affecting the center pixel. A reasonable choice of structuring element is <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">itk::BinaryBallStructuringElement</a>.</p>
-<h2>Description of the algorithm: </h2>
-<p >Let's consider the set of the ON elements of the input image as X.</p>
-<p >Let's consider the structuring element as B = {B0, B1, ..., Bn}, where Bi denotes a connected component of B.</p>
-<p >Let's consider bi, i in [0,n], an arbitrary point of Bi.</p>
-<p >We use hence the next property in order to compute minkoswki addition ( which will be written (+) ):</p>
-<p >X (+) B = ( Xb0 UNION Xb1 UNION ... Xbn ) UNION ( BORDER(X) (+) B ),</p>
-<p >where Xbi is the set X translated with respect to vector bi :</p>
-<p >Xbi ={ x + bi, x belongs to X }</p>
-<p >where BORDER(X) is the extracted border of X ( 8 connectivity in 2D, 26 in 3D )</p>
-<p >Our implementation for dilation is defined as: </p><pre class="fragment">X (+) SYM(B) = DILATION(X)_B
-</pre><p> Where DILATION(X)_B is the dilation of set with structuring element B. Where SYM(B) is the symmetric of the structuring element relatively to its center.</p>
-<p >This code was contributed by Jerome Schmid from the University of Strasbourg who provided a fast dilation implementation. Gaetan Lehmann from INRA de Jouy-en-Josas then provided a fast erosion implementation based on Jerome's implementation. The common portions of these two implementations were then placed in this superclass.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> <a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> <a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBinaryMorphologyImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkBinaryMorphologyImageFilter_8h_source.html">itkBinaryMorphologyImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a866e6f5c9641c78fb4cf99f8a6c844a9" name="a866e6f5c9641c78fb4cf99f8a6c844a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a866e6f5c9641c78fb4cf99f8a6c844a9">&#9670;&nbsp;</a></span>ComponentVectorConstIterator</h2>
 

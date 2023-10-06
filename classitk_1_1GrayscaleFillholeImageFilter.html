@@ -95,7 +95,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGrayscaleFillholeImageFilter_8h_source.html">itkGrayscaleFillholeImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::GrayscaleFillholeImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Remove local minima not connected to the boundary of the image. </p>
+<p ><a class="el" href="classitk_1_1GrayscaleFillholeImageFilter.html" title="Remove local minima not connected to the boundary of the image.">GrayscaleFillholeImageFilter</a> fills holes in a grayscale image. Holes are local minima in the grayscale topography that are not connected to boundaries of the image. Gray level values adjacent to a hole are extrapolated across the hole.</p>
+<p >This filter is used to smooth over local minima without affecting the values of local maxima. If you take the difference between the output of this filter and the original image (and perhaps threshold the difference above a small value), you'll obtain a map of the local minima.</p>
+<p >This filter uses the <a class="el" href="classitk_1_1ReconstructionByErosionImageFilter.html" title="grayscale reconstruction by erosion of an image">ReconstructionByErosionImageFilter</a>. It provides its own input as the "mask" input to the geodesic erosion. The "marker" image for the geodesic erosion is constructed such that boundary pixels match the boundary pixels of the input image and the interior pixels are set to the maximum pixel value in the input image.</p>
+<p >Geodesic morphology and the Fillhole algorithm is described in Chapter 6 of Pierre Soille's book "Morphological Image Analysis:
+Principles and Applications", Second Edition, Springer, 2003.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ReconstructionByErosionImageFilter.html" title="grayscale reconstruction by erosion of an image">ReconstructionByErosionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleErodeImageFilter.html" title="Grayscale erosion of an image.">GrayscaleErodeImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleFunctionErodeImageFilter.html" title="Grayscale function erosion of an image.">GrayscaleFunctionErodeImageFilter</a>, <a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGrayscaleFillholeImageFilter_8h_source.html#l00056">56</a> of file <a class="el" href="itkGrayscaleFillholeImageFilter_8h_source.html">itkGrayscaleFillholeImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GrayscaleFillholeImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -746,20 +759,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::GrayscaleFillholeImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Remove local minima not connected to the boundary of the image. </p>
-<p ><a class="el" href="classitk_1_1GrayscaleFillholeImageFilter.html" title="Remove local minima not connected to the boundary of the image.">GrayscaleFillholeImageFilter</a> fills holes in a grayscale image. Holes are local minima in the grayscale topography that are not connected to boundaries of the image. Gray level values adjacent to a hole are extrapolated across the hole.</p>
-<p >This filter is used to smooth over local minima without affecting the values of local maxima. If you take the difference between the output of this filter and the original image (and perhaps threshold the difference above a small value), you'll obtain a map of the local minima.</p>
-<p >This filter uses the <a class="el" href="classitk_1_1ReconstructionByErosionImageFilter.html" title="grayscale reconstruction by erosion of an image">ReconstructionByErosionImageFilter</a>. It provides its own input as the "mask" input to the geodesic erosion. The "marker" image for the geodesic erosion is constructed such that boundary pixels match the boundary pixels of the input image and the interior pixels are set to the maximum pixel value in the input image.</p>
-<p >Geodesic morphology and the Fillhole algorithm is described in Chapter 6 of Pierre Soille's book "Morphological Image Analysis:
-Principles and Applications", Second Edition, Springer, 2003.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ReconstructionByErosionImageFilter.html" title="grayscale reconstruction by erosion of an image">ReconstructionByErosionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleErodeImageFilter.html" title="Grayscale erosion of an image.">GrayscaleErodeImageFilter</a>, <a class="el" href="classitk_1_1GrayscaleFunctionErodeImageFilter.html" title="Grayscale function erosion of an image.">GrayscaleFunctionErodeImageFilter</a>, <a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGrayscaleFillholeImageFilter_8h_source.html#l00056">56</a> of file <a class="el" href="itkGrayscaleFillholeImageFilter_8h_source.html">itkGrayscaleFillholeImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acbabf92c487e070c16ece5c74c594edb" name="acbabf92c487e070c16ece5c74c594edb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbabf92c487e070c16ece5c74c594edb">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

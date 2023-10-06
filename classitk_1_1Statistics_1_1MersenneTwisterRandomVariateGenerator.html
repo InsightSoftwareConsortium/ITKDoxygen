@@ -101,7 +101,35 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMersenneTwisterRandomVariateGenerator_8h_source.html">itkMersenneTwisterRandomVariateGenerator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >MersenneTwisterRandom random variate generator. </p>
+<p >It is recommended to create a separate object in each thread. By default, each instantiated class will have a different seed created by the GetNextSeed method. The creation of the initial seeds are initialized once from the time. For deterministic behavior, the individual instances' seeds should be manual set to separate values in each thread.</p>
+<p >It is no longer recommended to use this class using a "Singleton-like" GetInstance method for the global instance of this class. This usage may result in unsafe concurrent access to the global instance.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This class's instance methods are NEITHER reentrant nor concurrent thread-safe, except where marked as thread-safe. That is to say you can still use separate objects concurrently.</dd></dl>
+<p>This notice was included with the original implementation. The only changes made were to obfuscate the author's email addresses.</p>
+<p >MersenneTwister.h Mersenne Twister random number generator &ndash; a C++ class MTRand Based on code by Makoto Matsumoto, Takuji Nishimura, and Shawn Cokus Richard J. Wagner v1.0 15 May 2003 rjwagner at writeme dot com</p>
+<p >The Mersenne Twister is an algorithm for generating random numbers. It was designed with consideration of the flaws in various other generators. The period, 2^19937-1, and the order of equidistribution, 623 dimensions, are far greater. The generator is also fast; it avoids multiplication and division, and it benefits from caches and pipelines. For more information see the inventors' web page at http:*www.math.keio.ac.jp/~matumoto/emt.html</p>
+<p >Reference M. Matsumoto and T. Nishimura, "Mersenne Twister: A 623-Dimensionally
+Equidistributed Uniform Pseudo-Random Number Generator", ACM Transactions on Modeling and Computer Simulation, Vol. 8, No. 1, January 1998, pp 3-30.</p>
+<p >Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura, Copyright (C) 2000 - 2003, Richard J. Wagner All rights reserved.</p>
+<p >Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ol type="1">
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>The names of its contributors may not be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ol>
+<p >THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p >The original code included the following notice: </p><pre class="fragment">When you use this, send an email to: matumoto at math dot keio dot ac dot jp
+with an appropriate reference to your work.
+</pre><p> It would be nice to CC: rjwagner at writeme dot com and Cokus at math dot washington dot edu when you write.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMersenneTwisterRandomVariateGenerator_8h_source.html#l00127">127</a> of file <a class="el" href="itkMersenneTwisterRandomVariateGenerator_8h_source.html">itkMersenneTwisterRandomVariateGenerator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::MersenneTwisterRandomVariateGenerator:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -404,35 +432,7 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ace2f2aaf4acc7920fb53310e07cacaf0"><td class="memItemLeft" align="right" valign="top">static MersenneTwisterGlobals *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Statistics_1_1MersenneTwisterRandomVariateGenerator.html#ace2f2aaf4acc7920fb53310e07cacaf0">m_PimplGlobals</a></td></tr>
 <tr class="separator:ace2f2aaf4acc7920fb53310e07cacaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >MersenneTwisterRandom random variate generator. </p>
-<p >It is recommended to create a separate object in each thread. By default, each instantiated class will have a different seed created by the GetNextSeed method. The creation of the initial seeds are initialized once from the time. For deterministic behavior, the individual instances' seeds should be manual set to separate values in each thread.</p>
-<p >It is no longer recommended to use this class using a "Singleton-like" GetInstance method for the global instance of this class. This usage may result in unsafe concurrent access to the global instance.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This class's instance methods are NEITHER reentrant nor concurrent thread-safe, except where marked as thread-safe. That is to say you can still use separate objects concurrently.</dd></dl>
-<p>This notice was included with the original implementation. The only changes made were to obfuscate the author's email addresses.</p>
-<p >MersenneTwister.h Mersenne Twister random number generator &ndash; a C++ class MTRand Based on code by Makoto Matsumoto, Takuji Nishimura, and Shawn Cokus Richard J. Wagner v1.0 15 May 2003 rjwagner at writeme dot com</p>
-<p >The Mersenne Twister is an algorithm for generating random numbers. It was designed with consideration of the flaws in various other generators. The period, 2^19937-1, and the order of equidistribution, 623 dimensions, are far greater. The generator is also fast; it avoids multiplication and division, and it benefits from caches and pipelines. For more information see the inventors' web page at http:*www.math.keio.ac.jp/~matumoto/emt.html</p>
-<p >Reference M. Matsumoto and T. Nishimura, "Mersenne Twister: A 623-Dimensionally
-Equidistributed Uniform Pseudo-Random Number Generator", ACM Transactions on Modeling and Computer Simulation, Vol. 8, No. 1, January 1998, pp 3-30.</p>
-<p >Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura, Copyright (C) 2000 - 2003, Richard J. Wagner All rights reserved.</p>
-<p >Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ol type="1">
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-<li>The names of its contributors may not be used to endorse or promote products derived from this software without specific prior written permission.</li>
-</ol>
-<p >THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-<p >The original code included the following notice: </p><pre class="fragment">When you use this, send an email to: matumoto at math dot keio dot ac dot jp
-with an appropriate reference to your work.
-</pre><p> It would be nice to CC: rjwagner at writeme dot com and Cokus at math dot washington dot edu when you write.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMersenneTwisterRandomVariateGenerator_8h_source.html#l00127">127</a> of file <a class="el" href="itkMersenneTwisterRandomVariateGenerator_8h_source.html">itkMersenneTwisterRandomVariateGenerator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6d28ad9a11d3c96bd48f43c834f73771" name="a6d28ad9a11d3c96bd48f43c834f73771"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d28ad9a11d3c96bd48f43c834f73771">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

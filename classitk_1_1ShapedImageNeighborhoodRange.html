@@ -96,7 +96,38 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkShapedImageNeighborhoodRange_8h_source.html">itkShapedImageNeighborhoodRange.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TImageNeighborhoodPixelAccessPolicy = ZeroFluxNeumannImageNeighborhoodPixelAccessPolicy&lt;TImage&gt;&gt;<br />
+class itk::ShapedImageNeighborhoodRange&lt; TImage, TImageNeighborhoodPixelAccessPolicy &gt;</div><p >Modern C++11 range to iterate over a neighborhood of pixels. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
+<p >The following example creates a 3 x 5 neighborhood around pixel [10, 20] and adds 42 to each neighborhood pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">ImageType::IndexType</a> location = {10, 20};</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="structitk_1_1Size.html">itk::Size&lt;ImageType::ImageDimension&gt;</a> radius = { { 1, 2 } };</div>
+<div class="line"><span class="keyword">const</span> std::vector&lt;OffsetType&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a118e8f67317a8878e5cbf697adc410b1">itk::GenerateRectangularImageNeighborhoodOffsets</a>(radius)</div>
+<div class="line"><a class="code hl_class" href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange&lt;ImageType&gt;</a> neighborhoodRange{ *image, location, offsets };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; neighborhoodPixel : neighborhoodRange)</div>
+<div class="line">{</div>
+<div class="line">  neighborhoodPixel = neighborhoodPixel + 42;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1ShapedImageNeighborhoodRange_html"><div class="ttname"><a href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange</a></div><div class="ttdef"><b>Definition:</b> <a href="itkShapedImageNeighborhoodRange_8h_source.html#l00092">itkShapedImageNeighborhoodRange.h:93</a></div></div>
+<div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a246a71b35a903d08cb4d0aec86f6f366"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">itk::GTest::TypedefsAndConstructors::Dimension2::IndexType</a></div><div class="ttdeci">ImageBaseType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00050">itkGTestTypedefsAndConstructors.h:50</a></div></div>
+<div class="ttc" id="anamespaceitk_html_a118e8f67317a8878e5cbf697adc410b1"><div class="ttname"><a href="namespaceitk.html#a118e8f67317a8878e5cbf697adc410b1">itk::GenerateRectangularImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; VImageDimension &gt; &gt; GenerateRectangularImageNeighborhoodOffsets(const Size&lt; VImageDimension &gt; &amp;radius)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00043">itkImageNeighborhoodOffsets.h:43</a></div></div>
+<div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size</a></div><div class="ttdoc">Represent a n-dimensional size (bounds) of a n-dimensional image.</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00071">itkSize.h:72</a></div></div>
+</div><!-- fragment --><p >The following example prints the values of the neighborhood pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ShapedImageNeighborhoodRange.html#a51afcd73e7c4243530041058fd98df6b">PixelType</a> neighborhoodPixel : neighborhoodRange)</div>
+<div class="line">{</div>
+<div class="line">  std::cout &lt;&lt; neighborhoodPixel &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1ShapedImageNeighborhoodRange_html_a51afcd73e7c4243530041058fd98df6b"><div class="ttname"><a href="classitk_1_1ShapedImageNeighborhoodRange.html#a51afcd73e7c4243530041058fd98df6b">itk::ShapedImageNeighborhoodRange::PixelType</a></div><div class="ttdeci">typename TImage::PixelType PixelType</div><div class="ttdef"><b>Definition:</b> <a href="itkShapedImageNeighborhoodRange_8h_source.html#l00143">itkShapedImageNeighborhoodRange.h:143</a></div></div>
+</div><!-- fragment --><p >The inner product of the neighborhood with a kernel can be produced with std::inner_product (from the Standard C++ header "numeric"), as follows: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> result = std::inner_product(</div>
+<div class="line">  kernel.begin(),</div>
+<div class="line">  kernel.end(),</div>
+<div class="line">  neighborhoodRange.begin(),</div>
+<div class="line">  0.0);</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Strictly speaking, the <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange</a> iterator classes do not fully comply with the C++11 random access iterator requirements, because their <a class="el" href="namespaceitk.html#a6ad353beca3dd7304e79f367be84fa70">operator*()</a> returns a proxy to the pixel, instead of a reference. Which implies that <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> iterators are not guaranteed to work well as argument to a C++ Standard Library function that requires a standard compliant iterator. However, this "pixel proxy" very much behaves like a reference to the pixel, and in practice, passing such an iterator to an std function usually just works!</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkShapedImageNeighborhoodRange_8h_source.html#l00092">92</a> of file <a class="el" href="itkShapedImageNeighborhoodRange_8h_source.html">itkShapedImageNeighborhoodRange.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::ShapedImageNeighborhoodRange&lt; TImage, TImageNeighborhoodPixelAccessPolicy &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -235,38 +266,7 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a4cbd969edfd8439a6c568306db47e633"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html#a4cbd969edfd8439a6c568306db47e633">IsImageTypeConst</a> = std::is_const_v&lt;TImage&gt;</td></tr>
 <tr class="separator:a4cbd969edfd8439a6c568306db47e633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TImageNeighborhoodPixelAccessPolicy = ZeroFluxNeumannImageNeighborhoodPixelAccessPolicy&lt;TImage&gt;&gt;<br />
-class itk::ShapedImageNeighborhoodRange&lt; TImage, TImageNeighborhoodPixelAccessPolicy &gt;</div><p >Modern C++11 range to iterate over a neighborhood of pixels. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
-<p >The following example creates a 3 x 5 neighborhood around pixel [10, 20] and adds 42 to each neighborhood pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">ImageType::IndexType</a> location = {10, 20};</div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="structitk_1_1Size.html">itk::Size&lt;ImageType::ImageDimension&gt;</a> radius = { { 1, 2 } };</div>
-<div class="line"><span class="keyword">const</span> std::vector&lt;OffsetType&gt; offsets = <a class="code hl_function" href="namespaceitk.html#a118e8f67317a8878e5cbf697adc410b1">itk::GenerateRectangularImageNeighborhoodOffsets</a>(radius)</div>
-<div class="line"><a class="code hl_class" href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange&lt;ImageType&gt;</a> neighborhoodRange{ *image, location, offsets };</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; neighborhoodPixel : neighborhoodRange)</div>
-<div class="line">{</div>
-<div class="line">  neighborhoodPixel = neighborhoodPixel + 42;</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassitk_1_1ShapedImageNeighborhoodRange_html"><div class="ttname"><a href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange</a></div><div class="ttdef"><b>Definition:</b> <a href="itkShapedImageNeighborhoodRange_8h_source.html#l00092">itkShapedImageNeighborhoodRange.h:93</a></div></div>
-<div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a246a71b35a903d08cb4d0aec86f6f366"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">itk::GTest::TypedefsAndConstructors::Dimension2::IndexType</a></div><div class="ttdeci">ImageBaseType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00050">itkGTestTypedefsAndConstructors.h:50</a></div></div>
-<div class="ttc" id="anamespaceitk_html_a118e8f67317a8878e5cbf697adc410b1"><div class="ttname"><a href="namespaceitk.html#a118e8f67317a8878e5cbf697adc410b1">itk::GenerateRectangularImageNeighborhoodOffsets</a></div><div class="ttdeci">std::vector&lt; Offset&lt; VImageDimension &gt; &gt; GenerateRectangularImageNeighborhoodOffsets(const Size&lt; VImageDimension &gt; &amp;radius)</div><div class="ttdef"><b>Definition:</b> <a href="itkImageNeighborhoodOffsets_8h_source.html#l00043">itkImageNeighborhoodOffsets.h:43</a></div></div>
-<div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size</a></div><div class="ttdoc">Represent a n-dimensional size (bounds) of a n-dimensional image.</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00071">itkSize.h:72</a></div></div>
-</div><!-- fragment --><p >The following example prints the values of the neighborhood pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ShapedImageNeighborhoodRange.html#a51afcd73e7c4243530041058fd98df6b">PixelType</a> neighborhoodPixel : neighborhoodRange)</div>
-<div class="line">{</div>
-<div class="line">  std::cout &lt;&lt; neighborhoodPixel &lt;&lt; std::endl;</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassitk_1_1ShapedImageNeighborhoodRange_html_a51afcd73e7c4243530041058fd98df6b"><div class="ttname"><a href="classitk_1_1ShapedImageNeighborhoodRange.html#a51afcd73e7c4243530041058fd98df6b">itk::ShapedImageNeighborhoodRange::PixelType</a></div><div class="ttdeci">typename TImage::PixelType PixelType</div><div class="ttdef"><b>Definition:</b> <a href="itkShapedImageNeighborhoodRange_8h_source.html#l00143">itkShapedImageNeighborhoodRange.h:143</a></div></div>
-</div><!-- fragment --><p >The inner product of the neighborhood with a kernel can be produced with std::inner_product (from the Standard C++ header "numeric"), as follows: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> result = std::inner_product(</div>
-<div class="line">  kernel.begin(),</div>
-<div class="line">  kernel.end(),</div>
-<div class="line">  neighborhoodRange.begin(),</div>
-<div class="line">  0.0);</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Strictly speaking, the <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">itk::ShapedImageNeighborhoodRange</a> iterator classes do not fully comply with the C++11 random access iterator requirements, because their <a class="el" href="namespaceitk.html#a6ad353beca3dd7304e79f367be84fa70">operator*()</a> returns a proxy to the pixel, instead of a reference. Which implies that <a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> iterators are not guaranteed to work well as argument to a C++ Standard Library function that requires a standard compliant iterator. However, this "pixel proxy" very much behaves like a reference to the pixel, and in practice, passing such an iterator to an std function usually just works!</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapedNeighborhoodIterator.html" title="A neighborhood iterator which can take on an arbitrary shape.">ShapedNeighborhoodIterator</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkShapedImageNeighborhoodRange_8h_source.html#l00092">92</a> of file <a class="el" href="itkShapedImageNeighborhoodRange_8h_source.html">itkShapedImageNeighborhoodRange.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af03aa4a71451786d58314943fd147ba8" name="af03aa4a71451786d58314943fd147ba8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af03aa4a71451786d58314943fd147ba8">&#9670;&nbsp;</a></span>const_iterator</h2>
 

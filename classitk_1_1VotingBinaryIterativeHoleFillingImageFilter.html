@@ -94,7 +94,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkVotingBinaryIterativeHoleFillingImageFilter_8h_source.html">itkVotingBinaryIterativeHoleFillingImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::VotingBinaryIterativeHoleFillingImageFilter&lt; TImage &gt;</div><p >Fills in holes and cavities by iteratively applying a voting operation. </p>
+<p >This filter uses internally the <a class="el" href="classitk_1_1VotingBinaryHoleFillingImageFilter.html" title="Fills in holes and cavities by applying a voting operation on each pixel.">VotingBinaryHoleFillingImageFilter</a>, and runs it iteratively until no pixels are being changed or until it reaches the maximum number of iterations. The purpose of the filter is to fill in holes of medium size (tens of pixels in radius). In principle the number of iterations is related to the size of the holes to be filled in. The larger the holes, the more iteration must be run with this filter in order to fill in the full hole. The size of the neighborhood is also related to the curvature of the hole borders and therefore the hole size. Note that as a collateral effect this filter may also fill in cavities in the external side of structures.</p>
+<p >This filter is templated over a single image type because the output image type must be the same as the input image type. This is required in order to make the iterations possible, since the output image of one iteration is taken as the input image for the next iteration.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VotingBinaryImageFilter.html" title="Applies a voting operation in a neighborhood of each pixel.">VotingBinaryImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VotingBinaryHoleFillingImageFilter.html" title="Fills in holes and cavities by applying a voting operation on each pixel.">VotingBinaryHoleFillingImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkVotingBinaryIterativeHoleFillingImageFilter_8h_source.html#l00056">56</a> of file <a class="el" href="itkVotingBinaryIterativeHoleFillingImageFilter_8h_source.html">itkVotingBinaryIterativeHoleFillingImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::VotingBinaryIterativeHoleFillingImageFilter&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -764,25 +782,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::VotingBinaryIterativeHoleFillingImageFilter&lt; TImage &gt;</div><p >Fills in holes and cavities by iteratively applying a voting operation. </p>
-<p >This filter uses internally the <a class="el" href="classitk_1_1VotingBinaryHoleFillingImageFilter.html" title="Fills in holes and cavities by applying a voting operation on each pixel.">VotingBinaryHoleFillingImageFilter</a>, and runs it iteratively until no pixels are being changed or until it reaches the maximum number of iterations. The purpose of the filter is to fill in holes of medium size (tens of pixels in radius). In principle the number of iterations is related to the size of the holes to be filled in. The larger the holes, the more iteration must be run with this filter in order to fill in the full hole. The size of the neighborhood is also related to the curvature of the hole borders and therefore the hole size. Note that as a collateral effect this filter may also fill in cavities in the external side of structures.</p>
-<p >This filter is templated over a single image type because the output image type must be the same as the input image type. This is required in order to make the iterations possible, since the output image of one iteration is taken as the input image for the next iteration.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VotingBinaryImageFilter.html" title="Applies a voting operation in a neighborhood of each pixel.">VotingBinaryImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VotingBinaryHoleFillingImageFilter.html" title="Fills in holes and cavities by applying a voting operation on each pixel.">VotingBinaryHoleFillingImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkVotingBinaryIterativeHoleFillingImageFilter_8h_source.html#l00056">56</a> of file <a class="el" href="itkVotingBinaryIterativeHoleFillingImageFilter_8h_source.html">itkVotingBinaryIterativeHoleFillingImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af391eb5479cc3f67310143e0ac13759d" name="af391eb5479cc3f67310143e0ac13759d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af391eb5479cc3f67310143e0ac13759d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

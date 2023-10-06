@@ -91,7 +91,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTotalProgressReporter_8h_source.html">itkTotalProgressReporter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A progress reporter for concurrent threads. </p>
+<p >Each thread should construct their own instance of the class. The <a class="el" href="classitk_1_1ProcessObject.html#ab336fe5a5c0d2acb1c9ca3e7e33e393c" title="Increment the progress of the process object.">ProcessObject::IncrementProgress</a> method will be called to update the progress from all threads. The <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>'s method will automatically create ProgressEvents when the pipeline invoking thread updates the progress.</p>
+<p >All threads concurrently contribute parts of the progress to the <em>total</em> number of pixels for all threads. This report will update the progress after a sufficient number of pixel to meet the numberOfUpdates requirement between all threads. Also when the object is deconstructed, all remaining pixels will increment the progress. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkTotalProgressReporter_8h_source.html#l00040">40</a> of file <a class="el" href="itkTotalProgressReporter_8h_source.html">itkTotalProgressReporter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::TotalProgressReporter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -130,13 +136,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a23d327af98ed33cbc940ecd90b5f1165"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1TotalProgressReporter.html#a23d327af98ed33cbc940ecd90b5f1165">m_ProgressWeight</a></td></tr>
 <tr class="separator:a23d327af98ed33cbc940ecd90b5f1165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >A progress reporter for concurrent threads. </p>
-<p >Each thread should construct their own instance of the class. The <a class="el" href="classitk_1_1ProcessObject.html#ab336fe5a5c0d2acb1c9ca3e7e33e393c" title="Increment the progress of the process object.">ProcessObject::IncrementProgress</a> method will be called to update the progress from all threads. The <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>'s method will automatically create ProgressEvents when the pipeline invoking thread updates the progress.</p>
-<p >All threads concurrently contribute parts of the progress to the <em>total</em> number of pixels for all threads. This report will update the progress after a sufficient number of pixel to meet the numberOfUpdates requirement between all threads. Also when the object is deconstructed, all remaining pixels will increment the progress. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkTotalProgressReporter_8h_source.html#l00040">40</a> of file <a class="el" href="itkTotalProgressReporter_8h_source.html">itkTotalProgressReporter.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a813104fea21700c3d14d640c321d5d95" name="a813104fea21700c3d14d640c321d5d95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a813104fea21700c3d14d640c321d5d95">&#9670;&nbsp;</a></span>TotalProgressReporter()</h2>
 

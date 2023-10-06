@@ -87,7 +87,15 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="VNLSparseLUSolverTraits_8h_source.html">VNLSparseLUSolverTraits.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = double&gt;<br />
+class VNLSparseLUSolverTraits&lt; T &gt;</div><p >Generic interface for sparse LU solver. </p>
+<p >This generic interface (common to several sparse solvers), allow to interchange solver solutions when dealing with sparse linear systems. See <a class="el" href="classitk_1_1ParameterizationQuadEdgeMeshFilter.html" title="Compute a planar parameterization of the input mesh.">itk::ParameterizationQuadEdgeMeshFilter</a> for reference.</p>
+<p >It internally uses the VNL library to represent and deal with vectors (vnl_vector) and sparse matrices (vnl_sparse_matrix). The solver by itself is made of a sparse LU decomposition followed by solving upper triangular system. see vnl_sparse_lu for more details on the method used.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVNLIterativeSparseSolverTraits.html" title="Generic interface for iterative sparse linear solver.">VNLIterativeSparseSolverTraits</a>:w </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="VNLSparseLUSolverTraits_8h_source.html#l00042">42</a> of file <a class="el" href="VNLSparseLUSolverTraits_8h_source.html">VNLSparseLUSolverTraits.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a466e00f352f8dc0fb84ffce33128436f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVNLSparseLUSolverTraits.html#a466e00f352f8dc0fb84ffce33128436f">MatrixType</a> = vnl_sparse_matrix&lt; <a class="el" href="classVNLSparseLUSolverTraits.html#a41be567fafe952b99d6f21fcc1927406">ValueType</a> &gt;</td></tr>
@@ -126,15 +134,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a163bc26d8e36100d06023553f56103cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVNLSparseLUSolverTraits.html#a163bc26d8e36100d06023553f56103cf">Solve</a> (<a class="el" href="classVNLSparseLUSolverTraits.html#a76a09acc75ab0d9d1c131b3fb429d791">SolverType</a> &amp;solver, const <a class="el" href="classVNLSparseLUSolverTraits.html#a34e4784cc0fb452c43b123bb25fce8d0">VectorType</a> &amp;iBx, const <a class="el" href="classVNLSparseLUSolverTraits.html#a34e4784cc0fb452c43b123bb25fce8d0">VectorType</a> &amp;iBy, <a class="el" href="classVNLSparseLUSolverTraits.html#a34e4784cc0fb452c43b123bb25fce8d0">VectorType</a> &amp;oX, <a class="el" href="classVNLSparseLUSolverTraits.html#a34e4784cc0fb452c43b123bb25fce8d0">VectorType</a> &amp;oY)</td></tr>
 <tr class="separator:a163bc26d8e36100d06023553f56103cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = double&gt;<br />
-class VNLSparseLUSolverTraits&lt; T &gt;</div><p >Generic interface for sparse LU solver. </p>
-<p >This generic interface (common to several sparse solvers), allow to interchange solver solutions when dealing with sparse linear systems. See <a class="el" href="classitk_1_1ParameterizationQuadEdgeMeshFilter.html" title="Compute a planar parameterization of the input mesh.">itk::ParameterizationQuadEdgeMeshFilter</a> for reference.</p>
-<p >It internally uses the VNL library to represent and deal with vectors (vnl_vector) and sparse matrices (vnl_sparse_matrix). The solver by itself is made of a sparse LU decomposition followed by solving upper triangular system. see vnl_sparse_lu for more details on the method used.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVNLIterativeSparseSolverTraits.html" title="Generic interface for iterative sparse linear solver.">VNLIterativeSparseSolverTraits</a>:w </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="VNLSparseLUSolverTraits_8h_source.html#l00042">42</a> of file <a class="el" href="VNLSparseLUSolverTraits_8h_source.html">VNLSparseLUSolverTraits.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a466e00f352f8dc0fb84ffce33128436f" name="a466e00f352f8dc0fb84ffce33128436f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a466e00f352f8dc0fb84ffce33128436f">&#9670;&nbsp;</a></span>MatrixType</h2>
 

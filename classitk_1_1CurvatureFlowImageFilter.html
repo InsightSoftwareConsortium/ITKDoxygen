@@ -95,7 +95,39 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCurvatureFlowImageFilter_8h_source.html">itkCurvatureFlowImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::CurvatureFlowImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Denoise an image using curvature driven flow. </p>
+<p ><a class="el" href="classitk_1_1CurvatureFlowImageFilter.html" title="Denoise an image using curvature driven flow.">CurvatureFlowImageFilter</a> implements a curvature driven image denoising algorithm. Iso-brightness contours in the grayscale input image are viewed as a level set. The level set is then evolved using a curvature-based speed function:</p>
+<p class="formulaDsp">
+\[ I_t = \kappa |\nabla I| \]
+</p>
+<p> where \( \kappa \) is the curvature.</p>
+<p >The advantage of this approach is that sharp boundaries are preserved with smoothing occurring only within a region. However, it should be noted that continuous application of this scheme will result in the eventual removal of all information as each contour shrinks to zero and disappear.</p>
+<p >Note that unlike level set segmentation algorithms, the image to be denoised is already the level set and can be set directly as the input using the <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> method.</p>
+<p >This filter has two parameters: the number of update iterations to be performed and the timestep between each update.</p>
+<p >The timestep should be "small enough" to ensure numerical stability. Stability is guarantee when the timestep meets the CFL (Courant-Friedrichs-Levy) condition. Broadly speaking, this condition ensures that each contour does not move more than one grid position at each timestep. In the literature, the timestep is typically user specified and have to manually tuned to the application.</p>
+<p >This filter make use of the multi-threaded finite difference solver hierarchy. Updates are computed using a <a class="el" href="classitk_1_1CurvatureFlowFunction.html" title="This class encapsulate the finite difference equation which drives a curvature flow denoising algorit...">CurvatureFlowFunction</a> object. A zero flux Neumann boundary condition when computing derivatives near the data boundary.</p>
+<p >This filter may be streamed. To support streaming this filter produces a padded output which takes into account edge effects. The size of the padding is m_NumberOfIterations on each edge. Users of this filter should only make use of the center valid central region.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the input and output types have the same dimensions. This filter also requires that the output image pixels are of a floating point type. This filter works for any dimensional images.</dd></dl>
+<p>Reference: "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Chapter 16, Second edition, 1999.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1CurvatureFlowFunction.html" title="This class encapsulate the finite difference equation which drives a curvature flow denoising algorit...">CurvatureFlowFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MinMaxCurvatureFlowImageFilter.html" title="Denoise an image using min/max curvature flow.">MinMaxCurvatureFlowImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryMinMaxCurvatureFlowImageFilter.html" title="Denoise a binary image using min/max curvature flow.">BinaryMinMaxCurvatureFlowImageFilter</a></dd></dl>
+<p>Input/Output Restrictions: TInputImage and TOutputImage must have the same dimension. TOutputImage's pixel type must be a real number type.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCurvatureFlowImageFilter_8h_source.html#l00096">96</a> of file <a class="el" href="itkCurvatureFlowImageFilter_8h_source.html">itkCurvatureFlowImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CurvatureFlowImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -935,39 +967,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::CurvatureFlowImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Denoise an image using curvature driven flow. </p>
-<p ><a class="el" href="classitk_1_1CurvatureFlowImageFilter.html" title="Denoise an image using curvature driven flow.">CurvatureFlowImageFilter</a> implements a curvature driven image denoising algorithm. Iso-brightness contours in the grayscale input image are viewed as a level set. The level set is then evolved using a curvature-based speed function:</p>
-<p class="formulaDsp">
-\[ I_t = \kappa |\nabla I| \]
-</p>
-<p> where \( \kappa \) is the curvature.</p>
-<p >The advantage of this approach is that sharp boundaries are preserved with smoothing occurring only within a region. However, it should be noted that continuous application of this scheme will result in the eventual removal of all information as each contour shrinks to zero and disappear.</p>
-<p >Note that unlike level set segmentation algorithms, the image to be denoised is already the level set and can be set directly as the input using the <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> method.</p>
-<p >This filter has two parameters: the number of update iterations to be performed and the timestep between each update.</p>
-<p >The timestep should be "small enough" to ensure numerical stability. Stability is guarantee when the timestep meets the CFL (Courant-Friedrichs-Levy) condition. Broadly speaking, this condition ensures that each contour does not move more than one grid position at each timestep. In the literature, the timestep is typically user specified and have to manually tuned to the application.</p>
-<p >This filter make use of the multi-threaded finite difference solver hierarchy. Updates are computed using a <a class="el" href="classitk_1_1CurvatureFlowFunction.html" title="This class encapsulate the finite difference equation which drives a curvature flow denoising algorit...">CurvatureFlowFunction</a> object. A zero flux Neumann boundary condition when computing derivatives near the data boundary.</p>
-<p >This filter may be streamed. To support streaming this filter produces a padded output which takes into account edge effects. The size of the padding is m_NumberOfIterations on each edge. Users of this filter should only make use of the center valid central region.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the input and output types have the same dimensions. This filter also requires that the output image pixels are of a floating point type. This filter works for any dimensional images.</dd></dl>
-<p>Reference: "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Chapter 16, Second edition, 1999.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1CurvatureFlowFunction.html" title="This class encapsulate the finite difference equation which drives a curvature flow denoising algorit...">CurvatureFlowFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MinMaxCurvatureFlowImageFilter.html" title="Denoise an image using min/max curvature flow.">MinMaxCurvatureFlowImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryMinMaxCurvatureFlowImageFilter.html" title="Denoise a binary image using min/max curvature flow.">BinaryMinMaxCurvatureFlowImageFilter</a></dd></dl>
-<p>Input/Output Restrictions: TInputImage and TOutputImage must have the same dimension. TOutputImage's pixel type must be a real number type.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCurvatureFlowImageFilter_8h_source.html#l00096">96</a> of file <a class="el" href="itkCurvatureFlowImageFilter_8h_source.html">itkCurvatureFlowImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad27956e8ceb61f3bc3613f5d77f452bd" name="ad27956e8ceb61f3bc3613f5d77f452bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad27956e8ceb61f3bc3613f5d77f452bd">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -94,7 +94,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkIterativeInverseDisplacementFieldImageFilter_8h_source.html">itkIterativeInverseDisplacementFieldImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::IterativeInverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse of a displacement field. </p>
+<p ><a class="el" href="classitk_1_1IterativeInverseDisplacementFieldImageFilter.html" title="Computes the inverse of a displacement field.">IterativeInverseDisplacementFieldImageFilter</a> takes a displacement field as input and computes the displacement field that is its inverse. If the input displacement field was mapping coordinates from a space A into a space B, the output of this filter will map coordinates from the space B into the space A.</p>
+<p >The algorithm implemented in this filter uses an iterative method for progressively refining the values of the inverse field. Starting from the direct field, at every pixel the direct mapping of this point is found, and a the negative of the current displacement is stored in the inverse field at the nearest pixel. Then, subsequent iterations verify if any of the neighbor pixels provide a better return to the current pixel, in which case its value is taken for updating the vector in the inverse field.</p>
+<p >This method was discussed in the users-list during February 2004.</p>
+<dl class="section author"><dt>Author</dt><dd>Corinne Mattmann </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkIterativeInverseDisplacementFieldImageFilter_8h_source.html#l00052">52</a> of file <a class="el" href="itkIterativeInverseDisplacementFieldImageFilter_8h_source.html">itkIterativeInverseDisplacementFieldImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::IterativeInverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -757,16 +766,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::IterativeInverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse of a displacement field. </p>
-<p ><a class="el" href="classitk_1_1IterativeInverseDisplacementFieldImageFilter.html" title="Computes the inverse of a displacement field.">IterativeInverseDisplacementFieldImageFilter</a> takes a displacement field as input and computes the displacement field that is its inverse. If the input displacement field was mapping coordinates from a space A into a space B, the output of this filter will map coordinates from the space B into the space A.</p>
-<p >The algorithm implemented in this filter uses an iterative method for progressively refining the values of the inverse field. Starting from the direct field, at every pixel the direct mapping of this point is found, and a the negative of the current displacement is stored in the inverse field at the nearest pixel. Then, subsequent iterations verify if any of the neighbor pixels provide a better return to the current pixel, in which case its value is taken for updating the vector in the inverse field.</p>
-<p >This method was discussed in the users-list during February 2004.</p>
-<dl class="section author"><dt>Author</dt><dd>Corinne Mattmann </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkIterativeInverseDisplacementFieldImageFilter_8h_source.html#l00052">52</a> of file <a class="el" href="itkIterativeInverseDisplacementFieldImageFilter_8h_source.html">itkIterativeInverseDisplacementFieldImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4fef95701612d632f08d1c223988c8e7" name="a4fef95701612d632f08d1c223988c8e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fef95701612d632f08d1c223988c8e7">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

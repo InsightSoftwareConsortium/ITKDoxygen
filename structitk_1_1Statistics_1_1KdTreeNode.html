@@ -91,7 +91,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkKdTree_8h_source.html">itkKdTree.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
+class itk::Statistics::KdTreeNode&lt; TSample &gt;</div><p >This class defines the interface of its derived classes. </p>
+<p >The methods defined in this class are a superset of the methods defined in its subclasses. Therefore, the subclasses implements only part of the methods. The template argument, TSample, can be any subclass of the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> class.</p>
+<p >There are two categories for the subclasses, terminal and nonterminal nodes. The terminal nodes stores the instance identifiers belonging to them, while the nonterminal nodes don't. Therefore, the AddInstanceIdentifier and the GetInstanceIdentifier have meaning only with the terminal ones. The terminal nodes don't have any child (left or right). For terminal nodes, the GetParameters method is void.</p>
+<p ><b>Recent API changes:</b> The static const macro to get the length of a measurement vector, <code>MeasurementVectorSize</code> has been removed to allow the length of a measurement vector to be specified at run time. The <code>type</code> alias for <code>CentroidType</code> has been changed from <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> to <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Statistics_1_1KdTreeNonterminalNode.html" title="This is a subclass of the KdTreeNode.">KdTreeNonterminalNode</a>, <a class="el" href="structitk_1_1Statistics_1_1KdTreeWeightedCentroidNonterminalNode.html" title="This is a subclass of the KdTreeNode.">KdTreeWeightedCentroidNonterminalNode</a>, <a class="el" href="structitk_1_1Statistics_1_1KdTreeTerminalNode.html" title="This class is the node that doesn&#39;t have any child node. The IsTerminal method returns true for this ...">KdTreeTerminalNode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkKdTree_8h_source.html#l00065">65</a> of file <a class="el" href="itkKdTree_8h_source.html">itkKdTree.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::KdTreeNode&lt; TSample &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -138,16 +147,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad381e22a9254d663ba5d21cc96e458fc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Statistics_1_1KdTreeNode.html#ad381e22a9254d663ba5d21cc96e458fc">~KdTreeNode</a> ()=default</td></tr>
 <tr class="separator:ad381e22a9254d663ba5d21cc96e458fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
-class itk::Statistics::KdTreeNode&lt; TSample &gt;</div><p >This class defines the interface of its derived classes. </p>
-<p >The methods defined in this class are a superset of the methods defined in its subclasses. Therefore, the subclasses implements only part of the methods. The template argument, TSample, can be any subclass of the <a class="el" href="classitk_1_1Statistics_1_1Sample.html" title="A collection of measurements for statistical analysis.">Sample</a> class.</p>
-<p >There are two categories for the subclasses, terminal and nonterminal nodes. The terminal nodes stores the instance identifiers belonging to them, while the nonterminal nodes don't. Therefore, the AddInstanceIdentifier and the GetInstanceIdentifier have meaning only with the terminal ones. The terminal nodes don't have any child (left or right). For terminal nodes, the GetParameters method is void.</p>
-<p ><b>Recent API changes:</b> The static const macro to get the length of a measurement vector, <code>MeasurementVectorSize</code> has been removed to allow the length of a measurement vector to be specified at run time. The <code>type</code> alias for <code>CentroidType</code> has been changed from <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> to <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Statistics_1_1KdTreeNonterminalNode.html" title="This is a subclass of the KdTreeNode.">KdTreeNonterminalNode</a>, <a class="el" href="structitk_1_1Statistics_1_1KdTreeWeightedCentroidNonterminalNode.html" title="This is a subclass of the KdTreeNode.">KdTreeWeightedCentroidNonterminalNode</a>, <a class="el" href="structitk_1_1Statistics_1_1KdTreeTerminalNode.html" title="This class is the node that doesn&#39;t have any child node. The IsTerminal method returns true for this ...">KdTreeTerminalNode</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkKdTree_8h_source.html#l00065">65</a> of file <a class="el" href="itkKdTree_8h_source.html">itkKdTree.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af8e87bc25d35a31741006502dfe64731" name="af8e87bc25d35a31741006502dfe64731"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8e87bc25d35a31741006502dfe64731">&#9670;&nbsp;</a></span>CentroidType</h2>
 

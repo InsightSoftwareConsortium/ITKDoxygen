@@ -91,7 +91,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkProgressReporter_8h_source.html">itkProgressReporter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Implements progress tracking for a filter. </p>
+<p >This is a utility class for use by filter implementations in GenerateData() and ThreadedGenerateData().</p>
+<p >The class constructor sets the progress to 0, and the destructor sets it to 1. In between, there should be one call to <a class="el" href="classitk_1_1ProgressReporter.html#ac372ae52541f97c144563c57f092ae01">CompletedPixel()</a> per pixel. The reporter will automatically update the filter's progress at an interval resulting in the specified number of updates. The default number of updates is 100.</p>
+<p >Example usage:</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ProgressReporter.html#ae939fb1aa4385f149be2eab90ed6068f">ProgressReporter</a> progress(<span class="keyword">this</span>, threadId,</div>
+<div class="line">                          threadRegion.GetNumberOfPixels(), 100);</div>
+<div class="line"><span class="keywordflow">for</span>( each pixel )</div>
+<div class="line">  {</div>
+<div class="line">  ...</div>
+<div class="line">  progress.CompletedPixel();</div>
+<div class="line">  }</div>
+<div class="ttc" id="aclassitk_1_1ProgressReporter_html_ae939fb1aa4385f149be2eab90ed6068f"><div class="ttname"><a href="classitk_1_1ProgressReporter.html#ae939fb1aa4385f149be2eab90ed6068f">itk::ProgressReporter::ProgressReporter</a></div><div class="ttdeci">ProgressReporter(ProcessObject *filter, ThreadIdType threadId, SizeValueType numberOfPixels, SizeValueType numberOfUpdates=100, float initialProgress=0.0f, float progressWeight=1.0f)</div></div>
+</div><!-- fragment --><p >When used in a non-threaded filter, the threadId argument should be 0.</p>
+<dl class="section see"><dt>See also</dt><dd>This class is a tool for filter implementers to equip a filter to report on its progress. For information on how to acquire this progress information, see:<ul>
+<li>ProcessObject::ReportProgress()</li>
+<li><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0" title="Add an observer/command to this object invoked for event.">Object::AddObserver()</a> </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkProgressReporter_8h_source.html#l00060">60</a> of file <a class="el" href="itkProgressReporter_8h_source.html">itkProgressReporter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::ProgressReporter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -132,28 +153,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a20cf59e23bf4700dfb0641d9b72260f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProgressReporter.html#a20cf59e23bf4700dfb0641d9b72260f4">m_ThreadId</a></td></tr>
 <tr class="separator:a20cf59e23bf4700dfb0641d9b72260f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Implements progress tracking for a filter. </p>
-<p >This is a utility class for use by filter implementations in GenerateData() and ThreadedGenerateData().</p>
-<p >The class constructor sets the progress to 0, and the destructor sets it to 1. In between, there should be one call to <a class="el" href="classitk_1_1ProgressReporter.html#ac372ae52541f97c144563c57f092ae01">CompletedPixel()</a> per pixel. The reporter will automatically update the filter's progress at an interval resulting in the specified number of updates. The default number of updates is 100.</p>
-<p >Example usage:</p>
-<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ProgressReporter.html#ae939fb1aa4385f149be2eab90ed6068f">ProgressReporter</a> progress(<span class="keyword">this</span>, threadId,</div>
-<div class="line">                          threadRegion.GetNumberOfPixels(), 100);</div>
-<div class="line"><span class="keywordflow">for</span>( each pixel )</div>
-<div class="line">  {</div>
-<div class="line">  ...</div>
-<div class="line">  progress.CompletedPixel();</div>
-<div class="line">  }</div>
-<div class="ttc" id="aclassitk_1_1ProgressReporter_html_ae939fb1aa4385f149be2eab90ed6068f"><div class="ttname"><a href="classitk_1_1ProgressReporter.html#ae939fb1aa4385f149be2eab90ed6068f">itk::ProgressReporter::ProgressReporter</a></div><div class="ttdeci">ProgressReporter(ProcessObject *filter, ThreadIdType threadId, SizeValueType numberOfPixels, SizeValueType numberOfUpdates=100, float initialProgress=0.0f, float progressWeight=1.0f)</div></div>
-</div><!-- fragment --><p >When used in a non-threaded filter, the threadId argument should be 0.</p>
-<dl class="section see"><dt>See also</dt><dd>This class is a tool for filter implementers to equip a filter to report on its progress. For information on how to acquire this progress information, see:<ul>
-<li>ProcessObject::ReportProgress()</li>
-<li><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0" title="Add an observer/command to this object invoked for event.">Object::AddObserver()</a> </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkProgressReporter_8h_source.html#l00060">60</a> of file <a class="el" href="itkProgressReporter_8h_source.html">itkProgressReporter.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae939fb1aa4385f149be2eab90ed6068f" name="ae939fb1aa4385f149be2eab90ed6068f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae939fb1aa4385f149be2eab90ed6068f">&#9670;&nbsp;</a></span>ProgressReporter()</h2>
 

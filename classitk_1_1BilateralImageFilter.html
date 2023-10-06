@@ -95,7 +95,36 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBilateralImageFilter_8h_source.html">itkBilateralImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::BilateralImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Blurs an image while preserving edges. </p>
+<p >This filter uses bilateral filtering to blur an image using both domain and range "neighborhoods". Pixels that are close to a pixel in the image domain and similar to a pixel in the image range are used to calculate the filtered value. Two gaussian kernels (one in the image domain and one in the image range) are used to smooth the image. The result is an image that is smoothed in homogeneous regions yet has edges preserved. The result is similar to anisotropic diffusion but the implementation in non-iterative. Another benefit to bilateral filtering is that any distance metric can be used for kernel smoothing the image range. Hence, color images can be smoothed as vector images, using the CIE distances between intensity values as the similarity metric (the Gaussian kernel for the image domain is evaluated using CIE distances). A separate version of this filter will be designed for color and vector images.</p>
+<p >Bilateral filtering is capable of reducing the noise in an image by an order of magnitude while maintaining edges.</p>
+<p >The bilateral operator used here was described by Tomasi and Manduchi (Bilateral Filtering for Gray and ColorImages. IEEE ICCV. 1998.)</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd><p class="startdd">Support color images </p>
+<p class="enddd">Support vector images </p>
+</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBilateralImageFilter_8h_source.html#l00075">75</a> of file <a class="el" href="itkBilateralImageFilter_8h_source.html">itkBilateralImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BilateralImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -802,36 +831,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::BilateralImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Blurs an image while preserving edges. </p>
-<p >This filter uses bilateral filtering to blur an image using both domain and range "neighborhoods". Pixels that are close to a pixel in the image domain and similar to a pixel in the image range are used to calculate the filtered value. Two gaussian kernels (one in the image domain and one in the image range) are used to smooth the image. The result is an image that is smoothed in homogeneous regions yet has edges preserved. The result is similar to anisotropic diffusion but the implementation in non-iterative. Another benefit to bilateral filtering is that any distance metric can be used for kernel smoothing the image range. Hence, color images can be smoothed as vector images, using the CIE distances between intensity values as the similarity metric (the Gaussian kernel for the image domain is evaluated using CIE distances). A separate version of this filter will be designed for color and vector images.</p>
-<p >Bilateral filtering is capable of reducing the noise in an image by an order of magnitude while maintaining edges.</p>
-<p >The bilateral operator used here was described by Tomasi and Manduchi (Bilateral Filtering for Gray and ColorImages. IEEE ICCV. 1998.)</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd><p class="startdd">Support color images </p>
-<p class="enddd">Support vector images </p>
-</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBilateralImageFilter_8h_source.html#l00075">75</a> of file <a class="el" href="itkBilateralImageFilter_8h_source.html">itkBilateralImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3222f0e3d4d320e6209b0c67f16bc6a0" name="a3222f0e3d4d320e6209b0c67f16bc6a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3222f0e3d4d320e6209b0c67f16bc6a0">&#9670;&nbsp;</a></span>ArrayType</h2>
 

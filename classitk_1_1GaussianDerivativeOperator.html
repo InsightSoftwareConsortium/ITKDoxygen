@@ -96,7 +96,33 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGaussianDerivativeOperator_8h_source.html">itkGaussianDerivativeOperator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
+class itk::GaussianDerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> whose coefficients are a one dimensional, discrete derivative Gaussian kernel. </p>
+<p ><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> can be used to calculate Gaussian derivatives by taking its inner product with to a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> (<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a>) that is swept across an image region. It is a directional operator. N successive applications oriented along each dimensional direction will calculate separable, efficient, N-D Gaussian derivatives of an image region.</p>
+<p ><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> takes three parameters:</p>
+<p >(1) The floating-point variance of the desired Gaussian function.</p>
+<p >(2) The order of the derivative to be calculated (zero order means it performs only smoothing as a standard <a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">itk::GaussianOperator</a>)</p>
+<p >(3) The "maximum error" allowed in the discrete Gaussian function. "Maximum error" is defined as the difference between the area under the discrete Gaussian curve and the area under the continuous Gaussian. Maximum error affects the Gaussian operator size. Care should be taken not to make this value too small relative to the variance lest the operator size become unreasonably large.</p>
+<p >References: The Gaussian kernel contained in this operator was described by Tony Lindeberg (Discrete Scale-Space Theory and the Scale-Space Primal Sketch. Dissertation. Royal Institute of Technology, Stockholm, Sweden. May 1991.).</p>
+<dl class="section author"><dt>Author</dt><dd>Ivan Macia, Vicomtech, Spain, <a href="https://www.vicomtech.org/en">https://www.vicomtech.org/en</a></dd></dl>
+<p>This implementation is derived from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/179">https://www.insight-journal.org/browse/publication/179</a></p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> does not have any user-declared "special member function", following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGaussianDerivativeOperator_8h_source.html#l00106">106</a> of file <a class="el" href="itkGaussianDerivativeOperator_8h_source.html">itkGaussianDerivativeOperator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GaussianDerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -362,33 +388,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Neighborhood.html#a10fd20cdc4fd2931b696f00f2c28f757">NeighborhoodDimension</a></td></tr>
 <tr class="separator:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
-class itk::GaussianDerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> whose coefficients are a one dimensional, discrete derivative Gaussian kernel. </p>
-<p ><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> can be used to calculate Gaussian derivatives by taking its inner product with to a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> (<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a>) that is swept across an image region. It is a directional operator. N successive applications oriented along each dimensional direction will calculate separable, efficient, N-D Gaussian derivatives of an image region.</p>
-<p ><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> takes three parameters:</p>
-<p >(1) The floating-point variance of the desired Gaussian function.</p>
-<p >(2) The order of the derivative to be calculated (zero order means it performs only smoothing as a standard <a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">itk::GaussianOperator</a>)</p>
-<p >(3) The "maximum error" allowed in the discrete Gaussian function. "Maximum error" is defined as the difference between the area under the discrete Gaussian curve and the area under the continuous Gaussian. Maximum error affects the Gaussian operator size. Care should be taken not to make this value too small relative to the variance lest the operator size become unreasonably large.</p>
-<p >References: The Gaussian kernel contained in this operator was described by Tony Lindeberg (Discrete Scale-Space Theory and the Scale-Space Primal Sketch. Dissertation. Royal Institute of Technology, Stockholm, Sweden. May 1991.).</p>
-<dl class="section author"><dt>Author</dt><dd>Ivan Macia, Vicomtech, Spain, <a href="https://www.vicomtech.org/en">https://www.vicomtech.org/en</a></dd></dl>
-<p>This implementation is derived from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/179">https://www.insight-journal.org/browse/publication/179</a></p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1GaussianDerivativeOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete derivative Gaussian kernel.">GaussianDerivativeOperator</a> does not have any user-declared "special member function", following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GaussianOperator.html" title="A NeighborhoodOperator whose coefficients are a one dimensional, discrete Gaussian kernel.">GaussianOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGaussianDerivativeOperator_8h_source.html#l00106">106</a> of file <a class="el" href="itkGaussianDerivativeOperator_8h_source.html">itkGaussianDerivativeOperator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab43ef8e6bf0e8492b6f8730fe2f7f2d1" name="ab43ef8e6bf0e8492b6f8730fe2f7f2d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab43ef8e6bf0e8492b6f8730fe2f7f2d1">&#9670;&nbsp;</a></span>CoefficientVector</h2>
 

@@ -94,7 +94,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkShapePriorSegmentationLevelSetImageFilter_8h_source.html">itkShapePriorSegmentationLevelSetImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TFeatureImage, typename TOutputPixelType = float&gt;<br />
+class itk::ShapePriorSegmentationLevelSetImageFilter&lt; TInputImage, TFeatureImage, TOutputPixelType &gt;</div><p >A base class which defines the API for implementing a level set segmentation filter with statistical shape influence. </p>
+<dl class="section user"><dt>OVERVIEW</dt><dd>This class extends the functionality of <a class="el" href="classitk_1_1SegmentationLevelSetImageFilter.html" title="A base class which defines the API for implementing a special class of image segmentation filters usi...">SegmentationLevelSetImageFilter</a> with an additional statistical shape influence term in the level set evolution as developed in [1].</dd></dl>
+<dl class="section user"><dt>TEMPLATE PARAMETERS</dt><dd>There are two required and one optional template parameter for these filters.</dd></dl>
+<p>TInputImage is the image type of the initial model you will input to the filter using <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> or SetInitialImage().</p>
+<p >TFeatureImage is the image type of the image from which the filter will calculate the speed term for segmentation (see INPUTS).</p>
+<p >TOutputPixelType is the data type used for the output image phi, the implicit level set image. This should really only ever be set as float (default) or double.</p>
+<dl class="section user"><dt>PARAMETERS</dt><dd></dd></dl>
+<dl class="section user"><dt></dt><dd>From a level set evolution point of view, the shape is represented by a signed distance function from the shape encapsulated in a <a class="el" href="classitk_1_1ShapeSignedDistanceFunction.html" title="Base class for functions which evaluates the signed distance from a shape.">ShapeSignedDistanceFunction</a> object.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapeSignedDistanceFunction.html" title="Base class for functions which evaluates the signed distance from a shape.">ShapeSignedDistanceFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapePriorSegmentationLevelSetFunction.html" title="This function is used in ShapePriorSegmentationLevelSetFilter to segment structures in an image based...">ShapePriorSegmentationLevelSetFunction</a></dd></dl>
+<dl class="section user"><dt>REFERENCES</dt><dd></dd></dl>
+<dl class="section user"><dt></dt><dd>[1] Leventon, M.E. et al. "Statistical Shape Influence in Geodesic Active Contours", CVPR 2000. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkShapePriorSegmentationLevelSetImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkShapePriorSegmentationLevelSetImageFilter_8h_source.html">itkShapePriorSegmentationLevelSetImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ShapePriorSegmentationLevelSetImageFilter&lt; TInputImage, TFeatureImage, TOutputPixelType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1202,24 +1219,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:acc8c0025545362c0b74951c4203ed618 inherit pro_static_attribs_classitk_1_1SparseFieldLevelSetImageFilter"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1SparseFieldLevelSetImageFilter.html#af4bb22b08ae968d391e3ce1addc33b90">ValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLevelSetImageFilter.html#acc8c0025545362c0b74951c4203ed618">m_ValueZero</a></td></tr>
 <tr class="separator:acc8c0025545362c0b74951c4203ed618 inherit pro_static_attribs_classitk_1_1SparseFieldLevelSetImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TFeatureImage, typename TOutputPixelType = float&gt;<br />
-class itk::ShapePriorSegmentationLevelSetImageFilter&lt; TInputImage, TFeatureImage, TOutputPixelType &gt;</div><p >A base class which defines the API for implementing a level set segmentation filter with statistical shape influence. </p>
-<dl class="section user"><dt>OVERVIEW</dt><dd>This class extends the functionality of <a class="el" href="classitk_1_1SegmentationLevelSetImageFilter.html" title="A base class which defines the API for implementing a special class of image segmentation filters usi...">SegmentationLevelSetImageFilter</a> with an additional statistical shape influence term in the level set evolution as developed in [1].</dd></dl>
-<dl class="section user"><dt>TEMPLATE PARAMETERS</dt><dd>There are two required and one optional template parameter for these filters.</dd></dl>
-<p>TInputImage is the image type of the initial model you will input to the filter using <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> or SetInitialImage().</p>
-<p >TFeatureImage is the image type of the image from which the filter will calculate the speed term for segmentation (see INPUTS).</p>
-<p >TOutputPixelType is the data type used for the output image phi, the implicit level set image. This should really only ever be set as float (default) or double.</p>
-<dl class="section user"><dt>PARAMETERS</dt><dd></dd></dl>
-<dl class="section user"><dt></dt><dd>From a level set evolution point of view, the shape is represented by a signed distance function from the shape encapsulated in a <a class="el" href="classitk_1_1ShapeSignedDistanceFunction.html" title="Base class for functions which evaluates the signed distance from a shape.">ShapeSignedDistanceFunction</a> object.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ShapeSignedDistanceFunction.html" title="Base class for functions which evaluates the signed distance from a shape.">ShapeSignedDistanceFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapePriorSegmentationLevelSetFunction.html" title="This function is used in ShapePriorSegmentationLevelSetFilter to segment structures in an image based...">ShapePriorSegmentationLevelSetFunction</a></dd></dl>
-<dl class="section user"><dt>REFERENCES</dt><dd></dd></dl>
-<dl class="section user"><dt></dt><dd>[1] Leventon, M.E. et al. "Statistical Shape Influence in Geodesic Active Contours", CVPR 2000. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkShapePriorSegmentationLevelSetImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkShapePriorSegmentationLevelSetImageFilter_8h_source.html">itkShapePriorSegmentationLevelSetImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4371998d5fb08b20a1b35ba4aa5aa2ba" name="a4371998d5fb08b20a1b35ba4aa5aa2ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4371998d5fb08b20a1b35ba4aa5aa2ba">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

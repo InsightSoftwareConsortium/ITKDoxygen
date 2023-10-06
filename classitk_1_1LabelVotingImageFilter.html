@@ -95,7 +95,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLabelVotingImageFilter_8h_source.html">itkLabelVotingImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::LabelVotingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs pixelwise voting among an arbitrary number of input images, where each of them represents a segmentation of the same scene (i.e., image). </p>
+<p ><a class="el" href="classLabel.html">Label</a> voting is a simple method of classifier combination applied to image segmentation. Typically, the accuracy of the combined segmentation exceeds the accuracy of any of the input segmentations. Voting is therefore commonly used as a way of boosting segmentation performance.</p>
+<p >The use of label voting for combination of multiple segmentations is described in</p>
+<p >T. Rohlfing and C. R. Maurer, Jr., "Multi-classifier framework for
+atlas-based image segmentation," Pattern Recognition Letters, 2005.</p>
+<dl class="section user"><dt>INPUTS</dt><dd>All input volumes to this filter must be segmentations of an image, that is, they must have discrete pixel values where each value represents a different segmented object.</dd></dl>
+<p>Input volumes must all contain the same size RequestedRegions. Not all input images must contain all possible labels, but all label values must have the same meaning in all images.</p>
+<dl class="section user"><dt>OUTPUTS</dt><dd>The voting filter produces a single output volume. Each output pixel contains the label that occurred most often among the labels assigned to this pixel in all the input volumes, that is, the label that received the maximum number of "votes" from the input pixels.. If the maximum number of votes is not unique, i.e., if more than one label have a maximum number of votes, an "undecided" label is assigned to that output pixel.</dd></dl>
+<p>By default, the label used for undecided pixels is the maximum label value used in the input images plus one. Since it is possible for an image with 8 bit pixel values to use all 256 possible label values, it is permissible to combine 8 bit (i.e., byte) images into a 16 bit (i.e., short) output image.</p>
+<dl class="section user"><dt>PARAMETERS</dt><dd>The label used for "undecided" labels can be set using SetLabelForUndecidedPixels. This functionality can be unset by calling UnsetLabelForUndecidedPixels.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Torsten Rohlfing, SRI International, Neuroscience Program </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLabelVotingImageFilter_8h_source.html#l00076">76</a> of file <a class="el" href="itkLabelVotingImageFilter_8h_source.html">itkLabelVotingImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LabelVotingImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -741,22 +756,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::LabelVotingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter performs pixelwise voting among an arbitrary number of input images, where each of them represents a segmentation of the same scene (i.e., image). </p>
-<p ><a class="el" href="classLabel.html">Label</a> voting is a simple method of classifier combination applied to image segmentation. Typically, the accuracy of the combined segmentation exceeds the accuracy of any of the input segmentations. Voting is therefore commonly used as a way of boosting segmentation performance.</p>
-<p >The use of label voting for combination of multiple segmentations is described in</p>
-<p >T. Rohlfing and C. R. Maurer, Jr., "Multi-classifier framework for
-atlas-based image segmentation," Pattern Recognition Letters, 2005.</p>
-<dl class="section user"><dt>INPUTS</dt><dd>All input volumes to this filter must be segmentations of an image, that is, they must have discrete pixel values where each value represents a different segmented object.</dd></dl>
-<p>Input volumes must all contain the same size RequestedRegions. Not all input images must contain all possible labels, but all label values must have the same meaning in all images.</p>
-<dl class="section user"><dt>OUTPUTS</dt><dd>The voting filter produces a single output volume. Each output pixel contains the label that occurred most often among the labels assigned to this pixel in all the input volumes, that is, the label that received the maximum number of "votes" from the input pixels.. If the maximum number of votes is not unique, i.e., if more than one label have a maximum number of votes, an "undecided" label is assigned to that output pixel.</dd></dl>
-<p>By default, the label used for undecided pixels is the maximum label value used in the input images plus one. Since it is possible for an image with 8 bit pixel values to use all 256 possible label values, it is permissible to combine 8 bit (i.e., byte) images into a 16 bit (i.e., short) output image.</p>
-<dl class="section user"><dt>PARAMETERS</dt><dd>The label used for "undecided" labels can be set using SetLabelForUndecidedPixels. This functionality can be unset by calling UnsetLabelForUndecidedPixels.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Torsten Rohlfing, SRI International, Neuroscience Program </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLabelVotingImageFilter_8h_source.html#l00076">76</a> of file <a class="el" href="itkLabelVotingImageFilter_8h_source.html">itkLabelVotingImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a704bb84f3be70fccdaab2c5291338a8d" name="a704bb84f3be70fccdaab2c5291338a8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a704bb84f3be70fccdaab2c5291338a8d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -94,7 +94,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkKullbackLeiblerCompareHistogramImageToImageMetric_8h_source.html">itkKullbackLeiblerCompareHistogramImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::KullbackLeiblerCompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the Kubler Lieblach(KL) metric between the histogram of the two images to be registered and a training histogram. </p>
+<p >This class is templated over the type of the fixed and moving images to be compared.</p>
+<p >This class computers the KL-metric by comparing the histograms of the testing histogram formed by the overlap of intensities in the images, to a training histogram. It is based on the following paper:</p>
+<p >Albert C.S. Chung, William M. Wells III, Alexander Norbash, and W. Eric L. Grimson, Multi-modal <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration by Minimising Kullback-Leibler Distance, In Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing and Computer-Assisted Intervention - MICCAI 2002, LNCS 2489, pp. 525 - 532.</p>
+<p >The metric is given by KL(P_test||P_train) = Sum_{i1,i2} P_test(i1,i2) std::log(P_test(i1,i2)/P_train(i1,i2)) where P_test and P_train are probabilities given my normalized histograms, and i1 and i2 are the intensity bins in the histogram.</p>
+<dl class="section user"><dt>PARAMETERS</dt><dd>Epsilon is added to every bin in both histograms. This prevents division by zero problems. Epsilon should generally be set to a number smaller than one divided by the total number bins in the histogram. So, for a 256 by 256 histogram, Epsilon should be much less than 1e-5. Tests have shown that choices of epsilon are not very important as long as it is small enough. The default is 1e-12. I doubt you will need to change it.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Samson Timoner</dd></dl>
+<dl class="section user"><dt>SUPPORT</dt><dd>This work was supported by the Functional Imaging Research in Schizophrenia Testbed (FIRST) Biomedical Informatics Research Network (BIRN, <a href="https://www.birncommunity.org/">https://www.birncommunity.org/</a>), which is funded by the National Center for Research Resources at the National Institutes of Health (NIH). This work is also funded by the Neuroimage Analysis Center (P41 RR13218). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkKullbackLeiblerCompareHistogramImageToImageMetric_8h_source.html#l00072">72</a> of file <a class="el" href="itkKullbackLeiblerCompareHistogramImageToImageMetric_8h_source.html">itkKullbackLeiblerCompareHistogramImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::KullbackLeiblerCompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -885,19 +897,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::KullbackLeiblerCompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes the Kubler Lieblach(KL) metric between the histogram of the two images to be registered and a training histogram. </p>
-<p >This class is templated over the type of the fixed and moving images to be compared.</p>
-<p >This class computers the KL-metric by comparing the histograms of the testing histogram formed by the overlap of intensities in the images, to a training histogram. It is based on the following paper:</p>
-<p >Albert C.S. Chung, William M. Wells III, Alexander Norbash, and W. Eric L. Grimson, Multi-modal <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration by Minimising Kullback-Leibler Distance, In Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing and Computer-Assisted Intervention - MICCAI 2002, LNCS 2489, pp. 525 - 532.</p>
-<p >The metric is given by KL(P_test||P_train) = Sum_{i1,i2} P_test(i1,i2) std::log(P_test(i1,i2)/P_train(i1,i2)) where P_test and P_train are probabilities given my normalized histograms, and i1 and i2 are the intensity bins in the histogram.</p>
-<dl class="section user"><dt>PARAMETERS</dt><dd>Epsilon is added to every bin in both histograms. This prevents division by zero problems. Epsilon should generally be set to a number smaller than one divided by the total number bins in the histogram. So, for a 256 by 256 histogram, Epsilon should be much less than 1e-5. Tests have shown that choices of epsilon are not very important as long as it is small enough. The default is 1e-12. I doubt you will need to change it.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Samson Timoner</dd></dl>
-<dl class="section user"><dt>SUPPORT</dt><dd>This work was supported by the Functional Imaging Research in Schizophrenia Testbed (FIRST) Biomedical Informatics Research Network (BIRN, <a href="https://www.birncommunity.org/">https://www.birncommunity.org/</a>), which is funded by the National Center for Research Resources at the National Institutes of Health (NIH). This work is also funded by the Neuroimage Analysis Center (P41 RR13218). </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkKullbackLeiblerCompareHistogramImageToImageMetric_8h_source.html#l00072">72</a> of file <a class="el" href="itkKullbackLeiblerCompareHistogramImageToImageMetric_8h_source.html">itkKullbackLeiblerCompareHistogramImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a61bfb7e2cf741abd799d2d4160a2c76d" name="a61bfb7e2cf741abd799d2d4160a2c76d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61bfb7e2cf741abd799d2d4160a2c76d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

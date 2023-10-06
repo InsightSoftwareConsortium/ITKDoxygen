@@ -95,7 +95,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAnisotropicDiffusionImageFilter_8h_source.html">itkAnisotropicDiffusionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::AnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter is the base class for a set of filters that iteratively diffuse images by solving non-linear partial differential equations based on the classical heat equation. For an overview of the diffusion algorithm, see AnisotropicImageFunction. <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> is a subclass of itkFiniteDifferenceImageFilter and is part of the finite difference solver hierarchy.</p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image-to-image filter. The requirements for data types and dimensionality of the input and output are defined by subclasses. In general, these filters expect images of real-valued types. This means pixel types of floats, doubles, or a user-defined type with floating point accuracy and arithmetic operations.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>Set/GetNumberOfIterations specifies the number of iterations (time-step updates) that the solver will perform to produce a solution image. The appropriate number of iterations is dependent on the application and the image being processed. As a general rule, the more iterations performed, the more diffused the image will become.</dd></dl>
+<dl class="section user"><dt></dt><dd>Set/GetTimeStep sets the time step to be used for each iteration (update). This parameter is described in detail in itkAnisotropicDiffusionFunction. The time step is constrained at run-time to keep the solution stable. In general, the time step should be at or below \((PixelSpacing)/2^{N+1}\), where \(N\) is the dimensionality of the image.</dd></dl>
+<dl class="section user"><dt></dt><dd>Set/GetConductanceParameter set a common parameter used by subclasses of itkAnisotropicDiffusionFunction. See itkAnisotropicDiffusionFunction for detailed information.</dd></dl>
+<dl class="section user"><dt>How to use this filter</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> must be subclassed to be used. This class implements a generic framework for other diffusion filters.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GradientAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the classic Perona-Malik,...">GradientAnisotropicDiffusionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VectorGradientAnisotropicDiffusionImageFilter.html">VectorGradientAnisotropicDiffusionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1CurvatureAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the modified curvature diffus...">CurvatureAnisotropicDiffusionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VectorCurvatureAnisotropicDiffusionImageFilter.html">VectorCurvatureAnisotropicDiffusionImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkAnisotropicDiffusionImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkAnisotropicDiffusionImageFilter_8h_source.html">itkAnisotropicDiffusionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -953,24 +970,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::AnisotropicDiffusionImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter is the base class for a set of filters that iteratively diffuse images by solving non-linear partial differential equations based on the classical heat equation. For an overview of the diffusion algorithm, see AnisotropicImageFunction. <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> is a subclass of itkFiniteDifferenceImageFilter and is part of the finite difference solver hierarchy.</p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image-to-image filter. The requirements for data types and dimensionality of the input and output are defined by subclasses. In general, these filters expect images of real-valued types. This means pixel types of floats, doubles, or a user-defined type with floating point accuracy and arithmetic operations.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>Set/GetNumberOfIterations specifies the number of iterations (time-step updates) that the solver will perform to produce a solution image. The appropriate number of iterations is dependent on the application and the image being processed. As a general rule, the more iterations performed, the more diffused the image will become.</dd></dl>
-<dl class="section user"><dt></dt><dd>Set/GetTimeStep sets the time step to be used for each iteration (update). This parameter is described in detail in itkAnisotropicDiffusionFunction. The time step is constrained at run-time to keep the solution stable. In general, the time step should be at or below \((PixelSpacing)/2^{N+1}\), where \(N\) is the dimensionality of the image.</dd></dl>
-<dl class="section user"><dt></dt><dd>Set/GetConductanceParameter set a common parameter used by subclasses of itkAnisotropicDiffusionFunction. See itkAnisotropicDiffusionFunction for detailed information.</dd></dl>
-<dl class="section user"><dt>How to use this filter</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a> must be subclassed to be used. This class implements a generic framework for other diffusion filters.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1GradientAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the classic Perona-Malik,...">GradientAnisotropicDiffusionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VectorGradientAnisotropicDiffusionImageFilter.html">VectorGradientAnisotropicDiffusionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1CurvatureAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the modified curvature diffus...">CurvatureAnisotropicDiffusionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VectorCurvatureAnisotropicDiffusionImageFilter.html">VectorCurvatureAnisotropicDiffusionImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkAnisotropicDiffusionImageFilter_8h_source.html#l00073">73</a> of file <a class="el" href="itkAnisotropicDiffusionImageFilter_8h_source.html">itkAnisotropicDiffusionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a296d468445fddc9b006df0e837a09d85" name="a296d468445fddc9b006df0e837a09d85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a296d468445fddc9b006df0e837a09d85">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

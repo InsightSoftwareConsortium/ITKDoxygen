@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkHoughTransform2DLinesImageFilter_8h_source.html">itkHoughTransform2DLinesImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputPixelType, typename TOutputPixelType&gt;<br />
+class itk::HoughTransform2DLinesImageFilter&lt; TInputPixelType, TOutputPixelType &gt;</div><p >Performs the Hough <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> to find 2D straight lines in a 2D image. </p>
+<p >This filter derives from <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a>. The input is an image, and all pixels above some threshold are those to be extracted. The output is the image of the accumulator. <a class="el" href="classitk_1_1HoughTransform2DLinesImageFilter.html#a1afa326b3611555e1df54ae683b7aeea">GetLines()</a> returns a list of LinesSpatialObjects.</p>
+<p >Lines are parameterized in the form:</p>
+<p >\( R = x \cos(\theta) + y \sin(\theta) \) where \(R\) is the perpendicular distance from the origin and \(\theta\) the angle with the normal.</p>
+<p >The output is the accumulator array:</p><ul>
+<li>The first dimension (X) represents the distance R from the corner to the line.</li>
+<li>The second dimension (Y) represents the angle between the X axis and the normal to the line.</li>
+</ul>
+<p >The size of the array depends on the AngleAxisSize that could be set (500 by default) for the angle axis. The distance axis depends on the size of the diagonal of the input image.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LineSpatialObject.html" title="Representation of a Line based on the spatial object classes.">LineSpatialObject</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkHoughTransform2DLinesImageFilter_8h_source.html#l00062">62</a> of file <a class="el" href="itkHoughTransform2DLinesImageFilter_8h_source.html">itkHoughTransform2DLinesImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::HoughTransform2DLinesImageFilter&lt; TInputPixelType, TOutputPixelType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -782,21 +796,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputPixelType, typename TOutputPixelType&gt;<br />
-class itk::HoughTransform2DLinesImageFilter&lt; TInputPixelType, TOutputPixelType &gt;</div><p >Performs the Hough <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> to find 2D straight lines in a 2D image. </p>
-<p >This filter derives from <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a>. The input is an image, and all pixels above some threshold are those to be extracted. The output is the image of the accumulator. <a class="el" href="classitk_1_1HoughTransform2DLinesImageFilter.html#a1afa326b3611555e1df54ae683b7aeea">GetLines()</a> returns a list of LinesSpatialObjects.</p>
-<p >Lines are parameterized in the form:</p>
-<p >\( R = x \cos(\theta) + y \sin(\theta) \) where \(R\) is the perpendicular distance from the origin and \(\theta\) the angle with the normal.</p>
-<p >The output is the accumulator array:</p><ul>
-<li>The first dimension (X) represents the distance R from the corner to the line.</li>
-<li>The second dimension (Y) represents the angle between the X axis and the normal to the line.</li>
-</ul>
-<p >The size of the array depends on the AngleAxisSize that could be set (500 by default) for the angle axis. The distance axis depends on the size of the diagonal of the input image.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LineSpatialObject.html" title="Representation of a Line based on the spatial object classes.">LineSpatialObject</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkHoughTransform2DLinesImageFilter_8h_source.html#l00062">62</a> of file <a class="el" href="itkHoughTransform2DLinesImageFilter_8h_source.html">itkHoughTransform2DLinesImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a815938519fb691c069120762715c0f8d" name="a815938519fb691c069120762715c0f8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a815938519fb691c069120762715c0f8d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

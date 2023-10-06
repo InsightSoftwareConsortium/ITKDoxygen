@@ -95,7 +95,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMirrorPadImageFilter_8h_source.html">itkMirrorPadImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::MirrorPadImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Increase the image size by padding with replicants of the input image value. </p>
+<p ><a class="el" href="classitk_1_1MirrorPadImageFilter.html" title="Increase the image size by padding with replicants of the input image value.">MirrorPadImageFilter</a> changes the image bounds of an image. Any added pixels are filled in with a mirrored replica of the input image. For instance, if the output image needs a pixel that is <b>two pixels to the left of the LargestPossibleRegion</b> of the input image, the value assigned will be from the pixel <b>two pixels inside the left boundary of the LargestPossibleRegion</b>. The image bounds of the output must be specified.</p>
+<div class="image">
+<img src="MirrorPadImageFilter.png" alt=""/>
+<div class="caption">
+Visual explanation of padding regions.</div></div>
+<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1MirrorPadImageFilter.html#a65e95176bf77124ee5e81696ab531d29">DynamicThreadedGenerateData()</a> method for its implementation.</p>
+<p >Exponential decay in the bounds is enabled when DecayBase has to be in the range (0.0, 1.0]. When it is 1.0 it is disabled. The decay rate is based on the Manhattan distance.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WrapPadImageFilter.html" title="Increase the image size by padding with replicants of the input image value.">WrapPadImageFilter</a>, <a class="el" href="classitk_1_1ConstantPadImageFilter.html" title="Increase the image size by padding with a constant value.">ConstantPadImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMirrorPadImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkMirrorPadImageFilter_8h_source.html">itkMirrorPadImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MirrorPadImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -860,25 +878,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::MirrorPadImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Increase the image size by padding with replicants of the input image value. </p>
-<p ><a class="el" href="classitk_1_1MirrorPadImageFilter.html" title="Increase the image size by padding with replicants of the input image value.">MirrorPadImageFilter</a> changes the image bounds of an image. Any added pixels are filled in with a mirrored replica of the input image. For instance, if the output image needs a pixel that is <b>two pixels to the left of the LargestPossibleRegion</b> of the input image, the value assigned will be from the pixel <b>two pixels inside the left boundary of the LargestPossibleRegion</b>. The image bounds of the output must be specified.</p>
-<div class="image">
-<img src="MirrorPadImageFilter.png" alt=""/>
-<div class="caption">
-Visual explanation of padding regions.</div></div>
-<p >This filter is implemented as a multithreaded filter. It provides a <a class="el" href="classitk_1_1MirrorPadImageFilter.html#a65e95176bf77124ee5e81696ab531d29">DynamicThreadedGenerateData()</a> method for its implementation.</p>
-<p >Exponential decay in the bounds is enabled when DecayBase has to be in the range (0.0, 1.0]. When it is 1.0 it is disabled. The decay rate is based on the Manhattan distance.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WrapPadImageFilter.html" title="Increase the image size by padding with replicants of the input image value.">WrapPadImageFilter</a>, <a class="el" href="classitk_1_1ConstantPadImageFilter.html" title="Increase the image size by padding with a constant value.">ConstantPadImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMirrorPadImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkMirrorPadImageFilter_8h_source.html">itkMirrorPadImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aeeb3716b18c643eddeaf2f51a529fbbc" name="aeeb3716b18c643eddeaf2f51a529fbbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeeb3716b18c643eddeaf2f51a529fbbc">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

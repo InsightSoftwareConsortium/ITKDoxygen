@@ -96,7 +96,47 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLaplacianDeformationQuadEdgeMeshFilter_8h_source.html">itkLaplacianDeformationQuadEdgeMeshFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputMesh, class TOutputMesh, class TSolverTraits&gt;<br />
+class itk::LaplacianDeformationQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh, TSolverTraits &gt;</div><p >(abstract) base class for laplacian surface mesh deformation. </p>
+<p >Laplacian mesh deformation offers the ability to deform 3D surface mesh while preserving local details.</p>
+<p >Laplacian-based approaches represent the surface by the so-called differential coordinates or Laplacian coordinates \( \boldsymbol{ \delta }_i \). These coordinates are obtained by applying the Laplacian operator to the mesh vertices:</p>
+<p class="formulaDsp">
+\[ \boldsymbol{ \delta }_i = \Delta_{S}( \boldsymbol{ p }_i ) = - H_i \cdot \boldsymbol{ n_i } \]
+</p>
+<p >where \(H_i\) is the mean curvature \( ( \kappa_1 + \kappa_2 ) \) at the vertex \(v_i\).</p>
+<p >The deformation can be formulated by minimizing the difference from the input surface coordinates \(\delta_i\). With a continuous formulation, this would lead to the minimization of the following energy: </p><p class="formulaDsp">
+\[ \min_{\boldsymbol{p&#39;}} \int_{\Omega} \| \boldsymbol{\Delta p&#39;} - \boldsymbol{\delta} \| du dv \]
+</p>
+<p >The Euler-Lagrange equation derived: </p><p class="formulaDsp">
+\[ \Delta^2 \boldsymbol{p&#39;} = \Delta \boldsymbol{\delta} \]
+</p>
+<p >When considering the input surface as the parameter domain, the Laplace operator turns out into the Laplace-Beltrami operator \( \Delta_S \): </p><p class="formulaDsp">
+\[ L^2 \boldsymbol{p&#39;} = L \boldsymbol{ \delta } \]
+</p>
+<p >which can be separated into 3 coordinate components.</p>
+<p >Then users can add positional constraints on some vertices: </p><p class="formulaDsp">
+\[ \boldsymbol{p&#39;}_j = \boldsymbol{c}_j \]
+</p>
+<p >If output positions must exactly match set constraints, see <a class="el" href="classitk_1_1LaplacianDeformationQuadEdgeMeshFilterWithHardConstraints.html" title="Laplacian mesh deformation with hard constraints (interpolating displacement for some handle points)">LaplacianDeformationQuadEdgeMeshFilterWithHardConstraints</a>. Else see <a class="el" href="classitk_1_1LaplacianDeformationQuadEdgeMeshFilterWithSoftConstraints.html" title="Laplacian deformation with soft constraints (approximating displacement for handle points).">LaplacianDeformationQuadEdgeMeshFilterWithSoftConstraints</a></p>
+<p >To make the deformation as generic as possible, user can provide/choose: </p><ul>
+<li>their own way to compute Laplacian by the means of m_CoefficientsMethod </li>
+<li>Laplacian order by the means of m_Order (according to the literature for m_Order &gt; 3, it can becomes numerically unstable) </li>
+<li>one normalization per vertex based on the local area on the mesh (MIXED_AREA) </li>
+<li>Sparser solver used by the mean of the template parameter TSolverTraits</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TInputMesh</td><td>Input <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> Type </td></tr>
+    <tr><td class="paramname">TOutputMesh</td><td>Output <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> Type </td></tr>
+    <tr><td class="paramname">TSolverTraits</td><td>Linear Sparse Solver Traits see <a class="el" href="classVNLIterativeSparseSolverTraits.html" title="Generic interface for iterative sparse linear solver.">VNLIterativeSparseSolverTraits</a> and <a class="el" href="classVNLSparseLUSolverTraits.html" title="Generic interface for sparse LU solver.">VNLSparseLUSolverTraits</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>For details, see <a href="https://www.insight-journal.org/browse/publication/890">https://www.insight-journal.org/browse/publication/890</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkLaplacianDeformationQuadEdgeMeshFilter_8h_source.html#l00116">116</a> of file <a class="el" href="itkLaplacianDeformationQuadEdgeMeshFilter_8h_source.html">itkLaplacianDeformationQuadEdgeMeshFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LaplacianDeformationQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh, TSolverTraits &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -834,47 +874,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputMesh, class TOutputMesh, class TSolverTraits&gt;<br />
-class itk::LaplacianDeformationQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh, TSolverTraits &gt;</div><p >(abstract) base class for laplacian surface mesh deformation. </p>
-<p >Laplacian mesh deformation offers the ability to deform 3D surface mesh while preserving local details.</p>
-<p >Laplacian-based approaches represent the surface by the so-called differential coordinates or Laplacian coordinates \( \boldsymbol{ \delta }_i \). These coordinates are obtained by applying the Laplacian operator to the mesh vertices:</p>
-<p class="formulaDsp">
-\[ \boldsymbol{ \delta }_i = \Delta_{S}( \boldsymbol{ p }_i ) = - H_i \cdot \boldsymbol{ n_i } \]
-</p>
-<p >where \(H_i\) is the mean curvature \( ( \kappa_1 + \kappa_2 ) \) at the vertex \(v_i\).</p>
-<p >The deformation can be formulated by minimizing the difference from the input surface coordinates \(\delta_i\). With a continuous formulation, this would lead to the minimization of the following energy: </p><p class="formulaDsp">
-\[ \min_{\boldsymbol{p&#39;}} \int_{\Omega} \| \boldsymbol{\Delta p&#39;} - \boldsymbol{\delta} \| du dv \]
-</p>
-<p >The Euler-Lagrange equation derived: </p><p class="formulaDsp">
-\[ \Delta^2 \boldsymbol{p&#39;} = \Delta \boldsymbol{\delta} \]
-</p>
-<p >When considering the input surface as the parameter domain, the Laplace operator turns out into the Laplace-Beltrami operator \( \Delta_S \): </p><p class="formulaDsp">
-\[ L^2 \boldsymbol{p&#39;} = L \boldsymbol{ \delta } \]
-</p>
-<p >which can be separated into 3 coordinate components.</p>
-<p >Then users can add positional constraints on some vertices: </p><p class="formulaDsp">
-\[ \boldsymbol{p&#39;}_j = \boldsymbol{c}_j \]
-</p>
-<p >If output positions must exactly match set constraints, see <a class="el" href="classitk_1_1LaplacianDeformationQuadEdgeMeshFilterWithHardConstraints.html" title="Laplacian mesh deformation with hard constraints (interpolating displacement for some handle points)">LaplacianDeformationQuadEdgeMeshFilterWithHardConstraints</a>. Else see <a class="el" href="classitk_1_1LaplacianDeformationQuadEdgeMeshFilterWithSoftConstraints.html" title="Laplacian deformation with soft constraints (approximating displacement for handle points).">LaplacianDeformationQuadEdgeMeshFilterWithSoftConstraints</a></p>
-<p >To make the deformation as generic as possible, user can provide/choose: </p><ul>
-<li>their own way to compute Laplacian by the means of m_CoefficientsMethod </li>
-<li>Laplacian order by the means of m_Order (according to the literature for m_Order &gt; 3, it can becomes numerically unstable) </li>
-<li>one normalization per vertex based on the local area on the mesh (MIXED_AREA) </li>
-<li>Sparser solver used by the mean of the template parameter TSolverTraits</li>
-</ul>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TInputMesh</td><td>Input <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> Type </td></tr>
-    <tr><td class="paramname">TOutputMesh</td><td>Output <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> Type </td></tr>
-    <tr><td class="paramname">TSolverTraits</td><td>Linear Sparse Solver Traits see <a class="el" href="classVNLIterativeSparseSolverTraits.html" title="Generic interface for iterative sparse linear solver.">VNLIterativeSparseSolverTraits</a> and <a class="el" href="classVNLSparseLUSolverTraits.html" title="Generic interface for sparse LU solver.">VNLSparseLUSolverTraits</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>For details, see <a href="https://www.insight-journal.org/browse/publication/890">https://www.insight-journal.org/browse/publication/890</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkLaplacianDeformationQuadEdgeMeshFilter_8h_source.html#l00116">116</a> of file <a class="el" href="itkLaplacianDeformationQuadEdgeMeshFilter_8h_source.html">itkLaplacianDeformationQuadEdgeMeshFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7a9b6a00a73b17389534302379622f01" name="a7a9b6a00a73b17389534302379622f01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a9b6a00a73b17389534302379622f01">&#9670;&nbsp;</a></span>AreaEnum</h2>
 

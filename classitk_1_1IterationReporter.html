@@ -91,7 +91,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkIterationReporter_8h_source.html">itkIterationReporter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Implements iterations tracking for a filter. </p>
+<p >This is a utility class for use by filter implementations in GenerateData() and ThreadedGenerateData().</p>
+<p >This class is intended to be used in iterative filter for which a progress cannot be established. These filters run until an stopping criterion is reached and it is not possible to anticipate how long it will take to get to the stopping point.</p>
+<p >This class is constructed before entering the iteration loop in the filter. The <a class="el" href="classitk_1_1IterationReporter.html#ac48dad5f6bfb42e11510d0079beccd3b">CompletedStep()</a> method should be called at every iteration. The reporter will count the number of calls and will invoke an IterationEvent every certain number of calls. The default period is 100.</p>
+<p >Example usage:</p>
+<p ><a class="el" href="classitk_1_1IterationReporter.html" title="Implements iterations tracking for a filter.">IterationReporter</a> iteration(this, threadId, 100);</p>
+<p >for( each pixel ) { ... iteration.CompletedStep(); }</p>
+<p >When used in a non-threaded filter, the threadId argument should be 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkIterationReporter_8h_source.html#l00055">55</a> of file <a class="el" href="itkIterationReporter_8h_source.html">itkIterationReporter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::IterationReporter:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -121,18 +132,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aa6734f6dd5bb54dea477269fcd83c0e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1IterationReporter.html#aa6734f6dd5bb54dea477269fcd83c0e7">m_ThreadId</a></td></tr>
 <tr class="separator:aa6734f6dd5bb54dea477269fcd83c0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Implements iterations tracking for a filter. </p>
-<p >This is a utility class for use by filter implementations in GenerateData() and ThreadedGenerateData().</p>
-<p >This class is intended to be used in iterative filter for which a progress cannot be established. These filters run until an stopping criterion is reached and it is not possible to anticipate how long it will take to get to the stopping point.</p>
-<p >This class is constructed before entering the iteration loop in the filter. The <a class="el" href="classitk_1_1IterationReporter.html#ac48dad5f6bfb42e11510d0079beccd3b">CompletedStep()</a> method should be called at every iteration. The reporter will count the number of calls and will invoke an IterationEvent every certain number of calls. The default period is 100.</p>
-<p >Example usage:</p>
-<p ><a class="el" href="classitk_1_1IterationReporter.html" title="Implements iterations tracking for a filter.">IterationReporter</a> iteration(this, threadId, 100);</p>
-<p >for( each pixel ) { ... iteration.CompletedStep(); }</p>
-<p >When used in a non-threaded filter, the threadId argument should be 0. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkIterationReporter_8h_source.html#l00055">55</a> of file <a class="el" href="itkIterationReporter_8h_source.html">itkIterationReporter.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abf78c7a1ff19644cc2b107de513d30e6" name="abf78c7a1ff19644cc2b107de513d30e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf78c7a1ff19644cc2b107de513d30e6">&#9670;&nbsp;</a></span>IterationReporter()</h2>
 

@@ -95,7 +95,37 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkExhaustiveOptimizer_8h_source.html">itkExhaustiveOptimizer.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p ><a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> that fully samples a grid on the parametric space. </p>
+<p >This optimizer is equivalent to an exhaustive search in a discrete grid defined over the parametric space. The grid is centered on the initial position. The subdivisions of the grid along each one of the dimensions of the parametric space is defined by an array of number of steps.</p>
+<p >A typical use is to plot the metric space to get an idea of how noisy it is. An example is given below, where it is desired to plot the metric space with respect to translations along x, y and z in a 3D registration application: Here it is assumed that the transform is <a class="el" href="classitk_1_1Euler3DTransform.html" title="Euler3DTransform of a vector space (e.g. space coordinates)">Euler3DTransform</a>.</p>
+<div class="fragment"><div class="line">OptimizerType::StepsType steps( m_Transform-&gt;GetNumberOfParameters() );</div>
+<div class="line">steps[0] = 10;</div>
+<div class="line">steps[1] = 10;</div>
+<div class="line">steps[2] = 10;</div>
+<div class="line">m_Optimizer-&gt;SetNumberOfSteps( steps );</div>
+<div class="line">m_Optimizer-&gt;SetStepLength( 2 );</div>
+</div><!-- fragment --><p >The optimizer throws IterationEvents after every iteration. We use this to plot the metric space in an image as follows:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>( itk::IterationEvent().CheckEvent(&amp; event ) )</div>
+<div class="line">{</div>
+<div class="line">  <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">IndexType</a> index;</div>
+<div class="line">  index[0] = m_Optimizer-&gt;GetCurrentIndex()[0];</div>
+<div class="line">  index[1] = m_Optimizer-&gt;GetCurrentIndex()[1];</div>
+<div class="line">  index[2] = m_Optimizer-&gt;GetCurrentIndex()[2];</div>
+<div class="line">  image-&gt;SetPixel( index, m_Optimizer-&gt;GetCurrentValue() );</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a246a71b35a903d08cb4d0aec86f6f366"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">itk::GTest::TypedefsAndConstructors::Dimension2::IndexType</a></div><div class="ttdeci">ImageBaseType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00050">itkGTestTypedefsAndConstructors.h:50</a></div></div>
+</div><!-- fragment --><p >The image size is expected to be 11 x 11 x 11.</p>
+<p >If you wish to use different step lengths along each parametric axis, you can use the <a class="el" href="classitk_1_1Optimizer.html#ab8bd201f92b5474f0640b81d378115fb">SetScales()</a> method. This accepts an array, each element represents the number of subdivisions per step length. For instance scales of [0.5 1 4] along with a step length of 2 will cause the optimizer to search the metric space on a grid with x,y,z spacing of [1 2 8].</p>
+<p >Physical dimensions of the grid are influenced by both the scales and the number of steps along each dimension, a side of the region is stepLength*(2*numberOfSteps[d]+1)*scaling[d].</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizer_8h_source.html#l00083">83</a> of file <a class="el" href="itkExhaustiveOptimizer_8h_source.html">itkExhaustiveOptimizer.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ExhaustiveOptimizer:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -458,37 +488,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9c23c7464541678c231233cf6a5776c6"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ExhaustiveOptimizer.html#a9c23c7464541678c231233cf6a5776c6">m_StopConditionDescription</a> {}</td></tr>
 <tr class="separator:a9c23c7464541678c231233cf6a5776c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p ><a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> that fully samples a grid on the parametric space. </p>
-<p >This optimizer is equivalent to an exhaustive search in a discrete grid defined over the parametric space. The grid is centered on the initial position. The subdivisions of the grid along each one of the dimensions of the parametric space is defined by an array of number of steps.</p>
-<p >A typical use is to plot the metric space to get an idea of how noisy it is. An example is given below, where it is desired to plot the metric space with respect to translations along x, y and z in a 3D registration application: Here it is assumed that the transform is <a class="el" href="classitk_1_1Euler3DTransform.html" title="Euler3DTransform of a vector space (e.g. space coordinates)">Euler3DTransform</a>.</p>
-<div class="fragment"><div class="line">OptimizerType::StepsType steps( m_Transform-&gt;GetNumberOfParameters() );</div>
-<div class="line">steps[0] = 10;</div>
-<div class="line">steps[1] = 10;</div>
-<div class="line">steps[2] = 10;</div>
-<div class="line">m_Optimizer-&gt;SetNumberOfSteps( steps );</div>
-<div class="line">m_Optimizer-&gt;SetStepLength( 2 );</div>
-</div><!-- fragment --><p >The optimizer throws IterationEvents after every iteration. We use this to plot the metric space in an image as follows:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>( itk::IterationEvent().CheckEvent(&amp; event ) )</div>
-<div class="line">{</div>
-<div class="line">  <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">IndexType</a> index;</div>
-<div class="line">  index[0] = m_Optimizer-&gt;GetCurrentIndex()[0];</div>
-<div class="line">  index[1] = m_Optimizer-&gt;GetCurrentIndex()[1];</div>
-<div class="line">  index[2] = m_Optimizer-&gt;GetCurrentIndex()[2];</div>
-<div class="line">  image-&gt;SetPixel( index, m_Optimizer-&gt;GetCurrentValue() );</div>
-<div class="line">}</div>
-<div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a246a71b35a903d08cb4d0aec86f6f366"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">itk::GTest::TypedefsAndConstructors::Dimension2::IndexType</a></div><div class="ttdeci">ImageBaseType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00050">itkGTestTypedefsAndConstructors.h:50</a></div></div>
-</div><!-- fragment --><p >The image size is expected to be 11 x 11 x 11.</p>
-<p >If you wish to use different step lengths along each parametric axis, you can use the <a class="el" href="classitk_1_1Optimizer.html#ab8bd201f92b5474f0640b81d378115fb">SetScales()</a> method. This accepts an array, each element represents the number of subdivisions per step length. For instance scales of [0.5 1 4] along with a step length of 2 will cause the optimizer to search the metric space on a grid with x,y,z spacing of [1 2 8].</p>
-<p >Physical dimensions of the grid are influenced by both the scales and the number of steps along each dimension, a side of the region is stepLength*(2*numberOfSteps[d]+1)*scaling[d].</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizer_8h_source.html#l00083">83</a> of file <a class="el" href="itkExhaustiveOptimizer_8h_source.html">itkExhaustiveOptimizer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9d008f863aabc392e5e21047bfca973a" name="a9d008f863aabc392e5e21047bfca973a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d008f863aabc392e5e21047bfca973a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

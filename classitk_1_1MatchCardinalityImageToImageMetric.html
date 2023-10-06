@@ -96,7 +96,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMatchCardinalityImageToImageMetric_8h_source.html">itkMatchCardinalityImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::MatchCardinalityImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two objects to be registered. </p>
+<p >This Class is templated over the type of the fixed and moving images to be compared.</p>
+<p >This metric computes cardinality of the set of pixels that match exactly between the moving and fixed images. The spatial correspondence between both images is established through a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. Pixel values are taken from the Moving image. Their positions are mapped to the Fixed image and result in general in non-grid position on it. Values at these non-grid position of the Fixed image are interpolated using a user-selected Interpolator.</p>
+<p >This metric is designed for matching label maps. All pixel mismatches are considered equal whether they are between label 1 and label 2 or between label 1 and label 500. In other words, the magnitude of an individual label mismatch is not relevant, or the occurrence of a label mismatch is important.</p>
+<p >Given the nature of label maps, a nearest neighbor interpolator is the preferred interpolator.</p>
+<p >The metric measure can measure the number of pixel matches (pixels with exactly the same label) or pixel mismatches (pixels with different labels). The returned metric value is the number of pixel matches (or mismatches) normalized by the number of pixels considered. The number of pixel considered is a function of the number of pixels in the overlap of the fixed and moving image buffers conditional on any assigned masks. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMatchCardinalityImageToImageMetric_8h_source.html#l00067">67</a> of file <a class="el" href="itkMatchCardinalityImageToImageMetric_8h_source.html">itkMatchCardinalityImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MatchCardinalityImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -744,17 +754,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::MatchCardinalityImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two objects to be registered. </p>
-<p >This Class is templated over the type of the fixed and moving images to be compared.</p>
-<p >This metric computes cardinality of the set of pixels that match exactly between the moving and fixed images. The spatial correspondence between both images is established through a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. Pixel values are taken from the Moving image. Their positions are mapped to the Fixed image and result in general in non-grid position on it. Values at these non-grid position of the Fixed image are interpolated using a user-selected Interpolator.</p>
-<p >This metric is designed for matching label maps. All pixel mismatches are considered equal whether they are between label 1 and label 2 or between label 1 and label 500. In other words, the magnitude of an individual label mismatch is not relevant, or the occurrence of a label mismatch is important.</p>
-<p >Given the nature of label maps, a nearest neighbor interpolator is the preferred interpolator.</p>
-<p >The metric measure can measure the number of pixel matches (pixels with exactly the same label) or pixel mismatches (pixels with different labels). The returned metric value is the number of pixel matches (or mismatches) normalized by the number of pixels considered. The number of pixel considered is a function of the number of pixels in the overlap of the fixed and moving image buffers conditional on any assigned masks. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMatchCardinalityImageToImageMetric_8h_source.html#l00067">67</a> of file <a class="el" href="itkMatchCardinalityImageToImageMetric_8h_source.html">itkMatchCardinalityImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4e7c5c110becce58afd37eceeb307688" name="a4e7c5c110becce58afd37eceeb307688"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e7c5c110becce58afd37eceeb307688">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

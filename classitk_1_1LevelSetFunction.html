@@ -98,7 +98,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetFunction_8h_source.html">itkLevelSetFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType&gt;<br />
+class itk::LevelSetFunction&lt; TImageType &gt;</div><p >The <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class is a generic function object which can be used to create a level set method filter when combined with an appropriate finite difference image filter. (See <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a>.) </p>
+<p ><a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> implements a generic level set function. This function is an expanded form of the basic equation developed in [1].</p>
+<p >\(\phi_{t} + \alpha \stackrel{\rightharpoonup}{A}(\mathbf{x})\cdot\nabla\phi + \beta P(\mathbf{x})\mid\nabla\phi\mid = \gamma Z(\mathbf{x})\kappa\mid\nabla\phi\mid\)</p>
+<p >where \( \stackrel{\rightharpoonup}{A} \) is an advection term, \( P \) is a propagation (growth) term, and \( Z \) is a spatial modifier term for the mean curvature \( \kappa \). \( \alpha \), \( \beta \), and \( \gamma \) are all scalar constants.</p>
+<p >Terms in the equation above are supplied through virtual methods, which must be subclassed to complete an implementation. Terms can be eliminated from the equation by setting the corresponding constants to zero. A wide variety of level set methods can be implemented by subclassing this basic equation.</p>
+<p >In ITK, the usual sign convention is that the INSIDE of a surface contains NEGATIVE values and the OUTSIDE of the surface contains POSITIVE values.</p>
+<dl class="section warning"><dt>Warning</dt><dd>You MUST call <a class="el" href="classitk_1_1LevelSetFunction.html#a02c33a8985c40e6e461f406b533f5459">Initialize()</a> in the constructor of subclasses of this object to set it up properly to do level-set Calculations. The argument that you pass Initialize is the radius of the neighborhood needed to perform the calculations. If your subclass does not do any additional neighborhood processing, then the default radius should be 1 in each direction.</dd></dl>
+<dl class="section user"><dt>REFERENCES</dt><dd></dd></dl>
+<dl class="section user"><dt></dt><dd>[1] Sethian, J.A. Level Set Methods. Cambridge University Press. 1996. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetFunction_8h_source.html#l00066">66</a> of file <a class="el" href="itkLevelSetFunction_8h_source.html">itkLevelSetFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetFunction&lt; TImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -375,20 +388,7 @@ Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a9dd8eb1a6b865d296f361554dd997a42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LevelSetFunction.html#a452b4d55467fc7acbedc5108388b6418">VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetFunction.html#a9dd8eb1a6b865d296f361554dd997a42">m_ZeroVectorConstant</a></td></tr>
 <tr class="separator:a9dd8eb1a6b865d296f361554dd997a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType&gt;<br />
-class itk::LevelSetFunction&lt; TImageType &gt;</div><p >The <a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> class is a generic function object which can be used to create a level set method filter when combined with an appropriate finite difference image filter. (See <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a>.) </p>
-<p ><a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> implements a generic level set function. This function is an expanded form of the basic equation developed in [1].</p>
-<p >\(\phi_{t} + \alpha \stackrel{\rightharpoonup}{A}(\mathbf{x})\cdot\nabla\phi + \beta P(\mathbf{x})\mid\nabla\phi\mid = \gamma Z(\mathbf{x})\kappa\mid\nabla\phi\mid\)</p>
-<p >where \( \stackrel{\rightharpoonup}{A} \) is an advection term, \( P \) is a propagation (growth) term, and \( Z \) is a spatial modifier term for the mean curvature \( \kappa \). \( \alpha \), \( \beta \), and \( \gamma \) are all scalar constants.</p>
-<p >Terms in the equation above are supplied through virtual methods, which must be subclassed to complete an implementation. Terms can be eliminated from the equation by setting the corresponding constants to zero. A wide variety of level set methods can be implemented by subclassing this basic equation.</p>
-<p >In ITK, the usual sign convention is that the INSIDE of a surface contains NEGATIVE values and the OUTSIDE of the surface contains POSITIVE values.</p>
-<dl class="section warning"><dt>Warning</dt><dd>You MUST call <a class="el" href="classitk_1_1LevelSetFunction.html#a02c33a8985c40e6e461f406b533f5459">Initialize()</a> in the constructor of subclasses of this object to set it up properly to do level-set Calculations. The argument that you pass Initialize is the radius of the neighborhood needed to perform the calculations. If your subclass does not do any additional neighborhood processing, then the default radius should be 1 in each direction.</dd></dl>
-<dl class="section user"><dt>REFERENCES</dt><dd></dd></dl>
-<dl class="section user"><dt></dt><dd>[1] Sethian, J.A. Level Set Methods. Cambridge University Press. 1996. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetFunction_8h_source.html#l00066">66</a> of file <a class="el" href="itkLevelSetFunction_8h_source.html">itkLevelSetFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a33e5b8b1f22867022f6f0b7ab7b5b3d7" name="a33e5b8b1f22867022f6f0b7ab7b5b3d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33e5b8b1f22867022f6f0b7ab7b5b3d7">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

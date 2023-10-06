@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageToImageMetricv4GetValueAndDerivativeThreaderBase_8h_source.html">itkImageToImageMetricv4GetValueAndDerivativeThreaderBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetricv4&gt;<br />
+class itk::ImageToImageMetricv4GetValueAndDerivativeThreaderBase&lt; TDomainPartitioner, TImageToImageMetricv4 &gt;</div><p >Provides threading for <a class="el" href="classitk_1_1ImageToImageMetricv4.html#a72a8c39dc85c9c285f79b98c928cabda">ImageToImageMetricv4::GetValueAndDerivative</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TDomainPartitioner</td><td>type of the Domain, <a class="el" href="classitk_1_1ThreadedImageRegionPartitioner.html" title="Class for partitioning of an ImageRegion.">ThreadedImageRegionPartitioner</a> or <a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a> </td></tr>
+    <tr><td class="paramname">TImageToImageMetricv4</td><td>type of the <a class="el" href="classitk_1_1ImageToImageMetricv4.html">ImageToImageMetricv4</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This class provides a <code>BeforeThreadedExecution</code>, and <code>AfterThreadedExecution</code>.</p>
+<p >The <code>ThreadedExecution</code> in <a class="el" href="classitk_1_1ImageToImageMetricv4GetValueAndDerivativeThreader.html" title="Provides threading for ImageToImageMetricv4::GetValueAndDerivative.">ImageToImageMetricv4GetValueAndDerivativeThreader</a> calls <code>ProcessVirtualPoint</code> on every point in the virtual image domain. <code>ProcessVirtualPoint</code> calls <code>ProcessPoint</code> on each point. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4GetValueAndDerivativeThreaderBase_8h_source.html#l00046">46</a> of file <a class="el" href="itkImageToImageMetricv4GetValueAndDerivativeThreaderBase_8h_source.html">itkImageToImageMetricv4GetValueAndDerivativeThreaderBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageToImageMetricv4GetValueAndDerivativeThreaderBase&lt; TDomainPartitioner, TImageToImageMetricv4 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -405,21 +419,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a98adf42643b6dc01a854f5c7f912c4b9 inherit pro_static_methods_classitk_1_1DomainThreader"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DomainThreader.html#a98adf42643b6dc01a854f5c7f912c4b9">ThreaderCallback</a> (void *arg)</td></tr>
 <tr class="separator:a98adf42643b6dc01a854f5c7f912c4b9 inherit pro_static_methods_classitk_1_1DomainThreader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TDomainPartitioner, typename TImageToImageMetricv4&gt;<br />
-class itk::ImageToImageMetricv4GetValueAndDerivativeThreaderBase&lt; TDomainPartitioner, TImageToImageMetricv4 &gt;</div><p >Provides threading for <a class="el" href="classitk_1_1ImageToImageMetricv4.html#a72a8c39dc85c9c285f79b98c928cabda">ImageToImageMetricv4::GetValueAndDerivative</a>. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TDomainPartitioner</td><td>type of the Domain, <a class="el" href="classitk_1_1ThreadedImageRegionPartitioner.html" title="Class for partitioning of an ImageRegion.">ThreadedImageRegionPartitioner</a> or <a class="el" href="classitk_1_1ThreadedIndexedContainerPartitioner.html" title="Partitions an indexed container.">ThreadedIndexedContainerPartitioner</a> </td></tr>
-    <tr><td class="paramname">TImageToImageMetricv4</td><td>type of the <a class="el" href="classitk_1_1ImageToImageMetricv4.html">ImageToImageMetricv4</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This class provides a <code>BeforeThreadedExecution</code>, and <code>AfterThreadedExecution</code>.</p>
-<p >The <code>ThreadedExecution</code> in <a class="el" href="classitk_1_1ImageToImageMetricv4GetValueAndDerivativeThreader.html" title="Provides threading for ImageToImageMetricv4::GetValueAndDerivative.">ImageToImageMetricv4GetValueAndDerivativeThreader</a> calls <code>ProcessVirtualPoint</code> on every point in the virtual image domain. <code>ProcessVirtualPoint</code> calls <code>ProcessPoint</code> on each point. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4GetValueAndDerivativeThreaderBase_8h_source.html#l00046">46</a> of file <a class="el" href="itkImageToImageMetricv4GetValueAndDerivativeThreaderBase_8h_source.html">itkImageToImageMetricv4GetValueAndDerivativeThreaderBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="afc078215de2b4a6746024b77a1262b9e" name="afc078215de2b4a6746024b77a1262b9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc078215de2b4a6746024b77a1262b9e">&#9670;&nbsp;</a></span>CompensatedDerivativeType</h2>
 

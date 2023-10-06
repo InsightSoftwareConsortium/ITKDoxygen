@@ -95,7 +95,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html">itkVectorThresholdSegmentationLevelSetFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFeatureImageType&gt;<br />
+class itk::VectorThresholdSegmentationLevelSetFunction&lt; TImageType, TFeatureImageType &gt;</div><p >This function is used in <a class="el" href="classitk_1_1VectorThresholdSegmentationLevelSetImageFilter.html" title="Segments structures in images based on intensity values.">VectorThresholdSegmentationLevelSetImageFilter</a> to segment structures in images based on the Mahalanobis distance. </p>
+<dl class="section user"><dt>CREDITS</dt><dd>This class was contributed to ITK by Stefan Lindenau <a href="https://www.itk.org/pipermail/insight-users/2003-December/005969.html">https://www.itk.org/pipermail/insight-users/2003-December/005969.html</a></dd></dl>
+<dl class="section user"><dt>SegmentationLevelSetFunction is a subclass of the generic LevelSetFunction.</dt><dd>It useful for segmentations based on intensity values in an image. It works by constructing a speed term (feature image) with positive values inside an intensity window (between a low and high threshold) and negative values outside that intensity window. The evolving level set front will lock onto regions that are at the edges of the intensity window.</dd></dl>
+<dl class="section user"><dt></dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> \( f(x) \) is thresholded pixel by pixel using threshold \(T\) according to the following formula.</dd></dl>
+<dl class="section user"><dt></dt><dd><p class="formulaDsp">
+\[ f(x) = T - MahalanobisDistance(x) \]
+</p>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>SegmentationLevelSetImageFunction </dd>
+<dd>
+<a class="el" href="classitk_1_1ThresholdSegmentationLevelSetImageFilter.html" title="Segments structures in images based on intensity values.">ThresholdSegmentationLevelSetImageFilter</a> </dd>
+<dd>
+MahalanobisDistanceMembershipFunction </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html#l00058">58</a> of file <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html">itkVectorThresholdSegmentationLevelSetFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::VectorThresholdSegmentationLevelSetFunction&lt; TImageType, TFeatureImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -495,24 +512,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LevelSetFunction.html#a452b4d55467fc7acbedc5108388b6418">VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetFunction.html#a9dd8eb1a6b865d296f361554dd997a42">m_ZeroVectorConstant</a></td></tr>
 <tr class="separator:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFeatureImageType&gt;<br />
-class itk::VectorThresholdSegmentationLevelSetFunction&lt; TImageType, TFeatureImageType &gt;</div><p >This function is used in <a class="el" href="classitk_1_1VectorThresholdSegmentationLevelSetImageFilter.html" title="Segments structures in images based on intensity values.">VectorThresholdSegmentationLevelSetImageFilter</a> to segment structures in images based on the Mahalanobis distance. </p>
-<dl class="section user"><dt>CREDITS</dt><dd>This class was contributed to ITK by Stefan Lindenau <a href="https://www.itk.org/pipermail/insight-users/2003-December/005969.html">https://www.itk.org/pipermail/insight-users/2003-December/005969.html</a></dd></dl>
-<dl class="section user"><dt>SegmentationLevelSetFunction is a subclass of the generic LevelSetFunction.</dt><dd>It useful for segmentations based on intensity values in an image. It works by constructing a speed term (feature image) with positive values inside an intensity window (between a low and high threshold) and negative values outside that intensity window. The evolving level set front will lock onto regions that are at the edges of the intensity window.</dd></dl>
-<dl class="section user"><dt></dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> \( f(x) \) is thresholded pixel by pixel using threshold \(T\) according to the following formula.</dd></dl>
-<dl class="section user"><dt></dt><dd><p class="formulaDsp">
-\[ f(x) = T - MahalanobisDistance(x) \]
-</p>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>SegmentationLevelSetImageFunction </dd>
-<dd>
-<a class="el" href="classitk_1_1ThresholdSegmentationLevelSetImageFilter.html" title="Segments structures in images based on intensity values.">ThresholdSegmentationLevelSetImageFilter</a> </dd>
-<dd>
-MahalanobisDistanceMembershipFunction </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html#l00058">58</a> of file <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html">itkVectorThresholdSegmentationLevelSetFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acad54b839563f1f3482aa5e4db52da4c" name="acad54b839563f1f3482aa5e4db52da4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acad54b839563f1f3482aa5e4db52da4c">&#9670;&nbsp;</a></span>ConstPointer</h2>
 
@@ -1094,7 +1094,7 @@ template&lt;typename TImageType , typename TFeatureImageType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Set/Get the threshold value for the MahanalobisDistance </p>
+<p >Set/Get the threshold value for the MahalanobisDistance </p>
 
 <p class="definition">Definition at line <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html#l00121">121</a> of file <a class="el" href="itkVectorThresholdSegmentationLevelSetFunction_8h_source.html">itkVectorThresholdSegmentationLevelSetFunction.h</a>.</p>
 

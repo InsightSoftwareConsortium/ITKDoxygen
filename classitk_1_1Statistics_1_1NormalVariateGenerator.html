@@ -96,7 +96,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNormalVariateGenerator_8h_source.html">itkNormalVariateGenerator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Normal random variate generator. </p>
+<p >This generation method was initially developed and implemented by Martin Styner, University of North Carolina at Chapel Hill, and his colleagues.</p>
+<p >You should run <a class="el" href="classitk_1_1Statistics_1_1NormalVariateGenerator.html#ad55588c31199d98d452b89ee98fa1d3a">Initialize()</a> function before call GetNormalVariate() function.</p>
+<p >The following are original comments.</p>
+<p >Revision date 31 May 1996 This is a revised version of the algorithm described in</p>
+<p >ACM Transactions on Mathematical Software, Vol 22, No 1 March 1996, pp 119-127.</p>
+<p >It is somewhat faster, and uses less memory as the vector of variates is updated in-situ. It has passed all the same statistical tests as described in the TOMS article, plus others. Seems OK so far. </p><pre class="fragment">   Works well with total pool of 1024 variates, and does not need
+   two vectors of this size, so does less damage to cache.
+           Has been tested for frequency of tail values which
+   should occur once in a million. OK. Other usual tests OK.
+   About 13 % faster than TOMS version.
+
+   FAST GENERATOR OF PSEUDO-RANDOM UNIT NORMAL VARIATES
+
+           C.S.Wallace, Monash University, 1994
+</pre><p> To use this code, files needing to call the generator should include: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;FastNorm.h&quot;</span></div>
+</div><!-- fragment --><p> and be linked with the math library (-lm) FastNorm.h contains declaration of the initialization routine 'initnorm()', definition of a macro 'FastGauss' used to generate variates, and three variables used in the macro. Read below for calling conventions.</p>
+<p >THIS CODE ASSUMES TWO'S-COMPLEMENT 32-BIT INTEGER ARITHMETIC. IT ALSO ASSUMES THE 'C' COMPILER COMPILES THE LEFT-SHIFT OPERATOR "&lt;&lt;" AS A LOGICAL SHIFT, DISCARDING THE SIGN DIGIT AND SHIFTING IN ZEROS ON THE RIGHT, SO " X &lt;&lt; 1" IS EQUIVALENT TO " X+X ". IT ALSO ASSUMES THE RIGHT-SHIFT OPERATOR "&gt;&gt;" IS SIGN-PRESERVING, SO ( -2 &gt;&gt; 1) = -1, ( -1&gt;&gt;1) = -1.</p>
+<pre class="fragment">    A fast generator of pseudo-random variates from the unit Normal
+</pre><p> distribution. It keeps a pool of about 1000 variates, and generates new ones by picking 4 from the pool, rotating the 4-vector with these as its components, and replacing the old variates with the components of the rotated vector.</p>
+<pre class="fragment">    The program should initialize the generator by calling
+</pre><p> initnorm(seed) with seed a int integer seed value. Different seed values will give different sequences of Normals. Then, wherever the program needs a new Normal variate, it should use the macro FastGauss, e.g. in statements like: x = FastGauss; (Sets x to a random Normal value) </p>
+
+<p class="definition">Definition at line <a class="el" href="itkNormalVariateGenerator_8h_source.html#l00098">98</a> of file <a class="el" href="itkNormalVariateGenerator_8h_source.html">itkNormalVariateGenerator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::NormalVariateGenerator:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -348,32 +373,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Normal random variate generator. </p>
-<p >This generation method was initially developed and implemented by Martin Styner, University of North Carolina at Chapel Hill, and his colleagues.</p>
-<p >You should run <a class="el" href="classitk_1_1Statistics_1_1NormalVariateGenerator.html#ad55588c31199d98d452b89ee98fa1d3a">Initialize()</a> function before call GetNormalVariate() function.</p>
-<p >The following are original comments.</p>
-<p >Revision date 31 May 1996 This is a revised version of the algorithm described in</p>
-<p >ACM Transactions on Mathematical Software, Vol 22, No 1 March 1996, pp 119-127.</p>
-<p >It is somewhat faster, and uses less memory as the vector of variates is updated in-situ. It has passed all the same statistical tests as described in the TOMS article, plus others. Seems OK so far. </p><pre class="fragment">   Works well with total pool of 1024 variates, and does not need
-   two vectors of this size, so does less damage to cache.
-           Has been tested for frequency of tail values which
-   should occur once in a million. OK. Other usual tests OK.
-   About 13 % faster than TOMS version.
-
-   FAST GENERATOR OF PSEUDO-RANDOM UNIT NORMAL VARIATES
-
-           C.S.Wallace, Monash University, 1994
-</pre><p> To use this code, files needing to call the generator should include: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;FastNorm.h&quot;</span></div>
-</div><!-- fragment --><p> and be linked with the math library (-lm) FastNorm.h contains declaration of the initialization routine 'initnorm()', definition of a macro 'FastGauss' used to generate variates, and three variables used in the macro. Read below for calling conventions.</p>
-<p >THIS CODE ASSUMES TWO'S-COMPLEMENT 32-BIT INTEGER ARITHMETIC. IT ALSO ASSUMES THE 'C' COMPILER COMPILES THE LEFT-SHIFT OPERATOR "&lt;&lt;" AS A LOGICAL SHIFT, DISCARDING THE SIGN DIGIT AND SHIFTING IN ZEROS ON THE RIGHT, SO " X &lt;&lt; 1" IS EQUIVALENT TO " X+X ". IT ALSO ASSUMES THE RIGHT-SHIFT OPERATOR "&gt;&gt;" IS SIGN-PRESERVING, SO ( -2 &gt;&gt; 1) = -1, ( -1&gt;&gt;1) = -1.</p>
-<pre class="fragment">    A fast generator of pseudo-random variates from the unit Normal
-</pre><p> distribution. It keeps a pool of about 1000 variates, and generates new ones by picking 4 from the pool, rotating the 4-vector with these as its components, and replacing the old variates with the components of the rotated vector.</p>
-<pre class="fragment">    The program should initialize the generator by calling
-</pre><p> initnorm(seed) with seed a int integer seed value. Different seed values will give different sequences of Normals. Then, wherever the program needs a new Normal variate, it should use the macro FastGauss, e.g. in statements like: x = FastGauss; (Sets x to a random Normal value) </p>
-
-<p class="definition">Definition at line <a class="el" href="itkNormalVariateGenerator_8h_source.html#l00098">98</a> of file <a class="el" href="itkNormalVariateGenerator_8h_source.html">itkNormalVariateGenerator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7f7f59915eddb9f4b4aa9410e71c1fc8" name="a7f7f59915eddb9f4b4aa9410e71c1fc8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f7f59915eddb9f4b4aa9410e71c1fc8">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -94,7 +94,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNormalizeImageFilter_8h_source.html">itkNormalizeImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::NormalizeImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Normalize an image by setting its mean to zero and variance to one. </p>
+<p ><a class="el" href="classitk_1_1NormalizeImageFilter.html" title="Normalize an image by setting its mean to zero and variance to one.">NormalizeImageFilter</a> shifts and scales an image so that the pixels in the image have a zero mean and unit variance. This filter uses <a class="el" href="classitk_1_1StatisticsImageFilter.html" title="Compute min, max, variance and mean of an Image.">StatisticsImageFilter</a> to compute the mean and variance of the input and then applies <a class="el" href="classitk_1_1ShiftScaleImageFilter.html" title="Shift and scale the pixels in an image.">ShiftScaleImageFilter</a> to shift and scale the pixels.</p>
+<p >NB: since this filter normalizes the data such that the mean is at 0, and \(-\sigma\) to \(+\sigma\) is mapped to -1.0 to 1.0, output image integral types will produce an image that DOES NOT HAVE a unit variance due to 68% of the intensity values being mapped to the real number range of -1.0 to 1.0 and then cast to the output integral value.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NormalizeToConstantImageFilter.html" title="Scales image pixel intensities to make the sum of all pixels equal a user-defined constant.">NormalizeToConstantImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNormalizeImageFilter_8h_source.html#l00054">54</a> of file <a class="el" href="itkNormalizeImageFilter_8h_source.html">itkNormalizeImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NormalizeImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -711,20 +724,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::NormalizeImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Normalize an image by setting its mean to zero and variance to one. </p>
-<p ><a class="el" href="classitk_1_1NormalizeImageFilter.html" title="Normalize an image by setting its mean to zero and variance to one.">NormalizeImageFilter</a> shifts and scales an image so that the pixels in the image have a zero mean and unit variance. This filter uses <a class="el" href="classitk_1_1StatisticsImageFilter.html" title="Compute min, max, variance and mean of an Image.">StatisticsImageFilter</a> to compute the mean and variance of the input and then applies <a class="el" href="classitk_1_1ShiftScaleImageFilter.html" title="Shift and scale the pixels in an image.">ShiftScaleImageFilter</a> to shift and scale the pixels.</p>
-<p >NB: since this filter normalizes the data such that the mean is at 0, and \(-\sigma\) to \(+\sigma\) is mapped to -1.0 to 1.0, output image integral types will produce an image that DOES NOT HAVE a unit variance due to 68% of the intensity values being mapped to the real number range of -1.0 to 1.0 and then cast to the output integral value.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NormalizeToConstantImageFilter.html" title="Scales image pixel intensities to make the sum of all pixels equal a user-defined constant.">NormalizeToConstantImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNormalizeImageFilter_8h_source.html#l00054">54</a> of file <a class="el" href="itkNormalizeImageFilter_8h_source.html">itkNormalizeImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a09740cd54fd15e16e7b431baa010a826" name="a09740cd54fd15e16e7b431baa010a826"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09740cd54fd15e16e7b431baa010a826">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

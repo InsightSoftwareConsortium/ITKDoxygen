@@ -94,7 +94,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBinaryThresholdImageFilter_8h_source.html">itkBinaryThresholdImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::BinaryThresholdImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Binarize an input image by thresholding. </p>
+<p >This filter produces an output image whose pixels are either one of two values ( OutsideValue or InsideValue ), depending on whether the corresponding input image pixels lie between the two thresholds ( LowerThreshold and UpperThreshold ). Values equal to either threshold is considered to be between the thresholds.</p>
+<p >More precisely </p><p class="formulaDsp">
+\[ Output(x_i) = \begin{cases} InsideValue &amp; \text{if $LowerThreshold \leq x_i \leq UpperThreshold$} \\ OutsideValue &amp; \text{otherwise} \end{cases} \]
+</p>
+<p >This filter is templated over the input image type and the output image type.</p>
+<p >The filter expect both images to have the same number of dimensions.</p>
+<p >The default values for LowerThreshold and UpperThreshold are: LowerThreshold = <a class="el" href="classitk_1_1NumericTraits.html#a130b93e7399bc5e5d81614cdaf46e4f1">NumericTraits&lt;TInput&gt;::NonpositiveMin()</a>; UpperThreshold = <a class="el" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">NumericTraits&lt;TInput&gt;::max()</a>; Therefore, generally only one of these needs to be set, depending on whether the user wants to threshold above or below the desired threshold.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBinaryThresholdImageFilter_8h_source.html#l00132">132</a> of file <a class="el" href="itkBinaryThresholdImageFilter_8h_source.html">itkBinaryThresholdImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BinaryThresholdImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -835,24 +852,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::BinaryThresholdImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Binarize an input image by thresholding. </p>
-<p >This filter produces an output image whose pixels are either one of two values ( OutsideValue or InsideValue ), depending on whether the corresponding input image pixels lie between the two thresholds ( LowerThreshold and UpperThreshold ). Values equal to either threshold is considered to be between the thresholds.</p>
-<p >More precisely </p><p class="formulaDsp">
-\[ Output(x_i) = \begin{cases} InsideValue &amp; \text{if $LowerThreshold \leq x_i \leq UpperThreshold$} \\ OutsideValue &amp; \text{otherwise} \end{cases} \]
-</p>
-<p >This filter is templated over the input image type and the output image type.</p>
-<p >The filter expect both images to have the same number of dimensions.</p>
-<p >The default values for LowerThreshold and UpperThreshold are: LowerThreshold = <a class="el" href="classitk_1_1NumericTraits.html#a130b93e7399bc5e5d81614cdaf46e4f1">NumericTraits&lt;TInput&gt;::NonpositiveMin()</a>; UpperThreshold = <a class="el" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">NumericTraits&lt;TInput&gt;::max()</a>; Therefore, generally only one of these needs to be set, depending on whether the user wants to threshold above or below the desired threshold.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBinaryThresholdImageFilter_8h_source.html#l00132">132</a> of file <a class="el" href="itkBinaryThresholdImageFilter_8h_source.html">itkBinaryThresholdImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2561dbbd4b54cfae71f471a95ba7ab8d" name="a2561dbbd4b54cfae71f471a95ba7ab8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2561dbbd4b54cfae71f471a95ba7ab8d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

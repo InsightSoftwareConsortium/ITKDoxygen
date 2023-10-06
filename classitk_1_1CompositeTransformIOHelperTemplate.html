@@ -93,7 +93,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCompositeTransformIOHelper_8h_source.html">itkCompositeTransformIOHelper.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType&gt;<br />
+class itk::CompositeTransformIOHelperTemplate&lt; TParametersValueType &gt;</div><p >An adapter that adapts <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a> into the TransformReader/Writer. </p>
+<p >The stumbling block with fitting CompositeTransforms into the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> hierarchy is that it encapsulates a list of <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">itk::Transform</a>, templated to match the dimension and scalar type of the <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a> itself. But the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> Reader/Writer uses instances of the superclass <a class="el" href="namespaceitk.html#aad7d99b5b2fe2dbf1d5e67a1917bf40a">itk::TransformBase</a> which is not templated.</p>
+<p >This class handles this by hiding the conversion between a list of TransformBase and the queue of <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. It handles the conversion in a cascade of template function invocations to match up the transform list with the particular instantiation of <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCompositeTransformIOHelper_8h_source.html#l00048">48</a> of file <a class="el" href="itkCompositeTransformIOHelper_8h_source.html">itkCompositeTransformIOHelper.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ae9304b445b33f4a1d41f89dc63dbdb1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CompositeTransformIOHelperTemplate.html#ae9304b445b33f4a1d41f89dc63dbdb1a">ConstTransformListType</a> = typename <a class="el" href="classitk_1_1TransformIOBaseTemplate.html">TransformIOBaseTemplate</a>&lt; TParametersValueType &gt;::ConstTransformListType</td></tr>
@@ -128,14 +135,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ac1d88fcbf901105bc025d9a403ebc9f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1CompositeTransformIOHelperTemplate.html#ae9304b445b33f4a1d41f89dc63dbdb1a">ConstTransformListType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1CompositeTransformIOHelperTemplate.html#ac1d88fcbf901105bc025d9a403ebc9f5">m_TransformList</a></td></tr>
 <tr class="separator:ac1d88fcbf901105bc025d9a403ebc9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType&gt;<br />
-class itk::CompositeTransformIOHelperTemplate&lt; TParametersValueType &gt;</div><p >An adapter that adapts <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a> into the TransformReader/Writer. </p>
-<p >The stumbling block with fitting CompositeTransforms into the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> hierarchy is that it encapsulates a list of <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">itk::Transform</a>, templated to match the dimension and scalar type of the <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a> itself. But the <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> Reader/Writer uses instances of the superclass <a class="el" href="namespaceitk.html#aad7d99b5b2fe2dbf1d5e67a1917bf40a">itk::TransformBase</a> which is not templated.</p>
-<p >This class handles this by hiding the conversion between a list of TransformBase and the queue of <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. It handles the conversion in a cascade of template function invocations to match up the transform list with the particular instantiation of <a class="el" href="classitk_1_1CompositeTransform.html" title="This class contains a list of transforms and concatenates them by composition.">CompositeTransform</a>. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCompositeTransformIOHelper_8h_source.html#l00048">48</a> of file <a class="el" href="itkCompositeTransformIOHelper_8h_source.html">itkCompositeTransformIOHelper.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae9304b445b33f4a1d41f89dc63dbdb1a" name="ae9304b445b33f4a1d41f89dc63dbdb1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9304b445b33f4a1d41f89dc63dbdb1a">&#9670;&nbsp;</a></span>ConstTransformListType</h2>
 

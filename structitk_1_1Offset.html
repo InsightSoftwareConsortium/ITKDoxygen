@@ -94,7 +94,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension = 2&gt;<br />
+struct itk::Offset&lt; VDimension &gt;</div><p >Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image. </p>
+<p ><a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is a templated class to represent a multi-dimensional offset, i.e. (i,j,k,...). <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is templated over the dimension of the space. ITK assumes the first element of a size (bounds) is the fastest moving index.</p>
+<p >For efficiency, <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> does not define a default constructor, a copy constructor, or an operator=. We rely on the compiler to provide efficient bitwise copies.</p>
+<p ><a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is an "aggregate" class. Its data is public (m_InternalArray) allowing for fast and convenient instantiations/assignments.</p>
+<p >The following syntax for assigning an aggregate type like this is allowed/suggested:</p>
+<p >Offset&lt;3&gt; var{{ 256, 256, 20 }}; // Also prevent narrowing conversions Offset&lt;3&gt; var = {{ 256, 256, 20 }};</p>
+<p >The doubled braces {{ and }} are required to prevent &lsquo;gcc -Wall&rsquo; (and perhaps other compilers) from complaining about a partly bracketed initializer.</p>
+<p >As an aggregate type that is intended to provide highest performance characteristics, this class is not appropriate to inherit from, so setting this struct as final.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00069">69</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a695343f680d4cb419cc5a09398f32293"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Offset.html#a695343f680d4cb419cc5a09398f32293">const_iterator</a> = const <a class="el" href="structitk_1_1Offset.html#aad771eb0f6562be2630ba10df24d3923">value_type</a> *</td></tr>
@@ -234,25 +252,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8c7a3c0b9bf7ba9183ee8a518b4a18cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1Offset.html#a8c7a3c0b9bf7ba9183ee8a518b4a18cf">ExceptionThrowingBoundsCheck</a> (<a class="el" href="structitk_1_1Offset.html#a04efef764ba7e859cc74ad3d21202980">size_type</a> pos) const</td></tr>
 <tr class="separator:a8c7a3c0b9bf7ba9183ee8a518b4a18cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension = 2&gt;<br />
-struct itk::Offset&lt; VDimension &gt;</div><p >Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image. </p>
-<p ><a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is a templated class to represent a multi-dimensional offset, i.e. (i,j,k,...). <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is templated over the dimension of the space. ITK assumes the first element of a size (bounds) is the fastest moving index.</p>
-<p >For efficiency, <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> does not define a default constructor, a copy constructor, or an operator=. We rely on the compiler to provide efficient bitwise copies.</p>
-<p ><a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">Offset</a> is an "aggregate" class. Its data is public (m_InternalArray) allowing for fast and convenient instantiations/assignments.</p>
-<p >The following syntax for assigning an aggregate type like this is allowed/suggested:</p>
-<p >Offset&lt;3&gt; var{{ 256, 256, 20 }}; // Also prevent narrowing conversions Offset&lt;3&gt; var = {{ 256, 256, 20 }};</p>
-<p >The doubled braces {{ and }} are required to prevent &lsquo;gcc -Wall&rsquo; (and perhaps other compilers) from complaining about a partly bracketed initializer.</p>
-<p >As an aggregate type that is intended to provide highest performance characteristics, this class is not appropriate to inherit from, so setting this struct as final.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00069">69</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a695343f680d4cb419cc5a09398f32293" name="a695343f680d4cb419cc5a09398f32293"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a695343f680d4cb419cc5a09398f32293">&#9670;&nbsp;</a></span>const_iterator</h2>
 

@@ -94,7 +94,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLaplacianOperator_8h_source.html">itkLaplacianOperator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
+class itk::LaplacianOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for use in calculating the Laplacian at a pixel. </p>
+<p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for use in calculating the Laplacian at a pixel. The <a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a>'s coefficients are a tightest-fitting convolution kernel.</p>
+<p >For example, the simplest Laplacian Operator for 2D has the form: </p><div class="fragment"><div class="line">0   1   0</div>
+<div class="line">1  -4   1</div>
+<div class="line">0   1   0</div>
+</div><!-- fragment --><dl class="section user"><dt></dt><dd>The <a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a> is a non-directional <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> that should be applied to a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> or <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> using an inner product method (itkNeighborhoodInnerProduct). To initialize the operator, you need call <a class="el" href="classitk_1_1LaplacianOperator.html#a8fa657625ec25f8a7a2ffa5669defb01">CreateOperator()</a> before using it.</dd></dl>
+<dl class="section user"><dt></dt><dd>By default the operator will be created for an isotropic image, but you can modify the operator to handle different pixel spacings by calling SetDerivativeScalings. The argument to SetDerivativeScalings is an array of doubles that is of length VDimension (the dimensionality of the image). Make sure to use 1/pixel_spacing to properly scale derivatives.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a> does not have any user-declared "special member function" for copy, move, or destruction, following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLaplacianOperator_8h_source.html#l00067">67</a> of file <a class="el" href="itkLaplacianOperator_8h_source.html">itkLaplacianOperator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LaplacianOperator&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -308,27 +328,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Neighborhood.html#a10fd20cdc4fd2931b696f00f2c28f757">NeighborhoodDimension</a></td></tr>
 <tr class="separator:a10fd20cdc4fd2931b696f00f2c28f757 inherit pub_static_attribs_classitk_1_1Neighborhood"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
-class itk::LaplacianOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for use in calculating the Laplacian at a pixel. </p>
-<p >A <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> for use in calculating the Laplacian at a pixel. The <a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a>'s coefficients are a tightest-fitting convolution kernel.</p>
-<p >For example, the simplest Laplacian Operator for 2D has the form: </p><div class="fragment"><div class="line">0   1   0</div>
-<div class="line">1  -4   1</div>
-<div class="line">0   1   0</div>
-</div><!-- fragment --><dl class="section user"><dt></dt><dd>The <a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a> is a non-directional <a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> that should be applied to a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> or <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> using an inner product method (itkNeighborhoodInnerProduct). To initialize the operator, you need call <a class="el" href="classitk_1_1LaplacianOperator.html#a8fa657625ec25f8a7a2ffa5669defb01">CreateOperator()</a> before using it.</dd></dl>
-<dl class="section user"><dt></dt><dd>By default the operator will be created for an isotropic image, but you can modify the operator to handle different pixel spacings by calling SetDerivativeScalings. The argument to SetDerivativeScalings is an array of doubles that is of length VDimension (the dimensionality of the image). Make sure to use 1/pixel_spacing to properly scale derivatives.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classitk_1_1LaplacianOperator.html" title="A NeighborhoodOperator for use in calculating the Laplacian at a pixel.">LaplacianOperator</a> does not have any user-declared "special member function" for copy, move, or destruction, following the C++ Rule of Zero: the compiler will generate them if necessary.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLaplacianOperator_8h_source.html#l00067">67</a> of file <a class="el" href="itkLaplacianOperator_8h_source.html">itkLaplacianOperator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab43ef8e6bf0e8492b6f8730fe2f7f2d1" name="ab43ef8e6bf0e8492b6f8730fe2f7f2d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab43ef8e6bf0e8492b6f8730fe2f7f2d1">&#9670;&nbsp;</a></span>CoefficientVector</h2>
 

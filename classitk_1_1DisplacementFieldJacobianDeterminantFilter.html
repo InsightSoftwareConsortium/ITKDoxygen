@@ -97,7 +97,35 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDisplacementFieldJacobianDeterminantFilter_8h_source.html">itkDisplacementFieldJacobianDeterminantFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TRealType = float, typename TOutputImage = Image&lt;TRealType, TInputImage::ImageDimension&gt;&gt;<br />
+class itk::DisplacementFieldJacobianDeterminantFilter&lt; TInputImage, TRealType, TOutputImage &gt;</div><p >Computes a scalar image from a vector image (e.g., deformation field) input, where each output scalar at each pixel is the Jacobian determinant of the vector field at that location. This calculation is correct in the case where the vector image is a "displacement" from the current location. The computation for the jacobian determinant is: det[ dT/dx ] = det[ I + du/dx ]. </p>
+<dl class="section user"><dt>Overview</dt><dd>This filter is based on itkVectorGradientMagnitudeImageFilter and supports the m_DerivativeWeights weights for partial derivatives.</dd></dl>
+<p>Note that the determinant of a zero vector field is also zero, whereas the Jacobian determinant of the corresponding identity warp transformation is 1.0. In order to compute the effective deformation Jacobian determinant 1.0 must be added to the diagonal elements of Jacobian prior to taking the derivative. i.e. det([ (1.0+dx/dx) dx/dy dx/dz ; dy/dx (1.0+dy/dy) dy/dz; dz/dx dz/dy (1.0+dz/dz) ])</p>
+<dl class="section user"><dt>Template Parameters (Input and Output)</dt><dd>This filter has one required template parameter which defines the input image type. The pixel type of the input image is assumed to be a vector (e.g., <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>, <a class="el" href="classitk_1_1RGBPixel.html" title="Represent Red, Green and Blue components for color images.">itk::RGBPixel</a>, <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">itk::FixedArray</a>). The scalar type of the vector components must be castable to floating point. Instantiating with an image of RGBPixel&lt;unsigned short&gt;, for example, is allowed, but the filter will convert it to an image of Vector&lt;float,3&gt; for processing.</dd></dl>
+<p>The second template parameter, TRealType, can be optionally specified to define the scalar numerical type used in calculations. This is the component type of the output image, which will be of itk::Vector&lt;TRealType, N&gt;, where N is the number of channels in the multiple component input image. The default type of TRealType is float. For extra precision, you may safely change this parameter to double.</p>
+<p >The third template parameter is the output image type. The third parameter will be automatically constructed from the first and second parameters, so it is not necessary (or advisable) to set this parameter explicitly. Given an M-channel input image with dimensionality N, and a numerical type specified as TRealType, the output image will be of type itk::Image&lt;TRealType, N&gt;.</p>
+<dl class="section user"><dt>Filter Parameters</dt><dd>The method UseImageSpacingOn will cause derivatives in the image to be scaled (inversely) with the pixel size of the input image, effectively taking derivatives in world coordinates (versus isotropic image space). UseImageSpacingOff turns this functionality off. Default is UseImageSpacingOn. The parameter UseImageSpacing can be set directly with the method <a class="el" href="classitk_1_1DisplacementFieldJacobianDeterminantFilter.html#aed6cd91f9c6cea20b7f722af8f609473">SetUseImageSpacing(bool)</a>.</dd></dl>
+<p>Weights can be applied to the derivatives directly using the SetDerivativeWeights method. Note that if UseImageSpacing is set to TRUE (ON), then these weights will be overridden by weights derived from the image spacing when the filter is updated. The argument to this method is a C array of TRealValue type.</p>
+<dl class="section user"><dt>Constraints</dt><dd>We use vnl_det for determinant computation, which only supports square matrices. So the vector dimension of the input image values must be equal to the image dimensions, which is trivially true for a deformation field that maps an n-dimensional space onto itself.</dd></dl>
+<p>Currently, dimensions up to and including 4 are supported. This limitation comes from the presence of vnl_det() functions for matrices of dimension up to 4x4.</p>
+<p >The template parameter TRealType must be floating point (float or double) or a user-defined "real" numerical type with arithmetic operations defined sufficient to compute derivatives.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This class was adapted by </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Hans J. Johnson, The University of Iowa from code provided by </dd>
+<dd>
+Tom Vercauteren, INRIA &amp; Mauna Kea Technologies </dd>
+<dd>
+Torsten Rohlfing, Neuroscience Program, SRI International. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDisplacementFieldJacobianDeterminantFilter_8h_source.html#l00114">114</a> of file <a class="el" href="itkDisplacementFieldJacobianDeterminantFilter_8h_source.html">itkDisplacementFieldJacobianDeterminantFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DisplacementFieldJacobianDeterminantFilter&lt; TInputImage, TRealType, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -782,35 +810,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TRealType = float, typename TOutputImage = Image&lt;TRealType, TInputImage::ImageDimension&gt;&gt;<br />
-class itk::DisplacementFieldJacobianDeterminantFilter&lt; TInputImage, TRealType, TOutputImage &gt;</div><p >Computes a scalar image from a vector image (e.g., deformation field) input, where each output scalar at each pixel is the Jacobian determinant of the vector field at that location. This calculation is correct in the case where the vector image is a "displacement" from the current location. The computation for the jacobian determinant is: det[ dT/dx ] = det[ I + du/dx ]. </p>
-<dl class="section user"><dt>Overview</dt><dd>This filter is based on itkVectorGradientMagnitudeImageFilter and supports the m_DerivativeWeights weights for partial derivatives.</dd></dl>
-<p>Note that the determinant of a zero vector field is also zero, whereas the Jacobian determinant of the corresponding identity warp transformation is 1.0. In order to compute the effective deformation Jacobian determinant 1.0 must be added to the diagonal elements of Jacobian prior to taking the derivative. i.e. det([ (1.0+dx/dx) dx/dy dx/dz ; dy/dx (1.0+dy/dy) dy/dz; dz/dx dz/dy (1.0+dz/dz) ])</p>
-<dl class="section user"><dt>Template Parameters (Input and Output)</dt><dd>This filter has one required template parameter which defines the input image type. The pixel type of the input image is assumed to be a vector (e.g., <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a>, <a class="el" href="classitk_1_1RGBPixel.html" title="Represent Red, Green and Blue components for color images.">itk::RGBPixel</a>, <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">itk::FixedArray</a>). The scalar type of the vector components must be castable to floating point. Instantiating with an image of RGBPixel&lt;unsigned short&gt;, for example, is allowed, but the filter will convert it to an image of Vector&lt;float,3&gt; for processing.</dd></dl>
-<p>The second template parameter, TRealType, can be optionally specified to define the scalar numerical type used in calculations. This is the component type of the output image, which will be of itk::Vector&lt;TRealType, N&gt;, where N is the number of channels in the multiple component input image. The default type of TRealType is float. For extra precision, you may safely change this parameter to double.</p>
-<p >The third template parameter is the output image type. The third parameter will be automatically constructed from the first and second parameters, so it is not necessary (or advisable) to set this parameter explicitly. Given an M-channel input image with dimensionality N, and a numerical type specified as TRealType, the output image will be of type itk::Image&lt;TRealType, N&gt;.</p>
-<dl class="section user"><dt>Filter Parameters</dt><dd>The method UseImageSpacingOn will cause derivatives in the image to be scaled (inversely) with the pixel size of the input image, effectively taking derivatives in world coordinates (versus isotropic image space). UseImageSpacingOff turns this functionality off. Default is UseImageSpacingOn. The parameter UseImageSpacing can be set directly with the method <a class="el" href="classitk_1_1DisplacementFieldJacobianDeterminantFilter.html#aed6cd91f9c6cea20b7f722af8f609473">SetUseImageSpacing(bool)</a>.</dd></dl>
-<p>Weights can be applied to the derivatives directly using the SetDerivativeWeights method. Note that if UseImageSpacing is set to TRUE (ON), then these weights will be overridden by weights derived from the image spacing when the filter is updated. The argument to this method is a C array of TRealValue type.</p>
-<dl class="section user"><dt>Constraints</dt><dd>We use vnl_det for determinant computation, which only supports square matrices. So the vector dimension of the input image values must be equal to the image dimensions, which is trivially true for a deformation field that maps an n-dimensional space onto itself.</dd></dl>
-<p>Currently, dimensions up to and including 4 are supported. This limitation comes from the presence of vnl_det() functions for matrices of dimension up to 4x4.</p>
-<p >The template parameter TRealType must be floating point (float or double) or a user-defined "real" numerical type with arithmetic operations defined sufficient to compute derivatives.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This class was adapted by </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Hans J. Johnson, The University of Iowa from code provided by </dd>
-<dd>
-Tom Vercauteren, INRIA &amp; Mauna Kea Technologies </dd>
-<dd>
-Torsten Rohlfing, Neuroscience Program, SRI International. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDisplacementFieldJacobianDeterminantFilter_8h_source.html#l00114">114</a> of file <a class="el" href="itkDisplacementFieldJacobianDeterminantFilter_8h_source.html">itkDisplacementFieldJacobianDeterminantFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac4ae46cee970dbc52f4364276f1e7643" name="ac4ae46cee970dbc52f4364276f1e7643"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4ae46cee970dbc52f4364276f1e7643">&#9670;&nbsp;</a></span>ConstNeighborhoodIteratorType</h2>
 

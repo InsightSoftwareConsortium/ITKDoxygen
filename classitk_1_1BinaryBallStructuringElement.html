@@ -92,7 +92,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBinaryBallStructuringElement_8h_source.html">itkBinaryBallStructuringElement.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
+class itk::BinaryBallStructuringElement&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> that represents a ball structuring element (ellipsoid) with binary elements. </p>
+<p >This class defines a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> whose elements are either off or on depending on whether they are outside or inside an ellipsoid whose radii match the radii of the <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a>. This class can be used as a structuring element for the Morphology image filters.</p>
+<p >A <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> has an N-dimensional <em>radius</em>. The radius is defined separately for each dimension as the number of pixels that the neighborhood extends outward from the center pixel. For example, a 2D <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> object with a radius of 2x3 has sides of length 5x7.</p>
+<p ><a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> objects always have an unambiguous center because their side lengths are always odd.</p>
+<p >Internally, this class carries out all of its computations using the <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. It is preferable to use that class instead of this one because <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a> is more flexible.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBinaryBallStructuringElement_8h_source.html#l00061">61</a> of file <a class="el" href="itkBinaryBallStructuringElement_8h_source.html">itkBinaryBallStructuringElement.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BinaryBallStructuringElement&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -264,28 +285,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3d1399473e4315314191cbdd12e0fc7e inherit pro_methods_classitk_1_1Neighborhood"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Neighborhood.html#a3d1399473e4315314191cbdd12e0fc7e">SetSize</a> ()</td></tr>
 <tr class="separator:a3d1399473e4315314191cbdd12e0fc7e inherit pro_methods_classitk_1_1Neighborhood"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixel, unsigned int VDimension = 2, typename TAllocator = NeighborhoodAllocator&lt;TPixel&gt;&gt;<br />
-class itk::BinaryBallStructuringElement&lt; TPixel, VDimension, TAllocator &gt;</div><p >A <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> that represents a ball structuring element (ellipsoid) with binary elements. </p>
-<p >This class defines a <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> whose elements are either off or on depending on whether they are outside or inside an ellipsoid whose radii match the radii of the <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a>. This class can be used as a structuring element for the Morphology image filters.</p>
-<p >A <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> has an N-dimensional <em>radius</em>. The radius is defined separately for each dimension as the number of pixels that the neighborhood extends outward from the center pixel. For example, a 2D <a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> object with a radius of 2x3 has sides of length 5x7.</p>
-<p ><a class="el" href="classitk_1_1BinaryBallStructuringElement.html" title="A Neighborhood that represents a ball structuring element (ellipsoid) with binary elements.">BinaryBallStructuringElement</a> objects always have an unambiguous center because their side lengths are always odd.</p>
-<p >Internally, this class carries out all of its computations using the <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. It is preferable to use that class instead of this one because <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a> is more flexible.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MorphologyImageFilter.html" title="Base class for the morphological operations such as erosion and dilation.">MorphologyImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryDilateImageFilter.html" title="Fast binary dilation of a single intensity value in the image.">BinaryDilateImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1BinaryErodeImageFilter.html" title="Fast binary erosion of a single intensity value in the image.">BinaryErodeImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBinaryBallStructuringElement_8h_source.html#l00061">61</a> of file <a class="el" href="itkBinaryBallStructuringElement_8h_source.html">itkBinaryBallStructuringElement.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aee91ca3c363769b7bf293b9c259828e8" name="aee91ca3c363769b7bf293b9c259828e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee91ca3c363769b7bf293b9c259828e8">&#9670;&nbsp;</a></span>AllocatorType</h2>
 

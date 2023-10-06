@@ -97,7 +97,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetEquationContainer_8h_source.html">itkLevelSetEquationContainer.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTermContainer&gt;<br />
+class itk::LevelSetEquationContainer&lt; TTermContainer &gt;</div><p >Class for holding a set of level set equations (PDEs). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TTermContainer</td><td>Container holding the terms in a level set equation</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Evolving level-set functions \(\left\{ \phi_j \right\}_{j=1}^{M}\) can be expressed as follows: </p><p class="formulaDsp">
+\begin{eqnarray*} \frac{\partial \phi_1(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_1} \alpha_{i1} \cdot \omega_{i1}(p) \\ \frac{\partial \phi_2(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_2} \alpha_{i2} \cdot \omega_{i2}(p) \\ &amp; \vdots &amp; \\ \frac{\partial \phi_M(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_M} \alpha_{iM} \cdot \omega_{iM}(p) \end{eqnarray*}
+</p>
+<p> where \(\omega_{iM}\) is a term which could depend on any of the level-set functions \(\left\{ \phi_j \right\}_{j=1}^{M}\) , the input image, and \(\alpha_{iM}\) is a weight to balance the contribution of each term in the PDE.</p>
+<p >Each equation of this system of equation (PDE) is referred as an equation in the level-set framework. Each equation \( equation_{j} \) contributes to the evolution of the level-set function \( \phi_j \).</p>
+<dl class="section see"><dt>See also</dt><dd>LevelSetEquationTerm </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationContainer_8h_source.html#l00058">58</a> of file <a class="el" href="itkLevelSetEquationContainer_8h_source.html">itkLevelSetEquationContainer.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetEquationContainer&lt; TTermContainer &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -352,24 +369,7 @@ Friends</h2></td></tr>
 <tr class="memitem:a9830fc407400559db7e7783cc10a9394"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationContainer.html#a9830fc407400559db7e7783cc10a9394">Iterator</a></td></tr>
 <tr class="separator:a9830fc407400559db7e7783cc10a9394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTermContainer&gt;<br />
-class itk::LevelSetEquationContainer&lt; TTermContainer &gt;</div><p >Class for holding a set of level set equations (PDEs). </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TTermContainer</td><td>Container holding the terms in a level set equation</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Evolving level-set functions \(\left\{ \phi_j \right\}_{j=1}^{M}\) can be expressed as follows: </p><p class="formulaDsp">
-\begin{eqnarray*} \frac{\partial \phi_1(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_1} \alpha_{i1} \cdot \omega_{i1}(p) \\ \frac{\partial \phi_2(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_2} \alpha_{i2} \cdot \omega_{i2}(p) \\ &amp; \vdots &amp; \\ \frac{\partial \phi_M(p)}{\partial \tau} &amp;=&amp; \sum\limits_{i=1}^{N_M} \alpha_{iM} \cdot \omega_{iM}(p) \end{eqnarray*}
-</p>
-<p> where \(\omega_{iM}\) is a term which could depend on any of the level-set functions \(\left\{ \phi_j \right\}_{j=1}^{M}\) , the input image, and \(\alpha_{iM}\) is a weight to balance the contribution of each term in the PDE.</p>
-<p >Each equation of this system of equation (PDE) is referred as an equation in the level-set framework. Each equation \( equation_{j} \) contributes to the evolution of the level-set function \( \phi_j \).</p>
-<dl class="section see"><dt>See also</dt><dd>LevelSetEquationTerm </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationContainer_8h_source.html#l00058">58</a> of file <a class="el" href="itkLevelSetEquationContainer_8h_source.html">itkLevelSetEquationContainer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae04710240a63c74cf3cfda93882244ec" name="ae04710240a63c74cf3cfda93882244ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae04710240a63c74cf3cfda93882244ec">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

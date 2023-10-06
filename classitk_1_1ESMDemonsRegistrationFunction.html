@@ -97,7 +97,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
+class itk::ESMDemonsRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >Fast implementation of the symmetric demons registration force. </p>
+<p >This class provides a substantially faster implementation of the symmetric demons registration force. Speed is improved by keeping a deformed copy of the moving image for gradient evaluation.</p>
+<p >Symmetric forces simply means using the mean of the gradient of the fixed image and the gradient of the warped moving image.</p>
+<p >Note that this class also enables the use of fixed, mapped moving and warped moving images forces by using a call to SetUseGradientType</p>
+<p >The moving image should not be saturated. We indeed use NumericTraits&lt;MovingPixelType&gt;::Max() as a special value.</p>
+<dl class="section author"><dt>Author</dt><dd>Tom Vercauteren, INRIA &amp; Mauna Kea Technologies</dd></dl>
+<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/154">https://www.insight-journal.org/browse/publication/154</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFunction.html">SymmetricForcesDemonsRegistrationFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">SymmetricForcesDemonsRegistrationFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DemonsRegistrationFunction.html">DemonsRegistrationFunction</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00084">84</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ESMDemonsRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -453,25 +471,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
-class itk::ESMDemonsRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >Fast implementation of the symmetric demons registration force. </p>
-<p >This class provides a substantially faster implementation of the symmetric demons registration force. Speed is improved by keeping a deformed copy of the moving image for gradient evaluation.</p>
-<p >Symmetric forces simply means using the mean of the gradient of the fixed image and the gradient of the warped moving image.</p>
-<p >Note that this class also enables the use of fixed, mapped moving and warped moving images forces by using a call to SetUseGradientType</p>
-<p >The moving image should not be saturated. We indeed use NumericTraits&lt;MovingPixelType&gt;::Max() as a special value.</p>
-<dl class="section author"><dt>Author</dt><dd>Tom Vercauteren, INRIA &amp; Mauna Kea Technologies</dd></dl>
-<p>This implementation was taken from the Insight Journal paper: <a href="https://www.insight-journal.org/browse/publication/154">https://www.insight-journal.org/browse/publication/154</a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFunction.html">SymmetricForcesDemonsRegistrationFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SymmetricForcesDemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">SymmetricForcesDemonsRegistrationFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DemonsRegistrationFunction.html">DemonsRegistrationFunction</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html#l00084">84</a> of file <a class="el" href="itkESMDemonsRegistrationFunction_8h_source.html">itkESMDemonsRegistrationFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3ff404627404a4d4ae4ad31c728b96f0" name="a3ff404627404a4d4ae4ad31c728b96f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ff404627404a4d4ae4ad31c728b96f0">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

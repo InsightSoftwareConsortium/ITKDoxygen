@@ -95,7 +95,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMultiResolutionPDEDeformableRegistration_8h_source.html">itkMultiResolutionPDEDeformableRegistration.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TRealType = float, typename TFloatImageType = Image&lt;TRealType, TFixedImage::ImageDimension&gt;, typename TRegistrationType = PDEDeformableRegistrationFilter&lt;TFloatImageType, TFloatImageType, TDisplacementField&gt;, typename TDefaultRegistrationType = DemonsRegistrationFilter&lt;TFloatImageType, TFloatImageType, TDisplacementField&gt;&gt;<br />
+class itk::MultiResolutionPDEDeformableRegistration&lt; TFixedImage, TMovingImage, TDisplacementField, TRealType, TFloatImageType, TRegistrationType, TDefaultRegistrationType &gt;</div><p >Framework for performing multi-resolution PDE deformable registration. </p>
+<p ><a class="el" href="classitk_1_1MultiResolutionPDEDeformableRegistration.html" title="Framework for performing multi-resolution PDE deformable registration.">MultiResolutionPDEDeformableRegistration</a> provides a generic framework to perform multi-resolution deformable registration.</p>
+<p >At each resolution level a <a class="el" href="classitk_1_1PDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">PDEDeformableRegistrationFilter</a> is used to register two images by computing the deformation field which will map a moving image onto a fixed image.</p>
+<p >A deformation field is represented as an image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
+<p >The internal PDEDeformationRegistrationFilter can be set using SetRegistrationFilter. By default a <a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> is used.</p>
+<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField if is matches the characteristics of the coarsest pyramid level. If no such assumption can be made (e.g. the deformation field has the same characteristics as the input images), an initial deformation field can still be set via SetArbitraryInitialDisplacementField or SetInput. The filter will then take care of matching the coarsest level characteristics. If no initial field is set a zero field is used as the initial condition.</p>
+<p >MultiResolutionPyramidImageFilters are used to downsample the fixed and moving images. A <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> is used to upsample the deformation as we move from a coarse to fine solution.</p>
+<p >This class is templated over the fixed image type, the moving image type, and the Deformation Field type.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This class assumes that the fixed, moving and deformation field image types all have the same number of dimensions.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">PDEDeformableRegistrationFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1MultiResolutionPyramidImageFilter.html" title="Framework for creating images in a multi-resolution pyramid.">MultiResolutionPyramidImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a></dd></dl>
+<p>The current implementation of this class does not support streaming. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMultiResolutionPDEDeformableRegistration_8h_source.html#l00088">88</a> of file <a class="el" href="itkMultiResolutionPDEDeformableRegistration_8h_source.html">itkMultiResolutionPDEDeformableRegistration.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MultiResolutionPDEDeformableRegistration&lt; TFixedImage, TMovingImage, TDisplacementField, TRealType, TFloatImageType, TRegistrationType, TDefaultRegistrationType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -826,28 +847,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField, typename TRealType = float, typename TFloatImageType = Image&lt;TRealType, TFixedImage::ImageDimension&gt;, typename TRegistrationType = PDEDeformableRegistrationFilter&lt;TFloatImageType, TFloatImageType, TDisplacementField&gt;, typename TDefaultRegistrationType = DemonsRegistrationFilter&lt;TFloatImageType, TFloatImageType, TDisplacementField&gt;&gt;<br />
-class itk::MultiResolutionPDEDeformableRegistration&lt; TFixedImage, TMovingImage, TDisplacementField, TRealType, TFloatImageType, TRegistrationType, TDefaultRegistrationType &gt;</div><p >Framework for performing multi-resolution PDE deformable registration. </p>
-<p ><a class="el" href="classitk_1_1MultiResolutionPDEDeformableRegistration.html" title="Framework for performing multi-resolution PDE deformable registration.">MultiResolutionPDEDeformableRegistration</a> provides a generic framework to perform multi-resolution deformable registration.</p>
-<p >At each resolution level a <a class="el" href="classitk_1_1PDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">PDEDeformableRegistrationFilter</a> is used to register two images by computing the deformation field which will map a moving image onto a fixed image.</p>
-<p >A deformation field is represented as an image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
-<p >The internal PDEDeformationRegistrationFilter can be set using SetRegistrationFilter. By default a <a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> is used.</p>
-<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField if is matches the characteristics of the coarsest pyramid level. If no such assumption can be made (e.g. the deformation field has the same characteristics as the input images), an initial deformation field can still be set via SetArbitraryInitialDisplacementField or SetInput. The filter will then take care of matching the coarsest level characteristics. If no initial field is set a zero field is used as the initial condition.</p>
-<p >MultiResolutionPyramidImageFilters are used to downsample the fixed and moving images. A <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> is used to upsample the deformation as we move from a coarse to fine solution.</p>
-<p >This class is templated over the fixed image type, the moving image type, and the Deformation Field type.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This class assumes that the fixed, moving and deformation field image types all have the same number of dimensions.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1PDEDeformableRegistrationFilter.html" title="Deformably register two images using a PDE algorithm.">PDEDeformableRegistrationFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1MultiResolutionPyramidImageFilter.html" title="Framework for creating images in a multi-resolution pyramid.">MultiResolutionPyramidImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a></dd></dl>
-<p>The current implementation of this class does not support streaming. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMultiResolutionPDEDeformableRegistration_8h_source.html#l00088">88</a> of file <a class="el" href="itkMultiResolutionPDEDeformableRegistration_8h_source.html">itkMultiResolutionPDEDeformableRegistration.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae385d1c4d3ebabd22929a033550cf7ea" name="ae385d1c4d3ebabd22929a033550cf7ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae385d1c4d3ebabd22929a033550cf7ea">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

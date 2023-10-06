@@ -95,7 +95,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMaskFeaturePointSelectionFilter_8h_source.html">itkMaskFeaturePointSelectionFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TMask = TImage, typename TFeatures = PointSet&lt;Matrix&lt;SpacePrecisionType, TImage::ImageDimension, TImage::ImageDimension&gt;,                                        TImage::ImageDimension&gt;&gt;<br />
+class itk::MaskFeaturePointSelectionFilter&lt; TImage, TMask, TFeatures &gt;</div><p >Generate a <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> containing the feature points selected from a masked 3D input image. </p>
+<p ><a class="el" href="classitk_1_1MaskFeaturePointSelectionFilter.html" title="Generate a PointSet containing the feature points selected from a masked 3D input image.">MaskFeaturePointSelectionFilter</a> takes 3D image and 3D mask as inputs and generates a <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> of feature points as output.</p>
+<p >This filter is intended to be used for initializing the process of Physics-Based Non-Rigid Registration. It selects a fraction of non-masked points with highest variance. Optionally, tensors are computed for each point and stored as pixel values. [ M. Bierling, Displacement estimation by hierarchical block matching, Proc. SPIE Vis. Comm. and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Proc., vol. 1001, pp. 942-951, 1988. ].</p>
+<p >The filter is templated over input image and mask and output pointset. </p><dl class="section author"><dt>Author</dt><dd>Andriy Kot, Center for Real-Time Computing, Old Dominion University, Norfolk, VA</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BlockMatchingImageFilter.html" title="Computes displacements of given points from a fixed image in a floating image.">BlockMatchingImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMaskFeaturePointSelectionFilter_8h_source.html#l00063">63</a> of file <a class="el" href="itkMaskFeaturePointSelectionFilter_8h_source.html">itkMaskFeaturePointSelectionFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MaskFeaturePointSelectionFilter&lt; TImage, TMask, TFeatures &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -710,16 +719,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TMask = TImage, typename TFeatures = PointSet&lt;Matrix&lt;SpacePrecisionType, TImage::ImageDimension, TImage::ImageDimension&gt;,                                        TImage::ImageDimension&gt;&gt;<br />
-class itk::MaskFeaturePointSelectionFilter&lt; TImage, TMask, TFeatures &gt;</div><p >Generate a <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> containing the feature points selected from a masked 3D input image. </p>
-<p ><a class="el" href="classitk_1_1MaskFeaturePointSelectionFilter.html" title="Generate a PointSet containing the feature points selected from a masked 3D input image.">MaskFeaturePointSelectionFilter</a> takes 3D image and 3D mask as inputs and generates a <a class="el" href="classitk_1_1PointSet.html" title="A superclass of the N-dimensional mesh structure; supports point (geometric coordinate and attribute)...">PointSet</a> of feature points as output.</p>
-<p >This filter is intended to be used for initializing the process of Physics-Based Non-Rigid Registration. It selects a fraction of non-masked points with highest variance. Optionally, tensors are computed for each point and stored as pixel values. [ M. Bierling, Displacement estimation by hierarchical block matching, Proc. SPIE Vis. Comm. and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Proc., vol. 1001, pp. 942-951, 1988. ].</p>
-<p >The filter is templated over input image and mask and output pointset. </p><dl class="section author"><dt>Author</dt><dd>Andriy Kot, Center for Real-Time Computing, Old Dominion University, Norfolk, VA</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BlockMatchingImageFilter.html" title="Computes displacements of given points from a fixed image in a floating image.">BlockMatchingImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMaskFeaturePointSelectionFilter_8h_source.html#l00063">63</a> of file <a class="el" href="itkMaskFeaturePointSelectionFilter_8h_source.html">itkMaskFeaturePointSelectionFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a877eeb348ce89f8fb7f5c24055944dbc" name="a877eeb348ce89f8fb7f5c24055944dbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a877eeb348ce89f8fb7f5c24055944dbc">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

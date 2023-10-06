@@ -96,7 +96,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename THessianImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::MultiScaleHessianBasedMeasureImageFilter&lt; TInputImage, THessianImage, TOutputImage &gt;</div><p >A filter to enhance structures using Hessian eigensystem-based measures in a multiscale framework. </p>
+<p >The filter evaluates a Hessian-based enhancement measure, such as vesselness or objectness, at different scale levels. The Hessian-based measure is computed from the Hessian image at each scale level and the best response is selected.</p>
+<p >Minimum and maximum sigma value can be set using SetMinSigma and SetMaxSigma methods respectively. The number of scale levels is set using SetNumberOfSigmaSteps method. Exponentially distributed scale levels are computed within the bound set by the minimum and maximum sigma values</p>
+<p >The filter computes a second output image (accessed by the GetScalesOutput method) containing the scales at which each pixel gave the best response.</p>
+<p >This code was contributed in the Insight Journal paper: "Generalizing vesselness with respect to dimensionality and shape" by Antiga L. <a href="https://www.insight-journal.org/browse/publication/175">https://www.insight-journal.org/browse/publication/175</a></p>
+<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Medical Imaging Unit, Bioengineering Department, Mario Negri Institute, Italy.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1HessianToObjectnessMeasureImageFilter.html" title="A filter to enhance M-dimensional objects in N-dimensional images.">HessianToObjectnessMeasureImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Hessian3DToVesselnessMeasureImageFilter.html" title="Line filter to provide a vesselness measure for tubular objects from the hessian matrix.">Hessian3DToVesselnessMeasureImageFilter</a> </dd>
+<dd>
+HessianSmoothed3DToVesselnessMeasureImageFilter </dd>
+<dd>
+<a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">HessianRecursiveGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SymmetricEigenAnalysisImageFilter.html" title="Computes the eigen-values of every input symmetric matrix pixel.">SymmetricEigenAnalysisImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00087">87</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MultiScaleHessianBasedMeasureImageFilter&lt; TInputImage, THessianImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -825,28 +846,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename THessianImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::MultiScaleHessianBasedMeasureImageFilter&lt; TInputImage, THessianImage, TOutputImage &gt;</div><p >A filter to enhance structures using Hessian eigensystem-based measures in a multiscale framework. </p>
-<p >The filter evaluates a Hessian-based enhancement measure, such as vesselness or objectness, at different scale levels. The Hessian-based measure is computed from the Hessian image at each scale level and the best response is selected.</p>
-<p >Minimum and maximum sigma value can be set using SetMinSigma and SetMaxSigma methods respectively. The number of scale levels is set using SetNumberOfSigmaSteps method. Exponentially distributed scale levels are computed within the bound set by the minimum and maximum sigma values</p>
-<p >The filter computes a second output image (accessed by the GetScalesOutput method) containing the scales at which each pixel gave the best response.</p>
-<p >This code was contributed in the Insight Journal paper: "Generalizing vesselness with respect to dimensionality and shape" by Antiga L. <a href="https://www.insight-journal.org/browse/publication/175">https://www.insight-journal.org/browse/publication/175</a></p>
-<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Medical Imaging Unit, Bioengineering Department, Mario Negri Institute, Italy.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1HessianToObjectnessMeasureImageFilter.html" title="A filter to enhance M-dimensional objects in N-dimensional images.">HessianToObjectnessMeasureImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Hessian3DToVesselnessMeasureImageFilter.html" title="Line filter to provide a vesselness measure for tubular objects from the hessian matrix.">Hessian3DToVesselnessMeasureImageFilter</a> </dd>
-<dd>
-HessianSmoothed3DToVesselnessMeasureImageFilter </dd>
-<dd>
-<a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">HessianRecursiveGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SymmetricEigenAnalysisImageFilter.html" title="Computes the eigen-values of every input symmetric matrix pixel.">SymmetricEigenAnalysisImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html#l00087">87</a> of file <a class="el" href="itkMultiScaleHessianBasedMeasureImageFilter_8h_source.html">itkMultiScaleHessianBasedMeasureImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac51f4a010ef58bb7729931a779f287b1" name="ac51f4a010ef58bb7729931a779f287b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac51f4a010ef58bb7729931a779f287b1">&#9670;&nbsp;</a></span>BufferValueType</h2>
 

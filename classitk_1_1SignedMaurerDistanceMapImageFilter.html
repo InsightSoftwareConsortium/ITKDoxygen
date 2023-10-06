@@ -96,7 +96,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSignedMaurerDistanceMapImageFilter_8h_source.html">itkSignedMaurerDistanceMapImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::SignedMaurerDistanceMapImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrary dimensions. </p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image-to-image filter. The dimensionality is arbitrary. The only dimensionality constraint is that the input and output images be of the same dimensions and size. To maintain integer arithmetic within the filter, the default output is the signed squared distance. This implies that the input image should be of type "unsigned int" or "int" whereas the output image is of type "int". Obviously, if the user wishes to utilize the image spacing or to have a filter with the Euclidean distance (as opposed to the squared distance), output image types of float or double should be used.</dd></dl>
+<p>The inside is considered as having negative distances. Outside is treated as having positive distances. To change the convention, use the InsideIsPositive(bool) function.</p>
+<dl class="section user"><dt>Parameters</dt><dd>Set/GetBackgroundValue specifies the background of the value of the input binary image. Normally this is zero and, as such, zero is the default value. Other than that, the usage is completely analogous to the itk::DanielssonDistanceImageFilter class except it does not return the Voronoi map.</dd></dl>
+<p>Reference: C. R. Maurer, Jr., R. Qi, and V. Raghavan, "A Linear Time Algorithm
+ for Computing Exact Euclidean Distance Transforms of Binary Images in
+ Arbitrary Dimensions", IEEE - Transactions on Pattern Analysis and Machine Intelligence, 25(2): 265-270, 2003.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSignedMaurerDistanceMapImageFilter_8h_source.html#l00067">67</a> of file <a class="el" href="itkSignedMaurerDistanceMapImageFilter_8h_source.html">itkSignedMaurerDistanceMapImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SignedMaurerDistanceMapImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -798,23 +814,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::SignedMaurerDistanceMapImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrary dimensions. </p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>This is an image-to-image filter. The dimensionality is arbitrary. The only dimensionality constraint is that the input and output images be of the same dimensions and size. To maintain integer arithmetic within the filter, the default output is the signed squared distance. This implies that the input image should be of type "unsigned int" or "int" whereas the output image is of type "int". Obviously, if the user wishes to utilize the image spacing or to have a filter with the Euclidean distance (as opposed to the squared distance), output image types of float or double should be used.</dd></dl>
-<p>The inside is considered as having negative distances. Outside is treated as having positive distances. To change the convention, use the InsideIsPositive(bool) function.</p>
-<dl class="section user"><dt>Parameters</dt><dd>Set/GetBackgroundValue specifies the background of the value of the input binary image. Normally this is zero and, as such, zero is the default value. Other than that, the usage is completely analogous to the itk::DanielssonDistanceImageFilter class except it does not return the Voronoi map.</dd></dl>
-<p>Reference: C. R. Maurer, Jr., R. Qi, and V. Raghavan, "A Linear Time Algorithm
- for Computing Exact Euclidean Distance Transforms of Binary Images in
- Arbitrary Dimensions", IEEE - Transactions on Pattern Analysis and Machine Intelligence, 25(2): 265-270, 2003.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSignedMaurerDistanceMapImageFilter_8h_source.html#l00067">67</a> of file <a class="el" href="itkSignedMaurerDistanceMapImageFilter_8h_source.html">itkSignedMaurerDistanceMapImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae5af03810113a2d4edad899a11786990" name="ae5af03810113a2d4edad899a11786990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5af03810113a2d4edad899a11786990">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

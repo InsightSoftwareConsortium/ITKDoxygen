@@ -97,7 +97,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMembershipFunction, typename TTrainingImage&gt;<br />
+class itk::ImageGaussianModelEstimator&lt; TInputImage, TMembershipFunction, TTrainingImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html" title="Base class for ImageGaussianModelEstimator object.">ImageGaussianModelEstimator</a> object. </p>
+<p >itkImageGaussianModelEstimator generates the Gaussian model for given tissue types (or class types) in an input training data set for segmentation. The training data set is typically provided as a set of labelled/classified data set by the user. A Gaussian model is generated for each label present in the training data set.</p>
+<p >The user should ensure that both the input and training images are of the same size. The input data consists of the raw data and the training data has class labels associated with each pixel.</p>
+<p >A zero label is used to identify the background. A model is not calculated for the background (its mean and covariance will be zero). Positive labels are classes for which models will be estimated. Negative labels indicate unlabeled data where no models will be estimated.</p>
+<p >This object supports data handling of multiband images. The object accepts the input image in vector format only, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset. A single band image is treated as a vector image with a single element for every vector. The classified image is treated as a single band scalar image.</p>
+<p >This function is templated over the type of input and output images. In addition, a third parameter for the MembershipFunction needs to be specified. In this case a Membership function that stores Gaussian models needs to be specified.</p>
+<p >The function <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a30e605239d527b40459135e51fc81c6e">EstimateModels()</a> calculates the various models, creates the membership function objects and populates them. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00077">77</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageGaussianModelEstimator&lt; TInputImage, TMembershipFunction, TTrainingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -432,18 +443,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMembershipFunction, typename TTrainingImage&gt;<br />
-class itk::ImageGaussianModelEstimator&lt; TInputImage, TMembershipFunction, TTrainingImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html" title="Base class for ImageGaussianModelEstimator object.">ImageGaussianModelEstimator</a> object. </p>
-<p >itkImageGaussianModelEstimator generates the Gaussian model for given tissue types (or class types) in an input training data set for segmentation. The training data set is typically provided as a set of labelled/classified data set by the user. A Gaussian model is generated for each label present in the training data set.</p>
-<p >The user should ensure that both the input and training images are of the same size. The input data consists of the raw data and the training data has class labels associated with each pixel.</p>
-<p >A zero label is used to identify the background. A model is not calculated for the background (its mean and covariance will be zero). Positive labels are classes for which models will be estimated. Negative labels indicate unlabeled data where no models will be estimated.</p>
-<p >This object supports data handling of multiband images. The object accepts the input image in vector format only, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset. A single band image is treated as a vector image with a single element for every vector. The classified image is treated as a single band scalar image.</p>
-<p >This function is templated over the type of input and output images. In addition, a third parameter for the MembershipFunction needs to be specified. In this case a Membership function that stores Gaussian models needs to be specified.</p>
-<p >The function <a class="el" href="classitk_1_1ImageGaussianModelEstimator.html#a30e605239d527b40459135e51fc81c6e">EstimateModels()</a> calculates the various models, creates the membership function objects and populates them. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkImageGaussianModelEstimator_8h_source.html#l00077">77</a> of file <a class="el" href="itkImageGaussianModelEstimator_8h_source.html">itkImageGaussianModelEstimator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad1fe26b6513e4bda4db35cb25dfcb632" name="ad1fe26b6513e4bda4db35cb25dfcb632"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1fe26b6513e4bda4db35cb25dfcb632">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

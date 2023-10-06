@@ -96,7 +96,39 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFiniteDifferenceImageFilter_8h_source.html">itkFiniteDifferenceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</div><dl class="section user"><dt>The Finite Difference Solver Hierarchy</dt><dd></dd></dl>
+<dl class="section user"><dt></dt><dd>This is an overview of the Finite Difference Solver (FDS) framework. The FDS framework is a set of classes for creating filters to solve partial differential equations on images using an iterative, finite difference update scheme.</dd></dl>
+<dl class="section user"><dt></dt><dd>The high-level algorithm implemented by the framework can be described by the following pseudocode.</dd></dl>
+<div class="fragment"><div class="line">WHILE NOT convergence:</div>
+<div class="line">   FOR ALL pixels i</div>
+<div class="line">      time_step = calculate_change(i)</div>
+<div class="line">      update(i, time_step)</div>
+</div><!-- fragment --><dl class="section user"><dt></dt><dd>The following equation describes update \( n+1 \) at pixel \( i \) on discrete image \( u \) :</dd></dl>
+<p class="formulaDsp">
+\[ u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t \]
+</p>
+<dl class="section user"><dt>Component objects</dt><dd>The FDS hierarchy is comprised of two component object types, variations of which are designed to be plugged together to create filters for different applications. At the process level are the "solver" objects, which are subclasses of <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a>. Solver objects are filters that take image inputs and produce image outputs. Solver objects require a <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> object to perform the calculation at each image pixel during iteration. These specialized function objects are subclasses of <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a>. <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> take a neighborhood of pixels as input (in the form of an <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">itk::NeighborhoodIterator</a>) and produce a scalar valued result.</dd></dl>
+<dl class="section user"><dt></dt><dd>Filters for different applications are created by defining a function object to handle the numerical calculations and choosing (or creating) a solver object that reflects the requirements and constraints of the application.</dd></dl>
+<p>For example, anisotropic diffusion filters are created by plugging anisotropic diffusion functions into the <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>.</p>
+<p >The separation between function object and solver object allows us to create, for example, sparse-field, dense-field, and narrow-band implementations of a level-set surface evolution filter can all be constructed by plugging the same function object into three different, specialized solvers.</p>
+<dl class="section user"><dt>Creating new filters in this hierarchy</dt><dd>The procedure for creating a filter within the FDS hierarchy is to identify all the virtual methods that need to be defined for your particular application. In the simplest case, a filter needs only to instantiate a specific function object and define some halting criteria. For more complicated applications, you may need to define a specialized type of iteration scheme or updating procedure in a higher-level solver object.</dd></dl>
+<dl class="section user"><dt></dt><dd>Some simple examples are the specific subclasses of <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a>. The leaves of the anisotropic diffusion filter tree only define the function object they use for their particular flavor of diffusion. See <a class="el" href="classitk_1_1CurvatureAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the modified curvature diffus...">CurvatureAnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1GradientAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the classic Perona-Malik,...">GradientAnisotropicDiffusionImageFilter</a> for details.</dd></dl>
+<dl class="section user"><dt>FiniteDifferenceImageFilter</dt><dd>This class defines the generic solver API at the top level of the FDS framework. <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> is an abstract class that implements the generic, high-level algorithm (described above).</dd></dl>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>This filter is an ImageToImage filter. Depending on the specific subclass implementation, finite difference image filters may process a variety of image types. The input to the filter is the initial value of \( u \) and the output of the filter is the solution to the P.D.E.</dd></dl>
+<dl class="section user"><dt>How to use this class</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a2aeeb79a26f5a6c8daba3ae50ee04ec4">GenerateData()</a> relies on several virtual methods that must be defined by a subclass. Specifically: <ul>
+<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#aea9af90f9ffe8282cd998c5b06608a77">AllocateUpdateBuffer()</a></em> </li>
+<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#ad3b9a163fa673c67886eaa7cfd532b71">ApplyUpdate()</a></em> </li>
+<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#af0cfa893c0e85d844b13ef165be00836">CalculateChange()</a></em> </li>
+<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a></em>. To create a finite difference solver, implement a subclass to define these methods.</li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt></dt><dd>Note that there is no fixed container type for the buffer used to hold the update \( \Delta \). The container might be another image, or simply a list of values. AllocateUpdateBuffer is responsible for creating the \( \Delta \) container. CalculateChange populates this buffer and ApplyUpdate adds the buffer values to the output image (solution). The boolean <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a> (or <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a29c43dd3316f55c33e238915db11cd4a">ThreadedHalt()</a>) method returns a true value to stop iteration.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFiniteDifferenceImageFilter_8h_source.html#l00133">133</a> of file <a class="el" href="itkFiniteDifferenceImageFilter_8h_source.html">itkFiniteDifferenceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -866,39 +898,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::FiniteDifferenceImageFilter&lt; TInputImage, TOutputImage &gt;</div><dl class="section user"><dt>The Finite Difference Solver Hierarchy</dt><dd></dd></dl>
-<dl class="section user"><dt></dt><dd>This is an overview of the Finite Difference Solver (FDS) framework. The FDS framework is a set of classes for creating filters to solve partial differential equations on images using an iterative, finite difference update scheme.</dd></dl>
-<dl class="section user"><dt></dt><dd>The high-level algorithm implemented by the framework can be described by the following pseudocode.</dd></dl>
-<div class="fragment"><div class="line">WHILE NOT convergence:</div>
-<div class="line">   FOR ALL pixels i</div>
-<div class="line">      time_step = calculate_change(i)</div>
-<div class="line">      update(i, time_step)</div>
-</div><!-- fragment --><dl class="section user"><dt></dt><dd>The following equation describes update \( n+1 \) at pixel \( i \) on discrete image \( u \) :</dd></dl>
-<p class="formulaDsp">
-\[ u_{\mathbf{i}}^{n+1}=u^n_{\mathbf{i}}+\Delta u^n_{\mathbf{i}}\Delta t \]
-</p>
-<dl class="section user"><dt>Component objects</dt><dd>The FDS hierarchy is comprised of two component object types, variations of which are designed to be plugged together to create filters for different applications. At the process level are the "solver" objects, which are subclasses of <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a>. Solver objects are filters that take image inputs and produce image outputs. Solver objects require a <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> object to perform the calculation at each image pixel during iteration. These specialized function objects are subclasses of <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a>. <a class="el" href="classitk_1_1FiniteDifferenceFunction.html">FiniteDifferenceFunction</a> take a neighborhood of pixels as input (in the form of an <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">itk::NeighborhoodIterator</a>) and produce a scalar valued result.</dd></dl>
-<dl class="section user"><dt></dt><dd>Filters for different applications are created by defining a function object to handle the numerical calculations and choosing (or creating) a solver object that reflects the requirements and constraints of the application.</dd></dl>
-<p>For example, anisotropic diffusion filters are created by plugging anisotropic diffusion functions into the <a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a>.</p>
-<p >The separation between function object and solver object allows us to create, for example, sparse-field, dense-field, and narrow-band implementations of a level-set surface evolution filter can all be constructed by plugging the same function object into three different, specialized solvers.</p>
-<dl class="section user"><dt>Creating new filters in this hierarchy</dt><dd>The procedure for creating a filter within the FDS hierarchy is to identify all the virtual methods that need to be defined for your particular application. In the simplest case, a filter needs only to instantiate a specific function object and define some halting criteria. For more complicated applications, you may need to define a specialized type of iteration scheme or updating procedure in a higher-level solver object.</dd></dl>
-<dl class="section user"><dt></dt><dd>Some simple examples are the specific subclasses of <a class="el" href="classitk_1_1AnisotropicDiffusionImageFilter.html">AnisotropicDiffusionImageFilter</a>. The leaves of the anisotropic diffusion filter tree only define the function object they use for their particular flavor of diffusion. See <a class="el" href="classitk_1_1CurvatureAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the modified curvature diffus...">CurvatureAnisotropicDiffusionImageFilter</a> and <a class="el" href="classitk_1_1GradientAnisotropicDiffusionImageFilter.html" title="This filter performs anisotropic diffusion on a scalar itk::Image using the classic Perona-Malik,...">GradientAnisotropicDiffusionImageFilter</a> for details.</dd></dl>
-<dl class="section user"><dt>FiniteDifferenceImageFilter</dt><dd>This class defines the generic solver API at the top level of the FDS framework. <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html">FiniteDifferenceImageFilter</a> is an abstract class that implements the generic, high-level algorithm (described above).</dd></dl>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>This filter is an ImageToImage filter. Depending on the specific subclass implementation, finite difference image filters may process a variety of image types. The input to the filter is the initial value of \( u \) and the output of the filter is the solution to the P.D.E.</dd></dl>
-<dl class="section user"><dt>How to use this class</dt><dd><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a2aeeb79a26f5a6c8daba3ae50ee04ec4">GenerateData()</a> relies on several virtual methods that must be defined by a subclass. Specifically: <ul>
-<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#aea9af90f9ffe8282cd998c5b06608a77">AllocateUpdateBuffer()</a></em> </li>
-<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#ad3b9a163fa673c67886eaa7cfd532b71">ApplyUpdate()</a></em> </li>
-<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#af0cfa893c0e85d844b13ef165be00836">CalculateChange()</a></em> </li>
-<li><em><a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a></em>. To create a finite difference solver, implement a subclass to define these methods.</li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt></dt><dd>Note that there is no fixed container type for the buffer used to hold the update \( \Delta \). The container might be another image, or simply a list of values. AllocateUpdateBuffer is responsible for creating the \( \Delta \) container. CalculateChange populates this buffer and ApplyUpdate adds the buffer values to the output image (solution). The boolean <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a27a23f1a3a4dccddf43aa006632ea66d">Halt()</a> (or <a class="el" href="classitk_1_1FiniteDifferenceImageFilter.html#a29c43dd3316f55c33e238915db11cd4a">ThreadedHalt()</a>) method returns a true value to stop iteration.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DenseFiniteDifferenceImageFilter.html">DenseFiniteDifferenceImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFiniteDifferenceImageFilter_8h_source.html#l00133">133</a> of file <a class="el" href="itkFiniteDifferenceImageFilter_8h_source.html">itkFiniteDifferenceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af307a259f84e53c252c552380d27bc9a" name="af307a259f84e53c252c552380d27bc9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af307a259f84e53c252c552380d27bc9a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

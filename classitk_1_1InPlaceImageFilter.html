@@ -95,7 +95,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkInPlaceImageFilter_8h_source.html">itkInPlaceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::InPlaceImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for filters that take an image as input and overwrite that image as the output. </p>
+<p ><a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> is the base class for all process objects whose output image data is constructed by overwriting the input image data. In other words, the output bulk data is the same block of memory as the input bulk data. This filter provides the mechanisms for in place image processing while maintaining general pipeline mechanics. InPlaceImageFilters use less memory than standard ImageToImageFilters because the input buffer is reused as the output buffer. However, this benefit does not come without a cost. Since the filter overwrites its input, the ownership of the bulk data is transitioned from the input data object to the output data object. When a data object has multiple consumers with one of the consumers being an in place filter, the in place filter effectively destroys the bulk data for the data object. Upstream filters will then have to re-execute to regenerate the data object's bulk data for the remaining consumers.</p>
+<p >Since an <a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> reuses the input bulk data memory for the output bulk data memory, the input image type must match the output image type. If the input and output image types are not identical, the filter reverts to a traditional <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> behaviour where an output image is allocated. Additionally, the requested region of the output must match that of the input. In place operation can also be controlled (when the input and output image type match) via the methods <a class="el" href="classitk_1_1InPlaceImageFilter.html#a579b1ce34d8ed0aca2e4620ce9056501">InPlaceOn()</a> and InPlaceOff().</p>
+<p >Subclasses of <a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> must take extra care in how they manage memory using (and perhaps overriding) the implementations of <a class="el" href="classitk_1_1InPlaceImageFilter.html#ab7058d6c16985d224afe9ff73b80876d">ReleaseInputs()</a> and <a class="el" href="classitk_1_1InPlaceImageFilter.html#a5e4c07c371d78af8b2217c8e9eef230a">AllocateOutputs()</a> provided here.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkInPlaceImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkInPlaceImageFilter_8h_source.html">itkInPlaceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InPlaceImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -739,21 +753,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::InPlaceImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for filters that take an image as input and overwrite that image as the output. </p>
-<p ><a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> is the base class for all process objects whose output image data is constructed by overwriting the input image data. In other words, the output bulk data is the same block of memory as the input bulk data. This filter provides the mechanisms for in place image processing while maintaining general pipeline mechanics. InPlaceImageFilters use less memory than standard ImageToImageFilters because the input buffer is reused as the output buffer. However, this benefit does not come without a cost. Since the filter overwrites its input, the ownership of the bulk data is transitioned from the input data object to the output data object. When a data object has multiple consumers with one of the consumers being an in place filter, the in place filter effectively destroys the bulk data for the data object. Upstream filters will then have to re-execute to regenerate the data object's bulk data for the remaining consumers.</p>
-<p >Since an <a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> reuses the input bulk data memory for the output bulk data memory, the input image type must match the output image type. If the input and output image types are not identical, the filter reverts to a traditional <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a> behaviour where an output image is allocated. Additionally, the requested region of the output must match that of the input. In place operation can also be controlled (when the input and output image type match) via the methods <a class="el" href="classitk_1_1InPlaceImageFilter.html#a579b1ce34d8ed0aca2e4620ce9056501">InPlaceOn()</a> and InPlaceOff().</p>
-<p >Subclasses of <a class="el" href="classitk_1_1InPlaceImageFilter.html" title="Base class for filters that take an image as input and overwrite that image as the output.">InPlaceImageFilter</a> must take extra care in how they manage memory using (and perhaps overriding) the implementations of <a class="el" href="classitk_1_1InPlaceImageFilter.html#ab7058d6c16985d224afe9ff73b80876d">ReleaseInputs()</a> and <a class="el" href="classitk_1_1InPlaceImageFilter.html#a5e4c07c371d78af8b2217c8e9eef230a">AllocateOutputs()</a> provided here.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkInPlaceImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkInPlaceImageFilter_8h_source.html">itkInPlaceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abe4adef7763d26d0a64775f032450683" name="abe4adef7763d26d0a64775f032450683"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe4adef7763d26d0a64775f032450683">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -95,7 +95,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkRecursiveGaussianImageFilter_8h_source.html">itkRecursiveGaussianImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::RecursiveGaussianImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for computing IIR convolution with an approximation of a Gaussian kernel. </p>
+<p class="formulaDsp">
+\[ \frac{ 1 }{ \sigma \sqrt{ 2 \pi } } \exp{ \left( - \frac{x^2}{ 2 \sigma^2 } \right) } \]
+</p>
+<p ><a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a> is the base class for recursive filters that approximate convolution with the Gaussian kernel. This class implements the recursive filtering method proposed by R.Deriche in IEEE-PAMI Vol.12, No.1, January 1990, pp 78-87, "Fast Algorithms for Low-Level Vision"</p>
+<p >Details of the implementation are described in the technical report: R. Deriche, "Recursively Implementing The Gaussian and Its Derivatives", INRIA, 1993, <a href="ftp://ftp.inria.fr/INRIA/tech-reports/RR/RR-1893.ps.gz">ftp://ftp.inria.fr/INRIA/tech-reports/RR/RR-1893.ps.gz</a></p>
+<p >Further improvements of the algorithm are described in: G. Farnebäck &amp; C.-F. Westin, "Improving Deriche-style Recursive Gaussian
+Filters". J <a class="el" href="namespaceitk_1_1Math.html">Math</a> Imaging Vis 26, 293–299 (2006). <a href="https://doi.org/10.1007/s10851-006-8464-z">https://doi.org/10.1007/s10851-006-8464-z</a></p>
+<p >As compared to <a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">itk::DiscreteGaussianImageFilter</a>, this filter tends to be faster for large kernels, and it can take the derivative of the blurred image in one step. Also, note that we have <a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html#a4eb60805326e6ee3815c0872d1fc9d6e">itk::RecursiveGaussianImageFilter::SetSigma()</a>, but <a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html#af01b5c4a3c6f340332b0ae1e639cda82">itk::DiscreteGaussianImageFilter::SetVariance()</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkRecursiveGaussianImageFilter_8h_source.html#l00100">100</a> of file <a class="el" href="itkRecursiveGaussianImageFilter_8h_source.html">itkRecursiveGaussianImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::RecursiveGaussianImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -896,26 +915,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::RecursiveGaussianImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Base class for computing IIR convolution with an approximation of a Gaussian kernel. </p>
-<p class="formulaDsp">
-\[ \frac{ 1 }{ \sigma \sqrt{ 2 \pi } } \exp{ \left( - \frac{x^2}{ 2 \sigma^2 } \right) } \]
-</p>
-<p ><a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html" title="Base class for computing IIR convolution with an approximation of a Gaussian kernel.">RecursiveGaussianImageFilter</a> is the base class for recursive filters that approximate convolution with the Gaussian kernel. This class implements the recursive filtering method proposed by R.Deriche in IEEE-PAMI Vol.12, No.1, January 1990, pp 78-87, "Fast Algorithms for Low-Level Vision"</p>
-<p >Details of the implementation are described in the technical report: R. Deriche, "Recursively Implementing The Gaussian and Its Derivatives", INRIA, 1993, <a href="ftp://ftp.inria.fr/INRIA/tech-reports/RR/RR-1893.ps.gz">ftp://ftp.inria.fr/INRIA/tech-reports/RR/RR-1893.ps.gz</a></p>
-<p >Further improvements of the algorithm are described in: G. Farnebäck &amp; C.-F. Westin, "Improving Deriche-style Recursive Gaussian
-Filters". J <a class="el" href="namespaceitk_1_1Math.html">Math</a> Imaging Vis 26, 293–299 (2006). <a href="https://doi.org/10.1007/s10851-006-8464-z">https://doi.org/10.1007/s10851-006-8464-z</a></p>
-<p >As compared to <a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">itk::DiscreteGaussianImageFilter</a>, this filter tends to be faster for large kernels, and it can take the derivative of the blurred image in one step. Also, note that we have <a class="el" href="classitk_1_1RecursiveGaussianImageFilter.html#a4eb60805326e6ee3815c0872d1fc9d6e">itk::RecursiveGaussianImageFilter::SetSigma()</a>, but <a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html#af01b5c4a3c6f340332b0ae1e639cda82">itk::DiscreteGaussianImageFilter::SetVariance()</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiscreteGaussianImageFilter.html" title="Blurs an image by separable convolution with discrete gaussian kernels. This filter performs Gaussian...">DiscreteGaussianImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkRecursiveGaussianImageFilter_8h_source.html#l00100">100</a> of file <a class="el" href="itkRecursiveGaussianImageFilter_8h_source.html">itkRecursiveGaussianImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad5b60107bf0ef971a52981f0be5e5d1b" name="ad5b60107bf0ef971a52981f0be5e5d1b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5b60107bf0ef971a52981f0be5e5d1b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

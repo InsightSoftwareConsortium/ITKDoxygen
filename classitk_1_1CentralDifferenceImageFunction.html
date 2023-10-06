@@ -97,7 +97,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCentralDifferenceImageFunction_8h_source.html">itkCentralDifferenceImageFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TCoordRep = float, typename TOutputType = CovariantVector&lt;double, TInputImage::ImageDimension&gt;&gt;<br />
+class itk::CentralDifferenceImageFunction&lt; TInputImage, TCoordRep, TOutputType &gt;</div><p >Calculate the derivative by central differencing. </p>
+<p >This class is templated over the input image type, the coordinate representation type (e.g. float or double), and the output derivative type.</p>
+<p >This class supports both scalar and vector pixel types for the input image, including <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a> types.</p>
+<p >For vector-pixel image types, the TOutputType template parameter must be set to a vector of appropriate size, to accommodate a result for each pixel component in each dimension. The output is packed by pixel component, i.e.</p>
+<p >[C0D0, C0D1, ..., C0DN, C1D0, ...]</p>
+<p >where C = pixel component, and D = image dimension.</p>
+<p >The output type can be, for example: </p><pre class="fragment">\code CovariantVector&lt;double, numberOfPixelComponents * ImageDimension&gt; \endcode
+</pre><p> or </p><div class="fragment"><div class="line">Matrix&lt;double, numberOfPixelComponents, ImageDimension&gt; </div>
+</div><!-- fragment --><p >Possible improvements:</p>
+<p >1) speed performance: The template-specialization of the Evaluate*() methods (needed to support vector-pixel types) incur a performance penalty for the scalar-pixel case, when compared with previous scalar-only versions of the code. On MacOS (2.4GHz Core 2 Duo, gcc 4.2) the penalty is 0.5-2%, depending on the method. To recover this loss, the specialization of the methods would have to be done such that a nested subroutine need not be called, ie the specialization is performed on the Evaluate* methods directly. At the moment is seems this can't be done without requiring a template parameter on the methods.</p>
+<p >2) the use of <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> operators may improve efficiency. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkCentralDifferenceImageFunction_8h_source.html#l00076">76</a> of file <a class="el" href="itkCentralDifferenceImageFunction_8h_source.html">itkCentralDifferenceImageFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CentralDifferenceImageFunction&lt; TInputImage, TCoordRep, TOutputType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -458,22 +473,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TCoordRep = float, typename TOutputType = CovariantVector&lt;double, TInputImage::ImageDimension&gt;&gt;<br />
-class itk::CentralDifferenceImageFunction&lt; TInputImage, TCoordRep, TOutputType &gt;</div><p >Calculate the derivative by central differencing. </p>
-<p >This class is templated over the input image type, the coordinate representation type (e.g. float or double), and the output derivative type.</p>
-<p >This class supports both scalar and vector pixel types for the input image, including <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a> types.</p>
-<p >For vector-pixel image types, the TOutputType template parameter must be set to a vector of appropriate size, to accommodate a result for each pixel component in each dimension. The output is packed by pixel component, i.e.</p>
-<p >[C0D0, C0D1, ..., C0DN, C1D0, ...]</p>
-<p >where C = pixel component, and D = image dimension.</p>
-<p >The output type can be, for example: </p><pre class="fragment">\code CovariantVector&lt;double, numberOfPixelComponents * ImageDimension&gt; \endcode
-</pre><p> or </p><div class="fragment"><div class="line">Matrix&lt;double, numberOfPixelComponents, ImageDimension&gt; </div>
-</div><!-- fragment --><p >Possible improvements:</p>
-<p >1) speed performance: The template-specialization of the Evaluate*() methods (needed to support vector-pixel types) incur a performance penalty for the scalar-pixel case, when compared with previous scalar-only versions of the code. On MacOS (2.4GHz Core 2 Duo, gcc 4.2) the penalty is 0.5-2%, depending on the method. To recover this loss, the specialization of the methods would have to be done such that a nested subroutine need not be called, ie the specialization is performed on the Evaluate* methods directly. At the moment is seems this can't be done without requiring a template parameter on the methods.</p>
-<p >2) the use of <a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> operators may improve efficiency. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkCentralDifferenceImageFunction_8h_source.html#l00076">76</a> of file <a class="el" href="itkCentralDifferenceImageFunction_8h_source.html">itkCentralDifferenceImageFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1594bd0adcacb1eea48e267125ed40f6" name="a1594bd0adcacb1eea48e267125ed40f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1594bd0adcacb1eea48e267125ed40f6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

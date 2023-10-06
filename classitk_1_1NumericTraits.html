@@ -92,7 +92,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNumericTraits_8h_source.html">itkNumericTraits.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class itk::NumericTraits&lt; T &gt;</div><p >Define additional traits for native types such as int or float. </p>
+<p >Define numeric traits for std::vector.</p>
+<p ><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> is used to extend the traits associated with native types such as float, char, int, and so on. These traits are extensions of the standard numeric_limits defined by the C++ compilers. Some of the added traits include minimum and maximum value; accumulation type; etc.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href=</li>
+</ul>
+</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Component type of std::vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>We provide here a generic implementation based on creating types of std::vector whose components are the types of the <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> from the original std::vector components. This implementation require support for partial specializations, since it is based on the concept that: <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a>&lt;std::vector&lt; T &gt; &gt; is defined piecewise by std::vector&lt; NumericTraits&lt; T &gt; &gt;</p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classitk_1_1NumericTraits.html#a5c2c22d63e30b02b607875bcc7e9801a">Zero()</a>, <a class="el" href="classitk_1_1NumericTraits.html#a90e1c163434b21ee5df4bbdedd7a6d00">One()</a>, <a class="el" href="classitk_1_1NumericTraits.html#a40826e6b55e0fec2457fed6075d9e1f1">min()</a> and <a class="el" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">max()</a> methods here take references to a pixel as input. This is due to the fact that the length of the std::vector is not known until run-time. Since the most common use of Zero and One is for comparison purposes or initialization of sums etc, this might just as easily be re-written with a pixel passed in as a reference and the length is inferred from this pixel.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNumericTraits_8h_source.html#l00059">59</a> of file <a class="el" href="itkNumericTraits_8h_source.html">itkNumericTraits.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NumericTraits&lt; T &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -179,28 +200,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a5c2c22d63e30b02b607875bcc7e9801a"><td class="memItemLeft" align="right" valign="top">static const T ITKCommon_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NumericTraits.html#a5c2c22d63e30b02b607875bcc7e9801a">Zero</a></td></tr>
 <tr class="separator:a5c2c22d63e30b02b607875bcc7e9801a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class itk::NumericTraits&lt; T &gt;</div><p >Define additional traits for native types such as int or float. </p>
-<p >Define numeric traits for std::vector.</p>
-<p ><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> is used to extend the traits associated with native types such as float, char, int, and so on. These traits are extensions of the standard numeric_limits defined by the C++ compilers. Some of the added traits include minimum and maximum value; accumulation type; etc.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href=</li>
-</ul>
-</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Component type of std::vector</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>We provide here a generic implementation based on creating types of std::vector whose components are the types of the <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> from the original std::vector components. This implementation require support for partial specializations, since it is based on the concept that: <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a>&lt;std::vector&lt; T &gt; &gt; is defined piecewise by std::vector&lt; NumericTraits&lt; T &gt; &gt;</p>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classitk_1_1NumericTraits.html#a5c2c22d63e30b02b607875bcc7e9801a">Zero()</a>, <a class="el" href="classitk_1_1NumericTraits.html#a90e1c163434b21ee5df4bbdedd7a6d00">One()</a>, <a class="el" href="classitk_1_1NumericTraits.html#a40826e6b55e0fec2457fed6075d9e1f1">min()</a> and <a class="el" href="classitk_1_1NumericTraits.html#a1341dd4e5b9b45217923f82b9175fb2d">max()</a> methods here take references to a pixel as input. This is due to the fact that the length of the std::vector is not known until run-time. Since the most common use of Zero and One is for comparison purposes or initialization of sums etc, this might just as easily be re-written with a pixel passed in as a reference and the length is inferred from this pixel.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNumericTraits_8h_source.html#l00059">59</a> of file <a class="el" href="itkNumericTraits_8h_source.html">itkNumericTraits.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af71138b6a9d2f75af9e00bea334079bc" name="af71138b6a9d2f75af9e00bea334079bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af71138b6a9d2f75af9e00bea334079bc">&#9670;&nbsp;</a></span>AbsType</h2>
 

@@ -94,7 +94,37 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkScalarToRGBColormapImageFilter_8h_source.html">itkScalarToRGBColormapImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::ScalarToRGBColormapImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Implements pixel-wise intensity-&gt;rgb mapping operation on one image. </p>
+<p >This class is parameterized over the type of the input image and the type of the output image.</p>
+<p >The input image's scalar pixel values are mapped into a color map. The color map is specified by passing the SetColormap function one of the predefined maps. The following selects the "RGBColormapFilterEnum::Hot" colormap: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> colormapImageFilter = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RGBFilterType::New</a>();</div>
+<div class="line">colormapImageFilter-&gt;SetColormap( RGBFilterType::Hot );</div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+</div><!-- fragment --><p >You can also specify a custom color map. This is done by creating a CustomColormapFunction, and then creating lists of values for the red, green, and blue channel. An example of setting the red channel of a colormap with only 2 colors is given below. The blue and green channels should be specified in the same manner.</p>
+<div class="fragment"><div class="line"><span class="comment">// Create the custom colormap</span></div>
+<div class="line"><span class="keyword">using</span> <a class="code hl_typedef" href="classitk_1_1ScalarToRGBColormapImageFilter.html#ad9c67befbbbb799ec8fdc1b36e39805f">ColormapType</a> = <a class="code hl_class" href="classitk_1_1Function_1_1CustomColormapFunction.html">itk::Function::CustomColormapFunction</a>&lt;RealImageType::PixelType,</div>
+<div class="line">RGBImageType::PixelType&gt;;</div>
+<div class="line"><span class="keyword">auto</span> colormap = <a class="code hl_function" href="classitk_1_1Object.html#abd47887c0b027fb8aa273251f4ee8a9a">ColormapType::New</a>();</div>
+<div class="line"><span class="comment">// Setup the red channel of the colormap</span></div>
+<div class="line">ColormapType::ChannelType redChannel;</div>
+<div class="line">redChannel.push_back(0); redChannel.push_back(255);</div>
+<div class="line">colormap-&gt;SetRedChannel( channel );</div>
+<div class="ttc" id="aclassitk_1_1Function_1_1CustomColormapFunction_html"><div class="ttname"><a href="classitk_1_1Function_1_1CustomColormapFunction.html">itk::Function::CustomColormapFunction</a></div><div class="ttdoc">Function object which maps a scalar value into an RGB colormap value.</div><div class="ttdef"><b>Definition:</b> <a href="itkCustomColormapFunction_8h_source.html#l00049">itkCustomColormapFunction.h:50</a></div></div>
+<div class="ttc" id="aclassitk_1_1Object_html_abd47887c0b027fb8aa273251f4ee8a9a"><div class="ttname"><a href="classitk_1_1Object.html#abd47887c0b027fb8aa273251f4ee8a9a">itk::Object::New</a></div><div class="ttdeci">static Pointer New()</div></div>
+<div class="ttc" id="aclassitk_1_1ScalarToRGBColormapImageFilter_html_ad9c67befbbbb799ec8fdc1b36e39805f"><div class="ttname"><a href="classitk_1_1ScalarToRGBColormapImageFilter.html#ad9c67befbbbb799ec8fdc1b36e39805f">itk::ScalarToRGBColormapImageFilter::ColormapType</a></div><div class="ttdeci">Function::ColormapFunction&lt; InputImagePixelType, OutputImagePixelType &gt; ColormapType</div><div class="ttdef"><b>Definition:</b> <a href="itkScalarToRGBColormapImageFilter_8h_source.html#l00158">itkScalarToRGBColormapImageFilter.h:158</a></div></div>
+</div><!-- fragment --><p >The range of values present in the input image is the range that is mapped to the entire range of colors.</p>
+<p >This code was contributed in the Insight Journal paper: "Meeting Andy Warhol Somewhere Over the Rainbow: RGB Colormapping and ITK" by Tustison N., Zhang H., Lehmann G., Yushkevich P., Gee J. <a href="https://www.insight-journal.org/browse/publication/285">https://www.insight-journal.org/browse/publication/285</a></p>
+<dl class="section see"><dt>See also</dt><dd>BinaryFunctionImageFilter TernaryFunctionImageFilter</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkScalarToRGBColormapImageFilter_8h_source.html#l00130">130</a> of file <a class="el" href="itkScalarToRGBColormapImageFilter_8h_source.html">itkScalarToRGBColormapImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ScalarToRGBColormapImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -744,37 +774,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::ScalarToRGBColormapImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Implements pixel-wise intensity-&gt;rgb mapping operation on one image. </p>
-<p >This class is parameterized over the type of the input image and the type of the output image.</p>
-<p >The input image's scalar pixel values are mapped into a color map. The color map is specified by passing the SetColormap function one of the predefined maps. The following selects the "RGBColormapFilterEnum::Hot" colormap: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> colormapImageFilter = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">RGBFilterType::New</a>();</div>
-<div class="line">colormapImageFilter-&gt;SetColormap( RGBFilterType::Hot );</div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-</div><!-- fragment --><p >You can also specify a custom color map. This is done by creating a CustomColormapFunction, and then creating lists of values for the red, green, and blue channel. An example of setting the red channel of a colormap with only 2 colors is given below. The blue and green channels should be specified in the same manner.</p>
-<div class="fragment"><div class="line"><span class="comment">// Create the custom colormap</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code hl_typedef" href="classitk_1_1ScalarToRGBColormapImageFilter.html#ad9c67befbbbb799ec8fdc1b36e39805f">ColormapType</a> = <a class="code hl_class" href="classitk_1_1Function_1_1CustomColormapFunction.html">itk::Function::CustomColormapFunction</a>&lt;RealImageType::PixelType,</div>
-<div class="line">RGBImageType::PixelType&gt;;</div>
-<div class="line"><span class="keyword">auto</span> colormap = <a class="code hl_function" href="classitk_1_1Object.html#abd47887c0b027fb8aa273251f4ee8a9a">ColormapType::New</a>();</div>
-<div class="line"><span class="comment">// Setup the red channel of the colormap</span></div>
-<div class="line">ColormapType::ChannelType redChannel;</div>
-<div class="line">redChannel.push_back(0); redChannel.push_back(255);</div>
-<div class="line">colormap-&gt;SetRedChannel( channel );</div>
-<div class="ttc" id="aclassitk_1_1Function_1_1CustomColormapFunction_html"><div class="ttname"><a href="classitk_1_1Function_1_1CustomColormapFunction.html">itk::Function::CustomColormapFunction</a></div><div class="ttdoc">Function object which maps a scalar value into an RGB colormap value.</div><div class="ttdef"><b>Definition:</b> <a href="itkCustomColormapFunction_8h_source.html#l00049">itkCustomColormapFunction.h:50</a></div></div>
-<div class="ttc" id="aclassitk_1_1Object_html_abd47887c0b027fb8aa273251f4ee8a9a"><div class="ttname"><a href="classitk_1_1Object.html#abd47887c0b027fb8aa273251f4ee8a9a">itk::Object::New</a></div><div class="ttdeci">static Pointer New()</div></div>
-<div class="ttc" id="aclassitk_1_1ScalarToRGBColormapImageFilter_html_ad9c67befbbbb799ec8fdc1b36e39805f"><div class="ttname"><a href="classitk_1_1ScalarToRGBColormapImageFilter.html#ad9c67befbbbb799ec8fdc1b36e39805f">itk::ScalarToRGBColormapImageFilter::ColormapType</a></div><div class="ttdeci">Function::ColormapFunction&lt; InputImagePixelType, OutputImagePixelType &gt; ColormapType</div><div class="ttdef"><b>Definition:</b> <a href="itkScalarToRGBColormapImageFilter_8h_source.html#l00158">itkScalarToRGBColormapImageFilter.h:158</a></div></div>
-</div><!-- fragment --><p >The range of values present in the input image is the range that is mapped to the entire range of colors.</p>
-<p >This code was contributed in the Insight Journal paper: "Meeting Andy Warhol Somewhere Over the Rainbow: RGB Colormapping and ITK" by Tustison N., Zhang H., Lehmann G., Yushkevich P., Gee J. <a href="https://www.insight-journal.org/browse/publication/285">https://www.insight-journal.org/browse/publication/285</a></p>
-<dl class="section see"><dt>See also</dt><dd>BinaryFunctionImageFilter TernaryFunctionImageFilter</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkScalarToRGBColormapImageFilter_8h_source.html#l00130">130</a> of file <a class="el" href="itkScalarToRGBColormapImageFilter_8h_source.html">itkScalarToRGBColormapImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad9c67befbbbb799ec8fdc1b36e39805f" name="ad9c67befbbbb799ec8fdc1b36e39805f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9c67befbbbb799ec8fdc1b36e39805f">&#9670;&nbsp;</a></span>ColormapType</h2>
 

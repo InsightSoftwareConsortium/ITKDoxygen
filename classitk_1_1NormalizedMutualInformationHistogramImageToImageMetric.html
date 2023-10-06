@@ -93,7 +93,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNormalizedMutualInformationHistogramImageToImageMetric_8h_source.html">itkNormalizedMutualInformationHistogramImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::NormalizedMutualInformationHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes normalized mutual information between two images to be registered using the histograms of the intensities in the images. </p>
+<p >The type of Normalize Mutual Information implemented in this class is given by the equation</p>
+<p class="formulaDsp">
+\[ \frac{ H(A) + H(B) }{ H(A,B) } \]
+</p>
+<p> Where $ H(A) $ is the entropy of image $ A $, $ H(B) $ is the entropy of image $ B $, and $ H(A,B) $ is the joint entropy of images $ A $ and $ B $.</p>
+<p >Details of this implementation can be found in the book "Medical Image Registration" by Hajnal, Hill and Hawkes. The book is available online at <a href="https://books.google.com/books?id=2dtQNsk-qBQC">https://books.google.com/books?id=2dtQNsk-qBQC</a> The implementation of this class corresponds to equation (30) in Chapter 3 of this book. Note that by slightly changing this class it will be trivial to compute the Normalized Mutual Information measures defined in equations (28) and (29) of the same book.</p>
+<p >This class is templated over the type of the fixed and moving images to be compared. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkNormalizedMutualInformationHistogramImageToImageMetric_8h_source.html#l00052">52</a> of file <a class="el" href="itkNormalizedMutualInformationHistogramImageToImageMetric_8h_source.html">itkNormalizedMutualInformationHistogramImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NormalizedMutualInformationHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -808,19 +820,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::NormalizedMutualInformationHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes normalized mutual information between two images to be registered using the histograms of the intensities in the images. </p>
-<p >The type of Normalize Mutual Information implemented in this class is given by the equation</p>
-<p class="formulaDsp">
-\[ \frac{ H(A) + H(B) }{ H(A,B) } \]
-</p>
-<p> Where $ H(A) $ is the entropy of image $ A $, $ H(B) $ is the entropy of image $ B $, and $ H(A,B) $ is the joint entropy of images $ A $ and $ B $.</p>
-<p >Details of this implementation can be found in the book "Medical Image Registration" by Hajnal, Hill and Hawkes. The book is available online at <a href="https://books.google.com/books?id=2dtQNsk-qBQC">https://books.google.com/books?id=2dtQNsk-qBQC</a> The implementation of this class corresponds to equation (30) in Chapter 3 of this book. Note that by slightly changing this class it will be trivial to compute the Normalized Mutual Information measures defined in equations (28) and (29) of the same book.</p>
-<p >This class is templated over the type of the fixed and moving images to be compared. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkNormalizedMutualInformationHistogramImageToImageMetric_8h_source.html#l00052">52</a> of file <a class="el" href="itkNormalizedMutualInformationHistogramImageToImageMetric_8h_source.html">itkNormalizedMutualInformationHistogramImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acac8db34424478b410cc3cea0f110036" name="acac8db34424478b410cc3cea0f110036"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acac8db34424478b410cc3cea0f110036">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

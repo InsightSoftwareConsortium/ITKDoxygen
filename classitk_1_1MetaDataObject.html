@@ -96,7 +96,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename MetaDataObjectType&gt;<br />
+class itk::MetaDataObject&lt; MetaDataObjectType &gt;</div><p >Allows arbitrary data types to be stored as <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> types, and to be stored in a <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Hans J. Johnson</dd></dl>
+<p>The <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> class is a templated class that is a specialization of the <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> type. This class allows arbitrary data types to be stored as <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> types, and to be stored in a <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a>.</p>
+<p >Any class or built in type that has valid copy constructor and operator= can be wrapped directly with this simple template type.</p>
+<p >Classes or built in types that do not have valid copy constructors or operator= implemented will have to implement those functions by deriving from MetaDataObject&lt;MetaDataObjectType&gt; and redefining the copy constructor and initializing constructor and the Get/Set functions to work around those deficiencies.</p>
+<p >The behavior of the <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">MetaDataObject&lt;Type&gt;::Print()</a> function has many plausible application dependent implementations. The default implementation prints the string "[UNKNOWN PRINT CHARACTERISTICS]" that works for all possible <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> types.</p>
+<p >The application developer may overload the default implementation to provide a specialized <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">Print()</a> characteristics to produce results desirable for their application. A set of very crude Macros {NATIVE_TYPE_METADATAPRINT, ITK_OBJECT_TYPE_METADATAPRINT_1COMMA, ITK_IMAGE_TYPE_METADATAPRINT } are provided to facilitate a very simple implementation, and as an example. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00075">75</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MetaDataObject&lt; MetaDataObjectType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -258,18 +269,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename MetaDataObjectType&gt;<br />
-class itk::MetaDataObject&lt; MetaDataObjectType &gt;</div><p >Allows arbitrary data types to be stored as <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> types, and to be stored in a <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a>. </p>
-<dl class="section author"><dt>Author</dt><dd>Hans J. Johnson</dd></dl>
-<p>The <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> class is a templated class that is a specialization of the <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> type. This class allows arbitrary data types to be stored as <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> types, and to be stored in a <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a>.</p>
-<p >Any class or built in type that has valid copy constructor and operator= can be wrapped directly with this simple template type.</p>
-<p >Classes or built in types that do not have valid copy constructors or operator= implemented will have to implement those functions by deriving from MetaDataObject&lt;MetaDataObjectType&gt; and redefining the copy constructor and initializing constructor and the Get/Set functions to work around those deficiencies.</p>
-<p >The behavior of the <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">MetaDataObject&lt;Type&gt;::Print()</a> function has many plausible application dependent implementations. The default implementation prints the string "[UNKNOWN PRINT CHARACTERISTICS]" that works for all possible <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> types.</p>
-<p >The application developer may overload the default implementation to provide a specialized <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">Print()</a> characteristics to produce results desirable for their application. A set of very crude Macros {NATIVE_TYPE_METADATAPRINT, ITK_OBJECT_TYPE_METADATAPRINT_1COMMA, ITK_IMAGE_TYPE_METADATAPRINT } are provided to facilitate a very simple implementation, and as an example. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00075">75</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aeeacd3a5e07d3f42543c3dd82827e9ff" name="aeeacd3a5e07d3f42543c3dd82827e9ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeeacd3a5e07d3f42543c3dd82827e9ff">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

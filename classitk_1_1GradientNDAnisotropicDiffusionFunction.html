@@ -96,7 +96,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGradientNDAnisotropicDiffusionFunction_8h_source.html">itkGradientNDAnisotropicDiffusionFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::GradientNDAnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class implements an N-dimensional version of the classic Perona-Malik anisotropic diffusion equation for scalar-valued images. See itkAnisotropicDiffusionFunction for an overview of the anisotropic diffusion framework and equation.</p>
+<dl class="section user"><dt></dt><dd>The conductance term for this implementation is chosen as a function of the gradient magnitude of the image at each point, reducing the strength of diffusion at edge pixels.</dd></dl>
+<p class="formulaDsp">
+\[C(\mathbf{x}) = e^{-(\frac{\parallel \nabla U(\mathbf{x}) \parallel}{K})^2}\]
+</p>
+<p>.</p>
+<dl class="section user"><dt></dt><dd>The numerical implementation of this equation is similar to that described in the Perona-Malik paper below, but uses a more robust technique for gradient magnitude estimation and has been generalized to N-dimensions.</dd></dl>
+<dl class="section user"><dt>References</dt><dd>Pietro Perona and Jalhandra Malik, `&lsquo;Scale-space and edge detection using anisotropic diffusion,&rsquo;' IEEE Transactions on Pattern Analysis Machine Intelligence, vol. 12, pp. 629-639, 1990.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VectorAnisotropicDiffusionFunction.html">VectorAnisotropicDiffusionFunction</a> </dd>
+<dd>
+VectorGradientAnisotropicDiffusionFunction </dd>
+<dd>
+<a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkGradientNDAnisotropicDiffusionFunction_8h_source.html#l00061">61</a> of file <a class="el" href="itkGradientNDAnisotropicDiffusionFunction_8h_source.html">itkGradientNDAnisotropicDiffusionFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GradientNDAnisotropicDiffusionFunction&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -354,26 +373,7 @@ Static Protected Attributes</h2></td></tr>
 <tr class="memitem:aec7bf145c4debf8728b1ff69e8866872"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1GradientNDAnisotropicDiffusionFunction.html#aec7bf145c4debf8728b1ff69e8866872">m_MIN_NORM</a></td></tr>
 <tr class="separator:aec7bf145c4debf8728b1ff69e8866872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::GradientNDAnisotropicDiffusionFunction&lt; TImage &gt;</div><p >This class implements an N-dimensional version of the classic Perona-Malik anisotropic diffusion equation for scalar-valued images. See itkAnisotropicDiffusionFunction for an overview of the anisotropic diffusion framework and equation.</p>
-<dl class="section user"><dt></dt><dd>The conductance term for this implementation is chosen as a function of the gradient magnitude of the image at each point, reducing the strength of diffusion at edge pixels.</dd></dl>
-<p class="formulaDsp">
-\[C(\mathbf{x}) = e^{-(\frac{\parallel \nabla U(\mathbf{x}) \parallel}{K})^2}\]
-</p>
-<p>.</p>
-<dl class="section user"><dt></dt><dd>The numerical implementation of this equation is similar to that described in the Perona-Malik paper below, but uses a more robust technique for gradient magnitude estimation and has been generalized to N-dimensions.</dd></dl>
-<dl class="section user"><dt>References</dt><dd>Pietro Perona and Jalhandra Malik, `&lsquo;Scale-space and edge detection using anisotropic diffusion,&rsquo;' IEEE Transactions on Pattern Analysis Machine Intelligence, vol. 12, pp. 629-639, 1990.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AnisotropicDiffusionFunction.html">AnisotropicDiffusionFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VectorAnisotropicDiffusionFunction.html">VectorAnisotropicDiffusionFunction</a> </dd>
-<dd>
-VectorGradientAnisotropicDiffusionFunction </dd>
-<dd>
-<a class="el" href="classitk_1_1CurvatureNDAnisotropicDiffusionFunction.html">CurvatureNDAnisotropicDiffusionFunction</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkGradientNDAnisotropicDiffusionFunction_8h_source.html#l00061">61</a> of file <a class="el" href="itkGradientNDAnisotropicDiffusionFunction_8h_source.html">itkGradientNDAnisotropicDiffusionFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a44494a7499f2cb65d56ed17a404b4ec0" name="a44494a7499f2cb65d56ed17a404b4ec0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44494a7499f2cb65d56ed17a404b4ec0">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

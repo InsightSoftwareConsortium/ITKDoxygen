@@ -92,7 +92,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPoint_8h_source.html">itkPoint.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPointContainer, typename TWeightContainer&gt;<br />
+class itk::BarycentricCombination&lt; TPointContainer, TWeightContainer &gt;</div><p >Computes the barycentric combination of an array of N points. </p>
+<p >This class computes the barycentric combination of an array of N points.</p>
+<p >An array of (N-1) values is expected to weight the contribution of the first (N-1) points, the weight of the Nth point is computed to ensure that the N weights sum 1.</p>
+<p >This method computes:</p>
+<p class="formulaDsp">
+\[ \overrightarrow{P}= \sum_{i=1}^{N-1} w_i * \overrightarrow{P}_i + \left(1- \sum_{i=1}^{N-1} w_i\right) * \overrightarrow{P}_N \]
+</p>
+<p >The points are expected to be stored in an itkContainer class like <a class="el" href="classitk_1_1VectorContainer.html" title="Define a front-end to the STL &quot;vector&quot; container that conforms to the IndexedContainerInterface.">itk::VectorContainer</a>, responding to the Begin(), End(), Value() API.</p>
+<p >The weights are expected to be stored in any array-like container having a operator[i]. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkPoint_8h_source.html#l00347">347</a> of file <a class="el" href="itkPoint_8h_source.html">itkPoint.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:af836181ae4108591c63ea72d5955c110"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BarycentricCombination.html#af836181ae4108591c63ea72d5955c110">PointContainerPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">PointContainerType::Pointer</a></td></tr>
@@ -116,20 +129,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a00e8e8e218bcac07d5174157508f8171"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1BarycentricCombination.html#aa7a95119e90f3b2eab0f895d7f869dd0">PointType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1BarycentricCombination.html#a00e8e8e218bcac07d5174157508f8171">Evaluate</a> (const <a class="el" href="classitk_1_1BarycentricCombination.html#af836181ae4108591c63ea72d5955c110">PointContainerPointer</a> &amp;points, const <a class="el" href="classitk_1_1BarycentricCombination.html#abe2a70969d35f6082da3668b7eab0524">WeightContainerType</a> &amp;weights)</td></tr>
 <tr class="separator:a00e8e8e218bcac07d5174157508f8171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPointContainer, typename TWeightContainer&gt;<br />
-class itk::BarycentricCombination&lt; TPointContainer, TWeightContainer &gt;</div><p >Computes the barycentric combination of an array of N points. </p>
-<p >This class computes the barycentric combination of an array of N points.</p>
-<p >An array of (N-1) values is expected to weight the contribution of the first (N-1) points, the weight of the Nth point is computed to ensure that the N weights sum 1.</p>
-<p >This method computes:</p>
-<p class="formulaDsp">
-\[ \overrightarrow{P}= \sum_{i=1}^{N-1} w_i * \overrightarrow{P}_i + \left(1- \sum_{i=1}^{N-1} w_i\right) * \overrightarrow{P}_N \]
-</p>
-<p >The points are expected to be stored in an itkContainer class like <a class="el" href="classitk_1_1VectorContainer.html" title="Define a front-end to the STL &quot;vector&quot; container that conforms to the IndexedContainerInterface.">itk::VectorContainer</a>, responding to the Begin(), End(), Value() API.</p>
-<p >The weights are expected to be stored in any array-like container having a operator[i]. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkPoint_8h_source.html#l00347">347</a> of file <a class="el" href="itkPoint_8h_source.html">itkPoint.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af836181ae4108591c63ea72d5955c110" name="af836181ae4108591c63ea72d5955c110"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af836181ae4108591c63ea72d5955c110">&#9670;&nbsp;</a></span>PointContainerPointer</h2>
 

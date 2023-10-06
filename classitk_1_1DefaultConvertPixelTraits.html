@@ -91,7 +91,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDefaultConvertPixelTraits_8h_source.html">itkDefaultConvertPixelTraits.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename PixelType&gt;<br />
+class itk::DefaultConvertPixelTraits&lt; PixelType &gt;</div><p >Traits class used to by ConvertPixels to convert blocks of pixels. </p>
+<p >TOutputPixelType is the destination type. The input type is inferred by the templated static function Convert.</p>
+<p >This implementation, does a simple assignment operator, so if you are going from from a higher bit representation to a lower bit one (int to char), you may want to specialize and add some sort of transfer function. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultConvertPixelTraits_8h_source.html#l00041">41</a> of file <a class="el" href="itkDefaultConvertPixelTraits_8h_source.html">itkDefaultConvertPixelTraits.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aa1f65c7f0562f977f6de9566afe70009"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultConvertPixelTraits.html#aa1f65c7f0562f977f6de9566afe70009">ComponentType</a> = typename PixelType::ComponentType</td></tr>
@@ -111,14 +118,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c286c03ad8492301fd8a87d85a30aa8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html#aa1f65c7f0562f977f6de9566afe70009">ComponentType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultConvertPixelTraits.html#a1c286c03ad8492301fd8a87d85a30aa8">GetScalarValue</a> (const PixelType &amp;pixel)</td></tr>
 <tr class="separator:a1c286c03ad8492301fd8a87d85a30aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename PixelType&gt;<br />
-class itk::DefaultConvertPixelTraits&lt; PixelType &gt;</div><p >Traits class used to by ConvertPixels to convert blocks of pixels. </p>
-<p >TOutputPixelType is the destination type. The input type is inferred by the templated static function Convert.</p>
-<p >This implementation, does a simple assignment operator, so if you are going from from a higher bit representation to a lower bit one (int to char), you may want to specialize and add some sort of transfer function. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultConvertPixelTraits_8h_source.html#l00041">41</a> of file <a class="el" href="itkDefaultConvertPixelTraits_8h_source.html">itkDefaultConvertPixelTraits.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa1f65c7f0562f977f6de9566afe70009" name="aa1f65c7f0562f977f6de9566afe70009"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1f65c7f0562f977f6de9566afe70009">&#9670;&nbsp;</a></span>ComponentType</h2>
 

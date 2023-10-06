@@ -95,7 +95,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkProjectionImageFilter_8h_source.html">itkProjectionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TAccumulator&gt;<br />
+class itk::ProjectionImageFilter&lt; TInputImage, TOutputImage, TAccumulator &gt;</div><p >Implements an accumulation of an image along a selected direction. </p>
+<p >This class accumulates an image along a dimension and reduces the size of this dimension to 1. The dimension being accumulated is set by ProjectionDimension.</p>
+<p >Each pixel is the cumulative sum of the pixels along the collapsed dimension and reduces the size of the accumulated dimension to 1 (only on the accumulated).</p>
+<p >The dimensions of the InputImage and the OutputImage are either the same or dimension of OutputImage is dimension of InputImage minus one. In the latter case, the direction cosine of the output image is set to the identity.</p>
+<p >This class is parameterized over the type of the input image and the type of the output image.</p>
+<p >This class was contributed to the Insight Journal by Emiliano Beronich and Gaetan Lehmann. The original paper can be found at <a href="https://www.insight-journal.org/browse/publication/71">https://www.insight-journal.org/browse/publication/71</a></p>
+<dl class="section author"><dt>Author</dt><dd>Emiliano Beronich </dd>
+<dd>
+Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AccumulateImageFilter.html" title="Implements an accumulation of an image along a selected direction.">AccumulateImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkProjectionImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkProjectionImageFilter_8h_source.html">itkProjectionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ProjectionImageFilter&lt; TInputImage, TOutputImage, TAccumulator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -740,21 +754,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TAccumulator&gt;<br />
-class itk::ProjectionImageFilter&lt; TInputImage, TOutputImage, TAccumulator &gt;</div><p >Implements an accumulation of an image along a selected direction. </p>
-<p >This class accumulates an image along a dimension and reduces the size of this dimension to 1. The dimension being accumulated is set by ProjectionDimension.</p>
-<p >Each pixel is the cumulative sum of the pixels along the collapsed dimension and reduces the size of the accumulated dimension to 1 (only on the accumulated).</p>
-<p >The dimensions of the InputImage and the OutputImage are either the same or dimension of OutputImage is dimension of InputImage minus one. In the latter case, the direction cosine of the output image is set to the identity.</p>
-<p >This class is parameterized over the type of the input image and the type of the output image.</p>
-<p >This class was contributed to the Insight Journal by Emiliano Beronich and Gaetan Lehmann. The original paper can be found at <a href="https://www.insight-journal.org/browse/publication/71">https://www.insight-journal.org/browse/publication/71</a></p>
-<dl class="section author"><dt>Author</dt><dd>Emiliano Beronich </dd>
-<dd>
-Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1AccumulateImageFilter.html" title="Implements an accumulation of an image along a selected direction.">AccumulateImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkProjectionImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkProjectionImageFilter_8h_source.html">itkProjectionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a54c06a3989704a3b2533edce36cea7c0" name="a54c06a3989704a3b2533edce36cea7c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54c06a3989704a3b2533edce36cea7c0">&#9670;&nbsp;</a></span>AccumulatorType</h2>
 

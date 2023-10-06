@@ -93,7 +93,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineDownsampleImageFilter_8h_source.html">itkBSplineDownsampleImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename ResamplerType = BSplineResampleImageFilterBase&lt;TInputImage, TOutputImage&gt;&gt;<br />
+class itk::BSplineDownsampleImageFilter&lt; TInputImage, TOutputImage, ResamplerType &gt;</div><p >Down-samples an image by a factor of 2 using B-Spline filter interpolation. </p>
+<p >This class is the public interface for spline down-sampling as defined by the ResamplerType. Requires the use of a resampler type. If in doubt, the basic itkBSplineResampleImageFilterBase should work fine for most applications.</p>
+<p >This class may also be used to create a smoother by combining it with the upSampler as in the following example: using ResamplerType = itk::BSplineResampleImageFilterBase&lt;ImageType2D, ImageType2D&gt;; using DownsamplerType2D = itk::BSplineDownsampleImageFilter&lt;ImageType2D,ImageType2D,ResamplerType&gt;; using UpsamplerType2D = itk::BSplineUpsampleImageFilter&lt;ImageType2D,ImageType2D,ResamplerType&gt;;</p>
+<p >auto downSampler = DownsamplerType2D::New(); UpsamplerType2D::Pointer upSampler = UpsamplerType2D::New(); int splineOrder = 3; downSampler-&gt;SetSplineOrder(splineOrder); upSampler-&gt;SetSplineOrder(splineOrder);</p>
+<p >downSampler-&gt;SetInput(image); downSampler-&gt;<a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>;</p>
+<p >upSampler-&gt;SetInput( downSampler-&gt;<a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a> ); // output of downSampler is input to upSampler upSampler-&gt;<a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>;</p>
+<p >ImageTypePtr2D outImage2 = upSampler-&gt;<a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a>; // outImage2 is the smoothed imaged</p>
+<p >Limitations: This class requires specification of a resampler type which may be one of: itkBSplineResampleImageFilterBase, itkBSplineL2ResampleImageFilterBase itkBSplineSplineCenteredResampleImageFilterBase, <a class="el" href="classitkBSplineCenteredL2ResampleImageFilterBase.html" title="Uses the &quot;Centered L2&quot; B-Spline pyramid implementation of B-Spline Filters to up/down sample an image...">itkBSplineCenteredL2ResampleImageFilterBase</a> The limitations of these resampler types will apply to this filter. Down-samples only by a factor of 2.</p>
+<dl class="section see"><dt>See also</dt><dd>itkBSplineDownsampleImageFilter </dd>
+<dd>
+itkBSplineL2ResampleImageFilter </dd>
+<dd>
+itkBSplineResampleImageFilterBase </dd>
+<dd>
+itkBSplineCenteredResampleImageFilterBase </dd>
+<dd>
+<a class="el" href="classitkBSplineCenteredL2ResampleImageFilterBase.html" title="Uses the &quot;Centered L2&quot; B-Spline pyramid implementation of B-Spline Filters to up/down sample an image...">itkBSplineCenteredL2ResampleImageFilterBase</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineDownsampleImageFilter_8h_source.html#l00092">92</a> of file <a class="el" href="itkBSplineDownsampleImageFilter_8h_source.html">itkBSplineDownsampleImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineDownsampleImageFilter&lt; TInputImage, TOutputImage, ResamplerType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -762,28 +783,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename ResamplerType = BSplineResampleImageFilterBase&lt;TInputImage, TOutputImage&gt;&gt;<br />
-class itk::BSplineDownsampleImageFilter&lt; TInputImage, TOutputImage, ResamplerType &gt;</div><p >Down-samples an image by a factor of 2 using B-Spline filter interpolation. </p>
-<p >This class is the public interface for spline down-sampling as defined by the ResamplerType. Requires the use of a resampler type. If in doubt, the basic itkBSplineResampleImageFilterBase should work fine for most applications.</p>
-<p >This class may also be used to create a smoother by combining it with the upSampler as in the following example: using ResamplerType = itk::BSplineResampleImageFilterBase&lt;ImageType2D, ImageType2D&gt;; using DownsamplerType2D = itk::BSplineDownsampleImageFilter&lt;ImageType2D,ImageType2D,ResamplerType&gt;; using UpsamplerType2D = itk::BSplineUpsampleImageFilter&lt;ImageType2D,ImageType2D,ResamplerType&gt;;</p>
-<p >auto downSampler = DownsamplerType2D::New(); UpsamplerType2D::Pointer upSampler = UpsamplerType2D::New(); int splineOrder = 3; downSampler-&gt;SetSplineOrder(splineOrder); upSampler-&gt;SetSplineOrder(splineOrder);</p>
-<p >downSampler-&gt;SetInput(image); downSampler-&gt;<a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>;</p>
-<p >upSampler-&gt;SetInput( downSampler-&gt;<a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a> ); // output of downSampler is input to upSampler upSampler-&gt;<a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a>;</p>
-<p >ImageTypePtr2D outImage2 = upSampler-&gt;<a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a>; // outImage2 is the smoothed imaged</p>
-<p >Limitations: This class requires specification of a resampler type which may be one of: itkBSplineResampleImageFilterBase, itkBSplineL2ResampleImageFilterBase itkBSplineSplineCenteredResampleImageFilterBase, <a class="el" href="classitkBSplineCenteredL2ResampleImageFilterBase.html" title="Uses the &quot;Centered L2&quot; B-Spline pyramid implementation of B-Spline Filters to up/down sample an image...">itkBSplineCenteredL2ResampleImageFilterBase</a> The limitations of these resampler types will apply to this filter. Down-samples only by a factor of 2.</p>
-<dl class="section see"><dt>See also</dt><dd>itkBSplineDownsampleImageFilter </dd>
-<dd>
-itkBSplineL2ResampleImageFilter </dd>
-<dd>
-itkBSplineResampleImageFilterBase </dd>
-<dd>
-itkBSplineCenteredResampleImageFilterBase </dd>
-<dd>
-<a class="el" href="classitkBSplineCenteredL2ResampleImageFilterBase.html" title="Uses the &quot;Centered L2&quot; B-Spline pyramid implementation of B-Spline Filters to up/down sample an image...">itkBSplineCenteredL2ResampleImageFilterBase</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineDownsampleImageFilter_8h_source.html#l00092">92</a> of file <a class="el" href="itkBSplineDownsampleImageFilter_8h_source.html">itkBSplineDownsampleImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7ee04223d7026eae1f7e017031d7ca9e" name="a7ee04223d7026eae1f7e017031d7ca9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ee04223d7026eae1f7e017031d7ca9e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

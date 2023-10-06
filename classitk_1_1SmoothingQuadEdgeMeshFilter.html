@@ -96,7 +96,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSmoothingQuadEdgeMeshFilter_8h_source.html">itkSmoothingQuadEdgeMeshFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh = TInputMesh&gt;<br />
+class itk::SmoothingQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p ><a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">QuadEdgeMesh</a> Smoothing Filter. </p>
+<p >This filter adjusts point coordinates using Laplacian smoothing. The effect is to "relax" the mesh, making the cells better shaped and the vertices more evenly distributed.</p>
+<p >For one iteration the location of one vertex is computed as follows: </p><p class="formulaDsp">
+\[ \boldsymbol{ v&#39; }_i = v_i + m_RelaxationFactor \cdot \frac{ \sum_j w_{ij} ( \boldsymbol{ v_j } - \boldsymbol{ v_i } ) }{ \sum_j w_{ij} } \]
+</p>
+<p >where \( w_{ij} \) is computed by the means of the set functor CoefficientsComputation</p>
+<p >This process is then repeated for m_NumberOfIterations (the more iterations, the smoother the output mesh will be).</p>
+<p >At each iteration, one can run <a class="el" href="classitk_1_1DelaunayConformingQuadEdgeMeshFilter.html" title="FIXME Add documentation.">DelaunayConformingQuadEdgeMeshFilter</a> resulting a more regular (in terms of connectivity) and smoother mesh. Depending on the mesh size and configuration it could be an expensive process to run it at each iterations, especially if the number of iterations is large. Note that one can still run N iterations without <a class="el" href="classitk_1_1DelaunayConformingQuadEdgeMeshFilter.html" title="FIXME Add documentation.">DelaunayConformingQuadEdgeMeshFilter</a>, then run this filter and apply this process M times. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkSmoothingQuadEdgeMeshFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkSmoothingQuadEdgeMeshFilter_8h_source.html">itkSmoothingQuadEdgeMeshFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SmoothingQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -813,19 +825,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh = TInputMesh&gt;<br />
-class itk::SmoothingQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p ><a class="el" href="classitk_1_1QuadEdgeMesh.html" title="Mesh class for 2D manifolds embedded in ND space.">QuadEdgeMesh</a> Smoothing Filter. </p>
-<p >This filter adjusts point coordinates using Laplacian smoothing. The effect is to "relax" the mesh, making the cells better shaped and the vertices more evenly distributed.</p>
-<p >For one iteration the location of one vertex is computed as follows: </p><p class="formulaDsp">
-\[ \boldsymbol{ v&#39; }_i = v_i + m_RelaxationFactor \cdot \frac{ \sum_j w_{ij} ( \boldsymbol{ v_j } - \boldsymbol{ v_i } ) }{ \sum_j w_{ij} } \]
-</p>
-<p >where \( w_{ij} \) is computed by the means of the set functor CoefficientsComputation</p>
-<p >This process is then repeated for m_NumberOfIterations (the more iterations, the smoother the output mesh will be).</p>
-<p >At each iteration, one can run <a class="el" href="classitk_1_1DelaunayConformingQuadEdgeMeshFilter.html" title="FIXME Add documentation.">DelaunayConformingQuadEdgeMeshFilter</a> resulting a more regular (in terms of connectivity) and smoother mesh. Depending on the mesh size and configuration it could be an expensive process to run it at each iterations, especially if the number of iterations is large. Note that one can still run N iterations without <a class="el" href="classitk_1_1DelaunayConformingQuadEdgeMeshFilter.html" title="FIXME Add documentation.">DelaunayConformingQuadEdgeMeshFilter</a>, then run this filter and apply this process M times. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkSmoothingQuadEdgeMeshFilter_8h_source.html#l00058">58</a> of file <a class="el" href="itkSmoothingQuadEdgeMeshFilter_8h_source.html">itkSmoothingQuadEdgeMeshFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a457bae2679c847e56f01f3c2f708ee52" name="a457bae2679c847e56f01f3c2f708ee52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a457bae2679c847e56f01f3c2f708ee52">&#9670;&nbsp;</a></span>CoefficientsComputation</h2>
 

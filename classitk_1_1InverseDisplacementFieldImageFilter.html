@@ -95,7 +95,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkInverseDisplacementFieldImageFilter_8h_source.html">itkInverseDisplacementFieldImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::InverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse of a displacement field. </p>
+<p ><a class="el" href="classitk_1_1InverseDisplacementFieldImageFilter.html" title="Computes the inverse of a displacement field.">InverseDisplacementFieldImageFilter</a> takes a displacement field as input and computes the displacement field that is its inverse. If the input displacement field was mapping coordinates from a space A into a space B, the output of this filter will map coordinates from the space B into the space A.</p>
+<p >Given that both the input and output displacement field are represented as discrete images with pixel type vector, the inverse will be only an estimation and will probably not correspond to a perfect inverse. The precision of the inverse can be improved at the price of increasing the computation time and memory consumption in this filter.</p>
+<p >The method used for computing the inverse displacement field is to subsample the input field using a regular grid and create Kerned-Base Spline in which the reference landmarks are the coordinates of the deformed point and the target landmarks are the negative of the displacement vectors. The kernel-base spline is then used for regularly sampling the output space and recover vector values for every single pixel.</p>
+<p >The subsampling factor used for the regular grid of the input field will determine the number of landmarks in the KernelBased spline and therefore it will have a dramatic effect on both the precision of output displacement field and the computational time required for the filter to complete the estimation. A large subsampling factor will result in few landmarks in the KernelBased spline, therefore on fast computation and low precision. A small subsampling factor will result in a large number of landmarks in the KernelBased spline, therefore a large memory consumption, long computation time and high precision for the inverse estimation.</p>
+<p >This filter expects both the input and output images to be of pixel type <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkInverseDisplacementFieldImageFilter_8h_source.html#l00065">65</a> of file <a class="el" href="itkInverseDisplacementFieldImageFilter_8h_source.html">itkInverseDisplacementFieldImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -785,17 +795,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::InverseDisplacementFieldImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse of a displacement field. </p>
-<p ><a class="el" href="classitk_1_1InverseDisplacementFieldImageFilter.html" title="Computes the inverse of a displacement field.">InverseDisplacementFieldImageFilter</a> takes a displacement field as input and computes the displacement field that is its inverse. If the input displacement field was mapping coordinates from a space A into a space B, the output of this filter will map coordinates from the space B into the space A.</p>
-<p >Given that both the input and output displacement field are represented as discrete images with pixel type vector, the inverse will be only an estimation and will probably not correspond to a perfect inverse. The precision of the inverse can be improved at the price of increasing the computation time and memory consumption in this filter.</p>
-<p >The method used for computing the inverse displacement field is to subsample the input field using a regular grid and create Kerned-Base Spline in which the reference landmarks are the coordinates of the deformed point and the target landmarks are the negative of the displacement vectors. The kernel-base spline is then used for regularly sampling the output space and recover vector values for every single pixel.</p>
-<p >The subsampling factor used for the regular grid of the input field will determine the number of landmarks in the KernelBased spline and therefore it will have a dramatic effect on both the precision of output displacement field and the computational time required for the filter to complete the estimation. A large subsampling factor will result in few landmarks in the KernelBased spline, therefore on fast computation and low precision. A small subsampling factor will result in a large number of landmarks in the KernelBased spline, therefore a large memory consumption, long computation time and high precision for the inverse estimation.</p>
-<p >This filter expects both the input and output images to be of pixel type <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a>. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkInverseDisplacementFieldImageFilter_8h_source.html#l00065">65</a> of file <a class="el" href="itkInverseDisplacementFieldImageFilter_8h_source.html">itkInverseDisplacementFieldImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5727d87ecfe3e303270b6ed366eab503" name="a5727d87ecfe3e303270b6ed366eab503"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5727d87ecfe3e303270b6ed366eab503">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

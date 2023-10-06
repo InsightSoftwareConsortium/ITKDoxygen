@@ -95,7 +95,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMorphologicalWatershedFromMarkersImageFilter_8h_source.html">itkMorphologicalWatershedFromMarkersImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TLabelImage&gt;<br />
+class itk::MorphologicalWatershedFromMarkersImageFilter&lt; TInputImage, TLabelImage &gt;</div><p >Morphological watershed transform from markers. </p>
+<p >The watershed transform is a tool for image segmentation that is fast and flexible and potentially fairly parameter free. It was originally derived from a geophysical model of rain falling on a terrain and a variety of more formal definitions have been devised to allow development of practical algorithms. If an image is considered as a terrain and divided into catchment basins then the hope is that each catchment basin would contain an object of interest.</p>
+<p >The output is a label image. A label image, sometimes referred to as a categorical image, has unique values for each region. For example, if a watershed produces 2 regions, all pixels belonging to one region would have value A, and all belonging to the other might have value B. Unassigned pixels, such as watershed lines, might have the background value (0 by convention).</p>
+<p >The simplest way of using the watershed is to preprocess the image we want to segment so that the boundaries of our objects are bright (e.g apply an edge detector) and compute the watershed transform of the edge image. Watershed lines will correspond to the boundaries and our problem will be solved. This is rarely useful in practice because there are always more regional minima than there are objects, either due to noise or natural variations in the object surfaces. Therefore, while many watershed lines do lie on significant boundaries, there are many that don't. Various methods can be used to reduce the number of minima in the image, like thresholding the smallest values, filtering the minima and/or smoothing the image.</p>
+<p >This filter use another approach to avoid the problem of over segmentation: it let the user provide a marker image which mark the minima in the input image and give them a label. The minima are imposed in the input image by the markers. The labels of the output image are the label of the marker image.</p>
+<p >The morphological watershed transform algorithm is described in Chapter 9.2 of Pierre Soille's book "Morphological Image Analysis:
+Principles and Applications", Second Edition, Springer, 2003.</p>
+<p >This code was contributed in the Insight Journal paper: "The watershed transform in ITK - discussion and new developments" by Beare R., Lehmann G. <a href="https://www.insight-journal.org/browse/publication/92">https://www.insight-journal.org/browse/publication/92</a></p>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France. </dd>
+<dd>
+Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">WatershedImageFilter</a>, <a class="el" href="classitk_1_1MorphologicalWatershedImageFilter.html" title="Watershed segmentation implementation with morphological operators.">MorphologicalWatershedImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMorphologicalWatershedFromMarkersImageFilter_8h_source.html#l00081">81</a> of file <a class="el" href="itkMorphologicalWatershedFromMarkersImageFilter_8h_source.html">itkMorphologicalWatershedFromMarkersImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MorphologicalWatershedFromMarkersImageFilter&lt; TInputImage, TLabelImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -761,23 +777,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TLabelImage&gt;<br />
-class itk::MorphologicalWatershedFromMarkersImageFilter&lt; TInputImage, TLabelImage &gt;</div><p >Morphological watershed transform from markers. </p>
-<p >The watershed transform is a tool for image segmentation that is fast and flexible and potentially fairly parameter free. It was originally derived from a geophysical model of rain falling on a terrain and a variety of more formal definitions have been devised to allow development of practical algorithms. If an image is considered as a terrain and divided into catchment basins then the hope is that each catchment basin would contain an object of interest.</p>
-<p >The output is a label image. A label image, sometimes referred to as a categorical image, has unique values for each region. For example, if a watershed produces 2 regions, all pixels belonging to one region would have value A, and all belonging to the other might have value B. Unassigned pixels, such as watershed lines, might have the background value (0 by convention).</p>
-<p >The simplest way of using the watershed is to preprocess the image we want to segment so that the boundaries of our objects are bright (e.g apply an edge detector) and compute the watershed transform of the edge image. Watershed lines will correspond to the boundaries and our problem will be solved. This is rarely useful in practice because there are always more regional minima than there are objects, either due to noise or natural variations in the object surfaces. Therefore, while many watershed lines do lie on significant boundaries, there are many that don't. Various methods can be used to reduce the number of minima in the image, like thresholding the smallest values, filtering the minima and/or smoothing the image.</p>
-<p >This filter use another approach to avoid the problem of over segmentation: it let the user provide a marker image which mark the minima in the input image and give them a label. The minima are imposed in the input image by the markers. The labels of the output image are the label of the marker image.</p>
-<p >The morphological watershed transform algorithm is described in Chapter 9.2 of Pierre Soille's book "Morphological Image Analysis:
-Principles and Applications", Second Edition, Springer, 2003.</p>
-<p >This code was contributed in the Insight Journal paper: "The watershed transform in ITK - discussion and new developments" by Beare R., Lehmann G. <a href="https://www.insight-journal.org/browse/publication/92">https://www.insight-journal.org/browse/publication/92</a></p>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann. Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France. </dd>
-<dd>
-Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">WatershedImageFilter</a>, <a class="el" href="classitk_1_1MorphologicalWatershedImageFilter.html" title="Watershed segmentation implementation with morphological operators.">MorphologicalWatershedImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMorphologicalWatershedFromMarkersImageFilter_8h_source.html#l00081">81</a> of file <a class="el" href="itkMorphologicalWatershedFromMarkersImageFilter_8h_source.html">itkMorphologicalWatershedFromMarkersImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3b0e02a77ff8ab12a05730eff9a2097e" name="a3b0e02a77ff8ab12a05730eff9a2097e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b0e02a77ff8ab12a05730eff9a2097e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

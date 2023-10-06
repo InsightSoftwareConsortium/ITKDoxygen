@@ -96,7 +96,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWarpImageFilter_8h_source.html">itkWarpImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TDisplacementField&gt;<br />
+class itk::WarpImageFilter&lt; TInputImage, TOutputImage, TDisplacementField &gt;</div><p >Warps an image using an input displacement field. </p>
+<p ><a class="el" href="classitk_1_1WarpImageFilter.html" title="Warps an image using an input displacement field.">WarpImageFilter</a> warps an existing image with respect to a given displacement field.</p>
+<p >A displacement field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the input image. The vector type must support element access via operator [].</p>
+<p >The output image is produced by inverse mapping: the output pixels are mapped back onto the input image. This scheme avoids the creation of any holes and overlaps in the output image.</p>
+<p >Each vector in the displacement field represent the distance between a geometric point in the input space and a point in the output space such that:</p>
+<p class="formulaDsp">
+\[ p_{in} = p_{out} + d \]
+</p>
+<p >Typically the mapped position does not correspond to an integer pixel position in the input image. Interpolation via an image function is used to compute values at non-integer positions. The default interpolation typed used is the <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user can specify a particular interpolation function via <a class="el" href="classitk_1_1WarpImageFilter.html#a18045deea5d7e17ba5a7d76f40312b2a">SetInterpolator()</a>. Note that the input interpolator must derive from base class <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
+<p >Position mapped to outside of the input image buffer are assigned a edge padding value.</p>
+<p >The LargestPossibleRegion for the output is inherited from the input displacement field. The output image spacing, origin and orientation may be set via SetOutputSpacing, SetOutputOrigin and SetOutputDirection. The default are respectively a vector of 1's, a vector of 0's and an identity matrix.</p>
+<p >This class is templated over the type of the input image, the type of the output image and the type of the displacement field.</p>
+<p >The input image is set via SetInput. The input displacement field is set via SetDisplacementField.</p>
+<p >This filter is implemented as a multithreaded filter.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the input type, output type and displacement field type all have the same number of dimensions.</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkWarpImageFilter_8h_source.html#l00085">85</a> of file <a class="el" href="itkWarpImageFilter_8h_source.html">itkWarpImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::WarpImageFilter&lt; TInputImage, TOutputImage, TDisplacementField &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -823,31 +847,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TDisplacementField&gt;<br />
-class itk::WarpImageFilter&lt; TInputImage, TOutputImage, TDisplacementField &gt;</div><p >Warps an image using an input displacement field. </p>
-<p ><a class="el" href="classitk_1_1WarpImageFilter.html" title="Warps an image using an input displacement field.">WarpImageFilter</a> warps an existing image with respect to a given displacement field.</p>
-<p >A displacement field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the input image. The vector type must support element access via operator [].</p>
-<p >The output image is produced by inverse mapping: the output pixels are mapped back onto the input image. This scheme avoids the creation of any holes and overlaps in the output image.</p>
-<p >Each vector in the displacement field represent the distance between a geometric point in the input space and a point in the output space such that:</p>
-<p class="formulaDsp">
-\[ p_{in} = p_{out} + d \]
-</p>
-<p >Typically the mapped position does not correspond to an integer pixel position in the input image. Interpolation via an image function is used to compute values at non-integer positions. The default interpolation typed used is the <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user can specify a particular interpolation function via <a class="el" href="classitk_1_1WarpImageFilter.html#a18045deea5d7e17ba5a7d76f40312b2a">SetInterpolator()</a>. Note that the input interpolator must derive from base class <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
-<p >Position mapped to outside of the input image buffer are assigned a edge padding value.</p>
-<p >The LargestPossibleRegion for the output is inherited from the input displacement field. The output image spacing, origin and orientation may be set via SetOutputSpacing, SetOutputOrigin and SetOutputDirection. The default are respectively a vector of 1's, a vector of 0's and an identity matrix.</p>
-<p >This class is templated over the type of the input image, the type of the output image and the type of the displacement field.</p>
-<p >The input image is set via SetInput. The input displacement field is set via SetDisplacementField.</p>
-<p >This filter is implemented as a multithreaded filter.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the input type, output type and displacement field type all have the same number of dimensions.</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkWarpImageFilter_8h_source.html#l00085">85</a> of file <a class="el" href="itkWarpImageFilter_8h_source.html">itkWarpImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac9fec3a67fa78e2d2de0a5d57a88b98e" name="ac9fec3a67fa78e2d2de0a5d57a88b98e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9fec3a67fa78e2d2de0a5d57a88b98e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

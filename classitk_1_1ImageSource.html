@@ -96,7 +96,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageSource_8h_source.html">itkImageSource.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputImage&gt;<br />
+class itk::ImageSource&lt; TOutputImage &gt;</div><p >Base class for all process objects that output image data. </p>
+<p ><a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a> is the base class for all process objects that output image data. Specifically, this class defines the <a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a> method that returns a pointer to the output image. The class also defines some internal private data members that are used to manage streaming of data.</p>
+<p >Memory management in an <a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a> is slightly different than a standard <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>'s always release the bulk data associated with their output prior to <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> being called. ImageSources default to not releasing the bulk data incase that particular memory block is large enough to hold the new output values. This avoids unnecessary deallocation/allocation sequences. <a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a>'s can be forced to use a memory management model similar to the default <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> behaviour by calling <a class="el" href="classitk_1_1ProcessObject.html#a49a2ca13f847b2a502a1f3db841542bb">ProcessObject::ReleaseDataBeforeUpdateFlagOn()</a>. A user may want to set this flag to limit peak memory usage during a pipeline update.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageSource_8h_source.html#l00067">67</a> of file <a class="el" href="itkImageSource_8h_source.html">itkImageSource.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageSource&lt; TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -608,19 +620,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa3cc5566a6e30281f7ebe660d5b6f90b inherit pub_static_methods_structitk_1_1ImageSourceCommon"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classitk_1_1ImageRegionSplitterBase.html">ImageRegionSplitterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1ImageSourceCommon.html#aa3cc5566a6e30281f7ebe660d5b6f90b">GetGlobalDefaultSplitter</a> ()</td></tr>
 <tr class="separator:aa3cc5566a6e30281f7ebe660d5b6f90b inherit pub_static_methods_structitk_1_1ImageSourceCommon"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TOutputImage&gt;<br />
-class itk::ImageSource&lt; TOutputImage &gt;</div><p >Base class for all process objects that output image data. </p>
-<p ><a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a> is the base class for all process objects that output image data. Specifically, this class defines the <a class="el" href="classitk_1_1ImageSource.html#a06c2475882c698eb005ee59bebecc436">GetOutput()</a> method that returns a pointer to the output image. The class also defines some internal private data members that are used to manage streaming of data.</p>
-<p >Memory management in an <a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a> is slightly different than a standard <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>'s always release the bulk data associated with their output prior to <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> being called. ImageSources default to not releasing the bulk data incase that particular memory block is large enough to hold the new output values. This avoids unnecessary deallocation/allocation sequences. <a class="el" href="classitk_1_1ImageSource.html" title="Base class for all process objects that output image data.">ImageSource</a>'s can be forced to use a memory management model similar to the default <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> behaviour by calling <a class="el" href="classitk_1_1ProcessObject.html#a49a2ca13f847b2a502a1f3db841542bb">ProcessObject::ReleaseDataBeforeUpdateFlagOn()</a>. A user may want to set this flag to limit peak memory usage during a pipeline update.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageSource_8h_source.html#l00067">67</a> of file <a class="el" href="itkImageSource_8h_source.html">itkImageSource.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aab6ba73d7ca08b61069f5e04e3b263f5" name="aab6ba73d7ca08b61069f5e04e3b263f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab6ba73d7ca08b61069f5e04e3b263f5">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

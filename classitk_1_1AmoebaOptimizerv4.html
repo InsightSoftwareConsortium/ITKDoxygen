@@ -96,7 +96,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Wrap of the vnl_amoeba algorithm. </p>
+<p ><a class="el" href="classitk_1_1AmoebaOptimizerv4.html" title="Wrap of the vnl_amoeba algorithm.">AmoebaOptimizerv4</a> is a wrapper around the vnl_amoeba algorithm which is an implementation of the Nelder-Meade downhill simplex problem. For most problems, it is a few times slower than a Levenberg-Marquardt algorithm but does not require derivatives of its cost function. It works by creating a simplex (n+1 points in ND space). The cost function is evaluated at each corner of the simplex. The simplex is then modified (by reflecting a corner about the opposite edge, by shrinking the entire simplex, by contracting one edge of the simplex, or by expanding the simplex) in searching for the minimum of the cost function.</p>
+<p >The methods AutomaticInitialSimplex() and <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a5b8dba797da8b8e0c0b4dfeed6ac7ac8">SetInitialSimplexDelta()</a> control whether the optimizer defines the initial simplex automatically (by constructing a very small simplex around the initial position) or uses a user supplied simplex size.</p>
+<p >The method <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#acd784ed8939b7a6e42dfe68262c6f023">SetOptimizeWithRestarts()</a> indicates that the amoeba algorithm should be rerun after if converges. This heuristic increases the chances of escaping from a local optimum. Each time the simplex is initialized with the best solution obtained by the previous runs. The edge length is half of that from the previous iteration. The heuristic is terminated if the total number of iterations is greater-equal than the maximal number of iterations (SetNumberOfIterations) or the difference between the current function value and the best function value is less than a threshold (SetFunctionConvergenceTolerance) and max(|best_parameters_i - current_parameters_i|) is less than a threshold (SetParametersConvergenceTolerance). </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00062">62</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AmoebaOptimizerv4:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -511,14 +518,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Wrap of the vnl_amoeba algorithm. </p>
-<p ><a class="el" href="classitk_1_1AmoebaOptimizerv4.html" title="Wrap of the vnl_amoeba algorithm.">AmoebaOptimizerv4</a> is a wrapper around the vnl_amoeba algorithm which is an implementation of the Nelder-Meade downhill simplex problem. For most problems, it is a few times slower than a Levenberg-Marquardt algorithm but does not require derivatives of its cost function. It works by creating a simplex (n+1 points in ND space). The cost function is evaluated at each corner of the simplex. The simplex is then modified (by reflecting a corner about the opposite edge, by shrinking the entire simplex, by contracting one edge of the simplex, or by expanding the simplex) in searching for the minimum of the cost function.</p>
-<p >The methods AutomaticInitialSimplex() and <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#a5b8dba797da8b8e0c0b4dfeed6ac7ac8">SetInitialSimplexDelta()</a> control whether the optimizer defines the initial simplex automatically (by constructing a very small simplex around the initial position) or uses a user supplied simplex size.</p>
-<p >The method <a class="el" href="classitk_1_1AmoebaOptimizerv4.html#acd784ed8939b7a6e42dfe68262c6f023">SetOptimizeWithRestarts()</a> indicates that the amoeba algorithm should be rerun after if converges. This heuristic increases the chances of escaping from a local optimum. Each time the simplex is initialized with the best solution obtained by the previous runs. The edge length is half of that from the previous iteration. The heuristic is terminated if the total number of iterations is greater-equal than the maximal number of iterations (SetNumberOfIterations) or the difference between the current function value and the best function value is less than a threshold (SetFunctionConvergenceTolerance) and max(|best_parameters_i - current_parameters_i|) is less than a threshold (SetParametersConvergenceTolerance). </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAmoebaOptimizerv4_8h_source.html#l00062">62</a> of file <a class="el" href="itkAmoebaOptimizerv4_8h_source.html">itkAmoebaOptimizerv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4c87b722921a363c7c4389b21c981caa" name="a4c87b722921a363c7c4389b21c981caa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c87b722921a363c7c4389b21c981caa">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

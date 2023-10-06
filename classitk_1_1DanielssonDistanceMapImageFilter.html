@@ -95,7 +95,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDanielssonDistanceMapImageFilter_8h_source.html">itkDanielssonDistanceMapImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TVoronoiImage = TInputImage&gt;<br />
+class itk::DanielssonDistanceMapImageFilter&lt; TInputImage, TOutputImage, TVoronoiImage &gt;</div><p >This filter computes the distance map of the input image as an approximation with pixel accuracy to the Euclidean distance. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TInputImage</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
+    <tr><td class="paramname">TOutputImage</td><td>Output <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
+    <tr><td class="paramname">TVoronoiImage</td><td>Voronoi <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type. Note the default value is TInputImage.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The input is assumed to contain numeric codes defining objects. The filter will produce as output the following images:</p>
+<ul>
+<li>A <b>Voronoi partition</b> using the same numeric codes as the input. </li>
+<li>A <b>distance map</b> with the approximation to the euclidean distance. from a particular pixel to the nearest object to this pixel in the input image. </li>
+<li>A <b>vector map</b> containing the component of the vector relating the current pixel with the closest point of the closest object to this pixel. Given that the components of the distance are computed in "pixels", the vector is represented by an <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">itk::Offset</a>. That is, physical coordinates are not used.</li>
+</ul>
+<p>This filter is N-dimensional and known to be efficient in computational time. The algorithm is the N-dimensional version of the 4SED algorithm given for two dimensions in:</p>
+<p >Danielsson, Per-Erik. Euclidean Distance Mapping. Computer Graphics and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing 14, 227-248 (1980). </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDanielssonDistanceMapImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkDanielssonDistanceMapImageFilter_8h_source.html">itkDanielssonDistanceMapImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DanielssonDistanceMapImageFilter&lt; TInputImage, TOutputImage, TVoronoiImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -796,28 +817,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TVoronoiImage = TInputImage&gt;<br />
-class itk::DanielssonDistanceMapImageFilter&lt; TInputImage, TOutputImage, TVoronoiImage &gt;</div><p >This filter computes the distance map of the input image as an approximation with pixel accuracy to the Euclidean distance. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TInputImage</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
-    <tr><td class="paramname">TOutputImage</td><td>Output <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
-    <tr><td class="paramname">TVoronoiImage</td><td>Voronoi <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type. Note the default value is TInputImage.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The input is assumed to contain numeric codes defining objects. The filter will produce as output the following images:</p>
-<ul>
-<li>A <b>Voronoi partition</b> using the same numeric codes as the input. </li>
-<li>A <b>distance map</b> with the approximation to the euclidean distance. from a particular pixel to the nearest object to this pixel in the input image. </li>
-<li>A <b>vector map</b> containing the component of the vector relating the current pixel with the closest point of the closest object to this pixel. Given that the components of the distance are computed in "pixels", the vector is represented by an <a class="el" href="structitk_1_1Offset.html" title="Represent a n-dimensional offset between two n-dimensional indexes of n-dimensional image.">itk::Offset</a>. That is, physical coordinates are not used.</li>
-</ul>
-<p>This filter is N-dimensional and known to be efficient in computational time. The algorithm is the N-dimensional version of the 4SED algorithm given for two dimensions in:</p>
-<p >Danielsson, Per-Erik. Euclidean Distance Mapping. Computer Graphics and <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Processing 14, 227-248 (1980). </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDanielssonDistanceMapImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkDanielssonDistanceMapImageFilter_8h_source.html">itkDanielssonDistanceMapImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac9f9c08a6a85362bee4e81b859a5d7c3" name="ac9f9c08a6a85362bee4e81b859a5d7c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9f9c08a6a85362bee4e81b859a5d7c3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

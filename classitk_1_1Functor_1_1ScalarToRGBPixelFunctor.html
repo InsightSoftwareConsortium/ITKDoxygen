@@ -92,7 +92,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkScalarToRGBPixelFunctor_8h_source.html">itkScalarToRGBPixelFunctor.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TScalar&gt;<br />
+class itk::Functor::ScalarToRGBPixelFunctor&lt; TScalar &gt;</div><p >A <a class="el" href="namespaceitk_1_1Function.html">Function</a> object which maps a scalar value into an RGB pixel value. </p>
+<p >This class is useful for visualizing labeled images which cannot be mapped successfully into grayscale images. Images of unsigned long integers, for example, may have too many graylevels to visualize effectively.</p>
+<p >The hashing scheme used is designed to spread close scalar values of very different colors by using the least significant bits (fastest changing) of the scalar type to determine the color. Because labeled images may typically use sequential values, it is desirable that those values result in easily discernible colors. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkScalarToRGBPixelFunctor_8h_source.html#l00044">44</a> of file <a class="el" href="itkScalarToRGBPixelFunctor_8h_source.html">itkScalarToRGBPixelFunctor.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3b003bea75984409bbfc36d1503a36e0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Functor_1_1ScalarToRGBPixelFunctor.html#a3b003bea75984409bbfc36d1503a36e0">RGBComponentType</a> = unsigned char</td></tr>
@@ -130,14 +137,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2599590d4939c1604297bef6df12636b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Functor_1_1ScalarToRGBPixelFunctor.html#a2599590d4939c1604297bef6df12636b">m_UseMSBForHashing</a></td></tr>
 <tr class="separator:a2599590d4939c1604297bef6df12636b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TScalar&gt;<br />
-class itk::Functor::ScalarToRGBPixelFunctor&lt; TScalar &gt;</div><p >A <a class="el" href="namespaceitk_1_1Function.html">Function</a> object which maps a scalar value into an RGB pixel value. </p>
-<p >This class is useful for visualizing labeled images which cannot be mapped successfully into grayscale images. Images of unsigned long integers, for example, may have too many graylevels to visualize effectively.</p>
-<p >The hashing scheme used is designed to spread close scalar values of very different colors by using the least significant bits (fastest changing) of the scalar type to determine the color. Because labeled images may typically use sequential values, it is desirable that those values result in easily discernible colors. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkScalarToRGBPixelFunctor_8h_source.html#l00044">44</a> of file <a class="el" href="itkScalarToRGBPixelFunctor_8h_source.html">itkScalarToRGBPixelFunctor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3b003bea75984409bbfc36d1503a36e0" name="a3b003bea75984409bbfc36d1503a36e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b003bea75984409bbfc36d1503a36e0">&#9670;&nbsp;</a></span>RGBComponentType</h2>
 

@@ -95,7 +95,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFastMarchingExtensionImageFilter_8h_source.html">itkFastMarchingExtensionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLevelSet, typename TAuxValue, unsigned int VAuxDimension = 1, typename TSpeedImage = Image&lt;float, TLevelSet::ImageDimension&gt;&gt;<br />
+class itk::FastMarchingExtensionImageFilter&lt; TLevelSet, TAuxValue, VAuxDimension, TSpeedImage &gt;</div><p >Extend auxiliary variables smoothly using Fast Marching. </p>
+<p >Fast marching can be used to extend auxiliary variables smoothly from the zero level set. Starting from an initial position on the front, this class simultaneously calculate the signed distance and extend a set of auxiliary values.</p>
+<p >This class is templated over the level set image type, the auxiliary variable type and the number of auxiliary variables to extended. The initial front is specified by two containers: one containing the known points and one containing the trial points. The auxiliary variables on the front are represented by two auxiliary variable containers: one containing the value of the variables at the know points and on containing the value of the variables at the trail points.</p>
+<p >Implementation of this class is based on Chapter 11 of "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Second edition, 1999.</p>
+<p >For an alternative implementation, see <a class="el" href="classitk_1_1FastMarchingExtensionImageFilterBase.html" title="Extend auxiliary variables smoothly using Fast Marching.">itk::FastMarchingExtensionImageFilterBase</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FastMarchingExtensionImageFilterBase.html" title="Extend auxiliary variables smoothly using Fast Marching.">FastMarchingExtensionImageFilterBase</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1FastMarchingImageFilter.html" title="Solve an Eikonal equation using Fast Marching.">FastMarchingImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1LevelSetTypeDefault.html" title="Level set type information.">LevelSetTypeDefault</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1AuxVarTypeDefault.html" title="Level set auxiliary variables type information.">AuxVarTypeDefault</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFastMarchingExtensionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkFastMarchingExtensionImageFilter_8h_source.html">itkFastMarchingExtensionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FastMarchingExtensionImageFilter&lt; TLevelSet, TAuxValue, VAuxDimension, TSpeedImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -904,23 +920,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TLevelSet, typename TAuxValue, unsigned int VAuxDimension = 1, typename TSpeedImage = Image&lt;float, TLevelSet::ImageDimension&gt;&gt;<br />
-class itk::FastMarchingExtensionImageFilter&lt; TLevelSet, TAuxValue, VAuxDimension, TSpeedImage &gt;</div><p >Extend auxiliary variables smoothly using Fast Marching. </p>
-<p >Fast marching can be used to extend auxiliary variables smoothly from the zero level set. Starting from an initial position on the front, this class simultaneously calculate the signed distance and extend a set of auxiliary values.</p>
-<p >This class is templated over the level set image type, the auxiliary variable type and the number of auxiliary variables to extended. The initial front is specified by two containers: one containing the known points and one containing the trial points. The auxiliary variables on the front are represented by two auxiliary variable containers: one containing the value of the variables at the know points and on containing the value of the variables at the trail points.</p>
-<p >Implementation of this class is based on Chapter 11 of "Level Set Methods and Fast Marching Methods", J.A. Sethian, Cambridge Press, Second edition, 1999.</p>
-<p >For an alternative implementation, see <a class="el" href="classitk_1_1FastMarchingExtensionImageFilterBase.html" title="Extend auxiliary variables smoothly using Fast Marching.">itk::FastMarchingExtensionImageFilterBase</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FastMarchingExtensionImageFilterBase.html" title="Extend auxiliary variables smoothly using Fast Marching.">FastMarchingExtensionImageFilterBase</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1FastMarchingImageFilter.html" title="Solve an Eikonal equation using Fast Marching.">FastMarchingImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1LevelSetTypeDefault.html" title="Level set type information.">LevelSetTypeDefault</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1AuxVarTypeDefault.html" title="Level set auxiliary variables type information.">AuxVarTypeDefault</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFastMarchingExtensionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkFastMarchingExtensionImageFilter_8h_source.html">itkFastMarchingExtensionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adbd9408bf2b009ffc7e9af6b4f7fc491" name="adbd9408bf2b009ffc7e9af6b4f7fc491"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbd9408bf2b009ffc7e9af6b4f7fc491">&#9670;&nbsp;</a></span>AuxImagePointer</h2>
 

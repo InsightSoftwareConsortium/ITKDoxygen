@@ -92,7 +92,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMultivariateLegendrePolynomial_8h_source.html">itkMultivariateLegendrePolynomial.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >2D and 3D multivariate Legendre Polynomial </p>
+<p >In 2D, </p><p class="formulaDsp">
+\[ f(x_{vector}, parameter_{vector}) = \sum_i^l \left( \sum_j^{l-i} \left( parameter_ {ij} * P_i(x) *P_j(y)) \right) \right) \]
+</p>
+<p> where P_i() denoting a Legendre polynomial of degree i and l it the degree of the polynomial</p>
+<p >In 3D, </p><p class="formulaDsp">
+\[ f(x_{vector}, parameter_{vector}) = \sum_i^l \left( \sum_j^{l-i} \left( \sum_k^{l-i-j} \left( parameter_{ijk} * P_i(x) * P_j(y) * P_k(z) \right) \right) \right) \]
+</p>
+<p >The size of the parameter vector for 2D is \(\frac{(l+1)\cdot(1+2)}{2}\), and for 3D is \(\frac{(l+1)*(l+2)*(l+3)}{3!}\)</p>
+<p >To get the size of the parameter vector, users can use one of the two <a class="el" href="classitk_1_1MultivariateLegendrePolynomial.html#a9ee63d7a4d882752f6e6f6fd3a601f6d">GetNumberOfCoefficients()</a> member functions</p>
+<p >To get function result, users can use the operator() or its <a class="el" href="classitk_1_1MultivariateLegendrePolynomial_1_1SimpleForwardIterator.html" title="Iterator which only supports forward iteration and Begin(), IsAtEnd(), and Get() method which work ju...">SimpleForwardIterator</a>'s Get() method.</p>
+<p >This is a part of the bias correction methods and implementations that was initially developed and implemented by Martin Styner, Univ. of North Carolina at Chapel Hill, and his colleagues.</p>
+<dl class="section note"><dt>Note</dt><dd>For more details. refer to the following articles. "Parametric estimate of intensity inhomogeneities applied to MRI" Martin Styner, G. Gerig, Christian Brechbuehler, Gabor Szekely, IEEE TRANSACTIONS ON MEDICAL IMAGING; 19(3), pp. 153-165, 2000, (<a href="https://www.cs.unc.edu/~styner/docs/tmi99.pdf">https://www.cs.unc.edu/~styner/docs/tmi99.pdf</a>)</dd></dl>
+<p>"Evaluation of 2D/3D bias correction with 1+1ES-optimization" Martin Styner, Prof. Dr. G. Gerig (IKT, BIWI, ETH Zuerich), TR-197 (<a href="https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf">https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf</a>) </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMultivariateLegendrePolynomial_8h_source.html#l00077">77</a> of file <a class="el" href="itkMultivariateLegendrePolynomial_8h_source.html">itkMultivariateLegendrePolynomial.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::MultivariateLegendrePolynomial:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -185,24 +202,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93c855aed7804dc7598399efd74c6f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultivariateLegendrePolynomial.html#a93c855aed7804dc7598399efd74c6f46">CalculateYCoef</a> (double norm_z, const <a class="el" href="classitk_1_1MultivariateLegendrePolynomial.html#aaca50c75117e67e92fa5c60f49129148">CoefficientArrayType</a> &amp;coef)</td></tr>
 <tr class="separator:a93c855aed7804dc7598399efd74c6f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >2D and 3D multivariate Legendre Polynomial </p>
-<p >In 2D, </p><p class="formulaDsp">
-\[ f(x_{vector}, parameter_{vector}) = \sum_i^l \left( \sum_j^{l-i} \left( parameter_ {ij} * P_i(x) *P_j(y)) \right) \right) \]
-</p>
-<p> where P_i() denoting a Legendre polynomial of degree i and l it the degree of the polynomial</p>
-<p >In 3D, </p><p class="formulaDsp">
-\[ f(x_{vector}, parameter_{vector}) = \sum_i^l \left( \sum_j^{l-i} \left( \sum_k^{l-i-j} \left( parameter_{ijk} * P_i(x) * P_j(y) * P_k(z) \right) \right) \right) \]
-</p>
-<p >The size of the parameter vector for 2D is \(\frac{(l+1)\cdot(1+2)}{2}\), and for 3D is \(\frac{(l+1)*(l+2)*(l+3)}{3!}\)</p>
-<p >To get the size of the parameter vector, users can use one of the two <a class="el" href="classitk_1_1MultivariateLegendrePolynomial.html#a9ee63d7a4d882752f6e6f6fd3a601f6d">GetNumberOfCoefficients()</a> member functions</p>
-<p >To get function result, users can use the operator() or its <a class="el" href="classitk_1_1MultivariateLegendrePolynomial_1_1SimpleForwardIterator.html" title="Iterator which only supports forward iteration and Begin(), IsAtEnd(), and Get() method which work ju...">SimpleForwardIterator</a>'s Get() method.</p>
-<p >This is a part of the bias correction methods and implementations that was initially developed and implemented by Martin Styner, Univ. of North Carolina at Chapel Hill, and his colleagues.</p>
-<dl class="section note"><dt>Note</dt><dd>For more details. refer to the following articles. "Parametric estimate of intensity inhomogeneities applied to MRI" Martin Styner, G. Gerig, Christian Brechbuehler, Gabor Szekely, IEEE TRANSACTIONS ON MEDICAL IMAGING; 19(3), pp. 153-165, 2000, (<a href="https://www.cs.unc.edu/~styner/docs/tmi99.pdf">https://www.cs.unc.edu/~styner/docs/tmi99.pdf</a>)</dd></dl>
-<p>"Evaluation of 2D/3D bias correction with 1+1ES-optimization" Martin Styner, Prof. Dr. G. Gerig (IKT, BIWI, ETH Zuerich), TR-197 (<a href="https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf">https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf</a>) </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMultivariateLegendrePolynomial_8h_source.html#l00077">77</a> of file <a class="el" href="itkMultivariateLegendrePolynomial_8h_source.html">itkMultivariateLegendrePolynomial.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aaca50c75117e67e92fa5c60f49129148" name="aaca50c75117e67e92fa5c60f49129148"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaca50c75117e67e92fa5c60f49129148">&#9670;&nbsp;</a></span>CoefficientArrayType</h2>
 

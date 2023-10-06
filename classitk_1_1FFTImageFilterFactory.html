@@ -93,7 +93,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;template&lt; typename, typename &gt; class TFFTImageFilter, template&lt; typename, unsigned int &gt; class TInput = Image, template&lt; typename, unsigned int &gt; class TOutput = Image&gt;<br />
+class itk::FFTImageFilterFactory&lt; TFFTImageFilter, TInput, TOutput &gt;</div><p ><a class="el" href="classitk_1_1Object.html" title="Base class for most ITK classes.">Object</a> factory implementation for FFT filters. </p>
+<p >ITK FFT filters are designed for overridable implementation through the global ITK object factory singleton. In order to instantiate a base FFT image filter object, at least one valid implementation must be registered in the object factory.</p>
+<p ><a class="el" href="classitk_1_1FFTImageFilterFactory.html" title="Object factory implementation for FFT filters.">FFTImageFilterFactory</a> exists as an implementation detail designed to reduce overhead for FFT factory operations. A factory object templated over an FFT image filter implementation class will make constructor overrides for that class available through the global object factory singleton.</p>
+<p ><a class="el" href="classitk_1_1FFTImageFilterFactory.html" title="Object factory implementation for FFT filters.">FFTImageFilterFactory</a> can be used for making an FFT implementation class available through object factory initialization if the class meets certain criteria:</p><ul>
+<li>the FFT implementation class must be able to be templated over the pattern &lt;TInput&lt;PixelType, Dimension&gt;, TOutput&lt;PixelType, Dimension&gt;</li>
+<li>the FFT implementation class must have an associated <code><a class="el" href="structitk_1_1FFTImageFilterTraits.html" title="Helper defining pixel traits for templated FFT image filters.">FFTImageFilterTraits</a></code> specialization defining pixel types and image dimensions for specialization</li>
+</ul>
+<p ><code>TInput</code> and <code>TOutput</code> must be classes implementing the <code><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a></code> interface but need not inherit from <code><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a></code>. For example, an FFT filter could define operations over an <code><a class="el" href="classitk_1_1SpecialCoordinatesImage.html" title="Templated n-dimensional nonrectilinear-coordinate image base class.">itk::SpecialCoordinatesImage</a></code>.</p>
+<p >FFT filters not meeting these criteria may define an independent factory tailored to their particular instantiation requirements.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1FFTImageFilterTraits.html" title="Helper defining pixel traits for templated FFT image filters.">FFTImageFilterTraits</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1VnlFFTImageFilterInitFactory.html" title="Initialize Vnl FFT image filter factory backends.">VnlFFTImageFilterInitFactory</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFFTImageFilterFactory_8h_source.html#l00089">89</a> of file <a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FFTImageFilterFactory&lt; TFFTImageFilter, TInput, TOutput &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -363,23 +379,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;template&lt; typename, typename &gt; class TFFTImageFilter, template&lt; typename, unsigned int &gt; class TInput = Image, template&lt; typename, unsigned int &gt; class TOutput = Image&gt;<br />
-class itk::FFTImageFilterFactory&lt; TFFTImageFilter, TInput, TOutput &gt;</div><p ><a class="el" href="classitk_1_1Object.html" title="Base class for most ITK classes.">Object</a> factory implementation for FFT filters. </p>
-<p >ITK FFT filters are designed for overridable implementation through the global ITK object factory singleton. In order to instantiate a base FFT image filter object, at least one valid implementation must be registered in the object factory.</p>
-<p ><a class="el" href="classitk_1_1FFTImageFilterFactory.html" title="Object factory implementation for FFT filters.">FFTImageFilterFactory</a> exists as an implementation detail designed to reduce overhead for FFT factory operations. A factory object templated over an FFT image filter implementation class will make constructor overrides for that class available through the global object factory singleton.</p>
-<p ><a class="el" href="classitk_1_1FFTImageFilterFactory.html" title="Object factory implementation for FFT filters.">FFTImageFilterFactory</a> can be used for making an FFT implementation class available through object factory initialization if the class meets certain criteria:</p><ul>
-<li>the FFT implementation class must be able to be templated over the pattern &lt;TInput&lt;PixelType, Dimension&gt;, TOutput&lt;PixelType, Dimension&gt;</li>
-<li>the FFT implementation class must have an associated <code><a class="el" href="structitk_1_1FFTImageFilterTraits.html" title="Helper defining pixel traits for templated FFT image filters.">FFTImageFilterTraits</a></code> specialization defining pixel types and image dimensions for specialization</li>
-</ul>
-<p ><code>TInput</code> and <code>TOutput</code> must be classes implementing the <code><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a></code> interface but need not inherit from <code><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a></code>. For example, an FFT filter could define operations over an <code><a class="el" href="classitk_1_1SpecialCoordinatesImage.html" title="Templated n-dimensional nonrectilinear-coordinate image base class.">itk::SpecialCoordinatesImage</a></code>.</p>
-<p >FFT filters not meeting these criteria may define an independent factory tailored to their particular instantiation requirements.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structitk_1_1FFTImageFilterTraits.html" title="Helper defining pixel traits for templated FFT image filters.">FFTImageFilterTraits</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1VnlFFTImageFilterInitFactory.html" title="Initialize Vnl FFT image filter factory backends.">VnlFFTImageFilterInitFactory</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFFTImageFilterFactory_8h_source.html#l00089">89</a> of file <a class="el" href="itkFFTImageFilterFactory_8h_source.html">itkFFTImageFilterFactory.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad0f339a90a5ebd0aa01c7f5bfe2e3eb6" name="ad0f339a90a5ebd0aa01c7f5bfe2e3eb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0f339a90a5ebd0aa01c7f5bfe2e3eb6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

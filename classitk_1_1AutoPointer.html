@@ -93,7 +93,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAutoPointer_8h_source.html">itkAutoPointer.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TObjectType&gt;<br />
+class itk::AutoPointer&lt; TObjectType &gt;</div><p >Implements an Automatic Pointer to an object. </p>
+<p ><a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> is intended to facilitate the construction of objects on the fly for those objects that are not to be shared. An <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> destroys its object when it goes out of scope. Ownership of the object is transferred from one <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> to another <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> when the assignment operator is used. An <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> can release ownership of the object it holds.</p>
+<p >This class follows the design of the std::unique_ptr (auto_ptr being deprecated in C++11) class. The main * reason for not using the std version is to avoid templated methods, which greatly increase the difficulty of wrapping for Tcl, Python and Java. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAutoPointer_8h_source.html#l00046">46</a> of file <a class="el" href="itkAutoPointer_8h_source.html">itkAutoPointer.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a49e6b78678d77137e5fa589aaf4c4187"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AutoPointer.html#a49e6b78678d77137e5fa589aaf4c4187">ObjectType</a> = TObjectType</td></tr>
@@ -162,14 +169,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:accea0c2f278115dbe205e5e997951513"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1AutoPointer.html#a49e6b78678d77137e5fa589aaf4c4187">ObjectType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AutoPointer.html#accea0c2f278115dbe205e5e997951513">m_Pointer</a></td></tr>
 <tr class="separator:accea0c2f278115dbe205e5e997951513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TObjectType&gt;<br />
-class itk::AutoPointer&lt; TObjectType &gt;</div><p >Implements an Automatic Pointer to an object. </p>
-<p ><a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> is intended to facilitate the construction of objects on the fly for those objects that are not to be shared. An <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> destroys its object when it goes out of scope. Ownership of the object is transferred from one <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> to another <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> when the assignment operator is used. An <a class="el" href="classitk_1_1AutoPointer.html" title="Implements an Automatic Pointer to an object.">AutoPointer</a> can release ownership of the object it holds.</p>
-<p >This class follows the design of the std::unique_ptr (auto_ptr being deprecated in C++11) class. The main * reason for not using the std version is to avoid templated methods, which greatly increase the difficulty of wrapping for Tcl, Python and Java. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAutoPointer_8h_source.html#l00046">46</a> of file <a class="el" href="itkAutoPointer_8h_source.html">itkAutoPointer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a49e6b78678d77137e5fa589aaf4c4187" name="a49e6b78678d77137e5fa589aaf4c4187"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49e6b78678d77137e5fa589aaf4c4187">&#9670;&nbsp;</a></span>ObjectType</h2>
 

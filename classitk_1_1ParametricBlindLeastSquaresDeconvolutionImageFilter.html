@@ -95,7 +95,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkParametricBlindLeastSquaresDeconvolutionImageFilter_8h_source.html">itkParametricBlindLeastSquaresDeconvolutionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelSource, typename TOutputImage = TInputImage&gt;<br />
+class itk::ParametricBlindLeastSquaresDeconvolutionImageFilter&lt; TInputImage, TKernelSource, TOutputImage &gt;</div><p >Least-squares blind deconvolution filter that also estimates the parameters of a user-supplied parametric point-spread function. </p>
+<p >This filter takes a parametric kernel image source instead of a static kernel image. During the deconvolution iterations, a new estimate of the restored image is produced, along with a new estimate of the kernel parameters. The parameters are available through the kernel image sources GetParameters() method after the filter has executed.</p>
+<p >Both the image estimate and the kernel parameter estimate are produced through gradient descent on a sum-of-squared differences objective function, making this method suitable for zero-mean Gaussian white noise.</p>
+<p >This filter produces output in two forms: a deconvolved image and the parameters of the input kernel image source.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The method SetKernelImage(), inherited from the superclass of this filter, is publicly available. However, this algorithm does not use the static kernel image set through this method. Instead, it uses the output of the parametric kernel source you specify.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Cory Quammen, The University of North Carolina at Chapel Hill </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkParametricBlindLeastSquaresDeconvolutionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkParametricBlindLeastSquaresDeconvolutionImageFilter_8h_source.html">itkParametricBlindLeastSquaresDeconvolutionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ParametricBlindLeastSquaresDeconvolutionImageFilter&lt; TInputImage, TKernelSource, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1000,17 +1010,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelSource, typename TOutputImage = TInputImage&gt;<br />
-class itk::ParametricBlindLeastSquaresDeconvolutionImageFilter&lt; TInputImage, TKernelSource, TOutputImage &gt;</div><p >Least-squares blind deconvolution filter that also estimates the parameters of a user-supplied parametric point-spread function. </p>
-<p >This filter takes a parametric kernel image source instead of a static kernel image. During the deconvolution iterations, a new estimate of the restored image is produced, along with a new estimate of the kernel parameters. The parameters are available through the kernel image sources GetParameters() method after the filter has executed.</p>
-<p >Both the image estimate and the kernel parameter estimate are produced through gradient descent on a sum-of-squared differences objective function, making this method suitable for zero-mean Gaussian white noise.</p>
-<p >This filter produces output in two forms: a deconvolved image and the parameters of the input kernel image source.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The method SetKernelImage(), inherited from the superclass of this filter, is publicly available. However, this algorithm does not use the static kernel image set through this method. Instead, it uses the output of the parametric kernel source you specify.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Cory Quammen, The University of North Carolina at Chapel Hill </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkParametricBlindLeastSquaresDeconvolutionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkParametricBlindLeastSquaresDeconvolutionImageFilter_8h_source.html">itkParametricBlindLeastSquaresDeconvolutionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="addd8f19b110cf9a835ac4c53dc45652f" name="addd8f19b110cf9a835ac4c53dc45652f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addd8f19b110cf9a835ac4c53dc45652f">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

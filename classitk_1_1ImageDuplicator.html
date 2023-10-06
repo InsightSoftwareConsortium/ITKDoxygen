@@ -95,7 +95,29 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageDuplicator_8h_source.html">itkImageDuplicator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
+class itk::ImageDuplicator&lt; TInputImage &gt;</div><p >A helper class which creates an image which is perfect copy of the input image. </p>
+<p >This class is NOT a filter. Although it has an API similar to a filter, this class is not intended to be used in a pipeline. Instead, the typical use will be like it is illustrated in the following code:</p>
+<div class="fragment"><div class="line">medianFilter-&gt;Update();</div>
+<div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> image = medianFilter-&gt;GetOutput();</div>
+<div class="line"><span class="keyword">using</span> DuplicatorType = <a class="code hl_class" href="classitk_1_1ImageDuplicator.html">itk::ImageDuplicator&lt; ImageType &gt;</a>;</div>
+<div class="line"><span class="keyword">auto</span> duplicator = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">DuplicatorType::New</a>();</div>
+<div class="line">duplicator-&gt;SetInputImage(image);</div>
+<div class="line">duplicator-&gt;Update();</div>
+<div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> clonedImage = duplicator-&gt;GetOutput();</div>
+<div class="ttc" id="aclassitk_1_1ImageDuplicator_html"><div class="ttname"><a href="classitk_1_1ImageDuplicator.html">itk::ImageDuplicator</a></div><div class="ttdoc">A helper class which creates an image which is perfect copy of the input image.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageDuplicator_8h_source.html#l00054">itkImageDuplicator.h:55</a></div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
+</div><!-- fragment --><p >Note that the <a class="el" href="classitk_1_1ImageDuplicator.html#a607ab4d15e0b6887fc9c3ca5892b5318">Update()</a> method must be called explicitly in the filter that provides the input to the <a class="el" href="classitk_1_1ImageDuplicator.html" title="A helper class which creates an image which is perfect copy of the input image.">ImageDuplicator</a> object. This is needed because the <a class="el" href="classitk_1_1ImageDuplicator.html" title="A helper class which creates an image which is perfect copy of the input image.">ImageDuplicator</a> is not a pipeline filter.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageDuplicator_8h_source.html#l00054">54</a> of file <a class="el" href="itkImageDuplicator_8h_source.html">itkImageDuplicator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageDuplicator&lt; TInputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -311,29 +333,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage&gt;<br />
-class itk::ImageDuplicator&lt; TInputImage &gt;</div><p >A helper class which creates an image which is perfect copy of the input image. </p>
-<p >This class is NOT a filter. Although it has an API similar to a filter, this class is not intended to be used in a pipeline. Instead, the typical use will be like it is illustrated in the following code:</p>
-<div class="fragment"><div class="line">medianFilter-&gt;Update();</div>
-<div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> image = medianFilter-&gt;GetOutput();</div>
-<div class="line"><span class="keyword">using</span> DuplicatorType = <a class="code hl_class" href="classitk_1_1ImageDuplicator.html">itk::ImageDuplicator&lt; ImageType &gt;</a>;</div>
-<div class="line"><span class="keyword">auto</span> duplicator = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">DuplicatorType::New</a>();</div>
-<div class="line">duplicator-&gt;SetInputImage(image);</div>
-<div class="line">duplicator-&gt;Update();</div>
-<div class="line"><a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">ImageType::Pointer</a> clonedImage = duplicator-&gt;GetOutput();</div>
-<div class="ttc" id="aclassitk_1_1ImageDuplicator_html"><div class="ttname"><a href="classitk_1_1ImageDuplicator.html">itk::ImageDuplicator</a></div><div class="ttdoc">A helper class which creates an image which is perfect copy of the input image.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageDuplicator_8h_source.html#l00054">itkImageDuplicator.h:55</a></div></div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_ac831674d6d3f7cd2148ae944cbaa7c9d"><div class="ttname"><a href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">Pointer</a></div><div class="ttdeci">SmartPointer&lt; Self &gt; Pointer</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00093">itkAddImageFilter.h:93</a></div></div>
-</div><!-- fragment --><p >Note that the <a class="el" href="classitk_1_1ImageDuplicator.html#a607ab4d15e0b6887fc9c3ca5892b5318">Update()</a> method must be called explicitly in the filter that provides the input to the <a class="el" href="classitk_1_1ImageDuplicator.html" title="A helper class which creates an image which is perfect copy of the input image.">ImageDuplicator</a> object. This is needed because the <a class="el" href="classitk_1_1ImageDuplicator.html" title="A helper class which creates an image which is perfect copy of the input image.">ImageDuplicator</a> is not a pipeline filter.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageDuplicator_8h_source.html#l00054">54</a> of file <a class="el" href="itkImageDuplicator_8h_source.html">itkImageDuplicator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a050ab394cd55738d0a8b5e2496ebace2" name="a050ab394cd55738d0a8b5e2496ebace2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a050ab394cd55738d0a8b5e2496ebace2">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -93,7 +93,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWatershedEquivalenceRelabeler_8h_source.html">itkWatershedEquivalenceRelabeler.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TScalar, unsigned int TImageDimension&gt;<br />
+class itk::watershed::EquivalenceRelabeler&lt; TScalar, TImageDimension &gt;</div><p >This class is part of the set of watershed segmentation component objects. It is an image-to-image filter that relabels its input according to a set of equivalencies defined in a table. The filter is used in <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a>, for example, to relabel a segmented image at different hierarchies in the merge tree (see <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> for documentation on terminology). It simply takes its input and changes any values found in the equivalency table.</p>
+<dl class="section user"><dt>Inputs</dt><dd>There are two inputs to this filter, an IdentifierType <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of arbitrary dimension, and an <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">itk::EquivalencyTable</a>. The input image is the image to be relabeled and copied to the output, and the <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">EquivalencyTable</a> identifies how to relabel the values.</dd></dl>
+<dl class="section user"><dt>Output</dt><dd>The output of this filter is the relabeled IdentifierType <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of same dimension and size as the input.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">EquivalencyTable</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkWatershedEquivalenceRelabeler_8h_source.html#l00054">54</a> of file <a class="el" href="itkWatershedEquivalenceRelabeler_8h_source.html">itkWatershedEquivalenceRelabeler.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::watershed::EquivalenceRelabeler&lt; TScalar, TImageDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -562,17 +572,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TScalar, unsigned int TImageDimension&gt;<br />
-class itk::watershed::EquivalenceRelabeler&lt; TScalar, TImageDimension &gt;</div><p >This class is part of the set of watershed segmentation component objects. It is an image-to-image filter that relabels its input according to a set of equivalencies defined in a table. The filter is used in <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a>, for example, to relabel a segmented image at different hierarchies in the merge tree (see <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> for documentation on terminology). It simply takes its input and changes any values found in the equivalency table.</p>
-<dl class="section user"><dt>Inputs</dt><dd>There are two inputs to this filter, an IdentifierType <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of arbitrary dimension, and an <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">itk::EquivalencyTable</a>. The input image is the image to be relabeled and copied to the output, and the <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">EquivalencyTable</a> identifies how to relabel the values.</dd></dl>
-<dl class="section user"><dt>Output</dt><dd>The output of this filter is the relabeled IdentifierType <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of same dimension and size as the input.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">EquivalencyTable</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkWatershedEquivalenceRelabeler_8h_source.html#l00054">54</a> of file <a class="el" href="itkWatershedEquivalenceRelabeler_8h_source.html">itkWatershedEquivalenceRelabeler.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a281c5a4a82eda05b51edc93a4526b5e1" name="a281c5a4a82eda05b51edc93a4526b5e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a281c5a4a82eda05b51edc93a4526b5e1">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

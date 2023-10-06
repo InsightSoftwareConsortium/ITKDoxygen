@@ -95,7 +95,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPasteImageFilter_8h_source.html">itkPasteImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TSourceImage = TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::PasteImageFilter&lt; TInputImage, TSourceImage, TOutputImage &gt;</div><p >Paste an image (or a constant value) into another image. </p>
+<p ><a class="el" href="classitk_1_1PasteImageFilter.html" title="Paste an image (or a constant value) into another image.">PasteImageFilter</a> allows a region in a destination image to be filled with a source image or a constant pixel value. The <a class="el" href="classitk_1_1PasteImageFilter.html#a7a59f77142b588e41544be5092d6fa7c">SetDestinationIndex()</a> method prescribes where in the destination input to start pasting data from the source input. The SetSourceRegion method prescribes the section of the second image to paste into the first. When a constant pixel value is set, the SourceRegion describes the size of the region filled. If the output requested region does not include the SourceRegion after it has been repositioned to DestinationIndex, then the output will just be a copy of the input.</p>
+<p >This filter supports running "InPlace" to efficiently reuse the destination image buffer for the output, removing the need to copy the destination pixels to the output.</p>
+<p >When the source image has a lower dimension than the destination image then the DestinationSkipAxes parameter specifies which axes in the destination image are set to 1 when copying the region or filling with a constant.</p>
+<p >The two inputs and output image will have the same pixel type.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkPasteImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkPasteImageFilter_8h_source.html">itkPasteImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PasteImageFilter&lt; TInputImage, TSourceImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -843,22 +858,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TSourceImage = TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::PasteImageFilter&lt; TInputImage, TSourceImage, TOutputImage &gt;</div><p >Paste an image (or a constant value) into another image. </p>
-<p ><a class="el" href="classitk_1_1PasteImageFilter.html" title="Paste an image (or a constant value) into another image.">PasteImageFilter</a> allows a region in a destination image to be filled with a source image or a constant pixel value. The <a class="el" href="classitk_1_1PasteImageFilter.html#a7a59f77142b588e41544be5092d6fa7c">SetDestinationIndex()</a> method prescribes where in the destination input to start pasting data from the source input. The SetSourceRegion method prescribes the section of the second image to paste into the first. When a constant pixel value is set, the SourceRegion describes the size of the region filled. If the output requested region does not include the SourceRegion after it has been repositioned to DestinationIndex, then the output will just be a copy of the input.</p>
-<p >This filter supports running "InPlace" to efficiently reuse the destination image buffer for the output, removing the need to copy the destination pixels to the output.</p>
-<p >When the source image has a lower dimension than the destination image then the DestinationSkipAxes parameter specifies which axes in the destination image are set to 1 when copying the region or filling with a constant.</p>
-<p >The two inputs and output image will have the same pixel type.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkPasteImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkPasteImageFilter_8h_source.html">itkPasteImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7b2456f5138704f6ab5528fb068a7a26" name="a7b2456f5138704f6ab5528fb068a7a26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b2456f5138704f6ab5528fb068a7a26">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

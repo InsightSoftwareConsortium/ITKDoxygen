@@ -93,7 +93,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSubtractImageFilter_8h_source.html">itkSubtractImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2 = TInputImage1, typename TOutputImage = TInputImage1&gt;<br />
+class itk::SubtractImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;</div><p >Pixel-wise subtraction of two images. </p>
+<p >Subtract each pixel from image2 from its corresponding pixel in image1:</p>
+<div class="fragment"><div class="line">Output = Input1 - Input2.</div>
+</div><!-- fragment --><p >This is done using</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">SetInput1</a>( image1 );</div>
+<div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#a678a715c2d53b1f67d304d3cd3fc0b36">SetInput2</a>( image2 );</div>
+<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_a678a715c2d53b1f67d304d3cd3fc0b36"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#a678a715c2d53b1f67d304d3cd3fc0b36">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetInput2</a></div><div class="ttdeci">virtual void SetInput2(const TInputImage1 *image2)</div></div>
+<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_aebfbe2926cb4a03c2b845f0b90150b5d"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetInput1</a></div><div class="ttdeci">virtual void SetInput1(const TInputImage1 *image1)</div></div>
+</div><!-- fragment --><p >This class is templated over the types of the two input images and the type of the output image. Numeric conversions (castings) are done by the C++ defaults.</p>
+<p >Additionally, a constant can be subtracted from every pixel in an image using:</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">SetInput1</a>( image1 );</div>
+<div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#a823dd9fda0da8e66d19e4f914a8fb4cf">SetConstant2</a>( constant );</div>
+<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_a823dd9fda0da8e66d19e4f914a8fb4cf"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#a823dd9fda0da8e66d19e4f914a8fb4cf">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetConstant2</a></div><div class="ttdeci">virtual void SetConstant2(const Input2ImagePixelType &amp;input2)</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The result of <a class="el" href="classAddImageFilter.html" title="Pixel-wise addition of two images.">AddImageFilter</a> with a negative constant is not necessarily the same as <a class="el" href="classitk_1_1SubtractImageFilter.html" title="Pixel-wise subtraction of two images.">SubtractImageFilter</a>. This would be the case when the PixelType defines an <a class="el" href="namespaceitk.html#a8bced69724154a53a6e346a1fcd60f1e">operator-()</a> that is not the inverse of <a class="el" href="namespaceitk.html#aaba19a880bc5cdfe735ed7a24c61c357">operator+()</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSubtractImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkSubtractImageFilter_8h_source.html">itkSubtractImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SubtractImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -846,31 +870,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2 = TInputImage1, typename TOutputImage = TInputImage1&gt;<br />
-class itk::SubtractImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;</div><p >Pixel-wise subtraction of two images. </p>
-<p >Subtract each pixel from image2 from its corresponding pixel in image1:</p>
-<div class="fragment"><div class="line">Output = Input1 - Input2.</div>
-</div><!-- fragment --><p >This is done using</p>
-<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">SetInput1</a>( image1 );</div>
-<div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#a678a715c2d53b1f67d304d3cd3fc0b36">SetInput2</a>( image2 );</div>
-<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_a678a715c2d53b1f67d304d3cd3fc0b36"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#a678a715c2d53b1f67d304d3cd3fc0b36">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetInput2</a></div><div class="ttdeci">virtual void SetInput2(const TInputImage1 *image2)</div></div>
-<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_aebfbe2926cb4a03c2b845f0b90150b5d"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetInput1</a></div><div class="ttdeci">virtual void SetInput1(const TInputImage1 *image1)</div></div>
-</div><!-- fragment --><p >This class is templated over the types of the two input images and the type of the output image. Numeric conversions (castings) are done by the C++ defaults.</p>
-<p >Additionally, a constant can be subtracted from every pixel in an image using:</p>
-<div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#aebfbe2926cb4a03c2b845f0b90150b5d">SetInput1</a>( image1 );</div>
-<div class="line"><a class="code hl_function" href="classitk_1_1BinaryGeneratorImageFilter.html#a823dd9fda0da8e66d19e4f914a8fb4cf">SetConstant2</a>( constant );</div>
-<div class="ttc" id="aclassitk_1_1BinaryGeneratorImageFilter_html_a823dd9fda0da8e66d19e4f914a8fb4cf"><div class="ttname"><a href="classitk_1_1BinaryGeneratorImageFilter.html#a823dd9fda0da8e66d19e4f914a8fb4cf">itk::BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage1, TInputImage1 &gt;::SetConstant2</a></div><div class="ttdeci">virtual void SetConstant2(const Input2ImagePixelType &amp;input2)</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The result of <a class="el" href="classAddImageFilter.html" title="Pixel-wise addition of two images.">AddImageFilter</a> with a negative constant is not necessarily the same as <a class="el" href="classitk_1_1SubtractImageFilter.html" title="Pixel-wise subtraction of two images.">SubtractImageFilter</a>. This would be the case when the PixelType defines an <a class="el" href="namespaceitk.html#a8bced69724154a53a6e346a1fcd60f1e">operator-()</a> that is not the inverse of <a class="el" href="namespaceitk.html#aaba19a880bc5cdfe735ed7a24c61c357">operator+()</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSubtractImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkSubtractImageFilter_8h_source.html">itkSubtractImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a89c0111bab80770d24b68b3b212fc89a" name="a89c0111bab80770d24b68b3b212fc89a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89c0111bab80770d24b68b3b212fc89a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

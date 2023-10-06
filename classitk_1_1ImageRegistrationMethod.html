@@ -94,7 +94,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageRegistrationMethod_8h_source.html">itkImageRegistrationMethod.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::ImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration Methods. </p>
+<p >This Class define the generic interface for a registration method.</p>
+<p >This class is templated over the type of the two image to be registered. A generic <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used by this class. That allows to select at run time the particular type of transformation that is to be applied for registering the images.</p>
+<p >This method use a generic Metric in order to compare the two images. the final goal of the registration method is to find the set of parameters of the Transformation that optimizes the metric.</p>
+<p >The registration method also support a generic optimizer that can be selected at run-time. The only restriction for the optimizer is that it should be able to operate in single-valued cost functions given that the metrics used to compare images provide a single value as output.</p>
+<p >The terms : Fixed image and Moving image are used in this class to indicate what image is being mapped by the transform.</p>
+<p >This class uses the coordinate system of the Fixed image as a reference and searches for a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> that will map points from the space of the Fixed image to the space of the Moving image.</p>
+<p >For doing so, a Metric will be continuously applied to compare the Fixed image with the Transformed Moving image. This process also requires to interpolate values from the Moving image.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageRegistrationMethod_8h_source.html#l00070">70</a> of file <a class="el" href="itkImageRegistrationMethod_8h_source.html">itkImageRegistrationMethod.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -645,26 +664,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::ImageRegistrationMethod&lt; TFixedImage, TMovingImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration Methods. </p>
-<p >This Class define the generic interface for a registration method.</p>
-<p >This class is templated over the type of the two image to be registered. A generic <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> is used by this class. That allows to select at run time the particular type of transformation that is to be applied for registering the images.</p>
-<p >This method use a generic Metric in order to compare the two images. the final goal of the registration method is to find the set of parameters of the Transformation that optimizes the metric.</p>
-<p >The registration method also support a generic optimizer that can be selected at run-time. The only restriction for the optimizer is that it should be able to operate in single-valued cost functions given that the metrics used to compare images provide a single value as output.</p>
-<p >The terms : Fixed image and Moving image are used in this class to indicate what image is being mapped by the transform.</p>
-<p >This class uses the coordinate system of the Fixed image as a reference and searches for a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> that will map points from the space of the Fixed image to the space of the Moving image.</p>
-<p >For doing so, a Metric will be continuously applied to compare the Fixed image with the Transformed Moving image. This process also requires to interpolate values from the Moving image.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageRegistrationMethod_8h_source.html#l00070">70</a> of file <a class="el" href="itkImageRegistrationMethod_8h_source.html">itkImageRegistrationMethod.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a79935770059047d9d8c75e5c3a7e9bb1" name="a79935770059047d9d8c75e5c3a7e9bb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79935770059047d9d8c75e5c3a7e9bb1">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -94,7 +94,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkKappaStatisticImageToImageMetric_8h_source.html">itkKappaStatisticImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::KappaStatisticImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two binary objects to be registered. </p>
+<p >This Class is templated over the type of the fixed and moving images to be compared. The metric here is designed for matching pixels in two images with the same exact value. Only one value can be considered (the default is 255) and can be specified with the SetForegroundValue method. In the computation of the metric, only foreground pixels are considered. The metric value is given by 2*|A&amp;B|/(|A|+|B|), where A is the foreground region in the moving image, B is the foreground region in the fixed image, &amp; is intersection, and |.| indicates the area of the enclosed set. The metric is described in "Morphometric Analysis of White Matter Lesions in MR
+Images: Method and Validation", A. P. Zijdenbos, B. M. Dawant, R. A. Margolin, A. C. Palmer.</p>
+<p >This metric is especially useful when considering the similarity between binary images. Given the nature of binary images, a nearest neighbor interpolator is the preferred interpolator.</p>
+<p >Metric values range from 0.0 (no foreground alignment) to 1.0 (perfect foreground alignment). When dealing with optimizers that can only minimize a metric, use the <a class="el" href="classitk_1_1KappaStatisticImageToImageMetric.html#aebc2dabb3a2273ad00e7bef0d0c8f333">ComplementOn()</a> method. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkKappaStatisticImageToImageMetric_8h_source.html#l00054">54</a> of file <a class="el" href="itkKappaStatisticImageToImageMetric_8h_source.html">itkKappaStatisticImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::KappaStatisticImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -727,16 +736,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::KappaStatisticImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two binary objects to be registered. </p>
-<p >This Class is templated over the type of the fixed and moving images to be compared. The metric here is designed for matching pixels in two images with the same exact value. Only one value can be considered (the default is 255) and can be specified with the SetForegroundValue method. In the computation of the metric, only foreground pixels are considered. The metric value is given by 2*|A&amp;B|/(|A|+|B|), where A is the foreground region in the moving image, B is the foreground region in the fixed image, &amp; is intersection, and |.| indicates the area of the enclosed set. The metric is described in "Morphometric Analysis of White Matter Lesions in MR
-Images: Method and Validation", A. P. Zijdenbos, B. M. Dawant, R. A. Margolin, A. C. Palmer.</p>
-<p >This metric is especially useful when considering the similarity between binary images. Given the nature of binary images, a nearest neighbor interpolator is the preferred interpolator.</p>
-<p >Metric values range from 0.0 (no foreground alignment) to 1.0 (perfect foreground alignment). When dealing with optimizers that can only minimize a metric, use the <a class="el" href="classitk_1_1KappaStatisticImageToImageMetric.html#aebc2dabb3a2273ad00e7bef0d0c8f333">ComplementOn()</a> method. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkKappaStatisticImageToImageMetric_8h_source.html#l00054">54</a> of file <a class="el" href="itkKappaStatisticImageToImageMetric_8h_source.html">itkKappaStatisticImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aafbe2b50ce2885e1292c294ec497dacb" name="aafbe2b50ce2885e1292c294ec497dacb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafbe2b50ce2885e1292c294ec497dacb">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

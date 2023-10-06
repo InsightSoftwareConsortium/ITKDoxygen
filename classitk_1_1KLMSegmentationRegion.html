@@ -94,7 +94,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkKLMSegmentationRegion_8h_source.html">itkKLMSegmentationRegion.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Base class for <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> object. </p>
+<p >itkKLMSegmentationRegion is the base class for the <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> objects. It provides the basic function definitions that are inherent to <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> objects.</p>
+<p >This object supports data handling of multiband images. The object accepts images in vector format, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset.</p>
+<p >We expect the user to provide the input to the routine in vector format. A single band image is treated as a vector image with a single element for every vector.</p>
+<p >Data structure for a region: A region is defined as a closed area in the image that is surrounded by a list of borders objects (see itkKLMSegmentationBorder class).</p>
+<p >Shown below is an initial two-dimensional 8x9 image with a 4x3 grid size partition. The initial region blocks are labelled in hexadecimal. Below the grid partition, the borders are shown as E, where C is an image pixel from the initial image. Note that each border is placed in between two regions. Each two-dimensional region is surrounded by four borders.</p>
+<p >Initial regions of a 8 by 9 image with a 4 by 3 grid partition. </p><p class="formulaDsp">
+\[\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 \\ \hline 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 \\ \hline 4 &amp; 4 &amp; 4 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 6 &amp; 6 \\ \hline 4 &amp; 4 &amp; 4 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 6 &amp; 6 \\ \hline 7 &amp; 7 &amp; 7 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 9 &amp; 9 \\ \hline 7 &amp; 7 &amp; 7 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 9 &amp; 9 \\ \hline a &amp; a &amp; a &amp; b &amp; b &amp; b &amp; c &amp; c &amp; c \\ \hline a &amp; a &amp; a &amp; b &amp; b &amp; b &amp; c &amp; c &amp; c \\ \hline \end{tabular}\]
+</p>
+<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> borders are shown as "E". </p><p class="formulaDsp">
+\[\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline \end{tabular}\]
+</p>
+ 
+<p class="definition">Definition at line <a class="el" href="itkKLMSegmentationRegion_8h_source.html#l00093">93</a> of file <a class="el" href="itkKLMSegmentationRegion_8h_source.html">itkKLMSegmentationRegion.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::KLMSegmentationRegion:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -372,22 +387,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Base class for <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> object. </p>
-<p >itkKLMSegmentationRegion is the base class for the <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> objects. It provides the basic function definitions that are inherent to <a class="el" href="classitk_1_1KLMSegmentationRegion.html" title="Base class for KLMSegmentationRegion object.">KLMSegmentationRegion</a> objects.</p>
-<p >This object supports data handling of multiband images. The object accepts images in vector format, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset.</p>
-<p >We expect the user to provide the input to the routine in vector format. A single band image is treated as a vector image with a single element for every vector.</p>
-<p >Data structure for a region: A region is defined as a closed area in the image that is surrounded by a list of borders objects (see itkKLMSegmentationBorder class).</p>
-<p >Shown below is an initial two-dimensional 8x9 image with a 4x3 grid size partition. The initial region blocks are labelled in hexadecimal. Below the grid partition, the borders are shown as E, where C is an image pixel from the initial image. Note that each border is placed in between two regions. Each two-dimensional region is surrounded by four borders.</p>
-<p >Initial regions of a 8 by 9 image with a 4 by 3 grid partition. </p><p class="formulaDsp">
-\[\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 \\ \hline 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 \\ \hline 4 &amp; 4 &amp; 4 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 6 &amp; 6 \\ \hline 4 &amp; 4 &amp; 4 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 6 &amp; 6 \\ \hline 7 &amp; 7 &amp; 7 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 9 &amp; 9 \\ \hline 7 &amp; 7 &amp; 7 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 9 &amp; 9 \\ \hline a &amp; a &amp; a &amp; b &amp; b &amp; b &amp; c &amp; c &amp; c \\ \hline a &amp; a &amp; a &amp; b &amp; b &amp; b &amp; c &amp; c &amp; c \\ \hline \end{tabular}\]
-</p>
-<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> borders are shown as "E". </p><p class="formulaDsp">
-\[\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline &amp; E &amp; &amp; &amp; &amp; E &amp; &amp; &amp; &amp; E &amp; \\ \hline C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C &amp; &amp; C &amp; C &amp; C \\ \hline C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C &amp; E &amp; C &amp; C &amp; C \\ \hline \end{tabular}\]
-</p>
- 
-<p class="definition">Definition at line <a class="el" href="itkKLMSegmentationRegion_8h_source.html#l00093">93</a> of file <a class="el" href="itkKLMSegmentationRegion_8h_source.html">itkKLMSegmentationRegion.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a93ce5c30b806e5106804c061d50186e0" name="a93ce5c30b806e5106804c061d50186e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93ce5c30b806e5106804c061d50186e0">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

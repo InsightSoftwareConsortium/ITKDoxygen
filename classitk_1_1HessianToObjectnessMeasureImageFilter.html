@@ -96,7 +96,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkHessianToObjectnessMeasureImageFilter_8h_source.html">itkHessianToObjectnessMeasureImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::HessianToObjectnessMeasureImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >A filter to enhance M-dimensional objects in N-dimensional images. </p>
+<p >The objectness measure is a generalization of Frangi's vesselness measure, which is based on the analysis of the the Hessian eigen system. The filter can enhance blob-like structures (M=0), vessel-like structures (M=1), 2D plate-like structures (M=2), hyper-plate-like structures (M=3) in N-dimensional images, with M&lt;N. The filter takes an image of a Hessian pixels ( <a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> pixels pixels ) and produces an enhanced image. The Hessian input image can be produced using <a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">itk::HessianRecursiveGaussianImageFilter</a>.</p>
+<dl class="section user"><dt>References</dt><dd>Frangi, AF, Niessen, WJ, Vincken, KL, &amp; Viergever, MA (1998). Multiscale Vessel Enhancement Filtering. In Wells, WM, Colchester, A, &amp; Delp, S, Editors, MICCAI '98 Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing and Computer-Assisted Intervention, Lecture Notes in Computer Science, pages 130-137, Springer Verlag, 1998.</dd></dl>
+<p>Additional information can be from in the Insight Journal: <a href="https://www.insight-journal.org/browse/publication/175">https://www.insight-journal.org/browse/publication/175</a></p>
+<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Medical Imaging Unit, Bioengineering Department, Mario Negri Institute, Italy.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html" title="A filter to enhance structures using Hessian eigensystem-based measures in a multiscale framework.">MultiScaleHessianBasedMeasureImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Hessian3DToVesselnessMeasureImageFilter.html" title="Line filter to provide a vesselness measure for tubular objects from the hessian matrix.">Hessian3DToVesselnessMeasureImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">HessianRecursiveGaussianImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SymmetricEigenAnalysisImageFilter.html" title="Computes the eigen-values of every input symmetric matrix pixel.">SymmetricEigenAnalysisImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkHessianToObjectnessMeasureImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkHessianToObjectnessMeasureImageFilter_8h_source.html">itkHessianToObjectnessMeasureImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::HessianToObjectnessMeasureImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -771,25 +789,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::HessianToObjectnessMeasureImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >A filter to enhance M-dimensional objects in N-dimensional images. </p>
-<p >The objectness measure is a generalization of Frangi's vesselness measure, which is based on the analysis of the the Hessian eigen system. The filter can enhance blob-like structures (M=0), vessel-like structures (M=1), 2D plate-like structures (M=2), hyper-plate-like structures (M=3) in N-dimensional images, with M&lt;N. The filter takes an image of a Hessian pixels ( <a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> pixels pixels ) and produces an enhanced image. The Hessian input image can be produced using <a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">itk::HessianRecursiveGaussianImageFilter</a>.</p>
-<dl class="section user"><dt>References</dt><dd>Frangi, AF, Niessen, WJ, Vincken, KL, &amp; Viergever, MA (1998). Multiscale Vessel Enhancement Filtering. In Wells, WM, Colchester, A, &amp; Delp, S, Editors, MICCAI '98 Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing and Computer-Assisted Intervention, Lecture Notes in Computer Science, pages 130-137, Springer Verlag, 1998.</dd></dl>
-<p>Additional information can be from in the Insight Journal: <a href="https://www.insight-journal.org/browse/publication/175">https://www.insight-journal.org/browse/publication/175</a></p>
-<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Medical Imaging Unit, Bioengineering Department, Mario Negri Institute, Italy.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1MultiScaleHessianBasedMeasureImageFilter.html" title="A filter to enhance structures using Hessian eigensystem-based measures in a multiscale framework.">MultiScaleHessianBasedMeasureImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Hessian3DToVesselnessMeasureImageFilter.html" title="Line filter to provide a vesselness measure for tubular objects from the hessian matrix.">Hessian3DToVesselnessMeasureImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1HessianRecursiveGaussianImageFilter.html" title="Computes the Hessian matrix of an image by convolution with the Second and Cross derivatives of a Gau...">HessianRecursiveGaussianImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SymmetricEigenAnalysisImageFilter.html" title="Computes the eigen-values of every input symmetric matrix pixel.">SymmetricEigenAnalysisImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkHessianToObjectnessMeasureImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkHessianToObjectnessMeasureImageFilter_8h_source.html">itkHessianToObjectnessMeasureImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae6ca57cbd6b40907d54a420ba6c7cc70" name="ae6ca57cbd6b40907d54a420ba6c7cc70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6ca57cbd6b40907d54a420ba6c7cc70">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

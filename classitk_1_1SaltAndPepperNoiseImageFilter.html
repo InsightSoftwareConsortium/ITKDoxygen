@@ -94,7 +94,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSaltAndPepperNoiseImageFilter_8h_source.html">itkSaltAndPepperNoiseImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputImage, class TOutputImage = TInputImage&gt;<br />
+class itk::SaltAndPepperNoiseImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Alter an image with fixed value impulse noise, often called salt and pepper noise. </p>
+<p >Salt (sensor saturation) and pepper (dead pixels) noise is a special kind of impulse noise where the value of the noise is either the maximum possible value in the image or its minimum. This is not necessarily the maximal/minimal possible intensity value based on the pixel type. For example, the native pixel type for CT is a signed 16 bit integer, but only 12 bits used, so we would like to set the salt and pepper values to match this smaller intensity range and not the range the pixel type represents. It can be modeled as:</p>
+<dl class="section user"><dt></dt><dd>\( I = \begin{cases} M, &amp; \quad \text{if } U &lt; p/2 \\ m, &amp; \quad \text{if } U &gt; 1 - p/2 \\ I_0, &amp; \quad \text{if } p/2 \geq &#x2415;U \leq&#x2414; 1 - p/2 \end{cases} \)</dd></dl>
+<dl class="section user"><dt></dt><dd>where \( p \) is the probability of the noise event, \( U \) is a uniformly distributed random variable in the \( [0,1] \) range, \( M \) is the greatest possible pixel value, and \( m \) the smallest possible pixel value.</dd></dl>
+<p>Pixel alteration occurs at a user defined probability. Salt and pepper pixels are equally distributed.</p>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann</dd></dl>
+<p>This code was contributed in the Insight Journal paper "Noise
+Simulation". <a href="https://www.insight-journal.org/browse/publication/721">https://www.insight-journal.org/browse/publication/721</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkSaltAndPepperNoiseImageFilter_8h_source.html#l00067">67</a> of file <a class="el" href="itkSaltAndPepperNoiseImageFilter_8h_source.html">itkSaltAndPepperNoiseImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SaltAndPepperNoiseImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -810,19 +822,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputImage, class TOutputImage = TInputImage&gt;<br />
-class itk::SaltAndPepperNoiseImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Alter an image with fixed value impulse noise, often called salt and pepper noise. </p>
-<p >Salt (sensor saturation) and pepper (dead pixels) noise is a special kind of impulse noise where the value of the noise is either the maximum possible value in the image or its minimum. This is not necessarily the maximal/minimal possible intensity value based on the pixel type. For example, the native pixel type for CT is a signed 16 bit integer, but only 12 bits used, so we would like to set the salt and pepper values to match this smaller intensity range and not the range the pixel type represents. It can be modeled as:</p>
-<dl class="section user"><dt></dt><dd>\( I = \begin{cases} M, &amp; \quad \text{if } U &lt; p/2 \\ m, &amp; \quad \text{if } U &gt; 1 - p/2 \\ I_0, &amp; \quad \text{if } p/2 \geq &#x2415;U \leq&#x2414; 1 - p/2 \end{cases} \)</dd></dl>
-<dl class="section user"><dt></dt><dd>where \( p \) is the probability of the noise event, \( U \) is a uniformly distributed random variable in the \( [0,1] \) range, \( M \) is the greatest possible pixel value, and \( m \) the smallest possible pixel value.</dd></dl>
-<p>Pixel alteration occurs at a user defined probability. Salt and pepper pixels are equally distributed.</p>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann</dd></dl>
-<p>This code was contributed in the Insight Journal paper "Noise
-Simulation". <a href="https://www.insight-journal.org/browse/publication/721">https://www.insight-journal.org/browse/publication/721</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkSaltAndPepperNoiseImageFilter_8h_source.html#l00067">67</a> of file <a class="el" href="itkSaltAndPepperNoiseImageFilter_8h_source.html">itkSaltAndPepperNoiseImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac063444554ce124361d6e2124f19e9b0" name="ac063444554ce124361d6e2124f19e9b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac063444554ce124361d6e2124f19e9b0">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

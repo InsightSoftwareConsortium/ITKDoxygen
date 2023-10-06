@@ -95,7 +95,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkInverseDeconvolutionImageFilter_8h_source.html">itkInverseDeconvolutionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
+class itk::InverseDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >The direct linear inverse deconvolution filter. </p>
+<p >The inverse filter is the most straightforward deconvolution method. Considering that convolution of two images in the spatial domain is equivalent to multiplying the Fourier transform of the two images, the inverse filter consists of inverting the multiplication. In other words, this filter computes the following: </p><p class="formulaDsp">
+\[ hat{F}(\omega) = \begin{cases} G(\omega) / H(\omega) &amp; \text{if $|H(\omega)| \geq \epsilon$} \\ 0 &amp; \text{otherwise} \end{cases} \]
+</p>
+<p> where \(\hat{F}(\omega)\) is the Fourier transform of the estimate produced by this filter, \(G(\omega)\) is the Fourier transform of the input blurred image, \(H(\omega)\) is the Fourier transform of the blurring kernel, and \(\epsilon\) is a constant real non-negative threshold (called KernelZeroMagnitudeThreshold in this filter) that determines when the magnitude of a complex number is considered zero.</p>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann, Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France </dd>
+<dd>
+Cory Quammen, The University of North Carolina at Chapel Hill </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkInverseDeconvolutionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkInverseDeconvolutionImageFilter_8h_source.html">itkInverseDeconvolutionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InverseDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -918,19 +930,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
-class itk::InverseDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >The direct linear inverse deconvolution filter. </p>
-<p >The inverse filter is the most straightforward deconvolution method. Considering that convolution of two images in the spatial domain is equivalent to multiplying the Fourier transform of the two images, the inverse filter consists of inverting the multiplication. In other words, this filter computes the following: </p><p class="formulaDsp">
-\[ hat{F}(\omega) = \begin{cases} G(\omega) / H(\omega) &amp; \text{if $|H(\omega)| \geq \epsilon$} \\ 0 &amp; \text{otherwise} \end{cases} \]
-</p>
-<p> where \(\hat{F}(\omega)\) is the Fourier transform of the estimate produced by this filter, \(G(\omega)\) is the Fourier transform of the input blurred image, \(H(\omega)\) is the Fourier transform of the blurring kernel, and \(\epsilon\) is a constant real non-negative threshold (called KernelZeroMagnitudeThreshold in this filter) that determines when the magnitude of a complex number is considered zero.</p>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann, Biologie du Developpement et de la Reproduction, INRA de Jouy-en-Josas, France </dd>
-<dd>
-Cory Quammen, The University of North Carolina at Chapel Hill </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkInverseDeconvolutionImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkInverseDeconvolutionImageFilter_8h_source.html">itkInverseDeconvolutionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4a2a848becdbecec09637ee28386589b" name="a4a2a848becdbecec09637ee28386589b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a2a848becdbecec09637ee28386589b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

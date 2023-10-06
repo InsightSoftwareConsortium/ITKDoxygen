@@ -97,7 +97,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetMotionRegistrationFunction_8h_source.html">itkLevelSetMotionRegistrationFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
+class itk::LevelSetMotionRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >This class encapsulate the PDE which drives the demons registration algorithm. It is used by <a class="el" href="classitk_1_1LevelSetMotionRegistrationFilter.html" title="Deformably register two images using level set motion.">LevelSetMotionRegistrationFilter</a> to compute the output deformation field which will map a moving image onto a a fixed image.</p>
+<p >Non-integer moving image values are obtained by using interpolation. The default interpolator is of type <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user may set other interpolators via method SetMovingImageInterpolator. Note that the input interpolator must derive from baseclass <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
+<p >This class is templated over the fixed image type, moving image type, and the deformation field type.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetMotionRegistrationFilter.html" title="Deformably register two images using level set motion.">LevelSetMotionRegistrationFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetMotionRegistrationFunction_8h_source.html#l00055">55</a> of file <a class="el" href="itkLevelSetMotionRegistrationFunction_8h_source.html">itkLevelSetMotionRegistrationFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetMotionRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -441,16 +450,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
-class itk::LevelSetMotionRegistrationFunction&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >This class encapsulate the PDE which drives the demons registration algorithm. It is used by <a class="el" href="classitk_1_1LevelSetMotionRegistrationFilter.html" title="Deformably register two images using level set motion.">LevelSetMotionRegistrationFilter</a> to compute the output deformation field which will map a moving image onto a a fixed image.</p>
-<p >Non-integer moving image values are obtained by using interpolation. The default interpolator is of type <a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a>. The user may set other interpolators via method SetMovingImageInterpolator. Note that the input interpolator must derive from baseclass <a class="el" href="classitk_1_1InterpolateImageFunction.html" title="Base class for all image interpolators.">InterpolateImageFunction</a>.</p>
-<p >This class is templated over the fixed image type, moving image type, and the deformation field type.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetMotionRegistrationFilter.html" title="Deformably register two images using level set motion.">LevelSetMotionRegistrationFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetMotionRegistrationFunction_8h_source.html#l00055">55</a> of file <a class="el" href="itkLevelSetMotionRegistrationFunction_8h_source.html">itkLevelSetMotionRegistrationFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aebe2e1cc61b90ea05fbd0381b2863bb2" name="aebe2e1cc61b90ea05fbd0381b2863bb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebe2e1cc61b90ea05fbd0381b2863bb2">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

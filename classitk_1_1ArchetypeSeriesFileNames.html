@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkArchetypeSeriesFileNames_8h_source.html">itkArchetypeSeriesFileNames.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Generate an ordered sequence of filenames. </p>
+<p >This class generates an ordered sequence of files based on an archetypical filename. From the archetypical filename, a set of regular expressions is created to group filenames based on numeric substrings. There can be multiple numeric substrings in the archetype. When this occurs, <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html" title="Generate an ordered sequence of filenames.">ArchetypeSeriesFileNames</a> can not determine which numeric substring refers to the "image number" and which numeric substring refers to the "series" or "study". By default, the <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html" title="Generate an ordered sequence of filenames.">ArchetypeSeriesFileNames</a> assumes the rightmost numeric substring refers to the image number, and this is the group of filenames returned by default. However, the other groupings of filenames can also be queried by passing in a group number to the <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html#a9a1ae022ff039bb8738a7b92e6fd7b8d">GetFileNames()</a> method. Groups are numbered by the numeric substrings from right to left in the archetype.</p>
+<p >For example, if a directory contains the files </p><pre class="fragment">    foo_5_1.png
+    foo_5_2.png
+    foo_5_3.png
+    foo_6_1.png
+    foo_6_2.png
+    foo_6_3.png
+</pre><p> and specifying an archetypical file foo_5_1.png, the filename list will contain </p><pre class="fragment">    foo_5_1.png
+    foo_5_2.png
+    foo_5_3.png
+</pre> 
+<p class="definition">Definition at line <a class="el" href="itkArchetypeSeriesFileNames_8h_source.html#l00068">68</a> of file <a class="el" href="itkArchetypeSeriesFileNames_8h_source.html">itkArchetypeSeriesFileNames.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ArchetypeSeriesFileNames:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -304,21 +318,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Generate an ordered sequence of filenames. </p>
-<p >This class generates an ordered sequence of files based on an archetypical filename. From the archetypical filename, a set of regular expressions is created to group filenames based on numeric substrings. There can be multiple numeric substrings in the archetype. When this occurs, <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html" title="Generate an ordered sequence of filenames.">ArchetypeSeriesFileNames</a> can not determine which numeric substring refers to the "image number" and which numeric substring refers to the "series" or "study". By default, the <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html" title="Generate an ordered sequence of filenames.">ArchetypeSeriesFileNames</a> assumes the rightmost numeric substring refers to the image number, and this is the group of filenames returned by default. However, the other groupings of filenames can also be queried by passing in a group number to the <a class="el" href="classitk_1_1ArchetypeSeriesFileNames.html#a9a1ae022ff039bb8738a7b92e6fd7b8d">GetFileNames()</a> method. Groups are numbered by the numeric substrings from right to left in the archetype.</p>
-<p >For example, if a directory contains the files </p><pre class="fragment">    foo_5_1.png
-    foo_5_2.png
-    foo_5_3.png
-    foo_6_1.png
-    foo_6_2.png
-    foo_6_3.png
-</pre><p> and specifying an archetypical file foo_5_1.png, the filename list will contain </p><pre class="fragment">    foo_5_1.png
-    foo_5_2.png
-    foo_5_3.png
-</pre> 
-<p class="definition">Definition at line <a class="el" href="itkArchetypeSeriesFileNames_8h_source.html#l00068">68</a> of file <a class="el" href="itkArchetypeSeriesFileNames_8h_source.html">itkArchetypeSeriesFileNames.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a96df76d88bb674206672caca0dfd245c" name="a96df76d88bb674206672caca0dfd245c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96df76d88bb674206672caca0dfd245c">&#9670;&nbsp;</a></span>IntVectorType</h2>
 

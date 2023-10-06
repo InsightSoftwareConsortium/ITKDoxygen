@@ -93,7 +93,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkConvertPixelBuffer_8h_source.html">itkConvertPixelBuffer.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename InputPixelType, typename OutputPixelType, typename OutputConvertTraits&gt;<br />
+class itk::ConvertPixelBuffer&lt; InputPixelType, OutputPixelType, OutputConvertTraits &gt;</div><p >Class to convert blocks of data from one type to another. </p>
+<p ><a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used by itkImageFileReader to convert from an unknown type at run-time to the compile-time template pixel type in itkImageFileReader. To work with complex pixel types like RGB and RGBA a traits class is used. OutputConvertTraits() is the traits class. The default one used is <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html" title="Traits class used to by ConvertPixels to convert blocks of pixels.">DefaultConvertPixelTraits</a>.</p>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href=</li>
+</ul>
+Derived from <a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used to work with pixel type as <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> type.</dd></dl>
+<p>Derived from <a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used to work with pixel type as <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> type. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkConvertPixelBuffer_8h_source.html#l00046">46</a> of file <a class="el" href="itkConvertPixelBuffer_8h_source.html">itkConvertPixelBuffer.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab7381c1fd50a9f6f40081fd4e7ed528e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ConvertPixelBuffer.html#ab7381c1fd50a9f6f40081fd4e7ed528e">OutputComponentType</a> = typename OutputConvertTraits::ComponentType</td></tr>
@@ -166,19 +178,7 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a08c6490b3e92977f1b1f55b060ac90d5"><td class="memTemplItemLeft" align="right" valign="top">static std::enable_if_t&lt; std::is_integral_v&lt; UComponentType &gt;, UComponentType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ConvertPixelBuffer.html#a08c6490b3e92977f1b1f55b060ac90d5">DefaultAlphaValue</a> ()</td></tr>
 <tr class="separator:a08c6490b3e92977f1b1f55b060ac90d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename InputPixelType, typename OutputPixelType, typename OutputConvertTraits&gt;<br />
-class itk::ConvertPixelBuffer&lt; InputPixelType, OutputPixelType, OutputConvertTraits &gt;</div><p >Class to convert blocks of data from one type to another. </p>
-<p ><a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used by itkImageFileReader to convert from an unknown type at run-time to the compile-time template pixel type in itkImageFileReader. To work with complex pixel types like RGB and RGBA a traits class is used. OutputConvertTraits() is the traits class. The default one used is <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html" title="Traits class used to by ConvertPixels to convert blocks of pixels.">DefaultConvertPixelTraits</a>.</p>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href=</li>
-</ul>
-Derived from <a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used to work with pixel type as <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> type.</dd></dl>
-<p>Derived from <a class="el" href="classitk_1_1ConvertPixelBuffer.html" title="Class to convert blocks of data from one type to another.">ConvertPixelBuffer</a> has a static method <a class="el" href="classitk_1_1ConvertPixelBuffer.html#a21a837c0808dd402797f40bc1142bc81">Convert()</a>. It is used to work with pixel type as <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> type. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkConvertPixelBuffer_8h_source.html#l00046">46</a> of file <a class="el" href="itkConvertPixelBuffer_8h_source.html">itkConvertPixelBuffer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab7381c1fd50a9f6f40081fd4e7ed528e" name="ab7381c1fd50a9f6f40081fd4e7ed528e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7381c1fd50a9f6f40081fd4e7ed528e">&#9670;&nbsp;</a></span>OutputComponentType</h2>
 

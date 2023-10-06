@@ -96,7 +96,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkContourDirectedMeanDistanceImageFilter_8h_source.html">itkContourDirectedMeanDistanceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
+class itk::ContourDirectedMeanDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Computes the directed Mean distance between the boundaries of non-zero pixel regions of two images. </p>
+<p ><a class="el" href="classitk_1_1ContourDirectedMeanDistanceImageFilter.html" title="Computes the directed Mean distance between the boundaries of non-zero pixel regions of two images.">ContourDirectedMeanDistanceImageFilter</a> computes the distance between the set non-zero pixels of two images using the following formula: </p><p class="formulaDsp">
+\[ h(A,B) = \mathrm{mean}_{a \in A} \min_{b \in B} \| a - b\| \]
+</p>
+<p> where \(A\) and \(B\) are respectively the set of non-zero pixels in the first and second input images. It identifies the point \( a \in A \) that is farthest from any point of \(B\) and measures the distance from \(a\) to the nearest neighbor in \(B\). Note that this function is not is not symmetric and hence is not a true distance.</p>
+<p >In particular, this filter uses the <a class="el" href="classitk_1_1SignedMaurerDistanceMapImageFilter.html" title="This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrar...">SignedMaurerDistanceMapImageFilter</a> inside to compute distance map from all non-zero pixels in the second image. It then computes the mean distance (in pixels) within the boundary pixels of non-zero regions in the first image.</p>
+<p >This filter requires the largest possible region of the first image and the same corresponding region in the second image. It behaves as filter with two input and one output. Thus it can be inserted in a pipeline with other filters. The filter passes the first input through unmodified.</p>
+<p >This filter is templated over the two input image type. It assume both image have the same number of dimensions.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1SignedMaurerDistanceMapImageFilter.html" title="This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrar...">SignedMaurerDistanceMapImageFilter</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Teo Popa, ISIS Center, Georgetown University </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkContourDirectedMeanDistanceImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkContourDirectedMeanDistanceImageFilter_8h_source.html">itkContourDirectedMeanDistanceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ContourDirectedMeanDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -778,21 +792,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
-class itk::ContourDirectedMeanDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Computes the directed Mean distance between the boundaries of non-zero pixel regions of two images. </p>
-<p ><a class="el" href="classitk_1_1ContourDirectedMeanDistanceImageFilter.html" title="Computes the directed Mean distance between the boundaries of non-zero pixel regions of two images.">ContourDirectedMeanDistanceImageFilter</a> computes the distance between the set non-zero pixels of two images using the following formula: </p><p class="formulaDsp">
-\[ h(A,B) = \mathrm{mean}_{a \in A} \min_{b \in B} \| a - b\| \]
-</p>
-<p> where \(A\) and \(B\) are respectively the set of non-zero pixels in the first and second input images. It identifies the point \( a \in A \) that is farthest from any point of \(B\) and measures the distance from \(a\) to the nearest neighbor in \(B\). Note that this function is not is not symmetric and hence is not a true distance.</p>
-<p >In particular, this filter uses the <a class="el" href="classitk_1_1SignedMaurerDistanceMapImageFilter.html" title="This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrar...">SignedMaurerDistanceMapImageFilter</a> inside to compute distance map from all non-zero pixels in the second image. It then computes the mean distance (in pixels) within the boundary pixels of non-zero regions in the first image.</p>
-<p >This filter requires the largest possible region of the first image and the same corresponding region in the second image. It behaves as filter with two input and one output. Thus it can be inserted in a pipeline with other filters. The filter passes the first input through unmodified.</p>
-<p >This filter is templated over the two input image type. It assume both image have the same number of dimensions.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1SignedMaurerDistanceMapImageFilter.html" title="This filter calculates the Euclidean distance transform of a binary image in linear time for arbitrar...">SignedMaurerDistanceMapImageFilter</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Teo Popa, ISIS Center, Georgetown University </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkContourDirectedMeanDistanceImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkContourDirectedMeanDistanceImageFilter_8h_source.html">itkContourDirectedMeanDistanceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adf12897cba470ad7a9b2f81ae606f27e" name="adf12897cba470ad7a9b2f81ae606f27e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf12897cba470ad7a9b2f81ae606f27e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

@@ -92,7 +92,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::ReflectiveImageRegionConstIterator&lt; TImage &gt;</div><p >Multi-dimensional image iterator which only walks a region. </p>
+<p ><a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is a templated class to represent a multi-dimensional iterator. <a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is templated over the image type. <a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is constrained to walk only within the specified region.</p>
+<p ><a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> will perform two passes over the image along each dimension. It is useful for algorithms that require to go back and forth (once) over the data.</p>
+<p >By setting the BeginOffset and EndOffset parameters, you can arrange for the starting point, when going forwards, to be different from the ending point, when going backwards. Along dimension d, when going forwards the iterator traverses the interval [BeginIndex[d]+BeginOffset[d], EndIndex[d]). When going back, it traverses the interval (EndIndex[d]-EndOffset[d], BeginIndex[d]]. Setting both offsets to (1, ..., 1) enables the <a class="el" href="classitk_1_1DanielssonDistanceMapImageFilter.html" title="This filter computes the distance map of the input image as an approximation with pixel accuracy to t...">DanielssonDistanceMapImageFilter</a> to process the entire image, without encountering boundary conditions, rather than removing a one-pixel border.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DanielssonDistanceMapImageFilter.html" title="This filter computes the distance map of the input image as an approximation with pixel accuracy to t...">DanielssonDistanceMapImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00054">54</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ReflectiveImageRegionConstIterator&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -284,16 +293,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab9e271619c90a0022969f70e0fd3ce63 inherit pro_attribs_classitk_1_1ImageConstIteratorWithIndex"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageConstIteratorWithIndex.html#ab9e271619c90a0022969f70e0fd3ce63">m_Remaining</a> { false }</td></tr>
 <tr class="separator:ab9e271619c90a0022969f70e0fd3ce63 inherit pro_attribs_classitk_1_1ImageConstIteratorWithIndex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::ReflectiveImageRegionConstIterator&lt; TImage &gt;</div><p >Multi-dimensional image iterator which only walks a region. </p>
-<p ><a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is a templated class to represent a multi-dimensional iterator. <a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is templated over the image type. <a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> is constrained to walk only within the specified region.</p>
-<p ><a class="el" href="classitk_1_1ReflectiveImageRegionConstIterator.html" title="Multi-dimensional image iterator which only walks a region.">ReflectiveImageRegionConstIterator</a> will perform two passes over the image along each dimension. It is useful for algorithms that require to go back and forth (once) over the data.</p>
-<p >By setting the BeginOffset and EndOffset parameters, you can arrange for the starting point, when going forwards, to be different from the ending point, when going backwards. Along dimension d, when going forwards the iterator traverses the interval [BeginIndex[d]+BeginOffset[d], EndIndex[d]). When going back, it traverses the interval (EndIndex[d]-EndOffset[d], BeginIndex[d]]. Setting both offsets to (1, ..., 1) enables the <a class="el" href="classitk_1_1DanielssonDistanceMapImageFilter.html" title="This filter computes the distance map of the input image as an approximation with pixel accuracy to t...">DanielssonDistanceMapImageFilter</a> to process the entire image, without encountering boundary conditions, rather than removing a one-pixel border.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DanielssonDistanceMapImageFilter.html" title="This filter computes the distance map of the input image as an approximation with pixel accuracy to t...">DanielssonDistanceMapImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00054">54</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a0b1c7b42f926becaf3c1e5e3dafe38df" name="a0b1c7b42f926becaf3c1e5e3dafe38df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b1c7b42f926becaf3c1e5e3dafe38df">&#9670;&nbsp;</a></span>ImageType</h2>
 
@@ -307,7 +307,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> type alias support While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> back to <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> to that is it not confused with ImageIterator::Image. </p>
+<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> type alias support While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> back to <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> to that is it not confused with ImageIterator::Image. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00072">72</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
 
@@ -326,7 +326,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p ><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> type alias support While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> back to <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">itk::Index</a> to that is it not confused with ImageIterator::Index. </p>
+<p ><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> type alias support While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> back to <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">itk::Index</a> to that is it not confused with ImageIterator::Index. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00066">66</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
 
@@ -382,7 +382,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >PixelContainer type alias support Used to refer to the container for the pixel data. While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
+<p >PixelContainer type alias support Used to refer to the container for the pixel data. While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00078">78</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
 
@@ -419,7 +419,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> type alias support While this was already typdef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> back to <a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">itk::ImageRegion</a> so that is it not confused with ImageIterator::Index. </p>
+<p ><a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> type alias support While this was already typedef'ed in the superclass it needs to be redone here for this subclass to compile properly with gcc. Note that we have to rescope <a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> back to <a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">itk::ImageRegion</a> so that is it not confused with ImageIterator::Index. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html#l00086">86</a> of file <a class="el" href="itkReflectiveImageRegionConstIterator_8h_source.html">itkReflectiveImageRegionConstIterator.h</a>.</p>
 

@@ -94,7 +94,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWatershedBoundaryResolver_8h_source.html">itkWatershedBoundaryResolver.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int TDimension&gt;<br />
+class itk::watershed::BoundaryResolver&lt; TPixelType, TDimension &gt;</div><p >This filter implements a piece of the streaming watershed segmentation algorithm. It takes in pairs of <a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> objects and connects the labeling of pixels across image chunk boundaries. Read the documentation found in <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> and the other watershed segmentation component objects for more information.</p>
+<dl class="section user"><dt>A note on terminology in itk watershed segmentation code</dt><dd>For streamed segmentation of images in the watershed framework, the documentation refers to the complete data set at the "image volume." The image volume is assumed to be partitioned into pieces referred to as image chunks. Each chunk is processed in sequence through the pipeline. The "face" of an image chunk is an N-1 dimensional boundary region of an N dimensional chunk (the planar faces of a cube, for example).</dd></dl>
+<dl class="section user"><dt>Input</dt><dd>The input to this filter is a pair of <a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> pointers (BoundaryA and BoundaryB). The algorithm assumes that these Boundaries come from facing chunks in the image volume. The faces that align need to be specified in the parameters of the filter.</dd></dl>
+<dl class="section user"><dt>Output</dt><dd>This filter outputs a table of equivalencies among labels. See <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">itk::EquivalencyTable</a> for more information.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>The only parameters to set on this filter are the indices of the faces that align in the boundary object inputs. See itk::Boundary for a description of how boundary faces are indexed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkWatershedBoundaryResolver_8h_source.html#l00065">65</a> of file <a class="el" href="itkWatershedBoundaryResolver_8h_source.html">itkWatershedBoundaryResolver.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::watershed::BoundaryResolver&lt; TPixelType, TDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -573,17 +583,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int TDimension&gt;<br />
-class itk::watershed::BoundaryResolver&lt; TPixelType, TDimension &gt;</div><p >This filter implements a piece of the streaming watershed segmentation algorithm. It takes in pairs of <a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> objects and connects the labeling of pixels across image chunk boundaries. Read the documentation found in <a class="el" href="classitk_1_1WatershedImageFilter.html" title="A low-level image analysis algorithm that automatically produces a hierarchy of segmented,...">itk::WatershedImageFilter</a> and the other watershed segmentation component objects for more information.</p>
-<dl class="section user"><dt>A note on terminology in itk watershed segmentation code</dt><dd>For streamed segmentation of images in the watershed framework, the documentation refers to the complete data set at the "image volume." The image volume is assumed to be partitioned into pieces referred to as image chunks. Each chunk is processed in sequence through the pipeline. The "face" of an image chunk is an N-1 dimensional boundary region of an N dimensional chunk (the planar faces of a cube, for example).</dd></dl>
-<dl class="section user"><dt>Input</dt><dd>The input to this filter is a pair of <a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> pointers (BoundaryA and BoundaryB). The algorithm assumes that these Boundaries come from facing chunks in the image volume. The faces that align need to be specified in the parameters of the filter.</dd></dl>
-<dl class="section user"><dt>Output</dt><dd>This filter outputs a table of equivalencies among labels. See <a class="el" href="classitk_1_1EquivalencyTable.html" title="Hash table to manage integral label equivalencies.">itk::EquivalencyTable</a> for more information.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>The only parameters to set on this filter are the indices of the faces that align in the boundary object inputs. See itk::Boundary for a description of how boundary faces are indexed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1watershed_1_1Boundary.html">itk::watershed::Boundary</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkWatershedBoundaryResolver_8h_source.html#l00065">65</a> of file <a class="el" href="itkWatershedBoundaryResolver_8h_source.html">itkWatershedBoundaryResolver.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab122739e972aa042143b968385438b5e" name="ab122739e972aa042143b968385438b5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab122739e972aa042143b968385438b5e">&#9670;&nbsp;</a></span>BoundaryType</h2>
 

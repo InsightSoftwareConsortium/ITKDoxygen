@@ -96,7 +96,22 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkValuedRegionalExtremaImageFilter_8h_source.html">itkValuedRegionalExtremaImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TFunction1, typename TFunction2&gt;<br />
+class itk::ValuedRegionalExtremaImageFilter&lt; TInputImage, TOutputImage, TFunction1, TFunction2 &gt;</div><p >Uses a flooding algorithm to set all voxels that are not a regional extrema to the max or min of the pixel type. </p>
+<p >This is the class used by <a class="el" href="classitk_1_1ValuedRegionalMinimaImageFilter.html" title="Transforms the image so that any pixel that is not a regional minima is set to the maximum value for ...">ValuedRegionalMinimaImageFilter</a> and <a class="el" href="classitk_1_1ValuedRegionalMaximaImageFilter.html" title="Transforms the image so that any pixel that is not a regional maxima is set to the minimum value for ...">ValuedRegionalMaximaImageFilter</a>. There is no suppression of regional minima based on dynamics, as available in <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>. This flooding algorithm is a very simple one, but I'm not sure where it came from - I certainly didn't invent it.</p>
+<p >Let's consider the case of regional minima. The basic algorithm is: Boundary conditions are such that the image is logically surrounded by a border that is either maximal or minimal for the pixel type. An optimized version could explicitly set the border to avoid the need for boundary checks. For regional minima the boundary is set to the maximal value for the pixel type.</p>
+<p >Pixels are visited in raster order. The neighbors of each pixel are examined. If any neighbor is greater than the centre, then the centre pixel cannot be a regional minima. The centre pixel is part of a flat region (consisting of at least one pixel) that is therefore not a regional minima either. This region is set to the maximum value for the pixel type using a flooding algorithm.</p>
+<p >There are some minor complications that prevent pixels being examined more than once &ndash; basically check that the output value is less than the maximum for the pixel type.</p>
+<p >The implementation uses the functor model from itkMaximumImageFilter.</p>
+<p >This code was contributed in the Insight Journal paper: "Finding regional extrema - methods and performance" by Beare R., Lehmann G. <a href="https://www.insight-journal.org/browse/publication/65">https://www.insight-journal.org/browse/publication/65</a></p>
+<dl class="section author"><dt>Author</dt><dd>Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ValuedRegionalMinimaImageFilter.html" title="Transforms the image so that any pixel that is not a regional minima is set to the maximum value for ...">ValuedRegionalMinimaImageFilter</a>, <a class="el" href="classitk_1_1ValuedRegionalMaximaImageFilter.html" title="Transforms the image so that any pixel that is not a regional maxima is set to the minimum value for ...">ValuedRegionalMaximaImageFilter</a>, </dd>
+<dd>
+<a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkValuedRegionalExtremaImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkValuedRegionalExtremaImageFilter_8h_source.html">itkValuedRegionalExtremaImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ValuedRegionalExtremaImageFilter&lt; TInputImage, TOutputImage, TFunction1, TFunction2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -771,22 +786,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TFunction1, typename TFunction2&gt;<br />
-class itk::ValuedRegionalExtremaImageFilter&lt; TInputImage, TOutputImage, TFunction1, TFunction2 &gt;</div><p >Uses a flooding algorithm to set all voxels that are not a regional extrema to the max or min of the pixel type. </p>
-<p >This is the class used by <a class="el" href="classitk_1_1ValuedRegionalMinimaImageFilter.html" title="Transforms the image so that any pixel that is not a regional minima is set to the maximum value for ...">ValuedRegionalMinimaImageFilter</a> and <a class="el" href="classitk_1_1ValuedRegionalMaximaImageFilter.html" title="Transforms the image so that any pixel that is not a regional maxima is set to the minimum value for ...">ValuedRegionalMaximaImageFilter</a>. There is no suppression of regional minima based on dynamics, as available in <a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a>. This flooding algorithm is a very simple one, but I'm not sure where it came from - I certainly didn't invent it.</p>
-<p >Let's consider the case of regional minima. The basic algorithm is: Boundary conditions are such that the image is logically surrounded by a border that is either maximal or minimal for the pixel type. An optimized version could explicitly set the border to avoid the need for boundary checks. For regional minima the boundary is set to the maximal value for the pixel type.</p>
-<p >Pixels are visited in raster order. The neighbors of each pixel are examined. If any neighbor is greater than the centre, then the centre pixel cannot be a regional minima. The centre pixel is part of a flat region (consisting of at least one pixel) that is therefore not a regional minima either. This region is set to the maximum value for the pixel type using a flooding algorithm.</p>
-<p >There are some minor complications that prevent pixels being examined more than once &ndash; basically check that the output value is less than the maximum for the pixel type.</p>
-<p >The implementation uses the functor model from itkMaximumImageFilter.</p>
-<p >This code was contributed in the Insight Journal paper: "Finding regional extrema - methods and performance" by Beare R., Lehmann G. <a href="https://www.insight-journal.org/browse/publication/65">https://www.insight-journal.org/browse/publication/65</a></p>
-<dl class="section author"><dt>Author</dt><dd>Richard Beare. Department of Medicine, Monash University, Melbourne, Australia.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ValuedRegionalMinimaImageFilter.html" title="Transforms the image so that any pixel that is not a regional minima is set to the maximum value for ...">ValuedRegionalMinimaImageFilter</a>, <a class="el" href="classitk_1_1ValuedRegionalMaximaImageFilter.html" title="Transforms the image so that any pixel that is not a regional maxima is set to the minimum value for ...">ValuedRegionalMaximaImageFilter</a>, </dd>
-<dd>
-<a class="el" href="classitk_1_1HMinimaImageFilter.html" title="Suppress local minima whose depth below the baseline is less than h.">HMinimaImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkValuedRegionalExtremaImageFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkValuedRegionalExtremaImageFilter_8h_source.html">itkValuedRegionalExtremaImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2e27f6765cec6a52dad927345f123072" name="a2e27f6765cec6a52dad927345f123072"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e27f6765cec6a52dad927345f123072">&#9670;&nbsp;</a></span>ConstInputIterator</h2>
 

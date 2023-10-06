@@ -92,7 +92,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWeakPointer_8h_source.html">itkWeakPointer.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TObjectType&gt;<br />
+class itk::WeakPointer&lt; TObjectType &gt;</div><p >Implements a weak reference to an object. </p>
+<p ><a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> implements a weak reference to an object. A natural interface to the class is defined by operator -&gt; (and *) among others. <a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> is really nothing more than a standard pointer. It is used to call attention to the fact that it does not adjust the reference count of an object like <a class="el" href="classitk_1_1SmartPointer.html" title="Implements transparent reference counting.">SmartPointer</a> does. <a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> is used internally to Insight to manage (break) reference counting loops. At some point, an object may keep track of how many objects hold weak references to itself. In all cases, however, an outstanding weak reference will not keep an object from destructing. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkWeakPointer_8h_source.html#l00044">44</a> of file <a class="el" href="itkWeakPointer_8h_source.html">itkWeakPointer.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab45e89ecd13acb02af704d50804f20bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WeakPointer.html#ab45e89ecd13acb02af704d50804f20bc">ObjectType</a> = TObjectType</td></tr>
@@ -139,13 +145,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a18b4987259a0c88b6f95724fc27058cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1WeakPointer.html#ab45e89ecd13acb02af704d50804f20bc">ObjectType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WeakPointer.html#a18b4987259a0c88b6f95724fc27058cb">m_Pointer</a> { nullptr }</td></tr>
 <tr class="separator:a18b4987259a0c88b6f95724fc27058cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TObjectType&gt;<br />
-class itk::WeakPointer&lt; TObjectType &gt;</div><p >Implements a weak reference to an object. </p>
-<p ><a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> implements a weak reference to an object. A natural interface to the class is defined by operator -&gt; (and *) among others. <a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> is really nothing more than a standard pointer. It is used to call attention to the fact that it does not adjust the reference count of an object like <a class="el" href="classitk_1_1SmartPointer.html" title="Implements transparent reference counting.">SmartPointer</a> does. <a class="el" href="classitk_1_1WeakPointer.html" title="Implements a weak reference to an object.">WeakPointer</a> is used internally to Insight to manage (break) reference counting loops. At some point, an object may keep track of how many objects hold weak references to itself. In all cases, however, an outstanding weak reference will not keep an object from destructing. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkWeakPointer_8h_source.html#l00044">44</a> of file <a class="el" href="itkWeakPointer_8h_source.html">itkWeakPointer.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab45e89ecd13acb02af704d50804f20bc" name="ab45e89ecd13acb02af704d50804f20bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab45e89ecd13acb02af704d50804f20bc">&#9670;&nbsp;</a></span>ObjectType</h2>
 

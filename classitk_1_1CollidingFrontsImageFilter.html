@@ -95,7 +95,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCollidingFrontsImageFilter_8h_source.html">itkCollidingFrontsImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::CollidingFrontsImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Selects a region of space where two independent fronts run towards each other. </p>
+<p >The filter can be used to quickly segment anatomical structures (e.g. for level set initialization).</p>
+<p >The filter uses two instances of <a class="el" href="classitk_1_1FastMarchingUpwindGradientImageFilter.html" title="Generates the upwind gradient field of fast marching arrival times.">FastMarchingUpwindGradientImageFilter</a> to compute the gradients of arrival times of two wavefronts propagating from two sets of seeds. The input of the filter is used as the speed of the two wavefronts. The output is the dot product between the two gradient vector fields.</p>
+<p >The filter works on the following basic idea. In the regions where the dot product between the two gradient fields is negative, the two fronts propagate in opposite directions. In the regions where the dot product is positive, the two fronts propagate in the same direction. This can be used to extract the region of space between two sets of points.</p>
+<p >If StopOnTargets is On, then each front will stop as soon as all seeds of the other front have been reached. This can markedly speed up the execution of the filter, since wave propagation does not take place on the complete image.</p>
+<p >Optionally, a connectivity criterion can be applied to the resulting dot product image. In this case, the only negative region in the output image is the one connected to the seeds.</p>
+<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Biomedical Technologies Laboratory, Bioengineering Department, Mario Negri Institute, Italy. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCollidingFrontsImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkCollidingFrontsImageFilter_8h_source.html">itkCollidingFrontsImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CollidingFrontsImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -777,18 +788,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::CollidingFrontsImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Selects a region of space where two independent fronts run towards each other. </p>
-<p >The filter can be used to quickly segment anatomical structures (e.g. for level set initialization).</p>
-<p >The filter uses two instances of <a class="el" href="classitk_1_1FastMarchingUpwindGradientImageFilter.html" title="Generates the upwind gradient field of fast marching arrival times.">FastMarchingUpwindGradientImageFilter</a> to compute the gradients of arrival times of two wavefronts propagating from two sets of seeds. The input of the filter is used as the speed of the two wavefronts. The output is the dot product between the two gradient vector fields.</p>
-<p >The filter works on the following basic idea. In the regions where the dot product between the two gradient fields is negative, the two fronts propagate in opposite directions. In the regions where the dot product is positive, the two fronts propagate in the same direction. This can be used to extract the region of space between two sets of points.</p>
-<p >If StopOnTargets is On, then each front will stop as soon as all seeds of the other front have been reached. This can markedly speed up the execution of the filter, since wave propagation does not take place on the complete image.</p>
-<p >Optionally, a connectivity criterion can be applied to the resulting dot product image. In this case, the only negative region in the output image is the one connected to the seeds.</p>
-<dl class="section author"><dt>Author</dt><dd>Luca Antiga Ph.D. Biomedical Technologies Laboratory, Bioengineering Department, Mario Negri Institute, Italy. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCollidingFrontsImageFilter_8h_source.html#l00061">61</a> of file <a class="el" href="itkCollidingFrontsImageFilter_8h_source.html">itkCollidingFrontsImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5c4d85caebbfe0d077bd6bd68cb2917d" name="a5c4d85caebbfe0d077bd6bd68cb2917d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c4d85caebbfe0d077bd6bd68cb2917d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

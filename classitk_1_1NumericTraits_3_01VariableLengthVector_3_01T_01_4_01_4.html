@@ -92,7 +92,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNumericTraitsVariableLengthVectorPixel_8h_source.html">itkNumericTraitsVariableLengthVectorPixel.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class itk::NumericTraits&lt; VariableLengthVector&lt; T &gt; &gt;</div><p >Define numeric traits for <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Component type of <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>We provide here a generic implementation based on creating types of <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> whose components are the types of the <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> from the original <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> components. This implementation require support for partial specializations, since it is based on the concept that: <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a>&lt;VariableLengthVector&lt; T &gt; &gt; is defined piecewise by <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>&lt; NumericTraits&lt; T &gt; &gt;</p>
+<dl class="section note"><dt>Note</dt><dd>The Zero(), One(), <a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#ae17c70fe541633b709b576372286e336">min()</a> and <a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#a8471445142bfd5f01eb4047435c274c9">max()</a> methods here take references to a pixel as input. This is due to the fact that the length of the <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> is not known until run-time. Since the most common use of Zero and One is for comparison purposes or initialization of sums etc, this might just as easily be re-written with a pixel passed in as a reference and the length is inferred from this pixel.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNumericTraitsVariableLengthVectorPixel_8h_source.html#l00054">54</a> of file <a class="el" href="itkNumericTraitsVariableLengthVectorPixel_8h_source.html">itkNumericTraitsVariableLengthVectorPixel.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a4fb77d76ca97b1a1e64723c96fc8cb81"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#a4fb77d76ca97b1a1e64723c96fc8cb81">AbsType</a> = <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>&lt; <a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#a3028907a35731f2c5940661a9271045f">ElementAbsType</a> &gt;</td></tr>
@@ -164,21 +178,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a778d9e1799fdc01d96d08eb6934242c5"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#a778d9e1799fdc01d96d08eb6934242c5">IsSigned</a> = std::is_signed_v&lt;<a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#abf4eb3e550b902aa9567501457788a3f">ValueType</a>&gt;</td></tr>
 <tr class="separator:a778d9e1799fdc01d96d08eb6934242c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class itk::NumericTraits&lt; VariableLengthVector&lt; T &gt; &gt;</div><p >Define numeric traits for <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Component type of <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>We provide here a generic implementation based on creating types of <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> whose components are the types of the <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> from the original <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> components. This implementation require support for partial specializations, since it is based on the concept that: <a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a>&lt;VariableLengthVector&lt; T &gt; &gt; is defined piecewise by <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a>&lt; NumericTraits&lt; T &gt; &gt;</p>
-<dl class="section note"><dt>Note</dt><dd>The Zero(), One(), <a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#ae17c70fe541633b709b576372286e336">min()</a> and <a class="el" href="classitk_1_1NumericTraits_3_01VariableLengthVector_3_01T_01_4_01_4.html#a8471445142bfd5f01eb4047435c274c9">max()</a> methods here take references to a pixel as input. This is due to the fact that the length of the <a class="el" href="classitk_1_1VariableLengthVector.html">VariableLengthVector</a> is not known until run-time. Since the most common use of Zero and One is for comparison purposes or initialization of sums etc, this might just as easily be re-written with a pixel passed in as a reference and the length is inferred from this pixel.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1NumericTraits.html" title="Define additional traits for native types such as int or float.">NumericTraits</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNumericTraitsVariableLengthVectorPixel_8h_source.html#l00054">54</a> of file <a class="el" href="itkNumericTraitsVariableLengthVectorPixel_8h_source.html">itkNumericTraitsVariableLengthVectorPixel.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4fb77d76ca97b1a1e64723c96fc8cb81" name="a4fb77d76ca97b1a1e64723c96fc8cb81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fb77d76ca97b1a1e64723c96fc8cb81">&#9670;&nbsp;</a></span>AbsType</h2>
 

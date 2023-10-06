@@ -94,7 +94,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNeighborhoodAlgorithm_8h_source.html">itkNeighborhoodAlgorithm.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::NeighborhoodAlgorithm::ImageBoundaryFacesCalculator&lt; TImage &gt;</div><p >Splits an image into a main region and several "face" regions which are used to handle computations on the boundary of an image. </p>
+<p >Splitting the image into the necessary regions is an easy task when you use the <a class="el" href="structitk_1_1NeighborhoodAlgorithm_1_1ImageBoundaryFacesCalculator.html" title="Splits an image into a main region and several &quot;face&quot; regions which are used to handle computations o...">ImageBoundaryFacesCalculator</a>. The face calculator is so named because it returns a list of the "faces" of the ND dataset. Faces are those regions whose pixels all lie within a distance \(d\) from the boundary, where \(d\) is the radius of the neighborhood stencil used for the numerical calculations. In other words, faces are those regions where a neighborhood iterator of radius \(d\) will always overlap the boundary of the image. The face calculator also returns the single <em>inner</em> region, in which out-of-bounds values are never required and bounds checking is not necessary.</p>
+<div class="image">
+<img src="FaceBoundaryCalculator.png" alt=""/>
+<div class="caption">
+Example regions produced by the calculator.</div></div>
+<p >First we find center (non-boundary) region 0. then find the face on the lower side of the 0th dimension (<a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> 1). Next we find the face opposite to that face (<a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> 2). Then we find the face between region 1 and region 2 on the lower side of the 1th dimension.(region 3). Finally we find the face opposite to face 3 (region 4).</p>
+<dl class="section note"><dt>Note</dt><dd>The first region contained in faceList should be the non-boundary region, if there is one. The existence of a non-boundary region depends on the relative location of regionToProcess and bufferedRegion. The non-boundary regions (if any) are the remaining faces in faceList. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNeighborhoodAlgorithm_8h_source.html#l00063">63</a> of file <a class="el" href="itkNeighborhoodAlgorithm_8h_source.html">itkNeighborhoodAlgorithm.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1NeighborhoodAlgorithm_1_1ImageBoundaryFacesCalculator_1_1Result.html">Result</a></td></tr>
@@ -128,19 +140,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1d9e2dfee63f685f0bf6047cb6abe4b3"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitk_1_1NeighborhoodAlgorithm_1_1ImageBoundaryFacesCalculator.html#a1d9e2dfee63f685f0bf6047cb6abe4b3">ImageDimension</a> = TImage::ImageDimension</td></tr>
 <tr class="separator:a1d9e2dfee63f685f0bf6047cb6abe4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::NeighborhoodAlgorithm::ImageBoundaryFacesCalculator&lt; TImage &gt;</div><p >Splits an image into a main region and several "face" regions which are used to handle computations on the boundary of an image. </p>
-<p >Splitting the image into the necessary regions is an easy task when you use the <a class="el" href="structitk_1_1NeighborhoodAlgorithm_1_1ImageBoundaryFacesCalculator.html" title="Splits an image into a main region and several &quot;face&quot; regions which are used to handle computations o...">ImageBoundaryFacesCalculator</a>. The face calculator is so named because it returns a list of the "faces" of the ND dataset. Faces are those regions whose pixels all lie within a distance \(d\) from the boundary, where \(d\) is the radius of the neighborhood stencil used for the numerical calculations. In other words, faces are those regions where a neighborhood iterator of radius \(d\) will always overlap the boundary of the image. The face calculator also returns the single <em>inner</em> region, in which out-of-bounds values are never required and bounds checking is not necessary.</p>
-<div class="image">
-<img src="FaceBoundaryCalculator.png" alt=""/>
-<div class="caption">
-Example regions produced by the calculator.</div></div>
-<p >First we find center (non-boundary) region 0. then find the face on the lower side of the 0th dimension (<a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> 1). Next we find the face opposite to that face (<a class="el" href="classitk_1_1Region.html" title="A region represents some portion or piece of data.">Region</a> 2). Then we find the face between region 1 and region 2 on the lower side of the 1th dimension.(region 3). Finally we find the face opposite to face 3 (region 4).</p>
-<dl class="section note"><dt>Note</dt><dd>The first region contained in faceList should be the non-boundary region, if there is one. The existence of a non-boundary region depends on the relative location of regionToProcess and bufferedRegion. The non-boundary regions (if any) are the remaining faces in faceList. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNeighborhoodAlgorithm_8h_source.html#l00063">63</a> of file <a class="el" href="itkNeighborhoodAlgorithm_8h_source.html">itkNeighborhoodAlgorithm.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="acfde75834da474c3b521e1f1d8b0764c" name="acfde75834da474c3b521e1f1d8b0764c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfde75834da474c3b521e1f1d8b0764c">&#9670;&nbsp;</a></span>FaceListType</h2>
 

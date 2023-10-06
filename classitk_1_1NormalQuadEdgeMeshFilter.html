@@ -94,7 +94,39 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkNormalQuadEdgeMeshFilter_8h_source.html">itkNormalQuadEdgeMeshFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh&gt;<br />
+class itk::NormalQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p >Filter which computes normals to faces and vertices and store it in the output mesh. Normals to face are first computed, then normals to vertices are computed as linear combination of neighbor face normals, i.e. </p>
+<p class="formulaDsp">
+\[ n_v = \frac{\sum_{i=0}^{N_f} \omega_i \cdot n_i}{\| \sum_{k=0}^{N_f} \omega_x \cdot n_k\|} \]
+</p>
+<p >The difference between each method relies in the definition of the weight \( \omega_i \) that you can specify by the method SetWeight.</p>
+<ul>
+<li>
+GOURAUD \( \omega_i = 1\) [1]  </li>
+<li>
+THURMER \( \omega_i = \) Angle of the considered triangle at the given vertex} [2]  </li>
+<li>
+AREA \( \omega_i = Area(t_i)\) [3]  </li>
+</ul>
+<p >These weights are defined in the literature: </p><ul>
+<li>
+[1] Henri Gouraud. Continuous shading of curved surfaces. IEEE Transaction on Computers, 20(6):623-629, 1971  </li>
+<li>
+[2] Shuangshuang Jin, Robert R. Lewis, and David West. A comparison of algorithms for vertex normal computation. The Visual Computer, 21(1-2):71-82, 2005.  </li>
+<li>
+[3] Grit Thurmer and Charles A. Wuthrich. Computing vertex normals from polygonal facets. Journal of Graphic Tools, 3(1):43-46, 1998.  </li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>By default the weight is set to the TURMER weight.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd>Fix run-time issues regarding the difference between the Traits of TInputMesh and the one of TOutputMesh. Right now, it only works if TInputMesh::MeshTraits == TOutputMesh::MeshTraits (and of course it requires that the output have some <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a> for point data and cell data. </dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkNormalQuadEdgeMeshFilter_8h_source.html#l00093">93</a> of file <a class="el" href="itkNormalQuadEdgeMeshFilter_8h_source.html">itkNormalQuadEdgeMeshFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::NormalQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -809,39 +841,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh&gt;<br />
-class itk::NormalQuadEdgeMeshFilter&lt; TInputMesh, TOutputMesh &gt;</div><p >Filter which computes normals to faces and vertices and store it in the output mesh. Normals to face are first computed, then normals to vertices are computed as linear combination of neighbor face normals, i.e. </p>
-<p class="formulaDsp">
-\[ n_v = \frac{\sum_{i=0}^{N_f} \omega_i \cdot n_i}{\| \sum_{k=0}^{N_f} \omega_x \cdot n_k\|} \]
-</p>
-<p >The difference between each method relies in the definition of the weight \( \omega_i \) that you can specify by the method SetWeight.</p>
-<ul>
-<li>
-GOURAUD \( \omega_i = 1\) [1]  </li>
-<li>
-THURMER \( \omega_i = \) Angle of the considered triangle at the given vertex} [2]  </li>
-<li>
-AREA \( \omega_i = Area(t_i)\) [3]  </li>
-</ul>
-<p >These weights are defined in the literature: </p><ul>
-<li>
-[1] Henri Gouraud. Continuous shading of curved surfaces. IEEE Transaction on Computers, 20(6):623-629, 1971  </li>
-<li>
-[2] Shuangshuang Jin, Robert R. Lewis, and David West. A comparison of algorithms for vertex normal computation. The Visual Computer, 21(1-2):71-82, 2005.  </li>
-<li>
-[3] Grit Thurmer and Charles A. Wuthrich. Computing vertex normals from polygonal facets. Journal of Graphic Tools, 3(1):43-46, 1998.  </li>
-</ul>
-<dl class="section note"><dt>Note</dt><dd>By default the weight is set to the TURMER weight.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd>Fix run-time issues regarding the difference between the Traits of TInputMesh and the one of TOutputMesh. Right now, it only works if TInputMesh::MeshTraits == TOutputMesh::MeshTraits (and of course it requires that the output have some <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">itk::Vector</a> for point data and cell data. </dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkNormalQuadEdgeMeshFilter_8h_source.html#l00093">93</a> of file <a class="el" href="itkNormalQuadEdgeMeshFilter_8h_source.html">itkNormalQuadEdgeMeshFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abfa3b0c5e00212008effc433430256e3" name="abfa3b0c5e00212008effc433430256e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abfa3b0c5e00212008effc433430256e3">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

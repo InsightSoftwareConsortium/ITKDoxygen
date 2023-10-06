@@ -94,7 +94,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPowellOptimizerv4_8h_source.html">itkPowellOptimizerv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
+class itk::PowellOptimizerv4&lt; TInternalComputationValueType &gt;</div><p >Implements Powell optimization using Brent line search. </p>
+<p >The code in this class was adapted from the Wikipedia and the netlib.org zeroin function.</p>
+<p ><a href="https://www.netlib.org/go/zeroin.f">https://www.netlib.org/go/zeroin.f</a> <a href="https://en.wikipedia.org/wiki/Brent_method">https://en.wikipedia.org/wiki/Brent_method</a> <a href="https://en.wikipedia.org/wiki/Golden_section_search">https://en.wikipedia.org/wiki/Golden_section_search</a></p>
+<p >This optimizer needs a cost function. Partial derivatives of that function are not required.</p>
+<p >For an N-dimensional parameter space, each iteration minimizes the function in N (initially orthogonal) directions. Typically only 2-5 iterations are required. If gradients are available, consider a conjugate gradient line search strategy.</p>
+<p >The SetStepLength determines the initial distance to step in a line direction when bounding the minimum (using bracketing triple spaced using a golden search strategy).</p>
+<p >The StepTolerance terminates optimization when the parameter values are known to be within this (scaled) distance of the local extreme.</p>
+<p >The ValueTolerance terminates optimization when the cost function values at the current parameters and at the local extreme are likely (within a second order approximation) to be within this is tolerance. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkPowellOptimizerv4_8h_source.html#l00060">60</a> of file <a class="el" href="itkPowellOptimizerv4_8h_source.html">itkPowellOptimizerv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PowellOptimizerv4&lt; TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -502,19 +514,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
-class itk::PowellOptimizerv4&lt; TInternalComputationValueType &gt;</div><p >Implements Powell optimization using Brent line search. </p>
-<p >The code in this class was adapted from the Wikipedia and the netlib.org zeroin function.</p>
-<p ><a href="https://www.netlib.org/go/zeroin.f">https://www.netlib.org/go/zeroin.f</a> <a href="https://en.wikipedia.org/wiki/Brent_method">https://en.wikipedia.org/wiki/Brent_method</a> <a href="https://en.wikipedia.org/wiki/Golden_section_search">https://en.wikipedia.org/wiki/Golden_section_search</a></p>
-<p >This optimizer needs a cost function. Partial derivatives of that function are not required.</p>
-<p >For an N-dimensional parameter space, each iteration minimizes the function in N (initially orthogonal) directions. Typically only 2-5 iterations are required. If gradients are available, consider a conjugate gradient line search strategy.</p>
-<p >The SetStepLength determines the initial distance to step in a line direction when bounding the minimum (using bracketing triple spaced using a golden search strategy).</p>
-<p >The StepTolerance terminates optimization when the parameter values are known to be within this (scaled) distance of the local extreme.</p>
-<p >The ValueTolerance terminates optimization when the cost function values at the current parameters and at the local extreme are likely (within a second order approximation) to be within this is tolerance. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkPowellOptimizerv4_8h_source.html#l00060">60</a> of file <a class="el" href="itkPowellOptimizerv4_8h_source.html">itkPowellOptimizerv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1e6565ce7807f9261fca53bbfb903908" name="a1e6565ce7807f9261fca53bbfb903908"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e6565ce7807f9261fca53bbfb903908">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

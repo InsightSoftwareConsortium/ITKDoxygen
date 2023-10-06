@@ -94,7 +94,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkShotNoiseImageFilter_8h_source.html">itkShotNoiseImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputImage, class TOutputImage = TInputImage&gt;<br />
+class itk::ShotNoiseImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Alter an image with shot noise. </p>
+<p >The shot noise follows a Poisson distribution:</p>
+<dl class="section user"><dt></dt><dd>\( I = N(I_0) \)</dd></dl>
+<dl class="section user"><dt></dt><dd>where \( N(I_0) \) is a Poisson-distributed random variable of mean \( I_0 \). The noise is thus dependent on the pixel intensities in the image.</dd></dl>
+<p>The intensities in the image can be scaled by a user provided value to map pixel values to the actual number of particles. The scaling can be seen as the inverse of the gain used during the acquisition. The noisy signal is then scaled back to its input intensity range:</p>
+<dl class="section user"><dt></dt><dd>\( I = \frac{N(I_0 \times s)}{s} \)</dd></dl>
+<dl class="section user"><dt></dt><dd>where \( s \) is the scale factor.</dd></dl>
+<p>The Poisson-distributed variable \( \lambda \) is computed by using the algorithm:</p>
+<dl class="section user"><dt></dt><dd>\( \begin{array}{l} k \leftarrow 0 \\ p \leftarrow 1 \\ \textbf{repeat} \\ \left\{ \begin{array}{l} k \leftarrow k+1 \\ p \leftarrow p \ast U() \end{array} \right. \\ \textbf{until } p &gt; e^{\lambda} \\ \textbf{return} (k) \end{array} \)</dd></dl>
+<dl class="section user"><dt></dt><dd>where \( U() \) provides a uniformly distributed random variable in the interval \( [0,1] \).</dd></dl>
+<p>This algorithm is very inefficient for large values of \( \lambda \), though. Fortunately, the Poisson distribution can be accurately approximated by a Gaussian distribution of mean and variance \( \lambda \) when \( \lambda \) is large enough. In this implementation, this value is considered to be 50. This leads to the faster algorithm:</p>
+<dl class="section user"><dt></dt><dd>\( \lambda + \sqrt{\lambda} \times N()\)</dd></dl>
+<dl class="section user"><dt></dt><dd>where \( N() \) is a normally distributed random variable of mean 0 and variance 1.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann</dd></dl>
+<p>This code was contributed in the Insight Journal paper "Noise
+Simulation". <a href="https://www.insight-journal.org/browse/publication/721">https://www.insight-journal.org/browse/publication/721</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkShotNoiseImageFilter_8h_source.html#l00094">94</a> of file <a class="el" href="itkShotNoiseImageFilter_8h_source.html">itkShotNoiseImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ShotNoiseImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -796,27 +816,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class TInputImage, class TOutputImage = TInputImage&gt;<br />
-class itk::ShotNoiseImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Alter an image with shot noise. </p>
-<p >The shot noise follows a Poisson distribution:</p>
-<dl class="section user"><dt></dt><dd>\( I = N(I_0) \)</dd></dl>
-<dl class="section user"><dt></dt><dd>where \( N(I_0) \) is a Poisson-distributed random variable of mean \( I_0 \). The noise is thus dependent on the pixel intensities in the image.</dd></dl>
-<p>The intensities in the image can be scaled by a user provided value to map pixel values to the actual number of particles. The scaling can be seen as the inverse of the gain used during the acquisition. The noisy signal is then scaled back to its input intensity range:</p>
-<dl class="section user"><dt></dt><dd>\( I = \frac{N(I_0 \times s)}{s} \)</dd></dl>
-<dl class="section user"><dt></dt><dd>where \( s \) is the scale factor.</dd></dl>
-<p>The Poisson-distributed variable \( \lambda \) is computed by using the algorithm:</p>
-<dl class="section user"><dt></dt><dd>\( \begin{array}{l} k \leftarrow 0 \\ p \leftarrow 1 \\ \textbf{repeat} \\ \left\{ \begin{array}{l} k \leftarrow k+1 \\ p \leftarrow p \ast U() \end{array} \right. \\ \textbf{until } p &gt; e^{\lambda} \\ \textbf{return} (k) \end{array} \)</dd></dl>
-<dl class="section user"><dt></dt><dd>where \( U() \) provides a uniformly distributed random variable in the interval \( [0,1] \).</dd></dl>
-<p>This algorithm is very inefficient for large values of \( \lambda \), though. Fortunately, the Poisson distribution can be accurately approximated by a Gaussian distribution of mean and variance \( \lambda \) when \( \lambda \) is large enough. In this implementation, this value is considered to be 50. This leads to the faster algorithm:</p>
-<dl class="section user"><dt></dt><dd>\( \lambda + \sqrt{\lambda} \times N()\)</dd></dl>
-<dl class="section user"><dt></dt><dd>where \( N() \) is a normally distributed random variable of mean 0 and variance 1.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gaetan Lehmann</dd></dl>
-<p>This code was contributed in the Insight Journal paper "Noise
-Simulation". <a href="https://www.insight-journal.org/browse/publication/721">https://www.insight-journal.org/browse/publication/721</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkShotNoiseImageFilter_8h_source.html#l00094">94</a> of file <a class="el" href="itkShotNoiseImageFilter_8h_source.html">itkShotNoiseImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a37511aab6039e8c16266faed192504e6" name="a37511aab6039e8c16266faed192504e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37511aab6039e8c16266faed192504e6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

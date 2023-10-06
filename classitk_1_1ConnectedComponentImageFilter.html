@@ -96,7 +96,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkConnectedComponentImageFilter_8h_source.html">itkConnectedComponentImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TMaskImage = TInputImage&gt;<br />
+class itk::ConnectedComponentImageFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;</div><p ><a class="el" href="classLabel.html">Label</a> the objects in a binary image. </p>
+<p ><a class="el" href="classitk_1_1ConnectedComponentImageFilter.html" title="Label the objects in a binary image.">ConnectedComponentImageFilter</a> labels the objects in a binary image (non-zero pixels are considered to be objects, zero-valued pixels are considered to be background). Each distinct object is assigned a unique label. The filter experiments with some improvements to the existing implementation, and is based on run length encoding along raster lines. If the output background value is set to zero (the default), the final object labels start with 1 and are consecutive. If the output background is set to a non-zero value (by calling the <a class="el" href="classitk_1_1ConnectedComponentImageFilter.html#ab2ee3c4d580312957f56cd9383bb7a35">SetBackgroundValue()</a> routine of the filter), the final labels start at 0, and remain consecutive except for skipping the background value as needed. Objects that are reached earlier by a raster order scan have a lower label. This is different to the behaviour of the original connected component image filter which did not produce consecutive labels or impose any particular ordering.</p>
+<p >After the filter is executed, ObjectCount holds the number of connected components.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkConnectedComponentImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkConnectedComponentImageFilter_8h_source.html">itkConnectedComponentImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ConnectedComponentImageFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -934,21 +948,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aee9c4e2939d6dc2b2b7f4c3658c161cb inherit pro_static_attribs_classitk_1_1ScanlineFilterCommon"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ScanlineFilterCommon.html#aee9c4e2939d6dc2b2b7f4c3658c161cb">OutputImageDimension</a> = TOutputImage::ImageDimension</td></tr>
 <tr class="separator:aee9c4e2939d6dc2b2b7f4c3658c161cb inherit pro_static_attribs_classitk_1_1ScanlineFilterCommon"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TMaskImage = TInputImage&gt;<br />
-class itk::ConnectedComponentImageFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;</div><p ><a class="el" href="classLabel.html">Label</a> the objects in a binary image. </p>
-<p ><a class="el" href="classitk_1_1ConnectedComponentImageFilter.html" title="Label the objects in a binary image.">ConnectedComponentImageFilter</a> labels the objects in a binary image (non-zero pixels are considered to be objects, zero-valued pixels are considered to be background). Each distinct object is assigned a unique label. The filter experiments with some improvements to the existing implementation, and is based on run length encoding along raster lines. If the output background value is set to zero (the default), the final object labels start with 1 and are consecutive. If the output background is set to a non-zero value (by calling the <a class="el" href="classitk_1_1ConnectedComponentImageFilter.html#ab2ee3c4d580312957f56cd9383bb7a35">SetBackgroundValue()</a> routine of the filter), the final labels start at 0, and remain consecutive except for skipping the background value as needed. Objects that are reached earlier by a raster order scan have a lower label. This is different to the behaviour of the original connected component image filter which did not produce consecutive labels or impose any particular ordering.</p>
-<p >After the filter is executed, ObjectCount holds the number of connected components.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkConnectedComponentImageFilter_8h_source.html#l00057">57</a> of file <a class="el" href="itkConnectedComponentImageFilter_8h_source.html">itkConnectedComponentImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5cd78645986ea142e751f1683be31f38" name="a5cd78645986ea142e751f1683be31f38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cd78645986ea142e751f1683be31f38">&#9670;&nbsp;</a></span>ConsecutiveVectorType</h2>
 

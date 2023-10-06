@@ -97,7 +97,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetEquationAdvectionTerm_8h_source.html">itkLevelSetEquationAdvectionTerm.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TLevelSetContainer&gt;<br />
+class itk::LevelSetEquationAdvectionTerm&lt; TInput, TLevelSetContainer &gt;</div><p >Derived class to represents an advection term in the level-set evolution PDE. </p>
+<p class="formulaDsp">
+\[ AdvectionImage\left( p \right) \bullet \nabla \phi\left( p \right) \]
+</p>
+<ul>
+<li>\( AdvectionImage \left( p \right) \) is the advection image provided by the user. </li>
+<li>\( \cdot \bullet \cdot \) denotes the usual dot product </li>
+<li>\( \nabla \phi \) denotes the gradient of the level set function \( \phi \).</li>
+</ul>
+<p>The advection image can be directly provided by the user; or by default, it is computed as the gradient of the input image. In this last case, it can be smoothed by the means of DerivativeSigma.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TInput</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
+    <tr><td class="paramname">TLevelSetContainer</td><td>Level set function container type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationAdvectionTerm_8h_source.html#l00052">52</a> of file <a class="el" href="itkLevelSetEquationAdvectionTerm_8h_source.html">itkLevelSetEquationAdvectionTerm.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetEquationAdvectionTerm&lt; TInput, TLevelSetContainer &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -456,28 +477,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae84a76e10daaa3be9869d882cd698a15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LevelSetEquationTermBase.html#aa1ea7de402dc03028099ed69c372805b">LevelSetOutputRealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetEquationAdvectionTerm.html#ae84a76e10daaa3be9869d882cd698a15">m_DerivativeSigma</a> {}</td></tr>
 <tr class="separator:ae84a76e10daaa3be9869d882cd698a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInput, typename TLevelSetContainer&gt;<br />
-class itk::LevelSetEquationAdvectionTerm&lt; TInput, TLevelSetContainer &gt;</div><p >Derived class to represents an advection term in the level-set evolution PDE. </p>
-<p class="formulaDsp">
-\[ AdvectionImage\left( p \right) \bullet \nabla \phi\left( p \right) \]
-</p>
-<ul>
-<li>\( AdvectionImage \left( p \right) \) is the advection image provided by the user. </li>
-<li>\( \cdot \bullet \cdot \) denotes the usual dot product </li>
-<li>\( \nabla \phi \) denotes the gradient of the level set function \( \phi \).</li>
-</ul>
-<p>The advection image can be directly provided by the user; or by default, it is computed as the gradient of the input image. In this last case, it can be smoothed by the means of DerivativeSigma.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TInput</td><td>Input <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Type </td></tr>
-    <tr><td class="paramname">TLevelSetContainer</td><td>Level set function container type </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetEquationAdvectionTerm_8h_source.html#l00052">52</a> of file <a class="el" href="itkLevelSetEquationAdvectionTerm_8h_source.html">itkLevelSetEquationAdvectionTerm.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3394fb88cb5c1bb9af15624b78e0968e" name="a3394fb88cb5c1bb9af15624b78e0968e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3394fb88cb5c1bb9af15624b78e0968e">&#9670;&nbsp;</a></span>AdvectionImagePointer</h2>
 

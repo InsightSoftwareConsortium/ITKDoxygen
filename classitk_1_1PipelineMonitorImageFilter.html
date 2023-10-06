@@ -94,7 +94,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkPipelineMonitorImageFilter_8h_source.html">itkPipelineMonitorImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType&gt;<br />
+class itk::PipelineMonitorImageFilter&lt; TImageType &gt;</div><p >Enables monitoring, recording and debugging of the pipeline execution and information exchange. </p>
+<p >This filter is useful for testing, debugging, and understanding the pipeline. When DebugOn is enabled and compiled in Debug mode, many itkDebug messages are printed. This filter also features, several Verify methods which check the recorded information, for certain conditions, which should occur when well behaved filters are executed.</p>
+<p >There are two meta verify methods that should primarily be used depending on the expected capabilities of the pipeline:</p><ul>
+<li><b>VerifyAllInputCanStream</b> </li>
+<li><b>VerifyAllInputCanNotStream</b> </li>
+</ul>
+<p >During the pipeline execution this filter records a variety of information to aid if verifying correct pipeline behavior:</p><ul>
+<li><b>NumberOfUpdate</b> the number of times GenerateData was executed</li>
+<li><b>OutputRequestedRegions</b> an array of the output of this filter's requested region</li>
+<li><b>InputRequestedRegions</b> an array of the input image's requested region after PropagateRequestedRegion</li>
+<li><b>UpdatedBufferedRegions</b> an array of the input image's buffered region after upstream GenerateData</li>
+<li><b>UpdatedRequestedRegions</b> an array of the input image's requested region after upstream GenerateData</li>
+</ul>
+<p >The following are recorded from the input image after the input's output information is generated:</p><ul>
+<li><b>UpdatedOutputOrigin</b> </li>
+<li><b>UpdatedOutputDirection</b> </li>
+<li><b>UpdatedOutputSpacing</b> </li>
+<li><b>UpdatedOutputLargestPossibleRegion</b> </li>
+</ul>
+<p >This filter always runs in-place so it has no per-pixel overhead. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkPipelineMonitorImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkPipelineMonitorImageFilter_8h_source.html">itkPipelineMonitorImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::PipelineMonitorImageFilter&lt; TImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -791,31 +815,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType&gt;<br />
-class itk::PipelineMonitorImageFilter&lt; TImageType &gt;</div><p >Enables monitoring, recording and debugging of the pipeline execution and information exchange. </p>
-<p >This filter is useful for testing, debugging, and understanding the pipeline. When DebugOn is enabled and compiled in Debug mode, many itkDebug messages are printed. This filter also features, several Verify methods which check the recorded information, for certain conditions, which should occur when well behaved filters are executed.</p>
-<p >There are two meta verify methods that should primarily be used depending on the expected capabilities of the pipeline:</p><ul>
-<li><b>VerifyAllInputCanStream</b> </li>
-<li><b>VerifyAllInputCanNotStream</b> </li>
-</ul>
-<p >During the pipeline execution this filter records a variety of information to aid if verifying correct pipeline behavior:</p><ul>
-<li><b>NumberOfUpdate</b> the number of times GenerateData was executed</li>
-<li><b>OutputRequestedRegions</b> an array of the output of this filter's requested region</li>
-<li><b>InputRequestedRegions</b> an array of the input image's requested region after PropagateRequestedRegion</li>
-<li><b>UpdatedBufferedRegions</b> an array of the input image's buffered region after upstream GenerateData</li>
-<li><b>UpdatedRequestedRegions</b> an array of the input image's requested region after upstream GenerateData</li>
-</ul>
-<p >The following are recorded from the input image after the input's output information is generated:</p><ul>
-<li><b>UpdatedOutputOrigin</b> </li>
-<li><b>UpdatedOutputDirection</b> </li>
-<li><b>UpdatedOutputSpacing</b> </li>
-<li><b>UpdatedOutputLargestPossibleRegion</b> </li>
-</ul>
-<p >This filter always runs in-place so it has no per-pixel overhead. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkPipelineMonitorImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkPipelineMonitorImageFilter_8h_source.html">itkPipelineMonitorImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab407667ceb340e5c9b6ae38c651d9b8b" name="ab407667ceb340e5c9b6ae38c651d9b8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab407667ceb340e5c9b6ae38c651d9b8b">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

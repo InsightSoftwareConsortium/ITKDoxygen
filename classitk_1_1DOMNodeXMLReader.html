@@ -94,7 +94,23 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDOMNodeXMLReader_8h_source.html">itkDOMNodeXMLReader.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class to read a DOM object from an XML file or an input stream. </p>
+<p >This class produces a DOM object, which can be subsequently used to create a corresponding user object.</p>
+<p >We do not recommend to directly use this class for user object reading, because the user has to handle both DOM object generation from the input XML file and user object generation from the intermediate DOM object. Users should derive from the <a class="el" href="classitk_1_1DOMReader.html" title="Class to read an ITK object from an XML file or a DOM object, using the DOM APIs.">DOMReader</a>, because it performs the former step automatically and lets the users concentrate on the latter step, thus implementation of such a reader is simplified.</p>
+<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because the output of this class, i.e. a <a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> object, is not a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
+<p >The following code snippet demonstrates how to read a DOM object from an XML file: </p><pre class="fragment">itk::DOMNode::Pointer output_dom_object;
+const char* input_xml_file_name = ...
+itk::DOMNodeXMLReader::Pointer reader = itk::DOMNodeXMLReader::New();
+reader-&gt;SetFileName( input_xml_file_name );
+reader-&gt;Update();
+output_dom_object = reader-&gt;GetOutput();
+</pre> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DOMReader.html" title="Class to read an ITK object from an XML file or a DOM object, using the DOM APIs.">DOMReader</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDOMNodeXMLReader_8h_source.html#l00061">61</a> of file <a class="el" href="itkDOMNodeXMLReader_8h_source.html">itkDOMNodeXMLReader.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DOMNodeXMLReader:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -308,23 +324,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class to read a DOM object from an XML file or an input stream. </p>
-<p >This class produces a DOM object, which can be subsequently used to create a corresponding user object.</p>
-<p >We do not recommend to directly use this class for user object reading, because the user has to handle both DOM object generation from the input XML file and user object generation from the intermediate DOM object. Users should derive from the <a class="el" href="classitk_1_1DOMReader.html" title="Class to read an ITK object from an XML file or a DOM object, using the DOM APIs.">DOMReader</a>, because it performs the former step automatically and lets the users concentrate on the latter step, thus implementation of such a reader is simplified.</p>
-<p >Note: Though this class behaves similar to <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>, it is not derived from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>. This is because the output of this class, i.e. a <a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> object, is not a <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a>, thus this class cannot be connected to an ITK process pipeline.</p>
-<p >The following code snippet demonstrates how to read a DOM object from an XML file: </p><pre class="fragment">itk::DOMNode::Pointer output_dom_object;
-const char* input_xml_file_name = ...
-itk::DOMNodeXMLReader::Pointer reader = itk::DOMNodeXMLReader::New();
-reader-&gt;SetFileName( input_xml_file_name );
-reader-&gt;Update();
-output_dom_object = reader-&gt;GetOutput();
-</pre> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DOMReader.html" title="Class to read an ITK object from an XML file or a DOM object, using the DOM APIs.">DOMReader</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DOMNode.html" title="Class to represent a node in a Document Object Model (DOM) tree structure.">DOMNode</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDOMNodeXMLReader_8h_source.html#l00061">61</a> of file <a class="el" href="itkDOMNodeXMLReader_8h_source.html">itkDOMNodeXMLReader.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad325cc4d62dabec64a975ee09500557e" name="ad325cc4d62dabec64a975ee09500557e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad325cc4d62dabec64a975ee09500557e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

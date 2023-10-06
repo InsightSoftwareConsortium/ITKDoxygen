@@ -95,7 +95,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMRIBiasFieldCorrectionFilter_8h_source.html">itkMRIBiasFieldCorrectionFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TMaskImage&gt;<br />
+class itk::MRIBiasFieldCorrectionFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;</div><p >Corrects 3D MRI bias field. </p>
+<p >This class is templated over the type of the input image (TInputImage) and the type of the output image (TOutputImage).</p>
+<p >In MRI images, intensity inhomogeneities which are caused by magnetic settings, patients' position, and other factors are not unusual. The main purpose of this filter is to reduce such bias field. To estimate the bias field, we use Legendre polynomials. The 1+1 evolutionary optimizer searches for the best parameters of a Legendre polynomial (bias field estimate) which minimizes the total energy value of each image after bias field is eliminated. The default Legendre polynomial degree is 3.</p>
+<p >The correction performs by default a multiplicative bias field correction by first log-transforming the input image. This log transform only works on images with grayscale values bigger than 0. The log-transform can be disabled and the filter computes an additive bias field.</p>
+<p >There are three major processes in the whole bias correction scheme: slab identification, inter-slice intensity correction, and actual bias correction process. Users can turn on and off each process within the whole bias correction scheme using SetUsingSlabIdentification(bool, false by default), SetUsingInterSliceIntensityCorrection(bool, true by default), and SetUsingBiasFieldCorrection(bool, true by default) member function.</p>
+<p >Only the last process (the actual bias field correction) is implemented in a multiresolution framework (without smoothing). Default is a standard level 2 multiresolution schedule (2 2 2 1 1 1).</p>
+<p >The bias field correction method was initially developed and implemented by Martin Styner, Univ. of North Carolina at Chapel Hill, and his colleagues.</p>
+<p >The multiresolution pyramid implementation is based on itkMultiResolutionPyramidImageFilter (without Gaussian smoothing)</p>
+<p >For more details. refer to the following articles. "Parametric estimate of intensity inhomogeneities applied to MRI" Martin Styner, Guido Gerig, Christian Brechbuehler, Gabor Szekely, IEEE TRANSACTIONS ON MEDICAL IMAGING; 19(3), pp. 153-165, 2000, (<a href="https://www.cs.unc.edu/~styner/docs/tmi00.pdf">https://www.cs.unc.edu/~styner/docs/tmi00.pdf</a>)</p>
+<p >"Evaluation of 2D/3D bias correction with 1+1ES-optimization" Martin Styner, Prof. Dr. G. Gerig (IKT, BIWI, ETH Zuerich), TR-197 (<a href="https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf">https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf</a>) </p>
+
+<p class="definition">Definition at line <a class="el" href="itkMRIBiasFieldCorrectionFilter_8h_source.html#l00232">232</a> of file <a class="el" href="itkMRIBiasFieldCorrectionFilter_8h_source.html">itkMRIBiasFieldCorrectionFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MRIBiasFieldCorrectionFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -958,21 +972,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TMaskImage&gt;<br />
-class itk::MRIBiasFieldCorrectionFilter&lt; TInputImage, TOutputImage, TMaskImage &gt;</div><p >Corrects 3D MRI bias field. </p>
-<p >This class is templated over the type of the input image (TInputImage) and the type of the output image (TOutputImage).</p>
-<p >In MRI images, intensity inhomogeneities which are caused by magnetic settings, patients' position, and other factors are not unusual. The main purpose of this filter is to reduce such bias field. To estimate the bias field, we use Legendre polynomials. The 1+1 evolutionary optimizer searches for the best parameters of a Legendre polynomial (bias field estimate) which minimizes the total energy value of each image after bias field is eliminated. The default Legendre polynomial degree is 3.</p>
-<p >The correction performs by default a multiplicative bias field correction by first log-transforming the input image. This log transform only works on images with grayscale values bigger than 0. The log-transform can be disabled and the filter computes an additive bias field.</p>
-<p >There are three major processes in the whole bias correction scheme: slab identification, inter-slice intensity correction, and actual bias correction process. Users can turn on and off each process within the whole bias correction scheme using SetUsingSlabIdentification(bool, false by default), SetUsingInterSliceIntensityCorrection(bool, true by default), and SetUsingBiasFieldCorrection(bool, true by default) member function.</p>
-<p >Only the last process (the actual bias field correction) is implemented in a multiresolution framework (without smoothing). Default is a standard level 2 multiresolution schedule (2 2 2 1 1 1).</p>
-<p >The bias field correction method was initially developed and implemented by Martin Styner, Univ. of North Carolina at Chapel Hill, and his colleagues.</p>
-<p >The multiresolution pyramid implementation is based on itkMultiResolutionPyramidImageFilter (without Gaussian smoothing)</p>
-<p >For more details. refer to the following articles. "Parametric estimate of intensity inhomogeneities applied to MRI" Martin Styner, Guido Gerig, Christian Brechbuehler, Gabor Szekely, IEEE TRANSACTIONS ON MEDICAL IMAGING; 19(3), pp. 153-165, 2000, (<a href="https://www.cs.unc.edu/~styner/docs/tmi00.pdf">https://www.cs.unc.edu/~styner/docs/tmi00.pdf</a>)</p>
-<p >"Evaluation of 2D/3D bias correction with 1+1ES-optimization" Martin Styner, Prof. Dr. G. Gerig (IKT, BIWI, ETH Zuerich), TR-197 (<a href="https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf">https://www.cs.unc.edu/~styner/docs/StynerTR97.pdf</a>) </p>
-
-<p class="definition">Definition at line <a class="el" href="itkMRIBiasFieldCorrectionFilter_8h_source.html#l00232">232</a> of file <a class="el" href="itkMRIBiasFieldCorrectionFilter_8h_source.html">itkMRIBiasFieldCorrectionFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a922255bb4a7c36accf3459ac0c5c63af" name="a922255bb4a7c36accf3459ac0c5c63af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a922255bb4a7c36accf3459ac0c5c63af">&#9670;&nbsp;</a></span>BiasFieldType</h2>
 

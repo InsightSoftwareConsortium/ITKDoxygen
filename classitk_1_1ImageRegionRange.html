@@ -96,7 +96,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageRegionRange_8h_source.html">itkImageRegionRange.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::ImageRegionRange&lt; TImage &gt;</div><p >Modern C++11 range to iterate over the pixels of an image region. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
+<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ImageRegionRange.html#a4ab4c7a3b40faaedbb4c15b32f0432bf">ImageRegionRange</a> range{ *image, imageRegion };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; pixel : range)</div>
+<div class="line">{</div>
+<div class="line">  pixel = pixel + 42;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1ImageRegionRange_html_a4ab4c7a3b40faaedbb4c15b32f0432bf"><div class="ttname"><a href="classitk_1_1ImageRegionRange.html#a4ab4c7a3b40faaedbb4c15b32f0432bf">itk::ImageRegionRange::ImageRegionRange</a></div><div class="ttdeci">ImageRegionRange() noexcept=default</div></div>
+</div><!-- fragment --><p >The following example prints the values of the pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> pixel : range)</div>
+<div class="line">{</div>
+<div class="line">  std::cout &lt;&lt; pixel &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
+<dd>
+<a class="el" href="namespaceitk.html#a6149e4650b1896fdc969600c22eb50f4">ImageRegionIndexRange</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageBufferRange.html">ImageBufferRange</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageRegionRange_8h_source.html#l00072">72</a> of file <a class="el" href="itkImageRegionRange_8h_source.html">itkImageRegionRange.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::ImageRegionRange&lt; TImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -205,31 +229,7 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ae0feed8b072b55c7d6ba19cde018498f"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageRegionRange.html#ae0feed8b072b55c7d6ba19cde018498f">IsImageTypeConst</a> = std::is_const_v&lt;TImage&gt;</td></tr>
 <tr class="separator:ae0feed8b072b55c7d6ba19cde018498f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::ImageRegionRange&lt; TImage &gt;</div><p >Modern C++11 range to iterate over the pixels of an image region. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
-<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ImageRegionRange.html#a4ab4c7a3b40faaedbb4c15b32f0432bf">ImageRegionRange</a> range{ *image, imageRegion };</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; pixel : range)</div>
-<div class="line">{</div>
-<div class="line">  pixel = pixel + 42;</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassitk_1_1ImageRegionRange_html_a4ab4c7a3b40faaedbb4c15b32f0432bf"><div class="ttname"><a href="classitk_1_1ImageRegionRange.html#a4ab4c7a3b40faaedbb4c15b32f0432bf">itk::ImageRegionRange::ImageRegionRange</a></div><div class="ttdeci">ImageRegionRange() noexcept=default</div></div>
-</div><!-- fragment --><p >The following example prints the values of the pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> pixel : range)</div>
-<div class="line">{</div>
-<div class="line">  std::cout &lt;&lt; pixel &lt;&lt; std::endl;</div>
-<div class="line">}</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegionIterator.html" title="A multi-dimensional iterator templated over image type that walks a region of pixels.">ImageRegionIterator</a> </dd>
-<dd>
-<a class="el" href="namespaceitk.html#a6149e4650b1896fdc969600c22eb50f4">ImageRegionIndexRange</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageBufferRange.html">ImageBufferRange</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageRegionRange_8h_source.html#l00072">72</a> of file <a class="el" href="itkImageRegionRange_8h_source.html">itkImageRegionRange.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a64b03a1f4e68119ba048953d095756ff" name="a64b03a1f4e68119ba048953d095756ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64b03a1f4e68119ba048953d095756ff">&#9670;&nbsp;</a></span>BufferIteratorType</h2>
 

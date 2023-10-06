@@ -94,7 +94,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTransformParametersAdaptor_8h_source.html">itkTransformParametersAdaptor.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
+class itk::TransformParametersAdaptor&lt; TTransform &gt;</div><p >Base helper class intended for multi-resolution image registration. </p>
+<p >During multi-resolution image registration, it is often useful to expand the number of parameters describing the transform when going from one level to the next. For example, in B-spline registration, one often wants to increase the mesh size (or, equivalently, the control point grid size) for increased flexibility in optimizing the transform. This requires the propagation of the current transform solution to the next level where the solution is identical but with an increase in the number of parameters. This base class and those derived classes are meant to handle these types of situations.</p>
+<p >Basic usage will involve the user specifying the required fixed parameters, i.e.</p>
+<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
+<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
+<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
+</div><!-- fragment --><p >which will adjust the transform based on the new fixed parameters.</p>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Marius Staring </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkTransformParametersAdaptor_8h_source.html#l00055">55</a> of file <a class="el" href="itkTransformParametersAdaptor_8h_source.html">itkTransformParametersAdaptor.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TransformParametersAdaptor&lt; TTransform &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -334,21 +348,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TTransform&gt;<br />
-class itk::TransformParametersAdaptor&lt; TTransform &gt;</div><p >Base helper class intended for multi-resolution image registration. </p>
-<p >During multi-resolution image registration, it is often useful to expand the number of parameters describing the transform when going from one level to the next. For example, in B-spline registration, one often wants to increase the mesh size (or, equivalently, the control point grid size) for increased flexibility in optimizing the transform. This requires the propagation of the current transform solution to the next level where the solution is identical but with an increase in the number of parameters. This base class and those derived classes are meant to handle these types of situations.</p>
-<p >Basic usage will involve the user specifying the required fixed parameters, i.e.</p>
-<div class="fragment"><div class="line">transformAdaptor-&gt;SetTransform( transform );</div>
-<div class="line">transformAdaptor-&gt;SetRequiredFixedParameters( fixedParameters );</div>
-<div class="line">transformAdaptor-&gt;AdaptTransformParameters();</div>
-</div><!-- fragment --><p >which will adjust the transform based on the new fixed parameters.</p>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Marius Staring </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkTransformParametersAdaptor_8h_source.html#l00055">55</a> of file <a class="el" href="itkTransformParametersAdaptor_8h_source.html">itkTransformParametersAdaptor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a11d362398fc55978a9802fa8435ee4d6" name="a11d362398fc55978a9802fa8435ee4d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11d362398fc55978a9802fa8435ee4d6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

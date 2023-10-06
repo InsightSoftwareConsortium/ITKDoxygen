@@ -95,7 +95,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageBufferRange_8h_source.html">itkImageBufferRange.h</a>&gt;</code></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
+class itk::ImageBufferRange&lt; TImage &gt;</div><p >Modern C++11 range to iterate over the pixels of an image. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
+<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">ImageBufferRange</a> range{ *image };</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; pixel : range)</div>
+<div class="line">{</div>
+<div class="line">  pixel = pixel + 42;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassitk_1_1ImageBufferRange_html_acb87dad747ff4d2732efc3b67d846ab7"><div class="ttname"><a href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">itk::ImageBufferRange::ImageBufferRange</a></div><div class="ttdeci">ImageBufferRange()=default</div></div>
+</div><!-- fragment --><p >The following example prints the values of the pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> pixel : range)</div>
+<div class="line">{</div>
+<div class="line">  std::cout &lt;&lt; pixel &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageBufferRange_8h_source.html#l00073">73</a> of file <a class="el" href="itkImageBufferRange_8h_source.html">itkImageBufferRange.h</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBufferRange_1_1AccessorFunctorInitializer.html">AccessorFunctorInitializer</a></td></tr>
@@ -186,31 +210,7 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a018fb7a492c051d21d9d7bb9a34ef42f"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBufferRange.html#a018fb7a492c051d21d9d7bb9a34ef42f">UsingPointerAsIterator</a> = <a class="el" href="classitk_1_1ImageBufferRange.html#ab89a7795e5d61ff3e8be38a6d5628b62">SupportsDirectPixelAccess</a></td></tr>
 <tr class="separator:a018fb7a492c051d21d9d7bb9a34ef42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::ImageBufferRange&lt; TImage &gt;</div><p >Modern C++11 range to iterate over the pixels of an image. Designed to conform to Standard C++ Iterator requirements, so that it can be used in range-based for loop, and passed to Standard C++ algorithms.</p>
-<p >The following example adds 42 to each pixel, using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">ImageBufferRange</a> range{ *image };</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; pixel : range)</div>
-<div class="line">{</div>
-<div class="line">  pixel = pixel + 42;</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassitk_1_1ImageBufferRange_html_acb87dad747ff4d2732efc3b67d846ab7"><div class="ttname"><a href="classitk_1_1ImageBufferRange.html#acb87dad747ff4d2732efc3b67d846ab7">itk::ImageBufferRange::ImageBufferRange</a></div><div class="ttdeci">ImageBufferRange()=default</div></div>
-</div><!-- fragment --><p >The following example prints the values of the pixels: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> pixel : range)</div>
-<div class="line">{</div>
-<div class="line">  std::cout &lt;&lt; pixel &lt;&lt; std::endl;</div>
-<div class="line">}</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Niels Dekker, LKEB, Leiden University Medical Center</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageIterator.html" title="A multi-dimensional iterator templated over image type.">ImageIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ImageConstIterator.html" title="A multi-dimensional image iterator templated over image type.">ImageConstIterator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1IndexRange.html">IndexRange</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1ShapedImageNeighborhoodRange.html">ShapedImageNeighborhoodRange</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageBufferRange_8h_source.html#l00073">73</a> of file <a class="el" href="itkImageBufferRange_8h_source.html">itkImageBufferRange.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab95dfe29864110faa6789ed3cb10c2bb" name="ab95dfe29864110faa6789ed3cb10c2bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab95dfe29864110faa6789ed3cb10c2bb">&#9670;&nbsp;</a></span>AccessorFunctorType</h2>
 

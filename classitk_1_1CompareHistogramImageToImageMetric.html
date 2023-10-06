@@ -93,7 +93,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCompareHistogramImageToImageMetric_8h_source.html">itkCompareHistogramImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::CompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Compares Histograms between two images to be registered to a Training Histogram. </p>
+<p >This class is templated over the type of the fixed and moving images to be compared.</p>
+<p >This metric computes the similarity between the histogram produced by two images overlapping and a training histogram.</p>
+<p >It is to be sub-classed by the method of comparing the histograms.</p>
+<p >Generally, the histogram from the training data is to be computed in exactly the same way as the histogram from the images to be compared are computed. Thus, the user can set the interpolator, region, two training images and the transform and the training histogram will be formed. OR, the user can simply calculate the training histogram separately and set it.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The Initialize function does nothing if the training histogram already exists. Thus repeated calls to the Initialize function do nothing after the first call. If you wish the training histogram to be re-calculated, you should set it to 0.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Samson Timoner. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCompareHistogramImageToImageMetric_8h_source.html#l00056">56</a> of file <a class="el" href="itkCompareHistogramImageToImageMetric_8h_source.html">itkCompareHistogramImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -862,18 +873,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::CompareHistogramImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Compares Histograms between two images to be registered to a Training Histogram. </p>
-<p >This class is templated over the type of the fixed and moving images to be compared.</p>
-<p >This metric computes the similarity between the histogram produced by two images overlapping and a training histogram.</p>
-<p >It is to be sub-classed by the method of comparing the histograms.</p>
-<p >Generally, the histogram from the training data is to be computed in exactly the same way as the histogram from the images to be compared are computed. Thus, the user can set the interpolator, region, two training images and the transform and the training histogram will be formed. OR, the user can simply calculate the training histogram separately and set it.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The Initialize function does nothing if the training histogram already exists. Thus repeated calls to the Initialize function do nothing after the first call. If you wish the training histogram to be re-calculated, you should set it to 0.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Samson Timoner. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCompareHistogramImageToImageMetric_8h_source.html#l00056">56</a> of file <a class="el" href="itkCompareHistogramImageToImageMetric_8h_source.html">itkCompareHistogramImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a14745cf7fce672d043e498363b77236f" name="a14745cf7fce672d043e498363b77236f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14745cf7fce672d043e498363b77236f">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

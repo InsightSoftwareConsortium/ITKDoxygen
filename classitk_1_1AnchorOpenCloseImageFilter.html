@@ -97,7 +97,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAnchorOpenCloseImageFilter_8h_source.html">itkAnchorOpenCloseImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TKernel, typename TCompare1, typename TCompare2&gt;<br />
+class itk::AnchorOpenCloseImageFilter&lt; TImage, TKernel, TCompare1, TCompare2 &gt;</div><p >class to implement openings and closings using anchor methods. </p>
+<p >Anchor methods directly implement opening/closing by line structuring elements, and erosion/dilation is slightly more complicated. This class used line structuring elements to produce more complex shaped SEs, and must be instantiated with a decomposable structuring element type such as <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. The direct implementation of openings by lines gives a mechanism to short cut the decomposition slightly - e.g. in the case of a rectangle the basic decomposition is Ex Ey Ez Dz Dy Dz, which can be changed to Ex Ey Oz Dy Dx, where Ex, Dx and Ox indicate erosions, dilations and openings along the x direction. Because anchor operations do openings directly, this is a saving of one pass through the filter. Unfortunately it results in more complex template parameters because the appropriate comparison operations need to be passed in. The less </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAnchorOpenCloseImageFilter_8h_source.html#l00051">51</a> of file <a class="el" href="itkAnchorOpenCloseImageFilter_8h_source.html">itkAnchorOpenCloseImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AnchorOpenCloseImageFilter&lt; TImage, TKernel, TCompare1, TCompare2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -860,13 +866,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage, typename TKernel, typename TCompare1, typename TCompare2&gt;<br />
-class itk::AnchorOpenCloseImageFilter&lt; TImage, TKernel, TCompare1, TCompare2 &gt;</div><p >class to implement openings and closings using anchor methods. </p>
-<p >Anchor methods directly implement opening/closing by line structuring elements, and erosion/dilation is slightly more complicated. This class used line structuring elements to produce more complex shaped SEs, and must be instantiated with a decomposable structuring element type such as <a class="el" href="classitk_1_1FlatStructuringElement.html" title="A class to support a variety of flat structuring elements, including versions created by decompositio...">FlatStructuringElement</a>. The direct implementation of openings by lines gives a mechanism to short cut the decomposition slightly - e.g. in the case of a rectangle the basic decomposition is Ex Ey Ez Dz Dy Dz, which can be changed to Ex Ey Oz Dy Dx, where Ex, Dx and Ox indicate erosions, dilations and openings along the x direction. Because anchor operations do openings directly, this is a saving of one pass through the filter. Unfortunately it results in more complex template parameters because the appropriate comparison operations need to be passed in. The less </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAnchorOpenCloseImageFilter_8h_source.html#l00051">51</a> of file <a class="el" href="itkAnchorOpenCloseImageFilter_8h_source.html">itkAnchorOpenCloseImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad1a813f6a4024e268194bea9b62fa221" name="ad1a813f6a4024e268194bea9b62fa221"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1a813f6a4024e268194bea9b62fa221">&#9670;&nbsp;</a></span>AnchorLineDilateType</h2>
 

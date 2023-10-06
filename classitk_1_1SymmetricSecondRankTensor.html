@@ -93,7 +93,25 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkSymmetricSecondRankTensor_8h_source.html">itkSymmetricSecondRankTensor.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TComponent, unsigned int VDimension = 3&gt;<br />
+class itk::SymmetricSecondRankTensor&lt; TComponent, VDimension &gt;</div><p >Represent a symmetric tensor of second rank. </p>
+<p >This class implements a ND symmetric tensor of second rank.</p>
+<p >Since <a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> is a subclass of <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>, you can access its components as:</p>
+<p >using TensorPixelType = itk::SymmetricSecondRankTensor&lt; float &gt;; TensorPixelType tensor;</p>
+<p >tensor[0] = 1.233; tensor[1] = 1.456;</p>
+<p >for convenience the indexed access is also available as</p>
+<p >tensor(0,0) = 1.233; tensor(2,0) = 1.233;</p>
+<p >The Tensor in principle represents a NxN matrix, but given that it is always symmetric the representation can be compacted into a N*(N+1)/2 elements array that derives from the itk::FixedArray&lt;T&gt;</p>
+<dl class="section author"><dt>Author</dt><dd>Jeffrey Duda from School of Engineering at University of Pennsylvania </dd>
+<dd>
+Torsten Rohlfing from SRI International Neuroscience Program.</dd></dl>
+<p>This class was mostly based on files that Jeffrey Duda, Torsten Rohlfing and Martin Styner contributed to the ITK users list during a discussion on support for DiffusionTensorImages. The funding for creating this class was largely provided by NAMIC (National Alliance for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing) (<a href="https://www.na-mic.org">https://www.na-mic.org</a>). A discussion on the design of this class can be found in the WIKI pages of NAMIC:</p>
+<p ><a href="https://www.na-mic.org/Wiki/index.php/NAMIC_Wiki:DTI:ITK-DiffusionTensorPixelType">https://www.na-mic.org/Wiki/index.php/NAMIC_Wiki:DTI:ITK-DiffusionTensorPixelType</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiffusionTensor3D.html" title="Represent a diffusion tensor as used in DTI images.">DiffusionTensor3D</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkSymmetricSecondRankTensor_8h_source.html#l00075">75</a> of file <a class="el" href="itkSymmetricSecondRankTensor_8h_source.html">itkSymmetricSecondRankTensor.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SymmetricSecondRankTensor&lt; TComponent, VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -333,25 +351,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:ab26845e5c8e66990c814c1801516f870 inherit pub_static_attribs_classitk_1_1FixedArray"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FixedArray.html#ab26845e5c8e66990c814c1801516f870">Length</a></td></tr>
 <tr class="separator:ab26845e5c8e66990c814c1801516f870 inherit pub_static_attribs_classitk_1_1FixedArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TComponent, unsigned int VDimension = 3&gt;<br />
-class itk::SymmetricSecondRankTensor&lt; TComponent, VDimension &gt;</div><p >Represent a symmetric tensor of second rank. </p>
-<p >This class implements a ND symmetric tensor of second rank.</p>
-<p >Since <a class="el" href="classitk_1_1SymmetricSecondRankTensor.html" title="Represent a symmetric tensor of second rank.">SymmetricSecondRankTensor</a> is a subclass of <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a>, you can access its components as:</p>
-<p >using TensorPixelType = itk::SymmetricSecondRankTensor&lt; float &gt;; TensorPixelType tensor;</p>
-<p >tensor[0] = 1.233; tensor[1] = 1.456;</p>
-<p >for convenience the indexed access is also available as</p>
-<p >tensor(0,0) = 1.233; tensor(2,0) = 1.233;</p>
-<p >The Tensor in principle represents a NxN matrix, but given that it is always symmetric the representation can be compacted into a N*(N+1)/2 elements array that derives from the itk::FixedArray&lt;T&gt;</p>
-<dl class="section author"><dt>Author</dt><dd>Jeffrey Duda from School of Engineering at University of Pennsylvania </dd>
-<dd>
-Torsten Rohlfing from SRI International Neuroscience Program.</dd></dl>
-<p>This class was mostly based on files that Jeffrey Duda, Torsten Rohlfing and Martin Styner contributed to the ITK users list during a discussion on support for DiffusionTensorImages. The funding for creating this class was largely provided by NAMIC (National Alliance for Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Computing) (<a href="https://www.na-mic.org">https://www.na-mic.org</a>). A discussion on the design of this class can be found in the WIKI pages of NAMIC:</p>
-<p ><a href="https://www.na-mic.org/Wiki/index.php/NAMIC_Wiki:DTI:ITK-DiffusionTensorPixelType">https://www.na-mic.org/Wiki/index.php/NAMIC_Wiki:DTI:ITK-DiffusionTensorPixelType</a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DiffusionTensor3D.html" title="Represent a diffusion tensor as used in DTI images.">DiffusionTensor3D</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkSymmetricSecondRankTensor_8h_source.html#l00075">75</a> of file <a class="el" href="itkSymmetricSecondRankTensor_8h_source.html">itkSymmetricSecondRankTensor.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae3f7877909866f2c829f426f32b38aa9" name="ae3f7877909866f2c829f426f32b38aa9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3f7877909866f2c829f426f32b38aa9">&#9670;&nbsp;</a></span>AccumulateValueType</h2>
 

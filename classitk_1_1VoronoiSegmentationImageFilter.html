@@ -96,7 +96,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkVoronoiSegmentationImageFilter_8h_source.html">itkVoronoiSegmentationImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TBinaryPriorImage = Image&lt;unsigned char, 2&gt;&gt;<br />
+class itk::VoronoiSegmentationImageFilter&lt; TInputImage, TOutputImage, TBinaryPriorImage &gt;</div><p >Perform the segmentation of 2D images (single channel) by Voronoi Diagram. Used as a node of the segmentation toolkits. The homogeneity operator here is the testing of mean and standard deviation value. By setting the tolerance level, the "internal" region was defined as those that is closed to the gold-standard value in the sense that the difference is within the tolerance value.</p>
+<p >See <a class="el" href="classitk_1_1VoronoiSegmentationImageFilterBase.html" title="Base class for VoronoiSegmentationImageFilter.">VoronoiSegmentationImageFilterBase</a> for detail description of voronoi segmentation principles.</p>
+<p >The parameters here are:</p><ol type="1">
+<li>the estimation of the statistics of the object. (mean and std.)</li>
+<li>the tolerance for the classification. (around the mean ans std. estimated value).</li>
+</ol>
+<p >The parameters can also be automatically set by given a prior, as a binary image.</p>
+<p >Detail information about this algorithm can be found in: " Semi-automated color segmentation of anatomical tissue," C. Imelinska, M. Downes, and W. Yuan Computerized Medical Imaging and Graphics, Vor.24, pp 173-180, 2000. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkVoronoiSegmentationImageFilter_8h_source.html#l00053">53</a> of file <a class="el" href="itkVoronoiSegmentationImageFilter_8h_source.html">itkVoronoiSegmentationImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::VoronoiSegmentationImageFilter&lt; TInputImage, TOutputImage, TBinaryPriorImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -951,19 +963,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TBinaryPriorImage = Image&lt;unsigned char, 2&gt;&gt;<br />
-class itk::VoronoiSegmentationImageFilter&lt; TInputImage, TOutputImage, TBinaryPriorImage &gt;</div><p >Perform the segmentation of 2D images (single channel) by Voronoi Diagram. Used as a node of the segmentation toolkits. The homogeneity operator here is the testing of mean and standard deviation value. By setting the tolerance level, the "internal" region was defined as those that is closed to the gold-standard value in the sense that the difference is within the tolerance value.</p>
-<p >See <a class="el" href="classitk_1_1VoronoiSegmentationImageFilterBase.html" title="Base class for VoronoiSegmentationImageFilter.">VoronoiSegmentationImageFilterBase</a> for detail description of voronoi segmentation principles.</p>
-<p >The parameters here are:</p><ol type="1">
-<li>the estimation of the statistics of the object. (mean and std.)</li>
-<li>the tolerance for the classification. (around the mean ans std. estimated value).</li>
-</ol>
-<p >The parameters can also be automatically set by given a prior, as a binary image.</p>
-<p >Detail information about this algorithm can be found in: " Semi-automated color segmentation of anatomical tissue," C. Imelinska, M. Downes, and W. Yuan Computerized Medical Imaging and Graphics, Vor.24, pp 173-180, 2000. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkVoronoiSegmentationImageFilter_8h_source.html#l00053">53</a> of file <a class="el" href="itkVoronoiSegmentationImageFilter_8h_source.html">itkVoronoiSegmentationImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a22c527b3031776d26d713287ff091ac6" name="a22c527b3031776d26d713287ff091ac6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22c527b3031776d26d713287ff091ac6">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

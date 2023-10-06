@@ -95,7 +95,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkCurvesLevelSetFunction_8h_source.html">itkCurvesLevelSetFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFeatureImageType = TImageType&gt;<br />
+class itk::CurvesLevelSetFunction&lt; TImageType, TFeatureImageType &gt;</div><p >This function is used in <a class="el" href="classitk_1_1CurvesLevelSetImageFilter.html" title="Segments structures in images based on user supplied edge potential map.">CurvesLevelSetImageFilter</a> to segment structures in images based on user supplied edge potential map. </p>
+<dl class="section user"><dt>CurvesLevelSetFunction is a subclass of the generic LevelSetFunction.</dt><dd>It is useful for segmentations based on a user supplied edge potential map which has values close to zero in regions near edges (or high image gradient) and values close to one in regions with relatively constant intensity. Typically, the edge potential map is a function of the gradient, for example:</dd></dl>
+<p class="formulaDsp">
+\[ g(I) = 1 / ( 1 + | (\nabla * G)(I)| ) \]
+</p>
+ <p class="formulaDsp">
+\[ g(I) = \exp^{-|(\nabla * G)(I)|} \]
+</p>
+<p >where \( I \) is image intensity and \( (\nabla * G) \) is the derivative of Gaussian operator.</p>
+<dl class="section user"><dt>In this function both the propagation term \( (\nabla * G) \)#281</dt><dd>and the curvature spatial modifier term $ \( Z(\mathbf{x}) \) are taken directly from the edge potential image. The edge potential image is set via the <a class="el" href="classitk_1_1SegmentationLevelSetFunction.html#a8856e6c5ecad70d2af9e0a5c531ad672">SetFeatureImage()</a> method. An advection term \( A(\mathbf{x}) \) is constructed from the negative gradient of the edge potential image. This term behaves like a doublet attracting the contour to the edges.</dd></dl>
+<dl class="section user"><dt>This implementation is based on:</dt><dd>L. Lorigo, O. Faugeras, W.E.L. Grimson, R. Keriven, R. Kikinis, A. Nabavi, and C.-F. Westin, Curves: Curve evolution for vessel segmentation. Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Analysis, 5:195-206, 2001.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> </dd>
+<dd>
+SegmentationLevelSetImageFunction </dd>
+<dd>
+<a class="el" href="classitk_1_1GeodesicActiveContourLevelSetImageFilter.html" title="Segments structures in images based on a user supplied edge potential map.">GeodesicActiveContourLevelSetImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCurvesLevelSetFunction_8h_source.html#l00062">62</a> of file <a class="el" href="itkCurvesLevelSetFunction_8h_source.html">itkCurvesLevelSetFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::CurvesLevelSetFunction&lt; TImageType, TFeatureImageType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -491,27 +511,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LevelSetFunction.html#a452b4d55467fc7acbedc5108388b6418">VectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LevelSetFunction.html#a9dd8eb1a6b865d296f361554dd997a42">m_ZeroVectorConstant</a></td></tr>
 <tr class="separator:a9dd8eb1a6b865d296f361554dd997a42 inherit pro_static_attribs_classitk_1_1LevelSetFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TImageType, typename TFeatureImageType = TImageType&gt;<br />
-class itk::CurvesLevelSetFunction&lt; TImageType, TFeatureImageType &gt;</div><p >This function is used in <a class="el" href="classitk_1_1CurvesLevelSetImageFilter.html" title="Segments structures in images based on user supplied edge potential map.">CurvesLevelSetImageFilter</a> to segment structures in images based on user supplied edge potential map. </p>
-<dl class="section user"><dt>CurvesLevelSetFunction is a subclass of the generic LevelSetFunction.</dt><dd>It is useful for segmentations based on a user supplied edge potential map which has values close to zero in regions near edges (or high image gradient) and values close to one in regions with relatively constant intensity. Typically, the edge potential map is a function of the gradient, for example:</dd></dl>
-<p class="formulaDsp">
-\[ g(I) = 1 / ( 1 + | (\nabla * G)(I)| ) \]
-</p>
- <p class="formulaDsp">
-\[ g(I) = \exp^{-|(\nabla * G)(I)|} \]
-</p>
-<p >where \( I \) is image intensity and \( (\nabla * G) \) is the derivative of Gaussian operator.</p>
-<dl class="section user"><dt>In this function both the propagation term \( (\nabla * G) \)#281</dt><dd>and the curvature spatial modifier term $ \( Z(\mathbf{x}) \) are taken directly from the edge potential image. The edge potential image is set via the <a class="el" href="classitk_1_1SegmentationLevelSetFunction.html#a8856e6c5ecad70d2af9e0a5c531ad672">SetFeatureImage()</a> method. An advection term \( A(\mathbf{x}) \) is constructed from the negative gradient of the edge potential image. This term behaves like a doublet attracting the contour to the edges.</dd></dl>
-<dl class="section user"><dt>This implementation is based on:</dt><dd>L. Lorigo, O. Faugeras, W.E.L. Grimson, R. Keriven, R. Kikinis, A. Nabavi, and C.-F. Westin, Curves: Curve evolution for vessel segmentation. Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Analysis, 5:195-206, 2001.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetFunction.html" title="The LevelSetFunction class is a generic function object which can be used to create a level set metho...">LevelSetFunction</a> </dd>
-<dd>
-SegmentationLevelSetImageFunction </dd>
-<dd>
-<a class="el" href="classitk_1_1GeodesicActiveContourLevelSetImageFilter.html" title="Segments structures in images based on a user supplied edge potential map.">GeodesicActiveContourLevelSetImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkCurvesLevelSetFunction_8h_source.html#l00062">62</a> of file <a class="el" href="itkCurvesLevelSetFunction_8h_source.html">itkCurvesLevelSetFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a0874f05762a7072c0f293239def71894" name="a0874f05762a7072c0f293239def71894"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0874f05762a7072c0f293239def71894">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

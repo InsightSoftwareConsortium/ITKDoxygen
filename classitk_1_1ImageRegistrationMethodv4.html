@@ -97,7 +97,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageRegistrationMethodv4_8h_source.html">itkImageRegistrationMethodv4.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TOutputTransform = Transform&lt;double, TFixedImage::ImageDimension, TFixedImage::ImageDimension&gt;, typename TVirtualImage = TFixedImage, typename TPointSet = PointSet&lt;unsigned int, TFixedImage::ImageDimension&gt;&gt;<br />
+class itk::ImageRegistrationMethodv4&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;</div><p ><a class="el" href="classInterface.html" title="Wrapper for FFTW API.">Interface</a> method for the current registration framework. </p>
+<p >This interface method class encapsulates typical registration usage by incorporating all the necessary elements for performing a simple image registration between two images. This method also allows for multistage registration whereby each stage is characterize by possibly different transforms of and different image metrics. For example, many users will want to perform a linear registration followed by deformable registration where both stages are performed in multiple levels. Each level can be characterized by:</p>
+<ul>
+<li>the resolution of the virtual domain image (see below) </li>
+<li>smoothing of the fixed and moving images </li>
+<li>the coarseness of the current transform via transform adaptors (see below)</li>
+</ul>
+<p>Multiple stages are handled by linking multiple instantiations of this class where the output transform is added to the optional composite transform input.</p>
+<p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> adaptors: To accommodate new changes to the current ITK registration framework, we introduced the concept of transform adaptors. Whereas each stage is associated with a moving and, possibly, fixed transform, each level of each stage is defined by a transform adaptor which describes how to adapt the transform to the current level. For example, if one were to use the B-spline transform during a deformable registration stage, common practice is to increase the resolution of the B-spline mesh (or, analogously, the control point grid size) at each level. At each level, one would define the parameters of the B-spline transform adaptor at that level which increases the resolution from the previous level. For many transforms, such as affine, this concept of an adaptor may be nonsensical. For this reason, the base transform adaptor class does not do anything to the transform but merely passes it through. Each level of each stage must define a transform adaptor but, by default, the base adaptor class is assigned which, again, does not do anything to the transform. A special mention should be made of the transform adaptor at level 0 of any stage. Most likely, the user will not want to do anything to the transform as it enters into the given stage so typical use will be to assign the base adaptor class to level 0 of all stages but we leave that open to the user.</p>
+<p >Output: The output is the updated transform.</p>
+<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
+<dd>
+Brian Avants </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageRegistrationMethodv4_8h_source.html#l00117">117</a> of file <a class="el" href="itkImageRegistrationMethodv4_8h_source.html">itkImageRegistrationMethodv4.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageRegistrationMethodv4&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -882,24 +899,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TOutputTransform = Transform&lt;double, TFixedImage::ImageDimension, TFixedImage::ImageDimension&gt;, typename TVirtualImage = TFixedImage, typename TPointSet = PointSet&lt;unsigned int, TFixedImage::ImageDimension&gt;&gt;<br />
-class itk::ImageRegistrationMethodv4&lt; TFixedImage, TMovingImage, TOutputTransform, TVirtualImage, TPointSet &gt;</div><p ><a class="el" href="classInterface.html" title="Wrapper for FFTW API.">Interface</a> method for the current registration framework. </p>
-<p >This interface method class encapsulates typical registration usage by incorporating all the necessary elements for performing a simple image registration between two images. This method also allows for multistage registration whereby each stage is characterize by possibly different transforms of and different image metrics. For example, many users will want to perform a linear registration followed by deformable registration where both stages are performed in multiple levels. Each level can be characterized by:</p>
-<ul>
-<li>the resolution of the virtual domain image (see below) </li>
-<li>smoothing of the fixed and moving images </li>
-<li>the coarseness of the current transform via transform adaptors (see below)</li>
-</ul>
-<p>Multiple stages are handled by linking multiple instantiations of this class where the output transform is added to the optional composite transform input.</p>
-<p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> adaptors: To accommodate new changes to the current ITK registration framework, we introduced the concept of transform adaptors. Whereas each stage is associated with a moving and, possibly, fixed transform, each level of each stage is defined by a transform adaptor which describes how to adapt the transform to the current level. For example, if one were to use the B-spline transform during a deformable registration stage, common practice is to increase the resolution of the B-spline mesh (or, analogously, the control point grid size) at each level. At each level, one would define the parameters of the B-spline transform adaptor at that level which increases the resolution from the previous level. For many transforms, such as affine, this concept of an adaptor may be nonsensical. For this reason, the base transform adaptor class does not do anything to the transform but merely passes it through. Each level of each stage must define a transform adaptor but, by default, the base adaptor class is assigned which, again, does not do anything to the transform. A special mention should be made of the transform adaptor at level 0 of any stage. Most likely, the user will not want to do anything to the transform as it enters into the given stage so typical use will be to assign the base adaptor class to level 0 of all stages but we leave that open to the user.</p>
-<p >Output: The output is the updated transform.</p>
-<dl class="section author"><dt>Author</dt><dd>Nick Tustison </dd>
-<dd>
-Brian Avants </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageRegistrationMethodv4_8h_source.html#l00117">117</a> of file <a class="el" href="itkImageRegistrationMethodv4_8h_source.html">itkImageRegistrationMethodv4.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a75b0a50d4b1f3fb1c01c3dc8700d9640" name="a75b0a50d4b1f3fb1c01c3dc8700d9640"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75b0a50d4b1f3fb1c01c3dc8700d9640">&#9670;&nbsp;</a></span>CompositeTransformPointer</h2>
 

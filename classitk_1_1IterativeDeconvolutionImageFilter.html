@@ -94,7 +94,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkIterativeDeconvolutionImageFilter_8h_source.html">itkIterativeDeconvolutionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
+class itk::IterativeDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >Abstract base class for filters that implement iterative deconvolution algorithms. </p>
+<p >This filter implements methods common to iterative deconvolution algorithms. The input blurred image is set with the usual <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> method and the blurring kernel is set with the SetKernelImage() method.</p>
+<p >The number of iterations can be set with the method <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#ac9b8ed80827dd8b9dc773af21695916c">SetNumberOfIterations()</a>. This class emits an IterationEvent at the start of each iteration. Iteration can be terminated early by calling <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#a047b1e75580cc4ab5507d7937388d1ec">SetStopIteration( bool )</a> with the argument set to true. To resume iterating, you must call <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#a047b1e75580cc4ab5507d7937388d1ec">SetStopIteration( bool )</a> with the argument set to false before calling <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> a second time.</p>
+<p >This code was adapted from the Insight Journal contribution:</p>
+<p >"Deconvolution: infrastructure and reference algorithms" by Gaetan Lehmann <a href="https://www.insight-journal.org/browse/publication/753">https://www.insight-journal.org/browse/publication/753</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="itkIterativeDeconvolutionImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkIterativeDeconvolutionImageFilter_8h_source.html">itkIterativeDeconvolutionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::IterativeDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -939,16 +948,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
-class itk::IterativeDeconvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >Abstract base class for filters that implement iterative deconvolution algorithms. </p>
-<p >This filter implements methods common to iterative deconvolution algorithms. The input blurred image is set with the usual <a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput()</a> method and the blurring kernel is set with the SetKernelImage() method.</p>
-<p >The number of iterations can be set with the method <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#ac9b8ed80827dd8b9dc773af21695916c">SetNumberOfIterations()</a>. This class emits an IterationEvent at the start of each iteration. Iteration can be terminated early by calling <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#a047b1e75580cc4ab5507d7937388d1ec">SetStopIteration( bool )</a> with the argument set to true. To resume iterating, you must call <a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html#a047b1e75580cc4ab5507d7937388d1ec">SetStopIteration( bool )</a> with the argument set to false before calling <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> a second time.</p>
-<p >This code was adapted from the Insight Journal contribution:</p>
-<p >"Deconvolution: infrastructure and reference algorithms" by Gaetan Lehmann <a href="https://www.insight-journal.org/browse/publication/753">https://www.insight-journal.org/browse/publication/753</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkIterativeDeconvolutionImageFilter_8h_source.html#l00055">55</a> of file <a class="el" href="itkIterativeDeconvolutionImageFilter_8h_source.html">itkIterativeDeconvolutionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7e9dc6a807f72789831910c1dc3c6b1a" name="a7e9dc6a807f72789831910c1dc3c6b1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e9dc6a807f72789831910c1dc3c6b1a">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

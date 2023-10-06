@@ -93,7 +93,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkMixtureModelComponentBase_8h_source.html">itkMixtureModelComponentBase.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
+class itk::Statistics::MixtureModelComponentBase&lt; TSample &gt;</div><p >base class for distribution modules that supports analytical way to update the distribution parameters </p>
+<p >This class expects that its subclasses (distribution components) should have analytical expressions for updating its parameters using only the measurement vectors and their associated weights.</p>
+<p >This class can be considered as a macro class that encapsulates the storage for the weights, model (subclasses of <a class="el" href="classitk_1_1Statistics_1_1MembershipFunctionBase.html" title="MembershipFunctionBase defines common interfaces for membership functions.">MembershipFunctionBase</a>), and model parameter estimators (implementation of analytical expressions).</p>
+<p >Subclasses of this class should define their own distribution specific membership function. For example, <a class="el" href="classitk_1_1Statistics_1_1GaussianMixtureModelComponent.html" title="is a component (derived from MixtureModelComponentBase) for Gaussian class. This class is used in Exp...">GaussianMixtureModelComponent</a> class defines and creates a GaussianDensityFunction object for that matter. Subclasses should also cast such membership function object to <a class="el" href="classitk_1_1Statistics_1_1MembershipFunctionBase.html" title="MembershipFunctionBase defines common interfaces for membership functions.">MembershipFunctionBase</a> object. By doing that, users can get pointers to membership functions from different distributional model</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1ExpectationMaximizationMixtureModelEstimator.html" title="This class generates the parameter estimates for a mixture model using expectation maximization strat...">ExpectationMaximizationMixtureModelEstimator</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkMixtureModelComponentBase_8h_source.html#l00057">57</a> of file <a class="el" href="itkMixtureModelComponentBase_8h_source.html">itkMixtureModelComponentBase.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::Statistics::MixtureModelComponentBase&lt; TSample &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -328,16 +337,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TSample&gt;<br />
-class itk::Statistics::MixtureModelComponentBase&lt; TSample &gt;</div><p >base class for distribution modules that supports analytical way to update the distribution parameters </p>
-<p >This class expects that its subclasses (distribution components) should have analytical expressions for updating its parameters using only the measurement vectors and their associated weights.</p>
-<p >This class can be considered as a macro class that encapsulates the storage for the weights, model (subclasses of <a class="el" href="classitk_1_1Statistics_1_1MembershipFunctionBase.html" title="MembershipFunctionBase defines common interfaces for membership functions.">MembershipFunctionBase</a>), and model parameter estimators (implementation of analytical expressions).</p>
-<p >Subclasses of this class should define their own distribution specific membership function. For example, <a class="el" href="classitk_1_1Statistics_1_1GaussianMixtureModelComponent.html" title="is a component (derived from MixtureModelComponentBase) for Gaussian class. This class is used in Exp...">GaussianMixtureModelComponent</a> class defines and creates a GaussianDensityFunction object for that matter. Subclasses should also cast such membership function object to <a class="el" href="classitk_1_1Statistics_1_1MembershipFunctionBase.html" title="MembershipFunctionBase defines common interfaces for membership functions.">MembershipFunctionBase</a> object. By doing that, users can get pointers to membership functions from different distributional model</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Statistics_1_1ExpectationMaximizationMixtureModelEstimator.html" title="This class generates the parameter estimates for a mixture model using expectation maximization strat...">ExpectationMaximizationMixtureModelEstimator</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkMixtureModelComponentBase_8h_source.html#l00057">57</a> of file <a class="el" href="itkMixtureModelComponentBase_8h_source.html">itkMixtureModelComponentBase.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa8f16e0da4cbbabc2e4637349fff95b7" name="aa8f16e0da4cbbabc2e4637349fff95b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8f16e0da4cbbabc2e4637349fff95b7">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

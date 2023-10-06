@@ -94,7 +94,48 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::TransformGeometryImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Modify an image's geometric meta-data, changing its "physical" extent. </p>
+<p >The <a class="el" href="classitk_1_1TransformGeometryImageFilter.html" title="Modify an image&#39;s geometric meta-data, changing its &quot;physical&quot; extent.">TransformGeometryImageFilter</a> "physically" changes the image in space using the given transformation. The resulting image is an image with the same voxel values as the input, but with different physical space representation as affected by the transform.</p>
+<p >The specific transformation type can be any type derived from the <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html" title="Matrix and Offset transformation of a vector space (e.g. space coordinates)">MatrixOffsetTransformBase</a> and the <a class="el" href="classitk_1_1TranslationTransform.html" title="Translation transformation of a vector space (e.g. space coordinates)">TranslationTransform</a>. The modification of the geometric meta-data is an alternative to resampling the moving image onto the fixed image grid, after registration. The advantages of using this approach over resampling are two-fold, it does not introduce artifacts into the result because the original intensity information is not modified, and it is computationally more efficient.</p>
+<p >When the filter is used with a rigid or translation transformation the resulting image can be saved in any desired format. When the filter is used with an affine transformation the resulting image should be saved in a format that supports a non ortho-normal direction cosine matrix (e.g. nrrd).</p>
+<p >Let us call the transform operation from the fixed image to moving image <code>TfmF2M</code>. Given a set of points from the fixed image in physical space (i.e. <code>physicalFixedImagePoints</code>), the aim is to convert those points into the moving image physical space as <code>physicalMovingImagePoints = TfmF2M( physicalFixedImagePoints )</code>, and then be able to get the image values as <code>movingContinuousIndexPoints = movingImage-&gt;TransformPhysicalPointToContinuousIndex( physicalMovingImagePoints
+)</code>.</p>
+<p >We desire to change the moving image direction cosine \(\mathbf{D}\) and origin \(\mathbf{o}\) such that we can compute the moving image points as <code>movingContinuousIndexPoints = newMovingImage-&gt;TransformPhysicalPointToContinuousIndex( physicalFixedImagePoints
+)</code></p>
+<p >Let us introduce the notation that will be used to formalize the transformation:</p><ul>
+<li>Image-related parameters:<ul>
+<li>\(\mathbf{D}\): direction cosine matrix</li>
+<li>\(\mathbf{o}\): origin vector</li>
+<li>\(\mathbf{S}\): spacing</li>
+<li>\(\mathbf{ci}\): continuous index</li>
+<li>\(\mathbf{D}^{&#39;}\): new direction cosine matrix</li>
+<li>\(\mathbf{o}^{&#39;}\): new origin vector</li>
+</ul>
+</li>
+<li><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> content in corresponding space:<ul>
+<li>\(\mathbf{f}_{p}\): fixed image points in physical space</li>
+<li>\(\mathbf{m}_{p}\): moving image points in physical space</li>
+</ul>
+</li>
+<li>Rigid transform-related parameters:<ul>
+<li>\(\mathbf{R}\): rotation matrix</li>
+<li>\(\mathbf{c}\): center of rotation vector</li>
+<li>\(\mathbf{t}\): translation vector</li>
+</ul>
+</li>
+</ul>
+<p >The <code>TransformPhysicalPointToContinuousIndex</code> method performs then: </p><p class="formulaDsp">
+\begin{eqnarray*} \mathbf{ci} &amp;= \mathbf{S}^{-1}\mathbf{D}^{-1}( \mathbf{m}_{p} - \mathbf{o} ) \\ \mathbf{m}_{p} &amp;= \mathbf{R}(\mathbf{f}_{p} - \mathbf{c}) + \mathbf{c} + \mathbf{t} \end{eqnarray*}
+</p>
+<p >After substitution:</p>
+<p class="formulaDsp">
+\begin{eqnarray*} \mathbf{m}_{c} &amp;= \underbrace{\mathbf{R}^{-1}\mathbf{D}}_\text{new cosine}\mathbf{S} * \mathbf{i} + \underbrace{\mathbf{R}^{-1} * \mathbf{o} - \mathbf{R}^{-1} * \mathbf{c} - \mathbf{R}^{-1}*t}_\text{new origin} + \mathbf{c} \\ \\ \mathbf{D}^{&#39;} &amp;= \mathbf{R}^{-1}\mathbf{D} \\ \mathbf{o}^{&#39;} &amp;= \mathbf{R}^{-1} * ( \mathbf{o} - \mathbf{c} - \mathbf{t} ) + \mathbf{c} \end{eqnarray*}
+</p>
+ 
+<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00101">101</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::TransformGeometryImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -786,48 +827,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::TransformGeometryImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Modify an image's geometric meta-data, changing its "physical" extent. </p>
-<p >The <a class="el" href="classitk_1_1TransformGeometryImageFilter.html" title="Modify an image&#39;s geometric meta-data, changing its &quot;physical&quot; extent.">TransformGeometryImageFilter</a> "physically" changes the image in space using the given transformation. The resulting image is an image with the same voxel values as the input, but with different physical space representation as affected by the transform.</p>
-<p >The specific transformation type can be any type derived from the <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html" title="Matrix and Offset transformation of a vector space (e.g. space coordinates)">MatrixOffsetTransformBase</a> and the <a class="el" href="classitk_1_1TranslationTransform.html" title="Translation transformation of a vector space (e.g. space coordinates)">TranslationTransform</a>. The modification of the geometric meta-data is an alternative to resampling the moving image onto the fixed image grid, after registration. The advantages of using this approach over resampling are two-fold, it does not introduce artifacts into the result because the original intensity information is not modified, and it is computationally more efficient.</p>
-<p >When the filter is used with a rigid or translation transformation the resulting image can be saved in any desired format. When the filter is used with an affine transformation the resulting image should be saved in a format that supports a non ortho-normal direction cosine matrix (e.g. nrrd).</p>
-<p >Let us call the transform operation from the fixed image to moving image <code>TfmF2M</code>. Given a set of points from the fixed image in physical space (i.e. <code>physicalFixedImagePoints</code>), the aim is to convert those points into the moving image physical space as <code>physicalMovingImagePoints = TfmF2M( physicalFixedImagePoints )</code>, and then be able to get the image values as <code>movingContinuousIndexPoints = movingImage-&gt;TransformPhysicalPointToContinuousIndex( physicalMovingImagePoints
-)</code>.</p>
-<p >We desire to change the moving image direction cosine \(\mathbf{D}\) and origin \(\mathbf{o}\) such that we can compute the moving image points as <code>movingContinuousIndexPoints = newMovingImage-&gt;TransformPhysicalPointToContinuousIndex( physicalFixedImagePoints
-)</code></p>
-<p >Let us introduce the notation that will be used to formalize the transformation:</p><ul>
-<li>Image-related parameters:<ul>
-<li>\(\mathbf{D}\): direction cosine matrix</li>
-<li>\(\mathbf{o}\): origin vector</li>
-<li>\(\mathbf{S}\): spacing</li>
-<li>\(\mathbf{ci}\): continuous index</li>
-<li>\(\mathbf{D}^{&#39;}\): new direction cosine matrix</li>
-<li>\(\mathbf{o}^{&#39;}\): new origin vector</li>
-</ul>
-</li>
-<li><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> content in corresponding space:<ul>
-<li>\(\mathbf{f}_{p}\): fixed image points in physical space</li>
-<li>\(\mathbf{m}_{p}\): moving image points in physical space</li>
-</ul>
-</li>
-<li>Rigid transform-related parameters:<ul>
-<li>\(\mathbf{R}\): rotation matrix</li>
-<li>\(\mathbf{c}\): center of rotation vector</li>
-<li>\(\mathbf{t}\): translation vector</li>
-</ul>
-</li>
-</ul>
-<p >The <code>TransformPhysicalPointToContinuousIndex</code> method performs then: </p><p class="formulaDsp">
-\begin{eqnarray*} \mathbf{ci} &amp;= \mathbf{S}^{-1}\mathbf{D}^{-1}( \mathbf{m}_{p} - \mathbf{o} ) \\ \mathbf{m}_{p} &amp;= \mathbf{R}(\mathbf{f}_{p} - \mathbf{c}) + \mathbf{c} + \mathbf{t} \end{eqnarray*}
-</p>
-<p >After substitution:</p>
-<p class="formulaDsp">
-\begin{eqnarray*} \mathbf{m}_{c} &amp;= \underbrace{\mathbf{R}^{-1}\mathbf{D}}_\text{new cosine}\mathbf{S} * \mathbf{i} + \underbrace{\mathbf{R}^{-1} * \mathbf{o} - \mathbf{R}^{-1} * \mathbf{c} - \mathbf{R}^{-1}*t}_\text{new origin} + \mathbf{c} \\ \\ \mathbf{D}^{&#39;} &amp;= \mathbf{R}^{-1}\mathbf{D} \\ \mathbf{o}^{&#39;} &amp;= \mathbf{R}^{-1} * ( \mathbf{o} - \mathbf{c} - \mathbf{t} ) + \mathbf{c} \end{eqnarray*}
-</p>
- 
-<p class="definition">Definition at line <a class="el" href="itkTransformGeometryImageFilter_8h_source.html#l00101">101</a> of file <a class="el" href="itkTransformGeometryImageFilter_8h_source.html">itkTransformGeometryImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9326029aeee492bed129fcdb6401c0ae" name="a9326029aeee492bed129fcdb6401c0ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9326029aeee492bed129fcdb6401c0ae">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

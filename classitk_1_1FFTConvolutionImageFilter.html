@@ -96,7 +96,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkFFTConvolutionImageFilter_8h_source.html">itkFFTConvolutionImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
+class itk::FFTConvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >Convolve a given image with an arbitrary image kernel using multiplication in the Fourier domain. </p>
+<p >This filter produces output equivalent to the output of the <a class="el" href="classitk_1_1ConvolutionImageFilter.html" title="Convolve a given image with an arbitrary image kernel.">ConvolutionImageFilter</a>. However, it takes advantage of the convolution theorem to accelerate the convolution computation when the kernel is large.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter ignores the spacing, origin, and orientation of the kernel image and treats them as identical to those in the input image.</dd></dl>
+<p>This code was adapted from the Insight Journal contribution:</p>
+<p >"FFT Based Convolution" by Gaetan Lehmann <a href="https://www.insight-journal.org/browse/publication/717">https://www.insight-journal.org/browse/publication/717</a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ConvolutionImageFilter.html" title="Convolve a given image with an arbitrary image kernel.">ConvolutionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1InverseDeconvolutionImageFilter.html" title="The direct linear inverse deconvolution filter.">InverseDeconvolutionImageFilter</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html" title="Abstract base class for filters that implement iterative deconvolution algorithms.">IterativeDeconvolutionImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkFFTConvolutionImageFilter_8h_source.html#l00060">60</a> of file <a class="el" href="itkFFTConvolutionImageFilter_8h_source.html">itkFFTConvolutionImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FFTConvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -887,21 +901,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TKernelImage = TInputImage, typename TOutputImage = TInputImage, typename TInternalPrecision = double&gt;<br />
-class itk::FFTConvolutionImageFilter&lt; TInputImage, TKernelImage, TOutputImage, TInternalPrecision &gt;</div><p >Convolve a given image with an arbitrary image kernel using multiplication in the Fourier domain. </p>
-<p >This filter produces output equivalent to the output of the <a class="el" href="classitk_1_1ConvolutionImageFilter.html" title="Convolve a given image with an arbitrary image kernel.">ConvolutionImageFilter</a>. However, it takes advantage of the convolution theorem to accelerate the convolution computation when the kernel is large.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter ignores the spacing, origin, and orientation of the kernel image and treats them as identical to those in the input image.</dd></dl>
-<p>This code was adapted from the Insight Journal contribution:</p>
-<p >"FFT Based Convolution" by Gaetan Lehmann <a href="https://www.insight-journal.org/browse/publication/717">https://www.insight-journal.org/browse/publication/717</a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ConvolutionImageFilter.html" title="Convolve a given image with an arbitrary image kernel.">ConvolutionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1InverseDeconvolutionImageFilter.html" title="The direct linear inverse deconvolution filter.">InverseDeconvolutionImageFilter</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1IterativeDeconvolutionImageFilter.html" title="Abstract base class for filters that implement iterative deconvolution algorithms.">IterativeDeconvolutionImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkFFTConvolutionImageFilter_8h_source.html#l00060">60</a> of file <a class="el" href="itkFFTConvolutionImageFilter_8h_source.html">itkFFTConvolutionImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa8235c3601b6c7ef1195728560d17f02" name="aa8235c3601b6c7ef1195728560d17f02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8235c3601b6c7ef1195728560d17f02">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

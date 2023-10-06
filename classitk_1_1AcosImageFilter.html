@@ -93,7 +93,21 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkAcosImageFilter_8h_source.html">itkAcosImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::AcosImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse cosine of each pixel. </p>
+<p >This filter is templated over the pixel type of the input image and the pixel type of the output image.</p>
+<p >The filter walks over all the pixels in the input image, and for each pixel does do the following:</p>
+<ul>
+<li>cast the pixel value to <code>double</code>, </li>
+<li>apply the <code>std::acos()</code> function to the <code>double</code> value </li>
+<li>cast the <code>double</code> value resulting from <code>std::acos()</code> to the pixel type of the output image </li>
+<li>store the casted value into the output image.</li>
+</ul>
+<p>The filter expects both images to have the same dimension (e.g. both 2D, or both 3D, or both ND). </p>
+
+<p class="definition">Definition at line <a class="el" href="itkAcosImageFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkAcosImageFilter_8h_source.html">itkAcosImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AcosImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -801,21 +815,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::AcosImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Computes the inverse cosine of each pixel. </p>
-<p >This filter is templated over the pixel type of the input image and the pixel type of the output image.</p>
-<p >The filter walks over all the pixels in the input image, and for each pixel does do the following:</p>
-<ul>
-<li>cast the pixel value to <code>double</code>, </li>
-<li>apply the <code>std::acos()</code> function to the <code>double</code> value </li>
-<li>cast the <code>double</code> value resulting from <code>std::acos()</code> to the pixel type of the output image </li>
-<li>store the casted value into the output image.</li>
-</ul>
-<p>The filter expects both images to have the same dimension (e.g. both 2D, or both 3D, or both ND). </p>
-
-<p class="definition">Definition at line <a class="el" href="itkAcosImageFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkAcosImageFilter_8h_source.html">itkAcosImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab41c520c009d4ef3abe413b61e41ef5e" name="ab41c520c009d4ef3abe413b61e41ef5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab41c520c009d4ef3abe413b61e41ef5e">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

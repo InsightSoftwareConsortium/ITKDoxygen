@@ -96,7 +96,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkGradientDifferenceImageToImageMetric_8h_source.html">itkGradientDifferenceImageToImageMetric.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
+class itk::GradientDifferenceImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two objects to be registered. </p>
+<p >This Class is templated over the type of the Images to be compared and over the type of transformation and Interpolator to be used.</p>
+<p >This metric computes the sum of squared differences between pixels in the derivatives of the moving and fixed images after passing the squared difference through a function of type \( \frac{1}{1+x} \).</p>
+<dl class="section warning"><dt>Warning</dt><dd>THIS IMAGE METRIC IS CURRENTLY UNDER DEBUGGING. USE AT YOUR OWN RISK.</dd></dl>
+<p>Spatial correspondence between both images is established through a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. Pixel values are taken from the Moving image. Their positions are mapped to the Fixed image and result in general in non-grid position on it. Values at these non-grid position of the Fixed image are interpolated using a user-selected Interpolator.</p>
+<p >Implementation of this class is based on: Hipwell, J. H., et. al. (2003), "Intensity-Based 2-D-3D Registration of
+Cerebral Angiograms,", IEEE Transactions on Medical Imaging, 22(11):1417-1426. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkGradientDifferenceImageToImageMetric_8h_source.html#l00058">58</a> of file <a class="el" href="itkGradientDifferenceImageToImageMetric_8h_source.html">itkGradientDifferenceImageToImageMetric.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::GradientDifferenceImageToImageMetric&lt; TFixedImage, TMovingImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -792,18 +803,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageMetric.html#a7cf998e76bd63a00abcc91d41c48d2bf">DeformationSplineOrder</a> = 3</td></tr>
 <tr class="separator:a7cf998e76bd63a00abcc91d41c48d2bf inherit pro_static_attribs_classitk_1_1ImageToImageMetric"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage&gt;<br />
-class itk::GradientDifferenceImageToImageMetric&lt; TFixedImage, TMovingImage &gt;</div><p >Computes similarity between two objects to be registered. </p>
-<p >This Class is templated over the type of the Images to be compared and over the type of transformation and Interpolator to be used.</p>
-<p >This metric computes the sum of squared differences between pixels in the derivatives of the moving and fixed images after passing the squared difference through a function of type \( \frac{1}{1+x} \).</p>
-<dl class="section warning"><dt>Warning</dt><dd>THIS IMAGE METRIC IS CURRENTLY UNDER DEBUGGING. USE AT YOUR OWN RISK.</dd></dl>
-<p>Spatial correspondence between both images is established through a <a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a>. Pixel values are taken from the Moving image. Their positions are mapped to the Fixed image and result in general in non-grid position on it. Values at these non-grid position of the Fixed image are interpolated using a user-selected Interpolator.</p>
-<p >Implementation of this class is based on: Hipwell, J. H., et. al. (2003), "Intensity-Based 2-D-3D Registration of
-Cerebral Angiograms,", IEEE Transactions on Medical Imaging, 22(11):1417-1426. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkGradientDifferenceImageToImageMetric_8h_source.html#l00058">58</a> of file <a class="el" href="itkGradientDifferenceImageToImageMetric_8h_source.html">itkGradientDifferenceImageToImageMetric.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a66d68ed20bbb3a47d9147e8bd97b3b7a" name="a66d68ed20bbb3a47d9147e8bd97b3b7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66d68ed20bbb3a47d9147e8bd97b3b7a">&#9670;&nbsp;</a></span>CastFixedImageFilterPointer</h2>
 

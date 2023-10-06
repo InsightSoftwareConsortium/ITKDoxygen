@@ -95,7 +95,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkStreamingImageFilter_8h_source.html">itkStreamingImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::StreamingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Pipeline object to control data streaming for large data processing. </p>
+<p ><a class="el" href="classitk_1_1StreamingImageFilter.html" title="Pipeline object to control data streaming for large data processing.">StreamingImageFilter</a> is a pipeline object that allows the user to control how data is pulled through the pipeline. To generate its OutputRequestedRegion, this filter will divide the output into several pieces (controlled by SetNumberOfStreamDivisions), and call the upstream pipeline for each piece, tiling the individual outputs into one large output. This reduces the memory footprint for the application since each filter does not have to process the entire dataset at once. This filter will produce the entire output as one image, but the upstream filters will do their processing in pieces. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkStreamingImageFilter_8h_source.html#l00044">44</a> of file <a class="el" href="itkStreamingImageFilter_8h_source.html">itkStreamingImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::StreamingImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -748,13 +754,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::StreamingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Pipeline object to control data streaming for large data processing. </p>
-<p ><a class="el" href="classitk_1_1StreamingImageFilter.html" title="Pipeline object to control data streaming for large data processing.">StreamingImageFilter</a> is a pipeline object that allows the user to control how data is pulled through the pipeline. To generate its OutputRequestedRegion, this filter will divide the output into several pieces (controlled by SetNumberOfStreamDivisions), and call the upstream pipeline for each piece, tiling the individual outputs into one large output. This reduces the memory footprint for the application since each filter does not have to process the entire dataset at once. This filter will produce the entire output as one image, but the upstream filters will do their processing in pieces. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkStreamingImageFilter_8h_source.html#l00044">44</a> of file <a class="el" href="itkStreamingImageFilter_8h_source.html">itkStreamingImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a728c02b40f6debcce41a0e727e428257" name="a728c02b40f6debcce41a0e727e428257"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a728c02b40f6debcce41a0e727e428257">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

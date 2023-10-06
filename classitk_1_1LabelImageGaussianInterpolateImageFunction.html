@@ -95,7 +95,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLabelImageGaussianInterpolateImageFunction_8h_source.html">itkLabelImageGaussianInterpolateImageFunction.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TCoordRep = double, typename TPixelCompare = std::less&lt;typename itk::NumericTraits&lt;typename TInputImage::PixelType&gt;::RealType&gt;&gt;<br />
+class itk::LabelImageGaussianInterpolateImageFunction&lt; TInputImage, TCoordRep, TPixelCompare &gt;</div><p >Interpolation function for multi-label images that implicitly smooths each unique value in the image corresponding to each label set element and returns the corresponding label set element with the largest weight. </p>
+<p >This filter is an alternative to nearest neighbor interpolation for multi-label images. Given a multi-label image <code>I</code> with label set <code>L</code>, this function returns a label at the non-voxel position <code>I(x)</code>, based on the following rule</p>
+<p class="formulaDsp">
+\[ I(x) = \arg\max_{l \in L} (G_\sigma * I_l)(x) \]
+</p>
+<p >Where \( I_l \) is the <code>l-th</code> binary component of the multilabel image. In other words, each label in the multi-label image is convolved with a Gaussian, and the label for which the response is largest is returned. For sigma=0, this is just nearest neighbor interpolation.</p>
+<p >This class defines an N-dimensional Gaussian interpolation function for label using the vnl error function. The two parameters associated with this function are: </p><ul>
+<li><code>Sigma</code> - a scalar array of size ImageDimension determining the width of the interpolation function. </li>
+<li><code>Alpha</code> - a scalar specifying the cutoff distance over which the function is calculated.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The input image can be of any type, but the number of unique intensity values in the image will determine the amount of memory needed to complete each interpolation.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Paul Yushkevich </dd>
+<dd>
+Nick Tustison</dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLabelImageGaussianInterpolateImageFunction_8h_source.html#l00072">72</a> of file <a class="el" href="itkLabelImageGaussianInterpolateImageFunction_8h_source.html">itkLabelImageGaussianInterpolateImageFunction.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LabelImageGaussianInterpolateImageFunction&lt; TInputImage, TCoordRep, TPixelCompare &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -492,30 +515,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TCoordRep = double, typename TPixelCompare = std::less&lt;typename itk::NumericTraits&lt;typename TInputImage::PixelType&gt;::RealType&gt;&gt;<br />
-class itk::LabelImageGaussianInterpolateImageFunction&lt; TInputImage, TCoordRep, TPixelCompare &gt;</div><p >Interpolation function for multi-label images that implicitly smooths each unique value in the image corresponding to each label set element and returns the corresponding label set element with the largest weight. </p>
-<p >This filter is an alternative to nearest neighbor interpolation for multi-label images. Given a multi-label image <code>I</code> with label set <code>L</code>, this function returns a label at the non-voxel position <code>I(x)</code>, based on the following rule</p>
-<p class="formulaDsp">
-\[ I(x) = \arg\max_{l \in L} (G_\sigma * I_l)(x) \]
-</p>
-<p >Where \( I_l \) is the <code>l-th</code> binary component of the multilabel image. In other words, each label in the multi-label image is convolved with a Gaussian, and the label for which the response is largest is returned. For sigma=0, this is just nearest neighbor interpolation.</p>
-<p >This class defines an N-dimensional Gaussian interpolation function for label using the vnl error function. The two parameters associated with this function are: </p><ul>
-<li><code>Sigma</code> - a scalar array of size ImageDimension determining the width of the interpolation function. </li>
-<li><code>Alpha</code> - a scalar specifying the cutoff distance over which the function is calculated.</li>
-</ul>
-<dl class="section note"><dt>Note</dt><dd>The input image can be of any type, but the number of unique intensity values in the image will determine the amount of memory needed to complete each interpolation.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Paul Yushkevich </dd>
-<dd>
-Nick Tustison</dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLabelImageGaussianInterpolateImageFunction_8h_source.html#l00072">72</a> of file <a class="el" href="itkLabelImageGaussianInterpolateImageFunction_8h_source.html">itkLabelImageGaussianInterpolateImageFunction.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4f3ccc3f5b61ec66da65c8a3505470c4" name="a4f3ccc3f5b61ec66da65c8a3505470c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f3ccc3f5b61ec66da65c8a3505470c4">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

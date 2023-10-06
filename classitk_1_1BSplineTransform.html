@@ -95,7 +95,44 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkBSplineTransform_8h_source.html">itkBSplineTransform.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VDimension = 3, unsigned int VSplineOrder = 3&gt;<br />
+class itk::BSplineTransform&lt; TParametersValueType, VDimension, VSplineOrder &gt;</div><p >Deformable transform using a BSpline representation. </p>
+<p >This class encapsulates a deformable transform of points from one N-dimensional space to another N-dimensional space. The deformation field is modeled using B-splines. A deformation is defined on a sparse regular grid of control points \( \vec{\lambda}_j \) and is varied by defining a deformation \( \vec{g}(\vec{\lambda}_j) \) of each control point. The deformation \( D(\vec{x}) \) at any point \( \vec{x} \) is obtained by using a B-spline interpolation kernel.</p>
+<p >The deformation field grid is defined by a user specified transform domain (origin, physical dimensions, direction) and B-spline mesh size where the mesh size is the number of polynomial patches comprising the finite domain of support. The relationship between the mesh size ( number of polynomial pieces) and the number of control points in any given dimension is</p>
+<p >mesh size = number of control points - spline order</p>
+<p >Each grid/control point has associated with it N deformation coefficients \( \vec{\delta}_j \), representing the N directional components of the deformation. Deformation outside the grid plus support region for the BSpline interpolation is assumed to be zero.</p>
+<p >The parameters for this transform is N x N-D grid of spline coefficients. The user specifies the parameters as one flat array: each N-D grid is represented by an array in the same way an N-D image is represented in the buffer; the N arrays are then concatenated together to form a single array.</p>
+<p >The following illustrates the typical usage of this class: </p><div class="fragment"><div class="line"><span class="keyword">using</span> TransformType = BSplineTransform&lt;double,2,3&gt;;</div>
+<div class="line"><span class="keyword">auto</span> transform = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TransformType::New</a>();</div>
+<div class="line"> </div>
+<div class="line">transform-&gt;SetTransformDomainOrigin( origin );</div>
+<div class="line">transform-&gt;SetTransformDomainPhysicalDimensions( physicalDimensions );</div>
+<div class="line">transform-&gt;SetTransformDomainDirection( direction );</div>
+<div class="line">transform-&gt;SetTransformDomainMeshSize( meshSize );</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// NB: The region must be set first before setting the parameters</span></div>
+<div class="line"> </div>
+<div class="line">TransformType::ParametersType parameters( transform-&gt;GetNumberOfParameters() );</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Fill the parameters with values</span></div>
+<div class="line"> </div>
+<div class="line">transform-&gt;SetParameters( parameters )</div>
+<div class="line"> </div>
+<div class="line">outputPoint = transform-&gt;TransformPoint( inputPoint );</div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
+</div><!-- fragment --><p >An alternative way to set the B-spline coefficients is via array of images. The fixed parameters of the transform are taken directly from the first image. It is assumed that the subsequent images are the same buffered region. The following illustrates the API: </p><div class="fragment"><div class="line">TransformType::ImageConstPointer <a class="code hl_variable" href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">images</a>[2];</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Fill the images up with values</span></div>
+<div class="line"> </div>
+<div class="line">transform-&gt;SetCoefficientImages( <a class="code hl_variable" href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">images</a> );</div>
+<div class="line">outputPoint = transform-&gt;TransformPoint( inputPoint );</div>
+<div class="ttc" id="anamespaceitk_html_afbb92e368d0b365d349483cdae730d35"><div class="ttname"><a href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">itk::images</a></div><div class="ttdeci">*par Constraints *The filter image with at least two dimensions and a vector *length of at least The theory supports extension to scalar images</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorGradientMagnitudeImageFilter_8h_source.html#l00107">itkVectorGradientMagnitudeImageFilter.h:107</a></div></div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Use either the <a class="el" href="classitk_1_1BSplineBaseTransform.html#a05389cc5948e719dc85bf3586eaa04aa">SetParameters()</a> or <a class="el" href="classitk_1_1BSplineTransform.html#ab931c3e7395c6fab2b48f5afb140baeb">SetCoefficientImages()</a> API. Mixing the two modes may results in unexpected results.</dd></dl>
+<p>The class is templated coordinate representation type (float or double), the space dimension and the spline order. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkBSplineTransform_8h_source.html#l00103">103</a> of file <a class="el" href="itkBSplineTransform_8h_source.html">itkBSplineTransform.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::BSplineTransform&lt; TParametersValueType, VDimension, VSplineOrder &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -721,44 +758,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TParametersValueType = double, unsigned int VDimension = 3, unsigned int VSplineOrder = 3&gt;<br />
-class itk::BSplineTransform&lt; TParametersValueType, VDimension, VSplineOrder &gt;</div><p >Deformable transform using a BSpline representation. </p>
-<p >This class encapsulates a deformable transform of points from one N-dimensional space to another N-dimensional space. The deformation field is modeled using B-splines. A deformation is defined on a sparse regular grid of control points \( \vec{\lambda}_j \) and is varied by defining a deformation \( \vec{g}(\vec{\lambda}_j) \) of each control point. The deformation \( D(\vec{x}) \) at any point \( \vec{x} \) is obtained by using a B-spline interpolation kernel.</p>
-<p >The deformation field grid is defined by a user specified transform domain (origin, physical dimensions, direction) and B-spline mesh size where the mesh size is the number of polynomial patches comprising the finite domain of support. The relationship between the mesh size ( number of polynomial pieces) and the number of control points in any given dimension is</p>
-<p >mesh size = number of control points - spline order</p>
-<p >Each grid/control point has associated with it N deformation coefficients \( \vec{\delta}_j \), representing the N directional components of the deformation. Deformation outside the grid plus support region for the BSpline interpolation is assumed to be zero.</p>
-<p >The parameters for this transform is N x N-D grid of spline coefficients. The user specifies the parameters as one flat array: each N-D grid is represented by an array in the same way an N-D image is represented in the buffer; the N arrays are then concatenated together to form a single array.</p>
-<p >The following illustrates the typical usage of this class: </p><div class="fragment"><div class="line"><span class="keyword">using</span> TransformType = BSplineTransform&lt;double,2,3&gt;;</div>
-<div class="line"><span class="keyword">auto</span> transform = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">TransformType::New</a>();</div>
-<div class="line"> </div>
-<div class="line">transform-&gt;SetTransformDomainOrigin( origin );</div>
-<div class="line">transform-&gt;SetTransformDomainPhysicalDimensions( physicalDimensions );</div>
-<div class="line">transform-&gt;SetTransformDomainDirection( direction );</div>
-<div class="line">transform-&gt;SetTransformDomainMeshSize( meshSize );</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// NB: The region must be set first before setting the parameters</span></div>
-<div class="line"> </div>
-<div class="line">TransformType::ParametersType parameters( transform-&gt;GetNumberOfParameters() );</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Fill the parameters with values</span></div>
-<div class="line"> </div>
-<div class="line">transform-&gt;SetParameters( parameters )</div>
-<div class="line"> </div>
-<div class="line">outputPoint = transform-&gt;TransformPoint( inputPoint );</div>
-<div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
-</div><!-- fragment --><p >An alternative way to set the B-spline coefficients is via array of images. The fixed parameters of the transform are taken directly from the first image. It is assumed that the subsequent images are the same buffered region. The following illustrates the API: </p><div class="fragment"><div class="line">TransformType::ImageConstPointer <a class="code hl_variable" href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">images</a>[2];</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Fill the images up with values</span></div>
-<div class="line"> </div>
-<div class="line">transform-&gt;SetCoefficientImages( <a class="code hl_variable" href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">images</a> );</div>
-<div class="line">outputPoint = transform-&gt;TransformPoint( inputPoint );</div>
-<div class="ttc" id="anamespaceitk_html_afbb92e368d0b365d349483cdae730d35"><div class="ttname"><a href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">itk::images</a></div><div class="ttdeci">*par Constraints *The filter image with at least two dimensions and a vector *length of at least The theory supports extension to scalar images</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorGradientMagnitudeImageFilter_8h_source.html#l00107">itkVectorGradientMagnitudeImageFilter.h:107</a></div></div>
-</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Use either the <a class="el" href="classitk_1_1BSplineBaseTransform.html#a05389cc5948e719dc85bf3586eaa04aa">SetParameters()</a> or <a class="el" href="classitk_1_1BSplineTransform.html#ab931c3e7395c6fab2b48f5afb140baeb">SetCoefficientImages()</a> API. Mixing the two modes may results in unexpected results.</dd></dl>
-<p>The class is templated coordinate representation type (float or double), the space dimension and the spline order. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkBSplineTransform_8h_source.html#l00103">103</a> of file <a class="el" href="itkBSplineTransform_8h_source.html">itkBSplineTransform.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4f768285dff7e5ecc0013149627b82f5" name="a4f768285dff7e5ecc0013149627b82f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f768285dff7e5ecc0013149627b82f5">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

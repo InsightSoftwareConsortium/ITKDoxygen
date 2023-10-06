@@ -94,7 +94,20 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDeformableSimplexMesh3DFilter_8h_source.html">itkDeformableSimplexMesh3DFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh&gt;<br />
+class itk::DeformableSimplexMesh3DFilter&lt; TInputMesh, TOutputMesh &gt;</div><p >Three-dimensional deformable model for image segmentation. </p>
+<p ><a class="el" href="classitk_1_1DeformableSimplexMesh3DFilter.html" title="Three-dimensional deformable model for image segmentation.">DeformableSimplexMesh3DFilter</a> is a discrete three-dimensional deformable model, which can be used to deform a 3-D <a class="el" href="classitk_1_1SimplexMesh.html" title="The class represents a 2-simplex mesh.">SimplexMesh</a>.</p>
+<p >The mesh deformation is constrained by internal forces. The internal force can be scaled via SetAlpha (typical values are 0.01 &lt; alpha &lt; 0.3). The external force is derived from the image one wants to delineate. Therefore an image of type GradientImageType needs to be set by calling SetGradientImage(...). The external forces are scaled via SetBeta (typical values are 0.01 &lt; beta &lt; 1). One still needs to play around with these values.</p>
+<p >To control the smoothness of the mesh a rigidity parameter can be adjusted. Low values (1 or 0) allow areas with high curvature. Higher values (around 7 or 8) will make the mesh smoother.</p>
+<p >By setting the gamma parameter the regularity of the mesh is controlled. Low values (&lt; 0.03) produce more regular mesh. Higher values ( 0.3 &lt; gamma &lt; 0.2) will allow to move the vertices to regions of higher curvature.</p>
+<p >This approach for segmentation follows that of Delingette et al. (1997).</p>
+<p >This filter currently assumes that the spacing of the input image is 1.</p>
+<p >The user has to set the number of iterations for mesh evolution.</p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Boettger. Division Medical and Biological Informatics, German Cancer Research Center, Heidelberg. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkDeformableSimplexMesh3DFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkDeformableSimplexMesh3DFilter_8h_source.html">itkDeformableSimplexMesh3DFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DeformableSimplexMesh3DFilter&lt; TInputMesh, TOutputMesh &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -779,20 +792,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputMesh, typename TOutputMesh&gt;<br />
-class itk::DeformableSimplexMesh3DFilter&lt; TInputMesh, TOutputMesh &gt;</div><p >Three-dimensional deformable model for image segmentation. </p>
-<p ><a class="el" href="classitk_1_1DeformableSimplexMesh3DFilter.html" title="Three-dimensional deformable model for image segmentation.">DeformableSimplexMesh3DFilter</a> is a discrete three-dimensional deformable model, which can be used to deform a 3-D <a class="el" href="classitk_1_1SimplexMesh.html" title="The class represents a 2-simplex mesh.">SimplexMesh</a>.</p>
-<p >The mesh deformation is constrained by internal forces. The internal force can be scaled via SetAlpha (typical values are 0.01 &lt; alpha &lt; 0.3). The external force is derived from the image one wants to delineate. Therefore an image of type GradientImageType needs to be set by calling SetGradientImage(...). The external forces are scaled via SetBeta (typical values are 0.01 &lt; beta &lt; 1). One still needs to play around with these values.</p>
-<p >To control the smoothness of the mesh a rigidity parameter can be adjusted. Low values (1 or 0) allow areas with high curvature. Higher values (around 7 or 8) will make the mesh smoother.</p>
-<p >By setting the gamma parameter the regularity of the mesh is controlled. Low values (&lt; 0.03) produce more regular mesh. Higher values ( 0.3 &lt; gamma &lt; 0.2) will allow to move the vertices to regions of higher curvature.</p>
-<p >This approach for segmentation follows that of Delingette et al. (1997).</p>
-<p >This filter currently assumes that the spacing of the input image is 1.</p>
-<p >The user has to set the number of iterations for mesh evolution.</p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Boettger. Division Medical and Biological Informatics, German Cancer Research Center, Heidelberg. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkDeformableSimplexMesh3DFilter_8h_source.html#l00077">77</a> of file <a class="el" href="itkDeformableSimplexMesh3DFilter_8h_source.html">itkDeformableSimplexMesh3DFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2438a70017c4ab61747fc463d21bf4da" name="a2438a70017c4ab61747fc463d21bf4da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2438a70017c4ab61747fc463d21bf4da">&#9670;&nbsp;</a></span>BinaryOutput</h2>
 

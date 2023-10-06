@@ -93,7 +93,26 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkLevelSetMotionRegistrationFilter_8h_source.html">itkLevelSetMotionRegistrationFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
+class itk::LevelSetMotionRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >Deformably register two images using level set motion. </p>
+<p >LevelSetMotionFilter implements a deformable registration algorithm that aligns a fixed and a moving image under level set motion. The equations of motion are similar to those of the <a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a>. The main differences are: (1) Gradients of the moving image are calculated on a smoothed image while intensity difference are measured on the original images (2) Magnitude of the motion vector is a function of the differences in intensity between the fixed and moving pixel. An adaptive timestep is calculated based on the maximum motion vector over the entire field to ensure stability. The timestep also implicitly converts the motion vector measured in units of intensity to a vector measured in physical units. Demons, on the other hand, defines its motion vectors as function of both the intensity differences and gradient magnitude at each respective pixel. Consider two separate pixels with the same intensity differences between the corresponding fixed and moving pixel pairs. In demons, the motion vector of the pixel over a low gradient region will be larger than the motion vector of the pixel over a large gradient region. This leads to an unstable vector field. In the levelset approach, the motion vectors will be proportional to the gradients, scaled by the maximum gradient over the entire field. The pixel with at the lower gradient position will more less than the pixel at the higher gradient position. (3) Gradients are calculated using minmod finite difference instead of using central differences.</p>
+<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
+<p >This class is templated over the fixed image type, moving image type and the deformation field type.</p>
+<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
+<p >The algorithm has one parameters: the number of iteration to be performed.</p>
+<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
+<p >This class make use of the finite difference solver hierarchy. Update for each iteration is computed in LevelSetMotionFunction.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
+<p>Ref: B.C. Vemuri, J. Ye, Y. Chen, C.M. Leonard. "Image
+registration via level-set motion: applications to atlas-based
+segmentation". Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Analysis. Vol. 7. pp. 1-20. 2003.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetMotionRegistrationFunction.html">LevelSetMotionRegistrationFunction</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkLevelSetMotionRegistrationFilter_8h_source.html#l00091">91</a> of file <a class="el" href="itkLevelSetMotionRegistrationFilter_8h_source.html">itkLevelSetMotionRegistrationFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::LevelSetMotionRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -1045,26 +1064,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImage, typename TMovingImage, typename TDisplacementField&gt;<br />
-class itk::LevelSetMotionRegistrationFilter&lt; TFixedImage, TMovingImage, TDisplacementField &gt;</div><p >Deformably register two images using level set motion. </p>
-<p >LevelSetMotionFilter implements a deformable registration algorithm that aligns a fixed and a moving image under level set motion. The equations of motion are similar to those of the <a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a>. The main differences are: (1) Gradients of the moving image are calculated on a smoothed image while intensity difference are measured on the original images (2) Magnitude of the motion vector is a function of the differences in intensity between the fixed and moving pixel. An adaptive timestep is calculated based on the maximum motion vector over the entire field to ensure stability. The timestep also implicitly converts the motion vector measured in units of intensity to a vector measured in physical units. Demons, on the other hand, defines its motion vectors as function of both the intensity differences and gradient magnitude at each respective pixel. Consider two separate pixels with the same intensity differences between the corresponding fixed and moving pixel pairs. In demons, the motion vector of the pixel over a low gradient region will be larger than the motion vector of the pixel over a large gradient region. This leads to an unstable vector field. In the levelset approach, the motion vectors will be proportional to the gradients, scaled by the maximum gradient over the entire field. The pixel with at the lower gradient position will more less than the pixel at the higher gradient position. (3) Gradients are calculated using minmod finite difference instead of using central differences.</p>
-<p >A deformation field is represented as a image whose pixel type is some vector type with at least N elements, where N is the dimension of the fixed image. The vector type must support element access via operator []. It is assumed that the vector elements behave like floating point scalars.</p>
-<p >This class is templated over the fixed image type, moving image type and the deformation field type.</p>
-<p >The input fixed and moving images are set via methods SetFixedImage and SetMovingImage respectively. An initial deformation field maybe set via SetInitialDisplacementField or SetInput. If no initial field is set, a zero field is used as the initial condition.</p>
-<p >The algorithm has one parameters: the number of iteration to be performed.</p>
-<p >The output deformation field can be obtained via methods GetOutput or GetDisplacementField.</p>
-<p >This class make use of the finite difference solver hierarchy. Update for each iteration is computed in LevelSetMotionFunction.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This filter assumes that the fixed image type, moving image type and deformation field type all have the same number of dimensions.</dd></dl>
-<p>Ref: B.C. Vemuri, J. Ye, Y. Chen, C.M. Leonard. "Image
-registration via level-set motion: applications to atlas-based
-segmentation". Medical <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Analysis. Vol. 7. pp. 1-20. 2003.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LevelSetMotionRegistrationFunction.html">LevelSetMotionRegistrationFunction</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1DemonsRegistrationFilter.html" title="Deformably register two images using the demons algorithm.">DemonsRegistrationFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkLevelSetMotionRegistrationFilter_8h_source.html#l00091">91</a> of file <a class="el" href="itkLevelSetMotionRegistrationFilter_8h_source.html">itkLevelSetMotionRegistrationFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a522f3758e05f6c7c9e784a666916cb09" name="a522f3758e05f6c7c9e784a666916cb09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a522f3758e05f6c7c9e784a666916cb09">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

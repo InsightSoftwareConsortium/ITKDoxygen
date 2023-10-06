@@ -93,7 +93,29 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkConstantBoundaryCondition_8h_source.html">itkConstantBoundaryCondition.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
+class itk::ConstantBoundaryCondition&lt; TInputImage, TOutputImage &gt;</div><p >This boundary condition returns a constant value for out-of-bounds image pixels. </p>
+<p >For example, invoking this function object with a constant value of zero (the default) on each out-of-bounds element of a 7x5 iterator that masks a region at an image corner (iterator is centered on the 2): </p><pre class="fragment">          * * * * * * *
+          * * * * * * *
+          * * 1 2 3 4 5  (where * denotes pixels that lie
+          * * 3 3 5 5 6          outside of the image boundary)
+          * * 4 4 6 7 8
+</pre><p> would produce the following neighborhood of values: </p><pre class="fragment">          0 0 0 0 0 0 0
+          0 0 0 0 0 0 0
+          0 0 1 2 3 4 5
+          0 0 3 3 5 5 6
+          0 0 4 4 6 7 8
+</pre> <dl class="section note"><dt>Note</dt><dd>If you are using an image with <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> as the pixel type, you will need to set the constant explicitly with an array of the appropriate length. This is also true if your image type is a <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageBoundaryCondition.html" title="A virtual base object that defines an interface to a class of boundary condition objects for use by n...">ImageBoundaryCondition</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkConstantBoundaryCondition_8h_source.html#l00068">68</a> of file <a class="el" href="itkConstantBoundaryCondition_8h_source.html">itkConstantBoundaryCondition.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ConstantBoundaryCondition&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -198,29 +220,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:add48174e6b77cdd9aa65a9265ee1beae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageBoundaryCondition.html#ac2f8c667aa9a9e3e20d156eaae07ffea">OutputPixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ConstantBoundaryCondition.html#add48174e6b77cdd9aa65a9265ee1beae">m_Constant</a> {}</td></tr>
 <tr class="separator:add48174e6b77cdd9aa65a9265ee1beae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::ConstantBoundaryCondition&lt; TInputImage, TOutputImage &gt;</div><p >This boundary condition returns a constant value for out-of-bounds image pixels. </p>
-<p >For example, invoking this function object with a constant value of zero (the default) on each out-of-bounds element of a 7x5 iterator that masks a region at an image corner (iterator is centered on the 2): </p><pre class="fragment">          * * * * * * *
-          * * * * * * *
-          * * 1 2 3 4 5  (where * denotes pixels that lie
-          * * 3 3 5 5 6          outside of the image boundary)
-          * * 4 4 6 7 8
-</pre><p> would produce the following neighborhood of values: </p><pre class="fragment">          0 0 0 0 0 0 0
-          0 0 0 0 0 0 0
-          0 0 1 2 3 4 5
-          0 0 3 3 5 5 6
-          0 0 4 4 6 7 8
-</pre> <dl class="section note"><dt>Note</dt><dd>If you are using an image with <a class="el" href="classitk_1_1Array.html" title="Array class with size defined at construction time.">Array</a> as the pixel type, you will need to set the constant explicitly with an array of the appropriate length. This is also true if your image type is a <a class="el" href="classitk_1_1VectorImage.html" title="Templated n-dimensional vector image class.">VectorImage</a>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageBoundaryCondition.html" title="A virtual base object that defines an interface to a class of boundary condition objects for use by n...">ImageBoundaryCondition</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkConstantBoundaryCondition_8h_source.html#l00068">68</a> of file <a class="el" href="itkConstantBoundaryCondition_8h_source.html">itkConstantBoundaryCondition.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab92db122eb084734aa14f2d63b75b6d2" name="ab92db122eb084734aa14f2d63b75b6d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab92db122eb084734aa14f2d63b75b6d2">&#9670;&nbsp;</a></span>Self</h2>
 

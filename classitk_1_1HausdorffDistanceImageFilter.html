@@ -95,7 +95,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkHausdorffDistanceImageFilter_8h_source.html">itkHausdorffDistanceImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
+class itk::HausdorffDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Computes the Hausdorff distance between the set of non-zero pixels of two images. </p>
+<p ><a class="el" href="classitk_1_1HausdorffDistanceImageFilter.html" title="Computes the Hausdorff distance between the set of non-zero pixels of two images.">HausdorffDistanceImageFilter</a> computes the distance between the set non-zero pixels of two images using the following formula: </p><p class="formulaDsp">
+\[ H(A,B) = \max(h(A,B),h(B,A)) \]
+</p>
+<p> where </p><p class="formulaDsp">
+\[ h(A,B) = \max_{a \in A} \min_{b \in B} \| a - b\| \]
+</p>
+<p> is the directed Hausdorff distance and \(A\) and \(B\) are respectively the set of non-zero pixels in the first and second input images.</p>
+<p >In particular, this filter uses the DirectedHausdorffImageFilter inside to compute the two directed distances and then select the largest of the two.</p>
+<p >The Hausdorff distance measures the degree of mismatch between two sets and behaves like a metric over the set of all closed bounded sets - with properties of identity, symmetry and triangle inequality.</p>
+<p >This filter requires the largest possible region of the first image and the same corresponding region in the second image. It behaves as filter with two inputs and one output. Thus it can be inserted in a pipeline with other filters. The filter passes the first input through unmodified.</p>
+<p >This filter is templated over the two input image types. It assume both images have the same number of dimensions.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DirectedHausdorffDistanceImageFilter.html" title="Computes the directed Hausdorff distance between the set of non-zero pixels of two images.">DirectedHausdorffDistanceImageFilter</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkHausdorffDistanceImageFilter_8h_source.html#l00063">63</a> of file <a class="el" href="itkHausdorffDistanceImageFilter_8h_source.html">itkHausdorffDistanceImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::HausdorffDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -761,24 +778,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage1, typename TInputImage2&gt;<br />
-class itk::HausdorffDistanceImageFilter&lt; TInputImage1, TInputImage2 &gt;</div><p >Computes the Hausdorff distance between the set of non-zero pixels of two images. </p>
-<p ><a class="el" href="classitk_1_1HausdorffDistanceImageFilter.html" title="Computes the Hausdorff distance between the set of non-zero pixels of two images.">HausdorffDistanceImageFilter</a> computes the distance between the set non-zero pixels of two images using the following formula: </p><p class="formulaDsp">
-\[ H(A,B) = \max(h(A,B),h(B,A)) \]
-</p>
-<p> where </p><p class="formulaDsp">
-\[ h(A,B) = \max_{a \in A} \min_{b \in B} \| a - b\| \]
-</p>
-<p> is the directed Hausdorff distance and \(A\) and \(B\) are respectively the set of non-zero pixels in the first and second input images.</p>
-<p >In particular, this filter uses the DirectedHausdorffImageFilter inside to compute the two directed distances and then select the largest of the two.</p>
-<p >The Hausdorff distance measures the degree of mismatch between two sets and behaves like a metric over the set of all closed bounded sets - with properties of identity, symmetry and triangle inequality.</p>
-<p >This filter requires the largest possible region of the first image and the same corresponding region in the second image. It behaves as filter with two inputs and one output. Thus it can be inserted in a pipeline with other filters. The filter passes the first input through unmodified.</p>
-<p >This filter is templated over the two input image types. It assume both images have the same number of dimensions.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DirectedHausdorffDistanceImageFilter.html" title="Computes the directed Hausdorff distance between the set of non-zero pixels of two images.">DirectedHausdorffDistanceImageFilter</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkHausdorffDistanceImageFilter_8h_source.html#l00063">63</a> of file <a class="el" href="itkHausdorffDistanceImageFilter_8h_source.html">itkHausdorffDistanceImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a924041a3a5f28169baa5fb743344f0b2" name="a924041a3a5f28169baa5fb743344f0b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a924041a3a5f28169baa5fb743344f0b2">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

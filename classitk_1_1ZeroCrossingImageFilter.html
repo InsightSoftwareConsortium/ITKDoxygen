@@ -95,7 +95,28 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkZeroCrossingImageFilter_8h_source.html">itkZeroCrossingImageFilter.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::ZeroCrossingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter finds the closest pixel to the zero-crossings (sign changes) in a signed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. </p>
+<p >Pixels closest to zero-crossings are labeled with a foreground value. All other pixels are marked with a background value. The algorithm works by detecting differences in sign among neighbors using city-block style connectivity (4-neighbors in 2d, 6-neighbors in 3d, etc.).</p>
+<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter is an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of arbitrary dimension. The algorithm assumes a signed data type (zero-crossings are not defined for unsigned int data types), and requires that operator&gt;, operator&lt;, operator==, and operator!= are defined.</dd></dl>
+<dl class="section user"><dt></dt><dd>The output of the filter is a binary, labeled image of user-specified type. By default, zero-crossing pixels are labeled with a default "foreground" value of <a class="el" href="classitk_1_1NumericTraits.html#a57732977c2e6a99b17abfa1cd9f78530">itk::NumericTraits&lt;OutputDataType&gt;::OneValue()</a>, where OutputDataType is the data type of the output image. All other pixels are labeled with a default "background" value of <a class="el" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">itk::NumericTraits&lt;OutputDataType&gt;::ZeroValue()</a>.</dd></dl>
+<dl class="section user"><dt>Parameters</dt><dd>There are two parameters for this filter. ForegroundValue is the value that marks zero-crossing pixels. The BackgroundValue is the value given to all other pixels.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
+<dd>
+<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkZeroCrossingImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkZeroCrossingImageFilter_8h_source.html">itkZeroCrossingImageFilter.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ZeroCrossingImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -736,28 +757,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
-class itk::ZeroCrossingImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >This filter finds the closest pixel to the zero-crossings (sign changes) in a signed <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a>. </p>
-<p >Pixels closest to zero-crossings are labeled with a foreground value. All other pixels are marked with a background value. The algorithm works by detecting differences in sign among neighbors using city-block style connectivity (4-neighbors in 2d, 6-neighbors in 3d, etc.).</p>
-<dl class="section user"><dt>Inputs and Outputs</dt><dd>The input to this filter is an <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> of arbitrary dimension. The algorithm assumes a signed data type (zero-crossings are not defined for unsigned int data types), and requires that operator&gt;, operator&lt;, operator==, and operator!= are defined.</dd></dl>
-<dl class="section user"><dt></dt><dd>The output of the filter is a binary, labeled image of user-specified type. By default, zero-crossing pixels are labeled with a default "foreground" value of <a class="el" href="classitk_1_1NumericTraits.html#a57732977c2e6a99b17abfa1cd9f78530">itk::NumericTraits&lt;OutputDataType&gt;::OneValue()</a>, where OutputDataType is the data type of the output image. All other pixels are labeled with a default "background" value of <a class="el" href="classitk_1_1NumericTraits.html#a2a78b68c2a6ed8fe843b298265e5dd7a">itk::NumericTraits&lt;OutputDataType&gt;::ZeroValue()</a>.</dd></dl>
-<dl class="section user"><dt>Parameters</dt><dd>There are two parameters for this filter. ForegroundValue is the value that marks zero-crossing pixels. The BackgroundValue is the value given to all other pixels.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1Neighborhood.html" title="A light-weight container object for storing an N-dimensional neighborhood of values.">Neighborhood</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodOperator.html" title="Virtual class that defines a common interface to all neighborhood operator subtypes.">NeighborhoodOperator</a> </dd>
-<dd>
-<a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkZeroCrossingImageFilter_8h_source.html#l00064">64</a> of file <a class="el" href="itkZeroCrossingImageFilter_8h_source.html">itkZeroCrossingImageFilter.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a509ee48fdac5bac0ae0c234cf27e7a70" name="a509ee48fdac5bac0ae0c234cf27e7a70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a509ee48fdac5bac0ae0c234cf27e7a70">&#9670;&nbsp;</a></span>ConstPointer</h2>
 

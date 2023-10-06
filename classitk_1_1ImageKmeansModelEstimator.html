@@ -96,7 +96,32 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkImageKmeansModelEstimator_8h_source.html">itkImageKmeansModelEstimator.h</a>&gt;</code></p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMembershipFunction&gt;<br />
+class itk::ImageKmeansModelEstimator&lt; TInputImage, TMembershipFunction &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImageKmeansModelEstimator.html" title="Base class for ImageKmeansModelEstimator object.">ImageKmeansModelEstimator</a> object. </p>
+<p >itkImageKmeansModelEstimator generates the kmeans model (cluster centers). This object performs clustering of data sets into different clusters, either using user-provided seed points as an initial guess or generating the clusters using a recursive approach when the user provides the number of desired clusters. Each cluster is represented by its cluster center. The two algorithms used are the Generalized Lloyd algorithm (GLA) and the Linde-Buzo-Gray algorithm (LBG). The cluster centers are also referred to as codewords and a table of cluster centers is referred as a codebook.</p>
+<p >As required by the GLA algorithm, the initial seed cluster should contain approximate centers of clusters. The GLA algorithm generates updated cluster centers that result in a lower distortion than the input seed cluster when the input vectors are mapped/classified/labelled using the given codebooks.</p>
+<p >If no codebook is provided, the Linde-Buzo-Gray algorithm is used. This algorithm uses the GLA algorithm at its core to generate the centroids of the input vectors (data). However, since there is no initial codebook, LBG first creates a one word codebook (or centroid of one cluster comprising of all the input training vectors). The LBG uses codeword or centroid splitting to create an increasing number of clusters. Each new set of clusters are optimized using the GLA algorithm. The number of clusters increases as $2^{n}$ n= 0, 1, ... The codebook is expected to be in the form of a vnl matrix, where there are N rows, each row representing the cluster mean of a given cluster. The number of columns in the codebook should be equal to the input image vector dimension.</p>
+<p >The threshold parameter controls the ''optimality'' of the returned codebook, where optimality is related to the least possible mean-squared error distortion that can be found by the algorithm. For larger thresholds, the result will be less optimal. For smaller thresholds, the result will be more optimal. If a more optimal result is desired, then the algorithm will take longer to complete. A reasonable threshold value is 0.01.</p>
+<p >If, during the operation of the algorithm, there are any unused clusters or cells, the m_OffsetAdd and m_OffsetMultiply parameters are used to split the cells with the highest distortion. This function will attempt to fill empty cells up to 10 times (unless the overall distortion is zero). Using 0.01 is a reasonable default values for the m_OffsetAdd and m_OffsetMultiply parameters.</p>
+<p >If the GLA is unable to resolve the data into the desired number of clusters or cells, only the codewords which were used will be returned.</p>
+<p >In terms of clustering, codewords are cluster centers, and a codebook is a table containing all cluster centers. The GLA produces results that are equivalent to the K-means clustering algorithm.</p>
+<p >For more information about the algorithms, see A. Gersho and R. M. Gray, {<em><a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a></em> Quantization and Signal <a class="el" href="classCompression.html">Compression</a>}, Kluwer Academic Publishers, Boston, MA, 1992.</p>
+<p >This object supports data handling of multiband images. The object accepts the input image in vector format only, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset. A single band image is treated as a vector image with a single element for every vector.</p>
+<p >This function is templated over the type of input image. In addition, a second parameter for the MembershipFunction needs to be specified. In this case a Membership function that store cluster centroids models needs to be specified.</p>
+<p >The <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abb25bc7895cc1b86b9a07d93a7c46ca0">Update()</a> function enables the calculation of the various models, creates the membership function objects and populates them.</p>
+<p >Note: There is a second implementation of k-means algorithm in ITK under the <a class="el" href="namespaceitk_1_1Statistics.html">itk::Statistics</a> namespace. While this algorithm (GLA/LBG based algorithm) is memory efficient, the other algorithm is time efficient.</p>
+<dl class="section see"><dt>See also</dt><dd>KdTreeBasedKmeansEstimator, WeightedCentroidKdTreeGenerator, KdTree </dd>
+<dd>
+<a class="el" href="classitk_1_1ScalarImageKmeansImageFilter.html" title="Classifies the intensity values of a scalar image using the K-Means algorithm.">ScalarImageKmeansImageFilter</a></dd></dl>
+<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
+<li>&lt;a href= </li>
+<li>&lt;a href= </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkImageKmeansModelEstimator_8h_source.html#l00131">131</a> of file <a class="el" href="itkImageKmeansModelEstimator_8h_source.html">itkImageKmeansModelEstimator.h</a>.</p>
+</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageKmeansModelEstimator&lt; TInputImage, TMembershipFunction &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -479,32 +504,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TMembershipFunction&gt;<br />
-class itk::ImageKmeansModelEstimator&lt; TInputImage, TMembershipFunction &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImageKmeansModelEstimator.html" title="Base class for ImageKmeansModelEstimator object.">ImageKmeansModelEstimator</a> object. </p>
-<p >itkImageKmeansModelEstimator generates the kmeans model (cluster centers). This object performs clustering of data sets into different clusters, either using user-provided seed points as an initial guess or generating the clusters using a recursive approach when the user provides the number of desired clusters. Each cluster is represented by its cluster center. The two algorithms used are the Generalized Lloyd algorithm (GLA) and the Linde-Buzo-Gray algorithm (LBG). The cluster centers are also referred to as codewords and a table of cluster centers is referred as a codebook.</p>
-<p >As required by the GLA algorithm, the initial seed cluster should contain approximate centers of clusters. The GLA algorithm generates updated cluster centers that result in a lower distortion than the input seed cluster when the input vectors are mapped/classified/labelled using the given codebooks.</p>
-<p >If no codebook is provided, the Linde-Buzo-Gray algorithm is used. This algorithm uses the GLA algorithm at its core to generate the centroids of the input vectors (data). However, since there is no initial codebook, LBG first creates a one word codebook (or centroid of one cluster comprising of all the input training vectors). The LBG uses codeword or centroid splitting to create an increasing number of clusters. Each new set of clusters are optimized using the GLA algorithm. The number of clusters increases as $2^{n}$ n= 0, 1, ... The codebook is expected to be in the form of a vnl matrix, where there are N rows, each row representing the cluster mean of a given cluster. The number of columns in the codebook should be equal to the input image vector dimension.</p>
-<p >The threshold parameter controls the ''optimality'' of the returned codebook, where optimality is related to the least possible mean-squared error distortion that can be found by the algorithm. For larger thresholds, the result will be less optimal. For smaller thresholds, the result will be more optimal. If a more optimal result is desired, then the algorithm will take longer to complete. A reasonable threshold value is 0.01.</p>
-<p >If, during the operation of the algorithm, there are any unused clusters or cells, the m_OffsetAdd and m_OffsetMultiply parameters are used to split the cells with the highest distortion. This function will attempt to fill empty cells up to 10 times (unless the overall distortion is zero). Using 0.01 is a reasonable default values for the m_OffsetAdd and m_OffsetMultiply parameters.</p>
-<p >If the GLA is unable to resolve the data into the desired number of clusters or cells, only the codewords which were used will be returned.</p>
-<p >In terms of clustering, codewords are cluster centers, and a codebook is a table containing all cluster centers. The GLA produces results that are equivalent to the K-means clustering algorithm.</p>
-<p >For more information about the algorithms, see A. Gersho and R. M. Gray, {<em><a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a></em> Quantization and Signal <a class="el" href="classCompression.html">Compression</a>}, Kluwer Academic Publishers, Boston, MA, 1992.</p>
-<p >This object supports data handling of multiband images. The object accepts the input image in vector format only, where each pixel is a vector and each element of the vector corresponds to an entry from 1 particular band of a multiband dataset. A single band image is treated as a vector image with a single element for every vector.</p>
-<p >This function is templated over the type of input image. In addition, a second parameter for the MembershipFunction needs to be specified. In this case a Membership function that store cluster centroids models needs to be specified.</p>
-<p >The <a class="el" href="classitk_1_1ImageModelEstimatorBase.html#abb25bc7895cc1b86b9a07d93a7c46ca0">Update()</a> function enables the calculation of the various models, creates the membership function objects and populates them.</p>
-<p >Note: There is a second implementation of k-means algorithm in ITK under the <a class="el" href="namespaceitk_1_1Statistics.html">itk::Statistics</a> namespace. While this algorithm (GLA/LBG based algorithm) is memory efficient, the other algorithm is time efficient.</p>
-<dl class="section see"><dt>See also</dt><dd>KdTreeBasedKmeansEstimator, WeightedCentroidKdTreeGenerator, KdTree </dd>
-<dd>
-<a class="el" href="classitk_1_1ScalarImageKmeansImageFilter.html" title="Classifies the intensity values of a scalar image using the K-Means algorithm.">ScalarImageKmeansImageFilter</a></dd></dl>
-<dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
-<li>&lt;a href= </li>
-<li>&lt;a href= </li>
-</ul>
-</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="itkImageKmeansModelEstimator_8h_source.html#l00131">131</a> of file <a class="el" href="itkImageKmeansModelEstimator_8h_source.html">itkImageKmeansModelEstimator.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad0d72de7049a51744c8c850bc10659c9" name="ad0d72de7049a51744c8c850bc10659c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0d72de7049a51744c8c850bc10659c9">&#9670;&nbsp;</a></span>CodebookMatrixOfDoubleType</h2>
 
