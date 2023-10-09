@@ -3,9 +3,11 @@ digraph "Module ITKImageCompare"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=box];
   rankdir=LR;
+  Node2 [label="Group Filtering",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__Group-Filtering.html",tooltip=" "];
   Node1 [label="Module ITKImageCompare",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node2 [label="Intensity Image Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__IntensityImageFilters.html",tooltip=" "];
-  Node3 [label="MultiThreaded Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__MultiThreaded.html",tooltip=" "];
-  Node1->Node2 [shape=plaintext, label="itk::AbsoluteValueDifference\lImageFilter\nitk::CheckerBoardImageFilter\nitk::SquaredDifferenceImage\lFilter", color="orange", dir="none", style="dashed"];
-  Node1->Node3 [shape=plaintext, label="itk::AbsoluteValueDifference\lImageFilter\nitk::CheckerBoardImageFilter\nitk::SimilarityIndexImage\lFilter\nitk::SquaredDifferenceImage\lFilter", color="orange", dir="none", style="dashed"];
+  Node3 [label="Intensity Image Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__IntensityImageFilters.html",tooltip=" "];
+  Node4 [label="MultiThreaded Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__MultiThreaded.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="itk::AbsoluteValueDifference\lImageFilter\nitk::CheckerBoardImageFilter\nitk::SquaredDifferenceImage\lFilter", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="itk::AbsoluteValueDifference\lImageFilter\nitk::CheckerBoardImageFilter\nitk::SimilarityIndexImage\lFilter\nitk::SquaredDifferenceImage\lFilter", color="orange", dir="none", style="dashed"];
 }
