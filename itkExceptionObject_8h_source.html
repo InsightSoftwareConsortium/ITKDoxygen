@@ -126,10 +126,10 @@ $(function() {
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                           <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lineNumber = 0,</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                           const <span class="keywordtype">char</span> * desc = &quot;None&quot;,</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                           const <span class="keywordtype">char</span> * loc = &quot;Unknown&quot;);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  explicit ExceptionObject(std::<span class="keywordtype">string</span>  file,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  explicit ExceptionObject(<a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>  file,</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                           <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lineNumber = 0,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                           std::<span class="keywordtype">string</span>  desc = &quot;None&quot;,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                           std::<span class="keywordtype">string</span>  loc = &quot;Unknown&quot;);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                           <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>  desc = &quot;None&quot;,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                           <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>  loc = &quot;Unknown&quot;);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  ExceptionObject(const ExceptionObject &amp;) noexcept = default;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
@@ -146,16 +146,16 @@ $(function() {
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  virtual <span class="keywordtype">bool</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  operator==(const ExceptionObject &amp; orig) const;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  itkTypeMacroNoParent(ExceptionObject);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  itkVirtualGetNameOfClassMacro(ExceptionObject);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  virtual <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  Print(std::ostream &amp; os) const;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  Print(<a class="code hl_namespace" href="namespacestd.html">std</a>::ostream &amp; os) const;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  virtual <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  SetLocation(const std::<span class="keywordtype">string</span> &amp; s);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  SetLocation(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp; s);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  virtual <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  SetDescription(const std::<span class="keywordtype">string</span> &amp; s);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  SetDescription(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp; s);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  virtual <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  SetLocation(const <span class="keywordtype">char</span> * s);</div>
@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>private:</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  class ExceptionData;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  std::shared_ptr&lt;const ExceptionData&gt; m_ExceptionData{};</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <a class="code hl_namespace" href="namespacestd.html">std</a>::shared_ptr&lt;const ExceptionData&gt; m_ExceptionData{};</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">inline</span> std::ostream &amp;</div>
@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="comment">// Inherit the constructors from its base class.</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keyword">using</span> ExceptionObject::ExceptionObject;</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  itkTypeMacro(MemoryAllocationError, ExceptionObject);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <a class="code hl_function" href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a>(MemoryAllocationError);</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>};</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="keyword">class </span>ITKCommon_EXPORT RangeError : <span class="keyword">public</span> ExceptionObject</div>
@@ -205,7 +205,7 @@ $(function() {
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="comment">// Inherit the constructors from its base class.</span></div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keyword">using</span> ExceptionObject::ExceptionObject;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  itkTypeMacro(RangeError, ExceptionObject);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <a class="code hl_function" href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a>(RangeError);</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>};</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">class </span>ITKCommon_EXPORT InvalidArgumentError : <span class="keyword">public</span> ExceptionObject</div>
@@ -214,7 +214,7 @@ $(function() {
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="comment">// Inherit the constructors from its base class.</span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keyword">using</span> ExceptionObject::ExceptionObject;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  itkTypeMacro(InvalidArgumentError, ExceptionObject);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <a class="code hl_function" href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a>(InvalidArgumentError);</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>};</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">class </span>ITKCommon_EXPORT IncompatibleOperandsError : <span class="keyword">public</span> ExceptionObject</div>
@@ -223,7 +223,7 @@ $(function() {
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="comment">// Inherit the constructors from its base class.</span></div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">using</span> ExceptionObject::ExceptionObject;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  itkTypeMacro(IncompatibleOperandsError, ExceptionObject);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <a class="code hl_function" href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a>(IncompatibleOperandsError);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>};</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keyword">class </span>ITKCommon_EXPORT ProcessAborted : <span class="keyword">public</span> ExceptionObject</div>
@@ -247,16 +247,18 @@ $(function() {
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    this-&gt;SetDescription(<span class="stringliteral">&quot;Filter execution was aborted by an external request&quot;</span>);</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  itkTypeMacro(ProcessAborted, ExceptionObject);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <a class="code hl_function" href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a>(ProcessAborted);</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>};</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>} <span class="comment">// end namespace itk</span></div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="preprocessor">#endif </span><span class="comment">// itkExceptionObject_h</span></div>
+<div class="ttc" id="aitkAddImageFilter_8h_html_a3722bc98deb6cde76fe0dbf2d1bb6c79"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3722bc98deb6cde76fe0dbf2d1bb6c79">itkOverrideGetNameOfClassMacro</a></div><div class="ttdeci">itkOverrideGetNameOfClassMacro(AddImageFilter)</div></div>
 <div class="ttc" id="aitkAddImageFilter_8h_html_a8c77390f5f26f2ec5a75801152e1f673"><div class="ttname"><a href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">Superclass</a></div><div class="ttdeci">BinaryGeneratorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt; Superclass</div><div class="ttdef"><b>Definition:</b> <a href="itkAddImageFilter_8h_source.html#l00090">itkAddImageFilter.h:90</a></div></div>
 <div class="ttc" id="aitkMacro_8h_html"><div class="ttname"><a href="itkMacro_8h.html">itkMacro.h</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_af105436026645171db6a4a3000ee8482"><div class="ttname"><a href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">itk::Math::e</a></div><div class="ttdeci">static constexpr double e</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00056">itkMath.h:56</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:25</a></div></div>
 <div class="ttc" id="anamespaceitk_html_a9598dc71da1c99b5683915d75ef586c4"><div class="ttname"><a href="namespaceitk.html#a9598dc71da1c99b5683915d75ef586c4">itk::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Array&lt; TValue &gt; &amp;arr)</div><div class="ttdef"><b>Definition:</b> <a href="itkArray_8h_source.html#l00215">itkArray.h:216</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
