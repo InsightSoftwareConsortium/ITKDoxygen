@@ -4461,6 +4461,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a70f6614dc16b852aee1ec8efb6b6032d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a70f6614dc16b852aee1ec8efb6b6032d">GenerateConnectedImageNeighborhoodShapeOffsets</a> () noexcept</td></tr>
 <tr class="separator:a70f6614dc16b852aee1ec8efb6b6032d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a3835b486bd5a0d47367748af7694f345"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3835b486bd5a0d47367748af7694f345"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a3835b486bd5a0d47367748af7694f345">Copy</a> (const T &amp;original)</td></tr>
+<tr class="separator:a3835b486bd5a0d47367748af7694f345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:af7e01e7953349197aa7359550be57f54"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af7e01e7953349197aa7359550be57f54"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#af7e01e7953349197aa7359550be57f54">Deref</a> (T *const ptr)</td></tr>
 <tr class="separator:af7e01e7953349197aa7359550be57f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6196,6 +6200,52 @@ template&lt;typename TValue &gt; </div>
 <p class="definition">Definition at line <a class="el" href="itkNumberToString_8h_source.html#l00083">83</a> of file <a class="el" href="itkNumberToString_8h_source.html">itkNumberToString.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="itkMeshIOBase_8h_source.html#l00663">itk::MeshIOBase::WriteBufferAsAscii()</a>, <a class="el" href="itkOBJMeshIO_8h_source.html#l00155">itk::OBJMeshIO::WritePointData()</a>, <a class="el" href="itkVTKPolyDataMeshIO_8h_source.html#l00688">itk::VTKPolyDataMeshIO::WritePointDataBufferAsASCII()</a>, <a class="el" href="itkBYUMeshIO_8h_source.html#l00119">itk::BYUMeshIO::WritePoints()</a>, <a class="el" href="itkOBJMeshIO_8h_source.html#l00117">itk::OBJMeshIO::WritePoints()</a>, and <a class="el" href="itkVTKPolyDataMeshIO_8h_source.html#l00435">itk::VTKPolyDataMeshIO::WritePointsBufferAsASCII()</a>.</p>
+
+</div>
+</div>
+<a id="a3835b486bd5a0d47367748af7694f345" name="a3835b486bd5a0d47367748af7694f345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3835b486bd5a0d47367748af7694f345">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr T itk::Copy </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>original</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns a copy of its argument. Primarily used to make the act of copying (typically involving a copy-constructor call) explicit, and to avoid warnings like:</p>
+<ul>
+<li>Microsoft Visual Studio 2022, IntelliSense Code Linter [lnt-accidental-copy] "`auto` doesn't deduce references. A
+  possibly unintended copy is being made" (<a href="https://learn.microsoft.com/en-us/cpp/ide/lnt-accidental-copy">https://learn.microsoft.com/en-us/cpp/ide/lnt-accidental-copy</a>)</li>
+<li>Microsoft Visual Studio 2022, Warning C26820, "This is a potentially expensive copy operation. Consider using a
+  reference unless a copy is required (p.9)" (<a href="https://learn.microsoft.com/en-us/cpp/code-quality/c26820?view=msvc-170">https://learn.microsoft.com/en-us/cpp/code-quality/c26820?view=msvc-170</a>)</li>
+<li>Synopsys Coverity 2023.6.2, "CID 331225:  Performance inefficiencies  (AUTO_CAUSES_COPY)", "Using the `auto`
+  keyword without an `&amp;` causes the copy of an object...".</li>
+<li>SonarSource static code analysis, "Unnecessary expensive copy should be avoided when using `auto` as a placeholder
+  type", "Avoid this unnecessary copy by using a "const" reference. (cpp:S6032)", <a href="https://rules.sonarsource.com/cpp/RSPEC-6032/">https://rules.sonarsource.com/cpp/RSPEC-6032/</a></li>
+</ul>
+<p >Example: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> possiblyUnintendedCopy = image-&gt;GetRequestedRegion(); <span class="comment">// Warning!</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> intendedCopy = <a class="code hl_function" href="namespaceitk.html#a3835b486bd5a0d47367748af7694f345">Copy</a>(image-&gt;GetRequestedRegion());     <span class="comment">// OK, no warning  :-)</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> [index, size] = <a class="code hl_function" href="namespaceitk.html#a3835b486bd5a0d47367748af7694f345">Copy</a>(image-&gt;GetRequestedRegion());    <span class="comment">// OK, no warning  :-)</span></div>
+<div class="ttc" id="anamespaceitk_html_a3835b486bd5a0d47367748af7694f345"><div class="ttname"><a href="namespaceitk.html#a3835b486bd5a0d47367748af7694f345">itk::Copy</a></div><div class="ttdeci">constexpr T Copy(const T &amp;original)</div><div class="ttdef"><b>Definition:</b> <a href="itkCopy_8h_source.html#l00050">itkCopy.h:50</a></div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>In general, it is up to the programmer to choose between doing a copy and using a reference, of course. <code>Copy</code> should only be used when doing a copy is preferred over using a reference. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="itkCopy_8h_source.html#l00050">50</a> of file <a class="el" href="itkCopy_8h_source.html">itkCopy.h</a>.</p>
 
 </div>
 </div>
