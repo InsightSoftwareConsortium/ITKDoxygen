@@ -301,12 +301,11 @@ Variables</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TReturn, <span class="keyword">typename</span> TInput&gt;                              \</div>
 <div class="line">  inline TReturn name(TInput x)                                             \</div>
 <div class="line">  {                                                                         \</div>
-<div class="line">                                                                            \</div>
-<div class="line">    if (<span class="keyword">sizeof</span>(TReturn) &lt;= 4)                                               \</div>
+<div class="line">    if <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(TReturn) &lt;= 4)                                     \</div>
 <div class="line">    {                                                                       \</div>
 <div class="line">      return <span class="keyword">static_cast&lt;</span>TReturn<span class="keyword">&gt;</span>(Detail::name##_32(x));                    \</div>
 <div class="line">    }                                                                       \</div>
-<div class="line">    else <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(TReturn) &lt;= 8)                                          \</div>
+<div class="line">    else <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(TReturn) &lt;= 8)                                \</div>
 <div class="line">    {                                                                       \</div>
 <div class="line">      return <span class="keyword">static_cast&lt;</span>TReturn<span class="keyword">&gt;</span>(Detail::name##_64(x));                    \</div>
 <div class="line">    }                                                                       \</div>

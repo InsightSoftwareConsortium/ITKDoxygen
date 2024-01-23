@@ -13,7 +13,7 @@ var searchData=
   ['xmlreaderbase_10',['XMLReaderBase',['../classitk_1_1XMLReaderBase.html',1,'itk::XMLReaderBase'],['../classitk_1_1XMLReaderBase.html#ab03368f4859bf310d8694b5c20e6f0a5',1,'itk::XMLReaderBase::XMLReaderBase()']]],
   ['xmlwriterbase_11',['XMLWriterBase',['../classitk_1_1XMLWriterBase.html',1,'itk::XMLWriterBase&lt; T &gt;'],['../classitk_1_1XMLWriterBase.html#a984d1c8c2d144cafa9fbbda9fe960749',1,'itk::XMLWriterBase::XMLWriterBase()']]],
   ['xmlwriterbase_3c_20groupspatialobject_3c_203_20_3e_20_3e_12',['XMLWriterBase&lt; GroupSpatialObject&lt; 3 &gt; &gt;',['../classitk_1_1XMLWriterBase.html',1,'itk']]],
-  ['xor_13',['XOR',['../classitk_1_1Functor_1_1XOR.html',1,'itk::Functor::XOR&lt; TInput1, TInput2, TOutput &gt;'],['../classitk_1_1Functor_1_1XOR.html#a6b68e31de45dcd05234153d86c25c5e3',1,'itk::Functor::XOR::XOR()']]],
+  ['xor_13',['XOR',['../classitk_1_1Functor_1_1XOR.html',1,'itk::Functor']]],
   ['xorg_14',['xorg',['../structitk_1_1MRCHeaderObject_1_1Header.html#ac36651b4db9604b5a5d5b237599ee1bd',1,'itk::MRCHeaderObject::Header']]],
   ['xorimagefilter_15',['XorImageFilter',['../classitk_1_1XorImageFilter.html',1,'itk::XorImageFilter&lt; TInputImage1, TInputImage2, TOutputImage &gt;'],['../classitk_1_1XorImageFilter.html#ab199ae558d2fa7d14f79544b914abac9',1,'itk::XorImageFilter::XorImageFilter()']]],
   ['xrotation_16',['XRotation',['../classitk_1_1BinaryMask3DMeshSource.html#a2a595878e167ff41a5d2e54a75fe1f38',1,'itk::BinaryMask3DMeshSource']]]

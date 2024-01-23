@@ -101,7 +101,7 @@ $(function() {
 class itk::RegistrationParameterScalesEstimator&lt; TMetric &gt;</div><p >Implements a registration helper class for estimating scales of transform parameters and step sizes. </p>
 <p >Its input is a metric, from which the fixed/moving images and transform objects are obtained.</p>
 <p >This class implements some common methods as building blocks called by subclasses with various estimation strategies. One of these methods is SampleVirtualDomain, which provides various choices of sampling the image domain.</p>
-<dl class="section note"><dt>Note</dt><dd>When used with a PointSetToPointSet type metric, a VirtualDomainPointSet must be defined, for use in shift estimation. See <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#aacda307b95eb9ef8518b8c07a0853909">SetVirtualDomainPointSet()</a>. The virtual domain point set can be retrieved from a metric using the GetVirtualTransformedPointSet() method within the metric. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>When used with a PointSetToPointSet type metric, a VirtualDomainPointSet must be defined, for use in shift estimation. See <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a1df76f91c6f8593d3ce78065d5305f41">SetVirtualDomainPointSet()</a>. The virtual domain point set can be retrieved from a metric using the GetVirtualTransformedPointSet() method within the metric. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00080">80</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -232,8 +232,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a08d9931ff2180ac1fd672e4e72eaa9cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a08d9931ff2180ac1fd672e4e72eaa9cb">TransformForwardOn</a> ()</td></tr>
 <tr class="separator:a08d9931ff2180ac1fd672e4e72eaa9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:aacda307b95eb9ef8518b8c07a0853909"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#aacda307b95eb9ef8518b8c07a0853909">SetVirtualDomainPointSet</a> (<a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a797fca76267b501161bf7c8fa8a825b6">VirtualPointSetType</a> *_arg)</td></tr>
-<tr class="separator:aacda307b95eb9ef8518b8c07a0853909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1df76f91c6f8593d3ce78065d5305f41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a1df76f91c6f8593d3ce78065d5305f41">SetVirtualDomainPointSet</a> (const <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a797fca76267b501161bf7c8fa8a825b6">VirtualPointSetType</a> *_arg)</td></tr>
 <tr class="separator:a1df76f91c6f8593d3ce78065d5305f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cead71a391d48bea3fafd27a503e789"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a797fca76267b501161bf7c8fa8a825b6">VirtualPointSetType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a8cead71a391d48bea3fafd27a503e789">GetVirtualDomainPointSet</a> () const</td></tr>
@@ -2041,7 +2039,7 @@ template&lt;typename TMetric &gt; </div>
 </div>
 </div>
 <a id="a1df76f91c6f8593d3ce78065d5305f41" name="a1df76f91c6f8593d3ce78065d5305f41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1df76f91c6f8593d3ce78065d5305f41">&#9670;&nbsp;</a></span>SetVirtualDomainPointSet() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df76f91c6f8593d3ce78065d5305f41">&#9670;&nbsp;</a></span>SetVirtualDomainPointSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2055,35 +2053,6 @@ template&lt;typename TMetric &gt; </div>
           <td class="memname">virtual void <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html">itk::RegistrationParameterScalesEstimator</a>&lt; TMetric &gt;::SetVirtualDomainPointSet </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a797fca76267b501161bf7c8fa8a825b6">VirtualPointSetType</a> *&#160;</td>
-          <td class="paramname"><em>_arg</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Get/Set a point set for virtual domain sampling. </p>
-
-</div>
-</div>
-<a id="aacda307b95eb9ef8518b8c07a0853909" name="aacda307b95eb9ef8518b8c07a0853909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacda307b95eb9ef8518b8c07a0853909">&#9670;&nbsp;</a></span>SetVirtualDomainPointSet() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TMetric &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html">itk::RegistrationParameterScalesEstimator</a>&lt; TMetric &gt;::SetVirtualDomainPointSet </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classitk_1_1RegistrationParameterScalesEstimator.html#a797fca76267b501161bf7c8fa8a825b6">VirtualPointSetType</a> *&#160;</td>
           <td class="paramname"><em>_arg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2317,7 +2286,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >the radius of the central region for sampling </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00347">347</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00355">355</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2344,7 +2313,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >the metric object </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00335">335</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00343">343</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2371,7 +2340,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >the number of samples in the virtual domain </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00344">344</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00352">352</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2398,7 +2367,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >the samples in the virtual domain </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00338">338</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00346">346</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2424,7 +2393,7 @@ template&lt;typename TMetric &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00362">362</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00370">370</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2451,7 +2420,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >Keep track of the last sampling time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00341">341</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00349">349</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2478,7 +2447,7 @@ template&lt;typename TMetric &gt; </div>
 </div><div class="memdoc">
 <p >m_TransformForward specifies which transform scales to be estimated. m_TransformForward = true (default) for the moving transform parameters. m_TransformForward = false for the fixed transform parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00359">359</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00367">367</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2504,7 +2473,7 @@ template&lt;typename TMetric &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00349">349</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00357">357</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>
@@ -2556,7 +2525,7 @@ template&lt;typename TMetric &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00352">352</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html#l00360">360</a> of file <a class="el" href="itkRegistrationParameterScalesEstimator_8h_source.html">itkRegistrationParameterScalesEstimator.h</a>.</p>
 
 </div>
 </div>

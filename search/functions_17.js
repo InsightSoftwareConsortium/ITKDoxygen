@@ -6,7 +6,6 @@ var searchData=
   ['xmlreader_3',['XMLReader',['../classitk_1_1XMLReader.html#abfbb144672d18815f8ed414bfe61db63',1,'itk::XMLReader']]],
   ['xmlreaderbase_4',['XMLReaderBase',['../classitk_1_1XMLReaderBase.html#ab03368f4859bf310d8694b5c20e6f0a5',1,'itk::XMLReaderBase']]],
   ['xmlwriterbase_5',['XMLWriterBase',['../classitk_1_1XMLWriterBase.html#a984d1c8c2d144cafa9fbbda9fe960749',1,'itk::XMLWriterBase']]],
-  ['xor_6',['XOR',['../classitk_1_1Functor_1_1XOR.html#a6b68e31de45dcd05234153d86c25c5e3',1,'itk::Functor::XOR']]],
-  ['xorimagefilter_7',['XorImageFilter',['../classitk_1_1XorImageFilter.html#ab199ae558d2fa7d14f79544b914abac9',1,'itk::XorImageFilter']]],
-  ['xrotation_8',['XRotation',['../classitk_1_1BinaryMask3DMeshSource.html#a2a595878e167ff41a5d2e54a75fe1f38',1,'itk::BinaryMask3DMeshSource']]]
+  ['xorimagefilter_6',['XorImageFilter',['../classitk_1_1XorImageFilter.html#ab199ae558d2fa7d14f79544b914abac9',1,'itk::XorImageFilter']]],
+  ['xrotation_7',['XRotation',['../classitk_1_1BinaryMask3DMeshSource.html#a2a595878e167ff41a5d2e54a75fe1f38',1,'itk::BinaryMask3DMeshSource']]]
 ];

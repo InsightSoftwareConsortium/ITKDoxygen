@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classitk_1_1SingletonIndex.html#ab640b13d0ae95e0bb449daf870c2e49f">   73</a></span>  <a class="code hl_function" href="classitk_1_1SingletonIndex.html#ab640b13d0ae95e0bb449daf870c2e49f">SetGlobalInstance</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * globalName, T * global, std::function&lt;<span class="keywordtype">void</span>()&gt; deleteFunc)</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    this-&gt;SetGlobalInstancePrivate(globalName, global, deleteFunc);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    this-&gt;SetGlobalInstancePrivate(globalName, global, std::move(deleteFunc));</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#ifndef ITK_FUTURE_LEGACY_REMOVE</span></div>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">void</span> *)&gt; itkNotUsed(func),</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    std::function&lt;<span class="keywordtype">void</span>()&gt;       deleteFunc)</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    this-&gt;SetGlobalInstance(globalName, global, deleteFunc);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    this-&gt;SetGlobalInstance(globalName, global, std::move(deleteFunc));</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Just returns true for backward compatibility (legacy only).</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordflow">if</span> (instance == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  {</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    instance = <span class="keyword">new</span> T;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_function" href="classitk_1_1SingletonIndex.html#a1734d845b92ba37f50156d1e76ca09e5">SingletonIndex::GetInstance</a>()-&gt;<a class="code hl_function" href="classitk_1_1SingletonIndex.html#ab640b13d0ae95e0bb449daf870c2e49f">SetGlobalInstance</a>&lt;T&gt;(globalName, instance, deleteFunc);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_function" href="classitk_1_1SingletonIndex.html#a1734d845b92ba37f50156d1e76ca09e5">SingletonIndex::GetInstance</a>()-&gt;<a class="code hl_function" href="classitk_1_1SingletonIndex.html#ab640b13d0ae95e0bb449daf870c2e49f">SetGlobalInstance</a>&lt;T&gt;(globalName, instance, std::move(deleteFunc));</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">return</span> instance;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
@@ -207,7 +207,7 @@ $(function() {
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>[[deprecated(<span class="stringliteral">&quot;Prefer calling the Singleton(globalName, deleteFunc) overload (without the unused func parameter)!&quot;</span>)]] T *</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><a class="code hl_function" href="namespaceitk.html#a665ff0af1d3843b26f6039ecfe0131ec">Singleton</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * globalName, std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">void</span> *)&gt; itkNotUsed(func), std::function&lt;<span class="keywordtype">void</span>()&gt; deleteFunc)</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>{</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">return</span> Singleton&lt;T&gt;(globalName, deleteFunc);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">return</span> Singleton&lt;T&gt;(globalName, std::move(deleteFunc));</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
