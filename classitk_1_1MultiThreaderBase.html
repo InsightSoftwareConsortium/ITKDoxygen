@@ -180,6 +180,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a121476b36dd25aa5933eefb5d5662406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f64d3f91414fbc742672e5cdf6a37c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiThreaderBase.html#a82f64d3f91414fbc742672e5cdf6a37c">SetSingleMethod</a> (<a class="el" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a>, void *data)=0</td></tr>
 <tr class="separator:a82f64d3f91414fbc742672e5cdf6a37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e03e1eccd481d45656b1ef292f0558d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiThreaderBase.html#a1e03e1eccd481d45656b1ef292f0558d">SetSingleMethodAndExecute</a> (<a class="el" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a> func, void *data)</td></tr>
+<tr class="separator:a1e03e1eccd481d45656b1ef292f0558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a947a9ccdad539a708b0561f0d5f09"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiThreaderBase.html#a76a947a9ccdad539a708b0561f0d5f09">SetUpdateProgress</a> (bool updates)</td></tr>
 <tr class="separator:a76a947a9ccdad539a708b0561f0d5f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd7462516f32a2cc7590d91f185a24f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1MultiThreaderBase.html#abd7462516f32a2cc7590d91f185a24f2">SingleMethodExecute</a> ()=0</td></tr>
@@ -417,7 +419,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00329">329</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00333">333</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -514,7 +516,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00328">328</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00332">332</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1029,7 @@ template&lt;unsigned int VDimension, typename TFunction &gt; </div>
 </div><div class="memdoc">
 <p >Break up region into smaller chunks, and call the user-specified function or function object <code>funcP</code> for each chunk, having the region of the chunk as argument. The type of such a chuck region is <code><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>&lt;VDimension&gt;</code>. Each such <code>funcP(region)</code> call must be thread-safe. If filter argument is not nullptr, this function will update its progress as each work unit is completed. Delegates work to non-templated version. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00349">349</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00353">353</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageRegion_8h_source.html#l00187">itk::ImageRegion&lt; VImageDimension &gt;::GetIndex()</a>, <a class="el" href="itkImageRegion_8h_source.html#l00208">itk::ImageRegion&lt; VImageDimension &gt;::GetSize()</a>, <a class="el" href="itkIndex_8h_source.html#l00293">itk::Index&lt; VDimension &gt;::m_InternalArray</a>, and <a class="el" href="itkSize_8h_source.html#l00245">itk::Size&lt; VDimension &gt;::m_InternalArray</a>.</p>
 
@@ -1165,7 +1167,7 @@ template&lt;unsigned int VDimension, typename TFunction &gt; </div>
 </div><div class="memdoc">
 <p >Similar to ParallelizeImageRegion, but do not split the region along one of the directions. If VDimension is 1, restrictedDirection is ignored and no parallelization occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00373">373</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00377">377</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageRegion_8h_source.html#l00187">itk::ImageRegion&lt; VImageDimension &gt;::GetIndex()</a>, <a class="el" href="classitk_1_1ImageRegion.html#a3869e176baeb0833cc46def514f0a46f">itk::ImageRegion&lt; VImageDimension &gt;::GetNumberOfPixels()</a>, and <a class="el" href="itkImageRegion_8h_source.html#l00208">itk::ImageRegion&lt; VImageDimension &gt;::GetSize()</a>.</p>
 
@@ -1425,6 +1427,35 @@ the developer's choice is respected over the environment variables.
 
 </div>
 </div>
+<a id="a1e03e1eccd481d45656b1ef292f0558d" name="a1e03e1eccd481d45656b1ef292f0558d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e03e1eccd481d45656b1ef292f0558d">&#9670;&nbsp;</a></span>SetSingleMethodAndExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void itk::MultiThreaderBase::SetSingleMethodAndExecute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceitk.html#a8670aa1c22a497a72349cbef99d15372">ThreadFunctionType</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Set the method and the user data, by SetSingleMethod, and executes the method, by SingleMethodExecute. </p>
+
+</div>
+</div>
 <a id="a76a947a9ccdad539a708b0561f0d5f09" name="a76a947a9ccdad539a708b0561f0d5f09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76a947a9ccdad539a708b0561f0d5f09">&#9670;&nbsp;</a></span>SetUpdateProgress()</h2>
 
@@ -1585,7 +1616,7 @@ the developer's choice is respected over the environment variables.
 <p >Friends of Multithreader. <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> is a friend so that it can call <a class="el" href="classitk_1_1MultiThreaderBase.html#a7f89c1737c876302dffc622faa0d7789">PrintSelf()</a> on its Multithreader.</p>
 <p >Friends of <a class="el" href="classitk_1_1DataObject.html" title="Base class for all data objects in ITK.">DataObject</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00504">504</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00508">508</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1611,7 +1642,7 @@ the developer's choice is respected over the environment variables.
 </div><div class="memdoc">
 <p >The number of threads to use. The m_MaximumNumberOfThreads must always be less than or equal to the m_GlobalMaximumNumberOfThreads before it is used during the execution of a threaded method. Its value is initialized to m_GlobalDefaultNumberOfThreads at construction time. Its value is clamped to the current m_GlobalMaximumNumberOfThreads in the <a class="el" href="classitk_1_1MultiThreaderBase.html#abd7462516f32a2cc7590d91f185a24f2">SingleMethodExecute()</a> method. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00472">472</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00476">476</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1667,7 @@ the developer's choice is respected over the environment variables.
 </div><div class="memdoc">
 <p >The number of work units to create. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00462">462</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00466">466</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1660,7 +1691,7 @@ the developer's choice is respected over the environment variables.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00500">500</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00504">504</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1685,7 +1716,7 @@ the developer's choice is respected over the environment variables.
 </div><div class="memdoc">
 <p >The data to be passed as argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00487">487</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00491">491</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1710,7 +1741,7 @@ the developer's choice is respected over the environment variables.
 </div><div class="memdoc">
 <p >The method to invoke. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00484">484</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00488">488</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
@@ -1734,7 +1765,7 @@ the developer's choice is respected over the environment variables.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00498">498</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMultiThreaderBase_8h_source.html#l00502">502</a> of file <a class="el" href="itkMultiThreaderBase_8h_source.html">itkMultiThreaderBase.h</a>.</p>
 
 </div>
 </div>
