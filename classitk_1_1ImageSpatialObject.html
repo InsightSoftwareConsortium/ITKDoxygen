@@ -88,6 +88,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ImageSpatialObject-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">itk::ImageSpatialObject&lt; TDimension, TPixelType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKSpatialObjects.html">Module ITKSpatialObjects</a></div></div></div>
@@ -252,6 +253,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a954ff6e143e61b9afd27531cdf6d5aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f051589392a9b025093167e63333402"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSpatialObject.html#a4f051589392a9b025093167e63333402">SetImage</a> (const <a class="el" href="classitk_1_1ImageSpatialObject.html#a063cb39e378c93310e0033a8fdb15009">ImageType</a> *image)</td></tr>
 <tr class="separator:a4f051589392a9b025093167e63333402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2352d6eb2ce0eff918c01931e051fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSpatialObject.html#a6a2352d6eb2ce0eff918c01931e051fb">Update</a> () override</td></tr>
+<tr class="separator:a6a2352d6eb2ce0eff918c01931e051fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96a7bbe3b953aa5951150754afa36286"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSpatialObject.html#a96a7bbe3b953aa5951150754afa36286">ValueAtInObjectSpace</a> (const <a class="el" href="classitk_1_1SpatialObject.html#ac1f4071e7b01e4ce2ed901b76b96057e">PointType</a> &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>, double &amp;value, unsigned int depth=0, const std::string &amp;name=&quot;&quot;) const override</td></tr>
 <tr class="separator:a96a7bbe3b953aa5951150754afa36286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
@@ -667,6 +670,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aa8a1cda36007db80f5e3024d9b23c0bb inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab290205d1ad15f208eb851a87121dd31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSpatialObject.html#ab290205d1ad15f208eb851a87121dd31">UpdateImageRegions</a> ()</td></tr>
+<tr class="separator:ab290205d1ad15f208eb851a87121dd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -1407,6 +1415,64 @@ template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt
 
 </div>
 </div>
+<a id="a6a2352d6eb2ce0eff918c01931e051fb" name="a6a2352d6eb2ce0eff918c01931e051fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a2352d6eb2ce0eff918c01931e051fb">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1ImageSpatialObject.html">itk::ImageSpatialObject</a>&lt; TDimension, TPixelType &gt;::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Updates the regions of this spatial object in accordance with its current image, and calls its Superclass. </p>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1DataObject.html#a943f87c89a468bbd12df2c25dbad3310">itk::DataObject</a>.</p>
+
+</div>
+</div>
+<a id="ab290205d1ad15f208eb851a87121dd31" name="ab290205d1ad15f208eb851a87121dd31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab290205d1ad15f208eb851a87121dd31">&#9670;&nbsp;</a></span>UpdateImageRegions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1ImageSpatialObject.html">itk::ImageSpatialObject</a>&lt; TDimension, TPixelType &gt;::UpdateImageRegions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Updates the regions of this spatial object in accordance with its current image. </p>
+
+</div>
+</div>
 <a id="a96a7bbe3b953aa5951150754afa36286" name="a96a7bbe3b953aa5951150754afa36286"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96a7bbe3b953aa5951150754afa36286">&#9670;&nbsp;</a></span>ValueAtInObjectSpace()</h2>
 
@@ -1485,7 +1551,7 @@ template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00145">145</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00149">149</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1511,7 +1577,7 @@ template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00153">153</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00157">157</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1537,7 +1603,7 @@ template&lt;unsigned int TDimension = 3, typename TPixelType  = unsigned char&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00147">147</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageSpatialObject_8h_source.html#l00151">151</a> of file <a class="el" href="itkImageSpatialObject_8h_source.html">itkImageSpatialObject.h</a>.</p>
 
 </div>
 </div>
