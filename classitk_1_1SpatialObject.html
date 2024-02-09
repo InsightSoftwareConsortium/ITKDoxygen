@@ -100,7 +100,7 @@ $(function() {
 class itk::SpatialObject&lt; VDimension &gt;</div><p >Implementation of the composite pattern. </p>
 <p >The purpose of this class is to implement the composite pattern [Design Patterns, Gamma, 1995] within itk, so that it becomes easy to create an environment containing objects within a scene, and to manipulate the environment as a whole or any of its component objects. An object has a list of transformations to transform object coordinates to the corresponding coordinates in the real world coordinate system, and a list of inverse transformation to go backward. Any spatial objects can be plugged to a spatial object as children. To implement your own spatial object, you need to derive from the following class, which requires overriding just a few virtual functions. Examples of such functions are <a class="el" href="classitk_1_1SpatialObject.html#a8f9190b75480387c18fcce12362f1c8a">ValueAtInObjectSpace()</a>, <a class="el" href="classitk_1_1SpatialObject.html#a9886361d642d6b63691de4c980f5a0ae">IsInsideInObjectSpace()</a>, and <a class="el" href="classitk_1_1SpatialObject.html#a0d6dc7d481e302698daa5c73d558347e">ComputeMyBoundingBox()</a>, each of which has a meaning specific to each particular object type. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00057">57</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00058">58</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SpatialObject&lt; VDimension &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -547,7 +547,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a959cbf91cdd1d552b5d90a89918bc6c2"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a959cbf91cdd1d552b5d90a89918bc6c2">MaximumDepth</a> = 9999999</td></tr>
+<tr class="memitem:a959cbf91cdd1d552b5d90a89918bc6c2"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a959cbf91cdd1d552b5d90a89918bc6c2">MaximumDepth</a> = std::numeric_limits&lt;unsigned int&gt;::max()</td></tr>
 <tr class="separator:a959cbf91cdd1d552b5d90a89918bc6c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f025988f0937c8bddc9a337354f6579"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1SpatialObject.html#a96be359a6fecb5515f7ba71cc6450856">ObjectDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a7f025988f0937c8bddc9a337354f6579">ObjectDimension</a> = VDimension</td></tr>
 <tr class="separator:a7f025988f0937c8bddc9a337354f6579"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -664,7 +664,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00106">106</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00107">107</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -682,7 +682,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00105">105</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00106">106</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -700,7 +700,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00112">112</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00113">113</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +718,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00110">110</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00111">111</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -736,7 +736,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00111">111</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00112">112</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -755,7 +755,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Return type for the list of children </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00109">109</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00110">110</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -773,7 +773,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00082">82</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00083">83</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -791,7 +791,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00091">91</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00092">92</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -809,7 +809,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00097">97</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00098">98</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -827,7 +827,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00095">95</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00096">96</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -845,7 +845,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00094">94</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00095">95</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -863,7 +863,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00122">122</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00123">123</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -881,7 +881,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00086">86</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00087">87</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -899,7 +899,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00115">115</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00116">116</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -917,7 +917,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00064">64</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00065">65</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -935,7 +935,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00114">114</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00115">115</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -953,7 +953,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00081">81</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00082">82</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -971,7 +971,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00089">89</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00090">90</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -989,7 +989,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00088">88</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00089">89</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1007,7 +1007,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00119">119</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00120">120</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1025,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00117">117</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00118">118</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00062">62</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00063">63</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1061,7 +1061,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00078">78</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00079">79</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1079,7 +1079,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00123">123</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00124">124</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1097,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00079">79</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00080">80</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00101">101</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00102">102</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1133,7 +1133,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00100">100</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00101">101</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1151,7 +1151,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00099">99</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00100">100</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1169,7 +1169,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00103">103</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00104">104</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1187,7 +1187,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00092">92</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00093">93</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1205,7 +1205,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00090">90</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00091">91</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -1699,7 +1699,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Returns true if a point is inside the object - provided to make spatial objects compatible with spatial functions and conditional iterators for defining regions of interest. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00679">679</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00680">680</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -1771,7 +1771,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Get the region object that defines the size and starting index of the region of the image currently loaded in memory. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>, <a class="el" href="classitk_1_1SpatialObject.html#a4ac1b5f6a952d18f90cd46787f545767">SetLargestPossibleRegion()</a>, <a class="el" href="classitk_1_1SpatialObject.html#a7509f657199a49003cbe0f8317078aa3">SetRequestedRegion()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00589">589</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00590">590</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2049,7 +2049,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Get the region object that defines the size and starting index for the largest possible region this image could represent. This is used in determining how much memory would be needed to load an entire dataset. It is also used to determine boundary conditions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>, <a class="el" href="classitk_1_1SpatialObject.html#aff469eda97fecf4fc454d6be6506363b">GetBufferedRegion()</a>, <a class="el" href="classitk_1_1SpatialObject.html#a6b6f1630493cef838eca49d4b00f61a2">GetRequestedRegion()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00574">574</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00575">575</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2079,7 +2079,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Return the maximum depth that a tree of spatial objects can have. This provides convenient access to a static constant. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00073">73</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00074">74</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2108,7 +2108,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00728">728</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00729">729</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2284,7 +2284,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Returns the latest modified time of the spatial object, but not the modification time of the children </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00200">200</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00201">201</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2387,7 +2387,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Get the dimensionality of the object </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00127">127</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00128">128</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2544,7 +2544,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00187">187</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00188">188</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2574,7 +2574,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Returns a pointer to the property object applied to this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00181">181</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00182">182</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2604,7 +2604,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Get the region object that defines the size and starting index for the region of the image requested (i.e., the region of the image to be operated on by a filter). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageRegion.html" title="An image region represents a structured region of data.">ImageRegion</a>, <a class="el" href="classitk_1_1SpatialObject.html#a4ac1b5f6a952d18f90cd46787f545767">SetLargestPossibleRegion()</a>, <a class="el" href="classitk_1_1SpatialObject.html#ae41351970bf2fdf8e01a39403b5e3e5d">SetBufferedRegion()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00613">613</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00614">614</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -2634,7 +2634,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Get the typename of the <a class="el" href="classitk_1_1SpatialObject.html" title="Implementation of the composite pattern.">SpatialObject</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00151">151</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00152">152</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3473,7 +3473,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Set the property applied to the object. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00172">172</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00173">173</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3858,7 +3858,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00750">750</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00751">751</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3884,7 +3884,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00763">763</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00764">764</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3911,7 +3911,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Default inside value for the <a class="el" href="classitk_1_1SpatialObject.html#a6604c90870695ed974426a99b19b22de">ValueAtInWorldSpace()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00766">766</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00767">767</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3938,7 +3938,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Default outside value for the <a class="el" href="classitk_1_1SpatialObject.html#a6604c90870695ed974426a99b19b22de">ValueAtInWorldSpace()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00769">769</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00770">770</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3964,7 +3964,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00754">754</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00755">755</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -3990,7 +3990,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00755">755</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00756">756</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4017,7 +4017,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Object.html" title="Base class for most ITK classes.">Object</a> Identification Number </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00738">738</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00739">739</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4043,7 +4043,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00748">748</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00749">749</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4069,7 +4069,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00752">752</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00753">753</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4095,7 +4095,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00753">753</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00754">754</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4121,7 +4121,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00757">757</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00758">758</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4147,7 +4147,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00758">758</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00759">759</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4173,7 +4173,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00760">760</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00761">761</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4199,7 +4199,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00761">761</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00762">762</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4225,7 +4225,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00746">746</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00747">747</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4251,7 +4251,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00745">745</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00746">746</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4277,7 +4277,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00743">743</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00744">744</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4303,7 +4303,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00749">749</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00750">750</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4330,7 +4330,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </div><div class="memdoc">
 <p >Type of spatial object </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00741">741</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00742">742</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4346,7 +4346,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1SpatialObject.html">itk::SpatialObject</a>&lt; VDimension &gt;::MaximumDepth = 9999999</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1SpatialObject.html">itk::SpatialObject</a>&lt; VDimension &gt;::MaximumDepth = std::numeric_limits&lt;unsigned int&gt;::max()</td>
         </tr>
       </table>
   </td>
@@ -4356,7 +4356,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00068">68</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00069">69</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -4382,7 +4382,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00066">66</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00067">67</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 
 </div>
 </div>
