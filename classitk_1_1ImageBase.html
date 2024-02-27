@@ -216,6 +216,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7ec5f74527ed9965c7d36b211a72a481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae644a3abea9060a323e028f9df031af0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ae644a3abea9060a323e028f9df031af0">Initialize</a> () override</td></tr>
 <tr class="separator:ae644a3abea9060a323e028f9df031af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe5130cb518fed5f36be5a6e0cc17b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#aebe5130cb518fed5f36be5a6e0cc17b1">IsCongruentImageGeometry</a> (const <a class="el" href="classitk_1_1ImageBase.html">ImageBase</a> *otherImage, double coordinateTolerance, double directionTolerance) const</td></tr>
+<tr class="separator:aebe5130cb518fed5f36be5a6e0cc17b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d64478a9806dcc1a8678f66a7f88130"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a3d64478a9806dcc1a8678f66a7f88130">IsSameImageGeometryAs</a> (const <a class="el" href="classitk_1_1ImageBase.html">ImageBase</a> *otherImage, double coordinateTolerance=1e-6, double directionTolerance=1e-6) const</td></tr>
+<tr class="separator:a3d64478a9806dcc1a8678f66a7f88130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a286e76583d3b8e36d05870229d3fe805"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a286e76583d3b8e36d05870229d3fe805">itkOverrideGetNameOfClassMacro</a> (<a class="el" href="classitk_1_1ImageBase.html">ImageBase</a>)</td></tr>
 <tr class="separator:a286e76583d3b8e36d05870229d3fe805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b89994b729b4d2169e153d4e64cba8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a36b89994b729b4d2169e153d4e64cba8">RequestedRegionIsOutsideOfTheBufferedRegion</a> () override</td></tr>
@@ -1167,7 +1171,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Directly computes the index of the pixel at a specified offset from the beginning of the buffered region. Bounds checking is not performed. Thus, the computed index could be outside the BufferedRegion. To ensure a valid index, the parameter <code>offset</code> should be between 0 and the number of pixels in the BufferedRegion (the latter can be found using <code><a class="el" href="classitk_1_1ImageRegion.html#a3869e176baeb0833cc46def514f0a46f">ImageRegion::GetNumberOfPixels()</a></code>). </p><dl class="section warning"><dt>Warning</dt><dd>unlike <code><a class="el" href="classitk_1_1ImageBase.html#ab094bc2ada8b9f972198fed63f8a06a8">ComputeOffset()</a></code>, this version does not incur a virtual call. It's meant to be used only for <code>itk::Image&lt;&gt;</code>, <code>itk::VectorImage&lt;&gt;</code> and <code>itk::SpecialCoordinatesImage&lt;&gt;</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00883">883</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00901">901</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00064">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeIndex()</a>, and <a class="el" href="itkIndex_8h_source.html#l00232">itk::Index&lt; VDimension &gt;::GetIndex()</a>.</p>
 
@@ -1200,7 +1204,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Directly computes an offset from the beginning of the buffer for a pixel at the specified index. The index is not checked as to whether it is inside the current buffer, so the computed offset could conceivably be outside the buffer. If bounds checking is needed, one can call <code>ImageRegion::IsInside(ind)</code> on the BufferedRegion prior to calling ComputeOffset. </p><dl class="section warning"><dt>Warning</dt><dd>unlike <code><a class="el" href="classitk_1_1ImageBase.html#ab094bc2ada8b9f972198fed63f8a06a8">ComputeOffset()</a></code>, this version does not incur a virtual call. It's meant to be used only for <code>itk::Image&lt;&gt;</code>, <code>itk::VectorImage&lt;&gt;</code> and <code>itk::SpecialCoordinatesImage&lt;&gt;</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00862">862</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00880">880</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00092">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeOffset()</a>.</p>
 
@@ -1648,6 +1652,80 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Restores the buffered region to its default state This method does not call Modify because Initialization is called by ReleaseData and can not modify the MTime </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1DataObject.html#a1663102ea89d1a6d61103a1f5d24a1e5">ReleaseData</a>, <a class="el" href="classitk_1_1ImageBase.html#ae644a3abea9060a323e028f9df031af0">Initialize</a>, <a class="el" href="classitk_1_1ImageBase.html#a3744d0f4a745a3276fd1799c3c5ad101">SetBufferedRegion</a> </dd></dl>
+
+</div>
+</div>
+<a id="aebe5130cb518fed5f36be5a6e0cc17b1" name="aebe5130cb518fed5f36be5a6e0cc17b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe5130cb518fed5f36be5a6e0cc17b1">&#9670;&nbsp;</a></span>IsCongruentImageGeometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int VImageDimension = 2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::IsCongruentImageGeometry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1ImageBase.html">ImageBase</a>&lt; VImageDimension &gt; *&#160;</td>
+          <td class="paramname"><em>otherImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>coordinateTolerance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>directionTolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Checks whether the images' pixels with the same index occupy the same physical space. Compares the origin, spacing, and direction for equality within provided tolerances. There is no check for valid regions in between the images. </p>
+
+</div>
+</div>
+<a id="a3d64478a9806dcc1a8678f66a7f88130" name="a3d64478a9806dcc1a8678f66a7f88130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d64478a9806dcc1a8678f66a7f88130">&#9670;&nbsp;</a></span>IsSameImageGeometryAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int VImageDimension = 2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::IsSameImageGeometryAs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1ImageBase.html">ImageBase</a>&lt; VImageDimension &gt; *&#160;</td>
+          <td class="paramname"><em>otherImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>coordinateTolerance</em> = <code>1e-6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>directionTolerance</em> = <code>1e-6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Check whether this image and the other image have the same grid in physical space. Compares largest possible regions for equality, and the origin, spacing, and direction cosines for equality within provided tolerances. See also: <a class="el" href="classitk_1_1ImageToImageFilter.html" title="Base class for filters that take an image as input and produce an image as output.">ImageToImageFilter</a>, namely: <a href="https://github.com/InsightSoftwareConsortium/ITK/blob/v5.3.0/Modules/Core/Common/include/itkImageToImageFilter.h#L78-L92">https://github.com/InsightSoftwareConsortium/ITK/blob/v5.3.0/Modules/Core/Common/include/itkImageToImageFilter.h#L78-L92</a> <a href="https://github.com/InsightSoftwareConsortium/ITK/blob/v5.3.0/Modules/Core/Common/src/itkImageToImageFilterCommon.cxx#L26-L27">https://github.com/InsightSoftwareConsortium/ITK/blob/v5.3.0/Modules/Core/Common/src/itkImageToImageFilterCommon.cxx#L26-L27</a> </p>
 
 </div>
 </div>
@@ -2911,7 +2989,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00900">900</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00918">918</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2938,7 +3016,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00834">834</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00852">852</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2965,7 +3043,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Matrices intended to help with the conversion of <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> coordinates to PhysicalPoint coordinates </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00840">840</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00858">858</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2992,7 +3070,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00835">835</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00853">853</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3018,7 +3096,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00898">898</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00916">916</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3044,7 +3122,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00896">896</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00914">914</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3071,7 +3149,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00833">833</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00851">851</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3098,7 +3176,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Matrices intended to help with the conversion of <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> coordinates to PhysicalPoint coordinates </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00841">841</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00859">859</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3124,7 +3202,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00899">899</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00917">917</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3151,7 +3229,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00832">832</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00850">850</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
