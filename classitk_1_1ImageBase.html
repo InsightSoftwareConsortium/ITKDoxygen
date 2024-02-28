@@ -194,6 +194,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a61e5244f291bd61e66bd7d485bc91c8e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a61e5244f291bd61e66bd7d485bc91c8e">Allocate</a> (bool initialize=false)</td></tr>
 <tr class="separator:a61e5244f291bd61e66bd7d485bc91c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ecf71c78d4591d2c287ca180a5a0370"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a2ecf71c78d4591d2c287ca180a5a0370">AllocateInitialized</a> ()</td></tr>
+<tr class="separator:a2ecf71c78d4591d2c287ca180a5a0370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab094bc2ada8b9f972198fed63f8a06a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageBase.html#a77661612e7279f3c9c03b0287af92790">OffsetValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ab094bc2ada8b9f972198fed63f8a06a8">ComputeOffset</a> (const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;ind) const</td></tr>
 <tr class="separator:ab094bc2ada8b9f972198fed63f8a06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab44e7bc88fc437c9a613a6beb50f37e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ab44e7bc88fc437c9a613a6beb50f37e3">CopyInformation</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *data) override</td></tr>
@@ -984,6 +986,36 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 
 </div>
 </div>
+<a id="a2ecf71c78d4591d2c287ca180a5a0370" name="a2ecf71c78d4591d2c287ca180a5a0370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ecf71c78d4591d2c287ca180a5a0370">&#9670;&nbsp;</a></span>AllocateInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int VImageDimension = 2&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::AllocateInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Allocates the pixel buffer of the image, zero-initializing its pixels. <code><a class="el" href="classitk_1_1ImageBase.html#a2ecf71c78d4591d2c287ca180a5a0370">AllocateInitialized()</a></code> is equivalent to <code>Allocate(true)</code>. It is just intended to make the code more readable. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00249">249</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+
+</div>
+</div>
 <a id="a0954e31d167204ec34bec990f1a3ddb8" name="a0954e31d167204ec34bec990f1a3ddb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0954e31d167204ec34bec990f1a3ddb8">&#9670;&nbsp;</a></span>ComputeIndex()</h2>
 
@@ -1011,7 +1043,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Compute the index of the pixel at a specified offset from the beginning of the buffered region. Bounds checking is not performed. Thus, the computed index could be outside the BufferedRegion. To ensure a valid index, the parameter "offset" should be between 0 and the number of pixels in the BufferedRegion (the latter can be found using <a class="el" href="classitk_1_1ImageRegion.html#a3869e176baeb0833cc46def514f0a46f">ImageRegion::GetNumberOfPixels()</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00391">391</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00399">399</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00064">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeIndex()</a>, and <a class="el" href="itkIndex_8h_source.html#l00232">itk::Index&lt; VDimension &gt;::GetIndex()</a>.</p>
 
@@ -1075,7 +1107,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Compute an offset from the beginning of the buffer for a pixel at the specified index. The index is not checked as to whether it is inside the current buffer, so the computed offset could conceivably be outside the buffer. If bounds checking is needed, one can call ImageRegion::IsInside(ind) on the BufferedRegion prior to calling ComputeOffset. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00357">357</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00365">365</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00092">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeOffset()</a>.</p>
 
@@ -1171,7 +1203,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Directly computes the index of the pixel at a specified offset from the beginning of the buffered region. Bounds checking is not performed. Thus, the computed index could be outside the BufferedRegion. To ensure a valid index, the parameter <code>offset</code> should be between 0 and the number of pixels in the BufferedRegion (the latter can be found using <code><a class="el" href="classitk_1_1ImageRegion.html#a3869e176baeb0833cc46def514f0a46f">ImageRegion::GetNumberOfPixels()</a></code>). </p><dl class="section warning"><dt>Warning</dt><dd>unlike <code><a class="el" href="classitk_1_1ImageBase.html#ab094bc2ada8b9f972198fed63f8a06a8">ComputeOffset()</a></code>, this version does not incur a virtual call. It's meant to be used only for <code>itk::Image&lt;&gt;</code>, <code>itk::VectorImage&lt;&gt;</code> and <code>itk::SpecialCoordinatesImage&lt;&gt;</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00901">901</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00909">909</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00064">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeIndex()</a>, and <a class="el" href="itkIndex_8h_source.html#l00232">itk::Index&lt; VDimension &gt;::GetIndex()</a>.</p>
 
@@ -1204,7 +1236,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Directly computes an offset from the beginning of the buffer for a pixel at the specified index. The index is not checked as to whether it is inside the current buffer, so the computed offset could conceivably be outside the buffer. If bounds checking is needed, one can call <code>ImageRegion::IsInside(ind)</code> on the BufferedRegion prior to calling ComputeOffset. </p><dl class="section warning"><dt>Warning</dt><dd>unlike <code><a class="el" href="classitk_1_1ImageBase.html#ab094bc2ada8b9f972198fed63f8a06a8">ComputeOffset()</a></code>, this version does not incur a virtual call. It's meant to be used only for <code>itk::Image&lt;&gt;</code>, <code>itk::VectorImage&lt;&gt;</code> and <code>itk::SpecialCoordinatesImage&lt;&gt;</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00880">880</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00888">888</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageHelper_8h_source.html#l00092">itk::ImageHelper&lt; VImageDimension, VLoop &gt;::ComputeOffset()</a>.</p>
 
@@ -1238,7 +1270,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, TAccessor &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::AbsPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::AcosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::AddPixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::AsinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::AtanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ComplexConjugatePixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToImaginaryPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToModulusPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToPhasePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToRealPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::CosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ExpPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::ExpNegativePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::Log10PixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::LogPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::RGBToLuminancePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::RGBToVectorPixelAccessor&lt; TImage::PixelType::ComponentType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::SinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::SqrtPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::TanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; VectorImage&lt; TPixelType, Dimension &gt;, Accessor::VectorImageToImagePixelAccessor&lt; TPixelType &gt; &gt;</a>, and <a class="el" href="classitk_1_1ImageAdaptor.html#af8a2ebb2085c0f0ae345e917ea86b4cb">itk::ImageAdaptor&lt; TImage, Accessor::VectorToRGBPixelAccessor&lt; TImage::PixelType::ValueType &gt; &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00277">277</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00285">285</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -1360,7 +1392,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, TAccessor &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::AbsPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::AcosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::AddPixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::AsinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::AtanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ComplexConjugatePixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToImaginaryPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToModulusPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToPhasePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToRealPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::CosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ExpPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::ExpNegativePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::Log10PixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::LogPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::RGBToLuminancePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::RGBToVectorPixelAccessor&lt; TImage::PixelType::ComponentType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::SinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::SqrtPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::TanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; VectorImage&lt; TPixelType, Dimension &gt;, Accessor::VectorImageToImagePixelAccessor&lt; TPixelType &gt; &gt;</a>, and <a class="el" href="classitk_1_1ImageAdaptor.html#a9b684e5dfb19d45372f9284dd1d11d4c">itk::ImageAdaptor&lt; TImage, Accessor::VectorToRGBPixelAccessor&lt; TImage::PixelType::ValueType &gt; &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00262">262</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00270">270</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="itkFastMarchingImageFilter_8h_source.html#l00224">itk::FastMarchingImageFilter&lt; TLevelSet, TSpeedImage &gt;::SetBinaryMask()</a>.</p>
 
@@ -1429,7 +1461,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Get the offset table. The offset table gives increments for moving from one pixel to next in the current row, column, slice, etc.. This table if of size [VImageDimension+1], because its values are computed progressively as: {1, N1, N1*N2, N1*N2*N3,...,(N1*...*Nn)} Where the values {N1,...,Nn} are the elements of the BufferedRegion::Size array. The last element of the OffsetTable is equivalent to the BufferSize. Having a [VImageDimension+1] size array, simplifies the implementation of some data accessing algorithms. The entries in the offset table are only valid after the BufferedRegion is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00344">344</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00352">352</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -1493,7 +1525,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, TAccessor &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::AbsPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::AcosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::AddPixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::AsinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::AtanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ComplexConjugatePixelAccessor&lt; TImage::PixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToImaginaryPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToModulusPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToPhasePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ComplexToRealPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::CosPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ExpPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::ExpNegativePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::Log10PixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::LogPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::RGBToLuminancePixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::RGBToVectorPixelAccessor&lt; TImage::PixelType::ComponentType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::SinPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::SqrtPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::TanPixelAccessor&lt; TImage::PixelType, TOutputPixelType &gt; &gt;</a>, <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; VectorImage&lt; TPixelType, Dimension &gt;, Accessor::VectorImageToImagePixelAccessor&lt; TPixelType &gt; &gt;</a>, and <a class="el" href="classitk_1_1ImageAdaptor.html#ad18d89f963a79aabbe455f2cd102cedd">itk::ImageAdaptor&lt; TImage, Accessor::VectorToRGBPixelAccessor&lt; TImage::PixelType::ValueType &gt; &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00307">307</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00315">315</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2114,7 +2146,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Convenience methods to set the LargestPossibleRegion, BufferedRegion and RequestedRegion. Allocate must still be called. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00316">316</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00324">324</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2144,7 +2176,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00325">325</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00333">333</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkImageRegion_8h_source.html#l00201">itk::ImageRegion&lt; VImageDimension &gt;::SetSize()</a>.</p>
 
@@ -2370,7 +2402,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 </div><div class="memdoc">
 <p >Returns a physical point (in the space which the origin and spacing information comes from) from a continuous index (in the index space) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00565">565</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00573">573</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2415,7 +2447,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 </div><div class="memdoc">
 <p >Get a physical point (in the space which the origin and spacing information comes from) from a continuous index (in the index space) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00544">544</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00552">552</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2451,7 +2483,7 @@ template&lt;typename TCoordRep &gt; </div>
 <p >Returns a physical point (in the space which the origin and spacing information comes from) from a discrete index (in the index space)</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00600">600</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00608">608</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2497,7 +2529,7 @@ template&lt;typename TCoordRep &gt; </div>
 <p >Get a physical point (in the space which the origin and spacing information comes from) from a discrete index (in the index space)</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00580">580</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00588">588</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2544,7 +2576,7 @@ template&lt;typename TCoordRep &gt; </div>
 <p >The inputGradient and the outputGradient must not refer to the same data.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00624">624</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00632">632</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00295">itk::FixedArray&lt; TValue, VLength &gt;::GetDataPointer()</a>.</p>
 
@@ -2579,7 +2611,7 @@ template&lt;typename TVector &gt; </div>
 </div><div class="memdoc">
 <p >Take a vector or covariant vector that has been computed in the coordinate system parallel to the image grid and rotate it by the direction cosines in order to get it in terms of the coordinate system of the image acquisition device. Returns the resulting gradient. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00651">651</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00659">659</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2621,7 +2653,7 @@ template&lt;typename TIndexRep , typename TCoordRep &gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00501">501</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00509">509</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2670,7 +2702,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>For performance reasons, if you do not need to use the <code>bool</code> return value, please call the corresponding overload instead, which has only one parameter (the point), and returns the continuous index.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00528">528</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00536">536</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2711,7 +2743,7 @@ template&lt;typename TCoordRep &gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00448">448</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00456">456</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2758,7 +2790,7 @@ template&lt;typename TCoordRep &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>For performance reasons, if you do not need to use the <code>bool</code> return value, please call the corresponding overload instead, which has only one parameter (the point), and returns the index.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00475">475</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00483">483</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">itk::point()</a>.</p>
 
@@ -2804,7 +2836,7 @@ template&lt;typename TCoordRep &gt; </div>
 <p >Take a vector or covariant vector that has been computed in terms of the coordinate system of the image acquisition device, and rotate it by the inverse direction cosines in order to get it in the coordinate system parallel to the image grid. This implementation in the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> multiply the array (vector or covariant vector) by the inverse of Direction Cosines. The arguments of the method are of type <a class="el" href="classitk_1_1FixedArray.html" title="Simulate a standard C array with copy semantics.">FixedArray</a> to make possible to use this method with both <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> and <a class="el" href="classitk_1_1CovariantVector.html" title="A templated class holding a n-Dimensional covariant vector.">CovariantVector</a>.</p>
 <p >The inputGradient and the outputGradient must not refer to the same data. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00674">674</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00682">682</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkFixedArray_8h_source.html#l00295">itk::FixedArray&lt; TValue, VLength &gt;::GetDataPointer()</a>.</p>
 
@@ -2839,7 +2871,7 @@ template&lt;typename TVector &gt; </div>
 </div><div class="memdoc">
 <p >Take a vector or covariant vector that has been computed in terms of the coordinate system of the image acquisition device, and rotate it by the inverse direction cosines in order to get it in the coordinate system parallel to the image grid. Returns the result. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00701">701</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00709">709</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -2989,7 +3021,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00918">918</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00926">926</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3016,7 +3048,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00852">852</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00860">860</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3043,7 +3075,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Matrices intended to help with the conversion of <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> coordinates to PhysicalPoint coordinates </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00858">858</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00866">866</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3070,7 +3102,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00853">853</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00861">861</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3096,7 +3128,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00916">916</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00924">924</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3122,7 +3154,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00914">914</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00922">922</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3149,7 +3181,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00851">851</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00859">859</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3176,7 +3208,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Matrices intended to help with the conversion of <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> coordinates to PhysicalPoint coordinates </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00859">859</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00867">867</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3202,7 +3234,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00917">917</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00925">925</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
@@ -3229,7 +3261,7 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 </div><div class="memdoc">
 <p >Origin, spacing, and direction in physical coordinates. This variables are protected for efficiency. They are referenced frequently by inner loop calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00850">850</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00858">858</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
 
 </div>
 </div>
