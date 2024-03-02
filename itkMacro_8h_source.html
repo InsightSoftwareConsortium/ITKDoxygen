@@ -352,7 +352,7 @@ $(function() {
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">    Pointer smartPtr = ::itk::ObjectFactory&lt;x&gt;::Create(); \</span></div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">    if (smartPtr == nullptr)                              \</span></div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">    {                                                     \</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">      smartPtr = new x;                                   \</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">      smartPtr = new x();                                 \</span></div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    }                                                     \</span></div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">    smartPtr-&gt;UnRegister();                               \</span></div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">    return smartPtr;                                      \</span></div>
@@ -393,7 +393,7 @@ $(function() {
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="preprocessor">#define itkFactorylessNewMacro(x) \</span></div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">  static Pointer New()            \</span></div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="preprocessor">  {                               \</span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">    x *     rawPtr = new x;       \</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">    x *     rawPtr = new x();     \</span></div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="preprocessor">    Pointer smartPtr = rawPtr;    \</span></div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="preprocessor">    rawPtr-&gt;UnRegister();         \</span></div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="preprocessor">    return smartPtr;              \</span></div>
