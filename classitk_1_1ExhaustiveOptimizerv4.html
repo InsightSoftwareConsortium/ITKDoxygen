@@ -99,7 +99,7 @@ $(function() {
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TInternalComputationValueType&gt;<br />
 class itk::ExhaustiveOptimizerv4&lt; TInternalComputationValueType &gt;</div><p ><a class="el" href="classitk_1_1Optimizer.html" title="Generic representation for an optimization method.">Optimizer</a> that fully samples a grid on the parametric space. </p>
 <p >This optimizer is equivalent to an exhaustive search in a discrete grid defined over the parametric space. The grid is centered on the initial position. The subdivisions of the grid along each one of the dimensions of the parametric space is defined by an array of number of steps.</p>
-<p >A typical use is to plot the metric space to get an idea of how noisy it is. An example is given below, where it is desired to plot the metric space with respect to translations along x, y and z in a 3D registration application: Here it is assumed that the transform is <a class="el" href="classitk_1_1Euler3DTransform.html" title="Euler3DTransform of a vector space (e.g. space coordinates)">Euler3DTransform</a>.</p>
+<p >A typical use is to plot the metric space to get an idea of how noisy it is. An example is given below, where it is desired to plot the metric space with respect to translations along x, y and z in a 3D registration application: Here it is assumed that the transform is <a class="el" href="classitk_1_1TranslationTransform.html" title="Translation transformation of a vector space (e.g. space coordinates)">TranslationTransform</a>.</p>
 <div class="fragment"><div class="line">OptimizerType::StepsType steps( m_Transform-&gt;GetNumberOfParameters() );</div>
 <div class="line">steps[0] = 10;</div>
 <div class="line">steps[1] = 10;</div>
@@ -118,9 +118,11 @@ class itk::ExhaustiveOptimizerv4&lt; TInternalComputationValueType &gt;</div><p 
 <div class="ttc" id="anamespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2_html_a246a71b35a903d08cb4d0aec86f6f366"><div class="ttname"><a href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a246a71b35a903d08cb4d0aec86f6f366">itk::GTest::TypedefsAndConstructors::Dimension2::IndexType</a></div><div class="ttdeci">ImageBaseType::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkGTestTypedefsAndConstructors_8h_source.html#l00050">itkGTestTypedefsAndConstructors.h:50</a></div></div>
 </div><!-- fragment --><p >The image size is expected to be 11 x 11 x 11.</p>
 <p >If you wish to use different step lengths along each parametric axis, you can use the <a class="el" href="classitk_1_1ObjectToObjectOptimizerBaseTemplate.html#acd7b8da940edf7a7a17a7df9c83fd116">SetScales()</a> method. This accepts an array, each element represents the number of subdivisions per step length. For instance scales of [0.5 1 4] along with a step length of 2 will cause the optimizer to search the metric space on a grid with x,y,z spacing of [1 2 8].</p>
-<p >Physical dimensions of the grid are influenced by both the scales and the number of steps along each dimension, a side of the region is stepLength*(2*numberOfSteps[d]+1)*scaling[d]. </p>
+<p >The number of samples for each dimension of the parameter grid are influenced by both the scales and the number of steps along each dimension:</p>
+<p >parameter_samples[d] = stepLength*(2*numberOfSteps[d]+1)*scaling[d]</p>
+<p >start_parameter[d] = - stepLength * scaling[d] * numberOfSteps[d] end_parameter[d] = + stepLength * scaling[d] * numberOfSteps[d] </p>
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00079">79</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00084">84</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ExhaustiveOptimizerv4&lt; TInternalComputationValueType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -494,7 +496,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00090">90</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00095">95</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -512,7 +514,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00089">89</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00094">94</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -531,7 +533,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </div><div class="memdoc">
 <p >Standard "Self" type alias. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00087">87</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00092">92</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -550,7 +552,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </div><div class="memdoc">
 <p >Steps type </p>
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00099">99</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00104">104</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -568,7 +570,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00088">88</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00093">93</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -736,7 +738,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </div><div class="memdoc">
 <p >Get the position to initialize the optimization. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00146">146</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00151">151</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1248,7 +1250,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00170">170</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00175">175</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1274,7 +1276,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00166">166</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00171">171</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1302,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00165">165</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00170">170</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1326,7 +1328,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00171">171</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00176">176</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1352,7 +1354,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00174">174</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00179">179</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1378,7 +1380,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00172">172</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00177">177</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1404,7 +1406,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00173">173</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00178">178</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1430,7 +1432,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00167">167</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00172">172</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1456,7 +1458,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00169">169</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00174">174</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1482,7 +1484,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00168">168</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00173">173</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
@@ -1508,7 +1510,7 @@ template&lt;typename TInternalComputationValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00177">177</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html#l00182">182</a> of file <a class="el" href="itkExhaustiveOptimizerv4_8h_source.html">itkExhaustiveOptimizerv4.h</a>.</p>
 
 </div>
 </div>
