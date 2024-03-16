@@ -96,11 +96,11 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="itkThresholdImageFilter_8h_source.html">itkThresholdImageFilter.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TImage&gt;<br />
-class itk::ThresholdImageFilter&lt; TImage &gt;</div><p >Set image values to a user-specified value if they are below, above, or between simple threshold values. </p>
-<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or between simple threshold valu...">ThresholdImageFilter</a> sets image values to a user-specified "outside" value (by default, "black") if the image values are below, above, or between simple threshold values.</p>
+class itk::ThresholdImageFilter&lt; TImage &gt;</div><p >Set image values to a user-specified value if they are below, above, or outside threshold values. </p>
+<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or outside threshold values.">ThresholdImageFilter</a> sets image values to a user-specified "outside" value (by default, zero) if the image values are below, above, or outside threshold values.</p>
 <p >The available methods are:</p>
-<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html#ac199473c4622c424edfac84ad5b9a8b5">ThresholdAbove()</a>: The values greater than the threshold value are set to OutsideValue</p>
-<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html#ae77a7917417c094691036b5a5c85a02b">ThresholdBelow()</a>: The values less than the threshold value are set to OutsideValue</p>
+<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html#a0f0d4aa128f66265427fd127b327e3d7">ThresholdAbove()</a>: The values greater than the threshold value are set to OutsideValue</p>
+<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html#a35aa4f18e1e8d99682b553b7cb27fd1f">ThresholdBelow()</a>: The values less than the threshold value are set to OutsideValue</p>
 <p ><a class="el" href="classitk_1_1ThresholdImageFilter.html#adc8c5191d45d753027a4aab33ab6cd05">ThresholdOutside()</a>: The values outside the threshold range (less than lower or greater than upper) are set to OutsideValue</p>
 <p >Note that these definitions indicate that pixels equal to the threshold value are not set to OutsideValue in any of these methods</p>
 <p >The pixels must support the operators &gt;= and &lt;=.</p>
@@ -263,10 +263,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a646f9a2e42f96fca65f387c5ee2264d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cdbd1e0ebfc323ff79e6d361e30b3bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#a5cdbd1e0ebfc323ff79e6d361e30b3bb">SetOutsideValue</a> (<a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> _arg)</td></tr>
 <tr class="separator:a5cdbd1e0ebfc323ff79e6d361e30b3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac199473c4622c424edfac84ad5b9a8b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#ac199473c4622c424edfac84ad5b9a8b5">ThresholdAbove</a> (const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;thresh)</td></tr>
-<tr class="separator:ac199473c4622c424edfac84ad5b9a8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae77a7917417c094691036b5a5c85a02b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#ae77a7917417c094691036b5a5c85a02b">ThresholdBelow</a> (const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;thresh)</td></tr>
-<tr class="separator:ae77a7917417c094691036b5a5c85a02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0d4aa128f66265427fd127b327e3d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#a0f0d4aa128f66265427fd127b327e3d7">ThresholdAbove</a> (const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;threshold)</td></tr>
+<tr class="separator:a0f0d4aa128f66265427fd127b327e3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aa4f18e1e8d99682b553b7cb27fd1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#a35aa4f18e1e8d99682b553b7cb27fd1f">ThresholdBelow</a> (const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;threshold)</td></tr>
+<tr class="separator:a35aa4f18e1e8d99682b553b7cb27fd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc8c5191d45d753027a4aab33ab6cd05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ThresholdImageFilter.html#adc8c5191d45d753027a4aab33ab6cd05">ThresholdOutside</a> (const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;lower, const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;upper)</td></tr>
 <tr class="separator:adc8c5191d45d753027a4aab33ab6cd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
@@ -1130,7 +1130,7 @@ template&lt;typename TImage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or between simple threshold valu...">ThresholdImageFilter</a> can be implemented as a multithreaded filter. Therefore, this implementation provides a <a class="el" href="classitk_1_1ThresholdImageFilter.html#afdaeadf02d66cc50fea957d40d825acd">DynamicThreadedGenerateData()</a> routine which is called for each processing thread. The output image data is allocated automatically by the superclass prior to calling <a class="el" href="classitk_1_1ThresholdImageFilter.html#afdaeadf02d66cc50fea957d40d825acd">DynamicThreadedGenerateData()</a>. DynamicThreadedGenerateData can only write to the portion of the output image specified by the parameter "outputRegionForThread".</p>
+<p ><a class="el" href="classitk_1_1ThresholdImageFilter.html" title="Set image values to a user-specified value if they are below, above, or outside threshold values.">ThresholdImageFilter</a> can be implemented as a multithreaded filter. Therefore, this implementation provides a <a class="el" href="classitk_1_1ThresholdImageFilter.html#afdaeadf02d66cc50fea957d40d825acd">DynamicThreadedGenerateData()</a> routine which is called for each processing thread. The output image data is allocated automatically by the superclass prior to calling <a class="el" href="classitk_1_1ThresholdImageFilter.html#afdaeadf02d66cc50fea957d40d825acd">DynamicThreadedGenerateData()</a>. DynamicThreadedGenerateData can only write to the portion of the output image specified by the parameter "outputRegionForThread".</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ImageToImageFilter::ThreadedGenerateData()</a>, <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">ImageToImageFilter::GenerateData()</a> <br  />
  </dd></dl>
 
@@ -1409,8 +1409,8 @@ template&lt;typename TImage &gt; </div>
 
 </div>
 </div>
-<a id="ac199473c4622c424edfac84ad5b9a8b5" name="ac199473c4622c424edfac84ad5b9a8b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac199473c4622c424edfac84ad5b9a8b5">&#9670;&nbsp;</a></span>ThresholdAbove()</h2>
+<a id="a0f0d4aa128f66265427fd127b327e3d7" name="a0f0d4aa128f66265427fd127b327e3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0d4aa128f66265427fd127b327e3d7">&#9670;&nbsp;</a></span>ThresholdAbove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1421,17 +1421,17 @@ template&lt;typename TImage &gt; </div>
           <td class="memname">void <a class="el" href="classitk_1_1ThresholdImageFilter.html">itk::ThresholdImageFilter</a>&lt; TImage &gt;::ThresholdAbove </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;&#160;</td>
-          <td class="paramname"><em>thresh</em></td><td>)</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >The values greater than or equal to the value are set to OutsideValue. </p>
+<p >The values greater than <code>threshold</code> are set to OutsideValue. </p>
 
 </div>
 </div>
-<a id="ae77a7917417c094691036b5a5c85a02b" name="ae77a7917417c094691036b5a5c85a02b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae77a7917417c094691036b5a5c85a02b">&#9670;&nbsp;</a></span>ThresholdBelow()</h2>
+<a id="a35aa4f18e1e8d99682b553b7cb27fd1f" name="a35aa4f18e1e8d99682b553b7cb27fd1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35aa4f18e1e8d99682b553b7cb27fd1f">&#9670;&nbsp;</a></span>ThresholdBelow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1442,12 +1442,12 @@ template&lt;typename TImage &gt; </div>
           <td class="memname">void <a class="el" href="classitk_1_1ThresholdImageFilter.html">itk::ThresholdImageFilter</a>&lt; TImage &gt;::ThresholdBelow </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1ThresholdImageFilter.html#a922117955f8a348144843114aec62221">PixelType</a> &amp;&#160;</td>
-          <td class="paramname"><em>thresh</em></td><td>)</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >The values less than or equal to the value are set to OutsideValue. </p>
+<p >The values less than <code>threshold</code> are set to OutsideValue. </p>
 
 </div>
 </div>
@@ -1478,7 +1478,7 @@ template&lt;typename TImage &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >The values outside the range are set to OutsideValue. </p>
+<p >The values outside the closed range are set to OutsideValue. </p>
 
 </div>
 </div>
