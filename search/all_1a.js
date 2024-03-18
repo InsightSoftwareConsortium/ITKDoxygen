@@ -506,7 +506,7 @@ var searchData=
   ['_7egradientdescentoptimizerbasev4template_503',['~GradientDescentOptimizerBasev4Template',['../classitk_1_1GradientDescentOptimizerBasev4Template.html#aaf83a54b0627f819d2f87a3853e33c63',1,'itk::GradientDescentOptimizerBasev4Template']]],
   ['_7egradientdescentoptimizerv4template_504',['~GradientDescentOptimizerv4Template',['../classitk_1_1GradientDescentOptimizerv4Template.html#aeac1aa5e0276f670c890bb0ae4011c9f',1,'itk::GradientDescentOptimizerv4Template']]],
   ['_7egradientdifferenceimagetoimagemetric_505',['~GradientDifferenceImageToImageMetric',['../classitk_1_1GradientDifferenceImageToImageMetric.html#a44e2dcd712a2fa72a489328392b5ba53',1,'itk::GradientDifferenceImageToImageMetric']]],
-  ['_7egradientimagefilter_506',['~GradientImageFilter',['../classitk_1_1GradientImageFilter.html#a0eaeaf28b93003189a86613f13c3aea3',1,'itk::GradientImageFilter']]],
+  ['_7egradientimagefilter_506',['~GradientImageFilter',['../classitk_1_1GradientImageFilter.html#ac6f992040558db0d22267251be9ea4c5',1,'itk::GradientImageFilter']]],
   ['_7egradientmagnitudeimagefilter_507',['~GradientMagnitudeImageFilter',['../classitk_1_1GradientMagnitudeImageFilter.html#a6d21d9537db9c9281954aa899df42a6b',1,'itk::GradientMagnitudeImageFilter']]],
   ['_7egradientmagnituderecursivegaussianimagefilter_508',['~GradientMagnitudeRecursiveGaussianImageFilter',['../classitk_1_1GradientMagnitudeRecursiveGaussianImageFilter.html#a6583aeccdfb2ec4071c98d6e0149e2f8',1,'itk::GradientMagnitudeRecursiveGaussianImageFilter']]],
   ['_7egradientndanisotropicdiffusionfunction_509',['~GradientNDAnisotropicDiffusionFunction',['../classitk_1_1GradientNDAnisotropicDiffusionFunction.html#aafab2cb29ae74de717cb886698c52c65',1,'itk::GradientNDAnisotropicDiffusionFunction']]],
