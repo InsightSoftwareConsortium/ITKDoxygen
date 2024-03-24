@@ -101,7 +101,7 @@ $(function() {
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = Image&lt;double, TInputImage::ImageDimension&gt;&gt;<br />
 class itk::ImagePCAShapeModelEstimator&lt; TInputImage, TOutputImage &gt;</div><p >Base class for <a class="el" href="classitk_1_1ImagePCAShapeModelEstimator.html" title="Base class for ImagePCAShapeModelEstimator object.">ImagePCAShapeModelEstimator</a> object. </p>
 <p >itkImagePCAShapeModelEstimator performs a principal component analysis (PCA) on a set of images. The user specifies the number of training images and also the number of desired largest principal components needed. The ITK pipeline mechanism sets up the storage for both input and output images. The number of output images are the user specified number of desired largest principal components plus 1 (for the mean image).</p>
-<p >The algorithm uses the VNL library to perform the eigen analysis. To speed the computation of the instead of performing the eigen analysis of the covariance vector A*A' where A is a matrix with p x t, p = number of pixels or voxels in each images and t = number of training images, we calculate the eigen vectors of the inner product matrix A'*A. The resulting eigen vectors (E) are then multiplied with the the matrix A to get the principal components. The covariance matrix has a dimension of p x p. Since number of pixels in any image being typically very high the eigen decomposition becomes computationally expensive. The inner product on the other hand has the dimension of t x t, where t is typically much smaller that p. Hence the eigen decomposition (most compute intensive part) is an orders of magnitude faster.</p>
+<p >The algorithm uses the VNL library to perform the eigen analysis. To speed the computation of the instead of performing the eigen analysis of the covariance vector A*A' where A is a matrix with p x t, p = number of pixels or voxels in each images and t = number of training images, we calculate the eigen vectors of the inner product matrix A'*A. The resulting eigen vectors (E) are then multiplied with the matrix A to get the principal components. The covariance matrix has a dimension of p x p. Since number of pixels in any image being typically very high the eigen decomposition becomes computationally expensive. The inner product on the other hand has the dimension of t x t, where t is typically much smaller that p. Hence the eigen decomposition (most compute intensive part) is an orders of magnitude faster.</p>
 <p >The <a class="el" href="classitk_1_1ProcessObject.html#a4041fb21e9105500eee311e265691bd5" title="Bring this filter up-to-date.">Update()</a> function enables the calculation of the various models, creates the membership function objects and populates them.</p>
 <dl class="section user"><dt>ITK Sphinx Examples: </dt><dd><ul>
 <li>&lt;a href= </li>
@@ -1516,7 +1516,7 @@ template&lt;typename TInputImage , typename TOutputImage  = Image&lt;double, TIn
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Run-time type information (and related methods). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LightObject.html#aee4e40acaa2b0aa7113b7cf94d742051">LightObject::GetNameOfClass()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#ae06f59a162985f74ce85ad71e7ce8cf8">itk::ProcessObject</a>.</p>
 
