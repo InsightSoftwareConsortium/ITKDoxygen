@@ -101,7 +101,7 @@ class itk::SparseFieldLayer&lt; TNodeType &gt;</div><p >A very simple linked lis
 <dl class="section user"><dt></dt><dd>This class implements a <em>very</em> simple linked list that is used to manage nodes in a layer of a sparse field level-set solver. For more information on the sparse field level-set solver, see documentation for <a class="el" href="classitk_1_1SparseFieldLevelSetImageFilter.html" title="This class implements a finite difference partial differential equation solver for evolving surfaces ...">itk::SparseFieldLevelSetImageFilter</a>.</dd></dl>
 <dl class="section user"><dt>IMPORTANT!</dt><dd>One important and distinctive feature of this list implementation (in fact, the entire reason for this object's existence) is that no memory allocation/deallocation occurs during linking or unlinking of nodes. The nodes themselves are expected to carry the appropriate "Next" &amp; "Previous" fields used to link. Guaranteeing that no calls to new or delete are <em>ever</em> made for normal list operations allows us to safely use this class in a multithread environment without incurring penalties from heap contention among threads. Because no allocation/deallocation occurs, it is entirely up to the calling program to manage the allocating and freeing of the list nodes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00161">161</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00162">162</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::SparseFieldLayer&lt; TNodeType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -115,7 +115,7 @@ class itk::SparseFieldLayer&lt; TNodeType &gt;</div><p >A very simple linked lis
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1SparseFieldLayer__coll__graph.svg" width="1918" height="280"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1SparseFieldLayer__coll__graph.svg" width="2134" height="280"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -177,16 +177,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4de896756bd424023bebcac4f62e0649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a602e965e4da2fa32398b1b51be70f0f0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a602e965e4da2fa32398b1b51be70f0f0">GetNameOfClass</a> () const override</td></tr>
 <tr class="separator:a602e965e4da2fa32398b1b51be70f0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ee598c947f396597d0c79f95cdfd36c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a2ee598c947f396597d0c79f95cdfd36c">PopFront</a> ()</td></tr>
-<tr class="separator:a2ee598c947f396597d0c79f95cdfd36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c71800bd49cac42daa92cd18a5a8369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a2c71800bd49cac42daa92cd18a5a8369">PushFront</a> (<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a> *n)</td></tr>
-<tr class="separator:a2c71800bd49cac42daa92cd18a5a8369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa55486beca8608dfe1596596d61d199"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#afa55486beca8608dfe1596596d61d199">Size</a> () const</td></tr>
 <tr class="separator:afa55486beca8608dfe1596596d61d199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78b9d0e75d51406a7f2f92e04014593f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SparseFieldLayer.html#ade583908f649f8368b74868b43fc5caf">RegionListType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a78b9d0e75d51406a7f2f92e04014593f">SplitRegions</a> (int num) const</td></tr>
 <tr class="separator:a78b9d0e75d51406a7f2f92e04014593f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a215204815dcfd379b08b2abd9183bb06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a215204815dcfd379b08b2abd9183bb06">Unlink</a> (<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a> *n)</td></tr>
 <tr class="separator:a215204815dcfd379b08b2abd9183bb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a2ee598c947f396597d0c79f95cdfd36c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a2ee598c947f396597d0c79f95cdfd36c">PopFront</a> ()</td></tr>
+<tr class="separator:a2ee598c947f396597d0c79f95cdfd36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a2c71800bd49cac42daa92cd18a5a8369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a2c71800bd49cac42daa92cd18a5a8369">PushFront</a> (<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a> *n)</td></tr>
+<tr class="separator:a2c71800bd49cac42daa92cd18a5a8369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:aee1f8a295cdad8bd20b0f04b34d2244b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#aee1f8a295cdad8bd20b0f04b34d2244b">Empty</a> () const</td></tr>
 <tr class="separator:aee1f8a295cdad8bd20b0f04b34d2244b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,8 +294,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aa5baaa448b7e7a621887ad8e1b177c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a53c29b3c01d3f0e37d6257a10945a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#aa9a53c29b3c01d3f0e37d6257a10945a">SparseFieldLayer</a> ()</td></tr>
 <tr class="separator:aa9a53c29b3c01d3f0e37d6257a10945a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ac3f985a8d07a943108e425c295972"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a92ac3f985a8d07a943108e425c295972">~SparseFieldLayer</a> () override</td></tr>
-<tr class="separator:a92ac3f985a8d07a943108e425c295972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268cc2b6b6efa36dcfe43cead05ee958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a268cc2b6b6efa36dcfe43cead05ee958">~SparseFieldLayer</a> () override=default</td></tr>
+<tr class="separator:a268cc2b6b6efa36dcfe43cead05ee958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#ae0090900983a935d815d65ecf832834c">Object</a> ()</td></tr>
 <tr class="separator:ae0090900983a935d815d65ecf832834c inherit pro_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,8 +323,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a90d13b42e2849ff043e326ce22fb8970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a90d13b42e2849ff043e326ce22fb8970">m_HeadNode</a> {}</td></tr>
-<tr class="separator:a90d13b42e2849ff043e326ce22fb8970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6d01b2551ac405dc74593a4b7b5873"><td class="memItemLeft" align="right" valign="top">const std::unique_ptr&lt; <a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a5a6d01b2551ac405dc74593a4b7b5873">m_HeadNode</a> { std::make_unique&lt;<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a>&gt;() }</td></tr>
+<tr class="separator:a5a6d01b2551ac405dc74593a4b7b5873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64e4ca5662f516af793b39e7a23606d7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SparseFieldLayer.html#a64e4ca5662f516af793b39e7a23606d7">m_Size</a> {}</td></tr>
 <tr class="separator:a64e4ca5662f516af793b39e7a23606d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -348,7 +350,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Const iterator type for the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00189">189</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00190">190</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -366,7 +368,7 @@ template&lt;typename TNodeType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00170">170</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00171">171</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -385,7 +387,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Iterator type for the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00186">186</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00187">187</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +406,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Type of node stored in the linked list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00179">179</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00180">180</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -422,7 +424,7 @@ template&lt;typename TNodeType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00169">169</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00170">170</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -440,7 +442,7 @@ template&lt;typename TNodeType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00198">198</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00199">199</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -459,7 +461,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Standard type alias. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00167">167</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00168">168</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -477,7 +479,7 @@ template&lt;typename TNodeType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00168">168</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00169">169</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -496,7 +498,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Alias for the type of value stored in the list. Conforms to Standard Template Library vocabulary. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00183">183</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00184">184</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -528,8 +530,8 @@ template&lt;typename TNodeType &gt; </div>
 
 </div>
 </div>
-<a id="a92ac3f985a8d07a943108e425c295972" name="a92ac3f985a8d07a943108e425c295972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92ac3f985a8d07a943108e425c295972">&#9670;&nbsp;</a></span>~SparseFieldLayer()</h2>
+<a id="a268cc2b6b6efa36dcfe43cead05ee958" name="a268cc2b6b6efa36dcfe43cead05ee958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268cc2b6b6efa36dcfe43cead05ee958">&#9670;&nbsp;</a></span>~SparseFieldLayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,7 +550,7 @@ template&lt;typename TNodeType &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -582,7 +584,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns an iterator pointing to the first node in the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00246">246</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00249">249</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -612,7 +614,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns a const iterator pointing to the first node in the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00254">254</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00257">257</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -642,7 +644,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns TRUE if the list is empty, FALSE otherwise. Executes in constant time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00276">276</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00279">279</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +674,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns an iterator pointing one node past the end of the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00261">261</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00264">264</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -702,7 +704,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns a const iterator pointing one node past the end of the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00268">268</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00271">271</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -732,7 +734,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns a pointer to the first node in the list. Constant time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00203">203</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00204">204</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -762,7 +764,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Returns a const pointer to the first node in the list. Constant time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00210">210</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00211">211</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -850,7 +852,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Unlinks the first node from the list. Constant time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00217">217</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00218">218</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -923,7 +925,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Links a node into the front of the list. Constant time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00226">226</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00228">228</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -995,13 +997,13 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >Unlinks a node from the list </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00237">237</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00240">240</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a90d13b42e2849ff043e326ce22fb8970" name="a90d13b42e2849ff043e326ce22fb8970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90d13b42e2849ff043e326ce22fb8970">&#9670;&nbsp;</a></span>m_HeadNode</h2>
+<a id="a5a6d01b2551ac405dc74593a4b7b5873" name="a5a6d01b2551ac405dc74593a4b7b5873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6d01b2551ac405dc74593a4b7b5873">&#9670;&nbsp;</a></span>m_HeadNode</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1012,7 +1014,7 @@ template&lt;typename TNodeType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a>* <a class="el" href="classitk_1_1SparseFieldLayer.html">itk::SparseFieldLayer</a>&lt; TNodeType &gt;::m_HeadNode {}</td>
+          <td class="memname">const std::unique_ptr&lt;<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a>&gt; <a class="el" href="classitk_1_1SparseFieldLayer.html">itk::SparseFieldLayer</a>&lt; TNodeType &gt;::m_HeadNode { std::make_unique&lt;<a class="el" href="classitk_1_1SparseFieldLayer.html#a15a8232f288596d653755d07626a2e95">NodeType</a>&gt;() }</td>
         </tr>
       </table>
   </td>
@@ -1023,7 +1025,7 @@ template&lt;typename TNodeType &gt; </div>
 </div><div class="memdoc">
 <p >The anchor node of the list. m_HeadNode-&gt;Next is the first node in the list. If m_HeadNode-&gt;Next == m_HeadNode, then the list is empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00308">308</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00311">311</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>
@@ -1049,7 +1051,7 @@ template&lt;typename TNodeType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00309">309</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkSparseFieldLayer_8h_source.html#l00312">312</a> of file <a class="el" href="itkSparseFieldLayer_8h_source.html">itkSparseFieldLayer.h</a>.</p>
 
 </div>
 </div>

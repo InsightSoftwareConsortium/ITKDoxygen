@@ -1306,7 +1306,7 @@ var searchData=
   ['_7esobeledgedetectionimagefilter_1303',['~SobelEdgeDetectionImageFilter',['../classitk_1_1SobelEdgeDetectionImageFilter.html#ac402a6016195b2a4e3efdaf0079f0ba3',1,'itk::SobelEdgeDetectionImageFilter']]],
   ['_7esparsefieldcityblockneighborlist_1304',['~SparseFieldCityBlockNeighborList',['../classitk_1_1SparseFieldCityBlockNeighborList.html#a930b0e32d811fcf32f5658f2290c326c',1,'itk::SparseFieldCityBlockNeighborList']]],
   ['_7esparsefieldfourthorderlevelsetimagefilter_1305',['~SparseFieldFourthOrderLevelSetImageFilter',['../classitk_1_1SparseFieldFourthOrderLevelSetImageFilter.html#a20652b8dcceff76662e43eddccbc5f4e',1,'itk::SparseFieldFourthOrderLevelSetImageFilter']]],
-  ['_7esparsefieldlayer_1306',['~SparseFieldLayer',['../classitk_1_1SparseFieldLayer.html#a92ac3f985a8d07a943108e425c295972',1,'itk::SparseFieldLayer']]],
+  ['_7esparsefieldlayer_1306',['~SparseFieldLayer',['../classitk_1_1SparseFieldLayer.html#a268cc2b6b6efa36dcfe43cead05ee958',1,'itk::SparseFieldLayer']]],
   ['_7esparsefieldlevelsetimagefilter_1307',['~SparseFieldLevelSetImageFilter',['../classitk_1_1SparseFieldLevelSetImageFilter.html#a51848f5f29959108170de98123379e88',1,'itk::SparseFieldLevelSetImageFilter']]],
   ['_7esparsefrequencycontainer2_1308',['~SparseFrequencyContainer2',['../classitk_1_1Statistics_1_1SparseFrequencyContainer2.html#a434d7d06c36654a3f6e722cd3991de66',1,'itk::Statistics::SparseFrequencyContainer2']]],
   ['_7esparseimage_1309',['~SparseImage',['../classitk_1_1SparseImage.html#ab70628978a785fcf4c37d5ed10b9c640',1,'itk::SparseImage']]],
