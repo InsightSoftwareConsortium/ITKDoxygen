@@ -939,7 +939,7 @@ var searchData=
   ['_7emrcheaderobject_936',['~MRCHeaderObject',['../classitk_1_1MRCHeaderObject.html#af85813f002c2b5c60f9149d97a5d82ac',1,'itk::MRCHeaderObject']]],
   ['_7emrcimageiofactory_937',['~MRCImageIOFactory',['../classitk_1_1MRCImageIOFactory.html#a6e7e41a22d225fffe3fbaaaff4dd0e6a',1,'itk::MRCImageIOFactory']]],
   ['_7emrfimagefilter_938',['~MRFImageFilter',['../classitk_1_1MRFImageFilter.html#aaead942042fb46e21b40b0b5976b3864',1,'itk::MRFImageFilter']]],
-  ['_7emribiasenergyfunction_939',['~MRIBiasEnergyFunction',['../classitk_1_1MRIBiasEnergyFunction.html#a27b7e70d9206ff7c731445e2da4e19aa',1,'itk::MRIBiasEnergyFunction']]],
+  ['_7emribiasenergyfunction_939',['~MRIBiasEnergyFunction',['../classitk_1_1MRIBiasEnergyFunction.html#a707fb4c322a14a141a59f77691a38a74',1,'itk::MRIBiasEnergyFunction']]],
   ['_7emribiasfieldcorrectionfilter_940',['~MRIBiasFieldCorrectionFilter',['../classitk_1_1MRIBiasFieldCorrectionFilter.html#ae3134010d0f1b9626f0ec6e7ab9a7cdc',1,'itk::MRIBiasFieldCorrectionFilter']]],
   ['_7emultigradientoptimizerv4template_941',['~MultiGradientOptimizerv4Template',['../classitk_1_1MultiGradientOptimizerv4Template.html#a9eeef538acc16399d3f32dc8697e2248',1,'itk::MultiGradientOptimizerv4Template']]],
   ['_7emultilabelstapleimagefilter_942',['~MultiLabelSTAPLEImageFilter',['../classitk_1_1MultiLabelSTAPLEImageFilter.html#a80d676faedcfed81c6bb47cd8a412cec',1,'itk::MultiLabelSTAPLEImageFilter']]],
