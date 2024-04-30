@@ -255,23 +255,24 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  {                                                                               \</div>
-<div class="line">    CLANG_PRAGMA_PUSH                                                             \</div>
-<div class="line">    CLANG_SUPPRESS_Wfloat_equal <span class="keywordtype">bool</span> _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh)); \</div>
-<div class="line">    CLANG_PRAGMA_POP                                                              \</div>
-<div class="line">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                                         \</div>
-<div class="line">    {                                                                             \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; #rh &lt;&lt; std::endl;              \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tIn &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl;           \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tlh: &quot;</span> &lt;&lt; (lh) &lt;&lt; std::endl;                                 \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\trh: &quot;</span> &lt;&lt; (rh) &lt;&lt; std::endl;                                 \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Expression is not equal&quot;</span> &lt;&lt; std::endl;                        \</div>
-<div class="line">      return EXIT_FAILURE;                                                        \</div>
-<div class="line">    }                                                                             \</div>
-<div class="line">  }                                                                               \</div>
+<b>Value:</b><div class="fragment"><div class="line">  {                                                                     \</div>
+<div class="line">    ITK_GCC_PRAGMA_PUSH                                                 \</div>
+<div class="line">    ITK_GCC_SUPPRESS_Wfloat_equal                                       \</div>
+<div class="line">    bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh));                   \</div>
+<div class="line">    ITK_GCC_PRAGMA_POP                                                  \</div>
+<div class="line">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                               \</div>
+<div class="line">    {                                                                   \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; #rh &lt;&lt; std::endl;    \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tIn &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tlh: &quot;</span> &lt;&lt; (lh) &lt;&lt; std::endl;                       \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\trh: &quot;</span> &lt;&lt; (rh) &lt;&lt; std::endl;                       \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Expression is not equal&quot;</span> &lt;&lt; std::endl;              \</div>
+<div class="line">      return EXIT_FAILURE;                                              \</div>
+<div class="line">    }                                                                   \</div>
+<div class="line">  }                                                                     \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00194">194</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00197">197</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -306,23 +307,24 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  {                                                                               \</div>
-<div class="line">    CLANG_PRAGMA_PUSH                                                             \</div>
-<div class="line">    CLANG_SUPPRESS_Wfloat_equal <span class="keywordtype">bool</span> _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh)); \</div>
-<div class="line">    CLANG_PRAGMA_POP                                                              \</div>
-<div class="line">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                                         \</div>
-<div class="line">    {                                                                             \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; #rh &lt;&lt; std::endl;              \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tIn &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl;           \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tlh: &quot;</span> &lt;&lt; (lh) &lt;&lt; std::endl;                                 \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\trh: &quot;</span> &lt;&lt; (rh) &lt;&lt; std::endl;                                 \</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Expression is not equal&quot;</span> &lt;&lt; std::endl;                        \</div>
-<div class="line">      statusVal = EXIT_FAILURE;                                                   \</div>
-<div class="line">    }                                                                             \</div>
-<div class="line">  }                                                                               \</div>
+<b>Value:</b><div class="fragment"><div class="line">  {                                                                     \</div>
+<div class="line">    ITK_GCC_PRAGMA_PUSH                                                 \</div>
+<div class="line">    ITK_GCC_SUPPRESS_Wfloat_equal                                       \</div>
+<div class="line">    bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh));                   \</div>
+<div class="line">    ITK_GCC_PRAGMA_POP                                                  \</div>
+<div class="line">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                               \</div>
+<div class="line">    {                                                                   \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; <span class="stringliteral">&quot; == &quot;</span> &lt;&lt; #rh &lt;&lt; std::endl;    \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tIn &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\tlh: &quot;</span> &lt;&lt; (lh) &lt;&lt; std::endl;                       \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;\trh: &quot;</span> &lt;&lt; (rh) &lt;&lt; std::endl;                       \</div>
+<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Expression is not equal&quot;</span> &lt;&lt; std::endl;              \</div>
+<div class="line">      statusVal = EXIT_FAILURE;                                         \</div>
+<div class="line">    }                                                                   \</div>
+<div class="line">  }                                                                     \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00177">177</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00179">179</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -342,9 +344,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  {                                                                             \</div>
-<div class="line">    CLANG_PRAGMA_PUSH                                                           \</div>
-<div class="line">    CLANG_SUPPRESS_Wfloat_equal <span class="keywordtype">bool</span> _ITK_TEST_EXPECT_TRUE_command(command);    \</div>
-<div class="line">    CLANG_PRAGMA_POP                                                            \</div>
+<div class="line">    ITK_GCC_PRAGMA_PUSH                                                         \</div>
+<div class="line">    ITK_GCC_SUPPRESS_Wfloat_equal                                               \</div>
+<div class="line">    bool _ITK_TEST_EXPECT_TRUE_command(command);                                \</div>
+<div class="line">    ITK_GCC_PRAGMA_POP                                                          \</div>
 <div class="line">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</div>
 <div class="line">    {                                                                           \</div>
 <div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
@@ -356,7 +359,7 @@ Macros</h2></td></tr>
 <div class="line">  }                                                                             \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00160">160</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00161">161</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -386,9 +389,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  {                                                                             \</div>
-<div class="line">    CLANG_PRAGMA_PUSH                                                           \</div>
-<div class="line">    CLANG_SUPPRESS_Wfloat_equal <span class="keywordtype">bool</span> _ITK_TEST_EXPECT_TRUE_command(command);    \</div>
-<div class="line">    CLANG_PRAGMA_POP                                                            \</div>
+<div class="line">    ITK_GCC_PRAGMA_PUSH                                                         \</div>
+<div class="line">    ITK_GCC_SUPPRESS_Wfloat_equal                                               \</div>
+<div class="line">    bool _ITK_TEST_EXPECT_TRUE_command(command);                                \</div>
+<div class="line">    ITK_GCC_PRAGMA_POP                                                          \</div>
 <div class="line">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</div>
 <div class="line">    {                                                                           \</div>
 <div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
@@ -439,7 +443,7 @@ Macros</h2></td></tr>
 <div class="line">  }                                                                   \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00212">212</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00216">216</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -505,7 +509,7 @@ Macros</h2></td></tr>
 <div class="line">  }                                                                                                     \</div>
 <div class="line">  object-&gt;Set##variable(value)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00248">248</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00254">254</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -535,7 +539,7 @@ Macros</h2></td></tr>
 <div class="line">  }                                                                   \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00236">236</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00242">242</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -564,18 +568,20 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  CLANG_PRAGMA_PUSH                                                     \</div>
-<div class="line">  CLANG_SUPPRESS_Wfloat_equal <span class="keywordflow">if</span> (variable != command) CLANG_PRAGMA_POP \</div>
-<div class="line">  {                                                                     \</div>
-<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                  \</div>
-<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;  In &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl;   \</div>
-<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Expected &quot;</span> &lt;&lt; variable &lt;&lt; std::endl;                  \</div>
-<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;but got  &quot;</span> &lt;&lt; command &lt;&lt; std::endl;                   \</div>
-<div class="line">    return EXIT_FAILURE;                                                \</div>
-<div class="line">  }                                                                     \</div>
+<b>Value:</b><div class="fragment"><div class="line">  ITK_GCC_PRAGMA_PUSH                                                 \</div>
+<div class="line">  ITK_GCC_SUPPRESS_Wfloat_equal                                       \</div>
+<div class="line">  if (variable != command)                                            \</div>
+<div class="line">  {                                                                   \</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;  In &quot;</span> __FILE__ <span class="stringliteral">&quot;, line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Expected &quot;</span> &lt;&lt; variable &lt;&lt; std::endl;                \</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;but got  &quot;</span> &lt;&lt; command &lt;&lt; std::endl;                 \</div>
+<div class="line">    return EXIT_FAILURE;                                              \</div>
+<div class="line">  }                                                                   \</div>
+<div class="line">  ITK_GCC_PRAGMA_POP                                                  \</div>
 <div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00224">224</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00228">228</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +672,7 @@ Macros</h2></td></tr>
 <div class="line">  }(__func__)</div>
 </div><!-- fragment --><p >The name of the executable, argv[0], is not always available as argv[0] may be null. In that case, use the name of the test function. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00283">283</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkTestingMacros_8h_source.html#l00289">289</a> of file <a class="el" href="itkTestingMacros_8h_source.html">itkTestingMacros.h</a>.</p>
 
 </div>
 </div>

@@ -226,147 +226,153 @@ $(function() {
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a6323a66ac689192acd9f6385e1b9f0a1">  144</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_TRUE_STATUS_VALUE(command, statusVal)                   \</span></div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">  {                                                                             \</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">    CLANG_PRAGMA_PUSH                                                           \</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">    CLANG_SUPPRESS_Wfloat_equal bool _ITK_TEST_EXPECT_TRUE_command(command);    \</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">    CLANG_PRAGMA_POP                                                            \</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">    {                                                                           \</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;         \</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      std::cerr &lt;&lt; &quot;Expected true&quot; &lt;&lt; std::endl;                                \</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      std::cerr &lt;&lt; &quot;  but got  &quot; &lt;&lt; _ITK_TEST_EXPECT_TRUE_command &lt;&lt; std::endl; \</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      statusVal = EXIT_FAILURE;                                                 \</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }                                                                           \</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }                                                                             \</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a65fe2089a9129025c6723bf9cc1e6fb2">  160</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_TRUE(command)                                           \</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">  {                                                                             \</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">    CLANG_PRAGMA_PUSH                                                           \</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">    CLANG_SUPPRESS_Wfloat_equal bool _ITK_TEST_EXPECT_TRUE_command(command);    \</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">    CLANG_PRAGMA_POP                                                            \</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">    {                                                                           \</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;         \</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      std::cerr &lt;&lt; &quot;Expected true&quot; &lt;&lt; std::endl;                                \</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::cerr &lt;&lt; &quot;  but got  &quot; &lt;&lt; _ITK_TEST_EXPECT_TRUE_command &lt;&lt; std::endl; \</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      return EXIT_FAILURE;                                                      \</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }                                                                           \</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }                                                                             \</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#af0dc44b3e9f296a77c6ad046895e8b3f">  177</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_EQUAL_STATUS_VALUE(lh, rh, statusVal)                     \</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">  {                                                                               \</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">    CLANG_PRAGMA_PUSH                                                             \</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">    CLANG_SUPPRESS_Wfloat_equal bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh)); \</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">    CLANG_PRAGMA_POP                                                              \</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                                         \</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">    {                                                                             \</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; &quot; == &quot; &lt;&lt; #rh &lt;&lt; std::endl;              \</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      std::cerr &lt;&lt; &quot;\tIn &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;           \</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      std::cerr &lt;&lt; &quot;\tlh: &quot; &lt;&lt; (lh) &lt;&lt; std::endl;                                 \</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      std::cerr &lt;&lt; &quot;\trh: &quot; &lt;&lt; (rh) &lt;&lt; std::endl;                                 \</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      std::cerr &lt;&lt; &quot;Expression is not equal&quot; &lt;&lt; std::endl;                        \</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      statusVal = EXIT_FAILURE;                                                   \</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }                                                                             \</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  }                                                                               \</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#af46fe7d9d33019bbb6e7abfa283b7346">  194</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_EQUAL(lh, rh)                                             \</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">  {                                                                               \</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">    CLANG_PRAGMA_PUSH                                                             \</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">    CLANG_SUPPRESS_Wfloat_equal bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh)); \</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">    CLANG_PRAGMA_POP                                                              \</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                                         \</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">    {                                                                             \</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; &quot; == &quot; &lt;&lt; #rh &lt;&lt; std::endl;              \</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      std::cerr &lt;&lt; &quot;\tIn &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;           \</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      std::cerr &lt;&lt; &quot;\tlh: &quot; &lt;&lt; (lh) &lt;&lt; std::endl;                                 \</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      std::cerr &lt;&lt; &quot;\trh: &quot; &lt;&lt; (rh) &lt;&lt; std::endl;                                 \</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      std::cerr &lt;&lt; &quot;Expression is not equal&quot; &lt;&lt; std::endl;                        \</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      return EXIT_FAILURE;                                                        \</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }                                                                             \</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }                                                                               \</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a3fe901ccd386394f327b70ee0bb7cb98">  212</a></span><span class="preprocessor">#define ITK_TEST_SET_GET(variable, command)                           \</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">  if (variable != command)                                            \</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="preprocessor">  {                                                                   \</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    std::cerr &lt;&lt; &quot;Expected &quot; &lt;&lt; variable.GetPointer() &lt;&lt; std::endl;   \</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                 \</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    return EXIT_FAILURE;                                              \</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  }                                                                   \</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a837f1d0636bac5b17e29d5e617a8d7e1">  224</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_VALUE(variable, command)                       \</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">  CLANG_PRAGMA_PUSH                                                     \</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">  CLANG_SUPPRESS_Wfloat_equal if (variable != command) CLANG_PRAGMA_POP \</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">  {                                                                     \</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                  \</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;   \</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    std::cerr &lt;&lt; &quot;Expected &quot; &lt;&lt; variable &lt;&lt; std::endl;                  \</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                   \</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    return EXIT_FAILURE;                                                \</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  }                                                                     \</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a87430a1106317a71b22a0ffa255c2d59">  236</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_NULL_VALUE(command)                          \</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">  if (nullptr != command)                                             \</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">  {                                                                   \</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    std::cerr &lt;&lt; &quot;Expected &quot;                                          \</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>              &lt;&lt; &quot;nullptr&quot; &lt;&lt; std::endl;                              \</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                 \</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    return EXIT_FAILURE;                                              \</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  }                                                                   \</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a9f9331630142909ce2de38f139f62b7e">  248</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_BOOLEAN(object, variable, value)                                               \</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">  object-&gt;Set##variable(false);                                                                         \</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">  object-&gt;Set##variable(true);                                                                          \</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">  if (object-&gt;Get##variable() != 1)                                                                     \</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">  {                                                                                                     \</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in Set/Get&quot;</span> #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>              &lt;&lt; &quot; instead of 1&quot; &lt;&lt; std::endl;                                                          \</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    return EXIT_FAILURE;                                                                                \</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  }                                                                                                     \</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  object-&gt;Set##variable(false);                                                                         \</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  if (object-&gt;Get##variable() != 0)                                                                     \</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  {                                                                                                     \</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    std::cerr &lt;&lt; &quot;Error in Set/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>              &lt;&lt; &quot; instead of 0&quot; &lt;&lt; std::endl;                                                          \</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    return EXIT_FAILURE;                                                                                \</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  }                                                                                                     \</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  object-&gt;variable##On();                                                                               \</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  if (object-&gt;Get##variable() != 1)                                                                     \</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  {                                                                                                     \</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    std::cerr &lt;&lt; &quot;Error in On/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable()  \</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>              &lt;&lt; &quot; instead of 1&quot; &lt;&lt; std::endl;                                                          \</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    return EXIT_FAILURE;                                                                                \</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  }                                                                                                     \</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  object-&gt;variable##Off();                                                                              \</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  if (object-&gt;Get##variable() != 0)                                                                     \</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  {                                                                                                     \</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    std::cerr &lt;&lt; &quot;Error in Off/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>              &lt;&lt; &quot; instead of 0&quot; &lt;&lt; std::endl;                                                          \</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    return EXIT_FAILURE;                                                                                \</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  }                                                                                                     \</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  object-&gt;Set##variable(value)</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a5ebb9961fa8dc91405bcd6648af19042">  283</a></span><span class="preprocessor">#define itkNameOfTestExecutableMacro(argv)                                                                             \</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">  [argv](const std::string &amp; functionName) {                                                                           \</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">    return ((argv == nullptr) || (argv[0] == nullptr) || (argv[0][0] == &#39;\0&#39;)) ? (&quot;&lt;&quot;</span> + functionName + &quot; executable&gt;&quot;) \</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                                                                               : argv[0];                              \</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }(__func__)</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">    ITK_GCC_PRAGMA_PUSH                                                         \</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">    ITK_GCC_SUPPRESS_Wfloat_equal                                               \</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">    bool _ITK_TEST_EXPECT_TRUE_command(command);                                \</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">    ITK_GCC_PRAGMA_POP                                                          \</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">    {                                                                           \</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;         \</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      std::cerr &lt;&lt; &quot;Expected true&quot; &lt;&lt; std::endl;                                \</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      std::cerr &lt;&lt; &quot;  but got  &quot; &lt;&lt; _ITK_TEST_EXPECT_TRUE_command &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      statusVal = EXIT_FAILURE;                                                 \</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }                                                                           \</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }                                                                             \</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a65fe2089a9129025c6723bf9cc1e6fb2">  161</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_TRUE(command)                                           \</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">  {                                                                             \</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">    ITK_GCC_PRAGMA_PUSH                                                         \</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">    ITK_GCC_SUPPRESS_Wfloat_equal                                               \</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">    bool _ITK_TEST_EXPECT_TRUE_command(command);                                \</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">    ITK_GCC_PRAGMA_POP                                                          \</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_TRUE_command))                                       \</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    {                                                                           \</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                        \</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl;         \</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      std::cerr &lt;&lt; &quot;Expected true&quot; &lt;&lt; std::endl;                                \</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      std::cerr &lt;&lt; &quot;  but got  &quot; &lt;&lt; _ITK_TEST_EXPECT_TRUE_command &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      return EXIT_FAILURE;                                                      \</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }                                                                           \</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }                                                                             \</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#af0dc44b3e9f296a77c6ad046895e8b3f">  179</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_EQUAL_STATUS_VALUE(lh, rh, statusVal)           \</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">  {                                                                     \</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">    ITK_GCC_PRAGMA_PUSH                                                 \</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">    ITK_GCC_SUPPRESS_Wfloat_equal                                       \</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">    bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh));                   \</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">    ITK_GCC_PRAGMA_POP                                                  \</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                               \</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">    {                                                                   \</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; &quot; == &quot; &lt;&lt; #rh &lt;&lt; std::endl;    \</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      std::cerr &lt;&lt; &quot;\tIn &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      std::cerr &lt;&lt; &quot;\tlh: &quot; &lt;&lt; (lh) &lt;&lt; std::endl;                       \</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      std::cerr &lt;&lt; &quot;\trh: &quot; &lt;&lt; (rh) &lt;&lt; std::endl;                       \</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      std::cerr &lt;&lt; &quot;Expression is not equal&quot; &lt;&lt; std::endl;              \</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      statusVal = EXIT_FAILURE;                                         \</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }                                                                   \</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }                                                                     \</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#af46fe7d9d33019bbb6e7abfa283b7346">  197</a></span><span class="preprocessor">#define ITK_TEST_EXPECT_EQUAL(lh, rh)                                   \</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">  {                                                                     \</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">    ITK_GCC_PRAGMA_PUSH                                                 \</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">    ITK_GCC_SUPPRESS_Wfloat_equal                                       \</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">    bool _ITK_TEST_EXPECT_EQUAL_result((lh) == (rh));                   \</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">    ITK_GCC_PRAGMA_POP                                                  \</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">    if (!(_ITK_TEST_EXPECT_EQUAL_result))                               \</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">    {                                                                   \</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">      std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #lh &lt;&lt; &quot; == &quot; &lt;&lt; #rh &lt;&lt; std::endl;    \</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      std::cerr &lt;&lt; &quot;\tIn &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      std::cerr &lt;&lt; &quot;\tlh: &quot; &lt;&lt; (lh) &lt;&lt; std::endl;                       \</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      std::cerr &lt;&lt; &quot;\trh: &quot; &lt;&lt; (rh) &lt;&lt; std::endl;                       \</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      std::cerr &lt;&lt; &quot;Expression is not equal&quot; &lt;&lt; std::endl;              \</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      return EXIT_FAILURE;                                              \</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }                                                                   \</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  }                                                                     \</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a3fe901ccd386394f327b70ee0bb7cb98">  216</a></span><span class="preprocessor">#define ITK_TEST_SET_GET(variable, command)                           \</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">  if (variable != command)                                            \</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">  {                                                                   \</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    std::cerr &lt;&lt; &quot;Expected &quot; &lt;&lt; variable.GetPointer() &lt;&lt; std::endl;   \</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                 \</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    return EXIT_FAILURE;                                              \</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  }                                                                   \</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a837f1d0636bac5b17e29d5e617a8d7e1">  228</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_VALUE(variable, command)                     \</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">  ITK_GCC_PRAGMA_PUSH                                                 \</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">  ITK_GCC_SUPPRESS_Wfloat_equal                                       \</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">  if (variable != command)                                            \</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">  {                                                                   \</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    std::cerr &lt;&lt; &quot;Expected &quot; &lt;&lt; variable &lt;&lt; std::endl;                \</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                 \</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    return EXIT_FAILURE;                                              \</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }                                                                   \</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  ITK_GCC_PRAGMA_POP                                                  \</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a87430a1106317a71b22a0ffa255c2d59">  242</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_NULL_VALUE(command)                          \</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">  if (nullptr != command)                                             \</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">  {                                                                   \</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in &quot;</span> &lt;&lt; #command &lt;&lt; std::endl;                \</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    std::cerr &lt;&lt; &quot;  In &quot; __FILE__ &quot;, line &quot; &lt;&lt; __LINE__ &lt;&lt; std::endl; \</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    std::cerr &lt;&lt; &quot;Expected &quot;                                          \</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>              &lt;&lt; &quot;nullptr&quot; &lt;&lt; std::endl;                              \</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    std::cerr &lt;&lt; &quot;but got  &quot; &lt;&lt; command &lt;&lt; std::endl;                 \</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    return EXIT_FAILURE;                                              \</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }                                                                   \</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  ITK_MACROEND_NOOP_STATEMENT</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a9f9331630142909ce2de38f139f62b7e">  254</a></span><span class="preprocessor">#define ITK_TEST_SET_GET_BOOLEAN(object, variable, value)                                               \</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">  object-&gt;Set##variable(false);                                                                         \</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="preprocessor">  object-&gt;Set##variable(true);                                                                          \</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">  if (object-&gt;Get##variable() != 1)                                                                     \</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">  {                                                                                                     \</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">    std::cerr &lt;&lt; &quot;Error in Set/Get&quot;</span> #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>              &lt;&lt; &quot; instead of 1&quot; &lt;&lt; std::endl;                                                          \</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    return EXIT_FAILURE;                                                                                \</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  }                                                                                                     \</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  object-&gt;Set##variable(false);                                                                         \</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  if (object-&gt;Get##variable() != 0)                                                                     \</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  {                                                                                                     \</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    std::cerr &lt;&lt; &quot;Error in Set/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>              &lt;&lt; &quot; instead of 0&quot; &lt;&lt; std::endl;                                                          \</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    return EXIT_FAILURE;                                                                                \</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }                                                                                                     \</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  object-&gt;variable##On();                                                                               \</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  if (object-&gt;Get##variable() != 1)                                                                     \</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  {                                                                                                     \</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    std::cerr &lt;&lt; &quot;Error in On/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable()  \</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>              &lt;&lt; &quot; instead of 1&quot; &lt;&lt; std::endl;                                                          \</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    return EXIT_FAILURE;                                                                                \</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  }                                                                                                     \</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  object-&gt;variable##Off();                                                                              \</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  if (object-&gt;Get##variable() != 0)                                                                     \</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  {                                                                                                     \</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    std::cerr &lt;&lt; &quot;Error in Off/Get&quot; #variable &lt;&lt; &quot;, Get&quot; #variable &lt;&lt; &quot; is &quot; &lt;&lt; object-&gt;Get##variable() \</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>              &lt;&lt; &quot; instead of 0&quot; &lt;&lt; std::endl;                                                          \</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    return EXIT_FAILURE;                                                                                \</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  }                                                                                                     \</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  object-&gt;Set##variable(value)</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="itkTestingMacros_8h.html#a5ebb9961fa8dc91405bcd6648af19042">  289</a></span><span class="preprocessor">#define itkNameOfTestExecutableMacro(argv)                                                                             \</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">  [argv](const std::string &amp; functionName) {                                                                           \</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">    return ((argv == nullptr) || (argv[0] == nullptr) || (argv[0][0] == &#39;\0&#39;)) ? (&quot;&lt;&quot;</span> + functionName + &quot; executable&gt;&quot;) \</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                                                                               : argv[0];                              \</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  }(__func__)</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aitkMacro_8h_html"><div class="ttname"><a href="itkMacro_8h.html">itkMacro.h</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

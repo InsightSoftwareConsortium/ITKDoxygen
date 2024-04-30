@@ -154,7 +154,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p >Get built-in type. Creates member Get"name"() (e.g., GetVisibility()); </p>
 
-<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00051">51</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00056">56</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
 
 </div>
 </div>
@@ -190,7 +190,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00054">54</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00059">59</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
 
 </div>
 </div>
@@ -256,10 +256,15 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordtype">void</span> class ::Set##name(<span class="keyword">const</span> type _arg)                                                               \</div>
-<div class="line">  {                                                                                                     \</div>
-<div class="line">    CLANG_PRAGMA_PUSH                                                                                   \</div>
-<div class="line">    CLANG_SUPPRESS_Wfloat_equal <span class="keywordflow">if</span> (this-&gt;m_##name != _arg) CLANG_PRAGMA_POP { this-&gt;m_##name = _arg; } \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordtype">void</span> class ::Set##name(<span class="keyword">const</span> type _arg)        \</div>
+<div class="line">  {                                              \</div>
+<div class="line">    ITK_GCC_PRAGMA_PUSH                          \</div>
+<div class="line">    ITK_GCC_SUPPRESS_Wfloat_equal                \</div>
+<div class="line">    if (this-&gt;m_##name != _arg)                  \</div>
+<div class="line">    {                                            \</div>
+<div class="line">      this-&gt;m_##name = _arg;                     \</div>
+<div class="line">    }                                            \</div>
+<div class="line">    ITK_GCC_PRAGMA_POP                           \</div>
 <div class="line">  }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00043">43</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
