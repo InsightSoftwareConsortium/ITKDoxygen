@@ -87,6 +87,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1ImageMaskSpatialObject-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">itk::ImageMaskSpatialObject&lt; TDimension, TPixel &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKSpatialObjects.html">Module ITKSpatialObjects</a></div></div></div>
 </div><!--header-->
@@ -97,10 +98,10 @@ $(function() {
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int TDimension = 3, typename TPixel = unsigned char&gt;<br />
 class itk::ImageMaskSpatialObject&lt; TDimension, TPixel &gt;</div><p >Implementation of an image mask as spatial object. </p>
 <p >This class derives from the <a class="el" href="classitk_1_1ImageSpatialObject.html" title="Implementation of an image as spatial object.">ImageSpatialObject</a> and overloads the <a class="el" href="classitk_1_1ImageMaskSpatialObject.html#ab9c0715fa892f644bf441ede89df2988">IsInsideInObjectSpace()</a> method. One of the common uses of this class is to serve as Mask for the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> Registration Metrics.</p>
-<dl class="section note"><dt>Note</dt><dd>The bounding box of an image mask is defined in such a way that any point whose nearest pixel has a non-zero value is inside the bounding box. When all the pixels of an image are zero, the bounding box of the image mask is empty, and its bounds are all zero.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The bounding box of an image mask is defined in such a way that any point whose nearest pixel has a non-zero value (or matches the specified mask value) is inside the bounding box. When all the pixels of an image are zero, the bounding box of the image mask is empty, and its bounds are all zero.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageSpatialObject.html" title="Implementation of an image as spatial object.">ImageSpatialObject</a> <a class="el" href="classitk_1_1SpatialObject.html" title="Implementation of the composite pattern.">SpatialObject</a> CompositeSpatialObject </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00045">45</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00047">47</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::ImageMaskSpatialObject&lt; TDimension, TPixel &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -254,8 +255,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae57d0978fe6777da45707d1132679c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a415ce06d60ded01be97b8bd8acf64a4a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a415ce06d60ded01be97b8bd8acf64a4a">GetNameOfClass</a> () const override</td></tr>
 <tr class="separator:a415ce06d60ded01be97b8bd8acf64a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98023967e6d0d28c1bd8811e2464b489"><td class="memItemLeft" align="right" valign="top">virtual const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a98023967e6d0d28c1bd8811e2464b489">GetUseMaskValue</a> () const</td></tr>
+<tr class="separator:a98023967e6d0d28c1bd8811e2464b489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c0715fa892f644bf441ede89df2988"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#ab9c0715fa892f644bf441ede89df2988">IsInsideInObjectSpace</a> (const <a class="el" href="classitk_1_1SpatialObject.html#ac1f4071e7b01e4ce2ed901b76b96057e">PointType</a> &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const override</td></tr>
 <tr class="separator:ab9c0715fa892f644bf441ede89df2988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61024147fc6297908587bcde12c10b48"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a61024147fc6297908587bcde12c10b48">SetUseMaskValue</a> (bool _arg)</td></tr>
+<tr class="separator:a61024147fc6297908587bcde12c10b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575b49be5195d619f0ec9f05f0d08da2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a575b49be5195d619f0ec9f05f0d08da2">UseMaskValueOn</a> ()</td></tr>
+<tr class="separator:a575b49be5195d619f0ec9f05f0d08da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aac99cb01d0e3255834146a759aa62d98"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#aac99cb01d0e3255834146a759aa62d98">SetMaskValue</a> (<a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a> _arg)</td></tr>
+<tr class="separator:aac99cb01d0e3255834146a759aa62d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6304c637690c0ccb3f356fab7692817d"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a6304c637690c0ccb3f356fab7692817d">GetMaskValue</a> () const</td></tr>
+<tr class="separator:a6304c637690c0ccb3f356fab7692817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageSpatialObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageSpatialObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageSpatialObject.html">itk::ImageSpatialObject&lt; 3, unsigned char &gt;</a></td></tr>
 <tr class="memitem:a505ffd95048b91bfadc21af71d454b9e inherit pub_methods_classitk_1_1ImageSpatialObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSpatialObject.html#a505ffd95048b91bfadc21af71d454b9e">Clear</a> () override</td></tr>
 <tr class="separator:a505ffd95048b91bfadc21af71d454b9e inherit pub_methods_classitk_1_1ImageSpatialObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -686,6 +698,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a9fc1061b53b6ddf209bea01d30d68a4f">~LightObject</a> ()</td></tr>
 <tr class="separator:a9fc1061b53b6ddf209bea01d30d68a4f inherit pro_methods_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad0411e33359ff795749ae56be1647bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#ad0411e33359ff795749ae56be1647bba">m_MaskValue</a> { <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a>&gt;::OneValue() }</td></tr>
+<tr class="separator:ad0411e33359ff795749ae56be1647bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4821936e13412a1c836b406ba6082e95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageMaskSpatialObject.html#a4821936e13412a1c836b406ba6082e95">m_UseMaskValue</a> { false }</td></tr>
+<tr class="separator:a4821936e13412a1c836b406ba6082e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1ImageSpatialObject"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageSpatialObject')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageSpatialObject.html">itk::ImageSpatialObject&lt; 3, unsigned char &gt;</a></td></tr>
@@ -715,7 +734,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00053">53</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00055">55</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -733,7 +752,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00052">52</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00054">54</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -751,7 +770,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00050">50</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00052">52</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -769,7 +788,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00067">67</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00069">69</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -787,7 +806,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00051">51</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00053">53</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
@@ -898,6 +917,34 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
 
 </div>
 </div>
+<a id="a6304c637690c0ccb3f356fab7692817d" name="a6304c637690c0ccb3f356fab7692817d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6304c637690c0ccb3f356fab7692817d">&#9670;&nbsp;</a></span>GetMaskValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a> &amp; <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::GetMaskValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Specify the value in the mask image that defines the object. You must also call SetUseMaskValue(true) to enable the use of the mask value, otherwise the value is ignored and any non-zero value in the mask is used to define the object. </p>
+
+</div>
+</div>
 <a id="a415ce06d60ded01be97b8bd8acf64a4a" name="a415ce06d60ded01be97b8bd8acf64a4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a415ce06d60ded01be97b8bd8acf64a4a">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
 
@@ -925,6 +972,33 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LightObject.html#aee4e40acaa2b0aa7113b7cf94d742051">LightObject::GetNameOfClass()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1DataObject.html#a8592a40cbf58e8566a7e22c8224b6311">itk::DataObject</a>.</p>
+
+</div>
+</div>
+<a id="a98023967e6d0d28c1bd8811e2464b489" name="a98023967e6d0d28c1bd8811e2464b489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98023967e6d0d28c1bd8811e2464b489">&#9670;&nbsp;</a></span>GetUseMaskValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const bool &amp; <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::GetUseMaskValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -984,7 +1058,7 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
 </table>
 </div><div class="memdoc">
 <p >Test whether a point is inside the object.</p>
-<p >A point is inside the image mask when the value of its nearest pixel is non-zero.</p>
+<p >A point is inside the image mask when the value of its nearest pixel is non-zero or matches the Mask_Value value.</p>
 <p >For computational speed purposes, it is faster if the method does not check the name of the class and the current depth. </p>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1SpatialObject.html#a47a7c8e61fcac6a7212ea1e12d181bba">itk::SpatialObject&lt; TDimension &gt;</a>.</p>
@@ -1016,6 +1090,143 @@ template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </
 </table>
 </div><div class="memdoc">
 <p >Method for creation through the object factory. </p>
+
+</div>
+</div>
+<a id="aac99cb01d0e3255834146a759aa62d98" name="aac99cb01d0e3255834146a759aa62d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac99cb01d0e3255834146a759aa62d98">&#9670;&nbsp;</a></span>SetMaskValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::SetMaskValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a>&#160;</td>
+          <td class="paramname"><em>_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Specify the value in the mask image that defines the object. You must also call SetUseMaskValue(true) to enable the use of the mask value, otherwise the value is ignored and any non-zero value in the mask is used to define the object. </p>
+
+</div>
+</div>
+<a id="a61024147fc6297908587bcde12c10b48" name="a61024147fc6297908587bcde12c10b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61024147fc6297908587bcde12c10b48">&#9670;&nbsp;</a></span>SetUseMaskValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::SetUseMaskValue </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a575b49be5195d619f0ec9f05f0d08da2" name="a575b49be5195d619f0ec9f05f0d08da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575b49be5195d619f0ec9f05f0d08da2">&#9670;&nbsp;</a></span>UseMaskValueOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::UseMaskValueOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad0411e33359ff795749ae56be1647bba" name="ad0411e33359ff795749ae56be1647bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0411e33359ff795749ae56be1647bba">&#9670;&nbsp;</a></span>m_MaskValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a> <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::m_MaskValue { <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1ImageSpatialObject.html#a81b06f164d8add45411d17b151efebf4">PixelType</a>&gt;::OneValue() }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00139">139</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
+
+</div>
+</div>
+<a id="a4821936e13412a1c836b406ba6082e95" name="a4821936e13412a1c836b406ba6082e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4821936e13412a1c836b406ba6082e95">&#9670;&nbsp;</a></span>m_UseMaskValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int TDimension = 3, typename TPixel  = unsigned char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1ImageMaskSpatialObject.html">itk::ImageMaskSpatialObject</a>&lt; TDimension, TPixel &gt;::m_UseMaskValue { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkImageMaskSpatialObject_8h_source.html#l00138">138</a> of file <a class="el" href="itkImageMaskSpatialObject_8h_source.html">itkImageMaskSpatialObject.h</a>.</p>
 
 </div>
 </div>
