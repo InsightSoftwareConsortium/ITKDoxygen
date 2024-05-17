@@ -129,274 +129,274 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceitk.html">itk</a></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIOEnums.html">   49</a></span><span class="keyword">class </span><a class="code hl_class" href="classitk_1_1GDCMImageIOEnums.html">GDCMImageIOEnums</a></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">   56</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">Compression</a> : uint8_t</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    JPEG = 0,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    JPEG2000,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    JPEGLS,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    RLE</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  };</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// Define how to print enumeration</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceitk.html#a0b7408157daaacba9eb02bdf970bcce9">   66</a></span><span class="keyword">extern</span> ITKIOGDCM_EXPORT std::ostream &amp;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                        <a class="code hl_function" href="namespaceitk.html#a9598dc71da1c99b5683915d75ef586c4">operator&lt;&lt;</a>(std::ostream &amp; out, <span class="keyword">const</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">GDCMImageIOEnums::Compression</a> value);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">class </span>InternalHeader;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html">  109</a></span><span class="keyword">class </span>ITKIOGDCM_EXPORT <a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a> : <span class="keyword">public</span> <a class="code hl_class" href="classitk_1_1ImageIOBase.html">ImageIOBase</a></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  ITK_DISALLOW_COPY_AND_MOVE(<a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af480e5349f24ed151a2f4d2e04302e28">  116</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1LightObject.html">Self</a> = <a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae17d6359b6a008570815ae3b50e5f3ac">  117</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1Object.html">Superclass</a> = <a class="code hl_class" href="classitk_1_1ImageIOBase.html">ImageIOBase</a>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#abd6dc5c6424e21ab1e8635a168595cd9">  118</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code hl_class" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a17bbdc3c3f2fa4e3c0d53e308b7a2b29">  121</a></span>  itkNewMacro(<a class="code hl_class" href="classitk_1_1LightObject.html">Self</a>);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af6c0121a4dbe651f06dd5de452f8fd6f">  124</a></span>  itkOverrideGetNameOfClassMacro(<a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="comment">/*-------- This part of the interface deals with reading data. ------ */</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa689152686c69416a169a61dd1025111">  131</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aa689152686c69416a169a61dd1025111">CanReadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a97c50ef2fe34b8b15b3e75a21efcca82">  135</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a97c50ef2fe34b8b15b3e75a21efcca82">ReadImageInformation</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aeb21e219dc96f7ff7fb9c4a23f70660d">  139</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aeb21e219dc96f7ff7fb9c4a23f70660d">Read</a>(<span class="keywordtype">void</span> * pointer) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#acad07a68b36324f1d8d2ac87fe957838">  144</a></span>  itkGetEnumMacro(InternalComponentType, <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">itk::CommonEnums::IOComponent</a>);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aacba5cdb152f5524f79332c9d600ebf0">  145</a></span>  itkSetEnumMacro(InternalComponentType, <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">itk::CommonEnums::IOComponent</a>);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">/*-------- This part of the interfaces deals with writing data. ----- */</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa2febc906761760b71aeeea549e8a6d8">  153</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aa2febc906761760b71aeeea549e8a6d8">CanWriteFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a95d6ada11841fa36252dda73ca5c792a">  158</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a95d6ada11841fa36252dda73ca5c792a">WriteImageInformation</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae8eb2fb7af9d8abdf115db5ba2f4a839">  163</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#ae8eb2fb7af9d8abdf115db5ba2f4a839">Write</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> * buffer) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9a84d2962b7275527e600c4ec160d280">  166</a></span>  itkGetConstMacro(RescaleSlope, <span class="keywordtype">double</span>);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a4430c20099f0510b052718853fff506f">  167</a></span>  itkGetConstMacro(RescaleIntercept, <span class="keywordtype">double</span>);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a2d854210879e1cfdeda90de4f5876493">  173</a></span>  itkGetStringMacro(UIDPrefix);</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab3f2cfe1c40840ec4a0f07ac40dbe7df">  174</a></span>  itkSetStringMacro(UIDPrefix);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa16d377633076ea86e82fad4b70dc658">  178</a></span>  itkGetStringMacro(StudyInstanceUID);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae80f7f34a918aea40b09c26761d3fb26">  179</a></span>  itkGetStringMacro(SeriesInstanceUID);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a0673bda311ea14042bd0fa57f0cf6341">  180</a></span>  itkGetStringMacro(FrameOfReferenceInstanceUID);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a72b968b685e34943bf0685a35418ca19">  184</a></span>  itkSetMacro(KeepOriginalUID, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a7066c73bd208d8325e3e2249e506c35f">  185</a></span>  itkGetConstMacro(KeepOriginalUID, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae215297a5be5792d5119940aca174514">  186</a></span>  itkBooleanMacro(KeepOriginalUID);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a26ea3d5e85c0e6a7a614cbfbc05c4478">  191</a></span>  itkSetMacro(LoadPrivateTags, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac7216a45f382d346ff01e1547f77ef30">  192</a></span>  itkGetConstMacro(LoadPrivateTags, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af51bf5085b5d9cf57ecc97c0ece02e2a">  193</a></span>  itkBooleanMacro(LoadPrivateTags);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a282e7382056d8773f40f1869404b3cf9">  198</a></span>  itkSetMacro(ReadYBRtoRGB, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a28b802d815604a7b948fd9883340e135">  199</a></span>  itkGetConstMacro(ReadYBRtoRGB, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a15e92adee0fd52188286c1cffa75b391">  200</a></span>  itkBooleanMacro(ReadYBRtoRGB);</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  GetPatientName(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  GetPatientID(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  GetPatientSex(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  GetPatientAge(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  GetStudyID(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  GetPatientDOB(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  GetStudyDescription(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  GetBodyPart(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  GetNumberOfSeriesInStudy(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  GetNumberOfStudyRelatedSeries(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  GetStudyDate(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  GetModality(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  GetManufacturer(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  GetInstitution(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  GetModel(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  GetScanOptions(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac6eb760390bf3916a6474eb3b345cbb4">  261</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#ac6eb760390bf3916a6474eb3b345cbb4">GetValueFromTag</a>(<span class="keyword">const</span> std::string &amp; tag, std::string &amp; value);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#adad2642a7dab4a896a8bf6afea6ff205">  270</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#adad2642a7dab4a896a8bf6afea6ff205">GetLabelFromTag</a>(<span class="keyword">const</span> std::string &amp; tag, std::string &amp; labelId);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  SetMaxSizeLoadEntry(<span class="keyword">const</span> <span class="keywordtype">long</span>)</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  {}</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  SetLoadSequences(<span class="keyword">const</span> <span class="keywordtype">bool</span>)</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  {}</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  GetLoadSequences()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  LoadSequencesOn()</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  {}</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  LoadSequencesOff()</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  {}</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  SetLoadSequencesDefault(<span class="keywordtype">bool</span>)</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  {}</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  LoadSequencesDefaultOn()</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  {}</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  LoadSequencesDefaultOff()</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  {}</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  GetLoadSequencesDefault()</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  }</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  SetLoadPrivateTagsDefault(<span class="keywordtype">bool</span>)</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  {}</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  LoadPrivateTagsDefaultOn()</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  {}</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  LoadPrivateTagsDefaultOff()</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  {}</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  GetLoadPrivateTagsDefault()</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  {</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  }</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6cab6d15bb8fff6dbc6c9f6f40e03ff8">  351</a></span>  <span class="keyword">using</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> = <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">GDCMImageIOEnums::Compression</a>;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="preprocessor">#if !defined(ITK_LEGACY_REMOVE)</span></div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="comment">// We need to expose the enum values at the class level</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="comment">// for backwards compatibility</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEG = CompressionEnum::JPEG;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEG2000 = CompressionEnum::JPEG2000;</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEGLS = CompressionEnum::JPEGLS;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> RLE = CompressionEnum::RLE;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab06ab775e0a8017f012acd9a73d2b6a2">  361</a></span>  itkSetEnumMacro(CompressionType, <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a>);</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#afbbf7ad2d2df01c9128f157dccca5786">  362</a></span>  itkGetEnumMacro(CompressionType, <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a>);</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aacb64313255e6afc0687d3113eff5feb">  365</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aacb64313255e6afc0687d3113eff5feb">InternalSetCompressor</a>(<span class="keyword">const</span> std::string &amp; _compressor) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a142605a9c94b78daf75077d6b7e425c4">  368</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a142605a9c94b78daf75077d6b7e425c4">GDCMImageIO</a>();</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9cb470b90f4dbdeec43fd371c1564fc3">  369</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a9cb470b90f4dbdeec43fd371c1564fc3">~GDCMImageIO</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9e5d6cfa2c2c1fb412542a58564a5adb">  371</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a9e5d6cfa2c2c1fb412542a58564a5adb">PrintSelf</a>(std::ostream &amp; os, <a class="code hl_class" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a95e33c8d01ea4399af937892064bb646">  374</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a95e33c8d01ea4399af937892064bb646">InternalReadImageInformation</a>();</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ad6bae492020723502c7021996d6ad91d">  376</a></span>  <span class="keywordtype">double</span> m_RescaleSlope{};</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab9543c2d63614b2813d40e5eaba0152d">  378</a></span>  <span class="keywordtype">double</span> m_RescaleIntercept{};</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a47e3790ebad22dbedf0eabaea504d48d">  380</a></span>  std::string m_UIDPrefix{};</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae756fd383f4670890784ec94525685f3">  382</a></span>  std::string m_StudyInstanceUID{};</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6d17f2321ef56d85fc7eef0a65dd8f86">  384</a></span>  std::string m_SeriesInstanceUID{};</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9d90d4582b3a3ce20c7abe0b7922a963">  386</a></span>  std::string m_FrameOfReferenceInstanceUID{};</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span> </div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a3b3d2e20ab842b21410c691075fc3279">  388</a></span>  <span class="keywordtype">bool</span> m_KeepOriginalUID{};</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa6cdb738198d5d70f4448f0b5df112fd">  390</a></span>  <span class="keywordtype">bool</span> m_LoadPrivateTags{};</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac25b4cd2b5aaa12c6a2b0d86e01e5466">  392</a></span>  <span class="keywordtype">bool</span> m_ReadYBRtoRGB{};</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  std::string m_PatientName{};</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  std::string m_PatientID{};</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  std::string m_PatientDOB{};</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  std::string m_StudyID{};</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  std::string m_StudyDescription{};</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  std::string m_BodyPart{};</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  std::string m_NumberOfSeriesInStudy{};</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  std::string m_NumberOfStudyRelatedSeries{};</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  std::string m_PatientSex{};</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  std::string m_PatientAge{};</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  std::string m_StudyDate{};</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  std::string m_Modality{};</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  std::string m_Manufacturer{};</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  std::string m_Institution{};</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  std::string m_Model{};</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>  std::string m_ScanOptions{};</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6006f66f44084ae83f89595ea7c5267a">  429</a></span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_GlobalNumberOfDimensions{};</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a38431ceffc3629eaeafd869bc8aa73bb">  431</a></span>  <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> m_CompressionType{};</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6c8d9348bcc7102bddbca45b115888dc">  433</a></span>  <span class="keywordtype">bool</span> m_SingleBit{};</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aae48478ecd695faf2d2626fc375f8dca">  435</a></span>  <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">IOComponentEnum</a> m_InternalComponentType{};</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a409725209b505166b22a05e979c20ef5">  437</a></span>  InternalHeader * m_DICOMHeader{};</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>};</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span><span class="preprocessor">#endif </span><span class="comment">// itkGDCMImageIO_h</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIOEnums.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classitk_1_1GDCMImageIOEnums.html">GDCMImageIOEnums</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">   55</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">Compression</a> : uint8_t</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    JPEG = 0,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    JPEG2000,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    JPEGLS,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    RLE</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Define how to print enumeration</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespaceitk.html#a0b7408157daaacba9eb02bdf970bcce9">   65</a></span><span class="keyword">extern</span> ITKIOGDCM_EXPORT std::ostream &amp;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                        <a class="code hl_function" href="namespaceitk.html#a9598dc71da1c99b5683915d75ef586c4">operator&lt;&lt;</a>(std::ostream &amp; out, <span class="keyword">const</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">GDCMImageIOEnums::Compression</a> value);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">class </span>InternalHeader;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html">  108</a></span><span class="keyword">class </span>ITKIOGDCM_EXPORT <a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a> : <span class="keyword">public</span> <a class="code hl_class" href="classitk_1_1ImageIOBase.html">ImageIOBase</a></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  ITK_DISALLOW_COPY_AND_MOVE(<a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af480e5349f24ed151a2f4d2e04302e28">  115</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1LightObject.html">Self</a> = <a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae17d6359b6a008570815ae3b50e5f3ac">  116</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1Object.html">Superclass</a> = <a class="code hl_class" href="classitk_1_1ImageIOBase.html">ImageIOBase</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#abd6dc5c6424e21ab1e8635a168595cd9">  117</a></span>  <span class="keyword">using</span> <a class="code hl_class" href="classitk_1_1SmartPointer.html">Pointer</a> = <a class="code hl_class" href="classitk_1_1SmartPointer.html">SmartPointer&lt;Self&gt;</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a17bbdc3c3f2fa4e3c0d53e308b7a2b29">  120</a></span>  itkNewMacro(<a class="code hl_class" href="classitk_1_1LightObject.html">Self</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af6c0121a4dbe651f06dd5de452f8fd6f">  123</a></span>  itkOverrideGetNameOfClassMacro(<a class="code hl_class" href="classitk_1_1GDCMImageIO.html">GDCMImageIO</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="comment">/*-------- This part of the interface deals with reading data. ------ */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa689152686c69416a169a61dd1025111">  130</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aa689152686c69416a169a61dd1025111">CanReadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a97c50ef2fe34b8b15b3e75a21efcca82">  134</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a97c50ef2fe34b8b15b3e75a21efcca82">ReadImageInformation</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aeb21e219dc96f7ff7fb9c4a23f70660d">  138</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aeb21e219dc96f7ff7fb9c4a23f70660d">Read</a>(<span class="keywordtype">void</span> * pointer) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#acad07a68b36324f1d8d2ac87fe957838">  143</a></span>  itkGetEnumMacro(InternalComponentType, <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">itk::CommonEnums::IOComponent</a>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aacba5cdb152f5524f79332c9d600ebf0">  144</a></span>  itkSetEnumMacro(InternalComponentType, <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">itk::CommonEnums::IOComponent</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">/*-------- This part of the interfaces deals with writing data. ----- */</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa2febc906761760b71aeeea549e8a6d8">  152</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aa2febc906761760b71aeeea549e8a6d8">CanWriteFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a95d6ada11841fa36252dda73ca5c792a">  157</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a95d6ada11841fa36252dda73ca5c792a">WriteImageInformation</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae8eb2fb7af9d8abdf115db5ba2f4a839">  162</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#ae8eb2fb7af9d8abdf115db5ba2f4a839">Write</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> * buffer) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9a84d2962b7275527e600c4ec160d280">  165</a></span>  itkGetConstMacro(RescaleSlope, <span class="keywordtype">double</span>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a4430c20099f0510b052718853fff506f">  166</a></span>  itkGetConstMacro(RescaleIntercept, <span class="keywordtype">double</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a2d854210879e1cfdeda90de4f5876493">  172</a></span>  itkGetStringMacro(UIDPrefix);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab3f2cfe1c40840ec4a0f07ac40dbe7df">  173</a></span>  itkSetStringMacro(UIDPrefix);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa16d377633076ea86e82fad4b70dc658">  177</a></span>  itkGetStringMacro(StudyInstanceUID);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae80f7f34a918aea40b09c26761d3fb26">  178</a></span>  itkGetStringMacro(SeriesInstanceUID);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a0673bda311ea14042bd0fa57f0cf6341">  179</a></span>  itkGetStringMacro(FrameOfReferenceInstanceUID);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a72b968b685e34943bf0685a35418ca19">  183</a></span>  itkSetMacro(KeepOriginalUID, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a7066c73bd208d8325e3e2249e506c35f">  184</a></span>  itkGetConstMacro(KeepOriginalUID, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae215297a5be5792d5119940aca174514">  185</a></span>  itkBooleanMacro(KeepOriginalUID);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a26ea3d5e85c0e6a7a614cbfbc05c4478">  190</a></span>  itkSetMacro(LoadPrivateTags, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac7216a45f382d346ff01e1547f77ef30">  191</a></span>  itkGetConstMacro(LoadPrivateTags, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#af51bf5085b5d9cf57ecc97c0ece02e2a">  192</a></span>  itkBooleanMacro(LoadPrivateTags);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a282e7382056d8773f40f1869404b3cf9">  197</a></span>  itkSetMacro(ReadYBRtoRGB, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a28b802d815604a7b948fd9883340e135">  198</a></span>  itkGetConstMacro(ReadYBRtoRGB, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a15e92adee0fd52188286c1cffa75b391">  199</a></span>  itkBooleanMacro(ReadYBRtoRGB);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  GetPatientName(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  GetPatientID(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  GetPatientSex(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  GetPatientAge(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  GetStudyID(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  GetPatientDOB(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  GetStudyDescription(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  GetBodyPart(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  GetNumberOfSeriesInStudy(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  GetNumberOfStudyRelatedSeries(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  GetStudyDate(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  GetModality(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  GetManufacturer(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  GetInstitution(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  GetModel(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  GetScanOptions(<span class="keywordtype">char</span> * name, <span class="keywordtype">size_t</span> len = 512);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac6eb760390bf3916a6474eb3b345cbb4">  260</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#ac6eb760390bf3916a6474eb3b345cbb4">GetValueFromTag</a>(<span class="keyword">const</span> std::string &amp; tag, std::string &amp; value);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#adad2642a7dab4a896a8bf6afea6ff205">  269</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#adad2642a7dab4a896a8bf6afea6ff205">GetLabelFromTag</a>(<span class="keyword">const</span> std::string &amp; tag, std::string &amp; labelId);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  SetMaxSizeLoadEntry(<span class="keyword">const</span> <span class="keywordtype">long</span>)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  {}</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  SetLoadSequences(<span class="keyword">const</span> <span class="keywordtype">bool</span>)</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  {}</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  GetLoadSequences()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  LoadSequencesOn()</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  {}</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  LoadSequencesOff()</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  {}</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  SetLoadSequencesDefault(<span class="keywordtype">bool</span>)</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  {}</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  LoadSequencesDefaultOn()</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  {}</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  LoadSequencesDefaultOff()</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  {}</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  GetLoadSequencesDefault()</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  SetLoadPrivateTagsDefault(<span class="keywordtype">bool</span>)</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  {}</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  LoadPrivateTagsDefaultOn()</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  {}</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  LoadPrivateTagsDefaultOff()</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  {}</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  GetLoadPrivateTagsDefault()</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  }</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6cab6d15bb8fff6dbc6c9f6f40e03ff8">  350</a></span>  <span class="keyword">using</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> = <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">GDCMImageIOEnums::Compression</a>;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#if !defined(ITK_LEGACY_REMOVE)</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="comment">// We need to expose the enum values at the class level</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="comment">// for backwards compatibility</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEG = CompressionEnum::JPEG;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEG2000 = CompressionEnum::JPEG2000;</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> JPEGLS = CompressionEnum::JPEGLS;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> RLE = CompressionEnum::RLE;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab06ab775e0a8017f012acd9a73d2b6a2">  360</a></span>  itkSetEnumMacro(CompressionType, <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a>);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#afbbf7ad2d2df01c9128f157dccca5786">  361</a></span>  itkGetEnumMacro(CompressionType, <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a>);</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aacb64313255e6afc0687d3113eff5feb">  364</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#aacb64313255e6afc0687d3113eff5feb">InternalSetCompressor</a>(<span class="keyword">const</span> std::string &amp; _compressor) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a142605a9c94b78daf75077d6b7e425c4">  367</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a142605a9c94b78daf75077d6b7e425c4">GDCMImageIO</a>();</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9cb470b90f4dbdeec43fd371c1564fc3">  368</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a9cb470b90f4dbdeec43fd371c1564fc3">~GDCMImageIO</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9e5d6cfa2c2c1fb412542a58564a5adb">  370</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a9e5d6cfa2c2c1fb412542a58564a5adb">PrintSelf</a>(std::ostream &amp; os, <a class="code hl_class" href="classitk_1_1Indent.html">Indent</a> indent) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a95e33c8d01ea4399af937892064bb646">  373</a></span>  <a class="code hl_function" href="classitk_1_1GDCMImageIO.html#a95e33c8d01ea4399af937892064bb646">InternalReadImageInformation</a>();</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ad6bae492020723502c7021996d6ad91d">  375</a></span>  <span class="keywordtype">double</span> m_RescaleSlope{};</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ab9543c2d63614b2813d40e5eaba0152d">  377</a></span>  <span class="keywordtype">double</span> m_RescaleIntercept{};</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a47e3790ebad22dbedf0eabaea504d48d">  379</a></span>  std::string m_UIDPrefix{};</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ae756fd383f4670890784ec94525685f3">  381</a></span>  std::string m_StudyInstanceUID{};</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6d17f2321ef56d85fc7eef0a65dd8f86">  383</a></span>  std::string m_SeriesInstanceUID{};</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a9d90d4582b3a3ce20c7abe0b7922a963">  385</a></span>  std::string m_FrameOfReferenceInstanceUID{};</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a3b3d2e20ab842b21410c691075fc3279">  387</a></span>  <span class="keywordtype">bool</span> m_KeepOriginalUID{};</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aa6cdb738198d5d70f4448f0b5df112fd">  389</a></span>  <span class="keywordtype">bool</span> m_LoadPrivateTags{};</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#ac25b4cd2b5aaa12c6a2b0d86e01e5466">  391</a></span>  <span class="keywordtype">bool</span> m_ReadYBRtoRGB{};</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="preprocessor">#if defined(ITKIO_DEPRECATED_GDCM1_API)</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  std::string m_PatientName{};</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  std::string m_PatientID{};</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  std::string m_PatientDOB{};</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  std::string m_StudyID{};</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  std::string m_StudyDescription{};</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  std::string m_BodyPart{};</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  std::string m_NumberOfSeriesInStudy{};</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  std::string m_NumberOfStudyRelatedSeries{};</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  std::string m_PatientSex{};</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  std::string m_PatientAge{};</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  std::string m_StudyDate{};</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  std::string m_Modality{};</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  std::string m_Manufacturer{};</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  std::string m_Institution{};</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  std::string m_Model{};</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  std::string m_ScanOptions{};</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6006f66f44084ae83f89595ea7c5267a">  428</a></span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_GlobalNumberOfDimensions{};</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a38431ceffc3629eaeafd869bc8aa73bb">  430</a></span>  <a class="code hl_enumeration" href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">CompressionEnum</a> m_CompressionType{};</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a6c8d9348bcc7102bddbca45b115888dc">  432</a></span>  <span class="keywordtype">bool</span> m_SingleBit{};</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#aae48478ecd695faf2d2626fc375f8dca">  434</a></span>  <a class="code hl_enumeration" href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">IOComponentEnum</a> m_InternalComponentType{};</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno"><a class="line" href="classitk_1_1GDCMImageIO.html#a409725209b505166b22a05e979c20ef5">  436</a></span>  InternalHeader * m_DICOMHeader{};</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>};</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span> </div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span><span class="preprocessor">#endif </span><span class="comment">// itkGDCMImageIO_h</span></div>
 <div class="ttc" id="aclassitk_1_1CommonEnums_html_a479ceef53f78a1a07f00cb867284fdd5"><div class="ttname"><a href="classitk_1_1CommonEnums.html#a479ceef53f78a1a07f00cb867284fdd5">itk::CommonEnums::IOComponent</a></div><div class="ttdeci">IOComponent</div><div class="ttdef"><b>Definition:</b> <a href="itkCommonEnums_8h_source.html#l00076">itkCommonEnums.h:77</a></div></div>
-<div class="ttc" id="aclassitk_1_1GDCMImageIOEnums_html"><div class="ttname"><a href="classitk_1_1GDCMImageIOEnums.html">itk::GDCMImageIOEnums</a></div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00049">itkGDCMImageIO.h:50</a></div></div>
-<div class="ttc" id="aclassitk_1_1GDCMImageIOEnums_html_ab17e992354bb6c1b50d1bd6020d3b5c8"><div class="ttname"><a href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">itk::GDCMImageIOEnums::Compression</a></div><div class="ttdeci">Compression</div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00056">itkGDCMImageIO.h:57</a></div></div>
-<div class="ttc" id="aclassitk_1_1GDCMImageIO_html"><div class="ttname"><a href="classitk_1_1GDCMImageIO.html">itk::GDCMImageIO</a></div><div class="ttdoc">ImageIO class for reading and writing DICOM V3.0 and ACR/NEMA 1&amp;2 uncompressed images....</div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00109">itkGDCMImageIO.h:110</a></div></div>
+<div class="ttc" id="aclassitk_1_1GDCMImageIOEnums_html"><div class="ttname"><a href="classitk_1_1GDCMImageIOEnums.html">itk::GDCMImageIOEnums</a></div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00048">itkGDCMImageIO.h:49</a></div></div>
+<div class="ttc" id="aclassitk_1_1GDCMImageIOEnums_html_ab17e992354bb6c1b50d1bd6020d3b5c8"><div class="ttname"><a href="classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8">itk::GDCMImageIOEnums::Compression</a></div><div class="ttdeci">Compression</div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00055">itkGDCMImageIO.h:56</a></div></div>
+<div class="ttc" id="aclassitk_1_1GDCMImageIO_html"><div class="ttname"><a href="classitk_1_1GDCMImageIO.html">itk::GDCMImageIO</a></div><div class="ttdoc">ImageIO class for reading and writing DICOM V3.0 and ACR/NEMA 1&amp;2 uncompressed images....</div><div class="ttdef"><b>Definition:</b> <a href="itkGDCMImageIO_8h_source.html#l00108">itkGDCMImageIO.h:109</a></div></div>
 <div class="ttc" id="aclassitk_1_1GDCMImageIO_html_a142605a9c94b78daf75077d6b7e425c4"><div class="ttname"><a href="classitk_1_1GDCMImageIO.html#a142605a9c94b78daf75077d6b7e425c4">itk::GDCMImageIO::GDCMImageIO</a></div><div class="ttdeci">GDCMImageIO()</div></div>
 <div class="ttc" id="aclassitk_1_1GDCMImageIO_html_a95d6ada11841fa36252dda73ca5c792a"><div class="ttname"><a href="classitk_1_1GDCMImageIO.html#a95d6ada11841fa36252dda73ca5c792a">itk::GDCMImageIO::WriteImageInformation</a></div><div class="ttdeci">void WriteImageInformation() override</div></div>
 <div class="ttc" id="aclassitk_1_1GDCMImageIO_html_a95e33c8d01ea4399af937892064bb646"><div class="ttname"><a href="classitk_1_1GDCMImageIO.html#a95e33c8d01ea4399af937892064bb646">itk::GDCMImageIO::InternalReadImageInformation</a></div><div class="ttdeci">void InternalReadImageInformation()</div></div>
