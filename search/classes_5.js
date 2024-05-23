@@ -228,7 +228,7 @@ var searchData=
   ['functionbase_3c_20tinputpointset_3a_3apointtype_2c_20double_20_3e_225',['FunctionBase&lt; TInputPointSet::PointType, double &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
   ['functionbase_3c_20tinputpointset_3a_3apointtype_2c_20toutput_20_3e_226',['FunctionBase&lt; TInputPointSet::PointType, TOutput &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
   ['functionbase_3c_20tmeasurementvector_2c_20double_20_3e_227',['FunctionBase&lt; TMeasurementVector, double &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
-  ['functionbase_3c_20tmesh_2c_20tmesh_3a_3aedgelistpointertype_20_3e_228',['FunctionBase&lt; TMesh, TMesh::EdgeListPointerType &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
+  ['functionbase_3c_20tmesh_2c_20tmesh_3a_3aedgelisttype_20_2a_20_3e_228',['FunctionBase&lt; TMesh, TMesh::EdgeListType * &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
   ['functionbase_3c_20trealvaluetype_2c_20trealvaluetype_20_3e_229',['FunctionBase&lt; TRealValueType, TRealValueType &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
   ['functionbase_3c_20tvector_2c_20double_20_3e_230',['FunctionBase&lt; TVector, double &gt;',['../classitk_1_1FunctionBase.html',1,'itk']]],
   ['functioncommand_231',['FunctionCommand',['../classitk_1_1FunctionCommand.html',1,'itk']]]
