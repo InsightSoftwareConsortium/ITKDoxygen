@@ -327,70 +327,69 @@ $(function() {
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">class </span><a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a> : <span class="keyword">public</span> std::istream</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>{</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode mode = std::ios_base::in)</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode itkNotused(mode) = std::ios_base::in)</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    : <a class="code hl_namespace" href="namespacestd.html">std</a>::istream(0)</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    , m_fd(<a class="code hl_function" href="namespaceitk_1_1i18n.html#a2bfdccc3c483333784fa6c0137e3941a">I18nOpenForReading</a>(str))</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    , m_buf(m_fd)</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    (void)mode;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    this-&gt;rdbuf(&amp;m_buf);</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  ~I18nIfstream() { this-&gt;close(); }</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  is_open()</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  {</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> (m_fd != -1);</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  close()</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">if</span> (m_fd != -1)</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      ::close(m_fd);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    m_fd = -1;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordtype">int</span>          m_fd;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  itk::fdinbuf m_buf;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>};</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#elif LOCAL_USE_WIN32_WOPEN</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">class </span><a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a> : <span class="keyword">public</span> std::ofstream</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>{</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode mode = std::ios_base::out)</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    : <a class="code hl_namespace" href="namespacestd.html">std</a>::ofstream(Utf8StringToWString(str).c_str(), mode)</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  {}</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>};</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="keyword">class </span><a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a> : <span class="keyword">public</span> std::ifstream</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>{</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode mode = std::ios_base::in)</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    : <a class="code hl_namespace" href="namespacestd.html">std</a>::ifstream(Utf8StringToWString(str).c_str(), mode)</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  {}</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>};</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">  293</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a> = std::ofstream;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">  294</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a> = std::ifstream;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>} <span class="comment">// namespace i18n</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>} <span class="comment">// namespace itk</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#undef LOCAL_USE_WIN32_WOPEN</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#undef LOCAL_USE_FDSTREAM</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">#endif </span><span class="comment">/* itkInternationalizationIOHelpers_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    this-&gt;rdbuf(&amp;m_buf);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  ~I18nIfstream() { this-&gt;close(); }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  is_open()</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">return</span> (m_fd != -1);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  close()</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">if</span> (m_fd != -1)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      ::close(m_fd);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    m_fd = -1;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordtype">int</span>          m_fd;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  itk::fdinbuf m_buf;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>};</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#elif LOCAL_USE_WIN32_WOPEN</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keyword">class </span><a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a> : <span class="keyword">public</span> std::ofstream</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>{</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode mode = std::ios_base::out)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    : <a class="code hl_namespace" href="namespacestd.html">std</a>::ofstream(Utf8StringToWString(str).c_str(), mode)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  {}</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>};</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="keyword">class </span><a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a> : <span class="keyword">public</span> std::ifstream</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>{</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * str, std::ios_base::openmode mode = std::ios_base::in)</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    : <a class="code hl_namespace" href="namespacestd.html">std</a>::ifstream(Utf8StringToWString(str).c_str(), mode)</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  {}</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>};</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">  292</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">I18nOfstream</a> = std::ofstream;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">  293</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">I18nIfstream</a> = std::ifstream;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>} <span class="comment">// namespace i18n</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>} <span class="comment">// namespace itk</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#undef LOCAL_USE_WIN32_WOPEN</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#undef LOCAL_USE_FDSTREAM</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">#endif </span><span class="comment">/* itkInternationalizationIOHelpers_h */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aitkMacro_8h_html"><div class="ttname"><a href="itkMacro_8h.html">itkMacro.h</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1i18n_html_a0fb6744ca363366ca732d7fe5a6c09b8"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a0fb6744ca363366ca732d7fe5a6c09b8">itk::i18n::I18nOpen</a></div><div class="ttdeci">int I18nOpen(const std::string &amp;str, const int flags)</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00118">itkInternationalizationIOHelpers.h:118</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1i18n_html_a2bfdccc3c483333784fa6c0137e3941a"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a2bfdccc3c483333784fa6c0137e3941a">itk::i18n::I18nOpenForReading</a></div><div class="ttdeci">int I18nOpenForReading(const std::string &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00147">itkInternationalizationIOHelpers.h:147</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1i18n_html_a3333150695b31868bbd861cacd1d134e"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a3333150695b31868bbd861cacd1d134e">itk::i18n::IsStringEncodingValid</a></div><div class="ttdeci">bool IsStringEncodingValid(const std::string &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00085">itkInternationalizationIOHelpers.h:85</a></div></div>
-<div class="ttc" id="anamespaceitk_1_1i18n_html_a47b8079dc1bd37baf955a614adb9fa35"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">itk::i18n::I18nOfstream</a></div><div class="ttdeci">std::ofstream I18nOfstream</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00293">itkInternationalizationIOHelpers.h:293</a></div></div>
-<div class="ttc" id="anamespaceitk_1_1i18n_html_a5e153fe9b0253fc9cdea06fa38570a11"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">itk::i18n::I18nIfstream</a></div><div class="ttdeci">std::ifstream I18nIfstream</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00294">itkInternationalizationIOHelpers.h:294</a></div></div>
+<div class="ttc" id="anamespaceitk_1_1i18n_html_a47b8079dc1bd37baf955a614adb9fa35"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a47b8079dc1bd37baf955a614adb9fa35">itk::i18n::I18nOfstream</a></div><div class="ttdeci">std::ofstream I18nOfstream</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00292">itkInternationalizationIOHelpers.h:292</a></div></div>
+<div class="ttc" id="anamespaceitk_1_1i18n_html_a5e153fe9b0253fc9cdea06fa38570a11"><div class="ttname"><a href="namespaceitk_1_1i18n.html#a5e153fe9b0253fc9cdea06fa38570a11">itk::i18n::I18nIfstream</a></div><div class="ttdeci">std::ifstream I18nIfstream</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00293">itkInternationalizationIOHelpers.h:293</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1i18n_html_ae4f62b5da70e8fc2a0c71633cd9e64be"><div class="ttname"><a href="namespaceitk_1_1i18n.html#ae4f62b5da70e8fc2a0c71633cd9e64be">itk::i18n::I18nOpenForWriting</a></div><div class="ttdeci">int I18nOpenForWriting(const std::string &amp;str, const bool append=false)</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00158">itkInternationalizationIOHelpers.h:158</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1i18n_html_af05eeaf7558a5e7ca2e806cc5b7a6861"><div class="ttname"><a href="namespaceitk_1_1i18n.html#af05eeaf7558a5e7ca2e806cc5b7a6861">itk::i18n::I18nFopen</a></div><div class="ttdeci">FILE * I18nFopen(const std::string &amp;str, const std::string &amp;mode)</div><div class="ttdef"><b>Definition:</b> <a href="itkInternationalizationIOHelpers_8h_source.html#l00193">itkInternationalizationIOHelpers.h:193</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnnulusOperator_8h_source.html#l00024">itkAnnulusOperator.h:25</a></div></div>
