@@ -83,37 +83,29 @@ $(function() {
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>Class <a class="el" href="classitk_1_1Accessor_1_1VectorImageToImagePixelAccessor.html">itk::Accessor::VectorImageToImagePixelAccessor&lt; TType &gt;</a>  </dt>
-<dd><a class="anchor" id="_deprecated000007"></a>Please use the more generic <a class="el" href="classitk_1_1NthElementImageAdaptor.html" title="Presents an image as being composed of the N-th element of its pixels.">NthElementImageAdaptor</a>. </dd>
+<dd><a class="anchor" id="_deprecated000004"></a>Please use the more generic <a class="el" href="classitk_1_1NthElementImageAdaptor.html" title="Presents an image as being composed of the N-th element of its pixels.">NthElementImageAdaptor</a>. </dd>
 <dt>Class <a class="el" href="classitk_1_1FastIncrementalBinaryDilateImageFilter.html">itk::FastIncrementalBinaryDilateImageFilter&lt; TInputImage, TOutputImage, TKernel &gt;</a>  </dt>
-<dd><a class="anchor" id="_deprecated000010"></a>  </dd>
+<dd><a class="anchor" id="_deprecated000006"></a>  </dd>
 <dt>Member <a class="el" href="classitk_1_1HistogramAlgorithmBase.html#ae44289d6ee557dbaf2b94d75cbac5d45">itk::HistogramAlgorithmBase&lt; TInputHistogram &gt;::HistogramAlgorithmBase</a>  ()</dt>
-<dd><a class="anchor" id="_deprecated000009"></a> Update() is deprecated because classes that do not derive from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> are not part of the pipeline and should therefore not have an Update() method. It is included for backwards compatibility.  </dd>
-<dt>Class <a class="el" href="structitk_1_1Image_1_1Rebind.html">itk::Image&lt; TPixel, VImageDimension &gt;::Rebind&lt; UPixelType, VUImageDimension &gt;</a>  </dt>
-<dd><a class="anchor" id="_deprecated000001"></a>Use RebindImageType instead  </dd>
-<dt>Class <a class="el" href="structitk_1_1ImageAdaptor_1_1Rebind.html">itk::ImageAdaptor&lt; TImage, TAccessor &gt;::Rebind&lt; UPixelType, UImageDimension &gt;</a>  </dt>
-<dd><a class="anchor" id="_deprecated000006"></a>Use RebindImageType instead  </dd>
+<dd><a class="anchor" id="_deprecated000005"></a> Update() is deprecated because classes that do not derive from <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a> are not part of the pipeline and should therefore not have an Update() method. It is included for backwards compatibility.  </dd>
 <dt>Member <a class="el" href="classitk_1_1IsolatedConnectedImageFilter.html#a314c08442971751f6de99910c068877b">itk::IsolatedConnectedImageFilter&lt; TInputImage, TOutputImage &gt;::SetSeed1</a>  (const IndexType &amp;seed)</dt>
-<dd><a class="anchor" id="_deprecated000015"></a>Please use AddSeed1.  </dd>
+<dd><a class="anchor" id="_deprecated000011"></a>Please use AddSeed1.  </dd>
 <dt>Member <a class="el" href="classitk_1_1IsolatedConnectedImageFilter.html#a33fbe096e9daa7e254a7f3262c3e0f97">itk::IsolatedConnectedImageFilter&lt; TInputImage, TOutputImage &gt;::SetSeed2</a>  (const IndexType &amp;seed)</dt>
-<dd><a class="anchor" id="_deprecated000016"></a>Please use AddSeed2.  </dd>
-<dt>Member <a class="el" href="classitk_1_1MatrixOffsetTransformBase.html#a84186eee8866ce67462779eab502a2b5">itk::MatrixOffsetTransformBase&lt; TParametersValueType, VInputDimension, VOutputDimension &gt;::GetInverseMatrix</a>  () const</dt>
-<dd><a class="anchor" id="_deprecated000008"></a>Use GetInverse for public API instead. Method will eventually be made a protected member function  </dd>
+<dd><a class="anchor" id="_deprecated000012"></a>Please use AddSeed2.  </dd>
 <dt>Member <a class="el" href="classitk_1_1ProcessObject.html#ae8b77f3e24996b9abcf40b04403661ce">itk::ProcessObject::GetProgress</a>  () const</dt>
-<dd><a class="anchor" id="_deprecated000002"></a> Set the execution progress of a process object. The progress is a floating number in [0,1] with 0 meaning no progress and 1 meaning the filter has completed execution. The ProgressEvent is NOT invoked. This method is deprecated because filters should not be calling SetProgress directly but should be using UpdateProgress or IncrementProgress instead.  </dd>
+<dd><a class="anchor" id="_deprecated000001"></a> Set the execution progress of a process object. The progress is a floating number in [0,1] with 0 meaning no progress and 1 meaning the filter has completed execution. The ProgressEvent is NOT invoked. This method is deprecated because filters should not be calling SetProgress directly but should be using UpdateProgress or IncrementProgress instead.  </dd>
 <dt>Member <a class="el" href="classitk_1_1ProgressAccumulator.html#a931af4fb7004190724c5be4148707e87">itk::ProgressAccumulator::ProgressAccumulator</a>  ()</dt>
-<dd><p class="startdd"><a class="anchor" id="_deprecated000003"></a> Reset the progress accumulator. This method should not be necessary because this functionality is already present in the filter constructor. </p>
-<p class="enddd"><a class="anchor" id="_deprecated000004"></a> Reset the filter progress but keep the accumulated progress. This method is deprecated because the <a class="el" href="classitk_1_1ProgressAccumulator.html" title="Facilitates progress reporting for filters that wrap around multiple other filters.">ProgressAccumulator</a> now internally checks if a filter has been restarted and updates the accumulated progress automatically. This method also used to have the unfortunate side effect of forcing filters to rerun even if their parameters and input had not changed. This is because it called SetProgress(0) on the filters, which triggered a ModifiedTime and thus caused the filters to rerun. To avoid this behavior, the implementation of this method is now empty.  </p>
+<dd><p class="startdd"><a class="anchor" id="_deprecated000002"></a> Reset the progress accumulator. This method should not be necessary because this functionality is already present in the filter constructor. </p>
+<p class="enddd"><a class="anchor" id="_deprecated000003"></a> Reset the filter progress but keep the accumulated progress. This method is deprecated because the <a class="el" href="classitk_1_1ProgressAccumulator.html" title="Facilitates progress reporting for filters that wrap around multiple other filters.">ProgressAccumulator</a> now internally checks if a filter has been restarted and updates the accumulated progress automatically. This method also used to have the unfortunate side effect of forcing filters to rerun even if their parameters and input had not changed. This is because it called SetProgress(0) on the filters, which triggered a ModifiedTime and thus caused the filters to rerun. To avoid this behavior, the implementation of this method is now empty.  </p>
 </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#a6e977a63dee112c32843f5e570c1cb2e">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUseImageSpacingOff</a>  ()</dt>
-<dd><a class="anchor" id="_deprecated000012"></a>Use VectorGradientMagnitudeImageFilter::UseImageSpacingOff instead.  </dd>
+<dd><a class="anchor" id="_deprecated000008"></a>Use VectorGradientMagnitudeImageFilter::UseImageSpacingOff instead.  </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#a22ba2b457ccd1ccd3ebf536c295fef3b">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUseImageSpacingOn</a>  ()</dt>
-<dd><a class="anchor" id="_deprecated000011"></a>Use VectorGradientMagnitudeImageFilter::UseImageSpacingOn instead.  </dd>
+<dd><a class="anchor" id="_deprecated000007"></a>Use VectorGradientMagnitudeImageFilter::UseImageSpacingOn instead.  </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#a14b11840602621a663fd22aac96ac569">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUsePrincipleComponentsOff</a>  ()</dt>
-<dd><a class="anchor" id="_deprecated000014"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOff instead.  </dd>
+<dd><a class="anchor" id="_deprecated000010"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOff instead.  </dd>
 <dt>Member <a class="el" href="classitk_1_1VectorGradientMagnitudeImageFilter.html#ab73d2fcff58b93eb77fe54311b126e52">itk::VectorGradientMagnitudeImageFilter&lt; TInputImage, TRealType, TOutputImage &gt;::SetUsePrincipleComponentsOn</a>  ()</dt>
-<dd><a class="anchor" id="_deprecated000013"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOn instead.  </dd>
-<dt>Class <a class="el" href="structitk_1_1VectorImage_1_1Rebind.html">itk::VectorImage&lt; TPixel, VImageDimension &gt;::Rebind&lt; UPixelType, VUImageDimension &gt;</a>  </dt>
-<dd><a class="anchor" id="_deprecated000005"></a>Use template alias RebindImageType instead </dd>
+<dd><a class="anchor" id="_deprecated000009"></a>Use VectorGradientMagnitudeImageFilter::UsePrincipleComponentsOn instead. </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
