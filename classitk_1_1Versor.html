@@ -97,6 +97,7 @@ $(function() {
 class itk::Versor&lt; T &gt;</div><p >A templated class holding a unit quaternion. </p>
 <p ><a class="el" href="classitk_1_1Versor.html" title="A templated class holding a unit quaternion.">Versor</a> is a templated class that holds a unit quaternion. The difference between versors and quaternions is that quaternions can represent rotations and scale changes while versors are limited to rotations.</p>
 <p >This class only implements the operations that maintain versors as a group, that is, any operations between versors result in another versor. For this reason, addition is not defined in this class, even though it is a valid operation between quaternions.</p>
+<dl class="section note"><dt>Note</dt><dd>Its special member functions are implicitly defaulted, following the C++ "Rule of Zero".</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> </dd>
 <dd>
 <a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> </dd>
@@ -105,7 +106,7 @@ class itk::Versor&lt; T &gt;</div><p >A templated class holding a unit quaternio
 <dd>
 <a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00050">50</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00052">52</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -170,8 +171,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a18c95012da69f44a6a640e03dcfbe707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acadaefe7ca8bbe223972a076015d7795"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#acadaefe7ca8bbe223972a076015d7795">operator/=</a> (const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;v)</td></tr>
 <tr class="separator:acadaefe7ca8bbe223972a076015d7795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad606ee07f896754412be9aa7fb16d24c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#ad606ee07f896754412be9aa7fb16d24c">operator=</a> (const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;v)</td></tr>
-<tr class="separator:ad606ee07f896754412be9aa7fb16d24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a112b71a10e47e97e4b98eb40df2b7302"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#a112b71a10e47e97e4b98eb40df2b7302">operator==</a> (const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;v) const</td></tr>
 <tr class="separator:a112b71a10e47e97e4b98eb40df2b7302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad625c37cd8378730b1a73c2e3c579180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#ad625c37cd8378730b1a73c2e3c579180">Set</a> (const <a class="el" href="classitk_1_1Versor.html#a22900e98d69ad472f00529174915e96b">MatrixType</a> &amp;mat)</td></tr>
@@ -200,10 +199,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa6dd62d04279a94d030a6f80f377e182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dc77a5e8e88a53d295666b6d46e0308"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Versor.html#aa972105ad210120491f6b7bdf3a9557f">VnlVectorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#a6dc77a5e8e88a53d295666b6d46e0308">Transform</a> (const <a class="el" href="classitk_1_1Versor.html#aa972105ad210120491f6b7bdf3a9557f">VnlVectorType</a> &amp;v) const</td></tr>
 <tr class="separator:a6dc77a5e8e88a53d295666b6d46e0308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21d2aee2683937173f4518291a600407"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#a21d2aee2683937173f4518291a600407">Versor</a> ()=default</td></tr>
-<tr class="separator:a21d2aee2683937173f4518291a600407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aede0307b8611788ad7d48659406b976f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#aede0307b8611788ad7d48659406b976f">Versor</a> (const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;v)</td></tr>
-<tr class="separator:aede0307b8611788ad7d48659406b976f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a610d6f1705d2a0de95ce92811a4e6bc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Versor.html#a610d6f1705d2a0de95ce92811a4e6bc7">Set</a> (T x, T y, T z, T w)</td></tr>
 <tr class="separator:a610d6f1705d2a0de95ce92811a4e6bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,7 +241,7 @@ template&lt;typename T &gt; </div>
 <p ><a class="el" href="classitk_1_1CovariantVector.html" title="A templated class holding a n-Dimensional covariant vector.">CovariantVector</a> type. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00070">70</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00072">72</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -265,7 +260,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Type of the rotation matrix equivalent to the <a class="el" href="classitk_1_1Versor.html" title="A templated class holding a unit quaternion.">Versor</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00079">79</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00081">81</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -285,7 +280,7 @@ template&lt;typename T &gt; </div>
 <p ><a class="el" href="classitk_1_1Point.html" title="A templated class holding a geometric point in n-Dimensional space.">Point</a> type. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00067">67</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00069">69</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +299,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Type used for computations on the versor components </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00061">61</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00063">63</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +318,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00054">54</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00056">56</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +338,7 @@ template&lt;typename T &gt; </div>
 <p >ValueType can be used to declare a variable that is the same type as a data element held in a <a class="el" href="classitk_1_1Versor.html" title="A templated class holding a unit quaternion.">Versor</a>. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00058">58</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00060">60</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -362,7 +357,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> type used to represent the axis. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00064">64</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00066">66</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -382,7 +377,7 @@ template&lt;typename T &gt; </div>
 <p >Vnl Quaternion type. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00076">76</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00078">78</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -402,58 +397,7 @@ template&lt;typename T &gt; </div>
 <p >Vnl <a class="el" href="classitk_1_1Vector.html" title="A templated class holding a n-Dimensional vector.">Vector</a> type. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00073">73</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a21d2aee2683937173f4518291a600407" name="a21d2aee2683937173f4518291a600407"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21d2aee2683937173f4518291a600407">&#9670;&nbsp;</a></span>Versor() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classitk_1_1Versor.html">itk::Versor</a>&lt; T &gt;::Versor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Default constructor creates a null versor (representing 0 degrees rotation). </p>
-
-</div>
-</div>
-<a id="aede0307b8611788ad7d48659406b976f" name="aede0307b8611788ad7d48659406b976f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aede0307b8611788ad7d48659406b976f">&#9670;&nbsp;</a></span>Versor() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classitk_1_1Versor.html">itk::Versor</a>&lt; T &gt;::Versor </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Copy constructor. <br  />
- </p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00075">75</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -484,7 +428,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >use different epsilon for float and double </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00324">324</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00315">315</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -515,7 +459,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >use different epsilon for float and double </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00314">314</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00305">305</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkMath_8h_source.html#l00056">itk::Math::e</a>.</p>
 
@@ -548,7 +492,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >use different epsilon for float and double </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00319">319</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00310">310</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkMath_8h_source.html#l00056">itk::Math::e</a>.</p>
 
@@ -782,9 +726,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Returns the W component. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00202">202</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00193">193</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00345">itk::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00336">itk::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -814,9 +758,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Returns the X component. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00181">181</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00172">172</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00345">itk::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00336">itk::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -846,9 +790,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Returns the Y component. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00188">188</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00179">179</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00345">itk::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00336">itk::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -878,9 +822,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Returns the Z component. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00195">195</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00186">186</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00345">itk::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkVersor_8h_source.html#l00336">itk::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -1006,27 +950,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p >Division operator /=. Divide the current versor with the operand and store the result in the current versor. This is equivalent to compose the <a class="el" href="classitk_1_1Versor.html" title="A templated class holding a unit quaternion.">Versor</a> with the reciprocal of the operand </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1Versor.html#accaf068160a3a08a1d5f9708936b1a37">GetReciprocal</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad606ee07f896754412be9aa7fb16d24c" name="ad606ee07f896754412be9aa7fb16d24c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad606ee07f896754412be9aa7fb16d24c">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp; <a class="el" href="classitk_1_1Versor.html">itk::Versor</a>&lt; T &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Versor.html#a3a1c40e9203df6a6bcaf2bc84e6a9482">Self</a> &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Assignment operator =. Copy the versor argument. </p>
 
 </div>
 </div>
@@ -1416,7 +1339,7 @@ template&lt;typename T &gt; </div>
 <p >Escalar component of the <a class="el" href="classitk_1_1Versor.html" title="A templated class holding a unit quaternion.">Versor</a>. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00340">340</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00331">331</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -1444,7 +1367,7 @@ template&lt;typename T &gt; </div>
 <p >Component parallel to x axis. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00331">331</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00322">322</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -1472,7 +1395,7 @@ template&lt;typename T &gt; </div>
 <p >Component parallel to y axis. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00334">334</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00325">325</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
@@ -1500,7 +1423,7 @@ template&lt;typename T &gt; </div>
 <p >Component parallel to z axis. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00337">337</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVersor_8h_source.html#l00328">328</a> of file <a class="el" href="itkVersor_8h_source.html">itkVersor.h</a>.</p>
 
 </div>
 </div>
