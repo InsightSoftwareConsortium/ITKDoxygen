@@ -209,9 +209,9 @@ $(function() {
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> m_ConstImage;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  }</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ab59314a56aa56fdc6be7072aed927455">  176</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                       GetIndex() const ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a6bfbd73f5e4e0018a19fc34ac197672b">  176</a></span>  <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  GetIndex()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">return</span> m_Loop;</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
@@ -221,12 +221,12 @@ $(function() {
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">return</span> m_Loop + o;</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ad3d33c504e76a97966bb5c9cbf9a139f">  190</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_class" href="classitk_1_1Neighborhood.html">NeighborhoodType</a></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                       GetNeighborhood() const ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a033569cc814e6661993c74c27cbff844">  190</a></span>  <a class="code hl_class" href="classitk_1_1Neighborhood.html">NeighborhoodType</a></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  GetNeighborhood() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a250f487bef74288e1c1ed95f42a6deba">  194</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                       GetPixel(const <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i) const ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a3acfc0bb84792f940c43e7ade8b3edad">  194</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  GetPixel(<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">if</span> (!m_NeedToUseBoundaryCondition || this-&gt;InBounds())</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keywordflow">return</span> (m_NeighborhoodAccessorFunctor.Get(this-&gt;operator[](i)));</div>
@@ -240,56 +240,56 @@ $(function() {
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>             : m_NeighborhoodAccessorFunctor.BoundaryCondition(internalIndex, offset, <span class="keyword">this</span>, m_BoundaryCondition);</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ae707c33b061ff3c5b82a10557f7148d2">  215</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                       GetPixel(<a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i, <span class="keywordtype">bool</span> &amp; IsInBounds) <span class="keyword">const</span> ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a441f266c7ce722eb8126bbf73421a889">  215</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  GetPixel(<a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i, <span class="keywordtype">bool</span> &amp; IsInBounds) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ad6d67f16eddbadda5aaa3ee2eeafc52f">  220</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                       GetPixel(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aea5973538a2efb8a078fea5d53a7a208">  220</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  GetPixel(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">bool</span> inbounds;</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetNeighborhoodIndex(o), inbounds));</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  }</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#acd243170c1b2ab97ba326d25f9dd910f">  233</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                       GetPixel(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o, <span class="keywordtype">bool</span> &amp; IsInBounds) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a7bcaf9cbabdb2ca793ef1293131fba5c">  233</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  GetPixel(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o, <span class="keywordtype">bool</span> &amp; IsInBounds)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetNeighborhoodIndex(o), IsInBounds));</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  }</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a3d4680352c5d137f63ad226e1d8a90e4">  242</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                       GetNext(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis, <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aff8efec889de7b796acb194ec733a3e9">  242</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  GetNext(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis, <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetCenterNeighborhoodIndex() + (i * this-&gt;GetStride(axis))));</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  }</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a083d7a9efd4a11ea2c3933fa3eb87a1b">  251</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                       GetNext(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a120a421917138e25a639bf8ab35681aa">  251</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  GetNext(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetCenterNeighborhoodIndex() + this-&gt;GetStride(axis)));</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  }</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ad833f910be70b2d254fe6fef35319b9c">  260</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                       GetPrevious(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis, <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aa8ef4a606a31c7796bde55fc8d294f5d">  260</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  GetPrevious(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis, <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetCenterNeighborhoodIndex() - (i * this-&gt;GetStride(axis))));</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  }</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a4057591fdcf30f26717e42b842b2052d">  269</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                       GetPrevious(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ac37de1ecbfd9f64fc4202e9d8d32cb51">  269</a></span>  <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ae02704022a70c0247b7afca6f5ca6875">PixelType</a></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  GetPrevious(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> axis)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordflow">return</span> (this-&gt;GetPixel(this-&gt;GetCenterNeighborhoodIndex() - this-&gt;GetStride(axis)));</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  }</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a2daaa74ca77fe434bca4a80eb22f70a2">  277</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                       GetIndex(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aaf406e69013f01a91a8401cc8d2e3144">  277</a></span>  <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  GetIndex(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Offset.html">OffsetType</a> &amp; o)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">return</span> (this-&gt;GetIndex() + o);</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a65ee833f2abd6bff3ad7b9a11056a697">  285</a></span>  ITK_ITERATOR_VIRTUAL <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                       GetIndex(<a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i) <span class="keyword">const</span> ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a9c551742ba66e075ed0ac42f68a1be74">  285</a></span>  <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  GetIndex(<a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> i)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordflow">return</span> (this-&gt;GetIndex() + this-&gt;GetOffset(i));</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  }</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
@@ -320,24 +320,24 @@ $(function() {
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">return</span> m_WrapOffset[n];</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  }</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#adb3548d768aca9c6dbd186badb2d55f1">  330</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  GoToBegin() ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a7bc80753a33ef3da960d312e62effa44">  330</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  GoToBegin();</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aaa7d4289798ec335d432ee9139aba77b">  335</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  GoToEnd() ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ab3b78cc22752587afad1620a2eacde45">  335</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  GoToEnd();</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a6260e56cd426ea443c0b8c3ff5c78e1f">  340</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  Initialize(const <a class="code hl_class" href="structitk_1_1Size.html">SizeType</a> &amp; radius, const <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2b92cf50c9da356552edf7c47e219c76">ImageType</a> * ptr, const <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2875878ee83ba56d0e5cba6aa1b70fa0">RegionType</a> &amp; region) ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a88b28bd4e31774911d365d6bd12888cf">  340</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  Initialize(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Size.html">SizeType</a> &amp; radius, <span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2b92cf50c9da356552edf7c47e219c76">ImageType</a> * ptr, <span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2875878ee83ba56d0e5cba6aa1b70fa0">RegionType</a> &amp; region);</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aaf4443a24d63b6ee9404849931493b68">  345</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  IsAtBegin() const ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aa4244b228d86f404ccaa13250a017aad">  345</a></span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  IsAtBegin()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordflow">return</span> (this-&gt;GetCenterPointer() == m_Begin);</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  }</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ae99ffe953cbc8c7ab88d3994ec0c72bb">  353</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  IsAtEnd() const ITK_ITERATOR_FINAL</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a82cf1d4bbcf6d359a820891b11492512">  353</a></span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  IsAtEnd()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keywordflow">if</span> (this-&gt;GetCenterPointer() &gt; m_End)</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    {</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>      ExceptionObject    <a class="code hl_variable" href="namespaceitk_1_1Math.html#af105436026645171db6a4a3000ee8482">e</a>(__FILE__, __LINE__);</div>
@@ -415,14 +415,14 @@ $(function() {
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a3314a9078cfb562f90bc610973bf002f">  484</a></span>  <span class="keywordtype">bool</span></div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>  IndexInBounds(<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#ac45ee297607154e6d655d31782ac6c5b">NeighborIndexType</a> n) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a88b04c2790d7f9d53b2a101404192c55">  492</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>  OverrideBoundaryCondition(<span class="keyword">const</span> <a class="code hl_class" href="classitk_1_1ImageBoundaryCondition.html">ImageBoundaryConditionPointerType</a> i) ITK_ITERATOR_FINAL</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a356f9e93f6528818e2edd1855b8ade22">  492</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>  OverrideBoundaryCondition(<span class="keyword">const</span> <a class="code hl_class" href="classitk_1_1ImageBoundaryCondition.html">ImageBoundaryConditionPointerType</a> i)</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>  {</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>    m_BoundaryCondition = i;</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>  }</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span> </div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#aa1d4cedbd51fd61bbc3936619e521d85">  500</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>  ResetBoundaryCondition() ITK_ITERATOR_FINAL</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#afe2968369ed149db6e2435184f226da1">  500</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>  ResetBoundaryCondition()</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>  {</div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>    m_BoundaryCondition = &amp;m_InternalBoundaryCondition;</div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>  }</div>
@@ -463,31 +463,31 @@ $(function() {
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    <span class="keywordflow">return</span> m_NeedToUseBoundaryCondition;</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>  }</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span> </div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a961f8afef66dff0b5f75c5bf9d9ab7b5">  546</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>  SetRegion(<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2875878ee83ba56d0e5cba6aa1b70fa0">RegionType</a> &amp; region) ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a0f228d6a8d459ce4581d60c8cd901749">  546</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>  SetRegion(<span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1ConstNeighborhoodIterator.html#a2875878ee83ba56d0e5cba6aa1b70fa0">RegionType</a> &amp; region);</div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ad61077c9a7624bcb4f6b8d2423d986f5">  552</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  SetLoop(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp; p) ITK_ITERATOR_FINAL</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a04cfd638d1dc02e42311ba31d1321386">  552</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  SetLoop(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp; p)</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>  {</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    m_Loop = p;</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    m_IsInBoundsValid = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>  }</div>
 <div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a1d42a158ea8cf99e203ad58bed15cd7b">  562</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  SetBound(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Size.html">SizeType</a> &amp;) ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a8df9936288fa08d48cf94b7c67f17af8">  562</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  SetBound(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Size.html">SizeType</a> &amp;);</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ae2f442e5b922c8fb99b3cd3c601603a3">  569</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  SetPixelPointers(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp;) ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a57340cccba5e0d55f47eb13c9007ac10">  569</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  SetPixelPointers(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp;);</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ab912b0637dd03a85c0005a410889b0dc">  574</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  SetBeginIndex(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp; start) ITK_ITERATOR_FINAL</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a49783996067e9ee6411b0fabe415e9d5">  574</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  SetBeginIndex(<span class="keyword">const</span> <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> &amp; start)</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  {</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    m_BeginIndex = start;</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>  }</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span> </div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#a856107011bcd12bc6009bf3a66c9978a">  582</a></span>  ITK_ITERATOR_VIRTUAL <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  SetEndIndex() ITK_ITERATOR_FINAL;</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno"><a class="line" href="classitk_1_1ConstNeighborhoodIterator.html#ad0f116f54358b2fea6c5915b03993986">  582</a></span>  <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  SetEndIndex();</div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>  <a class="code hl_class" href="structitk_1_1Index.html">IndexType</a> m_BeginIndex{ { 0 } };</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
