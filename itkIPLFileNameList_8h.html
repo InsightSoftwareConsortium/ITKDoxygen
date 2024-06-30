@@ -115,16 +115,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5179304a57d3c92e38895278fa7f4850"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a5179304a57d3c92e38895278fa7f4850">IPLGetMacroDefinition</a>(class,  name,  type)&#160;&#160;&#160;  type class ::Get##name() { return this-&gt;m_##name; }</td></tr>
+<tr class="memitem:a8d2ad770eb417244b45568c1ad725842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a8d2ad770eb417244b45568c1ad725842">IPLGetMacroDeclaration</a>(name,  type)&#160;&#160;&#160;virtual type Get##name()</td></tr>
+<tr class="separator:a8d2ad770eb417244b45568c1ad725842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5179304a57d3c92e38895278fa7f4850"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a5179304a57d3c92e38895278fa7f4850">IPLGetMacroDefinition</a>(class,  name,  type)</td></tr>
 <tr class="separator:a5179304a57d3c92e38895278fa7f4850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200307399ea00c0f9de0828ebf2df9d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a200307399ea00c0f9de0828ebf2df9d7">IPLSetMacroDeclaration</a>(name,  type)&#160;&#160;&#160;virtual void Set##name(const type _arg)</td></tr>
+<tr class="separator:a200307399ea00c0f9de0828ebf2df9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b50a2b29ecbe850918866295c7ad81e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a1b50a2b29ecbe850918866295c7ad81e">IPLSetMacroDefinition</a>(class,  name,  type)</td></tr>
 <tr class="separator:a1b50a2b29ecbe850918866295c7ad81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a200307399ea00c0f9de0828ebf2df9d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a200307399ea00c0f9de0828ebf2df9d7">IPLSetMacroDeclaration</a>(name,  type)&#160;&#160;&#160;virtual void Set##name(const type _arg);</td></tr>
-<tr class="separator:a200307399ea00c0f9de0828ebf2df9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a8d2ad770eb417244b45568c1ad725842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="itkIPLFileNameList_8h.html#a8d2ad770eb417244b45568c1ad725842">IPLGetMacroDeclaration</a>(name,  type)&#160;&#160;&#160;virtual type Get##name();</td></tr>
-<tr class="separator:a8d2ad770eb417244b45568c1ad725842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8d2ad770eb417244b45568c1ad725842" name="a8d2ad770eb417244b45568c1ad725842"></a>
@@ -148,7 +146,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;virtual type Get##name();</td>
+          <td></td><td>&#160;&#160;&#160;virtual type Get##name()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,12 +183,14 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  type class ::Get##name() { return this-&gt;m_##name; }</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00059">59</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
+<b>Value:</b><div class="fragment"><div class="line">  type class ::Get##name() { <span class="keywordflow">return</span> this-&gt;m_##name; } \</div>
+<div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00058">58</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
 
 </div>
 </div>
@@ -215,7 +215,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;virtual void Set##name(const type _arg);</td>
+          <td></td><td>&#160;&#160;&#160;virtual void Set##name(const type _arg)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -265,9 +265,10 @@ Macros</h2></td></tr>
 <div class="line">      this-&gt;m_##name = _arg;                     \</div>
 <div class="line">    }                                            \</div>
 <div class="line">    ITK_GCC_PRAGMA_POP                           \</div>
-<div class="line">  }</div>
+<div class="line">  }                                              \</div>
+<div class="line">  ITK_MACROEND_NOOP_STATEMENT</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00043">43</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkIPLFileNameList_8h_source.html#l00042">42</a> of file <a class="el" href="itkIPLFileNameList_8h_source.html">itkIPLFileNameList.h</a>.</p>
 
 </div>
 </div>
