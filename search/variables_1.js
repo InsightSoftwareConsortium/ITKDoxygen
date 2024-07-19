@@ -10,5 +10,6 @@ var searchData=
   ['brhca_7',['brhcA',['../structGEImageHeader.html#ac0818d129b522813a1d2ae3b03dcd0be',1,'GEImageHeader']]],
   ['brhcr_8',['brhcR',['../structGEImageHeader.html#a711710860879160a8165edefe66b6d33',1,'GEImageHeader']]],
   ['brhcs_9',['brhcS',['../structGEImageHeader.html#a2f6bb5228a865df5ae11b5a32ac5dc85',1,'GEImageHeader']]],
-  ['buf_10',['buf',['../classitk_1_1AttributeMorphologyBaseImageFilter_1_1CompareOffsetType.html#a50d3b3bf201cdfd660f51c823b443104',1,'itk::AttributeMorphologyBaseImageFilter::CompareOffsetType']]]
+  ['bspline_10',['BSpline',['../classTransformBaseTemplate.html#a36e28122a5f6265c4118dff3e327c911',1,'TransformBaseTemplate']]],
+  ['buf_11',['buf',['../classitk_1_1AttributeMorphologyBaseImageFilter_1_1CompareOffsetType.html#a50d3b3bf201cdfd660f51c823b443104',1,'itk::AttributeMorphologyBaseImageFilter::CompareOffsetType']]]
 ];

@@ -178,6 +178,5 @@ var searchData=
   ['gridforwardwarpimagefilter_175',['GridForwardWarpImageFilter',['../classitk_1_1GridForwardWarpImageFilter.html',1,'itk']]],
   ['gridimagesource_176',['GridImageSource',['../classitk_1_1GridImageSource.html',1,'itk']]],
   ['groupspatialobject_177',['GroupSpatialObject',['../classitk_1_1GroupSpatialObject.html',1,'itk']]],
-  ['groupspatialobject_3c_203_20_3e_178',['GroupSpatialObject&lt; 3 &gt;',['../classitk_1_1GroupSpatialObject.html',1,'itk']]],
-  ['growthstrategy_179',['GrowthStrategy',['../classGrowthStrategy.html',1,'']]]
+  ['groupspatialobject_3c_203_20_3e_178',['GroupSpatialObject&lt; 3 &gt;',['../classitk_1_1GroupSpatialObject.html',1,'itk']]]
 ];

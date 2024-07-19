@@ -7,5 +7,5 @@ var searchData=
   ['gradient_4',['Gradient',['../classitk_1_1ESMDemonsRegistrationFunctionEnums.html#ae40dce42a99ea8beb462b76ad5408021',1,'itk::ESMDemonsRegistrationFunctionEnums']]],
   ['gradientimageformat_5',['GradientImageFormat',['../classitk_1_1DiffusionTensor3DReconstructionImageFilterEnums.html#a21c7cff76feb41030da6b6c191c116b4',1,'itk::DiffusionTensor3DReconstructionImageFilterEnums']]],
   ['gradientsource_6',['GradientSource',['../classitk_1_1ObjectToObjectMetricBaseTemplateEnums.html#a50fb2a8e05932dd99cb429e358d9fe7d',1,'itk::ObjectToObjectMetricBaseTemplateEnums']]],
-  ['growthstrategy_7',['GrowthStrategy',['../classitk_1_1ObjectStoreEnums.html#a93a042aa4f6383dd65a9cb0532c40f86',1,'itk::ObjectStoreEnums']]]
+  ['growthstrategy_7',['GrowthStrategy',['../group__ITKCommon.html#ga93a042aa4f6383dd65a9cb0532c40f86',1,'itk::ObjectStoreEnums']]]
 ];

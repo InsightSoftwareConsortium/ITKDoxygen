@@ -1424,7 +1424,7 @@ var searchData=
   ['_7etorusinteriorexteriorspatialfunction_1421',['~TorusInteriorExteriorSpatialFunction',['../classitk_1_1TorusInteriorExteriorSpatialFunction.html#ab0ae0fdd030734fca9018346d8a45aea',1,'itk::TorusInteriorExteriorSpatialFunction']]],
   ['_7etotalprogressreporter_1422',['~TotalProgressReporter',['../classitk_1_1TotalProgressReporter.html#a89b92a8de8746a2f42df349f16bc14ab',1,'itk::TotalProgressReporter']]],
   ['_7etransform_1423',['~Transform',['../classitk_1_1Transform.html#a62e71e30e387f27e3c093da711879a2c',1,'itk::Transform']]],
-  ['_7etransformbasetemplate_1424',['~TransformBaseTemplate',['../classitk_1_1TransformBaseTemplate.html#a92ee27a486b0b0b34d9d566ee0af9615',1,'itk::TransformBaseTemplate']]],
+  ['_7etransformbasetemplate_1424',['~TransformBaseTemplate',['../classTransformBaseTemplate.html#a3d050505c258a46a5ab66c24b3e4f3f8',1,'TransformBaseTemplate']]],
   ['_7etransformfactorybase_1425',['~TransformFactoryBase',['../classitk_1_1TransformFactoryBase.html#a09619cccce29c7d4fbae1bdc1bcce6f3',1,'itk::TransformFactoryBase']]],
   ['_7etransformfilereadertemplate_1426',['~TransformFileReaderTemplate',['../classitk_1_1TransformFileReaderTemplate.html#a21efaa9ad5ee268b1944d495cac15f4e',1,'itk::TransformFileReaderTemplate']]],
   ['_7etransformfilewritertemplate_1427',['~TransformFileWriterTemplate',['../classitk_1_1TransformFileWriterTemplate.html#ac0286e070c9bcc5e7faa9a93cfcc9678',1,'itk::TransformFileWriterTemplate']]],

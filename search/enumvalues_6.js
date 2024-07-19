@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ga_0',['GA',['../classitk_1_1DTITubeSpatialObjectPointEnums.html#ab51e3e19baa008b8014f6adc1f1d91b7acd957338498985e538753ea8d071e0f9',1,'itk::DTITubeSpatialObjectPointEnums']]],
+  ['ga_0',['GA',['../group__ITKSpatialObjects.html#ggab51e3e19baa008b8014f6adc1f1d91b7acd957338498985e538753ea8d071e0f9',1,'itk::DTITubeSpatialObjectPointEnums']]],
   ['gausscurvature_1',['GaussCurvature',['../classitk_1_1TriangleMeshCurvatureCalculatorEnums.html#ad13a901560531942d542454910cc8462a36474748637c299337559e50c24ceef3',1,'itk::TriangleMeshCurvatureCalculatorEnums']]],
   ['gaussian_2',['GAUSSIAN',['../classitk_1_1PatchBasedDenoisingBaseImageFilterEnums.html#afa28709122c2bf56318396e29df0cd91a0fceff26ae86a047835cafbb6cadb1b9',1,'itk::PatchBasedDenoisingBaseImageFilterEnums']]],
   ['ge_5fadw_5fex_5fdatetime_5flen_3',['GE_ADW_EX_DATETIME_LEN',['../classitk_1_1GEAdwImageIO.html#ab644567cdf38584652d0a0df20a52997a403af0cc87b3924b370c7f56792550c6',1,'itk::GEAdwImageIO']]],
@@ -154,5 +154,5 @@ var searchData=
   ['grayscale_151',['GRAYSCALE',['../classitk_1_1TIFFImageIO.html#a5fdcae8eb9f4b1b2037646fc393be7aca5a309dbc5f5ae5f1032cdeff2370b570',1,'itk::TIFFImageIO']]],
   ['green_152',['Green',['../classitk_1_1ScalarToRGBColormapImageFilterEnums.html#accef98a6483928f193cc00406687b9e2ad382816a3cbeed082c9e216e7392eed1',1,'itk::ScalarToRGBColormapImageFilterEnums']]],
   ['grey_153',['Grey',['../classitk_1_1ScalarToRGBColormapImageFilterEnums.html#accef98a6483928f193cc00406687b9e2acaf3a042a037c064b7513ed640c22f77',1,'itk::ScalarToRGBColormapImageFilterEnums']]],
-  ['greylevelnonuniformity_154',['GreyLevelNonuniformity',['../classitk_1_1Statistics_1_1HistogramToRunLengthFeaturesFilterEnums.html#a253f2afb973a4482489a1ce3f5b01d32af4447d0c90229e3268145a43e8dec46e',1,'itk::Statistics::HistogramToRunLengthFeaturesFilterEnums']]]
+  ['greylevelnonuniformity_154',['GreyLevelNonuniformity',['../group__ITKStatistics.html#gga253f2afb973a4482489a1ce3f5b01d32af4447d0c90229e3268145a43e8dec46e',1,'itk::Statistics::HistogramToRunLengthFeaturesFilterEnums']]]
 ];
