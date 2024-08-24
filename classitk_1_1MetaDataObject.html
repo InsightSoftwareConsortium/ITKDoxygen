@@ -103,10 +103,9 @@ class itk::MetaDataObject&lt; MetaDataObjectType &gt;</div><p >Allows arbitrary 
 <p>The <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> class is a templated class that is a specialization of the <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> type. This class allows arbitrary data types to be stored as <a class="el" href="classitk_1_1MetaDataObjectBase.html" title="The common interface for MetaDataObject&#39;s.">MetaDataObjectBase</a> types, and to be stored in a <a class="el" href="classitk_1_1MetaDataDictionary.html" title="Provides a mechanism for storing a collection of arbitrary data types.">MetaDataDictionary</a>.</p>
 <p >Any class or built in type that has valid copy constructor and operator= can be wrapped directly with this simple template type.</p>
 <p >Classes or built in types that do not have valid copy constructors or operator= implemented will have to implement those functions by deriving from MetaDataObject&lt;MetaDataObjectType&gt; and redefining the copy constructor and initializing constructor and the Get/Set functions to work around those deficiencies.</p>
-<p >The behavior of the <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">MetaDataObject&lt;Type&gt;::Print()</a> function has many plausible application dependent implementations. The default implementation prints the string "[UNKNOWN PRINT CHARACTERISTICS]" that works for all possible <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">MetaDataObject</a> types.</p>
-<p >The application developer may overload the default implementation to provide a specialized <a class="el" href="classitk_1_1MetaDataObject.html#a2ef179bc2e8e0016fe8aa993ffd78038">Print()</a> characteristics to produce results desirable for their application. A set of very crude Macros {NATIVE_TYPE_METADATAPRINT, ITK_OBJECT_TYPE_METADATAPRINT_1COMMA, ITK_IMAGE_TYPE_METADATAPRINT } are provided to facilitate a very simple implementation, and as an example. </p>
+<p >The default implementation prints uses the MetaDataObjectType's Print or operator&lt;&lt; if available. Otherwise, it prints string "[UNKNOWN PRINT CHARACTERISTICS]". </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00075">75</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00068">68</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::MetaDataObject&lt; MetaDataObjectType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -285,7 +284,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00084">84</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00077">77</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -303,7 +302,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00083">83</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00076">76</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +321,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 </div><div class="memdoc">
 <p >Smart pointer type alias support </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00081">81</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00074">74</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -340,7 +339,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00082">82</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00075">75</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -440,7 +439,7 @@ template&lt;typename TValue &gt; </div>
 </div><div class="memdoc">
 <p >Assigns the value of <code>source</code> to <code>target</code>. </p><dl class="section note"><dt>Note</dt><dd>The trailing return type is there, just to enable SFINAE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00156">156</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00149">149</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -483,7 +482,7 @@ template&lt;typename TValue , vcl_size_t VNumberOfElements&gt; </div>
 </div><div class="memdoc">
 <p ><code>Assign</code> overload for C-style arrays (as well as arrays of arrays). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00164">164</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00157">157</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -516,7 +515,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 
 <p>Implements <a class="el" href="classitk_1_1MetaDataObjectBase.html#a6ed26684894a98e93653c1c58c630ae4">itk::MetaDataObjectBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00202">202</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00195">195</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -560,7 +559,7 @@ template&lt;typename TValue &gt; </div>
 </div><div class="memdoc">
 <p >Tells whether the specified arguments compare equal. </p><dl class="section note"><dt>Note</dt><dd>The trailing return type is there, just to enable SFINAE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00178">178</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00171">171</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +602,7 @@ template&lt;typename TValue , vcl_size_t VNumberOfElements&gt; </div>
 </div><div class="memdoc">
 <p ><code>EqualValues</code> overload for C-style arrays (as well as arrays of arrays). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00186">186</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00179">179</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -688,7 +687,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 <p ><a class="el" href="namespaceitk_1_1Function.html">Function</a> to return the stored value of type MetaDataObjectType. </p><dl class="section author"><dt>Author</dt><dd>Hans J. Johnson </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a constant reference to a MetaDataObjectType </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="itkMetaDataObject_8h_source.html#l00251">itk::ExposeMetaData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkMetaDataObject_8h_source.html#l00244">itk::ExposeMetaData()</a>.</p>
 
 </div>
 </div>
@@ -748,7 +747,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 </div><div class="memdoc">
 <p >Method for creation through the object factory. </p>
 
-<p class="reference">Referenced by <a class="el" href="itkMetaDataObject_8h_source.html#l00225">itk::EncapsulateMetaData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkMetaDataObject_8h_source.html#l00218">itk::EncapsulateMetaData()</a>.</p>
 
 </div>
 </div>
@@ -853,7 +852,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 </div><div class="memdoc">
 <p >Returns (metaDataObject1 != metaDataObject2). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00142">142</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00135">135</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -894,7 +893,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 </div><div class="memdoc">
 <p >Returns (metaDataObject1 == metaDataObject2). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00135">135</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00128">128</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
@@ -922,7 +921,7 @@ template&lt;typename MetaDataObjectType &gt; </div>
 </div><div class="memdoc">
 <p >A variable to store this derived type. </p><dl class="section author"><dt>Author</dt><dd>Hans J. Johnson </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00213">213</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMetaDataObject_8h_source.html#l00206">206</a> of file <a class="el" href="itkMetaDataObject_8h_source.html">itkMetaDataObject.h</a>.</p>
 
 </div>
 </div>
