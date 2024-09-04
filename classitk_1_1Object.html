@@ -139,10 +139,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23703e82fa4a979fd512528f471606a0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a23703e82fa4a979fd512528f471606a0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *)</td></tr>
-<tr class="separator:a23703e82fa4a979fd512528f471606a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da89bb406b20a4c8dc54eb069561de0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a0da89bb406b20a4c8dc54eb069561de0">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *) const</td></tr>
-<tr class="separator:a0da89bb406b20a4c8dc54eb069561de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcf554cdb168cf8c7fb08917c607f0d"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4bcf554cdb168cf8c7fb08917c607f0d">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, <a class="el" href="classitk_1_1Command.html">Command</a> *cmd) const</td></tr>
+<tr class="separator:a4bcf554cdb168cf8c7fb08917c607f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6386f913147481aad879d8b1ddbeda"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a4f6386f913147481aad879d8b1ddbeda">AddObserver</a> (const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;event, std::function&lt; void(const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;)&gt; function) const</td></tr>
 <tr class="separator:a4f6386f913147481aad879d8b1ddbeda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f651828ee09eeedc4f148af067fe33a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">LightObject::Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a9f651828ee09eeedc4f148af067fe33a">CreateAnother</a> () const override</td></tr>
@@ -406,8 +404,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a23703e82fa4a979fd512528f471606a0" name="a23703e82fa4a979fd512528f471606a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23703e82fa4a979fd512528f471606a0">&#9670;&nbsp;</a></span>AddObserver() <span class="overload">[1/3]</span></h2>
+<a id="a4bcf554cdb168cf8c7fb08917c607f0d" name="a4bcf554cdb168cf8c7fb08917c607f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bcf554cdb168cf8c7fb08917c607f0d">&#9670;&nbsp;</a></span>AddObserver() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,39 +420,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classitk_1_1Command.html">Command</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add an observer/command to this object invoked for event. </p>
-<p >This is an implementation of the subject/observer design pattern. An observer is added by specifying an event to respond to and an <a class="el" href="classitk_1_1Command.html" title="Superclass for callback/observer methods.">itk::Command</a> to execute. It returns an unsigned long tag which can be used later to remove the event or retrieve the command.</p>
-<dl class="section note"><dt>Note</dt><dd>This member function is overloaded for const and non-const, just for backward compatibility. Removing the non-const overload appears to break the use of SWIG pythonprepend in ITK/Wrapping/Generators/Python/PyBase/pyBase.i </dd></dl>
-
-</div>
-</div>
-<a id="a0da89bb406b20a4c8dc54eb069561de0" name="a0da89bb406b20a4c8dc54eb069561de0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da89bb406b20a4c8dc54eb069561de0">&#9670;&nbsp;</a></span>AddObserver() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned long itk::Object::AddObserver </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1EventObject.html">EventObject</a> &amp;&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classitk_1_1Command.html">Command</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -464,10 +430,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Add an observer/command to this object invoked for event. </p>
+<p >This is an implementation of the subject/observer design pattern. An observer is added by specifying an event to respond to and an <a class="el" href="classitk_1_1Command.html" title="Superclass for callback/observer methods.">itk::Command</a> to execute. It returns an unsigned long tag which can be used later to remove the event or retrieve the command.</p>
+<dl class="section note"><dt>Note</dt><dd>The parameter name <code>cmd</code> is part of the interface to SWIG! It is used by the pythonprepend section in ITK/Wrapping/Generators/Python/PyBase/pyBase.i </dd></dl>
+
 </div>
 </div>
 <a id="a4f6386f913147481aad879d8b1ddbeda" name="a4f6386f913147481aad879d8b1ddbeda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f6386f913147481aad879d8b1ddbeda">&#9670;&nbsp;</a></span>AddObserver() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f6386f913147481aad879d8b1ddbeda">&#9670;&nbsp;</a></span>AddObserver() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1374,7 +1344,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Enable/Disable debug messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00272">272</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00268">268</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
@@ -1399,7 +1369,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Global object debug flag. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00278">278</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00274">274</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
@@ -1428,7 +1398,7 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 <a class="el" href="classitk_1_1MetaDataObject.html" title="Allows arbitrary data types to be stored as MetaDataObjectBase types, and to be stored in a MetaDataD...">itk::MetaDataObject</a> This is only allocated if used. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00294">294</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00290">290</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
@@ -1453,7 +1423,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Keep track of modification time. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00275">275</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00271">271</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
@@ -1477,7 +1447,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00296">296</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00292">292</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1472,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Implementation class for Subject/Observer Pattern. This is only allocated if used. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00285">285</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkObject_8h_source.html#l00281">281</a> of file <a class="el" href="itkObject_8h_source.html">itkObject.h</a>.</p>
 
 </div>
 </div>
