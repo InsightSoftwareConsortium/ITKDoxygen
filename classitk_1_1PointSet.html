@@ -251,6 +251,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7bd70e66ff7d85f0a816dc43e1f25305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb5178d921da3525073ab1ae228c3244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSet.html#afb5178d921da3525073ab1ae228c3244">SetPoints</a> (<a class="el" href="classitk_1_1PointSet.html#afb80bfb34f527758fe0daf8b5b5bf963">PointsVectorContainer</a> *)</td></tr>
 <tr class="separator:afb5178d921da3525073ab1ae228c3244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80547d9b884ac1959120a5311883f380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSet.html#a80547d9b884ac1959120a5311883f380">SetPointsByCoordinates</a> (const std::vector&lt; <a class="el" href="classitk_1_1PointSet.html#aa01b7f33cd88d48b89801e44990f87b8">CoordRepType</a> &gt; &amp;coordinates)</td></tr>
+<tr class="separator:a80547d9b884ac1959120a5311883f380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a311f73aa21f460c3813b99fef0d8fde0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSet.html#a311f73aa21f460c3813b99fef0d8fde0">SetRequestedRegion</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *data) override</td></tr>
 <tr class="separator:a311f73aa21f460c3813b99fef0d8fde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4122434876f1f159353edd9c3889fad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSet.html#ab4122434876f1f159353edd9c3889fad">SetRequestedRegion</a> (const <a class="el" href="classitk_1_1PointSet.html#ae7ed4c6ffd0c577d3c11eb6d52fe0cf6">RegionType</a> &amp;region)</td></tr>
@@ -1608,7 +1610,28 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Set the points container using a 1D vector. </p>
+<p >Set the points container using a 1D vector. </p><dl class="section warning"><dt>Warning</dt><dd>This member function is unsafe. It may just work, but it may also lead to undefined behavior. </dd></dl>
+
+</div>
+</div>
+<a id="a80547d9b884ac1959120a5311883f380" name="a80547d9b884ac1959120a5311883f380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80547d9b884ac1959120a5311883f380">&#9670;&nbsp;</a></span>SetPointsByCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTraits  = DefaultStaticMeshTraits&lt;TPixelType, VDimension, VDimension&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1PointSet.html">itk::PointSet</a>&lt; TPixelType, VDimension, TMeshTraits &gt;::SetPointsByCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classitk_1_1PointSet.html#aa01b7f33cd88d48b89801e44990f87b8">CoordRepType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the points by specifying its coordinates. </p>
 
 </div>
 </div>
@@ -1786,7 +1809,7 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00282">282</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00287">287</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
 
 </div>
 </div>
@@ -1812,7 +1835,7 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00279">279</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00284">284</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
 
 </div>
 </div>
@@ -1838,7 +1861,7 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00280">280</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00285">285</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
 
 </div>
 </div>
@@ -1918,7 +1941,7 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00281">281</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00286">286</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
 
 </div>
 </div>
@@ -1944,7 +1967,7 @@ template&lt;typename TPixelType , unsigned int VDimension = 3, typename TMeshTra
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00283">283</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkPointSet_8h_source.html#l00288">288</a> of file <a class="el" href="itkPointSet_8h_source.html">itkPointSet.h</a>.</p>
 
 </div>
 </div>

@@ -511,12 +511,21 @@ $(function() {
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    , <a class="code hl_typedef" href="classitk_1_1VectorContainer.html#aec6b0cfe6d8eef8c17fee2d4958350dd">VectorType</a>(first, last)</div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  {}</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>};</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="comment"></span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="preprocessor">#  include &quot;itkVectorContainer.hxx&quot;</span></div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TElement&gt;</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keyword">auto</span></div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="namespaceitk.html#aba41c7a8f97ef1b7eb9dfd32839c52fc">  571</a></span><a class="code hl_function" href="namespaceitk.html#aba41c7a8f97ef1b7eb9dfd32839c52fc">MakeVectorContainer</a>(std::vector&lt;TElement&gt; stdVector)</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>{</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  <span class="keyword">auto</span> vectorContainer = <a class="code hl_function" href="classitk_1_1VectorContainer.html#ae1b2a4443565ede83cbb285e59615224">VectorContainer&lt;SizeValueType, TElement&gt;::New</a>();</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>  vectorContainer-&gt;CastToSTLContainer() = std::move(stdVector);</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  <span class="keywordflow">return</span> vectorContainer;</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span> </div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="preprocessor">#  include &quot;itkVectorContainer.hxx&quot;</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassitk_1_1LightObject_html"><div class="ttname"><a href="classitk_1_1LightObject.html">itk::LightObject</a></div><div class="ttdoc">Light weight base class for most itk classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkLightObject_8h_source.html#l00055">itkLightObject.h:56</a></div></div>
 <div class="ttc" id="aclassitk_1_1Object_html"><div class="ttname"><a href="classitk_1_1Object.html">itk::Object</a></div><div class="ttdoc">Base class for most ITK classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkObject_8h_source.html#l00061">itkObject.h:62</a></div></div>
 <div class="ttc" id="aclassitk_1_1SmartPointer_html"><div class="ttname"><a href="classitk_1_1SmartPointer.html">itk::SmartPointer&lt; Self &gt;</a></div></div>
@@ -603,6 +612,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_acc869df9aa4015827a56d9270e2de276"><div class="ttname"><a href="classitk_1_1VectorContainer.html#acc869df9aa4015827a56d9270e2de276">itk::VectorContainer::End</a></div><div class="ttdeci">ConstIterator End() const</div></div>
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_add170e42ea4d25ad6ff96d5a79193485"><div class="ttname"><a href="classitk_1_1VectorContainer.html#add170e42ea4d25ad6ff96d5a79193485">itk::VectorContainer::Element</a></div><div class="ttdeci">TElement Element</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorContainer_8h_source.html#l00061">itkVectorContainer.h:61</a></div></div>
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_ade7683c4062b4f578ede194c4dcbbf75"><div class="ttname"><a href="classitk_1_1VectorContainer.html#ade7683c4062b4f578ede194c4dcbbf75">itk::VectorContainer::GetElementIfIndexExists</a></div><div class="ttdeci">bool GetElementIfIndexExists(ElementIdentifier, Element *) const</div></div>
+<div class="ttc" id="aclassitk_1_1VectorContainer_html_ae1b2a4443565ede83cbb285e59615224"><div class="ttname"><a href="classitk_1_1VectorContainer.html#ae1b2a4443565ede83cbb285e59615224">itk::VectorContainer::New</a></div><div class="ttdeci">static Pointer New()</div></div>
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_ae4b58006c493fbff965dc17b60675585"><div class="ttname"><a href="classitk_1_1VectorContainer.html#ae4b58006c493fbff965dc17b60675585">itk::VectorContainer::SetElement</a></div><div class="ttdeci">void SetElement(ElementIdentifier, Element)</div></div>
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_aec6b0cfe6d8eef8c17fee2d4958350dd"><div class="ttname"><a href="classitk_1_1VectorContainer.html#aec6b0cfe6d8eef8c17fee2d4958350dd">itk::VectorContainer::VectorType</a></div><div class="ttdeci">std::vector&lt; Element &gt; VectorType</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorContainer_8h_source.html#l00065">itkVectorContainer.h:65</a></div></div>
 <div class="ttc" id="aclassitk_1_1VectorContainer_html_af987b96e02b8122691f9bde1891e9c82"><div class="ttname"><a href="classitk_1_1VectorContainer.html#af987b96e02b8122691f9bde1891e9c82">itk::VectorContainer::Size</a></div><div class="ttdeci">ElementIdentifier Size() const</div></div>
@@ -613,6 +623,7 @@ $(function() {
 <div class="ttc" id="anamespaceitk_html_a0feae99e46b0df7b10079fbb219dc744"><div class="ttname"><a href="namespaceitk.html#a0feae99e46b0df7b10079fbb219dc744">itk::swap</a></div><div class="ttdeci">void swap(Array&lt; T &gt; &amp;a, Array&lt; T &gt; &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="itkArray_8h_source.html#l00242">itkArray.h:242</a></div></div>
 <div class="ttc" id="anamespaceitk_html_a5d97690bba6434c577f23ef82f589e11"><div class="ttname"><a href="namespaceitk.html#a5d97690bba6434c577f23ef82f589e11">itk::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const Index&lt; VDimension &gt; &amp;one, const Index&lt; VDimension &gt; &amp;two)</div><div class="ttdef"><b>Definition:</b> <a href="itkIndex_8h_source.html#l00570">itkIndex.h:571</a></div></div>
 <div class="ttc" id="anamespaceitk_html_ab978315120e2a1346cddffdbc2d9f1b3"><div class="ttname"><a href="namespaceitk.html#ab978315120e2a1346cddffdbc2d9f1b3">itk::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Index&lt; VDimension &gt; &amp;one, const Index&lt; VDimension &gt; &amp;two)</div><div class="ttdef"><b>Definition:</b> <a href="itkIndex_8h_source.html#l00556">itkIndex.h:557</a></div></div>
+<div class="ttc" id="anamespaceitk_html_aba41c7a8f97ef1b7eb9dfd32839c52fc"><div class="ttname"><a href="namespaceitk.html#aba41c7a8f97ef1b7eb9dfd32839c52fc">itk::MakeVectorContainer</a></div><div class="ttdeci">auto MakeVectorContainer(std::vector&lt; TElement &gt; stdVector)</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorContainer_8h_source.html#l00571">itkVectorContainer.h:571</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
