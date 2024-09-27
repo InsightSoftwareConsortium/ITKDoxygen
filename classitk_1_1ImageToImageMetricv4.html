@@ -124,8 +124,8 @@ If the point set is sparse, the option SetUse[Fixed|Moving]ImageGradientFilter t
 <p >The GetValue method may be overridden to provide better-optimized or otherwise different behavior as needed. Otherwise, the m_ComputeDerivative member should be checked to avoid computing derivatives when the caller has called <a class="el" href="classitk_1_1ImageToImageMetricv4.html#a5c29ddfaf1a1b707b1a5a262c7f9b605">GetValue()</a>. See <a class="el" href="classitk_1_1ImageToImageMetricv4.html#a245fd4f89f75545cd41e0c2e7a1a0a5c">GetComputeDerivative()</a> in this class and in this metric's threader class.</p>
 <p >Derived classes must derive a threader class from <a class="el" href="classitk_1_1ImageToImageMetricv4GetValueAndDerivativeThreader.html" title="Provides threading for ImageToImageMetricv4::GetValueAndDerivative.">ImageToImageMetricv4GetValueAndDerivativeThreader</a>, from which a DenseGetValueAndDerivativeThreader and SparseGetValueAndDerivativeThreader must be defined. Then, </p><div class="fragment"><div class="line">this-&gt;<a class="code hl_variable" href="classitk_1_1ImageToImageMetricv4.html#a251001c27e7eabd0ab15b90335580376">m_DenseGetValueAndDerivativeThreader</a>   = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">DenseDerivedClassGetValueAndDerivativeThreader::New</a>();</div>
 <div class="line">this-&gt;<a class="code hl_variable" href="classitk_1_1ImageToImageMetricv4.html#aac45e0242e8a34f62126898ca8bd643d">m_SparseGetValueAndDerivativeThreader</a>  = <a class="code hl_function" href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">SparseDerivedClassGetValueAndDerivativeThreader::New</a>();</div>
-<div class="ttc" id="aclassitk_1_1ImageToImageMetricv4_html_a251001c27e7eabd0ab15b90335580376"><div class="ttname"><a href="classitk_1_1ImageToImageMetricv4.html#a251001c27e7eabd0ab15b90335580376">itk::ImageToImageMetricv4::m_DenseGetValueAndDerivativeThreader</a></div><div class="ttdeci">ImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedImageRegionPartitioner&lt; VirtualImageDimension &gt;, Self &gt;::Pointer m_DenseGetValueAndDerivativeThreader</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToImageMetricv4_8h_source.html#l00668">itkImageToImageMetricv4.h:668</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageToImageMetricv4_html_aac45e0242e8a34f62126898ca8bd643d"><div class="ttname"><a href="classitk_1_1ImageToImageMetricv4.html#aac45e0242e8a34f62126898ca8bd643d">itk::ImageToImageMetricv4::m_SparseGetValueAndDerivativeThreader</a></div><div class="ttdeci">ImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedIndexedContainerPartitioner, Self &gt;::Pointer m_SparseGetValueAndDerivativeThreader</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToImageMetricv4_8h_source.html#l00673">itkImageToImageMetricv4.h:673</a></div></div>
+<div class="ttc" id="aclassitk_1_1ImageToImageMetricv4_html_a251001c27e7eabd0ab15b90335580376"><div class="ttname"><a href="classitk_1_1ImageToImageMetricv4.html#a251001c27e7eabd0ab15b90335580376">itk::ImageToImageMetricv4::m_DenseGetValueAndDerivativeThreader</a></div><div class="ttdeci">ImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedImageRegionPartitioner&lt; VirtualImageDimension &gt;, Self &gt;::Pointer m_DenseGetValueAndDerivativeThreader</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToImageMetricv4_8h_source.html#l00686">itkImageToImageMetricv4.h:686</a></div></div>
+<div class="ttc" id="aclassitk_1_1ImageToImageMetricv4_html_aac45e0242e8a34f62126898ca8bd643d"><div class="ttname"><a href="classitk_1_1ImageToImageMetricv4.html#aac45e0242e8a34f62126898ca8bd643d">itk::ImageToImageMetricv4::m_SparseGetValueAndDerivativeThreader</a></div><div class="ttdeci">ImageToImageMetricv4GetValueAndDerivativeThreader&lt; ThreadedIndexedContainerPartitioner, Self &gt;::Pointer m_SparseGetValueAndDerivativeThreader</div><div class="ttdef"><b>Definition:</b> <a href="itkImageToImageMetricv4_8h_source.html#l00691">itkImageToImageMetricv4.h:691</a></div></div>
 <div class="ttc" id="aitkAddImageFilter_8h_html_a3a600dc8aa7dad7b4c1e9d190d4f8c92"><div class="ttname"><a href="itkAddImageFilter_8h.html#a3a600dc8aa7dad7b4c1e9d190d4f8c92">New</a></div><div class="ttdeci">static Pointer New()</div></div>
 </div><!-- fragment --><p> must be called in the constructor.</p>
 <p >The ProcessPoint method of the derived threader must be overridden to provide the metric-specific evaluation.</p>
@@ -1308,7 +1308,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00651">651</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00669">669</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -1445,7 +1445,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Only floating-point images are currently supported. To support integer images, several small changes must be made </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00876">876</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00894">894</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -1891,7 +1891,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00653">653</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00671">671</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -2027,7 +2027,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Only floating-point images are currently supported. To support integer images, several small changes must be made </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00877">877</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00895">895</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -2576,7 +2576,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 
 <p>Reimplemented in <a class="el" href="classitk_1_1MattesMutualInformationImageToImageMetricv4.html#a1c8232cde1d3e5fe3129054a89a64497">itk::MattesMutualInformationImageToImageMetricv4&lt; TFixedImage, TMovingImage, TVirtualImage, TInternalComputationValueType, TMetricTraits &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00561">561</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00579">579</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -2806,7 +2806,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ObjectToObjectMetricBaseTemplate.html#a36bec480c39c8f9eb116d70c2f689d0d">itk::ObjectToObjectMetricBaseTemplate&lt; double &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00644">644</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00662">662</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -3621,7 +3621,7 @@ template&lt;typename TVirtualPoint , typename TFixedImagePoint &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00844">844</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00862">862</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkPoint_8h_source.html#l00265">itk::Point&lt; TCoordRep, VPointDimension &gt;::CastFrom()</a>.</p>
 
@@ -3666,7 +3666,7 @@ template&lt;typename TVirtualPoint &gt; </div>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> a point. Avoid cast if possible </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00820">820</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00838">838</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkPoint_8h_source.html#l00265">itk::Point&lt; TCoordRep, VPointDimension &gt;::CastFrom()</a>.</p>
 
@@ -3710,7 +3710,7 @@ template&lt;typename TFixedImagePoint &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00833">833</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00851">851</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkPoint_8h_source.html#l00265">itk::Point&lt; TCoordRep, VPointDimension &gt;::CastFrom()</a>.</p>
 
@@ -3753,7 +3753,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Transform.html" title="Transform points and vectors from an input space to an output space.">Transform</a> a point. Avoid cast if possible </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00812">812</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00830">830</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4469,7 +4469,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 
 <p>Implements <a class="el" href="classitk_1_1ObjectToObjectMetric.html#a87abbad0d789c40fe5683a50968b426d">itk::ObjectToObjectMetric&lt; TFixedImage::ImageDimension, TMovingImage::ImageDimension, TFixedImage, double &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00635">635</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00653">653</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4727,7 +4727,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00644">644</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00662">662</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4753,7 +4753,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00644">644</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00662">662</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4779,7 +4779,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00644">644</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00662">662</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4805,7 +4805,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00644">644</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00662">662</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4859,7 +4859,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Flag to know if derivative should be calculated </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00871">871</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00889">889</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4886,7 +4886,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Pointer to default gradient calculators. Used for easier initialization of the default filter. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00765">765</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00783">783</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4913,7 +4913,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Pointer to default gradient filter. Used for easier initialization of the default filter. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00760">760</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00778">778</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4939,7 +4939,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00766">766</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00784">784</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4965,7 +4965,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00761">761</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00779">779</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -4991,7 +4991,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00668">668</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00686">686</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5018,7 +5018,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Derivative results holder. Uses a raw pointer so we can point it to a user-provided object. This is used in internal methods so the user-provided variable does not have to be passed around. It also enables safely sharing a derivative object between metrics during multi-variate analysis, for memory efficiency. Will be nullptr if not set. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00782">782</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00800">800</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5044,7 +5044,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00740">740</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00758">758</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5071,7 +5071,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> gradient calculators </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00773">773</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00791">791</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5098,7 +5098,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Gradient filters </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00755">755</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00773">773</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5125,7 +5125,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Gradient images to store gradient filter output. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00769">769</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00787">787</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5151,7 +5151,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00746">746</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00764">764</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5178,7 +5178,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Masks </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00785">785</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00803">803</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5205,7 +5205,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Pointers to interpolators </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00744">744</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00762">762</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5232,7 +5232,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Sampled point sets </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00789">789</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00807">807</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5258,7 +5258,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00866">866</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00884">884</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5285,7 +5285,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Flag for warning about use of GetValue. Will be removed when GetValue implementation is improved. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00858">858</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00876">876</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5311,7 +5311,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00868">868</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00886">886</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5337,7 +5337,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00741">741</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00759">759</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5363,7 +5363,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00774">774</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00792">792</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5389,7 +5389,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00756">756</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00774">774</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5415,7 +5415,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00770">770</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00788">788</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5441,7 +5441,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00747">747</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00765">765</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5467,7 +5467,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00786">786</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00804">804</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5493,7 +5493,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00745">745</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00763">763</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5520,7 +5520,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Keep track of the number of sampled fixed points that are deemed invalid during conversion to virtual domain. For informational purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00863">863</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00881">881</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5546,7 +5546,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00673">673</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00691">691</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5573,7 +5573,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Flag to control use of precomputed gradient filter image or gradient calculator for image gradient calculations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00751">751</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00769">769</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5599,7 +5599,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00865">865</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00883">883</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5625,7 +5625,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00752">752</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00770">770</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5652,7 +5652,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Flag to use a SampledPointSet, i.e. Sparse sampling. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00793">793</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00811">811</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5679,7 +5679,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </div><div class="memdoc">
 <p >Flag to indicate the user set VirtualSampledPointSet over FixedSampledPointSet </p>
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00797">797</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00815">815</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
@@ -5705,7 +5705,7 @@ template&lt;typename TFixedImage , typename TMovingImage , typename TVirtualImag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00790">790</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkImageToImageMetricv4_8h_source.html#l00808">808</a> of file <a class="el" href="itkImageToImageMetricv4_8h_source.html">itkImageToImageMetricv4.h</a>.</p>
 
 </div>
 </div>
