@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classitk_1_1RelabelComponentImageFilter.html#a019179565fc0acf94e652a38356487b3">  211</a></span>  <a class="code hl_typedef" href="classitk_1_1RelabelComponentImageFilter.html#adefb6bc443c7c69cfc7448e5d80cdbcb">ObjectSizeType</a></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  GetSizeOfObjectInPixels(<a class="code hl_typedef" href="classitk_1_1RelabelComponentImageFilter.html#ad1ee8e6c0291262c4a576b7d9e3f27f1">LabelType</a> obj)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">if</span> (obj &gt; 0 &amp;&amp; obj &lt;= m_NumberOfObjects)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">if</span> (obj &gt; 0 &amp;&amp; <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a><span class="keyword">&gt;</span>(obj) &lt;= m_NumberOfObjects)</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    {</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="keywordflow">return</span> m_SizeOfObjectsInPixels[obj - 1];</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
@@ -194,7 +194,7 @@ $(function() {
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classitk_1_1RelabelComponentImageFilter.html#a7e2aa3bac412e0bfbcff286650a9fde4">  228</a></span>  <span class="keywordtype">float</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  GetSizeOfObjectInPhysicalUnits(<a class="code hl_typedef" href="classitk_1_1RelabelComponentImageFilter.html#ad1ee8e6c0291262c4a576b7d9e3f27f1">LabelType</a> obj)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> (obj &gt; 0 &amp;&amp; obj &lt;= m_NumberOfObjects)</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> (obj &gt; 0 &amp;&amp; <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a><span class="keyword">&gt;</span>(obj) &lt;= m_NumberOfObjects)</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    {</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="keywordflow">return</span> m_SizeOfObjectsInPhysicalUnits[obj - 1];</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>

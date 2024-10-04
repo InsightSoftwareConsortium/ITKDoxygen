@@ -492,7 +492,7 @@ $(function() {
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno"><a class="line" href="classitk_1_1VTKPolyDataMeshIO.html#a6a84905f0fc7650d1728fb8c305a9fda">  456</a></span>  <a class="code hl_function" href="classitk_1_1VTKPolyDataMeshIO.html#a6a84905f0fc7650d1728fb8c305a9fda">WritePointsBufferAsBINARY</a>(std::ofstream &amp; outputFile, T * buffer, <span class="keyword">const</span> <a class="code hl_typedef" href="classitk_1_1VTKPolyDataMeshIO.html#ae450076def35a8b4218b68b7c5828c85">StringType</a> &amp; pointComponentType)</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>  {</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    outputFile &lt;&lt; <span class="stringliteral">&quot;POINTS &quot;</span> &lt;&lt; this-&gt;m_NumberOfPoints &lt;&lt; pointComponentType &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>      buffer, this-&gt;m_NumberOfPoints * this-&gt;m_PointDimension, &amp;outputFile);</div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span> </div>
@@ -634,7 +634,7 @@ $(function() {
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;VERTICES &quot;</span> &lt;&lt; numberOfVertices &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfVertexIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>      <span class="keyword">const</span> <span class="keyword">auto</span> data = make_unique_for_overwrite&lt;unsigned int[]&gt;(numberOfVertexIndices);</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      ReadCellsBuffer(buffer, data.get());</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        data.get(), numberOfVertexIndices, &amp;outputFile);</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>      outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    }</div>
@@ -687,7 +687,7 @@ $(function() {
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>        }</div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>      }</div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(data.get(), numberOfLineIndices, &amp;outputFile);</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(data.get(), numberOfLineIndices, &amp;outputFile);</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    }</div>
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span> </div>
@@ -699,7 +699,7 @@ $(function() {
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;POLYGONS &quot;</span> &lt;&lt; numberOfPolygons &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; numberOfPolygonIndices &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>      <span class="keyword">const</span> <span class="keyword">auto</span> data = make_unique_for_overwrite&lt;unsigned int[]&gt;(numberOfPolygonIndices);</div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>      ReadCellsBuffer(buffer, data.get());</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>      <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;unsigned int&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>        data.get(), numberOfPolygonIndices, &amp;outputFile);</div>
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>      outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    }</div>
@@ -892,7 +892,7 @@ $(function() {
 <div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LOOKUP_TABLE default\n&quot;</span>;</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    }</div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span> </div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>      buffer, this-&gt;m_NumberOfPointPixels * this-&gt;m_NumberOfPointPixelComponents, &amp;outputFile);</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="keywordflow">return</span>;</div>
@@ -1082,7 +1082,7 @@ $(function() {
 <div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>      outputFile &lt;&lt; <span class="stringliteral">&quot;LOOKUP_TABLE default\n&quot;</span>;</div>
 <div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>    }</div>
 <div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span> </div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>    <a class="code hl_function" href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper&lt;T&gt;::SwapWriteRangeFromSystemToBigEndian</a>(</div>
 <div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>      buffer, this-&gt;m_NumberOfCells * this-&gt;m_NumberOfCellPixelComponents, &amp;outputFile);</div>
 <div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    outputFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>    <span class="keywordflow">return</span>;</div>
@@ -1187,8 +1187,8 @@ $(function() {
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>} <span class="comment">// end namespace itk</span></div>
 <div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span> </div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span><span class="preprocessor">#endif </span><span class="comment">// itkVTKPolyDataMeshIO_h</span></div>
-<div class="ttc" id="aclassitk_1_1ByteSwapper_html_a80a3157a4f46d640e259f8788615692a"><div class="ttname"><a href="classitk_1_1ByteSwapper.html#a80a3157a4f46d640e259f8788615692a">itk::ByteSwapper::SwapWriteRangeFromSystemToBigEndian</a></div><div class="ttdeci">static void SwapWriteRangeFromSystemToBigEndian(const T *p, int num, OStreamType *fp)</div></div>
-<div class="ttc" id="aclassitk_1_1ByteSwapper_html_aa7b4bbd9944c0f91eba4cb4cb641c8c0"><div class="ttname"><a href="classitk_1_1ByteSwapper.html#aa7b4bbd9944c0f91eba4cb4cb641c8c0">itk::ByteSwapper::SystemIsLittleEndian</a></div><div class="ttdeci">static constexpr bool SystemIsLittleEndian()</div><div class="ttdef"><b>Definition:</b> <a href="itkByteSwapper_8h_source.html#l00081">itkByteSwapper.h:81</a></div></div>
+<div class="ttc" id="aclassitk_1_1ByteSwapper_html_aa7b4bbd9944c0f91eba4cb4cb641c8c0"><div class="ttname"><a href="classitk_1_1ByteSwapper.html#aa7b4bbd9944c0f91eba4cb4cb641c8c0">itk::ByteSwapper::SystemIsLittleEndian</a></div><div class="ttdeci">static constexpr bool SystemIsLittleEndian()</div><div class="ttdef"><b>Definition:</b> <a href="itkByteSwapper_8h_source.html#l00085">itkByteSwapper.h:85</a></div></div>
+<div class="ttc" id="aclassitk_1_1ByteSwapper_html_ab5b559a864e982a3516cbc1f3d6103ba"><div class="ttname"><a href="classitk_1_1ByteSwapper.html#ab5b559a864e982a3516cbc1f3d6103ba">itk::ByteSwapper::SwapWriteRangeFromSystemToBigEndian</a></div><div class="ttdeci">static void SwapWriteRangeFromSystemToBigEndian(const T *p, int num, std::ostream *fp)</div></div>
 <div class="ttc" id="aclassitk_1_1ByteSwapper_html_aecf07613c86f9909cab1f5a8be17fff6"><div class="ttname"><a href="classitk_1_1ByteSwapper.html#aecf07613c86f9909cab1f5a8be17fff6">itk::ByteSwapper::SwapRangeFromSystemToBigEndian</a></div><div class="ttdeci">static void SwapRangeFromSystemToBigEndian(T *p, BufferSizeType num)</div></div>
 <div class="ttc" id="aclassitk_1_1Indent_html"><div class="ttname"><a href="classitk_1_1Indent.html">itk::Indent</a></div><div class="ttdoc">Control indentation during Print() invocation.</div><div class="ttdef"><b>Definition:</b> <a href="itkIndent_8h_source.html#l00049">itkIndent.h:50</a></div></div>
 <div class="ttc" id="aclassitk_1_1LightObject_html"><div class="ttname"><a href="classitk_1_1LightObject.html">itk::LightObject</a></div><div class="ttdoc">Light weight base class for most itk classes.</div><div class="ttdef"><b>Definition:</b> <a href="itkLightObject_8h_source.html#l00055">itkLightObject.h:56</a></div></div>
