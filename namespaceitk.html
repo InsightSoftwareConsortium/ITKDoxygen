@@ -2604,6 +2604,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSet.html">PointSet</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetBase.html">PointSetBase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetFunction.html">PointSetFunction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1PointSetToImageFilter.html">PointSetToImageFilter</a></td></tr>
@@ -3410,8 +3412,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1VectorConnectedComponentImageFilter.html">VectorConnectedComponentImageFilter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1VectorContainer.html">VectorContainer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1VectorCurvatureAnisotropicDiffusionImageFilter.html">VectorCurvatureAnisotropicDiffusionImageFilter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1VectorCurvatureNDAnisotropicDiffusionFunction.html">VectorCurvatureNDAnisotropicDiffusionFunction</a></td></tr>
@@ -3710,6 +3710,9 @@ Typedefs</h2></td></tr>
 <tr class="separator:a31cf4ef1ecf32403c14e5b3fdcb1ab82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd335d1fceafdd6d24ba05d01e409be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html#afbd335d1fceafdd6d24ba05d01e409be">TxtTransformIO</a> = <a class="el" href="classitk_1_1TxtTransformIOTemplate.html">TxtTransformIOTemplate</a>&lt; double &gt;</td></tr>
 <tr class="separator:afbd335d1fceafdd6d24ba05d01e409be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af852854aa65e5117047e8127c98b243a"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2  = void&gt; </td></tr>
+<tr class="memitem:af852854aa65e5117047e8127c98b243a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceitk.html#af852854aa65e5117047e8127c98b243a">VectorContainer</a> = <a class="el" href="classitk_1_1detail_1_1VectorContainer.html">detail::VectorContainer</a>&lt; std::conditional_t&lt; std::is_void_v&lt; T2 &gt;, <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>, T1 &gt;, std::conditional_t&lt; std::is_void_v&lt; T2 &gt;, T1, T2 &gt; &gt;</td></tr>
+<tr class="separator:af852854aa65e5117047e8127c98b243a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5016105aff040354b19f342e8e1efced"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceitk.html#a5016105aff040354b19f342e8e1efced">VersorRigid3DTransformOptimizer</a> = <a class="el" href="classitk_1_1VersorTransformOptimizer.html">VersorTransformOptimizer</a></td></tr>
 <tr class="separator:a5016105aff040354b19f342e8e1efced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64d12535674a63d09cbb850cc15e778e"><td class="memTemplParams" colspan="2">template&lt;unsigned int VDimension&gt; </td></tr>
@@ -5706,6 +5709,33 @@ template&lt;unsigned int VDimension&gt; </div>
 <p >This helps to meet backward compatibility </p>
 
 <p class="definition">Definition at line <a class="el" href="itkTxtTransformIO_8h_source.html#l00088">88</a> of file <a class="el" href="itkTxtTransformIO_8h_source.html">itkTxtTransformIO.h</a>.</p>
+
+</div>
+</div>
+<a id="af852854aa65e5117047e8127c98b243a" name="af852854aa65e5117047e8127c98b243a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af852854aa65e5117047e8127c98b243a">&#9670;&nbsp;</a></span>VectorContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2  = void&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceitk.html#af852854aa65e5117047e8127c98b243a">itk::VectorContainer</a> = typedef <a class="el" href="classitk_1_1detail_1_1VectorContainer.html">detail::VectorContainer</a>&lt;std::conditional_t&lt;std::is_void_v&lt;T2&gt;, <a class="el" href="namespaceitk.html#ab7ab0be12978d8285c89179db3969651">SizeValueType</a>, T1&gt;, std::conditional_t&lt;std::is_void_v&lt;T2&gt;, T1, T2&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Alias template, allowing to use <code><a class="el" href="namespaceitk.html#af852854aa65e5117047e8127c98b243a">itk::VectorContainer</a>&lt;TElement&gt;</code> without having to explicitly specify its <code>ElementIdentifier</code> type.</p>
+<p >The template parameters <code>T1</code> and <code>T2</code> allow specifying the index type and the element type, as follows:</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T1</td><td>The index type OR (when <code>T2</code> is <code>void</code>) the element type.</td></tr>
+    <tr><td class="paramname">T2</td><td>The element type OR <code>void</code>. When <code>T2</code> is <code>void</code>, the element type is specified by the first template argument (T1), and the index type will be <code>SizeValueType</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="itkVectorContainer_8h_source.html#l00583">583</a> of file <a class="el" href="itkVectorContainer_8h_source.html">itkVectorContainer.h</a>.</p>
 
 </div>
 </div>
@@ -9755,11 +9785,11 @@ template&lt;typename TElement &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Makes a <a class="el" href="classitk_1_1VectorContainer.html" title="Define a front-end to the STL &quot;vector&quot; container that conforms to the IndexedContainerInterface.">VectorContainer</a> that has a copy of the specified <code>std::vector</code>. </p>
+<p >Makes a VectorContainer that has a copy of the specified <code>std::vector</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkVectorContainer_8h_source.html#l00571">571</a> of file <a class="el" href="itkVectorContainer_8h_source.html">itkVectorContainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkVectorContainer_8h_source.html#l00590">590</a> of file <a class="el" href="itkVectorContainer_8h_source.html">itkVectorContainer.h</a>.</p>
 
-<p class="reference">References <a class="el" href="classitk_1_1VectorContainer.html#ae1b2a4443565ede83cbb285e59615224">itk::VectorContainer&lt; TElementIdentifier, TElement &gt;::New()</a>.</p>
+<p class="reference">References <a class="el" href="classitk_1_1detail_1_1VectorContainer.html#aac3c80d2f72e66c9b55e98e972fa1203">itk::detail::VectorContainer&lt; TElementIdentifier, TElement &gt;::New()</a>.</p>
 
 </div>
 </div>
@@ -10461,7 +10491,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00493">493</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00491">491</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 </div>
 </div>
@@ -11069,7 +11099,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00499">499</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00497">497</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkOffset_8h_source.html#l00316">itk::Offset&lt; VDimension &gt;::begin()</a>, and <a class="el" href="itkOffset_8h_source.html#l00334">itk::Offset&lt; VDimension &gt;::end()</a>.</p>
 
@@ -11825,7 +11855,7 @@ template&lt;unsigned int VDimension&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00465">465</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00463">463</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 </div>
 </div>
@@ -14462,7 +14492,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00513">513</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00511">511</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 </div>
 </div>
@@ -14670,7 +14700,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00486">486</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00484">484</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkOffset_8h_source.html#l00316">itk::Offset&lt; VDimension &gt;::begin()</a>, and <a class="el" href="itkOffset_8h_source.html#l00334">itk::Offset&lt; VDimension &gt;::end()</a>.</p>
 
@@ -14917,7 +14947,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00507">507</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00505">505</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 </div>
 </div>
@@ -15079,7 +15109,7 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00521">521</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00519">519</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
 </div>
 </div>
@@ -16028,11 +16058,11 @@ template&lt;unsigned int VDimension&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00529">529</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOffset_8h_source.html#l00527">527</a> of file <a class="el" href="itkOffset_8h_source.html">itkOffset.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkOffset_8h_source.html#l00242">itk::Offset&lt; VDimension &gt;::m_InternalArray</a>, and <a class="el" href="itkOffset_8h_source.html#l00529">swap()</a>.</p>
+<p class="reference">References <a class="el" href="itkOffset_8h_source.html#l00242">itk::Offset&lt; VDimension &gt;::m_InternalArray</a>, and <a class="el" href="itkOffset_8h_source.html#l00527">swap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkOffset_8h_source.html#l00304">itk::Offset&lt; VDimension &gt;::swap()</a>, and <a class="el" href="itkOffset_8h_source.html#l00529">swap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkOffset_8h_source.html#l00304">itk::Offset&lt; VDimension &gt;::swap()</a>, and <a class="el" href="itkOffset_8h_source.html#l00527">swap()</a>.</p>
 
 </div>
 </div>
