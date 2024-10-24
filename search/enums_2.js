@@ -6,7 +6,9 @@ var searchData=
   ['compression_3',['Compression',['../classitk_1_1GDCMImageIOEnums.html#ab17e992354bb6c1b50d1bd6020d3b5c8',1,'itk::GDCMImageIOEnums']]],
   ['connectivity_4',['Connectivity',['../classitk_1_1ConnectedThresholdImageFilterEnums.html#a16939fb7bb2c4fe7d7cb8c1a3872bcdb',1,'itk::ConnectedThresholdImageFilterEnums']]],
   ['convolutionimagefilteroutputregion_5',['ConvolutionImageFilterOutputRegion',['../group__ITKConvolution.html#ga516a61867a03dad00b6bee653cdb5576',1,'itk::ConvolutionImageFilterBaseEnums']]],
-  ['coordinatemajornessterms_6',['CoordinateMajornessTerms',['../group__ITKCommon.html#ga31e898bb5bf864f2806404904577e524',1,'itk::SpatialOrientationEnums']]],
-  ['coordinateterms_7',['CoordinateTerms',['../group__ITKCommon.html#gaeebc5f41f756b247ec3e5179b03102f9',1,'itk::SpatialOrientationEnums']]],
-  ['curvatures_8',['Curvatures',['../classitk_1_1TriangleMeshCurvatureCalculatorEnums.html#ad13a901560531942d542454910cc8462',1,'itk::TriangleMeshCurvatureCalculatorEnums']]]
+  ['coordinateenum_6',['CoordinateEnum',['../classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515',1,'itk::AnatomicalOrientation']]],
+  ['coordinatemajornessterms_7',['CoordinateMajornessTerms',['../group__ITKCommon.html#ga31e898bb5bf864f2806404904577e524',1,'itk::SpatialOrientationEnums']]],
+  ['coordinatemajornesstermsenum_8',['CoordinateMajornessTermsEnum',['../classitk_1_1AnatomicalOrientation.html#a717edc78360ea6386ca269d97d299bfb',1,'itk::AnatomicalOrientation']]],
+  ['coordinateterms_9',['CoordinateTerms',['../group__ITKCommon.html#gaeebc5f41f756b247ec3e5179b03102f9',1,'itk::SpatialOrientationEnums']]],
+  ['curvatures_10',['Curvatures',['../classitk_1_1TriangleMeshCurvatureCalculatorEnums.html#ad13a901560531942d542454910cc8462',1,'itk::TriangleMeshCurvatureCalculatorEnums']]]
 ];
