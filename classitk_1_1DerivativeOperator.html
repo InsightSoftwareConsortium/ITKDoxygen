@@ -101,13 +101,11 @@ class itk::DerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A
 <p >An example operator to compute X derivatives of a 2D image can be created with: </p><div class="fragment"><div class="line"><span class="keyword">using</span> DerivativeOperatorType = <a class="code hl_class" href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator&lt;float, 2&gt;</a>;</div>
 <div class="line">DerivativeOperatorType derivativeOperator;</div>
 <div class="line">derivativeOperator.<a class="code hl_function" href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">SetDirection</a>(0); <span class="comment">// X dimension</span></div>
-<div class="line"><a class="code hl_class" href="structitk_1_1Size.html">itk::Size&lt;2&gt;</a> radius;</div>
-<div class="line">radius.<a class="code hl_function" href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">Fill</a>(1); <span class="comment">// A radius of 1 in both dimensions is a 3x3 operator</span></div>
+<div class="line"><span class="keyword">auto</span> radius = <a class="code hl_function" href="structitk_1_1Size.html#ade8164104b423193497c120fb8598467">itk::Size&lt;2&gt;::Filled</a>(1); <span class="comment">// A radius of 1 in both dimensions is a 3x3 operator</span></div>
 <div class="line">derivativeOperator.CreateToRadius(radius);</div>
-<div class="ttc" id="aclassitk_1_1DerivativeOperator_html"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator</a></div><div class="ttdoc">A NeighborhoodOperator for taking an n-th order derivative at a pixel.</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00069">itkDerivativeOperator.h:70</a></div></div>
+<div class="ttc" id="aclassitk_1_1DerivativeOperator_html"><div class="ttname"><a href="classitk_1_1DerivativeOperator.html">itk::DerivativeOperator</a></div><div class="ttdoc">A NeighborhoodOperator for taking an n-th order derivative at a pixel.</div><div class="ttdef"><b>Definition:</b> <a href="itkDerivativeOperator_8h_source.html#l00068">itkDerivativeOperator.h:69</a></div></div>
 <div class="ttc" id="aclassitk_1_1NeighborhoodOperator_html_a305ac4aad44dd6c52298a8b830078fec"><div class="ttname"><a href="classitk_1_1NeighborhoodOperator.html#a305ac4aad44dd6c52298a8b830078fec">itk::NeighborhoodOperator::SetDirection</a></div><div class="ttdeci">void SetDirection(const unsigned long direction)</div><div class="ttdef"><b>Definition:</b> <a href="itkNeighborhoodOperator_8h_source.html#l00094">itkNeighborhoodOperator.h:94</a></div></div>
-<div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size&lt; 2 &gt;</a></div></div>
-<div class="ttc" id="astructitk_1_1Size_html_a7a81d513733bd5cdeaecc2c132541c76"><div class="ttname"><a href="structitk_1_1Size.html#a7a81d513733bd5cdeaecc2c132541c76">itk::Size::Fill</a></div><div class="ttdeci">void Fill(SizeValueType value)</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00211">itkSize.h:211</a></div></div>
+<div class="ttc" id="astructitk_1_1Size_html_ade8164104b423193497c120fb8598467"><div class="ttname"><a href="structitk_1_1Size.html#ade8164104b423193497c120fb8598467">itk::Size::Filled</a></div><div class="ttdeci">static constexpr Self Filled(const SizeValueType value)</div><div class="ttdef"><b>Definition:</b> <a href="itkSize_8h_source.html#l00425">itkSize.h:425</a></div></div>
 </div><!-- fragment --><p> and creates a kernel that looks like: </p><div class="fragment"><div class="line">0        0 0</div>
 <div class="line">0.5  0   -0.5</div>
 <div class="line">0    0   0</div>
@@ -125,7 +123,7 @@ class itk::DerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;</div><p >A
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00069">69</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00068">68</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::DerivativeOperator&lt; TPixel, VDimension, TAllocator &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -398,7 +396,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00074">74</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00073">73</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -416,7 +414,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00075">75</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00074">74</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -450,7 +448,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 
 <p>Implements <a class="el" href="classitk_1_1NeighborhoodOperator.html#a9800f673e8e0bbacf8e5148a32623fc4">itk::NeighborhoodOperator&lt; TPixel, 2, NeighborhoodAllocator&lt; TPixel &gt; &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00115">115</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00114">114</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -540,7 +538,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 </div><div class="memdoc">
 <p >Returns the order of the derivative. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00092">92</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00091">91</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -583,7 +581,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 
 <p>Reimplemented from <a class="el" href="classitk_1_1Neighborhood.html#a13403b596b9df856208819eb7517e8d3">itk::Neighborhood&lt; TPixel, VDimension, NeighborhoodAllocator&lt; TPixel &gt; &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00098">98</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00097">97</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -614,7 +612,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 </div><div class="memdoc">
 <p >Sets the order of the derivative. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00085">85</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00084">84</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
@@ -642,7 +640,7 @@ template&lt;typename TPixel , unsigned int VDimension = 2, typename TAllocator  
 </div><div class="memdoc">
 <p >Order of the derivative. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00122">122</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDerivativeOperator_8h_source.html#l00121">121</a> of file <a class="el" href="itkDerivativeOperator_8h_source.html">itkDerivativeOperator.h</a>.</p>
 
 </div>
 </div>
