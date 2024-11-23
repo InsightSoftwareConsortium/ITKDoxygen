@@ -99,7 +99,7 @@ class itk::AdaptImageFilter&lt; TInputImage, TOutputImage, TAccessor &gt;</div><
 <p ><a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> converts an image to another pixel type using a data accessor. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> can perform simple cast operations (i.e. short to float) or can extract a subcomponent of a pixel (i.e. extract the green component of an RGB pixel. <a class="el" href="classitk_1_1AdaptImageFilter.html" title="Convert an image to another pixel type using the specified data accessor.">AdaptImageFilter</a> could also be used for performing simple arithmetic operations at a pixel (i.e. taking the std::sqrt() or std::sin() of a pixel); however, these types of operations could also be accomplished using the itk::UnaryImageFilter.</p>
 <p >The third template parameter for this filter is a DataAccessor which performs the adaption or conversion of a pixel. The DataAccessor must provide a method called Get() which takes an input pixel and returns an output pixel. The input pixel can be passed by reference but the output pixel is frequently returned by value. However, a data accessor that returns a subcomponent of a pixel will usually return that subcomponent by reference. For instance, a data accessor that returns the green component of a RGB pixel will simply return a reference to the proper element of the RGB vector. See itk::DataAccessor for performing simple cast operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00131">131</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00121">121</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::AdaptImageFilter&lt; TInputImage, TOutputImage, TAccessor &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -261,6 +261,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a045435abee226744b08f94b9e7e45dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab782582a1e162ab0d91fdcbeafabf9f8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AdaptImageFilter.html#ab782582a1e162ab0d91fdcbeafabf9f8">GetNameOfClass</a> () const override</td></tr>
 <tr class="separator:ab782582a1e162ab0d91fdcbeafabf9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:aa58e1e7a904a90955d92250eef721410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1AdaptImageFilter.html#aa58e1e7a904a90955d92250eef721410">SetAccessor</a> (<a class="el" href="classitk_1_1AdaptImageFilter.html#ab731aeb6093e2f9800df6beb5f057fdf">AccessorType</a> &amp;accessor)</td></tr>
 <tr class="separator:aa58e1e7a904a90955d92250eef721410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1UnaryFunctorImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1UnaryFunctorImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1UnaryFunctorImageFilter.html">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;</a></td></tr>
@@ -819,7 +820,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
 </div><div class="memdoc">
 <p >Typedef for the accessor type </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00155">155</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00145">145</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -837,7 +838,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00148">148</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00138">138</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -855,7 +856,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00147">147</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00137">137</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +875,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00141">141</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00131">131</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -892,7 +893,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00143">143</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00133">133</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
 </div>
 </div>
@@ -978,9 +979,9 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
 </div><div class="memdoc">
 <p >Get the accessor. This is a convenience method so the user </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00162">162</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00152">152</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkAdaptImageFilter_8h_source.html#l00064">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::GetAccessor()</a>, and <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00085">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::GetFunctor()</a>.</p>
+<p class="reference">References <a class="el" href="itkAdaptImageFilter_8h_source.html#l00062">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::GetAccessor()</a>, and <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00085">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::GetFunctor()</a>.</p>
 
 </div>
 </div>
@@ -1069,9 +1070,9 @@ template&lt;typename TInputImage , typename TOutputImage , typename TAccessor &g
 </div><div class="memdoc">
 <p >Set the accessor. This is a convenience method so the user does </p>
 
-<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00169">169</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkAdaptImageFilter_8h_source.html#l00159">159</a> of file <a class="el" href="itkAdaptImageFilter_8h_source.html">itkAdaptImageFilter.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkAdaptImageFilter_8h_source.html#l00064">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::GetAccessor()</a>, <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00085">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::GetFunctor()</a>, <a class="el" href="classitk_1_1Object.html#adf1c30b589a8c0311881ee31d8702ee2">itk::Object::Modified()</a>, <a class="el" href="itkAdaptImageFilter_8h_source.html#l00083">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::SetAccessor()</a>, and <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00103">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::SetFunctor()</a>.</p>
+<p class="reference">References <a class="el" href="itkAdaptImageFilter_8h_source.html#l00062">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::GetAccessor()</a>, <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00085">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::GetFunctor()</a>, <a class="el" href="classitk_1_1Object.html#adf1c30b589a8c0311881ee31d8702ee2">itk::Object::Modified()</a>, <a class="el" href="itkAdaptImageFilter_8h_source.html#l00073">itk::Functor::AccessorFunctor&lt; TInput, TAccessor &gt;::SetAccessor()</a>, and <a class="el" href="itkUnaryFunctorImageFilter_8h_source.html#l00103">itk::UnaryFunctorImageFilter&lt; TInputImage, TOutputImage, Functor::AccessorFunctor&lt; TInputImage::PixelType, TAccessor &gt; &gt;::SetFunctor()</a>.</p>
 
 </div>
 </div>
