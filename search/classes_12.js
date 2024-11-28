@@ -183,7 +183,7 @@ var searchData=
   ['spatialfunction_3c_20bool_2c_20vdimension_2c_20point_3c_20double_2c_203_20_3e_20_3e_180',['SpatialFunction&lt; bool, VDimension, Point&lt; double, 3 &gt; &gt;',['../classitk_1_1SpatialFunction.html',1,'itk']]],
   ['spatialfunction_3c_20double_2c_203_2c_20point_3c_20double_2c_203_20_3e_20_3e_181',['SpatialFunction&lt; double, 3, Point&lt; double, 3 &gt; &gt;',['../classitk_1_1SpatialFunction.html',1,'itk']]],
   ['spatialfunction_3c_20double_2c_203_2c_20point_3c_20spaceprecisiontype_2c_203_20_3e_20_3e_182',['SpatialFunction&lt; double, 3, Point&lt; SpacePrecisionType, 3 &gt; &gt;',['../classitk_1_1SpatialFunction.html',1,'itk']]],
-  ['spatialfunction_3c_20double_2c_20vspacedimension_2c_20point_3c_20tcoordrep_2c_20vspacedimension_20_3e_20_3e_183',['SpatialFunction&lt; double, VSpaceDimension, Point&lt; TCoordRep, VSpaceDimension &gt; &gt;',['../classitk_1_1SpatialFunction.html',1,'itk']]],
+  ['spatialfunction_3c_20double_2c_20vspacedimension_2c_20point_3c_20tcoordinate_2c_20vspacedimension_20_3e_20_3e_183',['SpatialFunction&lt; double, VSpaceDimension, Point&lt; TCoordinate, VSpaceDimension &gt; &gt;',['../classitk_1_1SpatialFunction.html',1,'itk']]],
   ['spatialfunctionimageevaluatorfilter_184',['SpatialFunctionImageEvaluatorFilter',['../classitk_1_1SpatialFunctionImageEvaluatorFilter.html',1,'itk']]],
   ['spatialneighborsubsampler_185',['SpatialNeighborSubsampler',['../classitk_1_1Statistics_1_1SpatialNeighborSubsampler.html',1,'itk::Statistics']]],
   ['spatialobject_186',['SpatialObject',['../classitk_1_1SpatialObject.html',1,'itk']]],

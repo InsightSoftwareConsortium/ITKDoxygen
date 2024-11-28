@@ -77,7 +77,7 @@ var searchData=
   ['point_3c_20float_2c_20vindexdimension_20_3e_74',['Point&lt; float, VIndexDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['point_3c_20pointvaluetype_2c_202_20_3e_75',['Point&lt; PointValueType, 2 &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['point_3c_20pointvaluetype_2c_20vimagedimension_20_3e_76',['Point&lt; PointValueType, VImageDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
-  ['point_3c_20tcoordrep_2c_20vpointdimension_20_3e_77',['Point&lt; TCoordRep, VPointDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
+  ['point_3c_20tcoordinate_2c_20vpointdimension_20_3e_77',['Point&lt; TCoordinate, VPointDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['pointbasedspatialobject_78',['PointBasedSpatialObject',['../classitk_1_1PointBasedSpatialObject.html',1,'itk']]],
   ['pointbasedspatialobject_3c_203_20_3e_79',['PointBasedSpatialObject&lt; 3 &gt;',['../classitk_1_1PointBasedSpatialObject.html',1,'itk']]],
   ['pointbasedspatialobject_3c_203_2c_20contourspatialobjectpoint_3c_203_20_3e_20_3e_80',['PointBasedSpatialObject&lt; 3, ContourSpatialObjectPoint&lt; 3 &gt; &gt;',['../classitk_1_1PointBasedSpatialObject.html',1,'itk']]],

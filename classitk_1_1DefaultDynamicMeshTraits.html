@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ITK: itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt; Class Template Reference</title>
+<title>ITK: itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,14 +86,14 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classitk_1_1DefaultDynamicMeshTraits-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataRepresentation.html">Data Representation Objects</a> &raquo; <a class="el" href="group__MeshObjects.html">Mesh Representation Objects</a> &#124; <a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKCommon.html">Module ITKCommon</a></div></div></div>
+  <div class="headertitle"><div class="title">itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataRepresentation.html">Data Representation Objects</a> &raquo; <a class="el" href="group__MeshObjects.html">Mesh Representation Objects</a> &#124; <a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKCommon.html">Module ITKCommon</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDefaultDynamicMeshTraits_8h_source.html">itkDefaultDynamicMeshTraits.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep = float, typename TInterpolationWeight = float, typename TCellPixelType = TPixelType&gt;<br />
-class itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;</div><p >A simple structure that holds type information for a mesh and its cells. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TPixelType, unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate = float, typename TInterpolationWeight = float, typename TCellPixelType = TPixelType&gt;<br />
+class itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;</div><p >A simple structure that holds type information for a mesh and its cells. </p>
 <p ><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html" title="A simple structure that holds type information for a mesh and its cells.">DefaultDynamicMeshTraits</a> is a simple structure that holds type information for a mesh and its cells. It is used to avoid the passing of many template parameters while still enjoying the benefits of generic programming.</p>
 <p >Unlike <a class="el" href="classitk_1_1DefaultStaticMeshTraits.html">DefaultStaticMeshTraits</a>, this version of the MeshTraits structure is designed to create <a class="el" href="classitk_1_1Mesh.html" title="Implements the N-dimensional mesh structure.">Mesh</a> instances that will have many insert and delete operations done on them.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -101,7 +101,7 @@ class itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopolog
     <tr><td class="paramname">TPixelType</td><td>The type stored as data for an entity (cell, point, or boundary).</td></tr>
     <tr><td class="paramname">VPointDimension</td><td>Geometric dimension of space.</td></tr>
     <tr><td class="paramname">VMaxTopologicalDimension</td><td>Max topological dimension of a cell that can be inserted into this mesh.</td></tr>
-    <tr><td class="paramname">TCoordRep</td><td>Numerical type to store each coordinate value.</td></tr>
+    <tr><td class="paramname">TCoordinate</td><td>Numerical type to store each coordinate value.</td></tr>
     <tr><td class="paramname">TInterpolationWeight</td><td>Numerical type to store interpolation weights. </td></tr>
   </table>
   </dd>
@@ -111,65 +111,65 @@ class itk::DefaultDynamicMeshTraits&lt; TPixelType, VPointDimension, VMaxTopolog
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a672db14f940b747aaa0adcd9df568538"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a672db14f940b747aaa0adcd9df568538">CellAutoPointer</a> = typename <a class="el" href="classitk_1_1CellInterface.html#a6f0e698481cd5658defc5424bdaaa01d">CellType::CellAutoPointer</a></td></tr>
-<tr class="separator:a672db14f940b747aaa0adcd9df568538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a586e1872cccb68600892312692ce62b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a586e1872cccb68600892312692ce62b6">CellDataContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a37aa22168f9d8f48adadc24eb611ddd3">CellPixelType</a> &gt;</td></tr>
-<tr class="separator:a586e1872cccb68600892312692ce62b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ce75d31bf2e668778a9e392d6f5736"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad0ce75d31bf2e668778a9e392d6f5736">CellFeatureIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
-<tr class="separator:ad0ce75d31bf2e668778a9e392d6f5736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50430cac1b0ae8fa9e7ad1857f6e83d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
-<tr class="separator:ad50430cac1b0ae8fa9e7ad1857f6e83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac828d750473fe2ce8e5faa5100f19def"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac828d750473fe2ce8e5faa5100f19def">CellLinksContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a7e516cbd80ab28a50d6e18368994d8f9">PointCellLinksContainer</a> &gt;</td></tr>
-<tr class="separator:ac828d750473fe2ce8e5faa5100f19def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37aa22168f9d8f48adadc24eb611ddd3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a37aa22168f9d8f48adadc24eb611ddd3">CellPixelType</a> = TCellPixelType</td></tr>
-<tr class="separator:a37aa22168f9d8f48adadc24eb611ddd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e253d2a118389ce10b9c65ca7bc9182"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6e253d2a118389ce10b9c65ca7bc9182">CellsContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a27dbdd4c6faed75e250e1bc80f6b5d59">CellType</a> * &gt;</td></tr>
-<tr class="separator:a6e253d2a118389ce10b9c65ca7bc9182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a125222d94a6f982b68e70052a40472ba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a125222d94a6f982b68e70052a40472ba">CellTraits</a> = <a class="el" href="itkCellInterface_8h.html#a27f99f1bc6b3eca8ab6058a2b2df233e">itkMakeCellTraitsMacro</a></td></tr>
-<tr class="separator:a125222d94a6f982b68e70052a40472ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27dbdd4c6faed75e250e1bc80f6b5d59"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a27dbdd4c6faed75e250e1bc80f6b5d59">CellType</a> = <a class="el" href="classitk_1_1CellInterface.html">CellInterface</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a37aa22168f9d8f48adadc24eb611ddd3">CellPixelType</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a125222d94a6f982b68e70052a40472ba">CellTraits</a> &gt;</td></tr>
-<tr class="separator:a27dbdd4c6faed75e250e1bc80f6b5d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5594fd2c9acb3b9e97b610e779090faf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a5594fd2c9acb3b9e97b610e779090faf">CoordRepType</a> = TCoordRep</td></tr>
-<tr class="separator:a5594fd2c9acb3b9e97b610e779090faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c6aa0c529908e61cec91315664d986"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#af7c6aa0c529908e61cec91315664d986">InterpolationWeightType</a> = TInterpolationWeight</td></tr>
-<tr class="separator:af7c6aa0c529908e61cec91315664d986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae60d1f83e3fa0daf9a36733d208eec46"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ae60d1f83e3fa0daf9a36733d208eec46">PixelType</a> = TPixelType</td></tr>
-<tr class="separator:ae60d1f83e3fa0daf9a36733d208eec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e516cbd80ab28a50d6e18368994d8f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a7e516cbd80ab28a50d6e18368994d8f9">PointCellLinksContainer</a> = std::set&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a> &gt;</td></tr>
-<tr class="separator:a7e516cbd80ab28a50d6e18368994d8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a3c0287122e2ac1ca8bb9902e526157"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a3c0287122e2ac1ca8bb9902e526157">PointDataContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ae60d1f83e3fa0daf9a36733d208eec46">PixelType</a> &gt;</td></tr>
-<tr class="separator:a8a3c0287122e2ac1ca8bb9902e526157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f0a0d19adeb04b41b8987e9f727b968"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a4f0a0d19adeb04b41b8987e9f727b968">PointHashType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a5594fd2c9acb3b9e97b610e779090faf">CoordRepType</a>, VPointDimension &gt;</td></tr>
-<tr class="separator:a4f0a0d19adeb04b41b8987e9f727b968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf9565b0ebf2be295b0f3a71a056540e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
-<tr class="separator:abf9565b0ebf2be295b0f3a71a056540e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0ca353f373f35e956d4955e95ac09f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#aa0ca353f373f35e956d4955e95ac09f9">PointsContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a4e0e6294cc91830c7f076721cad0edba">PointType</a> &gt;</td></tr>
-<tr class="separator:aa0ca353f373f35e956d4955e95ac09f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e0e6294cc91830c7f076721cad0edba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a4e0e6294cc91830c7f076721cad0edba">PointType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a5594fd2c9acb3b9e97b610e779090faf">CoordRepType</a>, VPointDimension &gt;</td></tr>
-<tr class="separator:a4e0e6294cc91830c7f076721cad0edba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d439f88d834948a224e91ae3212e2f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a3d439f88d834948a224e91ae3212e2f8">Self</a> = <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">DefaultDynamicMeshTraits</a></td></tr>
-<tr class="separator:a3d439f88d834948a224e91ae3212e2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad9a160bfce73581c9201e5077d24e70"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#aad9a160bfce73581c9201e5077d24e70">UsingCellsContainer</a> = std::set&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a> &gt;</td></tr>
-<tr class="separator:aad9a160bfce73581c9201e5077d24e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6d265de492413f8c85c98a9ee6c7dd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a0a6d265de492413f8c85c98a9ee6c7dd">CellAutoPointer</a> = typename <a class="el" href="classitk_1_1CellInterface.html#a6f0e698481cd5658defc5424bdaaa01d">CellType::CellAutoPointer</a></td></tr>
+<tr class="separator:a0a6d265de492413f8c85c98a9ee6c7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4637467c86b2bee9b16af80354d7b559"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a4637467c86b2bee9b16af80354d7b559">CellDataContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad3eb74d72941123fdd350e770ea372d6">CellPixelType</a> &gt;</td></tr>
+<tr class="separator:a4637467c86b2bee9b16af80354d7b559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace81945654378a53a689071fd46d99ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ace81945654378a53a689071fd46d99ab">CellFeatureIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
+<tr class="separator:ace81945654378a53a689071fd46d99ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7dcdbc9776c9de3214d1c0bdc9e89b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
+<tr class="separator:a8a7dcdbc9776c9de3214d1c0bdc9e89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce55a59421c53196b79f0844a55085e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a9ce55a59421c53196b79f0844a55085e">CellLinksContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#acb7e03fde7f6de92ea840967338b44bc">PointCellLinksContainer</a> &gt;</td></tr>
+<tr class="separator:a9ce55a59421c53196b79f0844a55085e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3eb74d72941123fdd350e770ea372d6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad3eb74d72941123fdd350e770ea372d6">CellPixelType</a> = TCellPixelType</td></tr>
+<tr class="separator:ad3eb74d72941123fdd350e770ea372d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba436594351f13bea342e4edb084d59"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abba436594351f13bea342e4edb084d59">CellsContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#adf9e9d0a744b35661e5720151cb4e39c">CellType</a> * &gt;</td></tr>
+<tr class="separator:abba436594351f13bea342e4edb084d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3eb4bed215e0ebe8a8db738228d40e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abc3eb4bed215e0ebe8a8db738228d40e">CellTraits</a> = <a class="el" href="itkCellInterface_8h.html#a27f99f1bc6b3eca8ab6058a2b2df233e">itkMakeCellTraitsMacro</a></td></tr>
+<tr class="separator:abc3eb4bed215e0ebe8a8db738228d40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9e9d0a744b35661e5720151cb4e39c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#adf9e9d0a744b35661e5720151cb4e39c">CellType</a> = <a class="el" href="classitk_1_1CellInterface.html">CellInterface</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad3eb74d72941123fdd350e770ea372d6">CellPixelType</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abc3eb4bed215e0ebe8a8db738228d40e">CellTraits</a> &gt;</td></tr>
+<tr class="separator:adf9e9d0a744b35661e5720151cb4e39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a6c514b7d862007dd97c972fa3178f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac5a6c514b7d862007dd97c972fa3178f">CoordRepType</a> = TCoordinate</td></tr>
+<tr class="separator:ac5a6c514b7d862007dd97c972fa3178f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a444ed2686eec374845de2a06386c5e1e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a444ed2686eec374845de2a06386c5e1e">InterpolationWeightType</a> = TInterpolationWeight</td></tr>
+<tr class="separator:a444ed2686eec374845de2a06386c5e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a740228a8da1454edc266b04d329f4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a46a740228a8da1454edc266b04d329f4">PixelType</a> = TPixelType</td></tr>
+<tr class="separator:a46a740228a8da1454edc266b04d329f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7e03fde7f6de92ea840967338b44bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#acb7e03fde7f6de92ea840967338b44bc">PointCellLinksContainer</a> = std::set&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a> &gt;</td></tr>
+<tr class="separator:acb7e03fde7f6de92ea840967338b44bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7209cd33c92f23387096e493a8d431d8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a7209cd33c92f23387096e493a8d431d8">PointDataContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a46a740228a8da1454edc266b04d329f4">PixelType</a> &gt;</td></tr>
+<tr class="separator:a7209cd33c92f23387096e493a8d431d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac78564a427e08c5a77d643c8c146a01"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#aac78564a427e08c5a77d643c8c146a01">PointHashType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac5a6c514b7d862007dd97c972fa3178f">CoordRepType</a>, VPointDimension &gt;</td></tr>
+<tr class="separator:aac78564a427e08c5a77d643c8c146a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6131ac2746764c7d77caff3a00de5ce6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a> = <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td></tr>
+<tr class="separator:a6131ac2746764c7d77caff3a00de5ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40579fc593ea6ece2dc7c06a0feef006"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a40579fc593ea6ece2dc7c06a0feef006">PointsContainer</a> = <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a00a70624b74269c2e5944cc7052bf6ee">PointType</a> &gt;</td></tr>
+<tr class="separator:a40579fc593ea6ece2dc7c06a0feef006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a70624b74269c2e5944cc7052bf6ee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a00a70624b74269c2e5944cc7052bf6ee">PointType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac5a6c514b7d862007dd97c972fa3178f">CoordRepType</a>, VPointDimension &gt;</td></tr>
+<tr class="separator:a00a70624b74269c2e5944cc7052bf6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab956e490951a7cf54891acc497ed91af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ab956e490951a7cf54891acc497ed91af">Self</a> = <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">DefaultDynamicMeshTraits</a></td></tr>
+<tr class="separator:ab956e490951a7cf54891acc497ed91af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a68b4cdae79c7b772d79f9553dedaa9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a0a68b4cdae79c7b772d79f9553dedaa9">UsingCellsContainer</a> = std::set&lt; <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a> &gt;</td></tr>
+<tr class="separator:a0a68b4cdae79c7b772d79f9553dedaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a9939ff37d154af89ca3083402a91e77d"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a9939ff37d154af89ca3083402a91e77d">MaxTopologicalDimension</a> = VMaxTopologicalDimension</td></tr>
-<tr class="separator:a9939ff37d154af89ca3083402a91e77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c57119f035e75a9d788093a30f0852"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a72c57119f035e75a9d788093a30f0852">PointDimension</a> = VPointDimension</td></tr>
-<tr class="separator:a72c57119f035e75a9d788093a30f0852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724b81d7128332cd44cd69bb973ca775"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a724b81d7128332cd44cd69bb973ca775">MaxTopologicalDimension</a> = VMaxTopologicalDimension</td></tr>
+<tr class="separator:a724b81d7128332cd44cd69bb973ca775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ac05f354943da99277a13b8aef5643"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac1ac05f354943da99277a13b8aef5643">PointDimension</a> = VPointDimension</td></tr>
+<tr class="separator:ac1ac05f354943da99277a13b8aef5643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a672db14f940b747aaa0adcd9df568538" name="a672db14f940b747aaa0adcd9df568538"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a672db14f940b747aaa0adcd9df568538">&#9670;&nbsp;</a></span>CellAutoPointer</h2>
+<a id="a0a6d265de492413f8c85c98a9ee6c7dd" name="a0a6d265de492413f8c85c98a9ee6c7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a6d265de492413f8c85c98a9ee6c7dd">&#9670;&nbsp;</a></span>CellAutoPointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellAutoPointer =  typename <a class="el" href="classitk_1_1CellInterface.html#a6f0e698481cd5658defc5424bdaaa01d">CellType::CellAutoPointer</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellAutoPointer =  typename <a class="el" href="classitk_1_1CellInterface.html#a6f0e698481cd5658defc5424bdaaa01d">CellType::CellAutoPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,16 +178,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a586e1872cccb68600892312692ce62b6" name="a586e1872cccb68600892312692ce62b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a586e1872cccb68600892312692ce62b6">&#9670;&nbsp;</a></span>CellDataContainer</h2>
+<a id="a4637467c86b2bee9b16af80354d7b559" name="a4637467c86b2bee9b16af80354d7b559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4637467c86b2bee9b16af80354d7b559">&#9670;&nbsp;</a></span>CellDataContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellDataContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a37aa22168f9d8f48adadc24eb611ddd3">CellPixelType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellDataContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad3eb74d72941123fdd350e770ea372d6">CellPixelType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,16 +197,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="ad0ce75d31bf2e668778a9e392d6f5736" name="ad0ce75d31bf2e668778a9e392d6f5736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ce75d31bf2e668778a9e392d6f5736">&#9670;&nbsp;</a></span>CellFeatureIdentifier</h2>
+<a id="ace81945654378a53a689071fd46d99ab" name="ace81945654378a53a689071fd46d99ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace81945654378a53a689071fd46d99ab">&#9670;&nbsp;</a></span>CellFeatureIdentifier</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellFeatureIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellFeatureIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,16 +216,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="ad50430cac1b0ae8fa9e7ad1857f6e83d" name="ad50430cac1b0ae8fa9e7ad1857f6e83d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad50430cac1b0ae8fa9e7ad1857f6e83d">&#9670;&nbsp;</a></span>CellIdentifier</h2>
+<a id="a8a7dcdbc9776c9de3214d1c0bdc9e89b" name="a8a7dcdbc9776c9de3214d1c0bdc9e89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7dcdbc9776c9de3214d1c0bdc9e89b">&#9670;&nbsp;</a></span>CellIdentifier</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,16 +235,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="ac828d750473fe2ce8e5faa5100f19def" name="ac828d750473fe2ce8e5faa5100f19def"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac828d750473fe2ce8e5faa5100f19def">&#9670;&nbsp;</a></span>CellLinksContainer</h2>
+<a id="a9ce55a59421c53196b79f0844a55085e" name="a9ce55a59421c53196b79f0844a55085e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce55a59421c53196b79f0844a55085e">&#9670;&nbsp;</a></span>CellLinksContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellLinksContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a7e516cbd80ab28a50d6e18368994d8f9">PointCellLinksContainer</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellLinksContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#acb7e03fde7f6de92ea840967338b44bc">PointCellLinksContainer</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -254,16 +254,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a37aa22168f9d8f48adadc24eb611ddd3" name="a37aa22168f9d8f48adadc24eb611ddd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37aa22168f9d8f48adadc24eb611ddd3">&#9670;&nbsp;</a></span>CellPixelType</h2>
+<a id="ad3eb74d72941123fdd350e770ea372d6" name="ad3eb74d72941123fdd350e770ea372d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3eb74d72941123fdd350e770ea372d6">&#9670;&nbsp;</a></span>CellPixelType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellPixelType =  TCellPixelType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellPixelType =  TCellPixelType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -272,16 +272,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a6e253d2a118389ce10b9c65ca7bc9182" name="a6e253d2a118389ce10b9c65ca7bc9182"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e253d2a118389ce10b9c65ca7bc9182">&#9670;&nbsp;</a></span>CellsContainer</h2>
+<a id="abba436594351f13bea342e4edb084d59" name="abba436594351f13bea342e4edb084d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abba436594351f13bea342e4edb084d59">&#9670;&nbsp;</a></span>CellsContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellsContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a27dbdd4c6faed75e250e1bc80f6b5d59">CellType</a> *&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellsContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#adf9e9d0a744b35661e5720151cb4e39c">CellType</a> *&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -291,16 +291,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a125222d94a6f982b68e70052a40472ba" name="a125222d94a6f982b68e70052a40472ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a125222d94a6f982b68e70052a40472ba">&#9670;&nbsp;</a></span>CellTraits</h2>
+<a id="abc3eb4bed215e0ebe8a8db738228d40e" name="abc3eb4bed215e0ebe8a8db738228d40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3eb4bed215e0ebe8a8db738228d40e">&#9670;&nbsp;</a></span>CellTraits</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellTraits =  <a class="el" href="itkCellInterface_8h.html#a27f99f1bc6b3eca8ab6058a2b2df233e">itkMakeCellTraitsMacro</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellTraits =  <a class="el" href="itkCellInterface_8h.html#a27f99f1bc6b3eca8ab6058a2b2df233e">itkMakeCellTraitsMacro</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -310,16 +310,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a27dbdd4c6faed75e250e1bc80f6b5d59" name="a27dbdd4c6faed75e250e1bc80f6b5d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27dbdd4c6faed75e250e1bc80f6b5d59">&#9670;&nbsp;</a></span>CellType</h2>
+<a id="adf9e9d0a744b35661e5720151cb4e39c" name="adf9e9d0a744b35661e5720151cb4e39c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9e9d0a744b35661e5720151cb4e39c">&#9670;&nbsp;</a></span>CellType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CellType =  <a class="el" href="classitk_1_1CellInterface.html">CellInterface</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a37aa22168f9d8f48adadc24eb611ddd3">CellPixelType</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a125222d94a6f982b68e70052a40472ba">CellTraits</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CellType =  <a class="el" href="classitk_1_1CellInterface.html">CellInterface</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad3eb74d72941123fdd350e770ea372d6">CellPixelType</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abc3eb4bed215e0ebe8a8db738228d40e">CellTraits</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -329,16 +329,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a5594fd2c9acb3b9e97b610e779090faf" name="a5594fd2c9acb3b9e97b610e779090faf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5594fd2c9acb3b9e97b610e779090faf">&#9670;&nbsp;</a></span>CoordRepType</h2>
+<a id="ac5a6c514b7d862007dd97c972fa3178f" name="ac5a6c514b7d862007dd97c972fa3178f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a6c514b7d862007dd97c972fa3178f">&#9670;&nbsp;</a></span>CoordRepType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::CoordRepType =  TCoordRep</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::CoordRepType =  TCoordinate</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -347,16 +347,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="af7c6aa0c529908e61cec91315664d986" name="af7c6aa0c529908e61cec91315664d986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7c6aa0c529908e61cec91315664d986">&#9670;&nbsp;</a></span>InterpolationWeightType</h2>
+<a id="a444ed2686eec374845de2a06386c5e1e" name="a444ed2686eec374845de2a06386c5e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444ed2686eec374845de2a06386c5e1e">&#9670;&nbsp;</a></span>InterpolationWeightType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::InterpolationWeightType =  TInterpolationWeight</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::InterpolationWeightType =  TInterpolationWeight</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -365,16 +365,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="ae60d1f83e3fa0daf9a36733d208eec46" name="ae60d1f83e3fa0daf9a36733d208eec46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae60d1f83e3fa0daf9a36733d208eec46">&#9670;&nbsp;</a></span>PixelType</h2>
+<a id="a46a740228a8da1454edc266b04d329f4" name="a46a740228a8da1454edc266b04d329f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a740228a8da1454edc266b04d329f4">&#9670;&nbsp;</a></span>PixelType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PixelType =  TPixelType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PixelType =  TPixelType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -384,16 +384,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a7e516cbd80ab28a50d6e18368994d8f9" name="a7e516cbd80ab28a50d6e18368994d8f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e516cbd80ab28a50d6e18368994d8f9">&#9670;&nbsp;</a></span>PointCellLinksContainer</h2>
+<a id="acb7e03fde7f6de92ea840967338b44bc" name="acb7e03fde7f6de92ea840967338b44bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7e03fde7f6de92ea840967338b44bc">&#9670;&nbsp;</a></span>PointCellLinksContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointCellLinksContainer =  std::set&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointCellLinksContainer =  std::set&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,16 +403,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a8a3c0287122e2ac1ca8bb9902e526157" name="a8a3c0287122e2ac1ca8bb9902e526157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a3c0287122e2ac1ca8bb9902e526157">&#9670;&nbsp;</a></span>PointDataContainer</h2>
+<a id="a7209cd33c92f23387096e493a8d431d8" name="a7209cd33c92f23387096e493a8d431d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7209cd33c92f23387096e493a8d431d8">&#9670;&nbsp;</a></span>PointDataContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointDataContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ae60d1f83e3fa0daf9a36733d208eec46">PixelType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointDataContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a46a740228a8da1454edc266b04d329f4">PixelType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -422,16 +422,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a4f0a0d19adeb04b41b8987e9f727b968" name="a4f0a0d19adeb04b41b8987e9f727b968"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f0a0d19adeb04b41b8987e9f727b968">&#9670;&nbsp;</a></span>PointHashType</h2>
+<a id="aac78564a427e08c5a77d643c8c146a01" name="aac78564a427e08c5a77d643c8c146a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac78564a427e08c5a77d643c8c146a01">&#9670;&nbsp;</a></span>PointHashType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointHashType =  <a class="el" href="classitk_1_1Point.html">Point</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a5594fd2c9acb3b9e97b610e779090faf">CoordRepType</a>, VPointDimension&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointHashType =  <a class="el" href="classitk_1_1Point.html">Point</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac5a6c514b7d862007dd97c972fa3178f">CoordRepType</a>, VPointDimension&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -441,16 +441,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="abf9565b0ebf2be295b0f3a71a056540e" name="abf9565b0ebf2be295b0f3a71a056540e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf9565b0ebf2be295b0f3a71a056540e">&#9670;&nbsp;</a></span>PointIdentifier</h2>
+<a id="a6131ac2746764c7d77caff3a00de5ce6" name="a6131ac2746764c7d77caff3a00de5ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6131ac2746764c7d77caff3a00de5ce6">&#9670;&nbsp;</a></span>PointIdentifier</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointIdentifier =  <a class="el" href="namespaceitk.html#a85602046bfa12294b70634299f5f1015">IdentifierType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -460,16 +460,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="aa0ca353f373f35e956d4955e95ac09f9" name="aa0ca353f373f35e956d4955e95ac09f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0ca353f373f35e956d4955e95ac09f9">&#9670;&nbsp;</a></span>PointsContainer</h2>
+<a id="a40579fc593ea6ece2dc7c06a0feef006" name="a40579fc593ea6ece2dc7c06a0feef006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40579fc593ea6ece2dc7c06a0feef006">&#9670;&nbsp;</a></span>PointsContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointsContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#abf9565b0ebf2be295b0f3a71a056540e">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a4e0e6294cc91830c7f076721cad0edba">PointType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointsContainer =  <a class="el" href="classitk_1_1MapContainer.html">MapContainer</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a6131ac2746764c7d77caff3a00de5ce6">PointIdentifier</a>, <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a00a70624b74269c2e5944cc7052bf6ee">PointType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -479,16 +479,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a4e0e6294cc91830c7f076721cad0edba" name="a4e0e6294cc91830c7f076721cad0edba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e0e6294cc91830c7f076721cad0edba">&#9670;&nbsp;</a></span>PointType</h2>
+<a id="a00a70624b74269c2e5944cc7052bf6ee" name="a00a70624b74269c2e5944cc7052bf6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a70624b74269c2e5944cc7052bf6ee">&#9670;&nbsp;</a></span>PointType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointType =  <a class="el" href="classitk_1_1Point.html">Point</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a5594fd2c9acb3b9e97b610e779090faf">CoordRepType</a>, VPointDimension&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointType =  <a class="el" href="classitk_1_1Point.html">Point</a>&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ac5a6c514b7d862007dd97c972fa3178f">CoordRepType</a>, VPointDimension&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -498,16 +498,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a3d439f88d834948a224e91ae3212e2f8" name="a3d439f88d834948a224e91ae3212e2f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d439f88d834948a224e91ae3212e2f8">&#9670;&nbsp;</a></span>Self</h2>
+<a id="ab956e490951a7cf54891acc497ed91af" name="ab956e490951a7cf54891acc497ed91af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab956e490951a7cf54891acc497ed91af">&#9670;&nbsp;</a></span>Self</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">DefaultDynamicMeshTraits</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">DefaultDynamicMeshTraits</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -517,16 +517,16 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="aad9a160bfce73581c9201e5077d24e70" name="aad9a160bfce73581c9201e5077d24e70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad9a160bfce73581c9201e5077d24e70">&#9670;&nbsp;</a></span>UsingCellsContainer</h2>
+<a id="a0a68b4cdae79c7b772d79f9553dedaa9" name="a0a68b4cdae79c7b772d79f9553dedaa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a68b4cdae79c7b772d79f9553dedaa9">&#9670;&nbsp;</a></span>UsingCellsContainer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::UsingCellsContainer =  std::set&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#ad50430cac1b0ae8fa9e7ad1857f6e83d">CellIdentifier</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::UsingCellsContainer =  std::set&lt;<a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html#a8a7dcdbc9776c9de3214d1c0bdc9e89b">CellIdentifier</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -537,19 +537,19 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9939ff37d154af89ca3083402a91e77d" name="a9939ff37d154af89ca3083402a91e77d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9939ff37d154af89ca3083402a91e77d">&#9670;&nbsp;</a></span>MaxTopologicalDimension</h2>
+<a id="a724b81d7128332cd44cd69bb973ca775" name="a724b81d7128332cd44cd69bb973ca775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724b81d7128332cd44cd69bb973ca775">&#9670;&nbsp;</a></span>MaxTopologicalDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::MaxTopologicalDimension = VMaxTopologicalDimension</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::MaxTopologicalDimension = VMaxTopologicalDimension</td>
         </tr>
       </table>
   </td>
@@ -563,19 +563,19 @@ template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int
 
 </div>
 </div>
-<a id="a72c57119f035e75a9d788093a30f0852" name="a72c57119f035e75a9d788093a30f0852"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72c57119f035e75a9d788093a30f0852">&#9670;&nbsp;</a></span>PointDimension</h2>
+<a id="ac1ac05f354943da99277a13b8aef5643" name="ac1ac05f354943da99277a13b8aef5643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ac05f354943da99277a13b8aef5643">&#9670;&nbsp;</a></span>PointDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordRep  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
+template&lt;typename TPixelType , unsigned int VPointDimension = 3, unsigned int VMaxTopologicalDimension = VPointDimension, typename TCoordinate  = float, typename TInterpolationWeight  = float, typename TCellPixelType  = TPixelType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordRep, TInterpolationWeight, TCellPixelType &gt;::PointDimension = VPointDimension</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1DefaultDynamicMeshTraits.html">itk::DefaultDynamicMeshTraits</a>&lt; TPixelType, VPointDimension, VMaxTopologicalDimension, TCoordinate, TInterpolationWeight, TCellPixelType &gt;::PointDimension = VPointDimension</td>
         </tr>
       </table>
   </td>

@@ -236,94 +236,98 @@ $(function() {
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  {</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_typedef" href="classitk_1_1DecimationQuadEdgeMeshFilter.html#af7f4cc4ee78d47d2dfb2fc5aa2c089d8">OutputMeshPointer</a>           output = this-&gt;GetOutput();</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a8ed649fa1150420ea57535d58bd59b16">OutputCellsContainerPointer</a> cells = output-&gt;GetCells();</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    std::list&lt;OutputCellIdentifier&gt; r1, r2, elements_to_be_tested;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a711fe22a668047f73ad9652e8641a6a8">OutputQEType</a> *                  qe = iEdge;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a711fe22a668047f73ad9652e8641a6a8">OutputQEType</a> *                  qe_it = qe-&gt;GetOnext();</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    {</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      r1.push_back(qe_it-&gt;GetLeft());</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      qe_it = qe_it-&gt;GetOnext();</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    } <span class="keywordflow">while</span> (qe_it != qe);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    qe = iEdge-&gt;GetSym();</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    qe_it = qe-&gt;GetOnext();</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    {</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      r2.push_back(qe_it-&gt;GetLeft());</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      qe_it = qe_it-&gt;GetOnext();</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    } <span class="keywordflow">while</span> (qe_it != qe);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    r1.sort();</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    r2.sort();</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    std::set_symmetric_difference(</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      r1.begin(), r1.end(), r2.begin(), r2.end(), std::back_inserter(elements_to_be_tested));</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">typename</span> std::list&lt;OutputCellIdentifier&gt;::iterator it = elements_to_be_tested.begin();</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    std::list&lt;OutputCellIdentifier&gt; r1;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    std::list&lt;OutputCellIdentifier&gt; r2;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    std::list&lt;OutputCellIdentifier&gt; elements_to_be_tested;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a711fe22a668047f73ad9652e8641a6a8">OutputQEType</a> *                  qe = iEdge;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a711fe22a668047f73ad9652e8641a6a8">OutputQEType</a> *                  qe_it = qe-&gt;GetOnext();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      r1.push_back(qe_it-&gt;GetLeft());</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      qe_it = qe_it-&gt;GetOnext();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    } <span class="keywordflow">while</span> (qe_it != qe);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    qe = iEdge-&gt;GetSym();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    qe_it = qe-&gt;GetOnext();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      r2.push_back(qe_it-&gt;GetLeft());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      qe_it = qe_it-&gt;GetOnext();</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    } <span class="keywordflow">while</span> (qe_it != qe);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    r1.sort();</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    r2.sort();</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    std::set_symmetric_difference(</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      r1.begin(), r1.end(), r2.begin(), r2.end(), std::back_inserter(elements_to_be_tested));</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keyword">using</span> TriangleType = <a class="code hl_class" href="classitk_1_1TriangleHelper.html">TriangleHelper&lt;OutputPointType&gt;</a>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keyword">typename</span> std::list&lt;OutputCellIdentifier&gt;::iterator it = elements_to_be_tested.begin();</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">bool</span>                  orientation_ok(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#af531470e812a27eab692aa5f50d5c71c">OutputCellIdentifier</a>  c_id(0);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <a class="code hl_class" href="classitk_1_1QuadEdgeMeshPolygonCell.html">OutputPolygonType</a> *   poly;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a4a753f637b9eb5c47fbe1bb363ec40bd">OutputPointIdentifier</a> p_id;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordtype">int</span>             k(0), replace_k(0);</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a8c3df9d81e21d40f5dfc8b099ca53d79">OutputPointType</a> pt[3];</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a0e1296b8a7e8f1d620b890cd34ca22fd">OutputVectorType</a> n_bef, n_aft;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">while</span> ((it != elements_to_be_tested.end()) &amp;&amp; orientation_ok)</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      c_id = *it;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      poly = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitk_1_1QuadEdgeMeshPolygonCell.html">OutputPolygonType</a> *<span class="keyword">&gt;</span>(cells-&gt;GetElement(c_id));</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      qe = poly-&gt;<a class="code hl_function" href="classitk_1_1QuadEdgeMeshPolygonCell.html#a4861548e7b8dde4c02ebea7d12b9edcb">GetEdgeRingEntry</a>();</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      qe_it = qe;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      k = 0;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keyword">using</span> TriangleType = <a class="code hl_class" href="classitk_1_1TriangleHelper.html">TriangleHelper&lt;OutputPointType&gt;</a>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">bool</span>                  orientation_ok(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#af531470e812a27eab692aa5f50d5c71c">OutputCellIdentifier</a>  c_id(0);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <a class="code hl_class" href="classitk_1_1QuadEdgeMeshPolygonCell.html">OutputPolygonType</a> *   poly;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a4a753f637b9eb5c47fbe1bb363ec40bd">OutputPointIdentifier</a> p_id;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordtype">int</span>             k(0);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">int</span>             replace_k(0);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a8c3df9d81e21d40f5dfc8b099ca53d79">OutputPointType</a> pt[3];</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a0e1296b8a7e8f1d620b890cd34ca22fd">OutputVectorType</a> n_bef;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <a class="code hl_typedef" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a0e1296b8a7e8f1d620b890cd34ca22fd">OutputVectorType</a> n_aft;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">while</span> ((it != elements_to_be_tested.end()) &amp;&amp; orientation_ok)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      c_id = *it;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      poly = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitk_1_1QuadEdgeMeshPolygonCell.html">OutputPolygonType</a> *<span class="keyword">&gt;</span>(cells-&gt;GetElement(c_id));</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        p_id = qe_it-&gt;GetOrigin();</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="keywordflow">if</span> (p_id == iId)</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>          replace_k = k;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        }</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        pt[k++] = output-&gt;GetPoint(p_id);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        qe_it = qe_it-&gt;GetLnext();</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      } <span class="keywordflow">while</span> (qe_it != qe);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      n_bef = TriangleType::ComputeNormal(pt[0], pt[1], pt[2]);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      <span class="keywordflow">switch</span> (replace_k)</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      {</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>          n_aft = TriangleType::ComputeNormal(iPt, pt[1], pt[2]);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>          n_aft = TriangleType::ComputeNormal(pt[0], iPt, pt[2]);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          n_aft = TriangleType::ComputeNormal(pt[0], pt[1], iPt);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      }</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>      orientation_ok = (n_bef * n_aft) &lt; 0.;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      ++it;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      qe = poly-&gt;<a class="code hl_function" href="classitk_1_1QuadEdgeMeshPolygonCell.html#a4861548e7b8dde4c02ebea7d12b9edcb">GetEdgeRingEntry</a>();</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      qe_it = qe;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      k = 0;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        p_id = qe_it-&gt;GetOrigin();</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keywordflow">if</span> (p_id == iId)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>          replace_k = k;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        pt[k++] = output-&gt;GetPoint(p_id);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        qe_it = qe_it-&gt;GetLnext();</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      } <span class="keywordflow">while</span> (qe_it != qe);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      n_bef = TriangleType::ComputeNormal(pt[0], pt[1], pt[2]);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      <span class="keywordflow">switch</span> (replace_k)</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          n_aft = TriangleType::ComputeNormal(iPt, pt[1], pt[2]);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>          n_aft = TriangleType::ComputeNormal(pt[0], iPt, pt[2]);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>          n_aft = TriangleType::ComputeNormal(pt[0], pt[1], iPt);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      }</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">return</span> orientation_ok;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  }</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a5e2c452f4427c8fa66048780f1f305fd">  311</a></span>  <a class="code hl_function" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a5e2c452f4427c8fa66048780f1f305fd">IsCriterionSatisfied</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>};</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>} <span class="comment">// namespace itk</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">#include &quot;itkEdgeDecimationQuadEdgeMeshFilter.hxx&quot;</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      orientation_ok = (n_bef * n_aft) &lt; 0.;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      ++it;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keywordflow">return</span> orientation_ok;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a5e2c452f4427c8fa66048780f1f305fd">  315</a></span>  <a class="code hl_function" href="classitk_1_1EdgeDecimationQuadEdgeMeshFilter.html#a5e2c452f4427c8fa66048780f1f305fd">IsCriterionSatisfied</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>};</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>} <span class="comment">// namespace itk</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">#include &quot;itkEdgeDecimationQuadEdgeMeshFilter.hxx&quot;</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassitk_1_1DecimationQuadEdgeMeshFilter_html"><div class="ttname"><a href="classitk_1_1DecimationQuadEdgeMeshFilter.html">itk::DecimationQuadEdgeMeshFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="itkDecimationQuadEdgeMeshFilter_8h_source.html#l00032">itkDecimationQuadEdgeMeshFilter.h:33</a></div></div>
 <div class="ttc" id="aclassitk_1_1DecimationQuadEdgeMeshFilter_html_a05242597a12ca03710f726dfa115222d"><div class="ttname"><a href="classitk_1_1DecimationQuadEdgeMeshFilter.html#a05242597a12ca03710f726dfa115222d">itk::DecimationQuadEdgeMeshFilter::CriterionPointer</a></div><div class="ttdeci">typename CriterionType::Pointer CriterionPointer</div><div class="ttdef"><b>Definition:</b> <a href="itkDecimationQuadEdgeMeshFilter_8h_source.html#l00052">itkDecimationQuadEdgeMeshFilter.h:52</a></div></div>
 <div class="ttc" id="aclassitk_1_1DecimationQuadEdgeMeshFilter_html_a1534c00a760b4349840cc968d0adbc54"><div class="ttname"><a href="classitk_1_1DecimationQuadEdgeMeshFilter.html#a1534c00a760b4349840cc968d0adbc54">itk::DecimationQuadEdgeMeshFilter::PriorityQueueItemType</a></div><div class="ttdeci">typename CriterionType::PriorityQueueWrapperType PriorityQueueItemType</div><div class="ttdef"><b>Definition:</b> <a href="itkDecimationQuadEdgeMeshFilter_8h_source.html#l00055">itkDecimationQuadEdgeMeshFilter.h:55</a></div></div>

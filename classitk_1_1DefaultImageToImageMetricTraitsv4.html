@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ITK: itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt; Class Template Reference</title>
+<title>ITK: itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,375 +86,102 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classitk_1_1DefaultImageToImageMetricTraitsv4-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Registration.html">Group Registration</a> &raquo; <a class="el" href="group__ITKMetricsv4.html">Module ITKMetricsv4</a></div></div></div>
+  <div class="headertitle"><div class="title">itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Registration.html">Group Registration</a> &raquo; <a class="el" href="group__ITKMetricsv4.html">Module ITKMetricsv4</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImageType, typename TMovingImageType, typename TVirtualImageType, typename TCoordRep = double&gt;<br />
-class itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;</div><p >A simple structure holding type information for <a class="el" href="classitk_1_1ImageToImageMetricv4.html">ImageToImageMetricv4</a> classes. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TFixedImageType, typename TMovingImageType, typename TVirtualImageType, typename TCoordinate = double&gt;<br />
+class itk::DefaultImageToImageMetricTraitsv4&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;</div><p >A simple structure holding type information for <a class="el" href="classitk_1_1ImageToImageMetricv4.html">ImageToImageMetricv4</a> classes. </p>
 <p >This class provides default type information for class members and methods used in gradient calculation. This class is used for all images with scalar pixel types. For images with vector pixel types, see itkVectorImageToImageMetricTraitsv4.</p>
 <dl class="section see"><dt>See also</dt><dd>itkVectorImageToImageMetricTraitsv4 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00042">42</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00045">45</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4628d49c6a90f09b2226be3255feeb53"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a> = TCoordRep</td></tr>
-<tr class="separator:a4628d49c6a90f09b2226be3255feeb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c99584b9d9892602afaf1c55d21df3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a6c99584b9d9892602afaf1c55d21df3c">DefaultFixedImageGradientCalculator</a> = <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a> &gt;</td></tr>
-<tr class="separator:a6c99584b9d9892602afaf1c55d21df3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59c8f8555d47f869d6337e9a3f19c2cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a59c8f8555d47f869d6337e9a3f19c2cc">DefaultFixedImageGradientFilter</a> = <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa808a41cdd3d9d98396f0da7e8e9ac91">FixedImageGradientImageType</a> &gt;</td></tr>
-<tr class="separator:a59c8f8555d47f869d6337e9a3f19c2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8b4c22bdad6bd4a9b15268cedd0d1a5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ae8b4c22bdad6bd4a9b15268cedd0d1a5">DefaultMovingImageGradientCalculator</a> = <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a> &gt;</td></tr>
-<tr class="separator:ae8b4c22bdad6bd4a9b15268cedd0d1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab719fe1ea44e118067e9b9a6cf88ef52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab719fe1ea44e118067e9b9a6cf88ef52">DefaultMovingImageGradientFilter</a> = <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a798f41c3357e65523568f6f5439645c3">MovingImageGradientImageType</a> &gt;</td></tr>
-<tr class="separator:ab719fe1ea44e118067e9b9a6cf88ef52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcbe1fcf2d585e8caa9af79ad38e7936"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcbe1fcf2d585e8caa9af79ad38e7936">FixedGradientPixelType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0720757bc3ad2a1fd0cb8a6cd91a3940">FixedRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a> &gt;</td></tr>
-<tr class="separator:abcbe1fcf2d585e8caa9af79ad38e7936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1db4355bdec86b9eafac98c9f667160a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a1db4355bdec86b9eafac98c9f667160a">FixedImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4f618c50997c9c29f8f42b02076a258b">FixedImageGradientType</a></td></tr>
-<tr class="separator:a1db4355bdec86b9eafac98c9f667160a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5addeb791571e7a7e45095bffc58757c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a5addeb791571e7a7e45095bffc58757c">FixedImageGradientCalculatorType</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a> &gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a> &gt;</td></tr>
-<tr class="separator:a5addeb791571e7a7e45095bffc58757c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef0defc6a0d0bbb7ce2a8d7014dc786"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aeef0defc6a0d0bbb7ce2a8d7014dc786">FixedImageGradientConvertType</a> = <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4f618c50997c9c29f8f42b02076a258b">FixedImageGradientType</a> &gt;</td></tr>
-<tr class="separator:aeef0defc6a0d0bbb7ce2a8d7014dc786"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa38814089e5cf48cddf0d57955a646e5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa38814089e5cf48cddf0d57955a646e5">FixedImageGradientFilterType</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa808a41cdd3d9d98396f0da7e8e9ac91">FixedImageGradientImageType</a> &gt;</td></tr>
-<tr class="separator:aa38814089e5cf48cddf0d57955a646e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa808a41cdd3d9d98396f0da7e8e9ac91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa808a41cdd3d9d98396f0da7e8e9ac91">FixedImageGradientImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcbe1fcf2d585e8caa9af79ad38e7936">FixedGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a> &gt;</td></tr>
-<tr class="separator:aa808a41cdd3d9d98396f0da7e8e9ac91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f618c50997c9c29f8f42b02076a258b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4f618c50997c9c29f8f42b02076a258b">FixedImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a> &gt;</td></tr>
-<tr class="separator:a4f618c50997c9c29f8f42b02076a258b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad97d9f1088f9330103fde1f10bbb8dc1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad97d9f1088f9330103fde1f10bbb8dc1">FixedImagePixelType</a> = typename FixedImageType::PixelType</td></tr>
-<tr class="separator:ad97d9f1088f9330103fde1f10bbb8dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4038f6ec2c781a143ea3d729a3a27457"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a> = TFixedImageType</td></tr>
-<tr class="separator:a4038f6ec2c781a143ea3d729a3a27457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0720757bc3ad2a1fd0cb8a6cd91a3940"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0720757bc3ad2a1fd0cb8a6cd91a3940">FixedRealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad97d9f1088f9330103fde1f10bbb8dc1">FixedImagePixelType</a> &gt;::RealType</td></tr>
-<tr class="separator:a0720757bc3ad2a1fd0cb8a6cd91a3940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaabe658ff003c54148794c87e645239e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a> = unsigned int</td></tr>
-<tr class="separator:aaabe658ff003c54148794c87e645239e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfd5f8cfe211643402f9c0ad10d89c15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#adfd5f8cfe211643402f9c0ad10d89c15">MovingGradientPixelType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a32f32d02841ddf752b942d6f5ee58192">MovingRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a> &gt;</td></tr>
-<tr class="separator:adfd5f8cfe211643402f9c0ad10d89c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a987aae6d9ba62cfe1944054ab5863914"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a987aae6d9ba62cfe1944054ab5863914">MovingImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a78938bf0aeddb18da605d8fc01c5a296">MovingImageGradientType</a></td></tr>
-<tr class="separator:a987aae6d9ba62cfe1944054ab5863914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce39e143df222d6041d99f0f1f9fb55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a8ce39e143df222d6041d99f0f1f9fb55">MovingImageGradientCalculatorType</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a> &gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a> &gt;</td></tr>
-<tr class="separator:a8ce39e143df222d6041d99f0f1f9fb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d06df9a390159fa940a83df371e3f82"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a1d06df9a390159fa940a83df371e3f82">MovingImageGradientConvertType</a> = <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a78938bf0aeddb18da605d8fc01c5a296">MovingImageGradientType</a> &gt;</td></tr>
-<tr class="separator:a1d06df9a390159fa940a83df371e3f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a916c1768f798791fff4b28dc722b4ccf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a916c1768f798791fff4b28dc722b4ccf">MovingImageGradientFilterType</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a798f41c3357e65523568f6f5439645c3">MovingImageGradientImageType</a> &gt;</td></tr>
-<tr class="separator:a916c1768f798791fff4b28dc722b4ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a798f41c3357e65523568f6f5439645c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a798f41c3357e65523568f6f5439645c3">MovingImageGradientImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#adfd5f8cfe211643402f9c0ad10d89c15">MovingGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a> &gt;</td></tr>
-<tr class="separator:a798f41c3357e65523568f6f5439645c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78938bf0aeddb18da605d8fc01c5a296"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a78938bf0aeddb18da605d8fc01c5a296">MovingImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a> &gt;</td></tr>
-<tr class="separator:a78938bf0aeddb18da605d8fc01c5a296"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9da4c86290f69d3486c2fa60dc7c6705"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9da4c86290f69d3486c2fa60dc7c6705">MovingImagePixelType</a> = typename MovingImageType::PixelType</td></tr>
-<tr class="separator:a9da4c86290f69d3486c2fa60dc7c6705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3303cd2e28224c8712e18fc29ac060b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a> = TMovingImageType</td></tr>
-<tr class="separator:a3303cd2e28224c8712e18fc29ac060b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32f32d02841ddf752b942d6f5ee58192"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a32f32d02841ddf752b942d6f5ee58192">MovingRealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9da4c86290f69d3486c2fa60dc7c6705">MovingImagePixelType</a> &gt;::RealType</td></tr>
-<tr class="separator:a32f32d02841ddf752b942d6f5ee58192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e8244ca082f617cdda5c8d0f43d31a2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a2e8244ca082f617cdda5c8d0f43d31a2">Self</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">DefaultImageToImageMetricTraitsv4</a></td></tr>
-<tr class="separator:a2e8244ca082f617cdda5c8d0f43d31a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff69b2467e0718c6d5be575d62e2eed"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aeff69b2467e0718c6d5be575d62e2eed">VirtualImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab97d00da34de9d27c90c3fe8ebcaec4a">VirtualImageGradientType</a></td></tr>
-<tr class="separator:aeff69b2467e0718c6d5be575d62e2eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab97d00da34de9d27c90c3fe8ebcaec4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab97d00da34de9d27c90c3fe8ebcaec4a">VirtualImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a8d1518286ce7f2ff16fab15d8c5dd769">Self::VirtualImageDimension</a> &gt;</td></tr>
-<tr class="separator:ab97d00da34de9d27c90c3fe8ebcaec4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0d8e03461a910b439d8318c5f5c424"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afb0d8e03461a910b439d8318c5f5c424">VirtualImageType</a> = TVirtualImageType</td></tr>
-<tr class="separator:afb0d8e03461a910b439d8318c5f5c424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab995d2668bcefb30e86fddac03aac3d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a> = TCoordinate</td></tr>
+<tr class="separator:ab995d2668bcefb30e86fddac03aac3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64890b1d44805b0f51ecb5c837e671e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab64890b1d44805b0f51ecb5c837e671e">DefaultFixedImageGradientCalculator</a> = <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a> &gt;</td></tr>
+<tr class="separator:ab64890b1d44805b0f51ecb5c837e671e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ef3566891ed098888bd18227092525"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a03ef3566891ed098888bd18227092525">DefaultFixedImageGradientFilter</a> = <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afcf89685820fcf6102156dc49184ebfb">FixedImageGradientImageType</a> &gt;</td></tr>
+<tr class="separator:a03ef3566891ed098888bd18227092525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e19cddf207411f427fdbde06c1fc35"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a02e19cddf207411f427fdbde06c1fc35">DefaultMovingImageGradientCalculator</a> = <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a> &gt;</td></tr>
+<tr class="separator:a02e19cddf207411f427fdbde06c1fc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c55e19ec26544c4b87514756d29641"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a54c55e19ec26544c4b87514756d29641">DefaultMovingImageGradientFilter</a> = <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a62ef1433706220989a547d48fe311cd1">MovingImageGradientImageType</a> &gt;</td></tr>
+<tr class="separator:a54c55e19ec26544c4b87514756d29641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a5b6b60e420044bd77214de74a0cdf8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9a5b6b60e420044bd77214de74a0cdf8">FixedGradientPixelType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcb6dba594cf0bbdba30eabab693020c">FixedRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a> &gt;</td></tr>
+<tr class="separator:a9a5b6b60e420044bd77214de74a0cdf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fbf3c269e7402801137d83d5850974"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a55fbf3c269e7402801137d83d5850974">FixedImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad9b3cde99adcbc81d1e13d3422eaaf57">FixedImageGradientType</a></td></tr>
+<tr class="separator:a55fbf3c269e7402801137d83d5850974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad4cb94ef2bff08ccff390699106eba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acad4cb94ef2bff08ccff390699106eba">FixedImageGradientCalculatorType</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a> &gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a> &gt;</td></tr>
+<tr class="separator:acad4cb94ef2bff08ccff390699106eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8688e6ba7b82701cab7275af43b44566"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a8688e6ba7b82701cab7275af43b44566">FixedImageGradientConvertType</a> = <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad9b3cde99adcbc81d1e13d3422eaaf57">FixedImageGradientType</a> &gt;</td></tr>
+<tr class="separator:a8688e6ba7b82701cab7275af43b44566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e161858b58b7617cfab5c2017f148a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a67e161858b58b7617cfab5c2017f148a">FixedImageGradientFilterType</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afcf89685820fcf6102156dc49184ebfb">FixedImageGradientImageType</a> &gt;</td></tr>
+<tr class="separator:a67e161858b58b7617cfab5c2017f148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf89685820fcf6102156dc49184ebfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afcf89685820fcf6102156dc49184ebfb">FixedImageGradientImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9a5b6b60e420044bd77214de74a0cdf8">FixedGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a> &gt;</td></tr>
+<tr class="separator:afcf89685820fcf6102156dc49184ebfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b3cde99adcbc81d1e13d3422eaaf57"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad9b3cde99adcbc81d1e13d3422eaaf57">FixedImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a> &gt;</td></tr>
+<tr class="separator:ad9b3cde99adcbc81d1e13d3422eaaf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfcdbfa89a52f2b1aaf3f4cbd0daa18c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfcdbfa89a52f2b1aaf3f4cbd0daa18c">FixedImagePixelType</a> = typename FixedImageType::PixelType</td></tr>
+<tr class="separator:acfcdbfa89a52f2b1aaf3f4cbd0daa18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe4604e5d922dee3b4efeed4fa5064f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a> = TFixedImageType</td></tr>
+<tr class="separator:acfe4604e5d922dee3b4efeed4fa5064f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb6dba594cf0bbdba30eabab693020c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcb6dba594cf0bbdba30eabab693020c">FixedRealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfcdbfa89a52f2b1aaf3f4cbd0daa18c">FixedImagePixelType</a> &gt;::RealType</td></tr>
+<tr class="separator:abcb6dba594cf0bbdba30eabab693020c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4e63cec3506f02f5edd06c5a00afce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a> = unsigned int</td></tr>
+<tr class="separator:a0e4e63cec3506f02f5edd06c5a00afce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9615a4cd5df2b867480a2f945c428b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4d9615a4cd5df2b867480a2f945c428b">MovingGradientPixelType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a57a4ad39d2035f379200a5879e6ea85d">MovingRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a> &gt;</td></tr>
+<tr class="separator:a4d9615a4cd5df2b867480a2f945c428b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575ff03218f846f84abd8e5923361918"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a575ff03218f846f84abd8e5923361918">MovingImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afe53b7030697e9cdce955ded9a51790a">MovingImageGradientType</a></td></tr>
+<tr class="separator:a575ff03218f846f84abd8e5923361918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a853ba3363d60a8d26913778cd1b539"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a2a853ba3363d60a8d26913778cd1b539">MovingImageGradientCalculatorType</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a> &gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a> &gt;</td></tr>
+<tr class="separator:a2a853ba3363d60a8d26913778cd1b539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64bbf4472b5a9254c7565c4ba066739d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a64bbf4472b5a9254c7565c4ba066739d">MovingImageGradientConvertType</a> = <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afe53b7030697e9cdce955ded9a51790a">MovingImageGradientType</a> &gt;</td></tr>
+<tr class="separator:a64bbf4472b5a9254c7565c4ba066739d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e162e2a167eefa47fd8eab58b7d9e6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a68e162e2a167eefa47fd8eab58b7d9e6">MovingImageGradientFilterType</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a62ef1433706220989a547d48fe311cd1">MovingImageGradientImageType</a> &gt;</td></tr>
+<tr class="separator:a68e162e2a167eefa47fd8eab58b7d9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ef1433706220989a547d48fe311cd1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a62ef1433706220989a547d48fe311cd1">MovingImageGradientImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4d9615a4cd5df2b867480a2f945c428b">MovingGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a> &gt;</td></tr>
+<tr class="separator:a62ef1433706220989a547d48fe311cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe53b7030697e9cdce955ded9a51790a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afe53b7030697e9cdce955ded9a51790a">MovingImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a> &gt;</td></tr>
+<tr class="separator:afe53b7030697e9cdce955ded9a51790a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadbb7e7756fda332aa2fdd63f4076ee3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aadbb7e7756fda332aa2fdd63f4076ee3">MovingImagePixelType</a> = typename MovingImageType::PixelType</td></tr>
+<tr class="separator:aadbb7e7756fda332aa2fdd63f4076ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe69cb183f211e4253bbce22db54abae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a> = TMovingImageType</td></tr>
+<tr class="separator:abe69cb183f211e4253bbce22db54abae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a4ad39d2035f379200a5879e6ea85d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a57a4ad39d2035f379200a5879e6ea85d">MovingRealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aadbb7e7756fda332aa2fdd63f4076ee3">MovingImagePixelType</a> &gt;::RealType</td></tr>
+<tr class="separator:a57a4ad39d2035f379200a5879e6ea85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab6710cf8e8c318e96d704547185d05"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#adab6710cf8e8c318e96d704547185d05">Self</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">DefaultImageToImageMetricTraitsv4</a></td></tr>
+<tr class="separator:adab6710cf8e8c318e96d704547185d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9076f6415f0460549c068eb6cd92215"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab9076f6415f0460549c068eb6cd92215">VirtualImageComponentGradientType</a> = <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a70badfa53f004c9f14eeb7624a718941">VirtualImageGradientType</a></td></tr>
+<tr class="separator:ab9076f6415f0460549c068eb6cd92215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70badfa53f004c9f14eeb7624a718941"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a70badfa53f004c9f14eeb7624a718941">VirtualImageGradientType</a> = <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt; <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad4625b196e1cd0658e638dfe941cec81">Self::VirtualImageDimension</a> &gt;</td></tr>
+<tr class="separator:a70badfa53f004c9f14eeb7624a718941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f8b055f82ab8059c035987d9d0add5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a84f8b055f82ab8059c035987d9d0add5">VirtualImageType</a> = TVirtualImageType</td></tr>
+<tr class="separator:a84f8b055f82ab8059c035987d9d0add5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:af7b7a512d1c44c780e5eda49f66b3d3b"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">FixedImageDimension</a> = FixedImageType::ImageDimension</td></tr>
-<tr class="separator:af7b7a512d1c44c780e5eda49f66b3d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc13083818cc9079ab95556bf94a8343"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">MovingImageDimension</a> = MovingImageType::ImageDimension</td></tr>
-<tr class="separator:abc13083818cc9079ab95556bf94a8343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d1518286ce7f2ff16fab15d8c5dd769"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a8d1518286ce7f2ff16fab15d8c5dd769">VirtualImageDimension</a> = VirtualImageType::ImageDimension</td></tr>
-<tr class="separator:a8d1518286ce7f2ff16fab15d8c5dd769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ed5887093a5c937fab32cb32abec51"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">FixedImageDimension</a> = FixedImageType::ImageDimension</td></tr>
+<tr class="separator:ab7ed5887093a5c937fab32cb32abec51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1ed4cc93875955a69f6d7029c80762"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">MovingImageDimension</a> = MovingImageType::ImageDimension</td></tr>
+<tr class="separator:aae1ed4cc93875955a69f6d7029c80762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4625b196e1cd0658e638dfe941cec81"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad4625b196e1cd0658e638dfe941cec81">VirtualImageDimension</a> = VirtualImageType::ImageDimension</td></tr>
+<tr class="separator:ad4625b196e1cd0658e638dfe941cec81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a4628d49c6a90f09b2226be3255feeb53" name="a4628d49c6a90f09b2226be3255feeb53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4628d49c6a90f09b2226be3255feeb53">&#9670;&nbsp;</a></span>CoordinateRepresentationType</h2>
+<a id="ab995d2668bcefb30e86fddac03aac3d9" name="ab995d2668bcefb30e86fddac03aac3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab995d2668bcefb30e86fddac03aac3d9">&#9670;&nbsp;</a></span>CoordinateRepresentationType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::CoordinateRepresentationType =  TCoordRep</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00055">55</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a6c99584b9d9892602afaf1c55d21df3c" name="a6c99584b9d9892602afaf1c55d21df3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c99584b9d9892602afaf1c55d21df3c">&#9670;&nbsp;</a></span>DefaultFixedImageGradientCalculator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::DefaultFixedImageGradientCalculator =  <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00101">101</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a59c8f8555d47f869d6337e9a3f19c2cc" name="a59c8f8555d47f869d6337e9a3f19c2cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59c8f8555d47f869d6337e9a3f19c2cc">&#9670;&nbsp;</a></span>DefaultFixedImageGradientFilter</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::DefaultFixedImageGradientFilter =  <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa808a41cdd3d9d98396f0da7e8e9ac91">FixedImageGradientImageType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Default image gradient filter types </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00089">89</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="ae8b4c22bdad6bd4a9b15268cedd0d1a5" name="ae8b4c22bdad6bd4a9b15268cedd0d1a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8b4c22bdad6bd4a9b15268cedd0d1a5">&#9670;&nbsp;</a></span>DefaultMovingImageGradientCalculator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::DefaultMovingImageGradientCalculator =  <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00103">103</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="ab719fe1ea44e118067e9b9a6cf88ef52" name="ab719fe1ea44e118067e9b9a6cf88ef52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab719fe1ea44e118067e9b9a6cf88ef52">&#9670;&nbsp;</a></span>DefaultMovingImageGradientFilter</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::DefaultMovingImageGradientFilter =  <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a798f41c3357e65523568f6f5439645c3">MovingImageGradientImageType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00091">91</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="abcbe1fcf2d585e8caa9af79ad38e7936" name="abcbe1fcf2d585e8caa9af79ad38e7936"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcbe1fcf2d585e8caa9af79ad38e7936">&#9670;&nbsp;</a></span>FixedGradientPixelType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedGradientPixelType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0720757bc3ad2a1fd0cb8a6cd91a3940">FixedRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00077">77</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a1db4355bdec86b9eafac98c9f667160a" name="a1db4355bdec86b9eafac98c9f667160a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1db4355bdec86b9eafac98c9f667160a">&#9670;&nbsp;</a></span>FixedImageComponentGradientType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4f618c50997c9c29f8f42b02076a258b">FixedImageGradientType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00068">68</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a5addeb791571e7a7e45095bffc58757c" name="a5addeb791571e7a7e45095bffc58757c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5addeb791571e7a7e45095bffc58757c">&#9670;&nbsp;</a></span>FixedImageGradientCalculatorType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageGradientCalculatorType =  <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a>&gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> gradient calculator types. The TOutput template parameter is chosen to match that of <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html" title="Calculate the derivative by central differencing.">CentralDifferenceImageFunction</a>. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00096">96</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="aeef0defc6a0d0bbb7ce2a8d7014dc786" name="aeef0defc6a0d0bbb7ce2a8d7014dc786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeef0defc6a0d0bbb7ce2a8d7014dc786">&#9670;&nbsp;</a></span>FixedImageGradientConvertType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageGradientConvertType =  <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4f618c50997c9c29f8f42b02076a258b">FixedImageGradientType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00072">72</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="aa38814089e5cf48cddf0d57955a646e5" name="aa38814089e5cf48cddf0d57955a646e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa38814089e5cf48cddf0d57955a646e5">&#9670;&nbsp;</a></span>FixedImageGradientFilterType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageGradientFilterType =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4038f6ec2c781a143ea3d729a3a27457">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aa808a41cdd3d9d98396f0da7e8e9ac91">FixedImageGradientImageType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00080">80</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="aa808a41cdd3d9d98396f0da7e8e9ac91" name="aa808a41cdd3d9d98396f0da7e8e9ac91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa808a41cdd3d9d98396f0da7e8e9ac91">&#9670;&nbsp;</a></span>FixedImageGradientImageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageGradientImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcbe1fcf2d585e8caa9af79ad38e7936">FixedGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00078">78</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a4f618c50997c9c29f8f42b02076a258b" name="a4f618c50997c9c29f8f42b02076a258b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f618c50997c9c29f8f42b02076a258b">&#9670;&nbsp;</a></span>FixedImageGradientType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#af7b7a512d1c44c780e5eda49f66b3d3b">Self::FixedImageDimension</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00063">63</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="ad97d9f1088f9330103fde1f10bbb8dc1" name="ad97d9f1088f9330103fde1f10bbb8dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad97d9f1088f9330103fde1f10bbb8dc1">&#9670;&nbsp;</a></span>FixedImagePixelType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImagePixelType =  typename FixedImageType::PixelType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00052">52</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a4038f6ec2c781a143ea3d729a3a27457" name="a4038f6ec2c781a143ea3d729a3a27457"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4038f6ec2c781a143ea3d729a3a27457">&#9670;&nbsp;</a></span>FixedImageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageType =  TFixedImageType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00048">48</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a0720757bc3ad2a1fd0cb8a6cd91a3940" name="a0720757bc3ad2a1fd0cb8a6cd91a3940"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0720757bc3ad2a1fd0cb8a6cd91a3940">&#9670;&nbsp;</a></span>FixedRealType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedRealType =  typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad97d9f1088f9330103fde1f10bbb8dc1">FixedImagePixelType</a>&gt;::RealType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Type of the filter used to calculate the gradients. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00076">76</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="aaabe658ff003c54148794c87e645239e" name="aaabe658ff003c54148794c87e645239e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaabe658ff003c54148794c87e645239e">&#9670;&nbsp;</a></span>ImageDimensionType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::ImageDimensionType =  unsigned int</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::CoordinateRepresentationType =  TCoordinate</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -463,16 +190,162 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 
 </div>
 </div>
-<a id="adfd5f8cfe211643402f9c0ad10d89c15" name="adfd5f8cfe211643402f9c0ad10d89c15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfd5f8cfe211643402f9c0ad10d89c15">&#9670;&nbsp;</a></span>MovingGradientPixelType</h2>
+<a id="ab64890b1d44805b0f51ecb5c837e671e" name="ab64890b1d44805b0f51ecb5c837e671e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64890b1d44805b0f51ecb5c837e671e">&#9670;&nbsp;</a></span>DefaultFixedImageGradientCalculator</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingGradientPixelType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a32f32d02841ddf752b942d6f5ee58192">MovingRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::DefaultFixedImageGradientCalculator =  <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00104">104</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a03ef3566891ed098888bd18227092525" name="a03ef3566891ed098888bd18227092525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ef3566891ed098888bd18227092525">&#9670;&nbsp;</a></span>DefaultFixedImageGradientFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::DefaultFixedImageGradientFilter =  <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afcf89685820fcf6102156dc49184ebfb">FixedImageGradientImageType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Default image gradient filter types </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00092">92</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a02e19cddf207411f427fdbde06c1fc35" name="a02e19cddf207411f427fdbde06c1fc35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e19cddf207411f427fdbde06c1fc35">&#9670;&nbsp;</a></span>DefaultMovingImageGradientCalculator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::DefaultMovingImageGradientCalculator =  <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html">CentralDifferenceImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00106">106</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a54c55e19ec26544c4b87514756d29641" name="a54c55e19ec26544c4b87514756d29641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c55e19ec26544c4b87514756d29641">&#9670;&nbsp;</a></span>DefaultMovingImageGradientFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::DefaultMovingImageGradientFilter =  <a class="el" href="classitk_1_1GradientRecursiveGaussianImageFilter.html">GradientRecursiveGaussianImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a62ef1433706220989a547d48fe311cd1">MovingImageGradientImageType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00094">94</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a9a5b6b60e420044bd77214de74a0cdf8" name="a9a5b6b60e420044bd77214de74a0cdf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a5b6b60e420044bd77214de74a0cdf8">&#9670;&nbsp;</a></span>FixedGradientPixelType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedGradientPixelType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abcb6dba594cf0bbdba30eabab693020c">FixedRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00080">80</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a55fbf3c269e7402801137d83d5850974" name="a55fbf3c269e7402801137d83d5850974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55fbf3c269e7402801137d83d5850974">&#9670;&nbsp;</a></span>FixedImageComponentGradientType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad9b3cde99adcbc81d1e13d3422eaaf57">FixedImageGradientType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00071">71</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="acad4cb94ef2bff08ccff390699106eba" name="acad4cb94ef2bff08ccff390699106eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad4cb94ef2bff08ccff390699106eba">&#9670;&nbsp;</a></span>FixedImageGradientCalculatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageGradientCalculatorType =  <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a>&gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> gradient calculator types. The TOutput template parameter is chosen to match that of <a class="el" href="classitk_1_1CentralDifferenceImageFunction.html" title="Calculate the derivative by central differencing.">CentralDifferenceImageFunction</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00099">99</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a8688e6ba7b82701cab7275af43b44566" name="a8688e6ba7b82701cab7275af43b44566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8688e6ba7b82701cab7275af43b44566">&#9670;&nbsp;</a></span>FixedImageGradientConvertType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageGradientConvertType =  <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad9b3cde99adcbc81d1e13d3422eaaf57">FixedImageGradientType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00075">75</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a67e161858b58b7617cfab5c2017f148a" name="a67e161858b58b7617cfab5c2017f148a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e161858b58b7617cfab5c2017f148a">&#9670;&nbsp;</a></span>FixedImageGradientFilterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageGradientFilterType =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfe4604e5d922dee3b4efeed4fa5064f">FixedImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afcf89685820fcf6102156dc49184ebfb">FixedImageGradientImageType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -481,215 +354,34 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 
 </div>
 </div>
-<a id="a987aae6d9ba62cfe1944054ab5863914" name="a987aae6d9ba62cfe1944054ab5863914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a987aae6d9ba62cfe1944054ab5863914">&#9670;&nbsp;</a></span>MovingImageComponentGradientType</h2>
+<a id="afcf89685820fcf6102156dc49184ebfb" name="afcf89685820fcf6102156dc49184ebfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf89685820fcf6102156dc49184ebfb">&#9670;&nbsp;</a></span>FixedImageGradientImageType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a78938bf0aeddb18da605d8fc01c5a296">MovingImageGradientType</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageGradientImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9a5b6b60e420044bd77214de74a0cdf8">FixedGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00069">69</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00081">81</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 
 </div>
 </div>
-<a id="a8ce39e143df222d6041d99f0f1f9fb55" name="a8ce39e143df222d6041d99f0f1f9fb55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ce39e143df222d6041d99f0f1f9fb55">&#9670;&nbsp;</a></span>MovingImageGradientCalculatorType</h2>
+<a id="ad9b3cde99adcbc81d1e13d3422eaaf57" name="ad9b3cde99adcbc81d1e13d3422eaaf57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b3cde99adcbc81d1e13d3422eaaf57">&#9670;&nbsp;</a></span>FixedImageGradientType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageGradientCalculatorType =  <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a>&gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00098">98</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a1d06df9a390159fa940a83df371e3f82" name="a1d06df9a390159fa940a83df371e3f82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d06df9a390159fa940a83df371e3f82">&#9670;&nbsp;</a></span>MovingImageGradientConvertType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageGradientConvertType =  <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a78938bf0aeddb18da605d8fc01c5a296">MovingImageGradientType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00073">73</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a916c1768f798791fff4b28dc722b4ccf" name="a916c1768f798791fff4b28dc722b4ccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a916c1768f798791fff4b28dc722b4ccf">&#9670;&nbsp;</a></span>MovingImageGradientFilterType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageGradientFilterType =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a3303cd2e28224c8712e18fc29ac060b0">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a798f41c3357e65523568f6f5439645c3">MovingImageGradientImageType</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00086">86</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a798f41c3357e65523568f6f5439645c3" name="a798f41c3357e65523568f6f5439645c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a798f41c3357e65523568f6f5439645c3">&#9670;&nbsp;</a></span>MovingImageGradientImageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageGradientImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#adfd5f8cfe211643402f9c0ad10d89c15">MovingGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00084">84</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a78938bf0aeddb18da605d8fc01c5a296" name="a78938bf0aeddb18da605d8fc01c5a296"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78938bf0aeddb18da605d8fc01c5a296">&#9670;&nbsp;</a></span>MovingImageGradientType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abc13083818cc9079ab95556bf94a8343">Self::MovingImageDimension</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00064">64</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a9da4c86290f69d3486c2fa60dc7c6705" name="a9da4c86290f69d3486c2fa60dc7c6705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9da4c86290f69d3486c2fa60dc7c6705">&#9670;&nbsp;</a></span>MovingImagePixelType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImagePixelType =  typename MovingImageType::PixelType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00053">53</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a3303cd2e28224c8712e18fc29ac060b0" name="a3303cd2e28224c8712e18fc29ac060b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3303cd2e28224c8712e18fc29ac060b0">&#9670;&nbsp;</a></span>MovingImageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageType =  TMovingImageType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00049">49</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a32f32d02841ddf752b942d6f5ee58192" name="a32f32d02841ddf752b942d6f5ee58192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32f32d02841ddf752b942d6f5ee58192">&#9670;&nbsp;</a></span>MovingRealType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingRealType =  typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a9da4c86290f69d3486c2fa60dc7c6705">MovingImagePixelType</a>&gt;::RealType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00082">82</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="a2e8244ca082f617cdda5c8d0f43d31a2" name="a2e8244ca082f617cdda5c8d0f43d31a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8244ca082f617cdda5c8d0f43d31a2">&#9670;&nbsp;</a></span>Self</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">DefaultImageToImageMetricTraitsv4</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Standard class type aliases. </p>
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00046">46</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="aeff69b2467e0718c6d5be575d62e2eed" name="aeff69b2467e0718c6d5be575d62e2eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeff69b2467e0718c6d5be575d62e2eed">&#9670;&nbsp;</a></span>VirtualImageComponentGradientType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::VirtualImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab97d00da34de9d27c90c3fe8ebcaec4a">VirtualImageGradientType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00070">70</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
-
-</div>
-</div>
-<a id="ab97d00da34de9d27c90c3fe8ebcaec4a" name="ab97d00da34de9d27c90c3fe8ebcaec4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab97d00da34de9d27c90c3fe8ebcaec4a">&#9670;&nbsp;</a></span>VirtualImageGradientType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::VirtualImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4628d49c6a90f09b2226be3255feeb53">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a8d1518286ce7f2ff16fab15d8c5dd769">Self::VirtualImageDimension</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab7ed5887093a5c937fab32cb32abec51">Self::FixedImageDimension</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -698,38 +390,346 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 
 </div>
 </div>
-<a id="afb0d8e03461a910b439d8318c5f5c424" name="afb0d8e03461a910b439d8318c5f5c424"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb0d8e03461a910b439d8318c5f5c424">&#9670;&nbsp;</a></span>VirtualImageType</h2>
+<a id="acfcdbfa89a52f2b1aaf3f4cbd0daa18c" name="acfcdbfa89a52f2b1aaf3f4cbd0daa18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfcdbfa89a52f2b1aaf3f4cbd0daa18c">&#9670;&nbsp;</a></span>FixedImagePixelType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::VirtualImageType =  TVirtualImageType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImagePixelType =  typename FixedImageType::PixelType</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00050">50</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00055">55</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="acfe4604e5d922dee3b4efeed4fa5064f" name="acfe4604e5d922dee3b4efeed4fa5064f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe4604e5d922dee3b4efeed4fa5064f">&#9670;&nbsp;</a></span>FixedImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageType =  TFixedImageType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00051">51</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="abcb6dba594cf0bbdba30eabab693020c" name="abcb6dba594cf0bbdba30eabab693020c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb6dba594cf0bbdba30eabab693020c">&#9670;&nbsp;</a></span>FixedRealType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedRealType =  typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#acfcdbfa89a52f2b1aaf3f4cbd0daa18c">FixedImagePixelType</a>&gt;::RealType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Type of the filter used to calculate the gradients. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00079">79</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a0e4e63cec3506f02f5edd06c5a00afce" name="a0e4e63cec3506f02f5edd06c5a00afce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4e63cec3506f02f5edd06c5a00afce">&#9670;&nbsp;</a></span>ImageDimensionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::ImageDimensionType =  unsigned int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00061">61</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d9615a4cd5df2b867480a2f945c428b" name="a4d9615a4cd5df2b867480a2f945c428b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9615a4cd5df2b867480a2f945c428b">&#9670;&nbsp;</a></span>MovingGradientPixelType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingGradientPixelType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a57a4ad39d2035f379200a5879e6ea85d">MovingRealType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00086">86</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a575ff03218f846f84abd8e5923361918" name="a575ff03218f846f84abd8e5923361918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575ff03218f846f84abd8e5923361918">&#9670;&nbsp;</a></span>MovingImageComponentGradientType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afe53b7030697e9cdce955ded9a51790a">MovingImageGradientType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00072">72</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a853ba3363d60a8d26913778cd1b539" name="a2a853ba3363d60a8d26913778cd1b539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a853ba3363d60a8d26913778cd1b539">&#9670;&nbsp;</a></span>MovingImageGradientCalculatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageGradientCalculatorType =  <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;double, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a>&gt;, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00101">101</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a64bbf4472b5a9254c7565c4ba066739d" name="a64bbf4472b5a9254c7565c4ba066739d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64bbf4472b5a9254c7565c4ba066739d">&#9670;&nbsp;</a></span>MovingImageGradientConvertType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageGradientConvertType =  <a class="el" href="classitk_1_1DefaultConvertPixelTraits.html">DefaultConvertPixelTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#afe53b7030697e9cdce955ded9a51790a">MovingImageGradientType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00076">76</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a68e162e2a167eefa47fd8eab58b7d9e6" name="a68e162e2a167eefa47fd8eab58b7d9e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e162e2a167eefa47fd8eab58b7d9e6">&#9670;&nbsp;</a></span>MovingImageGradientFilterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageGradientFilterType =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#abe69cb183f211e4253bbce22db54abae">MovingImageType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a62ef1433706220989a547d48fe311cd1">MovingImageGradientImageType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00089">89</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a62ef1433706220989a547d48fe311cd1" name="a62ef1433706220989a547d48fe311cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ef1433706220989a547d48fe311cd1">&#9670;&nbsp;</a></span>MovingImageGradientImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageGradientImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a4d9615a4cd5df2b867480a2f945c428b">MovingGradientPixelType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00087">87</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="afe53b7030697e9cdce955ded9a51790a" name="afe53b7030697e9cdce955ded9a51790a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe53b7030697e9cdce955ded9a51790a">&#9670;&nbsp;</a></span>MovingImageGradientType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aae1ed4cc93875955a69f6d7029c80762">Self::MovingImageDimension</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00067">67</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="aadbb7e7756fda332aa2fdd63f4076ee3" name="aadbb7e7756fda332aa2fdd63f4076ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadbb7e7756fda332aa2fdd63f4076ee3">&#9670;&nbsp;</a></span>MovingImagePixelType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImagePixelType =  typename MovingImageType::PixelType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00056">56</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="abe69cb183f211e4253bbce22db54abae" name="abe69cb183f211e4253bbce22db54abae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe69cb183f211e4253bbce22db54abae">&#9670;&nbsp;</a></span>MovingImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageType =  TMovingImageType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00052">52</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a57a4ad39d2035f379200a5879e6ea85d" name="a57a4ad39d2035f379200a5879e6ea85d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a4ad39d2035f379200a5879e6ea85d">&#9670;&nbsp;</a></span>MovingRealType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingRealType =  typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aadbb7e7756fda332aa2fdd63f4076ee3">MovingImagePixelType</a>&gt;::RealType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00085">85</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="adab6710cf8e8c318e96d704547185d05" name="adab6710cf8e8c318e96d704547185d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab6710cf8e8c318e96d704547185d05">&#9670;&nbsp;</a></span>Self</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">DefaultImageToImageMetricTraitsv4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Standard class type aliases. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00049">49</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9076f6415f0460549c068eb6cd92215" name="ab9076f6415f0460549c068eb6cd92215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9076f6415f0460549c068eb6cd92215">&#9670;&nbsp;</a></span>VirtualImageComponentGradientType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::VirtualImageComponentGradientType =  <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a70badfa53f004c9f14eeb7624a718941">VirtualImageGradientType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00073">73</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a70badfa53f004c9f14eeb7624a718941" name="a70badfa53f004c9f14eeb7624a718941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70badfa53f004c9f14eeb7624a718941">&#9670;&nbsp;</a></span>VirtualImageGradientType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::VirtualImageGradientType =  <a class="el" href="classitk_1_1CovariantVector.html">CovariantVector</a>&lt;<a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ab995d2668bcefb30e86fddac03aac3d9">CoordinateRepresentationType</a>, <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#ad4625b196e1cd0658e638dfe941cec81">Self::VirtualImageDimension</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00069">69</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+
+</div>
+</div>
+<a id="a84f8b055f82ab8059c035987d9d0add5" name="a84f8b055f82ab8059c035987d9d0add5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f8b055f82ab8059c035987d9d0add5">&#9670;&nbsp;</a></span>VirtualImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::VirtualImageType =  TVirtualImageType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00053">53</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af7b7a512d1c44c780e5eda49f66b3d3b" name="af7b7a512d1c44c780e5eda49f66b3d3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7b7a512d1c44c780e5eda49f66b3d3b">&#9670;&nbsp;</a></span>FixedImageDimension</h2>
+<a id="ab7ed5887093a5c937fab32cb32abec51" name="ab7ed5887093a5c937fab32cb32abec51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ed5887093a5c937fab32cb32abec51">&#9670;&nbsp;</a></span>FixedImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::FixedImageDimension = FixedImageType::ImageDimension</td>
+          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::FixedImageDimension = FixedImageType::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -739,23 +739,23 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00059">59</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00062">62</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 
 </div>
 </div>
-<a id="abc13083818cc9079ab95556bf94a8343" name="abc13083818cc9079ab95556bf94a8343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc13083818cc9079ab95556bf94a8343">&#9670;&nbsp;</a></span>MovingImageDimension</h2>
+<a id="aae1ed4cc93875955a69f6d7029c80762" name="aae1ed4cc93875955a69f6d7029c80762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1ed4cc93875955a69f6d7029c80762">&#9670;&nbsp;</a></span>MovingImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::MovingImageDimension = MovingImageType::ImageDimension</td>
+          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::MovingImageDimension = MovingImageType::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -765,23 +765,23 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00060">60</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00063">63</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 
 </div>
 </div>
-<a id="a8d1518286ce7f2ff16fab15d8c5dd769" name="a8d1518286ce7f2ff16fab15d8c5dd769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d1518286ce7f2ff16fab15d8c5dd769">&#9670;&nbsp;</a></span>VirtualImageDimension</h2>
+<a id="ad4625b196e1cd0658e638dfe941cec81" name="ad4625b196e1cd0658e638dfe941cec81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4625b196e1cd0658e638dfe941cec81">&#9670;&nbsp;</a></span>VirtualImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordRep  = double&gt; </div>
+template&lt;typename TFixedImageType , typename TMovingImageType , typename TVirtualImageType , typename TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#aaabe658ff003c54148794c87e645239e">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordRep &gt;::VirtualImageDimension = VirtualImageType::ImageDimension</td>
+          <td class="memname">constexpr <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html#a0e4e63cec3506f02f5edd06c5a00afce">ImageDimensionType</a> <a class="el" href="classitk_1_1DefaultImageToImageMetricTraitsv4.html">itk::DefaultImageToImageMetricTraitsv4</a>&lt; TFixedImageType, TMovingImageType, TVirtualImageType, TCoordinate &gt;::VirtualImageDimension = VirtualImageType::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -791,7 +791,7 @@ template&lt;typename TFixedImageType , typename TMovingImageType , typename TVir
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00061">61</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html#l00064">64</a> of file <a class="el" href="itkDefaultImageToImageMetricTraitsv4_8h_source.html">itkDefaultImageToImageMetricTraitsv4.h</a>.</p>
 
 </div>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ITK: itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt; Class Template Reference</title>
+<title>ITK: itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,14 +93,14 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classitk_1_1WindowedSincInterpolateImageFunction-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &raquo; <a class="el" href="group__ImageFunctions.html">Image Functions</a> &#124; <a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &raquo; <a class="el" href="group__ImageFunctions.html">Image Functions</a> &raquo; <a class="el" href="group__ImageInterpolators.html">Image Interpolators</a> &#124; <a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKImageFunction.html">Module ITKImageFunction</a></div></div></div>
+  <div class="headertitle"><div class="title">itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &raquo; <a class="el" href="group__ImageFunctions.html">Image Functions</a> &#124; <a class="el" href="group__DataProcessing.html">Data Processing Objects</a> &raquo; <a class="el" href="group__Functions.html">Functions</a> &raquo; <a class="el" href="group__ImageFunctions.html">Image Functions</a> &raquo; <a class="el" href="group__ImageInterpolators.html">Image Interpolators</a> &#124; <a class="el" href="group__Group-Core.html">Group Core</a> &raquo; <a class="el" href="group__ITKImageFunction.html">Module ITKImageFunction</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, unsigned int VRadius, typename TWindowFunction = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep = double&gt;<br />
-class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;</div><p >Use the windowed sinc function to interpolate. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, unsigned int VRadius, typename TWindowFunction = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate = double&gt;<br />
+class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;</div><p >Use the windowed sinc function to interpolate. </p>
 <dl class="section author"><dt>Author</dt><dd>Paul A. Yushkevich</dd></dl>
 <dl class="section user"><dt>THEORY</dt><dd></dd></dl>
 <p>This function is intended to provide an interpolation function that has minimum aliasing artifacts, in contrast to linear interpolation. According to sampling theory, the infinite-support sinc filter, whose Fourier transform is the box filter, is optimal for resampling a function. In practice, the infinite support sinc filter is approximated using a limited support 'windowed' sinc filter.</p>
@@ -123,7 +123,7 @@ class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindo
 <dl class="section user"><dt></dt><dd>The second (VRadius) is the radius of the kernel, i.e., the \( m \) from the formula above.</dd></dl>
 <dl class="section user"><dt></dt><dd>The third (TWindowFunction) is the window function object, which you can choose from about five different functions defined in this header. The default is the Hamming window, which is commonly used but not optimal according to the cited paper.</dd></dl>
 <dl class="section user"><dt></dt><dd>The fourth (TBoundaryCondition) is the boundary condition class used to determine the values of pixels that fall off the image boundary. This class has the same meaning here as in the <a class="el" href="classitk_1_1NeighborhoodIterator.html" title="Defines iteration of a local N-dimensional neighborhood of pixels across an itk::Image.">NeighborhoodIterator</a> classes.</dd></dl>
-<dl class="section user"><dt></dt><dd>The fifth (TCoordRep) is again standard for interpolating functions, and should be float or double.</dd></dl>
+<dl class="section user"><dt></dt><dd>The fifth (TCoordinate) is again standard for interpolating functions, and should be float or double.</dd></dl>
 <dl class="section user"><dt>CAVEATS</dt><dd></dd></dl>
 <p>There are a few improvements that an enthusiastic ITK developer could make to this filter. One issue is with the way that the kernel is applied. The computational expense comes from two sources: computing the kernel weights K(t) and multiplying the pixels in the window by the kernel weights. The first is done more or less efficiently in \( 2 m d \) operations (where d is the dimensionality of the image). The second can be done better. Presently, each pixel \( I(i,j,k) \) is multiplied by the weights \( K(x-i), K(y-j), K(z-k) \) and added to the running total. This results in \( d (2m)^d \) multiplication operations. However, by keeping intermediate sums, it would be possible to do the operation in \( O ( (2m)^d ) \) operations. This would require some creative coding. In addition, in the case when one of the coordinates is integer, the computation could be reduced by an order of magnitude.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LinearInterpolateImageFunction.html" title="Linearly interpolate an image at specified positions.">LinearInterpolateImageFunction</a> <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd>
@@ -140,74 +140,74 @@ class itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindo
 
 <p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00271">271</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1WindowedSincInterpolateImageFunction__inherit__graph.svg" width="1430" height="82"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1WindowedSincInterpolateImageFunction__inherit__graph.svg" width="1438" height="82"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::WindowedSincInterpolateImageFunction&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1WindowedSincInterpolateImageFunction__coll__graph.svg" width="3102" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1WindowedSincInterpolateImageFunction__coll__graph.svg" width="3110" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a555deb2e9b5226f43e66e042ee0a5e93"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a555deb2e9b5226f43e66e042ee0a5e93">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:a555deb2e9b5226f43e66e042ee0a5e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d21e2e35df6957806b69c10b7061f08"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9d21e2e35df6957806b69c10b7061f08">ImageType</a> = TInputImage</td></tr>
-<tr class="separator:a9d21e2e35df6957806b69c10b7061f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61979b187dc3c62fa0b0d1b4fec0dd31"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a61979b187dc3c62fa0b0d1b4fec0dd31">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:a61979b187dc3c62fa0b0d1b4fec0dd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a148f21ce5c57739b4dab66af3201c648"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a148f21ce5c57739b4dab66af3201c648">Self</a> = <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a></td></tr>
-<tr class="separator:a148f21ce5c57739b4dab66af3201c648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e219d48bd48dc15ebfbce9a32b8d6e8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a8e219d48bd48dc15ebfbce9a32b8d6e8">Superclass</a> = <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a>&lt; TInputImage, TCoordRep &gt;</td></tr>
-<tr class="separator:a8e219d48bd48dc15ebfbce9a32b8d6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fb10b1ed35dcb7553c41c5a2698861"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a85fb10b1ed35dcb7553c41c5a2698861">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:a85fb10b1ed35dcb7553c41c5a2698861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac44bce2d82d56048203e7b42bd1701df"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ac44bce2d82d56048203e7b42bd1701df">ImageType</a> = TInputImage</td></tr>
+<tr class="separator:ac44bce2d82d56048203e7b42bd1701df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2970da09852885efb10f0bd7616fdc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a1c2970da09852885efb10f0bd7616fdc">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:a1c2970da09852885efb10f0bd7616fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9be893bc364a71e335b062772ef21a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#af9be893bc364a71e335b062772ef21a7">Self</a> = <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a></td></tr>
+<tr class="separator:af9be893bc364a71e335b062772ef21a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f559e9562218e13e3b4d4126af8974"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a17f559e9562218e13e3b4d4126af8974">Superclass</a> = <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a>&lt; TInputImage, TCoordinate &gt;</td></tr>
+<tr class="separator:a17f559e9562218e13e3b4d4126af8974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classitk_1_1InterpolateImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1InterpolateImageFunction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1InterpolateImageFunction.html">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a></td></tr>
-<tr class="memitem:a9d7a1e01b13eb757b9d00a70795a7e93 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a9d7a1e01b13eb757b9d00a70795a7e93">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:a9d7a1e01b13eb757b9d00a70795a7e93 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a8e1455c8a8a7514af0819dc15b4564 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a5a8e1455c8a8a7514af0819dc15b4564">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:a5a8e1455c8a8a7514af0819dc15b4564 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0b8bd86404ff41c447b0eb07e1eb048 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#af0b8bd86404ff41c447b0eb07e1eb048">RealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; typename TInputImage::PixelType &gt;::RealType</td></tr>
-<tr class="separator:af0b8bd86404ff41c447b0eb07e1eb048 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9331202208901cdd1e9a0bb56051ca32 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a9331202208901cdd1e9a0bb56051ca32">Self</a> = <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a></td></tr>
-<tr class="separator:a9331202208901cdd1e9a0bb56051ca32 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5efb3cd544f3441922e2d941c0bdf430 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a5efb3cd544f3441922e2d941c0bdf430">SizeType</a> = typename InputImageType::SizeType</td></tr>
-<tr class="separator:a5efb3cd544f3441922e2d941c0bdf430 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed3d3058d69df6edead174bd0539459 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a0ed3d3058d69df6edead174bd0539459">Superclass</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; TInputImage, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; typename TInputImage::PixelType &gt;<a class="el" href="classitk_1_1InterpolateImageFunction.html#af0b8bd86404ff41c447b0eb07e1eb048">::RealType</a>, double &gt;</td></tr>
-<tr class="separator:a0ed3d3058d69df6edead174bd0539459 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af70294f5bc61ac81ea9134d96746fdcd inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#af70294f5bc61ac81ea9134d96746fdcd">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:af70294f5bc61ac81ea9134d96746fdcd inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8eb3aa97fa7d7b834cf7ac5f431c597 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#ac8eb3aa97fa7d7b834cf7ac5f431c597">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:ac8eb3aa97fa7d7b834cf7ac5f431c597 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256bc0c22567dc8c9c4a134e3e84f025 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a256bc0c22567dc8c9c4a134e3e84f025">RealType</a> = typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; typename TInputImage::PixelType &gt;::RealType</td></tr>
+<tr class="separator:a256bc0c22567dc8c9c4a134e3e84f025 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577455b26153de116dd02ba1c3a415de inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a577455b26153de116dd02ba1c3a415de">Self</a> = <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a></td></tr>
+<tr class="separator:a577455b26153de116dd02ba1c3a415de inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa990589b3a2739377818a61d1e066522 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aa990589b3a2739377818a61d1e066522">SizeType</a> = typename InputImageType::SizeType</td></tr>
+<tr class="separator:aa990589b3a2739377818a61d1e066522 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c445253bd998deb7ad9d8bbfb67d5e0 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a9c445253bd998deb7ad9d8bbfb67d5e0">Superclass</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a>&lt; TInputImage, typename <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; typename TInputImage::PixelType &gt;<a class="el" href="classitk_1_1InterpolateImageFunction.html#a256bc0c22567dc8c9c4a134e3e84f025">::RealType</a>, double &gt;</td></tr>
+<tr class="separator:a9c445253bd998deb7ad9d8bbfb67d5e0 inherit pub_types_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classitk_1_1ImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageFunction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageFunction.html">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a></td></tr>
-<tr class="memitem:acf531c4dab83457deb2d641ee05d977a inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#acf531c4dab83457deb2d641ee05d977a">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:acf531c4dab83457deb2d641ee05d977a inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a513f80fdec7e57873123982cfd7f6f59 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> = <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; double, Self::ImageDimension &gt;</td></tr>
-<tr class="separator:a513f80fdec7e57873123982cfd7f6f59 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94db0addefae71ca6a9ed9693a2796d0 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a94db0addefae71ca6a9ed9693a2796d0">CoordRepType</a> = double</td></tr>
-<tr class="separator:a94db0addefae71ca6a9ed9693a2796d0 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe86fc284ebef8f7f8420c334fd25fd1 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> = typename InputImageType::IndexType</td></tr>
-<tr class="separator:afe86fc284ebef8f7f8420c334fd25fd1 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9235a19d3b5f942aac2767ee657d2e5 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ad9235a19d3b5f942aac2767ee657d2e5">IndexValueType</a> = typename InputImageType::IndexValueType</td></tr>
-<tr class="separator:ad9235a19d3b5f942aac2767ee657d2e5 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c521eb0e2fcdb3bbe2dd321ba5e1f0 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#af9c521eb0e2fcdb3bbe2dd321ba5e1f0">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
-<tr class="separator:af9c521eb0e2fcdb3bbe2dd321ba5e1f0 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a34829e02be66819f894226811300b3 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a2a34829e02be66819f894226811300b3">InputImageType</a> = TInputImage</td></tr>
-<tr class="separator:a2a34829e02be66819f894226811300b3 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa45d2c42e64eca043cf3f351929a2c3b inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#aa45d2c42e64eca043cf3f351929a2c3b">InputPixelType</a> = typename InputImageType::PixelType</td></tr>
-<tr class="separator:aa45d2c42e64eca043cf3f351929a2c3b inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bfa9cf3992559110377144e86ce7959 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a5bfa9cf3992559110377144e86ce7959">OutputType</a> = <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType</td></tr>
-<tr class="separator:a5bfa9cf3992559110377144e86ce7959 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8b163f45b7f7d7abb46fc1fe9649a7e inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#af8b163f45b7f7d7abb46fc1fe9649a7e">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:af8b163f45b7f7d7abb46fc1fe9649a7e inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a44aece96b61db2ab6f7a31a4512b45 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; double, Self::ImageDimension &gt;</td></tr>
-<tr class="separator:a6a44aece96b61db2ab6f7a31a4512b45 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf1033bfc011c558f061d6f6f227628e inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#acf1033bfc011c558f061d6f6f227628e">Self</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a></td></tr>
-<tr class="separator:acf1033bfc011c558f061d6f6f227628e inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b38bbfd2e4b5b6e7f812ac3994a80a0 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a1b38bbfd2e4b5b6e7f812ac3994a80a0">Superclass</a> = <a class="el" href="classitk_1_1FunctionBase.html">FunctionBase</a>&lt; <a class="el" href="classitk_1_1Point.html">Point</a>&lt; double, Self::ImageDimension &gt;, <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType &gt;</td></tr>
-<tr class="separator:a1b38bbfd2e4b5b6e7f812ac3994a80a0 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1fa92beef87bf70cfa24529b7e22831 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ab1fa92beef87bf70cfa24529b7e22831">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:ab1fa92beef87bf70cfa24529b7e22831 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0310032b58f8027da364a96ce959c2 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> = <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; double, Self::ImageDimension &gt;</td></tr>
+<tr class="separator:acd0310032b58f8027da364a96ce959c2 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252821fb96b6730d2b9ede136c792f7b inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a252821fb96b6730d2b9ede136c792f7b">CoordRepType</a> = double</td></tr>
+<tr class="separator:a252821fb96b6730d2b9ede136c792f7b inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdcf3a307b8699e47b755b4e046cb1c6 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> = typename InputImageType::IndexType</td></tr>
+<tr class="separator:abdcf3a307b8699e47b755b4e046cb1c6 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a25df406b226ed826cb1831c6f6af3a inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a9a25df406b226ed826cb1831c6f6af3a">IndexValueType</a> = typename InputImageType::IndexValueType</td></tr>
+<tr class="separator:a9a25df406b226ed826cb1831c6f6af3a inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942c3ace96c14743086cf310a6b7d82a inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a942c3ace96c14743086cf310a6b7d82a">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
+<tr class="separator:a942c3ace96c14743086cf310a6b7d82a inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49a85a9699e2383077339ba31039ee9 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ae49a85a9699e2383077339ba31039ee9">InputImageType</a> = TInputImage</td></tr>
+<tr class="separator:ae49a85a9699e2383077339ba31039ee9 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d096b360b6b2e7614a127c39285f1d inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a69d096b360b6b2e7614a127c39285f1d">InputPixelType</a> = typename InputImageType::PixelType</td></tr>
+<tr class="separator:a69d096b360b6b2e7614a127c39285f1d inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f25033f8fd00449bbc2965c21883ab inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a98f25033f8fd00449bbc2965c21883ab">OutputType</a> = <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType</td></tr>
+<tr class="separator:a98f25033f8fd00449bbc2965c21883ab inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72d439bd0d773eafac7736379a898f3 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#af72d439bd0d773eafac7736379a898f3">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="separator:af72d439bd0d773eafac7736379a898f3 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6b71bb1c788dbda334e2b086733c77c inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> = <a class="el" href="classitk_1_1Point.html">Point</a>&lt; double, Self::ImageDimension &gt;</td></tr>
+<tr class="separator:ac6b71bb1c788dbda334e2b086733c77c inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46378326b1fd4c16df61ddbb7eda812 inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#aa46378326b1fd4c16df61ddbb7eda812">Self</a> = <a class="el" href="classitk_1_1ImageFunction.html">ImageFunction</a></td></tr>
+<tr class="separator:aa46378326b1fd4c16df61ddbb7eda812 inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d54e4599f8864e455a2200866e729a inherit pub_types_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a78d54e4599f8864e455a2200866e729a">Superclass</a> = <a class="el" href="classitk_1_1FunctionBase.html">FunctionBase</a>&lt; <a class="el" href="classitk_1_1Point.html">Point</a>&lt; double, Self::ImageDimension &gt;, <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType &gt;</td></tr>
+<tr class="separator:a78d54e4599f8864e455a2200866e729a inherit pub_types_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classitk_1_1FunctionBase"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1FunctionBase')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1FunctionBase.html">itk::FunctionBase&lt; Point&lt; double, TInputImage::ImageDimension &gt;, NumericTraits&lt; TInputImage::PixelType &gt;::RealType &gt;</a></td></tr>
 <tr class="memitem:a5ad0885e3b60d969e9ec89372dce13b9 inherit pub_types_classitk_1_1FunctionBase"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FunctionBase.html#a5ad0885e3b60d969e9ec89372dce13b9">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
 <tr class="separator:a5ad0885e3b60d969e9ec89372dce13b9 inherit pub_types_classitk_1_1FunctionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,58 +240,58 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba9a6c23ab6d3caaa641c5d101f80175"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#aba9a6c23ab6d3caaa641c5d101f80175">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;index) const override</td></tr>
-<tr class="separator:aba9a6c23ab6d3caaa641c5d101f80175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66514b99534f9bb8d53f7767da9e9776"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a66514b99534f9bb8d53f7767da9e9776">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:a66514b99534f9bb8d53f7767da9e9776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae12ab7c0f2adea0111a4e0dcee81e0b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a5efb3cd544f3441922e2d941c0bdf430">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ae12ab7c0f2adea0111a4e0dcee81e0b1">GetRadius</a> () const override</td></tr>
-<tr class="separator:ae12ab7c0f2adea0111a4e0dcee81e0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc3597895509317e3af6045b2a320fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a2fc3597895509317e3af6045b2a320fa">SetInputImage</a> (const <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9d21e2e35df6957806b69c10b7061f08">ImageType</a> *image) override</td></tr>
-<tr class="separator:a2fc3597895509317e3af6045b2a320fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6c69d87696563215c5dacf4b7a8f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9f6c69d87696563215c5dacf4b7a8f8d">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;index) const override</td></tr>
+<tr class="separator:a9f6c69d87696563215c5dacf4b7a8f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbdf9d37c510823210cbcfe6a8487b4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a8dbdf9d37c510823210cbcfe6a8487b4">GetNameOfClass</a> () const override</td></tr>
+<tr class="separator:a8dbdf9d37c510823210cbcfe6a8487b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce24ddcccf639d152d204d8a6f0bb10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aa990589b3a2739377818a61d1e066522">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a0ce24ddcccf639d152d204d8a6f0bb10">GetRadius</a> () const override</td></tr>
+<tr class="separator:a0ce24ddcccf639d152d204d8a6f0bb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde39b648dfe281afdd3ce05b2f60751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#abde39b648dfe281afdd3ce05b2f60751">SetInputImage</a> (const <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ac44bce2d82d56048203e7b42bd1701df">ImageType</a> *image) override</td></tr>
+<tr class="separator:abde39b648dfe281afdd3ce05b2f60751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1InterpolateImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1InterpolateImageFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1InterpolateImageFunction.html">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a></td></tr>
-<tr class="memitem:a424d81040dbcf22c01086fa36c5849af inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a424d81040dbcf22c01086fa36c5849af">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;index) const override=0</td></tr>
-<tr class="separator:a424d81040dbcf22c01086fa36c5849af inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd10766293aeaa147114ee82a7d0b281 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#abd10766293aeaa147114ee82a7d0b281">EvaluateAtIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;index) const override</td></tr>
-<tr class="separator:abd10766293aeaa147114ee82a7d0b281 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f297d112eacea58db72371442cd1aa inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#ac9f297d112eacea58db72371442cd1aa">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:ac9f297d112eacea58db72371442cd1aa inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84505a7e1bf1c2da14bec24d13438e86 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1InterpolateImageFunction.html#a5efb3cd544f3441922e2d941c0bdf430">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a84505a7e1bf1c2da14bec24d13438e86">GetRadius</a> () const=0</td></tr>
-<tr class="separator:a84505a7e1bf1c2da14bec24d13438e86 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff0574b35c3c19fc3a2801a6ac3c28bc inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aff0574b35c3c19fc3a2801a6ac3c28bc">Evaluate</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> &amp;point) const override</td></tr>
-<tr class="separator:aff0574b35c3c19fc3a2801a6ac3c28bc inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc62b8bdf30bacab317b83f709f517e6 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#adc62b8bdf30bacab317b83f709f517e6">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;index) const override=0</td></tr>
+<tr class="separator:adc62b8bdf30bacab317b83f709f517e6 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73962973179525b1e74cb889d102780 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aa73962973179525b1e74cb889d102780">EvaluateAtIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;index) const override</td></tr>
+<tr class="separator:aa73962973179525b1e74cb889d102780 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7d0b173b9f66231ee3a4ff92a117f5 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aed7d0b173b9f66231ee3a4ff92a117f5">GetNameOfClass</a> () const override</td></tr>
+<tr class="separator:aed7d0b173b9f66231ee3a4ff92a117f5 inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a460f9ea95e13407ac9a901a02fa82b6f inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1InterpolateImageFunction.html#aa990589b3a2739377818a61d1e066522">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a460f9ea95e13407ac9a901a02fa82b6f">GetRadius</a> () const=0</td></tr>
+<tr class="separator:a460f9ea95e13407ac9a901a02fa82b6f inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc67338a6224b922f97459b728375cd inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a8bc67338a6224b922f97459b728375cd">Evaluate</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> &amp;point) const override</td></tr>
+<tr class="separator:a8bc67338a6224b922f97459b728375cd inherit pub_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageFunction.html">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a></td></tr>
-<tr class="memitem:a21c4a208790e788c9229a63d297a2c20 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a21c4a208790e788c9229a63d297a2c20">ConvertContinuousIndexToNearestIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;cindex, <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;index) const</td></tr>
-<tr class="separator:a21c4a208790e788c9229a63d297a2c20 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6dd4f30b63057ba1f4749dcb594e914 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ad6dd4f30b63057ba1f4749dcb594e914">ConvertPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> &amp;point, <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;cindex) const</td></tr>
-<tr class="separator:ad6dd4f30b63057ba1f4749dcb594e914 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad18358a61b8fba539a56e496b5907efe inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ad18358a61b8fba539a56e496b5907efe">Evaluate</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> &amp;point) const override=0</td></tr>
-<tr class="separator:ad18358a61b8fba539a56e496b5907efe inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9405bf6fcdb160ee4d5a4115a619a2e5 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a9405bf6fcdb160ee4d5a4115a619a2e5">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;index) const=0</td></tr>
-<tr class="separator:a9405bf6fcdb160ee4d5a4115a619a2e5 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9eed45b9f140885ab1e51b551b67d30 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ae9eed45b9f140885ab1e51b551b67d30">EvaluateAtIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;index) const=0</td></tr>
-<tr class="separator:ae9eed45b9f140885ab1e51b551b67d30 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02fc723bbb176c03d89ce4c4e260f518 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a02fc723bbb176c03d89ce4c4e260f518">GetEndContinuousIndex</a> () const</td></tr>
-<tr class="separator:a02fc723bbb176c03d89ce4c4e260f518 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dfa3409add0d2ab32edfce4efbe7bca inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a5dfa3409add0d2ab32edfce4efbe7bca">GetEndIndex</a> () const</td></tr>
-<tr class="separator:a5dfa3409add0d2ab32edfce4efbe7bca inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c4fc5ea8bda74139bd684c0cc02100 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageFunction.html#a2a34829e02be66819f894226811300b3">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a11c4fc5ea8bda74139bd684c0cc02100">GetInputImage</a> () const</td></tr>
-<tr class="separator:a11c4fc5ea8bda74139bd684c0cc02100 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a712c4306ea2e9df9c24fddda89766564 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a712c4306ea2e9df9c24fddda89766564">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:a712c4306ea2e9df9c24fddda89766564 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdffc2d2e3e3cb78fcd0980070d9b610 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#afdffc2d2e3e3cb78fcd0980070d9b610">GetStartContinuousIndex</a> () const</td></tr>
-<tr class="separator:afdffc2d2e3e3cb78fcd0980070d9b610 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affd28ee026f9d7d7af5700fdcd811495 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#affd28ee026f9d7d7af5700fdcd811495">GetStartIndex</a> () const</td></tr>
-<tr class="separator:affd28ee026f9d7d7af5700fdcd811495 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf68cc4c7af483ea30ffd8a64ed27088 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#adf68cc4c7af483ea30ffd8a64ed27088">SetInputImage</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a2a34829e02be66819f894226811300b3">InputImageType</a> *ptr)</td></tr>
-<tr class="separator:adf68cc4c7af483ea30ffd8a64ed27088 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd294da99d2c10d49baa0c9fb52132a3 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#abd294da99d2c10d49baa0c9fb52132a3">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;index) const</td></tr>
-<tr class="separator:abd294da99d2c10d49baa0c9fb52132a3 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab96dfb42a5e3e3921196c736a6cd741a inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ab96dfb42a5e3e3921196c736a6cd741a">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;index) const</td></tr>
-<tr class="separator:ab96dfb42a5e3e3921196c736a6cd741a inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dc97695a78700f4bf2690ad6773528c inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a9dc97695a78700f4bf2690ad6773528c">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> &amp;point) const</td></tr>
-<tr class="separator:a9dc97695a78700f4bf2690ad6773528c inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9024bdaeaede07685d7ef6e64a18081 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ad9024bdaeaede07685d7ef6e64a18081">ConvertPointToNearestIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#a6a44aece96b61db2ab6f7a31a4512b45">PointType</a> &amp;point, <a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a> &amp;index) const</td></tr>
-<tr class="separator:ad9024bdaeaede07685d7ef6e64a18081 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb606fbc1e0c84dc2518216d04badf7 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#accb606fbc1e0c84dc2518216d04badf7">ConvertContinuousIndexToNearestIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;cindex, <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;index) const</td></tr>
+<tr class="separator:accb606fbc1e0c84dc2518216d04badf7 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6a1238241d90dee6210ed75a2abd7b inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a0f6a1238241d90dee6210ed75a2abd7b">ConvertPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> &amp;point, <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;cindex) const</td></tr>
+<tr class="separator:a0f6a1238241d90dee6210ed75a2abd7b inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa220907b4e13f2f5b182019bfd74f6ee inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#aa220907b4e13f2f5b182019bfd74f6ee">Evaluate</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> &amp;point) const override=0</td></tr>
+<tr class="separator:aa220907b4e13f2f5b182019bfd74f6ee inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cf7bc406fd2d9bf58e291621595fac9 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a5cf7bc406fd2d9bf58e291621595fac9">EvaluateAtContinuousIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;index) const=0</td></tr>
+<tr class="separator:a5cf7bc406fd2d9bf58e291621595fac9 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef651ff94d7adaee8c1f1f5b12f0d28 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1NumericTraits.html">NumericTraits</a>&lt; TInputImage::PixelType &gt;::RealType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a7ef651ff94d7adaee8c1f1f5b12f0d28">EvaluateAtIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;index) const=0</td></tr>
+<tr class="separator:a7ef651ff94d7adaee8c1f1f5b12f0d28 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b74e7e1bdc89440456dad2856a9dc6f inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a2b74e7e1bdc89440456dad2856a9dc6f">GetEndContinuousIndex</a> () const</td></tr>
+<tr class="separator:a2b74e7e1bdc89440456dad2856a9dc6f inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b79ac554558c16763ce8985a87703ab inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a4b79ac554558c16763ce8985a87703ab">GetEndIndex</a> () const</td></tr>
+<tr class="separator:a4b79ac554558c16763ce8985a87703ab inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2656fc8ef15d196115834f2660f71b0 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageFunction.html#ae49a85a9699e2383077339ba31039ee9">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#aa2656fc8ef15d196115834f2660f71b0">GetInputImage</a> () const</td></tr>
+<tr class="separator:aa2656fc8ef15d196115834f2660f71b0 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b98518fb346313433d9e0ed80cb034d inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a8b98518fb346313433d9e0ed80cb034d">GetNameOfClass</a> () const override</td></tr>
+<tr class="separator:a8b98518fb346313433d9e0ed80cb034d inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a629aab28bebaf5ef64c8dbd76c883c61 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a629aab28bebaf5ef64c8dbd76c883c61">GetStartContinuousIndex</a> () const</td></tr>
+<tr class="separator:a629aab28bebaf5ef64c8dbd76c883c61 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f425345c4cb36f3dc3acaa0c63f3bc6 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a8f425345c4cb36f3dc3acaa0c63f3bc6">GetStartIndex</a> () const</td></tr>
+<tr class="separator:a8f425345c4cb36f3dc3acaa0c63f3bc6 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3021bddb0935aca26c7b8bb6dd59429f inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a3021bddb0935aca26c7b8bb6dd59429f">SetInputImage</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ae49a85a9699e2383077339ba31039ee9">InputImageType</a> *ptr)</td></tr>
+<tr class="separator:a3021bddb0935aca26c7b8bb6dd59429f inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae647fe5d17fc11031b77ae5860bc23e4 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ae647fe5d17fc11031b77ae5860bc23e4">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;index) const</td></tr>
+<tr class="separator:ae647fe5d17fc11031b77ae5860bc23e4 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a6d30b0d57adeb030fe4944d0289b6 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a69a6d30b0d57adeb030fe4944d0289b6">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;index) const</td></tr>
+<tr class="separator:a69a6d30b0d57adeb030fe4944d0289b6 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b1c42c9afe1d23da1ccf4ebd49a1ca inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ab1b1c42c9afe1d23da1ccf4ebd49a1ca">IsInsideBuffer</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> &amp;point) const</td></tr>
+<tr class="separator:ab1b1c42c9afe1d23da1ccf4ebd49a1ca inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c621e1699998c967da9c93d268fed0 inherit pub_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a85c621e1699998c967da9c93d268fed0">ConvertPointToNearestIndex</a> (const <a class="el" href="classitk_1_1ImageFunction.html#ac6b71bb1c788dbda334e2b086733c77c">PointType</a> &amp;point, <a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a> &amp;index) const</td></tr>
+<tr class="separator:a85c621e1699998c967da9c93d268fed0 inherit pub_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1FunctionBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1FunctionBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1FunctionBase.html">itk::FunctionBase&lt; Point&lt; double, TInputImage::ImageDimension &gt;, NumericTraits&lt; TInputImage::PixelType &gt;::RealType &gt;</a></td></tr>
 <tr class="memitem:ab972f824813df0217d9c5053bbc18681 inherit pub_methods_classitk_1_1FunctionBase"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FunctionBase.html#ab972f824813df0217d9c5053bbc18681">Evaluate</a> (const <a class="el" href="classitk_1_1FunctionBase.html#ae309f82aaa982eebaf5bdb9d79e75bfb">InputType</a> &amp;input) const=0</td></tr>
 <tr class="separator:ab972f824813df0217d9c5053bbc18681 inherit pub_methods_classitk_1_1FunctionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -372,8 +372,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2606596f5ab3298e9c4494110d26d604"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a2606596f5ab3298e9c4494110d26d604">New</a> ()</td></tr>
-<tr class="separator:a2606596f5ab3298e9c4494110d26d604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7f4f2d098bc1731eeb4533a06fc2db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#acf7f4f2d098bc1731eeb4533a06fc2db">New</a> ()</td></tr>
+<tr class="separator:acf7f4f2d098bc1731eeb4533a06fc2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classitk_1_1Object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1Object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1Object.html">itk::Object</a></td></tr>
 <tr class="memitem:a722122bd785f53294ff40b828d5ffa4d inherit pub_static_methods_classitk_1_1Object"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Object.html#a722122bd785f53294ff40b828d5ffa4d">GetGlobalWarningDisplay</a> ()</td></tr>
 <tr class="separator:a722122bd785f53294ff40b828d5ffa4d inherit pub_static_methods_classitk_1_1Object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -393,37 +393,37 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a3ead2d44ce3470dcdd6932e05f6d5394"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3ead2d44ce3470dcdd6932e05f6d5394">ImageDimension</a> = Superclass::ImageDimension</td></tr>
-<tr class="separator:a3ead2d44ce3470dcdd6932e05f6d5394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b7a55b89dd10ed0e7214487a6d6f9f"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a39b7a55b89dd10ed0e7214487a6d6f9f">ImageDimension</a> = Superclass::ImageDimension</td></tr>
+<tr class="separator:a39b7a55b89dd10ed0e7214487a6d6f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1InterpolateImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1InterpolateImageFunction')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1InterpolateImageFunction.html">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a></td></tr>
-<tr class="memitem:ad5e2e0f2f59c047734c9ce739035243b inherit pub_static_attribs_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#ad5e2e0f2f59c047734c9ce739035243b">ImageDimension</a></td></tr>
-<tr class="separator:ad5e2e0f2f59c047734c9ce739035243b inherit pub_static_attribs_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6aeb522c90221c175d9ce6c9eff967 inherit pub_static_attribs_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aff6aeb522c90221c175d9ce6c9eff967">ImageDimension</a></td></tr>
+<tr class="separator:aff6aeb522c90221c175d9ce6c9eff967 inherit pub_static_attribs_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1ImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageFunction')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageFunction.html">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a></td></tr>
-<tr class="memitem:a3422861b2f979f0f6cbdccc02d76cd7c inherit pub_static_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a3422861b2f979f0f6cbdccc02d76cd7c">ImageDimension</a></td></tr>
-<tr class="separator:a3422861b2f979f0f6cbdccc02d76cd7c inherit pub_static_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7305bb7644f15cf96608e3342b702c42 inherit pub_static_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a7305bb7644f15cf96608e3342b702c42">ImageDimension</a></td></tr>
+<tr class="separator:a7305bb7644f15cf96608e3342b702c42 inherit pub_static_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a5e3b85567a2a016d366c608c405d4d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5e3b85567a2a016d366c608c405d4d20">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a5e3b85567a2a016d366c608c405d4d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c3bf958939aa3d77f84691eaff9ee09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a6c3bf958939aa3d77f84691eaff9ee09">WindowedSincInterpolateImageFunction</a> ()=default</td></tr>
-<tr class="separator:a6c3bf958939aa3d77f84691eaff9ee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a941eb74d16486a10d9f34eebef6267ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a941eb74d16486a10d9f34eebef6267ed">~WindowedSincInterpolateImageFunction</a> () override=default</td></tr>
-<tr class="separator:a941eb74d16486a10d9f34eebef6267ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f71f02d5086fdbd970b84b2ed2d1d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a65f71f02d5086fdbd970b84b2ed2d1d0">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a65f71f02d5086fdbd970b84b2ed2d1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91684d5ae198ece7000fb39dae22b1c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a91684d5ae198ece7000fb39dae22b1c4">WindowedSincInterpolateImageFunction</a> ()=default</td></tr>
+<tr class="separator:a91684d5ae198ece7000fb39dae22b1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8a798e696764c189fc71655154ff8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a4f8a798e696764c189fc71655154ff8f">~WindowedSincInterpolateImageFunction</a> () override=default</td></tr>
+<tr class="separator:a4f8a798e696764c189fc71655154ff8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1InterpolateImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1InterpolateImageFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1InterpolateImageFunction.html">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a></td></tr>
-<tr class="memitem:af5d1f21aecea9d0a7cee9ae8210f38b6 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#af5d1f21aecea9d0a7cee9ae8210f38b6">InterpolateImageFunction</a> ()=default</td></tr>
-<tr class="separator:af5d1f21aecea9d0a7cee9ae8210f38b6 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae05f4912343a6ace6e2ca48f53786f27 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#ae05f4912343a6ace6e2ca48f53786f27">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ae05f4912343a6ace6e2ca48f53786f27 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad10af63c2162bce4ecd273244ad2746 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aad10af63c2162bce4ecd273244ad2746">~InterpolateImageFunction</a> () override=default</td></tr>
-<tr class="separator:aad10af63c2162bce4ecd273244ad2746 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b2b54bb36b9e3305805adbe726b090 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a73b2b54bb36b9e3305805adbe726b090">InterpolateImageFunction</a> ()=default</td></tr>
+<tr class="separator:a73b2b54bb36b9e3305805adbe726b090 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4075759c1a5c1d81be04fe10b86fa1e7 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a4075759c1a5c1d81be04fe10b86fa1e7">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a4075759c1a5c1d81be04fe10b86fa1e7 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf28aac890da8d848e038b2ca00ec196 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImageFunction.html#adf28aac890da8d848e038b2ca00ec196">~InterpolateImageFunction</a> () override=default</td></tr>
+<tr class="separator:adf28aac890da8d848e038b2ca00ec196 inherit pro_methods_classitk_1_1InterpolateImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageFunction')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageFunction.html">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a></td></tr>
-<tr class="memitem:af2eb8c15d61736ec89fd8a84b04a5c34 inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#af2eb8c15d61736ec89fd8a84b04a5c34">ImageFunction</a> ()</td></tr>
-<tr class="separator:af2eb8c15d61736ec89fd8a84b04a5c34 inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae63aa44a13598699c87efb340448995f inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ae63aa44a13598699c87efb340448995f">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:ae63aa44a13598699c87efb340448995f inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05f93f31594872bbe9ccac0f24c23e0 inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ac05f93f31594872bbe9ccac0f24c23e0">~ImageFunction</a> () override=default</td></tr>
-<tr class="separator:ac05f93f31594872bbe9ccac0f24c23e0 inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213df1a58010a0b6d9c9e3216e586a98 inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a213df1a58010a0b6d9c9e3216e586a98">ImageFunction</a> ()</td></tr>
+<tr class="separator:a213df1a58010a0b6d9c9e3216e586a98 inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274e59335d2ec069cef5d2b2fde07afb inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a274e59335d2ec069cef5d2b2fde07afb">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a274e59335d2ec069cef5d2b2fde07afb inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ba84ce3d38b7fc380c75d93d721bfb inherit pro_methods_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a50ba84ce3d38b7fc380c75d93d721bfb">~ImageFunction</a> () override=default</td></tr>
+<tr class="separator:a50ba84ce3d38b7fc380c75d93d721bfb inherit pro_methods_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1FunctionBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1FunctionBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1FunctionBase.html">itk::FunctionBase&lt; Point&lt; double, TInputImage::ImageDimension &gt;, NumericTraits&lt; TInputImage::PixelType &gt;::RealType &gt;</a></td></tr>
 <tr class="memitem:a8086f207cf5b8beb1a853a26c23af096 inherit pro_methods_classitk_1_1FunctionBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FunctionBase.html#a8086f207cf5b8beb1a853a26c23af096">FunctionBase</a> ()=default</td></tr>
 <tr class="separator:a8086f207cf5b8beb1a853a26c23af096 inherit pro_methods_classitk_1_1FunctionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -456,98 +456,98 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a06479d1919628f36e3bcbd5daf4601b1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a06479d1919628f36e3bcbd5daf4601b1">IteratorType</a> = <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html">ConstNeighborhoodIterator</a>&lt; <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9d21e2e35df6957806b69c10b7061f08">ImageType</a>, TBoundaryCondition &gt;</td></tr>
-<tr class="separator:a06479d1919628f36e3bcbd5daf4601b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafaad85bfd47b823f423d4390e64a5f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#aafaad85bfd47b823f423d4390e64a5f0">IteratorType</a> = <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html">ConstNeighborhoodIterator</a>&lt; <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ac44bce2d82d56048203e7b42bd1701df">ImageType</a>, TBoundaryCondition &gt;</td></tr>
+<tr class="separator:aafaad85bfd47b823f423d4390e64a5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a21204ca985d310019b67b117f9eab04b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a21204ca985d310019b67b117f9eab04b">Sinc</a> (double x) const</td></tr>
-<tr class="separator:a21204ca985d310019b67b117f9eab04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80c7e815a012225dccff23e943a5318"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#aa80c7e815a012225dccff23e943a5318">Sinc</a> (double x) const</td></tr>
+<tr class="separator:aa80c7e815a012225dccff23e943a5318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5357b57752abf102c80c2021090093e8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5357b57752abf102c80c2021090093e8">m_OffsetTable</a> [<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a179c07281dc4ddaa39241011a3f6b96d">m_OffsetTableSize</a>] {}</td></tr>
-<tr class="separator:a5357b57752abf102c80c2021090093e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3654b0f2ee0f663b752420e620f056b1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3654b0f2ee0f663b752420e620f056b1">m_WeightOffsetTable</a> [<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a179c07281dc4ddaa39241011a3f6b96d">m_OffsetTableSize</a>][<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3ead2d44ce3470dcdd6932e05f6d5394">ImageDimension</a>] {}</td></tr>
-<tr class="separator:a3654b0f2ee0f663b752420e620f056b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a5900c1d24ddaecc7fc2bf9c55ed641"><td class="memItemLeft" align="right" valign="top">TWindowFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a0a5900c1d24ddaecc7fc2bf9c55ed641">m_WindowFunction</a> {}</td></tr>
-<tr class="separator:a0a5900c1d24ddaecc7fc2bf9c55ed641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf42c8862b35975b42336c40c7e15027"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#aaf42c8862b35975b42336c40c7e15027">m_OffsetTable</a> [<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5bb5a02e9b37146819a3b1ab30f9b0cc">m_OffsetTableSize</a>] {}</td></tr>
+<tr class="separator:aaf42c8862b35975b42336c40c7e15027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a37b974d48623704a6fb3ec8e2a5634"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5a37b974d48623704a6fb3ec8e2a5634">m_WeightOffsetTable</a> [<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5bb5a02e9b37146819a3b1ab30f9b0cc">m_OffsetTableSize</a>][<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a39b7a55b89dd10ed0e7214487a6d6f9f">ImageDimension</a>] {}</td></tr>
+<tr class="separator:a5a37b974d48623704a6fb3ec8e2a5634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f3f6947eab5d6c713ee54ff3acbdd7"><td class="memItemLeft" align="right" valign="top">TWindowFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a01f3f6947eab5d6c713ee54ff3acbdd7">m_WindowFunction</a> {}</td></tr>
+<tr class="separator:a01f3f6947eab5d6c713ee54ff3acbdd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a179c07281dc4ddaa39241011a3f6b96d"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a179c07281dc4ddaa39241011a3f6b96d">m_OffsetTableSize</a> = <a class="el" href="namespaceitk_1_1Math.html#a5b8722c96c6a34c5be24a2c8e1425cef">Math::UnsignedPower</a>(<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#af1239cc0212ad496cd072b0cb37d3f37">m_WindowSize</a>, <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3ead2d44ce3470dcdd6932e05f6d5394">ImageDimension</a>)</td></tr>
-<tr class="separator:a179c07281dc4ddaa39241011a3f6b96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1239cc0212ad496cd072b0cb37d3f37"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#af1239cc0212ad496cd072b0cb37d3f37">m_WindowSize</a> { 2 * VRadius }</td></tr>
-<tr class="separator:af1239cc0212ad496cd072b0cb37d3f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb5a02e9b37146819a3b1ab30f9b0cc"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5bb5a02e9b37146819a3b1ab30f9b0cc">m_OffsetTableSize</a> = <a class="el" href="namespaceitk_1_1Math.html#a5b8722c96c6a34c5be24a2c8e1425cef">Math::UnsignedPower</a>(<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a03ca24e2ab315c0ffa5d05fa96bbfee6">m_WindowSize</a>, <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a39b7a55b89dd10ed0e7214487a6d6f9f">ImageDimension</a>)</td></tr>
+<tr class="separator:a5bb5a02e9b37146819a3b1ab30f9b0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ca24e2ab315c0ffa5d05fa96bbfee6"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a03ca24e2ab315c0ffa5d05fa96bbfee6">m_WindowSize</a> { 2 * VRadius }</td></tr>
+<tr class="separator:a03ca24e2ab315c0ffa5d05fa96bbfee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1ImageFunction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1ImageFunction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1ImageFunction.html">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a></td></tr>
-<tr class="memitem:ac6464b571a0efde9d6d88fa3d232081f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ac6464b571a0efde9d6d88fa3d232081f">m_EndContinuousIndex</a></td></tr>
-<tr class="separator:ac6464b571a0efde9d6d88fa3d232081f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b0efde48f468cea3631d8c9f96a2a52 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a3b0efde48f468cea3631d8c9f96a2a52">m_EndIndex</a></td></tr>
-<tr class="separator:a3b0efde48f468cea3631d8c9f96a2a52 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe184df810dfcd688b9bd0bcfe000f0d inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#af9c521eb0e2fcdb3bbe2dd321ba5e1f0">InputImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#afe184df810dfcd688b9bd0bcfe000f0d">m_Image</a></td></tr>
-<tr class="separator:afe184df810dfcd688b9bd0bcfe000f0d inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7312407d2f03006160ed075a89a7c18f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a7312407d2f03006160ed075a89a7c18f">m_StartContinuousIndex</a></td></tr>
-<tr class="separator:a7312407d2f03006160ed075a89a7c18f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2f2c44cf2366a46775d067e4d69f33f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#afe86fc284ebef8f7f8420c334fd25fd1">IndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ae2f2c44cf2366a46775d067e4d69f33f">m_StartIndex</a></td></tr>
-<tr class="separator:ae2f2c44cf2366a46775d067e4d69f33f inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c47e5401e25225b966eb6683210f560 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a7c47e5401e25225b966eb6683210f560">m_EndContinuousIndex</a></td></tr>
+<tr class="separator:a7c47e5401e25225b966eb6683210f560 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b755e93d60d34f4e28d955981fdd482 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a0b755e93d60d34f4e28d955981fdd482">m_EndIndex</a></td></tr>
+<tr class="separator:a0b755e93d60d34f4e28d955981fdd482 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e16a557fd45010a895f75b3d2d1991 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#a942c3ace96c14743086cf310a6b7d82a">InputImageConstPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a51e16a557fd45010a895f75b3d2d1991">m_Image</a></td></tr>
+<tr class="separator:a51e16a557fd45010a895f75b3d2d1991 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83652bd6597f7011207d740b36936b1 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#ac83652bd6597f7011207d740b36936b1">m_StartContinuousIndex</a></td></tr>
+<tr class="separator:ac83652bd6597f7011207d740b36936b1 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7709740e62892a8c51a85ba3692dc887 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageFunction.html#abdcf3a307b8699e47b755b4e046cb1c6">IndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageFunction.html#a7709740e62892a8c51a85ba3692dc887">m_StartIndex</a></td></tr>
+<tr class="separator:a7709740e62892a8c51a85ba3692dc887 inherit pro_attribs_classitk_1_1ImageFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1LightObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1LightObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1LightObject.html">itk::LightObject</a></td></tr>
 <tr class="memitem:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1LightObject.html#a112a61462b494af0d8ca86f068ab2b04">m_ReferenceCount</a> {}</td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a555deb2e9b5226f43e66e042ee0a5e93" name="a555deb2e9b5226f43e66e042ee0a5e93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a555deb2e9b5226f43e66e042ee0a5e93">&#9670;&nbsp;</a></span>ConstPointer</h2>
+<a id="a85fb10b1ed35dcb7553c41c5a2698861" name="a85fb10b1ed35dcb7553c41c5a2698861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fb10b1ed35dcb7553c41c5a2698861">&#9670;&nbsp;</a></span>ConstPointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00282">282</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00283">283</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a9d21e2e35df6957806b69c10b7061f08" name="a9d21e2e35df6957806b69c10b7061f08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d21e2e35df6957806b69c10b7061f08">&#9670;&nbsp;</a></span>ImageType</h2>
+<a id="ac44bce2d82d56048203e7b42bd1701df" name="ac44bce2d82d56048203e7b42bd1701df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac44bce2d82d56048203e7b42bd1701df">&#9670;&nbsp;</a></span>ImageType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::ImageType =  TInputImage</td>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::ImageType =  TInputImage</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> type definition </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00310">310</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00311">311</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a06479d1919628f36e3bcbd5daf4601b1" name="a06479d1919628f36e3bcbd5daf4601b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06479d1919628f36e3bcbd5daf4601b1">&#9670;&nbsp;</a></span>IteratorType</h2>
+<a id="aafaad85bfd47b823f423d4390e64a5f0" name="aafaad85bfd47b823f423d4390e64a5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafaad85bfd47b823f423d4390e64a5f0">&#9670;&nbsp;</a></span>IteratorType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::IteratorType =  <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html">ConstNeighborhoodIterator</a>&lt;<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9d21e2e35df6957806b69c10b7061f08">ImageType</a>, TBoundaryCondition&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::IteratorType =  <a class="el" href="classitk_1_1ConstNeighborhoodIterator.html">ConstNeighborhoodIterator</a>&lt;<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ac44bce2d82d56048203e7b42bd1701df">ImageType</a>, TBoundaryCondition&gt;</td>
         </tr>
       </table>
   </td>
@@ -557,79 +557,79 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00342">342</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00343">343</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a61979b187dc3c62fa0b0d1b4fec0dd31" name="a61979b187dc3c62fa0b0d1b4fec0dd31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61979b187dc3c62fa0b0d1b4fec0dd31">&#9670;&nbsp;</a></span>Pointer</h2>
+<a id="a1c2970da09852885efb10f0bd7616fdc" name="a1c2970da09852885efb10f0bd7616fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2970da09852885efb10f0bd7616fdc">&#9670;&nbsp;</a></span>Pointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00281">281</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00282">282</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a148f21ce5c57739b4dab66af3201c648" name="a148f21ce5c57739b4dab66af3201c648"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a148f21ce5c57739b4dab66af3201c648">&#9670;&nbsp;</a></span>Self</h2>
+<a id="af9be893bc364a71e335b062772ef21a7" name="af9be893bc364a71e335b062772ef21a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9be893bc364a71e335b062772ef21a7">&#9670;&nbsp;</a></span>Self</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00278">278</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
-
-</div>
-</div>
-<a id="a8e219d48bd48dc15ebfbce9a32b8d6e8" name="a8e219d48bd48dc15ebfbce9a32b8d6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e219d48bd48dc15ebfbce9a32b8d6e8">&#9670;&nbsp;</a></span>Superclass</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a>&lt;TInputImage, TCoordRep&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 <p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00279">279</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6c3bf958939aa3d77f84691eaff9ee09" name="a6c3bf958939aa3d77f84691eaff9ee09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c3bf958939aa3d77f84691eaff9ee09">&#9670;&nbsp;</a></span>WindowedSincInterpolateImageFunction()</h2>
+<a id="a17f559e9562218e13e3b4d4126af8974" name="a17f559e9562218e13e3b4d4126af8974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f559e9562218e13e3b4d4126af8974">&#9670;&nbsp;</a></span>Superclass</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1InterpolateImageFunction.html">InterpolateImageFunction</a>&lt;TInputImage, TCoordinate&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00280">280</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a91684d5ae198ece7000fb39dae22b1c4" name="a91684d5ae198ece7000fb39dae22b1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91684d5ae198ece7000fb39dae22b1c4">&#9670;&nbsp;</a></span>WindowedSincInterpolateImageFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::WindowedSincInterpolateImageFunction </td>
+          <td class="memname"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::WindowedSincInterpolateImageFunction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -644,19 +644,19 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 
 </div>
 </div>
-<a id="a941eb74d16486a10d9f34eebef6267ed" name="a941eb74d16486a10d9f34eebef6267ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a941eb74d16486a10d9f34eebef6267ed">&#9670;&nbsp;</a></span>~WindowedSincInterpolateImageFunction()</h2>
+<a id="a4f8a798e696764c189fc71655154ff8f" name="a4f8a798e696764c189fc71655154ff8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8a798e696764c189fc71655154ff8f">&#9670;&nbsp;</a></span>~WindowedSincInterpolateImageFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::~<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a> </td>
+          <td class="memname"><a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::~<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">WindowedSincInterpolateImageFunction</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -672,21 +672,21 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aba9a6c23ab6d3caaa641c5d101f80175" name="aba9a6c23ab6d3caaa641c5d101f80175"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9a6c23ab6d3caaa641c5d101f80175">&#9670;&nbsp;</a></span>EvaluateAtContinuousIndex()</h2>
+<a id="a9f6c69d87696563215c5dacf4b7a8f8d" name="a9f6c69d87696563215c5dacf4b7a8f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6c69d87696563215c5dacf4b7a8f8d">&#9670;&nbsp;</a></span>EvaluateAtContinuousIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::EvaluateAtContinuousIndex </td>
+          <td class="memname"><a class="el" href="classitk_1_1FunctionBase.html#a10c044033e2abbfc8b8e927aeab5f328">OutputType</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::EvaluateAtContinuousIndex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1ImageFunction.html#a513f80fdec7e57873123982cfd7f6f59">ContinuousIndexType</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1ImageFunction.html#acd0310032b58f8027da364a96ce959c2">ContinuousIndexType</a> &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -700,23 +700,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 <p >Evaluate the function at a <a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> position</p>
 <p >Returns the interpolated image intensity at a specified point position. Bounds checking is based on the type of the TBoundaryCondition specified. </p>
 
-<p>Implements <a class="el" href="classitk_1_1InterpolateImageFunction.html#a424d81040dbcf22c01086fa36c5849af">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a>.</p>
+<p>Implements <a class="el" href="classitk_1_1InterpolateImageFunction.html#adc62b8bdf30bacab317b83f709f517e6">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a66514b99534f9bb8d53f7767da9e9776" name="a66514b99534f9bb8d53f7767da9e9776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66514b99534f9bb8d53f7767da9e9776">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
+<a id="a8dbdf9d37c510823210cbcfe6a8487b4" name="a8dbdf9d37c510823210cbcfe6a8487b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbdf9d37c510823210cbcfe6a8487b4">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char * <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::GetNameOfClass </td>
+          <td class="memname">const char * <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::GetNameOfClass </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -734,19 +734,19 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 
 </div>
 </div>
-<a id="ae12ab7c0f2adea0111a4e0dcee81e0b1" name="ae12ab7c0f2adea0111a4e0dcee81e0b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae12ab7c0f2adea0111a4e0dcee81e0b1">&#9670;&nbsp;</a></span>GetRadius()</h2>
+<a id="a0ce24ddcccf639d152d204d8a6f0bb10" name="a0ce24ddcccf639d152d204d8a6f0bb10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce24ddcccf639d152d204d8a6f0bb10">&#9670;&nbsp;</a></span>GetRadius()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1InterpolateImageFunction.html#a5efb3cd544f3441922e2d941c0bdf430">SizeType</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::GetRadius </td>
+          <td class="memname"><a class="el" href="classitk_1_1InterpolateImageFunction.html#aa990589b3a2739377818a61d1e066522">SizeType</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::GetRadius </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -761,25 +761,25 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 <p >Get the radius required for interpolation.</p>
 <p >This defines the number of surrounding pixels required to interpolate at a given point. </p>
 
-<p>Implements <a class="el" href="classitk_1_1InterpolateImageFunction.html#a84505a7e1bf1c2da14bec24d13438e86">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a>.</p>
+<p>Implements <a class="el" href="classitk_1_1InterpolateImageFunction.html#a460f9ea95e13407ac9a901a02fa82b6f">itk::InterpolateImageFunction&lt; TInputImage, double &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00328">328</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00329">329</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a2606596f5ab3298e9c4494110d26d604" name="a2606596f5ab3298e9c4494110d26d604"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2606596f5ab3298e9c4494110d26d604">&#9670;&nbsp;</a></span>New()</h2>
+<a id="acf7f4f2d098bc1731eeb4533a06fc2db" name="acf7f4f2d098bc1731eeb4533a06fc2db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7f4f2d098bc1731eeb4533a06fc2db">&#9670;&nbsp;</a></span>New()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::New </td>
+          <td class="memname">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a> <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::New </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -795,19 +795,19 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 
 </div>
 </div>
-<a id="a5e3b85567a2a016d366c608c405d4d20" name="a5e3b85567a2a016d366c608c405d4d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e3b85567a2a016d366c608c405d4d20">&#9670;&nbsp;</a></span>PrintSelf()</h2>
+<a id="a65f71f02d5086fdbd970b84b2ed2d1d0" name="a65f71f02d5086fdbd970b84b2ed2d1d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f71f02d5086fdbd970b84b2ed2d1d0">&#9670;&nbsp;</a></span>PrintSelf()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::PrintSelf </td>
+          <td class="memname">void <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::PrintSelf </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -837,21 +837,21 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 
 </div>
 </div>
-<a id="a2fc3597895509317e3af6045b2a320fa" name="a2fc3597895509317e3af6045b2a320fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fc3597895509317e3af6045b2a320fa">&#9670;&nbsp;</a></span>SetInputImage()</h2>
+<a id="abde39b648dfe281afdd3ce05b2f60751" name="abde39b648dfe281afdd3ce05b2f60751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde39b648dfe281afdd3ce05b2f60751">&#9670;&nbsp;</a></span>SetInputImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::SetInputImage </td>
+          <td class="memname">void <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::SetInputImage </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a9d21e2e35df6957806b69c10b7061f08">ImageType</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#ac44bce2d82d56048203e7b42bd1701df">ImageType</a> *&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -864,23 +864,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p >Set the input image. </p><dl class="section warning"><dt>Warning</dt><dd>this method caches BufferedRegion information. If the BufferedRegion has changed, user must call SetInputImage again to update cached values. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ImageFunction.html#adf68cc4c7af483ea30ffd8a64ed27088">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageFunction.html#a3021bddb0935aca26c7b8bb6dd59429f">itk::ImageFunction&lt; TInputImage, NumericTraits&lt; TInputImage::PixelType &gt;::RealType, double &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a21204ca985d310019b67b117f9eab04b" name="a21204ca985d310019b67b117f9eab04b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21204ca985d310019b67b117f9eab04b">&#9670;&nbsp;</a></span>Sinc()</h2>
+<a id="aa80c7e815a012225dccff23e943a5318" name="aa80c7e815a012225dccff23e943a5318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80c7e815a012225dccff23e943a5318">&#9670;&nbsp;</a></span>Sinc()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::Sinc </td>
+          <td class="memname">double <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::Sinc </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -895,26 +895,26 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p >The sinc function </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00362">362</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00363">363</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 <p class="reference">References <a class="el" href="itkMath_8h_source.html#l00066">itk::Math::pi</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3ead2d44ce3470dcdd6932e05f6d5394" name="a3ead2d44ce3470dcdd6932e05f6d5394"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ead2d44ce3470dcdd6932e05f6d5394">&#9670;&nbsp;</a></span>ImageDimension</h2>
+<a id="a39b7a55b89dd10ed0e7214487a6d6f9f" name="a39b7a55b89dd10ed0e7214487a6d6f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b7a55b89dd10ed0e7214487a6d6f9f">&#9670;&nbsp;</a></span>ImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::ImageDimension = Superclass::ImageDimension</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::ImageDimension = Superclass::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -925,23 +925,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p >Dimension underlying input image. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00300">300</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00301">301</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a5357b57752abf102c80c2021090093e8" name="a5357b57752abf102c80c2021090093e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5357b57752abf102c80c2021090093e8">&#9670;&nbsp;</a></span>m_OffsetTable</h2>
+<a id="aaf42c8862b35975b42336c40c7e15027" name="aaf42c8862b35975b42336c40c7e15027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf42c8862b35975b42336c40c7e15027">&#9670;&nbsp;</a></span>m_OffsetTable</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::m_OffsetTable[<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a179c07281dc4ddaa39241011a3f6b96d">m_OffsetTableSize</a>] {}</td>
+          <td class="memname">unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::m_OffsetTable[<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5bb5a02e9b37146819a3b1ab30f9b0cc">m_OffsetTableSize</a>] {}</td>
         </tr>
       </table>
   </td>
@@ -952,23 +952,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p >The offset array, used to keep a list of relevant offsets in the neighborhoodIterator </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00355">355</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00356">356</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a179c07281dc4ddaa39241011a3f6b96d" name="a179c07281dc4ddaa39241011a3f6b96d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a179c07281dc4ddaa39241011a3f6b96d">&#9670;&nbsp;</a></span>m_OffsetTableSize</h2>
+<a id="a5bb5a02e9b37146819a3b1ab30f9b0cc" name="a5bb5a02e9b37146819a3b1ab30f9b0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb5a02e9b37146819a3b1ab30f9b0cc">&#9670;&nbsp;</a></span>m_OffsetTableSize</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::m_OffsetTableSize = <a class="el" href="namespaceitk_1_1Math.html#a5b8722c96c6a34c5be24a2c8e1425cef">Math::UnsignedPower</a>(<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#af1239cc0212ad496cd072b0cb37d3f37">m_WindowSize</a>, <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3ead2d44ce3470dcdd6932e05f6d5394">ImageDimension</a>)</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::m_OffsetTableSize = <a class="el" href="namespaceitk_1_1Math.html#a5b8722c96c6a34c5be24a2c8e1425cef">Math::UnsignedPower</a>(<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a03ca24e2ab315c0ffa5d05fa96bbfee6">m_WindowSize</a>, <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a39b7a55b89dd10ed0e7214487a6d6f9f">ImageDimension</a>)</td>
         </tr>
       </table>
   </td>
@@ -979,23 +979,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p ><a class="el" href="structitk_1_1Size.html" title="Represent a n-dimensional size (bounds) of a n-dimensional image.">Size</a> of the offset table </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00351">351</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00352">352</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a3654b0f2ee0f663b752420e620f056b1" name="a3654b0f2ee0f663b752420e620f056b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3654b0f2ee0f663b752420e620f056b1">&#9670;&nbsp;</a></span>m_WeightOffsetTable</h2>
+<a id="a5a37b974d48623704a6fb3ec8e2a5634" name="a5a37b974d48623704a6fb3ec8e2a5634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a37b974d48623704a6fb3ec8e2a5634">&#9670;&nbsp;</a></span>m_WeightOffsetTable</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::m_WeightOffsetTable[<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a179c07281dc4ddaa39241011a3f6b96d">m_OffsetTableSize</a>][<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a3ead2d44ce3470dcdd6932e05f6d5394">ImageDimension</a>] {}</td>
+          <td class="memname">unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::m_WeightOffsetTable[<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a5bb5a02e9b37146819a3b1ab30f9b0cc">m_OffsetTableSize</a>][<a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html#a39b7a55b89dd10ed0e7214487a6d6f9f">ImageDimension</a>] {}</td>
         </tr>
       </table>
   </td>
@@ -1006,23 +1006,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p ><a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> into the weights array for each offset </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00358">358</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00359">359</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="a0a5900c1d24ddaecc7fc2bf9c55ed641" name="a0a5900c1d24ddaecc7fc2bf9c55ed641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a5900c1d24ddaecc7fc2bf9c55ed641">&#9670;&nbsp;</a></span>m_WindowFunction</h2>
+<a id="a01f3f6947eab5d6c713ee54ff3acbdd7" name="a01f3f6947eab5d6c713ee54ff3acbdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f3f6947eab5d6c713ee54ff3acbdd7">&#9670;&nbsp;</a></span>m_WindowFunction</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TWindowFunction <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::m_WindowFunction {}</td>
+          <td class="memname">TWindowFunction <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::m_WindowFunction {}</td>
         </tr>
       </table>
   </td>
@@ -1033,23 +1033,23 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </div><div class="memdoc">
 <p >The function object, used to compute window </p>
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00348">348</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00349">349</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>
-<a id="af1239cc0212ad496cd072b0cb37d3f37" name="af1239cc0212ad496cd072b0cb37d3f37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1239cc0212ad496cd072b0cb37d3f37">&#9670;&nbsp;</a></span>m_WindowSize</h2>
+<a id="a03ca24e2ab315c0ffa5d05fa96bbfee6" name="a03ca24e2ab315c0ffa5d05fa96bbfee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ca24e2ab315c0ffa5d05fa96bbfee6">&#9670;&nbsp;</a></span>m_WindowSize</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordRep  = double&gt; </div>
+template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunction  = Function::HammingWindowFunction&lt;VRadius&gt;, class TBoundaryCondition  = ZeroFluxNeumannBoundaryCondition&lt;TInputImage, TInputImage&gt;, class TCoordinate  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordRep &gt;::m_WindowSize { 2 * VRadius }</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>&lt; TInputImage, VRadius, TWindowFunction, TBoundaryCondition, TCoordinate &gt;::m_WindowSize { 2 * VRadius }</td>
         </tr>
       </table>
   </td>
@@ -1059,7 +1059,7 @@ template&lt;typename TInputImage , unsigned int VRadius, typename TWindowFunctio
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00345">345</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html#l00346">346</a> of file <a class="el" href="itkWindowedSincInterpolateImageFunction_8h_source.html">itkWindowedSincInterpolateImageFunction.h</a>.</p>
 
 </div>
 </div>

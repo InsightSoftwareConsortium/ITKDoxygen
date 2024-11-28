@@ -103,7 +103,7 @@ class itk::ImageBase&lt; VImageDimension &gt;</div><p >Base class for templated 
 <p >The position and orientation of an image is defined by its "Origin" and its "Directions". The "Origin" is the physical position of the pixel whose "Index" is all zeros. The "Direction" of an image is a matrix whose columns indicate the direction in physical space that each dimension of the image traverses. The first column defines the direction that the fastest moving index in the image traverses in physical space while the last column defines the direction that the slowest moving index in the image traverses in physical space.</p>
 <p >The extent of an image is defined by the pixel spacing and a set of regions. The "Spacing" is the size of a pixel in physical space along each dimension. Regions describe a portion of an image grid via a starting index for the image array and a size (or number of pixels) in each dimension. The ivar LargestPossibleRegion defines the size and starting index of the image dataset. The entire image dataset, however, may not be resident in memory. The region of the image that is resident in memory is defined by the "BufferedRegion". The Buffer is a contiguous block of memory. The third set of meta-data defines a region of interest, called the "RequestedRegion". The RequestedRegion is used by the pipeline execution model to define what a filter is requested to produce.</p>
 <p >[RegionIndex, RegionSize] C [BufferIndex, BufferSize] C [ImageIndex, ImageSize]</p>
-<p ><a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> provides all the methods for converting between the physical space and index coordinate frames. <a class="el" href="classitk_1_1ImageBase.html#a8360b9623d685997725c81c85716c4d2">TransformIndexToPhysicalPoint()</a> converts an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> in the pixel array into its coordinates in physical space. <a class="el" href="classitk_1_1ImageBase.html#ae46118e0a604c11e6f1170da7c478f81">TransformPhysicalPointToIndex()</a> converts a position in physical space into an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> into the pixel array (using rounding). Subpixel locations are supported by methods that convert to and from <a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> types.</p>
+<p ><a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> provides all the methods for converting between the physical space and index coordinate frames. <a class="el" href="classitk_1_1ImageBase.html#ab49e08d6349d1e136e499cad56bf81bd">TransformIndexToPhysicalPoint()</a> converts an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> in the pixel array into its coordinates in physical space. <a class="el" href="classitk_1_1ImageBase.html#a1ffb3de86b68608a17262f6c6ff6d565">TransformPhysicalPointToIndex()</a> converts a position in physical space into an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> into the pixel array (using rounding). Subpixel locations are supported by methods that convert to and from <a class="el" href="classitk_1_1ContinuousIndex.html" title="A templated class holding a point in n-Dimensional image space.">ContinuousIndex</a> types.</p>
 <p ><a class="el" href="classitk_1_1ImageBase.html" title="Base class for templated image classes.">ImageBase</a> also provides helper routines for the ImageIterators which convert an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> to an offset in memory from the first pixel address as well as convert an offset in memory from the first pixel address to an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="itkImageBase_8h_source.html#l00114">114</a> of file <a class="el" href="itkImageBase_8h_source.html">itkImageBase.h</a>.</p>
@@ -240,21 +240,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a07a352e10a135c720fbb85cb1135d403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c91b3e520877bda5820a3ca73a264ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a0c91b3e520877bda5820a3ca73a264ce">SetRequestedRegionToLargestPossibleRegion</a> () override</td></tr>
 <tr class="separator:a0c91b3e520877bda5820a3ca73a264ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9cbee64110e23bc01646caab56381b"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a6e9cbee64110e23bc01646caab56381b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a6e9cbee64110e23bc01646caab56381b">TransformLocalVectorToPhysicalVector</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;inputGradient, <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;outputGradient) const</td></tr>
-<tr class="separator:a6e9cbee64110e23bc01646caab56381b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c5fd23306c6be4bd769ff8772e7f0e8"><td class="memTemplParams" colspan="2">template&lt;typename TIndexRep , typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a3c5fd23306c6be4bd769ff8772e7f0e8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a3c5fd23306c6be4bd769ff8772e7f0e8">TransformPhysicalPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
-<tr class="separator:a3c5fd23306c6be4bd769ff8772e7f0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664c26a41a8f3f8dc1eba918e2b4e6db"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep , typename TIndexRep &gt; </td></tr>
-<tr class="memitem:a664c26a41a8f3f8dc1eba918e2b4e6db"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a664c26a41a8f3f8dc1eba918e2b4e6db">TransformPhysicalPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>, <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index) const</td></tr>
-<tr class="separator:a664c26a41a8f3f8dc1eba918e2b4e6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c4f893aff7e68ffdc6ec4d6f592bb18"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a5c4f893aff7e68ffdc6ec4d6f592bb18"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a5c4f893aff7e68ffdc6ec4d6f592bb18">TransformPhysicalPointToIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>, <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index) const</td></tr>
-<tr class="separator:a5c4f893aff7e68ffdc6ec4d6f592bb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a90b5d0dbdf6095f2ea98e23ffe6a3"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a94a90b5d0dbdf6095f2ea98e23ffe6a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a94a90b5d0dbdf6095f2ea98e23ffe6a3">TransformPhysicalVectorToLocalVector</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;inputGradient, <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;outputGradient) const</td></tr>
-<tr class="separator:a94a90b5d0dbdf6095f2ea98e23ffe6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5483e05d97e5006a6fd0e340937c19"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:aec5483e05d97e5006a6fd0e340937c19"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#aec5483e05d97e5006a6fd0e340937c19">TransformLocalVectorToPhysicalVector</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;inputGradient, <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;outputGradient) const</td></tr>
+<tr class="separator:aec5483e05d97e5006a6fd0e340937c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12cbb71a82148c3c0eddf52dd4452744"><td class="memTemplParams" colspan="2">template&lt;typename TIndexRep , typename TCoordinate &gt; </td></tr>
+<tr class="memitem:a12cbb71a82148c3c0eddf52dd4452744"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a12cbb71a82148c3c0eddf52dd4452744">TransformPhysicalPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
+<tr class="separator:a12cbb71a82148c3c0eddf52dd4452744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d7f8bf7a0294fca1898b2e9751a4d5"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate , typename TIndexRep &gt; </td></tr>
+<tr class="memitem:a69d7f8bf7a0294fca1898b2e9751a4d5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a69d7f8bf7a0294fca1898b2e9751a4d5">TransformPhysicalPointToContinuousIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>, <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index) const</td></tr>
+<tr class="separator:a69d7f8bf7a0294fca1898b2e9751a4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aef428c0f4a14da0ea8db09085ed434"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:a4aef428c0f4a14da0ea8db09085ed434"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a4aef428c0f4a14da0ea8db09085ed434">TransformPhysicalPointToIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>, <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index) const</td></tr>
+<tr class="separator:a4aef428c0f4a14da0ea8db09085ed434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f4ec8f5b43d2d89b0ff1d6ef92bccb"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:a01f4ec8f5b43d2d89b0ff1d6ef92bccb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a01f4ec8f5b43d2d89b0ff1d6ef92bccb">TransformPhysicalVectorToLocalVector</a> (const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;inputGradient, <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;outputGradient) const</td></tr>
+<tr class="separator:a01f4ec8f5b43d2d89b0ff1d6ef92bccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46090be19ab40e90f4e23193f858c16b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a46090be19ab40e90f4e23193f858c16b">UpdateOutputData</a> () override</td></tr>
 <tr class="separator:a46090be19ab40e90f4e23193f858c16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c16e11a21521818d9c654c3d1bb142e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a7c16e11a21521818d9c654c3d1bb142e">UpdateOutputInformation</a> () override</td></tr>
@@ -285,25 +285,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9462d9ae91f2a53a41bac6b649706cc6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a9462d9ae91f2a53a41bac6b649706cc6">SetSpacing</a> (const float spacing[VImageDimension])</td></tr>
 <tr class="separator:a9462d9ae91f2a53a41bac6b649706cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ae46118e0a604c11e6f1170da7c478f81"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:ae46118e0a604c11e6f1170da7c478f81"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ae46118e0a604c11e6f1170da7c478f81">TransformPhysicalPointToIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
-<tr class="separator:ae46118e0a604c11e6f1170da7c478f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffb3de86b68608a17262f6c6ff6d565"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:a1ffb3de86b68608a17262f6c6ff6d565"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a1ffb3de86b68608a17262f6c6ff6d565">TransformPhysicalPointToIndex</a> (const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
+<tr class="separator:a1ffb3de86b68608a17262f6c6ff6d565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a1b613fe03cee708b7ebccca58d9fb9a9"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep , typename TIndexRep &gt; </td></tr>
-<tr class="memitem:a1b613fe03cee708b7ebccca58d9fb9a9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a1b613fe03cee708b7ebccca58d9fb9a9">TransformContinuousIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index, <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
-<tr class="separator:a1b613fe03cee708b7ebccca58d9fb9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7ce22ae33e616ce89b6003c02c92ae"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate , typename TIndexRep &gt; </td></tr>
+<tr class="memitem:a7f7ce22ae33e616ce89b6003c02c92ae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a7f7ce22ae33e616ce89b6003c02c92ae">TransformContinuousIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index, <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
+<tr class="separator:a7f7ce22ae33e616ce89b6003c02c92ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:aa3f38c874d1bd044f4b75e022fecae37"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep , typename TIndexRep &gt; </td></tr>
-<tr class="memitem:aa3f38c874d1bd044f4b75e022fecae37"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#aa3f38c874d1bd044f4b75e022fecae37">TransformContinuousIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index) const</td></tr>
-<tr class="separator:aa3f38c874d1bd044f4b75e022fecae37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55686712c8a23d4e82abc49b1884827"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate , typename TIndexRep &gt; </td></tr>
+<tr class="memitem:ac55686712c8a23d4e82abc49b1884827"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ac55686712c8a23d4e82abc49b1884827">TransformContinuousIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;index) const</td></tr>
+<tr class="separator:ac55686712c8a23d4e82abc49b1884827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a8360b9623d685997725c81c85716c4d2"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:a8360b9623d685997725c81c85716c4d2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a8360b9623d685997725c81c85716c4d2">TransformIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index, <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
-<tr class="separator:a8360b9623d685997725c81c85716c4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49e08d6349d1e136e499cad56bf81bd"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:ab49e08d6349d1e136e499cad56bf81bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ab49e08d6349d1e136e499cad56bf81bd">TransformIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index, <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;<a class="el" href="namespaceitk.html#a2b1146bed5414748f28fd07fd7cf057e">point</a>) const</td></tr>
+<tr class="separator:ab49e08d6349d1e136e499cad56bf81bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ad4400cd0650d87d086d395ff1ef5c009"><td class="memTemplParams" colspan="2">template&lt;typename TCoordRep &gt; </td></tr>
-<tr class="memitem:ad4400cd0650d87d086d395ff1ef5c009"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ad4400cd0650d87d086d395ff1ef5c009">TransformIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index) const</td></tr>
-<tr class="separator:ad4400cd0650d87d086d395ff1ef5c009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac811c65534440f2dfcb109db12c181a3"><td class="memTemplParams" colspan="2">template&lt;typename TCoordinate &gt; </td></tr>
+<tr class="memitem:ac811c65534440f2dfcb109db12c181a3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#ac811c65534440f2dfcb109db12c181a3">TransformIndexToPhysicalPoint</a> (const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;index) const</td></tr>
+<tr class="separator:ac811c65534440f2dfcb109db12c181a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a65ce5872d8316c3ca976b2b1749fc418"><td class="memTemplParams" colspan="2">template&lt;typename TVector &gt; </td></tr>
 <tr class="memitem:a65ce5872d8316c3ca976b2b1749fc418"><td class="memTemplItemLeft" align="right" valign="top">TVector&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageBase.html#a65ce5872d8316c3ca976b2b1749fc418">TransformLocalVectorToPhysicalVector</a> (const TVector &amp;inputGradient) const</td></tr>
@@ -2382,21 +2382,21 @@ template&lt;unsigned int VImageDimension = 2&gt; </div>
 
 </div>
 </div>
-<a id="aa3f38c874d1bd044f4b75e022fecae37" name="aa3f38c874d1bd044f4b75e022fecae37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3f38c874d1bd044f4b75e022fecae37">&#9670;&nbsp;</a></span>TransformContinuousIndexToPhysicalPoint() <span class="overload">[1/2]</span></h2>
+<a id="ac55686712c8a23d4e82abc49b1884827" name="ac55686712c8a23d4e82abc49b1884827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55686712c8a23d4e82abc49b1884827">&#9670;&nbsp;</a></span>TransformContinuousIndexToPhysicalPoint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
+template&lt;typename TCoordinate , typename TIndexRep &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformContinuousIndexToPhysicalPoint </td>
+          <td class="memname"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformContinuousIndexToPhysicalPoint </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -2417,15 +2417,15 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 
 </div>
 </div>
-<a id="a1b613fe03cee708b7ebccca58d9fb9a9" name="a1b613fe03cee708b7ebccca58d9fb9a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b613fe03cee708b7ebccca58d9fb9a9">&#9670;&nbsp;</a></span>TransformContinuousIndexToPhysicalPoint() <span class="overload">[2/2]</span></h2>
+<a id="a7f7ce22ae33e616ce89b6003c02c92ae" name="a7f7ce22ae33e616ce89b6003c02c92ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7ce22ae33e616ce89b6003c02c92ae">&#9670;&nbsp;</a></span>TransformContinuousIndexToPhysicalPoint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
+template&lt;typename TCoordinate , typename TIndexRep &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2439,7 +2439,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em>&#160;</td>
         </tr>
         <tr>
@@ -2462,21 +2462,21 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 
 </div>
 </div>
-<a id="ad4400cd0650d87d086d395ff1ef5c009" name="ad4400cd0650d87d086d395ff1ef5c009"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4400cd0650d87d086d395ff1ef5c009">&#9670;&nbsp;</a></span>TransformIndexToPhysicalPoint() <span class="overload">[1/2]</span></h2>
+<a id="ac811c65534440f2dfcb109db12c181a3" name="ac811c65534440f2dfcb109db12c181a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac811c65534440f2dfcb109db12c181a3">&#9670;&nbsp;</a></span>TransformIndexToPhysicalPoint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformIndexToPhysicalPoint </td>
+          <td class="memname"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformIndexToPhysicalPoint </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -2498,15 +2498,15 @@ template&lt;typename TCoordRep &gt; </div>
 
 </div>
 </div>
-<a id="a8360b9623d685997725c81c85716c4d2" name="a8360b9623d685997725c81c85716c4d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8360b9623d685997725c81c85716c4d2">&#9670;&nbsp;</a></span>TransformIndexToPhysicalPoint() <span class="overload">[2/2]</span></h2>
+<a id="ab49e08d6349d1e136e499cad56bf81bd" name="ab49e08d6349d1e136e499cad56bf81bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49e08d6349d1e136e499cad56bf81bd">&#9670;&nbsp;</a></span>TransformIndexToPhysicalPoint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2520,7 +2520,7 @@ template&lt;typename TCoordRep &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em>&#160;</td>
         </tr>
         <tr>
@@ -2544,15 +2544,15 @@ template&lt;typename TCoordRep &gt; </div>
 
 </div>
 </div>
-<a id="a6e9cbee64110e23bc01646caab56381b" name="a6e9cbee64110e23bc01646caab56381b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e9cbee64110e23bc01646caab56381b">&#9670;&nbsp;</a></span>TransformLocalVectorToPhysicalVector() <span class="overload">[1/2]</span></h2>
+<a id="aec5483e05d97e5006a6fd0e340937c19" name="aec5483e05d97e5006a6fd0e340937c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5483e05d97e5006a6fd0e340937c19">&#9670;&nbsp;</a></span>TransformLocalVectorToPhysicalVector() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2560,13 +2560,13 @@ template&lt;typename TCoordRep &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformLocalVectorToPhysicalVector </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>inputGradient</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>outputGradient</em>&#160;</td>
         </tr>
         <tr>
@@ -2624,15 +2624,15 @@ template&lt;typename TVector &gt; </div>
 
 </div>
 </div>
-<a id="a3c5fd23306c6be4bd769ff8772e7f0e8" name="a3c5fd23306c6be4bd769ff8772e7f0e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c5fd23306c6be4bd769ff8772e7f0e8">&#9670;&nbsp;</a></span>TransformPhysicalPointToContinuousIndex() <span class="overload">[1/2]</span></h2>
+<a id="a12cbb71a82148c3c0eddf52dd4452744" name="a12cbb71a82148c3c0eddf52dd4452744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12cbb71a82148c3c0eddf52dd4452744">&#9670;&nbsp;</a></span>TransformPhysicalPointToContinuousIndex() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TIndexRep , typename TCoordRep &gt; </div>
+template&lt;typename TIndexRep , typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2640,7 +2640,7 @@ template&lt;typename TIndexRep , typename TCoordRep &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classitk_1_1ContinuousIndex.html">ContinuousIndex</a>&lt; TIndexRep, VImageDimension &gt; <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformPhysicalPointToContinuousIndex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -2668,15 +2668,15 @@ template&lt;typename TIndexRep , typename TCoordRep &gt; </div>
 
 </div>
 </div>
-<a id="a664c26a41a8f3f8dc1eba918e2b4e6db" name="a664c26a41a8f3f8dc1eba918e2b4e6db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a664c26a41a8f3f8dc1eba918e2b4e6db">&#9670;&nbsp;</a></span>TransformPhysicalPointToContinuousIndex() <span class="overload">[2/2]</span></h2>
+<a id="a69d7f8bf7a0294fca1898b2e9751a4d5" name="a69d7f8bf7a0294fca1898b2e9751a4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d7f8bf7a0294fca1898b2e9751a4d5">&#9670;&nbsp;</a></span>TransformPhysicalPointToContinuousIndex() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
+template&lt;typename TCoordinate , typename TIndexRep &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2684,7 +2684,7 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformPhysicalPointToContinuousIndex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em>, </td>
         </tr>
         <tr>
@@ -2717,15 +2717,15 @@ template&lt;typename TCoordRep , typename TIndexRep &gt; </div>
 
 </div>
 </div>
-<a id="ae46118e0a604c11e6f1170da7c478f81" name="ae46118e0a604c11e6f1170da7c478f81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae46118e0a604c11e6f1170da7c478f81">&#9670;&nbsp;</a></span>TransformPhysicalPointToIndex() <span class="overload">[1/2]</span></h2>
+<a id="a1ffb3de86b68608a17262f6c6ff6d565" name="a1ffb3de86b68608a17262f6c6ff6d565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ffb3de86b68608a17262f6c6ff6d565">&#9670;&nbsp;</a></span>TransformPhysicalPointToIndex() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2733,7 +2733,7 @@ template&lt;typename TCoordRep &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classitk_1_1ImageBase.html#a3aefec2434ea61561f5ff67a9c58f3d6">IndexType</a> <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformPhysicalPointToIndex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -2758,15 +2758,15 @@ template&lt;typename TCoordRep &gt; </div>
 
 </div>
 </div>
-<a id="a5c4f893aff7e68ffdc6ec4d6f592bb18" name="a5c4f893aff7e68ffdc6ec4d6f592bb18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c4f893aff7e68ffdc6ec4d6f592bb18">&#9670;&nbsp;</a></span>TransformPhysicalPointToIndex() <span class="overload">[2/2]</span></h2>
+<a id="a4aef428c0f4a14da0ea8db09085ed434" name="a4aef428c0f4a14da0ea8db09085ed434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aef428c0f4a14da0ea8db09085ed434">&#9670;&nbsp;</a></span>TransformPhysicalPointToIndex() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2774,7 +2774,7 @@ template&lt;typename TCoordRep &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformPhysicalPointToIndex </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1Point.html">Point</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>point</em>, </td>
         </tr>
         <tr>
@@ -2805,15 +2805,15 @@ template&lt;typename TCoordRep &gt; </div>
 
 </div>
 </div>
-<a id="a94a90b5d0dbdf6095f2ea98e23ffe6a3" name="a94a90b5d0dbdf6095f2ea98e23ffe6a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94a90b5d0dbdf6095f2ea98e23ffe6a3">&#9670;&nbsp;</a></span>TransformPhysicalVectorToLocalVector() <span class="overload">[1/2]</span></h2>
+<a id="a01f4ec8f5b43d2d89b0ff1d6ef92bccb" name="a01f4ec8f5b43d2d89b0ff1d6ef92bccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f4ec8f5b43d2d89b0ff1d6ef92bccb">&#9670;&nbsp;</a></span>TransformPhysicalVectorToLocalVector() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned int VImageDimension = 2&gt; </div>
 <div class="memtemplate">
-template&lt;typename TCoordRep &gt; </div>
+template&lt;typename TCoordinate &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2821,13 +2821,13 @@ template&lt;typename TCoordRep &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classitk_1_1ImageBase.html">itk::ImageBase</a>&lt; VImageDimension &gt;::TransformPhysicalVectorToLocalVector </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>inputGradient</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordRep, VImageDimension &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1FixedArray.html">FixedArray</a>&lt; TCoordinate, VImageDimension &gt; &amp;&#160;</td>
           <td class="paramname"><em>outputGradient</em>&#160;</td>
         </tr>
         <tr>
