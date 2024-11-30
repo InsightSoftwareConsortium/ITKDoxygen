@@ -18,7 +18,7 @@ var searchData=
   ['varianceimagefunction_15',['VarianceImageFunction',['../classitk_1_1VarianceImageFunction.html',1,'itk']]],
   ['variancelabelobjectaccessor_16',['VarianceLabelObjectAccessor',['../classitk_1_1Functor_1_1VarianceLabelObjectAccessor.html',1,'itk::Functor']]],
   ['vector_17',['Vector',['../classitk_1_1Vector.html',1,'itk']]],
-  ['vector_3c_20coordreptype_2c_20self_3a_3aspacedimension_20_3e_18',['Vector&lt; CoordRepType, Self::SpaceDimension &gt;',['../classitk_1_1Vector.html',1,'itk']]],
+  ['vector_3c_20coordinatetype_2c_20self_3a_3aspacedimension_20_3e_18',['Vector&lt; CoordinateType, Self::SpaceDimension &gt;',['../classitk_1_1Vector.html',1,'itk']]],
   ['vector_3c_20double_2c_201_20_3e_19',['Vector&lt; double, 1 &gt;',['../classitk_1_1Vector.html',1,'itk']]],
   ['vector_3c_20double_2c_202_20_3e_20',['Vector&lt; double, 2 &gt;',['../classitk_1_1Vector.html',1,'itk']]],
   ['vector_3c_20double_2c_203_20_3e_21',['Vector&lt; double, 3 &gt;',['../classitk_1_1Vector.html',1,'itk']]],

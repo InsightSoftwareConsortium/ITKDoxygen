@@ -65,7 +65,7 @@ var searchData=
   ['pngimageiofactory_62',['PNGImageIOFactory',['../classitk_1_1PNGImageIOFactory.html',1,'itk']]],
   ['point_63',['Point',['../classitk_1_1Point.html',1,'itk']]],
   ['point1d_64',['Point1D',['../classitk_1_1Point1D.html',1,'itk']]],
-  ['point_3c_20coordreptype_2c_20self_3a_3aimagedimension_20_3e_65',['Point&lt; CoordRepType, Self::ImageDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
+  ['point_3c_20coordinatetype_2c_20self_3a_3aimagedimension_20_3e_65',['Point&lt; CoordinateType, Self::ImageDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['point_3c_20double_2c_202_20_3e_66',['Point&lt; double, 2 &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['point_3c_20double_2c_203_20_3e_67',['Point&lt; double, 3 &gt;',['../classitk_1_1Point.html',1,'itk']]],
   ['point_3c_20double_2c_20self_3a_3aimagedimension_20_3e_68',['Point&lt; double, Self::ImageDimension &gt;',['../classitk_1_1Point.html',1,'itk']]],

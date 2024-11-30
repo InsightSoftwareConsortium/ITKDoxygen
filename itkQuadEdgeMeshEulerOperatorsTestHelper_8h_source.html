@@ -136,16 +136,16 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="itkQuadEdgeMeshEulerOperatorsTestHelper_8h.html#a7d8b8507cf70ac3f2f1816f68c8f7171">   49</a></span><a class="code hl_function" href="itkQuadEdgeMeshEulerOperatorsTestHelper_8h.html#a7d8b8507cf70ac3f2f1816f68c8f7171">GeneratePointCoordinates</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iN)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">using</span> <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">PointType</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="namespaceitk_1_1GTest_1_1TypedefsAndConstructors_1_1Dimension2.html#a4e283d9983c57c5015a80d0b1d1cf09f">TMesh::PointType</a>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">using</span> CoordRepType = <span class="keyword">typename</span> PointType::CoordRepType;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">using</span> CoordinateType = <span class="keyword">typename</span> PointType::CoordinateType;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  std::vector&lt;PointType&gt; oPt(iN * iN);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; iN; ++i)</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; iN; ++j)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      oPt[i * iN + j][0] = <span class="keyword">static_cast&lt;</span>CoordRepType<span class="keyword">&gt;</span>(j);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      oPt[i * iN + j][1] = <span class="keyword">static_cast&lt;</span>CoordRepType<span class="keyword">&gt;</span>(i);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      oPt[i * iN + j][2] = <span class="keyword">static_cast&lt;</span>CoordRepType<span class="keyword">&gt;</span>(0.);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      oPt[i * iN + j][0] = <span class="keyword">static_cast&lt;</span>CoordinateType<span class="keyword">&gt;</span>(j);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      oPt[i * iN + j][1] = <span class="keyword">static_cast&lt;</span>CoordinateType<span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      oPt[i * iN + j][2] = <span class="keyword">static_cast&lt;</span>CoordinateType<span class="keyword">&gt;</span>(0.);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
