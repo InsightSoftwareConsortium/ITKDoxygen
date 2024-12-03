@@ -150,8 +150,8 @@ $(function() {
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">using</span> CoordinateType = double;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#  ifndef ITK_FUTURE_LEGACY_REMOVE</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">using</span> CoordRepType [[deprecated(<span class="stringliteral">&quot;ITK 6 discourages using `CoordRepType`. Please use `CoordinateType` instead!&quot;</span>)]] =</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    CoordinateType;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">using</span> CoordRepType ITK_FUTURE_DEPRECATED(</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="stringliteral">&quot;ITK 6 discourages using `CoordRepType`. Please use `CoordinateType` instead!&quot;</span>) = CoordinateType;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#  endif</span></div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">using</span> InterpolatorType = VectorInterpolateImageFunction&lt;InputImageType, CoordinateType&gt;;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keyword">using</span> InterpolatorPointer = <span class="keyword">typename</span> <a class="code hl_typedef" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a>;</div>

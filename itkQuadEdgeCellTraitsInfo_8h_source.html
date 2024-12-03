@@ -128,8 +128,8 @@ $(function() {
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> PointDimension = VPointDimension;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">using</span> CoordinateType = TCoordinate;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#ifndef ITK_FUTURE_LEGACY_REMOVE</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">using</span> CoordRepType [[deprecated(<span class="stringliteral">&quot;ITK 6 discourages using `CoordRepType`. Please use `CoordinateType` instead!&quot;</span>)]] =</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    CoordinateType;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">using</span> CoordRepType ITK_FUTURE_DEPRECATED(</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="stringliteral">&quot;ITK 6 discourages using `CoordRepType`. Please use `CoordinateType` instead!&quot;</span>) = CoordinateType;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">using</span> InterpolationWeightType = TInterpolationWeight;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">using</span> PointIdentifier = TPointIdentifier;</div>
