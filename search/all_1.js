@@ -299,7 +299,7 @@ var searchData=
   ['buildcelllinks_296',['BuildCellLinks',['../classitk_1_1QuadEdgeMesh.html#a00a39c813fe6b8f584f771dc1fa2a03a',1,'itk::QuadEdgeMesh::BuildCellLinks()'],['../classitk_1_1Mesh.html#a61fc489e16da27646a1020e2abd9492a',1,'itk::Mesh::BuildCellLinks()']]],
   ['buildedge_297',['BuildEdge',['../classitk_1_1VoronoiDiagram2D.html#ab22416397f5f21d932255aa3f79a4c97',1,'itk::VoronoiDiagram2D']]],
   ['buildedges_298',['BuildEdges',['../classitk_1_1PolygonCell.html#a78194e5b8460fcecde9b37076223db5c',1,'itk::PolygonCell']]],
-  ['buildformattedentry_299',['BuildFormattedEntry',['../classitk_1_1LoggerBase.html#adbfa791f360126c0c9a40f589d2a3975',1,'itk::LoggerBase']]],
+  ['buildformattedentry_299',['BuildFormattedEntry',['../classitk_1_1LoggerBase.html#abf61195295c13bf0303b6eb59356d770',1,'itk::LoggerBase']]],
   ['buildfrombuffer_300',['BuildFromBuffer',['../classitk_1_1OctreeBase.html#aecbd7082a496301541e1bada82b3e367',1,'itk::OctreeBase::BuildFromBuffer()'],['../classitk_1_1Octree.html#ae4b31343ad5b4e697100551b0a003efa',1,'itk::Octree::BuildFromBuffer(const void *frombuffer, const unsigned int xsize, const unsigned int ysize, const unsigned int zsize) override']]],
   ['buildfromimage_301',['BuildFromImage',['../classitk_1_1Octree.html#a1357d9f79ac0b380de235b7a890ee7d4',1,'itk::Octree']]],
   ['buildinformation_302',['BuildInformation',['../classitk_1_1BuildInformation.html#a9faadf88f52e8a716c1ca3c7fd9e3715',1,'itk::BuildInformation::BuildInformation()'],['../classitk_1_1BuildInformation.html',1,'itk::BuildInformation']]],
