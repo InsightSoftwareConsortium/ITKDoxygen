@@ -224,14 +224,14 @@ $(function() {
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  {</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="classitk_1_1NumericTraits.html">itk::NumericTraits&lt;TInput&gt;::IsPositive</a>(x) != <a class="code hl_function" href="classitk_1_1NumericTraits.html#a3485e2fc0aba8ffeff9b890326bce4a8">itk::NumericTraits&lt;TReturn&gt;::IsPositive</a>(ret))</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      itk::RangeError _e(__FILE__, __LINE__);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <a class="code hl_class" href="classitk_1_1RangeError.html">itk::RangeError</a> _e(__FILE__, __LINE__);</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">throw</span> _e;</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  }</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span>TInput<span class="keyword">&gt;</span>(ret) != x ||</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>           (<a class="code hl_class" href="classitk_1_1NumericTraits.html">itk::NumericTraits&lt;TInput&gt;::IsPositive</a>(x) != <a class="code hl_class" href="classitk_1_1NumericTraits.html">itk::NumericTraits&lt;TReturn&gt;::IsPositive</a>(ret)))</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  {</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    itk::RangeError _e(__FILE__, __LINE__);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_class" href="classitk_1_1RangeError.html">itk::RangeError</a> _e(__FILE__, __LINE__);</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">throw</span> _e;</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  }</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keywordflow">return</span> ret;</div>
@@ -241,8 +241,8 @@ $(function() {
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#ab8c19280d7db85eb08ae053857f79c85">Detail::FloatIEEE&lt;T&gt;::IntType</a></div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a14dde8ab31df3c6ef9eed1af717e1dca">  255</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a14dde8ab31df3c6ef9eed1af717e1dca">FloatDifferenceULP</a>(T x1, T x2)</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>{</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> x1f(x1);</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> x2f(x2);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keyword">const</span> <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> x1f(x1);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keyword">const</span> <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> x2f(x2);</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="keywordflow">return</span> x1f.<a class="code hl_function" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#adce9f71e73e681185073f791d1fd0a08">AsULP</a>() - x2f.<a class="code hl_function" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#adce9f71e73e681185073f791d1fd0a08">AsULP</a>();</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
@@ -250,8 +250,8 @@ $(function() {
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="keyword">inline</span> T</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#ab1d0669930d3a771d244756304101174">  271</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#ab1d0669930d3a771d244756304101174">FloatAddULP</a>(T x, <span class="keyword">typename</span> <a class="code hl_typedef" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#ab8c19280d7db85eb08ae053857f79c85">Detail::FloatIEEE&lt;T&gt;::IntType</a> ulps)</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>{</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> representInput(x);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> representOutput(representInput.<a class="code hl_variable" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#a20a84a8ca85b27127062da65f66cbb6b">asInt</a> + ulps);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keyword">const</span> <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> representInput(x);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keyword">const</span> <a class="code hl_union" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html">Detail::FloatIEEE&lt;T&gt;</a> representOutput(representInput.<a class="code hl_variable" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#a20a84a8ca85b27127062da65f66cbb6b">asInt</a> + ulps);</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="keywordflow">return</span> representOutput.<a class="code hl_variable" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#a587a7a0ab7f75031c08c8da36347b676">asFloat</a>;</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>}</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
@@ -280,7 +280,7 @@ $(function() {
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  }</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <span class="keyword">typename</span> <a class="code hl_typedef" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#ab8c19280d7db85eb08ae053857f79c85">Detail::FloatIEEE&lt;T&gt;::IntType</a> ulps = <a class="code hl_function" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">std::abs</a>(<a class="code hl_function" href="namespaceitk_1_1Math.html#a14dde8ab31df3c6ef9eed1af717e1dca">FloatDifferenceULP</a>(x1, x2));</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="unionitk_1_1Math_1_1Detail_1_1FloatIEEE.html#ab8c19280d7db85eb08ae053857f79c85">Detail::FloatIEEE&lt;T&gt;::IntType</a> ulps = <a class="code hl_function" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">std::abs</a>(<a class="code hl_function" href="namespaceitk_1_1Math.html#a14dde8ab31df3c6ef9eed1af717e1dca">FloatDifferenceULP</a>(x1, x2));</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <span class="keywordflow">return</span> ulps &lt;= maxUlps;</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>}</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
@@ -660,103 +660,103 @@ $(function() {
 <div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span> </div>
 <div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>  <span class="comment">// Uses recursive function calls because C++11 does not support other ways of</span></div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>  <span class="comment">// iterations for a constexpr function.</span></div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  <span class="keywordflow">return</span> (exponent == 0)</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>           ? (assert(base &gt; 0), 1)</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>           : (exponent == 1) ? base</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                             : UnsignedProduct&lt;TReturnType&gt;(UnsignedPower&lt;TReturnType&gt;(base, exponent / 2),</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                                                            UnsignedPower&lt;TReturnType&gt;(base, (exponent + 1) / 2));</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>}</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  <span class="keywordflow">return</span> (exponent == 0)   ? (assert(base &gt; 0), 1)</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>         : (exponent == 1) ? base</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>                           : UnsignedProduct&lt;TReturnType&gt;(UnsignedPower&lt;TReturnType&gt;(base, exponent / 2),</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                                                          UnsignedPower&lt;TReturnType&gt;(base, (exponent + 1) / 2));</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>}</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span> </div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="comment">/*==========================================</span></div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="comment"> * Alias the vnl_math functions in the itk::Math</span></div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="comment"> * namespace. If possible, use the std:: equivalents</span></div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span><span class="keyword">using</span> std::isnan;</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="keyword">using</span> std::isinf;</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="keyword">using</span> std::isfinite;</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span><span class="keyword">using</span> std::isnormal;</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><span class="keyword">using</span> std::cbrt;</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="keyword">using</span> std::hypot;</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="keyword">using</span> vnl_math::angle_0_to_2pi;</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="keyword">using</span> vnl_math::angle_minuspi_to_pi;</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="keyword">using</span> vnl_math::rnd_halfinttoeven;</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="keyword">using</span> vnl_math::rnd_halfintup;</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="keyword">using</span> vnl_math::rnd;</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="keyword">using</span> vnl_math::floor;</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="keyword">using</span> vnl_math::ceil;</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="keyword">using</span> vnl_math::sgn;</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="keyword">using</span> vnl_math::sgn0;</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span><span class="keyword">using</span> vnl_math::remainder_truncated;</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span><span class="keyword">using</span> vnl_math::remainder_floored;</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span><span class="keyword">using</span> vnl_math::sqr;</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span><span class="keyword">using</span> vnl_math::cube;</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span><span class="keyword">using</span> vnl_math::squared_magnitude;</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="comment">/*==========================================</span></div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="comment"> * Alias the vnl_math functions in the itk::Math</span></div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="comment"> * namespace. If possible, use the std:: equivalents</span></div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="keyword">using</span> std::isnan;</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span><span class="keyword">using</span> std::isinf;</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="keyword">using</span> std::isfinite;</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="keyword">using</span> std::isnormal;</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span><span class="keyword">using</span> std::cbrt;</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><span class="keyword">using</span> std::hypot;</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="keyword">using</span> vnl_math::angle_0_to_2pi;</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="keyword">using</span> vnl_math::angle_minuspi_to_pi;</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="keyword">using</span> vnl_math::rnd_halfinttoeven;</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="keyword">using</span> vnl_math::rnd_halfintup;</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="keyword">using</span> vnl_math::rnd;</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="keyword">using</span> vnl_math::floor;</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="keyword">using</span> vnl_math::ceil;</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="keyword">using</span> vnl_math::sgn;</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="keyword">using</span> vnl_math::sgn0;</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="keyword">using</span> vnl_math::remainder_truncated;</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span><span class="keyword">using</span> vnl_math::remainder_floored;</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span><span class="keyword">using</span> vnl_math::sqr;</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span><span class="keyword">using</span> vnl_math::cube;</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span><span class="keyword">using</span> vnl_math::squared_magnitude;</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span> </div>
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment">/*============================================</span></div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="comment">Decouple dependence and exposure of vnl_math::abs operations</span></div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="comment">in ITK.  Placing this small amount of duplicate vnl_math</span></div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="comment">code directly in ITK removes backward compatibility</span></div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span><span class="comment">issues with system installed VXL versions.</span></div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span><span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">  840</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">bool</span> x)</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>{</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>}</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a4cd5b7f276ab99c1c4737954300fdebd">  845</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> x)</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>{</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>}</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a766ab5ef924a408078027c13e5de21b6">  850</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">signed</span> <span class="keywordtype">char</span> x)</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>{</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>  <span class="keywordflow">return</span> x &lt; 0 ? static_cast&lt;unsigned char&gt;(-x) : x;</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>}</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#add7bcc9ede832f6c2418a5ccbbbf0d8b">  855</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">char</span> x)</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>{</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(x);</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>}</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span></div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a7c40db0dddb83464c99f3d859abf7faf">  860</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">short</span> x)</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>{</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>  <span class="keywordflow">return</span> x &lt; 0 ? static_cast&lt;unsigned short&gt;(-x) : x;</div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>}</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span></div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#aafa3509d96687796f9851ce76eea80bc">  865</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x)</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>{</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>}</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span></div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a918e770c733fa316441db9e3a142ce46">  870</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> x)</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>{</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>}</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span></div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a4fe744ece820d8e05950b4c75f791bb6">  875</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x)</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>{</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>}</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="comment">// long long - target type will have width of at least 64 bits. (since C++11)</span></div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span></div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">  881</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> x)</div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>{</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>}</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span> </div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span><span class="keyword">using</span> <a class="code hl_function" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">std::abs</a>;</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span> </div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>} <span class="comment">// end namespace Math</span></div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>} <span class="comment">// end namespace itk</span></div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span><span class="preprocessor">#endif </span><span class="comment">// end of itkMath.h</span></div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="comment">/*============================================</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="comment">Decouple dependence and exposure of vnl_math::abs operations</span></div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="comment">in ITK.  Placing this small amount of duplicate vnl_math</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="comment">code directly in ITK removes backward compatibility</span></div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="comment">issues with system installed VXL versions.</span></div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span><span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">  839</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">bool</span> x)</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>{</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>}</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a4cd5b7f276ab99c1c4737954300fdebd">  844</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> x)</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>{</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>}</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a766ab5ef924a408078027c13e5de21b6">  849</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">signed</span> <span class="keywordtype">char</span> x)</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>{</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>  <span class="keywordflow">return</span> x &lt; 0 ? static_cast&lt;unsigned char&gt;(-x) : x;</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>}</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span></div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#add7bcc9ede832f6c2418a5ccbbbf0d8b">  854</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">char</span> x)</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>{</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(x);</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>}</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span></div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a7c40db0dddb83464c99f3d859abf7faf">  859</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">short</span> x)</div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>{</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>  <span class="keywordflow">return</span> x &lt; 0 ? static_cast&lt;unsigned short&gt;(-x) : x;</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>}</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span></div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#aafa3509d96687796f9851ce76eea80bc">  864</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> x)</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>{</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>}</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span></div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a918e770c733fa316441db9e3a142ce46">  869</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> x)</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>{</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>}</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span></div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#a4fe744ece820d8e05950b4c75f791bb6">  874</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x)</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>{</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>}</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="comment">// long long - target type will have width of at least 64 bits. (since C++11)</span></div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span></div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno"><a class="line" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">  880</a></span><a class="code hl_function" href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">abs</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> x)</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>{</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>  <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>}</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span> </div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span><span class="keyword">using</span> <a class="code hl_function" href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">std::abs</a>;</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span> </div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>} <span class="comment">// end namespace Math</span></div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span><span class="preprocessor">#endif </span><span class="comment">// end of itkMath.h</span></div>
 <div class="ttc" id="aclassitk_1_1NumericTraits_html"><div class="ttname"><a href="classitk_1_1NumericTraits.html">itk::NumericTraits</a></div><div class="ttdoc">Define additional traits for native types such as int or float.</div><div class="ttdef"><b>Definition:</b> <a href="itkNumericTraits_8h_source.html#l00060">itkNumericTraits.h:61</a></div></div>
 <div class="ttc" id="aclassitk_1_1NumericTraits_html_a3485e2fc0aba8ffeff9b890326bce4a8"><div class="ttname"><a href="classitk_1_1NumericTraits.html#a3485e2fc0aba8ffeff9b890326bce4a8">itk::NumericTraits::IsPositive</a></div><div class="ttdeci">static bool IsPositive(T val)</div><div class="ttdef"><b>Definition:</b> <a href="itkNumericTraits_8h_source.html#l00106">itkNumericTraits.h:106</a></div></div>
 <div class="ttc" id="aclassitk_1_1NumericTraits_html_a388ee722192f69e96c136f34fbb5108c"><div class="ttname"><a href="classitk_1_1NumericTraits.html#a388ee722192f69e96c136f34fbb5108c">itk::NumericTraits::ValueType</a></div><div class="ttdeci">T ValueType</div><div class="ttdef"><b>Definition:</b> <a href="itkNumericTraits_8h_source.html#l00067">itkNumericTraits.h:67</a></div></div>
 <div class="ttc" id="aclassitk_1_1NumericTraits_html_ae15d09cd274f758f9505e35e891649ba"><div class="ttname"><a href="classitk_1_1NumericTraits.html#ae15d09cd274f758f9505e35e891649ba">itk::NumericTraits::IsComplex</a></div><div class="ttdeci">static constexpr bool IsComplex</div><div class="ttdef"><b>Definition:</b> <a href="itkNumericTraits_8h_source.html#l00145">itkNumericTraits.h:145</a></div></div>
+<div class="ttc" id="aclassitk_1_1RangeError_html"><div class="ttname"><a href="classitk_1_1RangeError.html">itk::RangeError</a></div><div class="ttdef"><b>Definition:</b> <a href="itkExceptionObject_8h_source.html#l00173">itkExceptionObject.h:174</a></div></div>
 <div class="ttc" id="aitkConceptChecking_8h_html"><div class="ttname"><a href="itkConceptChecking_8h.html">itkConceptChecking.h</a></div></div>
 <div class="ttc" id="aitkConceptChecking_8h_html_a009eae6c305d9c390972159815e6a710"><div class="ttname"><a href="itkConceptChecking_8h.html#a009eae6c305d9c390972159815e6a710">itkConceptMacro</a></div><div class="ttdeci">#define itkConceptMacro(name, concept)</div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00065">itkConceptChecking.h:65</a></div></div>
 <div class="ttc" id="aitkMathDetail_8h_html"><div class="ttname"><a href="itkMathDetail_8h.html">itkMathDetail.h</a></div></div>
@@ -777,10 +777,10 @@ $(function() {
 <div class="ttc" id="anamespaceitk_1_1Math_html_a61f89850adc11169fddfe635ccd64675"><div class="ttname"><a href="namespaceitk_1_1Math.html#a61f89850adc11169fddfe635ccd64675">itk::Math::one_over_sqrt2pi</a></div><div class="ttdeci">static constexpr double one_over_sqrt2pi</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00086">itkMath.h:86</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_a6c2724b701963ff2a84b26264d08aa80"><div class="ttname"><a href="namespaceitk_1_1Math.html#a6c2724b701963ff2a84b26264d08aa80">itk::Math::pi_over_4</a></div><div class="ttdeci">static constexpr double pi_over_4</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00072">itkMath.h:72</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_a73e5a47a6dcbb0b768c2da23e8bd626c"><div class="ttname"><a href="namespaceitk_1_1Math.html#a73e5a47a6dcbb0b768c2da23e8bd626c">itk::Math::RoundHalfIntegerUp</a></div><div class="ttdeci">TInput RoundHalfIntegerUp(TInput x) template&lt; typename TReturn</div><div class="ttdoc">Round towards nearest integer (This is a synonym for RoundHalfIntegerUp)</div></div>
-<div class="ttc" id="anamespaceitk_1_1Math_html_a8d36e9e43216f0a0d76e74bfd02e882e"><div class="ttname"><a href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">itk::Math::abs</a></div><div class="ttdeci">bool abs(bool x)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00840">itkMath.h:840</a></div></div>
+<div class="ttc" id="anamespaceitk_1_1Math_html_a8d36e9e43216f0a0d76e74bfd02e882e"><div class="ttname"><a href="namespaceitk_1_1Math.html#a8d36e9e43216f0a0d76e74bfd02e882e">itk::Math::abs</a></div><div class="ttdeci">bool abs(bool x)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00839">itkMath.h:839</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_aa44beb675c0b40654f4b38e71d5b6dd1"><div class="ttname"><a href="namespaceitk_1_1Math.html#aa44beb675c0b40654f4b38e71d5b6dd1">itk::Math::sqrteps</a></div><div class="ttdeci">static constexpr double sqrteps</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00098">itkMath.h:98</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_aa61f98a1240434633c11b964af3b3ab3"><div class="ttname"><a href="namespaceitk_1_1Math.html#aa61f98a1240434633c11b964af3b3ab3">itk::Math::two_over_sqrtpi</a></div><div class="ttdeci">static constexpr double two_over_sqrtpi</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00084">itkMath.h:84</a></div></div>
-<div class="ttc" id="anamespaceitk_1_1Math_html_aa7107a51959e3b160b16a64192d78157"><div class="ttname"><a href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">itk::Math::abs</a></div><div class="ttdeci">unsigned long long abs(unsigned long long x)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00881">itkMath.h:881</a></div></div>
+<div class="ttc" id="anamespaceitk_1_1Math_html_aa7107a51959e3b160b16a64192d78157"><div class="ttname"><a href="namespaceitk_1_1Math.html#aa7107a51959e3b160b16a64192d78157">itk::Math::abs</a></div><div class="ttdeci">unsigned long long abs(unsigned long long x)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00880">itkMath.h:880</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_aad2d113ebb3ebcd4d93d9234d732a27b"><div class="ttname"><a href="namespaceitk_1_1Math.html#aad2d113ebb3ebcd4d93d9234d732a27b">itk::Math::one_over_pi</a></div><div class="ttdeci">static constexpr double one_over_pi</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00076">itkMath.h:76</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_ab1d0669930d3a771d244756304101174"><div class="ttname"><a href="namespaceitk_1_1Math.html#ab1d0669930d3a771d244756304101174">itk::Math::FloatAddULP</a></div><div class="ttdeci">T FloatAddULP(T x, typename Detail::FloatIEEE&lt; T &gt;::IntType ulps)</div><div class="ttdoc">Add the given ULPs (units in the last place) to a float.</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00271">itkMath.h:271</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_ab8827a651f0efb2dc5743020ad63a09e"><div class="ttname"><a href="namespaceitk_1_1Math.html#ab8827a651f0efb2dc5743020ad63a09e">itk::Math::UnsignedProduct</a></div><div class="ttdeci">constexpr TReturnType UnsignedProduct(const uintmax_t a, const uintmax_t b) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00771">itkMath.h:771</a></div></div>
@@ -805,7 +805,7 @@ $(function() {
 <div class="ttc" id="anamespaceitk_1_1Math_html_afee3487bff9ed1e1efab878eedfca45f"><div class="ttname"><a href="namespaceitk_1_1Math.html#afee3487bff9ed1e1efab878eedfca45f">itk::Math::log2e</a></div><div class="ttdeci">static constexpr double log2e</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00058">itkMath.h:58</a></div></div>
 <div class="ttc" id="anamespaceitk_1_1Math_html_aff15fb962e668ca8543c2217d063fa76"><div class="ttname"><a href="namespaceitk_1_1Math.html#aff15fb962e668ca8543c2217d063fa76">itk::Math::Round</a></div><div class="ttdeci">TInput TInput TReturn Round(TInput x)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00179">itkMath.h:179</a></div></div>
 <div class="ttc" id="anamespaceitk_html"><div class="ttname"><a href="namespaceitk.html">itk</a></div><div class="ttdoc">The &quot;itk&quot; namespace contains all Insight Segmentation and Registration Toolkit (ITK) classes....</div><div class="ttdef"><b>Definition:</b> <a href="itkAnatomicalOrientation_8h_source.html#l00029">itkAnatomicalOrientation.h:30</a></div></div>
-<div class="ttc" id="astructitk_1_1Concept_1_1IsInteger_html"><div class="ttname"><a href="structitk_1_1Concept_1_1IsInteger.html">itk::Concept::IsInteger</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00877">itkConceptChecking.h:878</a></div></div>
+<div class="ttc" id="astructitk_1_1Concept_1_1IsInteger_html"><div class="ttname"><a href="structitk_1_1Concept_1_1IsInteger.html">itk::Concept::IsInteger</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00882">itkConceptChecking.h:883</a></div></div>
 <div class="ttc" id="astructitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat_html"><div class="ttname"><a href="structitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat.html">itk::Math::Detail::AlmostEqualsFloatVsFloat</a></div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00346">itkMath.h:347</a></div></div>
 <div class="ttc" id="astructitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat_html_a072bef3a075702e3e19c5b7306486b3a"><div class="ttname"><a href="structitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat.html#a072bef3a075702e3e19c5b7306486b3a">itk::Math::Detail::AlmostEqualsFloatVsFloat::AlmostEqualsFunction</a></div><div class="ttdeci">static bool AlmostEqualsFunction(double x1, double x2)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00357">itkMath.h:357</a></div></div>
 <div class="ttc" id="astructitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat_html_a33526a7c6fc659192db33c5545c2fe24"><div class="ttname"><a href="structitk_1_1Math_1_1Detail_1_1AlmostEqualsFloatVsFloat.html#a33526a7c6fc659192db33c5545c2fe24">itk::Math::Detail::AlmostEqualsFloatVsFloat::AlmostEqualsFunction</a></div><div class="ttdeci">static bool AlmostEqualsFunction(float x1, double x2)</div><div class="ttdef"><b>Definition:</b> <a href="itkMath_8h_source.html#l00371">itkMath.h:371</a></div></div>

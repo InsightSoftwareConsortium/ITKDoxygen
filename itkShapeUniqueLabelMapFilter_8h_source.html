@@ -180,7 +180,7 @@ $(function() {
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keyword">typename</span> std::priority_queue&lt;LineOfLabelObject, std::vector&lt;LineOfLabelObject&gt;, <a class="code hl_class" href="classitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObjectComparator.html">LineOfLabelObjectComparator</a>&gt;;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    PriorityQueueType priorityQueue;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="classitk_1_1ProgressReporter.html">ProgressReporter</a> progress(<span class="keyword">this</span>, 0, 1);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> <a class="code hl_class" href="classitk_1_1ProgressReporter.html">ProgressReporter</a> progress(<span class="keyword">this</span>, 0, 1);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">// TODO: really report the progress</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">for</span> (<span class="keyword">typename</span> ImageType::Iterator it(this-&gt;GetLabelMap()); !it.IsAtEnd(); ++it)</div>
@@ -243,8 +243,8 @@ $(function() {
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      }</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> prevLength = prev.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#a0295660440f57de5e92c9f738b958aeb">line</a>.GetLength();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> length = l.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#a0295660440f57de5e92c9f738b958aeb">line</a>.GetLength();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a>       prevLength = prev.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#a0295660440f57de5e92c9f738b958aeb">line</a>.GetLength();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> length = l.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#a0295660440f57de5e92c9f738b958aeb">line</a>.GetLength();</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">if</span> (prevIdx[0] + prevLength &gt; idx[0])</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        {</div>
@@ -254,9 +254,9 @@ $(function() {
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>          <span class="comment">// which line to keep. This is necessary to avoid the case where a</span></div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>          <span class="comment">// part of a label is over</span></div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>          <span class="comment">// a second label, and below in another part of the image.</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>          <span class="keywordtype">bool</span>                                            keepCurrent;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>          <span class="keyword">typename</span> TAttributeAccessor::AttributeValueType prevAttr = accessor(prev.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#aad7ce3c731800e14a9cb714c257028ca">labelObject</a>);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>          <span class="keyword">typename</span> TAttributeAccessor::AttributeValueType attr = accessor(l.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#aad7ce3c731800e14a9cb714c257028ca">labelObject</a>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>          <span class="keywordtype">bool</span>                                                  keepCurrent;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>          <span class="keyword">const</span> <span class="keyword">typename</span> TAttributeAccessor::AttributeValueType prevAttr = accessor(prev.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#aad7ce3c731800e14a9cb714c257028ca">labelObject</a>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>          <span class="keyword">const</span> <span class="keyword">typename</span> TAttributeAccessor::AttributeValueType attr = accessor(l.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#aad7ce3c731800e14a9cb714c257028ca">labelObject</a>);</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>          <span class="comment">// this may be changed to a single boolean expression, but may become</span></div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>          <span class="comment">// quite difficult to read</span></div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>          <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceitk_1_1Math.html#a32b9ea67c77c95ec52dd9db9ef1268dc">Math::ExactlyEquals</a>(attr, prevAttr))</div>
@@ -296,7 +296,7 @@ $(function() {
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>              <span class="comment">// add it to the priority queue</span></div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>              <a class="code hl_typedef" href="classitk_1_1ShapeUniqueLabelMapFilter.html#a287cd10a2ad52b7076ddafac955a6caf">IndexType</a> newIdx = idx;</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>              newIdx[0] = idx[0] + length;</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>              <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> newLength = prevIdx[0] + prevLength - newIdx[0];</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>              <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> newLength = prevIdx[0] + prevLength - newIdx[0];</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>              priorityQueue.push(<a class="code hl_struct" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html">LineOfLabelObject</a>(<a class="code hl_typedef" href="classitk_1_1ShapeUniqueLabelMapFilter.html#a8cbc12f9b9c6f4afe4c4e371a671dab0">LineType</a>(newIdx, newLength), prev.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#aad7ce3c731800e14a9cb714c257028ca">labelObject</a>));</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            }</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="comment">// truncate the previous line to let some place for the current one</span></div>
@@ -327,7 +327,7 @@ $(function() {
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            {</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>              <a class="code hl_typedef" href="classitk_1_1ShapeUniqueLabelMapFilter.html#a287cd10a2ad52b7076ddafac955a6caf">IndexType</a> newIdx = idx;</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>              newIdx[0] = prevIdx[0] + prevLength;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>              <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> newLength = idx[0] + length - newIdx[0];</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>              <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceitk.html#ad1bf81d1e7a8716a988450b4742282a0">OffsetValueType</a> newLength = idx[0] + length - newIdx[0];</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>              <span class="keywordflow">if</span> (newLength &gt; 0)</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>              {</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                l.<a class="code hl_variable" href="structitk_1_1ShapeUniqueLabelMapFilter_1_1LineOfLabelObject.html#a0295660440f57de5e92c9f738b958aeb">line</a>.SetIndex(newIdx);</div>
@@ -362,8 +362,8 @@ $(function() {
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keyword">typename</span> ImageType::Iterator it(this-&gt;GetLabelMap());</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordflow">while</span> (!it.IsAtEnd())</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    {</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      <span class="keyword">typename</span> LabelObjectType::LabelType label = it.GetLabel();</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <a class="code hl_typedef" href="classitk_1_1ShapeUniqueLabelMapFilter.html#abb29d4aee982b2995debf00f7db9c6ff">LabelObjectType</a> *                   labelObject = it.GetLabelObject();</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      <span class="keyword">const</span> <span class="keyword">typename</span> LabelObjectType::LabelType label = it.GetLabel();</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <a class="code hl_typedef" href="classitk_1_1ShapeUniqueLabelMapFilter.html#abb29d4aee982b2995debf00f7db9c6ff">LabelObjectType</a> *                         labelObject = it.GetLabelObject();</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      <span class="keywordflow">if</span> (labelObject-&gt;Empty())</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      {</div>

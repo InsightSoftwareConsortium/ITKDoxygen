@@ -351,7 +351,7 @@ $(function() {
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">  itkCloneMacro(x);                \</span></div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">  ITK_MACROEND_NOOP_STATEMENT</span></div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">#define itkSimpleFactoryOnlyNewMacro(x)                                                                 \</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">  static auto New()-&gt;Pointer                                                                            \</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">  static auto New() -&gt; Pointer                                                                          \</span></div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">  {                                                                                                     \</span></div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">    Pointer smartPtr = ::itk::ObjectFactory&lt;x&gt;::Create();                                               \</span></div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">    if (smartPtr == nullptr)                                                                            \</span></div>
@@ -367,7 +367,7 @@ $(function() {
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="preprocessor">#define itkFactorylessNewMacro(x) \</span></div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">  static Pointer New()            \</span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">  {                               \</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">    x *     rawPtr = new x();     \</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">    auto *  rawPtr = new x();     \</span></div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">    Pointer smartPtr = rawPtr;    \</span></div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">    rawPtr-&gt;UnRegister();         \</span></div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">    return smartPtr;              \</span></div>
@@ -1212,129 +1212,110 @@ $(function() {
 <div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>    return output-&gt;Get();                                                                                             \</div>
 <div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>  }                                                                                                                   \</div>
 <div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>  ITK_MACROEND_NOOP_STATEMENT</div>
-<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span><span class="preprocessor">#define itkExceptionObject_h</span></div>
-<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span><span class="preprocessor">#include &quot;<a class="code" href="itkExceptionObject_8h.html">itkExceptionObject.h</a>&quot;</span></div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span><span class="preprocessor">#undef itkExceptionObject_h</span></div>
-<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span> </div>
-<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TTarget, <span class="keyword">typename</span> TSource&gt;</div>
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>TTarget</div>
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>itkDynamicCastInDebugMode(TSource x)</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>{</div>
-<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span><span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>  <span class="keywordflow">if</span> (x == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>  {</div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>  }</div>
-<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>  TTarget rval = <span class="keyword">dynamic_cast&lt;</span>TTarget<span class="keyword">&gt;</span>(x);</div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>  <span class="keywordflow">if</span> (rval == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>  {</div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>    itkGenericExceptionMacro(<span class="stringliteral">&quot;Failed dynamic cast to &quot;</span> &lt;&lt; <span class="keyword">typeid</span>(TTarget).name()</div>
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>                                                       &lt;&lt; <span class="stringliteral">&quot; object type = &quot;</span> &lt;&lt; x-&gt;GetNameOfClass());</div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>  }</div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>  <span class="keywordflow">return</span> rval;</div>
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>TTarget<span class="keyword">&gt;</span>(x);</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>}</div>
-<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span><span class="comment">// ITK_FUTURE_DEPRECATED is only for internal use, within the implementation of ITK. It allows triggering &quot;deprecated&quot;</span></div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span><span class="comment">// warnings when legacy support is removed, which warn that a specific feature may be removed in the future.</span></div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span><span class="preprocessor">#if defined(ITK_LEGACY_REMOVE) &amp;&amp; !defined(ITK_LEGACY_SILENT)</span></div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span><span class="preprocessor">#  define ITK_FUTURE_DEPRECATED(message) [[deprecated(message)]]</span></div>
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span><span class="preprocessor">#  define ITK_FUTURE_DEPRECATED(message)</span></div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span> </div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span><span class="preprocessor">#if __cplusplus &gt;= 202002L</span></div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span><span class="preprocessor">#  define ITK_NODISCARD(message) [[nodiscard(message)]]</span></div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span><span class="preprocessor">#  define ITK_NODISCARD(message) [[nodiscard]]</span></div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span> </div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span><span class="comment">//-*-*-*</span></div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span><span class="comment">// ITK_FUTURE_DEPRECATED is only for internal use, within the implementation of ITK. It allows triggering &quot;deprecated&quot;</span></div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span><span class="comment">// warnings when legacy support is removed, which warn that a specific feature may be removed in the future.</span></div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span><span class="preprocessor">#if defined(ITK_LEGACY_REMOVE) &amp;&amp; !defined(ITK_LEGACY_SILENT)</span></div>
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span><span class="preprocessor">#  define ITK_FUTURE_DEPRECATED(message) [[deprecated(message)]]</span></div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span><span class="preprocessor">#  define ITK_FUTURE_DEPRECATED(message)</span></div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span> </div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span><span class="preprocessor">#if __cplusplus &gt;= 202002L</span></div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span><span class="preprocessor">#  define ITK_NODISCARD(message) [[nodiscard(message)]]</span></div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span><span class="preprocessor">#  define ITK_NODISCARD(message) [[nodiscard]]</span></div>
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span> </div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span><span class="comment">//-*-*-*</span></div>
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span> </div>
+<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span><span class="preprocessor">#if defined(ITK_LEGACY_REMOVE)</span></div>
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span><span class="preprocessor">#  define itkExposeEnumValue(name) \</span></div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span><span class="preprocessor">    static_assert(false, &quot;ERROR: Replace static_cast&lt;int&gt;(name) with with proper enumeration instead of integer&quot;</span>)</div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span> </div>
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span><span class="preprocessor">#  define ITK_NOEXCEPT_OR_THROW static_assert(false, &quot;Replace ITK_NOEXCEPT_OR_THROW with ITK_NOEXCEPT&quot;</span>)</div>
+<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span> </div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span><span class="preprocessor">#  define ITK_DELETE_FUNCTION static_assert(false, &quot;ERROR: ITK_DELETE_FUNCTION must be replaced with `= delete`&quot;</span></div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span><span class="preprocessor">#  define ITK_CONSTEXPR_FUNC static_assert(false, &quot;ERROR: ITK_CONSTEXPR_FUNC must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span><span class="preprocessor">#  define ITK_CONSTEXPR_VAR static_assert(false, &quot;ERROR: ITK_CONSTEXPR_VAR must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span> </div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span><span class="preprocessor">#  define ITK_FALLTHROUGH static_assert(false, &quot;ERROR: ITK_FALLTHROUGH must be replaced with &#39;[[fallthrough]]&#39;&quot;</span>)</div>
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span> </div>
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span><span class="preprocessor">#  define ITK_ALIGNAS static_assert(false, &quot;ERROR: ITK_ALIGNAS must be replaced with &#39;alignas&#39;&quot;</span>)</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span><span class="preprocessor">#  define ITK_ALIGNOF static_assert(false, &quot;ERROR: ITK_ALIGNOF must be replaced with &#39;alignof&#39;&quot;</span>)</div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span><span class="preprocessor">#  define ITK_DEPRECATED static_assert(false, &quot;ERROR: ITK_DEPRECATED must be replaced with &#39;[[deprecated]]&#39;&quot;</span>)</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span><span class="preprocessor">#  define ITK_DEPRECATED_MSG \</span></div>
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span><span class="preprocessor">    static_assert(false, &quot;ERROR: ITK_DEPRECATED_MSG must be replaced with &#39;[[deprecated(MSG)]]&#39;&quot;</span>)</div>
+<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span><span class="preprocessor">#  define ITK_CONSTEXPR static_assert(false, &quot;ERROR: ITK_CONSTEXPR must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span><span class="preprocessor">#  define ITK_DELETED_FUNCTION static_assert(false, &quot;ERROR: ITK_DELETED_FUNCTION must be replaced with &#39;= delete&#39;&quot;</span>)</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span><span class="preprocessor">#  define ITK_EXTERN_TEMPLATE static_assert(false, &quot;ERROR: ITK_EXTERN_TEMPLATE must be replaced with &#39;extern&#39;&quot;</span>)</div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span><span class="preprocessor">#  define ITK_FINAL static_assert(false, &quot;ERROR: ITK_FINAL must be replaced with &#39;final&#39;&quot;</span>)</div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span><span class="preprocessor">#  define ITK_NOEXCEPT static_assert(false, &quot;ERROR: ITK_NOEXCEPT must be replaced with &#39;noexcept&#39;&quot;</span>)</div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span><span class="preprocessor">#  define ITK_NOEXCEPT_EXPR static_assert(false, &quot;ERROR: ITK_NOEXCEPT_EXPR must be replaced with &#39;noexcept&#39;&quot;</span>)</div>
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span><span class="preprocessor">#  define ITK_NULLPTR static_assert(false, &quot;ERROR: ITK_NULLPTR must be replaced with &#39;nullptr&#39;&quot;</span>)</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span><span class="preprocessor">#  define ITK_OVERRIDE static_assert(false, &quot;ERROR: ITK_OVERRIDE must be replaced with &#39;override&#39;&quot;</span>)</div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span><span class="preprocessor">#  define ITK_STATIC_ASSERT static_assert(false, &quot;ERROR: ITK_STATIC_ASSERT must be replaced with &#39;static_assert&#39;&quot;</span>)</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span><span class="preprocessor">#  define ITK_STATIC_ASSERT_MSG \</span></div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span><span class="preprocessor">    static_assert(false, &quot;ERROR: ITK_STATIC_ASSERT_MSG must be replaced with &#39;static_assert&#39;&quot;</span>)</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span><span class="preprocessor">#  define ITK_THREAD_LOCAL static_assert(false, &quot;ERROR: ITK_THREAD_LOCAL must be replaced with &#39;thread_local&#39;&quot;</span>)</div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span> </div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span><span class="comment">// A macro for methods which are const in ITKv5 and ITKv6 require const for functions</span></div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span><span class="preprocessor">#  define ITKv5_CONST static_assert(false, &quot;ERROR: ITKv5_CONST must be replaced with &#39;const&#39;&quot;</span>)</div>
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span> </div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="preprocessor">#if defined(ITK_LEGACY_REMOVE)</span></div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span><span class="preprocessor">#  define itkExposeEnumValue(name) \</span></div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="preprocessor">    static_assert(false, &quot;ERROR: Replace static_cast&lt;int&gt;(name) with with proper enumeration instead of integer&quot;</span>)</div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="preprocessor">#  define ITK_ITERATOR_VIRTUAL static_assert(false, &quot;ERROR: ITK_ITERATOR_VIRTUAL must be removed&#39;&quot;</span>)</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span><span class="preprocessor">#  define ITK_ITERATOR_OVERRIDE static_assert(false, &quot;ERROR: ITK_ITERATOR_OVERRIDE must be removed&quot;</span>)</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="preprocessor">#  define ITK_ITERATOR_FINAL static_assert(false, &quot;ERROR: ITK_ITERATOR_FINAL must be removed&quot;</span>)</div>
 <div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span> </div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span><span class="preprocessor">#  define ITK_NOEXCEPT_OR_THROW static_assert(false, &quot;Replace ITK_NOEXCEPT_OR_THROW with ITK_NOEXCEPT&quot;</span>)</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span> </div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span><span class="preprocessor">#  define ITK_DELETE_FUNCTION static_assert(false, &quot;ERROR: ITK_DELETE_FUNCTION must be replaced with `= delete`&quot;</span></div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="preprocessor">#  define ITK_CONSTEXPR_FUNC static_assert(false, &quot;ERROR: ITK_CONSTEXPR_FUNC must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="preprocessor">#  define ITK_CONSTEXPR_VAR static_assert(false, &quot;ERROR: ITK_CONSTEXPR_VAR must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span> </div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="preprocessor">#  define ITK_FALLTHROUGH static_assert(false, &quot;ERROR: ITK_FALLTHROUGH must be replaced with &#39;[[fallthrough]]&#39;&quot;</span>)</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span> </div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span><span class="preprocessor">#  define ITK_ALIGNAS static_assert(false, &quot;ERROR: ITK_ALIGNAS must be replaced with &#39;alignas&#39;&quot;</span>)</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span><span class="preprocessor">#  define ITK_ALIGNOF static_assert(false, &quot;ERROR: ITK_ALIGNOF must be replaced with &#39;alignof&#39;&quot;</span>)</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span><span class="preprocessor">#  define ITK_DEPRECATED static_assert(false, &quot;ERROR: ITK_DEPRECATED must be replaced with &#39;[[deprecated]]&#39;&quot;</span>)</div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span><span class="preprocessor">#  define ITK_DEPRECATED_MSG \</span></div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span><span class="preprocessor">    static_assert(false, &quot;ERROR: ITK_DEPRECATED_MSG must be replaced with &#39;[[deprecated(MSG)]]&#39;&quot;</span>)</div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span><span class="preprocessor">#  define ITK_CONSTEXPR static_assert(false, &quot;ERROR: ITK_CONSTEXPR must be replaced with &#39;constexpr&#39;&quot;</span>)</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span><span class="preprocessor">#  define ITK_DELETED_FUNCTION static_assert(false, &quot;ERROR: ITK_DELETED_FUNCTION must be replaced with &#39;= delete&#39;&quot;</span>)</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="preprocessor">#  define ITK_EXTERN_TEMPLATE static_assert(false, &quot;ERROR: ITK_EXTERN_TEMPLATE must be replaced with &#39;extern&#39;&quot;</span>)</div>
-<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span><span class="preprocessor">#  define ITK_FINAL static_assert(false, &quot;ERROR: ITK_FINAL must be replaced with &#39;final&#39;&quot;</span>)</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span><span class="preprocessor">#  define ITK_NOEXCEPT static_assert(false, &quot;ERROR: ITK_NOEXCEPT must be replaced with &#39;noexcept&#39;&quot;</span>)</div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span><span class="preprocessor">#  define ITK_NOEXCEPT_EXPR static_assert(false, &quot;ERROR: ITK_NOEXCEPT_EXPR must be replaced with &#39;noexcept&#39;&quot;</span>)</div>
-<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span><span class="preprocessor">#  define ITK_NULLPTR static_assert(false, &quot;ERROR: ITK_NULLPTR must be replaced with &#39;nullptr&#39;&quot;</span>)</div>
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span><span class="preprocessor">#  define ITK_OVERRIDE static_assert(false, &quot;ERROR: ITK_OVERRIDE must be replaced with &#39;override&#39;&quot;</span>)</div>
-<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span><span class="preprocessor">#  define ITK_STATIC_ASSERT static_assert(false, &quot;ERROR: ITK_STATIC_ASSERT must be replaced with &#39;static_assert&#39;&quot;</span>)</div>
-<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span><span class="preprocessor">#  define ITK_STATIC_ASSERT_MSG \</span></div>
-<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span><span class="preprocessor">    static_assert(false, &quot;ERROR: ITK_STATIC_ASSERT_MSG must be replaced with &#39;static_assert&#39;&quot;</span>)</div>
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span><span class="preprocessor">#  define ITK_THREAD_LOCAL static_assert(false, &quot;ERROR: ITK_THREAD_LOCAL must be replaced with &#39;thread_local&#39;&quot;</span>)</div>
-<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span> </div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span><span class="comment">// A macro for methods which are const in ITKv5 and ITKv6 require const for functions</span></div>
-<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span><span class="preprocessor">#  define ITKv5_CONST static_assert(false, &quot;ERROR: ITKv5_CONST must be replaced with &#39;const&#39;&quot;</span>)</div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span> </div>
-<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span><span class="preprocessor">#  define ITK_ITERATOR_VIRTUAL static_assert(false, &quot;ERROR: ITK_ITERATOR_VIRTUAL must be removed&#39;&quot;</span>)</div>
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span><span class="preprocessor">#  define ITK_ITERATOR_OVERRIDE static_assert(false, &quot;ERROR: ITK_ITERATOR_OVERRIDE must be removed&quot;</span>)</div>
-<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span><span class="preprocessor">#  define ITK_ITERATOR_FINAL static_assert(false, &quot;ERROR: ITK_ITERATOR_FINAL must be removed&quot;</span>)</div>
-<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span> </div>
-<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span><span class="comment">// DEPRECATED: These macros are left here for compatibility with remote modules.</span></div>
-<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span><span class="comment">// Once they have been removed from all known remote modules, this code should</span></div>
-<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span><span class="comment">// be removed.</span></div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span><span class="comment">// DEPRECATED: These macros are left here for compatibility with remote modules.</span></div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span><span class="comment">// Once they have been removed from all known remote modules, this code should</span></div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="comment">// be removed.</span></div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span> </div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="comment">// Future remove `#define itkExposeEnumValue(name)`</span></div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="comment">// &quot;Replace type of  `name` with proper enumeration instead of integer.</span></div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span><span class="preprocessor">#  define itkExposeEnumValue(name) static_cast&lt;int&gt;(name)</span></div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span> </div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span> </div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span><span class="preprocessor">#  define ITK_NOEXCEPT_OR_THROW ITK_NOEXCEPT</span></div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span> </div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span><span class="preprocessor">#  define ITK_FALLTHROUGH [[fallthrough]]</span></div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span> </div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span><span class="preprocessor">#  define ITK_DELETE_FUNCTION = delete</span></div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span> </div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="preprocessor">#  define ITK_CONSTEXPR_FUNC constexpr</span></div>
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span><span class="preprocessor">#  define ITK_CONSTEXPR_VAR constexpr</span></div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span> </div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span><span class="preprocessor">#  define ITK_ALIGNAS(X) alignas(X)</span></div>
+<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span><span class="preprocessor">#  define ITK_ALIGNOF(X) alignof(X)</span></div>
+<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span><span class="preprocessor">#  define ITK_DEPRECATED [[deprecated]]</span></div>
+<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span><span class="preprocessor">#  define ITK_DEPRECATED_MSG(MSG) [[deprecated(MSG)]]</span></div>
+<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span><span class="preprocessor">#  define ITK_CONSTEXPR constexpr</span></div>
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span><span class="preprocessor">#  define ITK_DELETED_FUNCTION = delete</span></div>
+<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span><span class="preprocessor">#  define ITK_EXTERN_TEMPLATE extern</span></div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span><span class="preprocessor">#  define ITK_FINAL final</span></div>
+<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span><span class="preprocessor">#  define ITK_NOEXCEPT noexcept</span></div>
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span><span class="preprocessor">#  define ITK_NOEXCEPT_EXPR(X) noexcept(X)</span></div>
+<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span><span class="preprocessor">#  define ITK_NULLPTR nullptr</span></div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span><span class="preprocessor">#  define ITK_OVERRIDE override</span></div>
+<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span><span class="preprocessor">#  define ITK_STATIC_ASSERT(X) static_assert(X, #X)</span></div>
+<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span><span class="preprocessor">#  define ITK_STATIC_ASSERT_MSG(X, MSG) static_assert(X, MSG)</span></div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span><span class="preprocessor">#  define ITK_THREAD_LOCAL thread_local</span></div>
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span> </div>
+<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span><span class="comment">// A macro for methods which are const in after ITKv4</span></div>
+<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span><span class="preprocessor">#  define ITKv5_CONST const</span></div>
 <div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span> </div>
-<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span><span class="comment">// Future remove `#define itkExposeEnumValue(name)`</span></div>
-<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span><span class="comment">// &quot;Replace type of  `name` with proper enumeration instead of integer.</span></div>
-<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span><span class="preprocessor">#  define itkExposeEnumValue(name) static_cast&lt;int&gt;(name)</span></div>
-<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span> </div>
+<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span><span class="preprocessor">#  define ITK_ITERATOR_VIRTUAL  </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span><span class="preprocessor">#  define ITK_ITERATOR_OVERRIDE </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span><span class="preprocessor">#  define ITK_ITERATOR_FINAL    </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span> </div>
-<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span><span class="preprocessor">#  define ITK_NOEXCEPT_OR_THROW ITK_NOEXCEPT</span></div>
-<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span> </div>
-<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span><span class="preprocessor">#  define ITK_FALLTHROUGH [[fallthrough]]</span></div>
-<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span> </div>
-<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span><span class="preprocessor">#  define ITK_DELETE_FUNCTION = delete</span></div>
-<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span> </div>
-<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span><span class="preprocessor">#  define ITK_CONSTEXPR_FUNC constexpr</span></div>
-<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span><span class="preprocessor">#  define ITK_CONSTEXPR_VAR constexpr</span></div>
-<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span> </div>
-<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span><span class="comment">// Defines which used to be in itk_compiler_detection.h</span></div>
-<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span><span class="preprocessor">#  define ITK_ALIGNAS(X) alignas(X)</span></div>
-<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span><span class="preprocessor">#  define ITK_ALIGNOF(X) alignof(X)</span></div>
-<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span><span class="preprocessor">#  define ITK_DEPRECATED [[deprecated]]</span></div>
-<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span><span class="preprocessor">#  define ITK_DEPRECATED_MSG(MSG) [[deprecated(MSG)]]</span></div>
-<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span><span class="preprocessor">#  define ITK_CONSTEXPR constexpr</span></div>
-<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span><span class="preprocessor">#  define ITK_DELETED_FUNCTION = delete</span></div>
-<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span><span class="preprocessor">#  define ITK_EXTERN_TEMPLATE extern</span></div>
-<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span><span class="preprocessor">#  define ITK_FINAL final</span></div>
-<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span><span class="preprocessor">#  define ITK_NOEXCEPT noexcept</span></div>
-<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span><span class="preprocessor">#  define ITK_NOEXCEPT_EXPR(X) noexcept(X)</span></div>
-<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span><span class="preprocessor">#  define ITK_NULLPTR nullptr</span></div>
-<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span><span class="preprocessor">#  define ITK_OVERRIDE override</span></div>
-<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span><span class="preprocessor">#  define ITK_STATIC_ASSERT(X) static_assert(X, #  X)</span></div>
-<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span><span class="preprocessor">#  define ITK_STATIC_ASSERT_MSG(X, MSG) static_assert(X, MSG)</span></div>
-<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span><span class="preprocessor">#  define ITK_THREAD_LOCAL thread_local</span></div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span> </div>
-<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span><span class="comment">// A macro for methods which are const in after ITKv4</span></div>
-<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span><span class="preprocessor">#  define ITKv5_CONST const</span></div>
-<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span> </div>
-<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span><span class="preprocessor">#  define ITK_ITERATOR_VIRTUAL  </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span><span class="preprocessor">#  define ITK_ITERATOR_OVERRIDE </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span><span class="preprocessor">#  define ITK_ITERATOR_FINAL    </span><span class="comment">/*purposefully empty for ITKv6, iterators are not virtual for performance reasons*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span> </div>
-<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span><span class="preprocessor">#endif </span><span class="comment">// itkMacro_h</span></div>
+<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span><span class="preprocessor">#define allow_inclusion_of_itkExceptionObject_h</span></div>
+<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span><span class="comment">// Must include itkExceptionObject.h at the end of the file</span></div>
+<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span><span class="comment">// because it depends on the macros defined above</span></div>
+<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span><span class="preprocessor">#include &quot;<a class="code" href="itkExceptionObject_8h.html">itkExceptionObject.h</a>&quot;</span></div>
+<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span><span class="preprocessor">#undef allow_inclusion_of_itkExceptionObject_h</span></div>
+<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span><span class="preprocessor">#endif </span><span class="comment">// itkMacro_h</span></div>
 <div class="ttc" id="aitkExceptionObject_8h_html"><div class="ttname"><a href="itkExceptionObject_8h.html">itkExceptionObject.h</a></div></div>
 <div class="ttc" id="aitkPrintHelper_8h_html"><div class="ttname"><a href="itkPrintHelper_8h.html">itkPrintHelper.h</a></div></div>
 <div class="ttc" id="aitkWin32Header_8h_html"><div class="ttname"><a href="itkWin32Header_8h.html">itkWin32Header.h</a></div></div>

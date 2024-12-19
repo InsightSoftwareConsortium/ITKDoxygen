@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ITK: itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt; Class Template Reference</title>
+<title>ITK: itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,24 +91,24 @@ $(function() {
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classitk_1_1InterpolateImagePointsFilter-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__MultiThreadingGroup.html">MultiThreading Support</a> &raquo; <a class="el" href="group__MultiThreaded.html">MultiThreaded Filters</a> &#124; <a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKImageGrid.html">Module ITKImageGrid</a></div></div></div>
+  <div class="headertitle"><div class="title">itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__MultiThreadingGroup.html">MultiThreading Support</a> &raquo; <a class="el" href="group__MultiThreaded.html">MultiThreaded Filters</a> &#124; <a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKImageGrid.html">Module ITKImageGrid</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="itkInterpolateImagePointsFilter_8h_source.html">itkInterpolateImagePointsFilter.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TCoordType = typename TInputImage::PixelType, typename InterpolatorType = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt;<br />
-class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;</div><p >Resamples an image at the coordinates specified by the user. </p>
-<p >This class may be templated over the Interpolate <a class="el" href="namespaceitk_1_1Function.html">Function</a> but defaults to the <a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> for cubic interpolation. The user must set the image using the SetInputImage function and they must set the coordinates (one coordinate "image" for each dimension) using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a60ec74e2e8132f5203a8fc5732e4c0ac">SetInterpolationCoordinate()</a>. The coordinates may be any number of points and can be randomly organized. The interpolated output will correspond to the ordering of the coordinate points. The coordinates must be of type ContinuousIndexType and not of PointType.</p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage, typename TCoordinate = typename TInputImage::PixelType, typename InterpolatorType = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt;<br />
+class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;</div><p >Resamples an image at the coordinates specified by the user. </p>
+<p >This class may be templated over the Interpolate <a class="el" href="namespaceitk_1_1Function.html">Function</a> but defaults to the <a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> for cubic interpolation. The user must set the image using the SetInputImage function and they must set the coordinates (one coordinate "image" for each dimension) using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a787d8365b68de4adcf7b54dc32e2d3fd">SetInterpolationCoordinate()</a>. The coordinates may be any number of points and can be randomly organized. The interpolated output will correspond to the ordering of the coordinate points. The coordinates must be of type ContinuousIndexType and not of PointType.</p>
 <p >This function is different from the resampleImageFilter class in that the resampleImageFilter applies a transform to the original input image coordinates. This function takes an arbitrary set of point coordinates and applies the transform at these locations.</p>
-<p >Limitations: The coordinates must be in an image of the same dimension as the input image. There is no reason why this should be the case and future revisions should look at eliminating this limitation. Currently TCoordType must be the same as the input pixel type (TInputImage). Again future revisions should look at eliminating this limitation. Though the output generation may be streamed the entire input image, must be supplied. The coordinates may be streamed in smaller blocks. The coordinates are specified as separate images for each dimension. The coordinates are treated as Continuous Indices. If coordinates are supplied as Points then they must be converted to an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> before passing to this class.</p>
+<p >Limitations: The coordinates must be in an image of the same dimension as the input image. There is no reason why this should be the case and future revisions should look at eliminating this limitation. Currently TCoordinate must be the same as the input pixel type (TInputImage). Again future revisions should look at eliminating this limitation. Though the output generation may be streamed the entire input image, must be supplied. The coordinates may be streamed in smaller blocks. The coordinates are specified as separate images for each dimension. The coordinates are treated as Continuous Indices. If coordinates are supplied as Points then they must be converted to an <a class="el" href="structitk_1_1Index.html" title="Represent a n-dimensional index in a n-dimensional image.">Index</a> before passing to this class.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1BSplineInterpolateImageFunction.html" title="Evaluates the B-Spline interpolation of an image. Spline order may be from 0 to 5.">BSplineInterpolateImageFunction</a> </dd>
 <dd>
 <a class="el" href="classitk_1_1ResampleImageFilter.html" title="Resample an image via a coordinate transform.">ResampleImageFilter</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkInterpolateImagePointsFilter_8h_source.html">itkInterpolateImagePointsFilter.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
@@ -116,7 +116,7 @@ class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordTyp
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
@@ -126,30 +126,30 @@ class itk::InterpolateImagePointsFilter&lt; TInputImage, TOutputImage, TCoordTyp
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a56038e2ede3e60937b72d2c9e4e05a24"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a56038e2ede3e60937b72d2c9e4e05a24">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
-<tr class="separator:a56038e2ede3e60937b72d2c9e4e05a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae40ef927e69d35325ce13e55826c562b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ae40ef927e69d35325ce13e55826c562b">ContinuousIndexType</a> = typename InterpolatorType::ContinuousIndexType</td></tr>
-<tr class="separator:ae40ef927e69d35325ce13e55826c562b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48cb22404884d528a10dca7421283636"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a48cb22404884d528a10dca7421283636">CoordImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; TCoordType, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a> &gt;</td></tr>
-<tr class="separator:a48cb22404884d528a10dca7421283636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0564efa1771c0481c42867601333cbfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0564efa1771c0481c42867601333cbfb">InterpolatorPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a></td></tr>
-<tr class="separator:a0564efa1771c0481c42867601333cbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d4591587dd22066eabc2a434419827"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a45d4591587dd22066eabc2a434419827">OutputImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> &gt;</td></tr>
-<tr class="separator:a45d4591587dd22066eabc2a434419827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e2a41f34660fa2bf0a94e947f0c88a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad9e2a41f34660fa2bf0a94e947f0c88a">OutputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a></td></tr>
-<tr class="separator:ad9e2a41f34660fa2bf0a94e947f0c88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635ae096a88e080edd7576a37e3388b7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a635ae096a88e080edd7576a37e3388b7">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
-<tr class="separator:a635ae096a88e080edd7576a37e3388b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86ed59a3386fb553782355e7e64d0db2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a> = typename TOutputImage::PixelType</td></tr>
-<tr class="separator:a86ed59a3386fb553782355e7e64d0db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94567abcec0f7ae094fdd1864933004"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ae94567abcec0f7ae094fdd1864933004">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
-<tr class="separator:ae94567abcec0f7ae094fdd1864933004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfc3b1e51cf94eb66151867062500fbc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#abfc3b1e51cf94eb66151867062500fbc">RegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a>, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a> &gt;</td></tr>
-<tr class="separator:abfc3b1e51cf94eb66151867062500fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af535a037f6565e2c5cac96d2759a04c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#af535a037f6565e2c5cac96d2759a04c4">Self</a> = <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">InterpolateImagePointsFilter</a></td></tr>
-<tr class="separator:af535a037f6565e2c5cac96d2759a04c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550527d912520e06c2eeb2eee93fe2d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a550527d912520e06c2eeb2eee93fe2d3">Superclass</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
-<tr class="separator:a550527d912520e06c2eeb2eee93fe2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c904881fd2ca56ecb81cbe02f0919d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ab3c904881fd2ca56ecb81cbe02f0919d">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
+<tr class="separator:ab3c904881fd2ca56ecb81cbe02f0919d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31554dc641faac8f7c2c17d2dac4cfa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad31554dc641faac8f7c2c17d2dac4cfa">ContinuousIndexType</a> = typename InterpolatorType::ContinuousIndexType</td></tr>
+<tr class="separator:ad31554dc641faac8f7c2c17d2dac4cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb9cb0d189e16e6089e3c1cd6c2b31a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7bb9cb0d189e16e6089e3c1cd6c2b31a">CoordImageType</a> = <a class="el" href="classitk_1_1Image.html">Image</a>&lt; TCoordinate, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a> &gt;</td></tr>
+<tr class="separator:a7bb9cb0d189e16e6089e3c1cd6c2b31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3727accfcabab0deaef3470edddb21"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aff3727accfcabab0deaef3470edddb21">InterpolatorPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a></td></tr>
+<tr class="separator:aff3727accfcabab0deaef3470edddb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac1e5589cde6a53f42d26b4f64be1a3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aeac1e5589cde6a53f42d26b4f64be1a3">OutputImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> &gt;</td></tr>
+<tr class="separator:aeac1e5589cde6a53f42d26b4f64be1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f789ce817b77168fbc2a5292d9d3808"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a5f789ce817b77168fbc2a5292d9d3808">OutputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a></td></tr>
+<tr class="separator:a5f789ce817b77168fbc2a5292d9d3808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a16f408999edbcaf9781a5a9b4ee0d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a08a16f408999edbcaf9781a5a9b4ee0d">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
+<tr class="separator:a08a16f408999edbcaf9781a5a9b4ee0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671f05c3cc3ea7c38b2653ea188c2217"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a> = typename TOutputImage::PixelType</td></tr>
+<tr class="separator:a671f05c3cc3ea7c38b2653ea188c2217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e2159d737c8da96fb28d2e2985fe37"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ae2e2159d737c8da96fb28d2e2985fe37">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
+<tr class="separator:ae2e2159d737c8da96fb28d2e2985fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f9bdb0aabd400b66e124b59be7ee092"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a4f9bdb0aabd400b66e124b59be7ee092">RegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a>, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a> &gt;</td></tr>
+<tr class="separator:a4f9bdb0aabd400b66e124b59be7ee092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8eba3c57ea1d0e977ef93d00dca1851"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#af8eba3c57ea1d0e977ef93d00dca1851">Self</a> = <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">InterpolateImagePointsFilter</a></td></tr>
+<tr class="separator:af8eba3c57ea1d0e977ef93d00dca1851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2119136dc9b667cc4f355ca4a589cd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aae2119136dc9b667cc4f355ca4a589cd">Superclass</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
+<tr class="separator:aae2119136dc9b667cc4f355ca4a589cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae23fc89d336966b2c24b84e66ff6a405">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
 <tr class="separator:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,22 +232,22 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7ea9ad1248f020126869e8149d1b13e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ac7ea9ad1248f020126869e8149d1b13e">GenerateInputRequestedRegion</a> () override</td></tr>
-<tr class="separator:ac7ea9ad1248f020126869e8149d1b13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad988392cd02e31ca29f85e573867c038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad988392cd02e31ca29f85e573867c038">GenerateOutputInformation</a> () override</td></tr>
-<tr class="separator:ad988392cd02e31ca29f85e573867c038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c7d82b4b5edb5ae3ac41fc4888c469"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a83c7d82b4b5edb5ae3ac41fc4888c469">GetDefaultPixelValue</a> () const</td></tr>
-<tr class="separator:a83c7d82b4b5edb5ae3ac41fc4888c469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e3213ef99b86c9ecd880cc96106ae10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0564efa1771c0481c42867601333cbfb">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0e3213ef99b86c9ecd880cc96106ae10">GetInterpolator</a> ()</td></tr>
-<tr class="separator:a0e3213ef99b86c9ecd880cc96106ae10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac038479d5070d84108fd33cfea983aa0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ac038479d5070d84108fd33cfea983aa0">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:ac038479d5070d84108fd33cfea983aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2229a19b57bf2f9ec4c3cbc43673af25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a2229a19b57bf2f9ec4c3cbc43673af25">SetDefaultPixelValue</a> (<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a> _arg)</td></tr>
-<tr class="separator:a2229a19b57bf2f9ec4c3cbc43673af25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18caffa3de4ecbc0ae564cea3bf64048"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a18caffa3de4ecbc0ae564cea3bf64048">SetInputImage</a> (const TInputImage *inputImage)</td></tr>
-<tr class="separator:a18caffa3de4ecbc0ae564cea3bf64048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60ec74e2e8132f5203a8fc5732e4c0ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a60ec74e2e8132f5203a8fc5732e4c0ac">SetInterpolationCoordinate</a> (const <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a48cb22404884d528a10dca7421283636">CoordImageType</a> *coordinate, unsigned int setDimension)</td></tr>
-<tr class="separator:a60ec74e2e8132f5203a8fc5732e4c0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2138c79f30e0c87a70df2649eac6e3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ac2138c79f30e0c87a70df2649eac6e3c">GenerateInputRequestedRegion</a> () override</td></tr>
+<tr class="separator:ac2138c79f30e0c87a70df2649eac6e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eaaa81b9426f3b57aac0d2a1c7dbf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a9eaaa81b9426f3b57aac0d2a1c7dbf6c">GenerateOutputInformation</a> () override</td></tr>
+<tr class="separator:a9eaaa81b9426f3b57aac0d2a1c7dbf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913fb8cb645aad3800681d73701a790d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a913fb8cb645aad3800681d73701a790d">GetDefaultPixelValue</a> () const</td></tr>
+<tr class="separator:a913fb8cb645aad3800681d73701a790d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab583f69f6a07ab043cea2e076e70a2e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aff3727accfcabab0deaef3470edddb21">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ab583f69f6a07ab043cea2e076e70a2e9">GetInterpolator</a> ()</td></tr>
+<tr class="separator:ab583f69f6a07ab043cea2e076e70a2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775bf6a40d0faa297875583909cba5fa"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a775bf6a40d0faa297875583909cba5fa">GetNameOfClass</a> () const override</td></tr>
+<tr class="separator:a775bf6a40d0faa297875583909cba5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba18a77253fe61d7f0b9296d82e469bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aba18a77253fe61d7f0b9296d82e469bb">SetDefaultPixelValue</a> (<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a> _arg)</td></tr>
+<tr class="separator:aba18a77253fe61d7f0b9296d82e469bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff33b7dd814535f96c20043fee6bbf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#afff33b7dd814535f96c20043fee6bbf6">SetInputImage</a> (const TInputImage *inputImage)</td></tr>
+<tr class="separator:afff33b7dd814535f96c20043fee6bbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787d8365b68de4adcf7b54dc32e2d3fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a787d8365b68de4adcf7b54dc32e2d3fd">SetInterpolationCoordinate</a> (const <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7bb9cb0d189e16e6089e3c1cd6c2b31a">CoordImageType</a> *coordinate, unsigned int setDimension)</td></tr>
+<tr class="separator:a787d8365b68de4adcf7b54dc32e2d3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:a9db129144c450fe7d6a1cb2311e73a82 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a9db129144c450fe7d6a1cb2311e73a82">GetInput</a> () const</td></tr>
 <tr class="separator:a9db129144c450fe7d6a1cb2311e73a82 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -456,8 +456,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abe69ce4292ca54b2125db346aab19e8c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#abe69ce4292ca54b2125db346aab19e8c">New</a> ()</td></tr>
-<tr class="separator:abe69ce4292ca54b2125db346aab19e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fe7c2dd3991e4ecf3ad8630edf9dc1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#af7fe7c2dd3991e4ecf3ad8630edf9dc1">New</a> ()</td></tr>
+<tr class="separator:af7fe7c2dd3991e4ecf3ad8630edf9dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0dbecad3f9685120bfb0878767113837">GetGlobalDefaultCoordinateTolerance</a> ()</td></tr>
 <tr class="separator:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -486,8 +486,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a7e24f3ea8410d048f5c0cf0896b8a827"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">ImageDimension</a> = TInputImage::ImageDimension</td></tr>
-<tr class="separator:a7e24f3ea8410d048f5c0cf0896b8a827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c7f3fc57ddb08e65c63f75060d18d8"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">ImageDimension</a> = TInputImage::ImageDimension</td></tr>
+<tr class="separator:ad2c7f3fc57ddb08e65c63f75060d18d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">InputImageDimension</a> = TInputImage::ImageDimension</td></tr>
 <tr class="separator:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -499,14 +499,14 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a45cf78b4a40dd715db8c6b6ec9827981"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a45cf78b4a40dd715db8c6b6ec9827981">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread) override</td></tr>
-<tr class="separator:a45cf78b4a40dd715db8c6b6ec9827981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6c6515fa44e5f9a28789eefe86fc63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#abc6c6515fa44e5f9a28789eefe86fc63">InterpolateImagePointsFilter</a> ()</td></tr>
-<tr class="separator:abc6c6515fa44e5f9a28789eefe86fc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa91e45939684bb256e19932ddb5875f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aa91e45939684bb256e19932ddb5875f0">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:aa91e45939684bb256e19932ddb5875f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84471aa698b7a2c4ddcdcd0bccdebdd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a84471aa698b7a2c4ddcdcd0bccdebdd2">VerifyInputInformation</a> () const override</td></tr>
-<tr class="separator:a84471aa698b7a2c4ddcdcd0bccdebdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c402390722eecb9eb552b2566db2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a62c402390722eecb9eb552b2566db2e3">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread) override</td></tr>
+<tr class="separator:a62c402390722eecb9eb552b2566db2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7366c71a2b1fb6f1b6c08bc48bb0c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#abe7366c71a2b1fb6f1b6c08bc48bb0c6">InterpolateImagePointsFilter</a> ()</td></tr>
+<tr class="separator:abe7366c71a2b1fb6f1b6c08bc48bb0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67453e20c4da6e8cb21ccf0015576807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a67453e20c4da6e8cb21ccf0015576807">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a67453e20c4da6e8cb21ccf0015576807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b78881d42235a7bc3a2f1403244ca51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a5b78881d42235a7bc3a2f1403244ca51">VerifyInputInformation</a> () const override</td></tr>
+<tr class="separator:a5b78881d42235a7bc3a2f1403244ca51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae201413bc62727f7e282dbd176288b4f">CallCopyInputRegionToOutputRegion</a> (<a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;srcRegion)</td></tr>
 <tr class="separator:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -717,19 +717,19 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:aefa9a26fe278c186d0598a4aa8f4eed6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aefa9a26fe278c186d0598a4aa8f4eed6">CoordImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt; <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a48cb22404884d528a10dca7421283636">CoordImageType</a> &gt;</td></tr>
-<tr class="separator:aefa9a26fe278c186d0598a4aa8f4eed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac786daa338721336a7130482f67f108"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aac786daa338721336a7130482f67f108">CoordImageRegionType</a> = typename <a class="el" href="classitk_1_1ImageBase.html#a116a2410361d797ed56b5dfcf1b332ed">CoordImageType::RegionType</a></td></tr>
-<tr class="separator:aac786daa338721336a7130482f67f108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad414ffcb0bf37ffec9e09a25dab990e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad414ffcb0bf37ffec9e09a25dab990e7">CoordImageTypePointer</a> = typename <a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">CoordImageType::Pointer</a></td></tr>
-<tr class="separator:ad414ffcb0bf37ffec9e09a25dab990e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31820a6752b55831d210fee925d91a40"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a31820a6752b55831d210fee925d91a40">CoordImageIterator</a> = <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt; <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7bb9cb0d189e16e6089e3c1cd6c2b31a">CoordImageType</a> &gt;</td></tr>
+<tr class="separator:a31820a6752b55831d210fee925d91a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae010d3d28c61bb444dd2b8c890630c27"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ae010d3d28c61bb444dd2b8c890630c27">CoordImageRegionType</a> = typename <a class="el" href="classitk_1_1ImageBase.html#a116a2410361d797ed56b5dfcf1b332ed">CoordImageType::RegionType</a></td></tr>
+<tr class="separator:ae010d3d28c61bb444dd2b8c890630c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648da8cb0c7f0912287ff571ebefb8a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a648da8cb0c7f0912287ff571ebefb8a7">CoordImageTypePointer</a> = typename <a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">CoordImageType::Pointer</a></td></tr>
+<tr class="separator:a648da8cb0c7f0912287ff571ebefb8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a827ab6e8ec53a6dec5baf4fe31d15f9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a827ab6e8ec53a6dec5baf4fe31d15f9d">m_DefaultPixelValue</a> {}</td></tr>
-<tr class="separator:a827ab6e8ec53a6dec5baf4fe31d15f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a639b76257d7b124d21ce07dbe73f9afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0564efa1771c0481c42867601333cbfb">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a639b76257d7b124d21ce07dbe73f9afb">m_Interpolator</a> {}</td></tr>
-<tr class="separator:a639b76257d7b124d21ce07dbe73f9afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8267836769286622712d8472f26cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a3a8267836769286622712d8472f26cd6">m_DefaultPixelValue</a> {}</td></tr>
+<tr class="separator:a3a8267836769286622712d8472f26cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fba8fd990eab955649c63baeec891f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aff3727accfcabab0deaef3470edddb21">InterpolatorPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a5fba8fd990eab955649c63baeec891f8">m_Interpolator</a> {}</td></tr>
+<tr class="separator:a5fba8fd990eab955649c63baeec891f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -764,16 +764,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a56038e2ede3e60937b72d2c9e4e05a24" name="a56038e2ede3e60937b72d2c9e4e05a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56038e2ede3e60937b72d2c9e4e05a24">&#9670;&nbsp;</a></span>ConstPointer</h2>
+<a id="ab3c904881fd2ca56ecb81cbe02f0919d" name="ab3c904881fd2ca56ecb81cbe02f0919d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c904881fd2ca56ecb81cbe02f0919d">&#9670;&nbsp;</a></span>ConstPointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -782,16 +782,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ae40ef927e69d35325ce13e55826c562b" name="ae40ef927e69d35325ce13e55826c562b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae40ef927e69d35325ce13e55826c562b">&#9670;&nbsp;</a></span>ContinuousIndexType</h2>
+<a id="ad31554dc641faac8f7c2c17d2dac4cfa" name="ad31554dc641faac8f7c2c17d2dac4cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31554dc641faac8f7c2c17d2dac4cfa">&#9670;&nbsp;</a></span>ContinuousIndexType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::ContinuousIndexType =  typename InterpolatorType::ContinuousIndexType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::ContinuousIndexType =  typename InterpolatorType::ContinuousIndexType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -800,19 +800,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="aefa9a26fe278c186d0598a4aa8f4eed6" name="aefa9a26fe278c186d0598a4aa8f4eed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefa9a26fe278c186d0598a4aa8f4eed6">&#9670;&nbsp;</a></span>CoordImageIterator</h2>
+<a id="a31820a6752b55831d210fee925d91a40" name="a31820a6752b55831d210fee925d91a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31820a6752b55831d210fee925d91a40">&#9670;&nbsp;</a></span>CoordImageIterator</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::CoordImageIterator =  <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt;<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a48cb22404884d528a10dca7421283636">CoordImageType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::CoordImageIterator =  <a class="el" href="classitk_1_1ImageRegionConstIterator.html">ImageRegionConstIterator</a>&lt;<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7bb9cb0d189e16e6089e3c1cd6c2b31a">CoordImageType</a>&gt;</td>
         </tr>
       </table>
   </td>
@@ -826,19 +826,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="aac786daa338721336a7130482f67f108" name="aac786daa338721336a7130482f67f108"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac786daa338721336a7130482f67f108">&#9670;&nbsp;</a></span>CoordImageRegionType</h2>
+<a id="ae010d3d28c61bb444dd2b8c890630c27" name="ae010d3d28c61bb444dd2b8c890630c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae010d3d28c61bb444dd2b8c890630c27">&#9670;&nbsp;</a></span>CoordImageRegionType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::CoordImageRegionType =  typename <a class="el" href="classitk_1_1ImageBase.html#a116a2410361d797ed56b5dfcf1b332ed">CoordImageType::RegionType</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::CoordImageRegionType =  typename <a class="el" href="classitk_1_1ImageBase.html#a116a2410361d797ed56b5dfcf1b332ed">CoordImageType::RegionType</a></td>
         </tr>
       </table>
   </td>
@@ -852,16 +852,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a48cb22404884d528a10dca7421283636" name="a48cb22404884d528a10dca7421283636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48cb22404884d528a10dca7421283636">&#9670;&nbsp;</a></span>CoordImageType</h2>
+<a id="a7bb9cb0d189e16e6089e3c1cd6c2b31a" name="a7bb9cb0d189e16e6089e3c1cd6c2b31a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb9cb0d189e16e6089e3c1cd6c2b31a">&#9670;&nbsp;</a></span>CoordImageType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::CoordImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;TCoordType, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::CoordImageType =  <a class="el" href="classitk_1_1Image.html">Image</a>&lt;TCoordinate, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -871,19 +871,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ad414ffcb0bf37ffec9e09a25dab990e7" name="ad414ffcb0bf37ffec9e09a25dab990e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad414ffcb0bf37ffec9e09a25dab990e7">&#9670;&nbsp;</a></span>CoordImageTypePointer</h2>
+<a id="a648da8cb0c7f0912287ff571ebefb8a7" name="a648da8cb0c7f0912287ff571ebefb8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648da8cb0c7f0912287ff571ebefb8a7">&#9670;&nbsp;</a></span>CoordImageTypePointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::CoordImageTypePointer =  typename <a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">CoordImageType::Pointer</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::CoordImageTypePointer =  typename <a class="el" href="classitk_1_1Image.html#af2d85a74c5b98b8a5f7edff2d7b1c2d8">CoordImageType::Pointer</a></td>
         </tr>
       </table>
   </td>
@@ -898,16 +898,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a0564efa1771c0481c42867601333cbfb" name="a0564efa1771c0481c42867601333cbfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0564efa1771c0481c42867601333cbfb">&#9670;&nbsp;</a></span>InterpolatorPointer</h2>
+<a id="aff3727accfcabab0deaef3470edddb21" name="aff3727accfcabab0deaef3470edddb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff3727accfcabab0deaef3470edddb21">&#9670;&nbsp;</a></span>InterpolatorPointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::InterpolatorPointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::InterpolatorPointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InterpolatorType::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -917,16 +917,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a45d4591587dd22066eabc2a434419827" name="a45d4591587dd22066eabc2a434419827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45d4591587dd22066eabc2a434419827">&#9670;&nbsp;</a></span>OutputImageIterator</h2>
+<a id="aeac1e5589cde6a53f42d26b4f64be1a3" name="aeac1e5589cde6a53f42d26b4f64be1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac1e5589cde6a53f42d26b4f64be1a3">&#9670;&nbsp;</a></span>OutputImageIterator</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::OutputImageIterator =  <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt;<a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::OutputImageIterator =  <a class="el" href="classitk_1_1ImageRegionIterator.html">ImageRegionIterator</a>&lt;<a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -935,16 +935,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ad9e2a41f34660fa2bf0a94e947f0c88a" name="ad9e2a41f34660fa2bf0a94e947f0c88a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e2a41f34660fa2bf0a94e947f0c88a">&#9670;&nbsp;</a></span>OutputImagePointer</h2>
+<a id="a5f789ce817b77168fbc2a5292d9d3808" name="a5f789ce817b77168fbc2a5292d9d3808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f789ce817b77168fbc2a5292d9d3808">&#9670;&nbsp;</a></span>OutputImagePointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::OutputImagePointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::OutputImagePointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">TOutputImage::Pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -954,16 +954,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a635ae096a88e080edd7576a37e3388b7" name="a635ae096a88e080edd7576a37e3388b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a635ae096a88e080edd7576a37e3388b7">&#9670;&nbsp;</a></span>OutputImageRegionType</h2>
+<a id="a08a16f408999edbcaf9781a5a9b4ee0d" name="a08a16f408999edbcaf9781a5a9b4ee0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a16f408999edbcaf9781a5a9b4ee0d">&#9670;&nbsp;</a></span>OutputImageRegionType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::OutputImageRegionType =  typename OutputImageType::RegionType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::OutputImageRegionType =  typename OutputImageType::RegionType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -972,16 +972,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a86ed59a3386fb553782355e7e64d0db2" name="a86ed59a3386fb553782355e7e64d0db2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ed59a3386fb553782355e7e64d0db2">&#9670;&nbsp;</a></span>PixelType</h2>
+<a id="a671f05c3cc3ea7c38b2653ea188c2217" name="a671f05c3cc3ea7c38b2653ea188c2217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a671f05c3cc3ea7c38b2653ea188c2217">&#9670;&nbsp;</a></span>PixelType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::PixelType =  typename TOutputImage::PixelType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::PixelType =  typename TOutputImage::PixelType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -991,16 +991,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ae94567abcec0f7ae094fdd1864933004" name="ae94567abcec0f7ae094fdd1864933004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae94567abcec0f7ae094fdd1864933004">&#9670;&nbsp;</a></span>Pointer</h2>
+<a id="ae2e2159d737c8da96fb28d2e2985fe37" name="ae2e2159d737c8da96fb28d2e2985fe37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e2159d737c8da96fb28d2e2985fe37">&#9670;&nbsp;</a></span>Pointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1009,16 +1009,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="abfc3b1e51cf94eb66151867062500fbc" name="abfc3b1e51cf94eb66151867062500fbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfc3b1e51cf94eb66151867062500fbc">&#9670;&nbsp;</a></span>RegionCopierType</h2>
+<a id="a4f9bdb0aabd400b66e124b59be7ee092" name="a4f9bdb0aabd400b66e124b59be7ee092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9bdb0aabd400b66e124b59be7ee092">&#9670;&nbsp;</a></span>RegionCopierType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::RegionCopierType =  <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt;<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a>, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7e24f3ea8410d048f5c0cf0896b8a827">Self::ImageDimension</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::RegionCopierType =  <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt;<a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a>, <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#ad2c7f3fc57ddb08e65c63f75060d18d8">Self::ImageDimension</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1028,16 +1028,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="af535a037f6565e2c5cac96d2759a04c4" name="af535a037f6565e2c5cac96d2759a04c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af535a037f6565e2c5cac96d2759a04c4">&#9670;&nbsp;</a></span>Self</h2>
+<a id="af8eba3c57ea1d0e977ef93d00dca1851" name="af8eba3c57ea1d0e977ef93d00dca1851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8eba3c57ea1d0e977ef93d00dca1851">&#9670;&nbsp;</a></span>Self</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">InterpolateImagePointsFilter</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">InterpolateImagePointsFilter</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1047,16 +1047,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a550527d912520e06c2eeb2eee93fe2d3" name="a550527d912520e06c2eeb2eee93fe2d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a550527d912520e06c2eeb2eee93fe2d3">&#9670;&nbsp;</a></span>Superclass</h2>
+<a id="aae2119136dc9b667cc4f355ca4a589cd" name="aae2119136dc9b667cc4f355ca4a589cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2119136dc9b667cc4f355ca4a589cd">&#9670;&nbsp;</a></span>Superclass</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;TInputImage, TOutputImage&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;TInputImage, TOutputImage&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1066,19 +1066,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abc6c6515fa44e5f9a28789eefe86fc63" name="abc6c6515fa44e5f9a28789eefe86fc63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc6c6515fa44e5f9a28789eefe86fc63">&#9670;&nbsp;</a></span>InterpolateImagePointsFilter()</h2>
+<a id="abe7366c71a2b1fb6f1b6c08bc48bb0c6" name="abe7366c71a2b1fb6f1b6c08bc48bb0c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7366c71a2b1fb6f1b6c08bc48bb0c6">&#9670;&nbsp;</a></span>InterpolateImagePointsFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::InterpolateImagePointsFilter </td>
+          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::InterpolateImagePointsFilter </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1094,19 +1094,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a45cf78b4a40dd715db8c6b6ec9827981" name="a45cf78b4a40dd715db8c6b6ec9827981"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45cf78b4a40dd715db8c6b6ec9827981">&#9670;&nbsp;</a></span>DynamicThreadedGenerateData()</h2>
+<a id="a62c402390722eecb9eb552b2566db2e3" name="a62c402390722eecb9eb552b2566db2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c402390722eecb9eb552b2566db2e3">&#9670;&nbsp;</a></span>DynamicThreadedGenerateData()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::DynamicThreadedGenerateData </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::DynamicThreadedGenerateData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;&#160;</td>
           <td class="paramname"><em>outputRegionForThread</em></td><td>)</td>
@@ -1125,19 +1125,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ac7ea9ad1248f020126869e8149d1b13e" name="ac7ea9ad1248f020126869e8149d1b13e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ea9ad1248f020126869e8149d1b13e">&#9670;&nbsp;</a></span>GenerateInputRequestedRegion()</h2>
+<a id="ac2138c79f30e0c87a70df2649eac6e3c" name="ac2138c79f30e0c87a70df2649eac6e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2138c79f30e0c87a70df2649eac6e3c">&#9670;&nbsp;</a></span>GenerateInputRequestedRegion()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::GenerateInputRequestedRegion </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::GenerateInputRequestedRegion </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1155,19 +1155,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ad988392cd02e31ca29f85e573867c038" name="ad988392cd02e31ca29f85e573867c038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad988392cd02e31ca29f85e573867c038">&#9670;&nbsp;</a></span>GenerateOutputInformation()</h2>
+<a id="a9eaaa81b9426f3b57aac0d2a1c7dbf6c" name="a9eaaa81b9426f3b57aac0d2a1c7dbf6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eaaa81b9426f3b57aac0d2a1c7dbf6c">&#9670;&nbsp;</a></span>GenerateOutputInformation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::GenerateOutputInformation </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::GenerateOutputInformation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1185,19 +1185,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a83c7d82b4b5edb5ae3ac41fc4888c469" name="a83c7d82b4b5edb5ae3ac41fc4888c469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83c7d82b4b5edb5ae3ac41fc4888c469">&#9670;&nbsp;</a></span>GetDefaultPixelValue()</h2>
+<a id="a913fb8cb645aad3800681d73701a790d" name="a913fb8cb645aad3800681d73701a790d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913fb8cb645aad3800681d73701a790d">&#9670;&nbsp;</a></span>GetDefaultPixelValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::GetDefaultPixelValue </td>
+          <td class="memname">virtual <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::GetDefaultPixelValue </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1213,19 +1213,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a0e3213ef99b86c9ecd880cc96106ae10" name="a0e3213ef99b86c9ecd880cc96106ae10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e3213ef99b86c9ecd880cc96106ae10">&#9670;&nbsp;</a></span>GetInterpolator()</h2>
+<a id="ab583f69f6a07ab043cea2e076e70a2e9" name="ab583f69f6a07ab043cea2e076e70a2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab583f69f6a07ab043cea2e076e70a2e9">&#9670;&nbsp;</a></span>GetInterpolator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0564efa1771c0481c42867601333cbfb">InterpolatorPointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::GetInterpolator </td>
+          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aff3727accfcabab0deaef3470edddb21">InterpolatorPointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::GetInterpolator </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1243,19 +1243,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="ac038479d5070d84108fd33cfea983aa0" name="ac038479d5070d84108fd33cfea983aa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac038479d5070d84108fd33cfea983aa0">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
+<a id="a775bf6a40d0faa297875583909cba5fa" name="a775bf6a40d0faa297875583909cba5fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a775bf6a40d0faa297875583909cba5fa">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char * <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::GetNameOfClass </td>
+          <td class="memname">const char * <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::GetNameOfClass </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1273,19 +1273,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="abe69ce4292ca54b2125db346aab19e8c" name="abe69ce4292ca54b2125db346aab19e8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe69ce4292ca54b2125db346aab19e8c">&#9670;&nbsp;</a></span>New()</h2>
+<a id="af7fe7c2dd3991e4ecf3ad8630edf9dc1" name="af7fe7c2dd3991e4ecf3ad8630edf9dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fe7c2dd3991e4ecf3ad8630edf9dc1">&#9670;&nbsp;</a></span>New()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::New </td>
+          <td class="memname">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::New </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1301,19 +1301,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="aa91e45939684bb256e19932ddb5875f0" name="aa91e45939684bb256e19932ddb5875f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa91e45939684bb256e19932ddb5875f0">&#9670;&nbsp;</a></span>PrintSelf()</h2>
+<a id="a67453e20c4da6e8cb21ccf0015576807" name="a67453e20c4da6e8cb21ccf0015576807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67453e20c4da6e8cb21ccf0015576807">&#9670;&nbsp;</a></span>PrintSelf()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::PrintSelf </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::PrintSelf </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -1343,21 +1343,21 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a2229a19b57bf2f9ec4c3cbc43673af25" name="a2229a19b57bf2f9ec4c3cbc43673af25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2229a19b57bf2f9ec4c3cbc43673af25">&#9670;&nbsp;</a></span>SetDefaultPixelValue()</h2>
+<a id="aba18a77253fe61d7f0b9296d82e469bb" name="aba18a77253fe61d7f0b9296d82e469bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba18a77253fe61d7f0b9296d82e469bb">&#9670;&nbsp;</a></span>SetDefaultPixelValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::SetDefaultPixelValue </td>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::SetDefaultPixelValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a>&#160;</td>
           <td class="paramname"><em>_arg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1372,16 +1372,16 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a18caffa3de4ecbc0ae564cea3bf64048" name="a18caffa3de4ecbc0ae564cea3bf64048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18caffa3de4ecbc0ae564cea3bf64048">&#9670;&nbsp;</a></span>SetInputImage()</h2>
+<a id="afff33b7dd814535f96c20043fee6bbf6" name="afff33b7dd814535f96c20043fee6bbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff33b7dd814535f96c20043fee6bbf6">&#9670;&nbsp;</a></span>SetInputImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::SetInputImage </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::SetInputImage </td>
           <td>(</td>
           <td class="paramtype">const TInputImage *&#160;</td>
           <td class="paramname"><em>inputImage</em></td><td>)</td>
@@ -1393,18 +1393,18 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a60ec74e2e8132f5203a8fc5732e4c0ac" name="a60ec74e2e8132f5203a8fc5732e4c0ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60ec74e2e8132f5203a8fc5732e4c0ac">&#9670;&nbsp;</a></span>SetInterpolationCoordinate()</h2>
+<a id="a787d8365b68de4adcf7b54dc32e2d3fd" name="a787d8365b68de4adcf7b54dc32e2d3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787d8365b68de4adcf7b54dc32e2d3fd">&#9670;&nbsp;</a></span>SetInterpolationCoordinate()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::SetInterpolationCoordinate </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::SetInterpolationCoordinate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a48cb22404884d528a10dca7421283636">CoordImageType</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a7bb9cb0d189e16e6089e3c1cd6c2b31a">CoordImageType</a> *&#160;</td>
           <td class="paramname"><em>coordinate</em>, </td>
         </tr>
         <tr>
@@ -1424,19 +1424,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a84471aa698b7a2c4ddcdcd0bccdebdd2" name="a84471aa698b7a2c4ddcdcd0bccdebdd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84471aa698b7a2c4ddcdcd0bccdebdd2">&#9670;&nbsp;</a></span>VerifyInputInformation()</h2>
+<a id="a5b78881d42235a7bc3a2f1403244ca51" name="a5b78881d42235a7bc3a2f1403244ca51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b78881d42235a7bc3a2f1403244ca51">&#9670;&nbsp;</a></span>VerifyInputInformation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::VerifyInputInformation </td>
+          <td class="memname">void <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::VerifyInputInformation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1448,7 +1448,7 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Override <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a84471aa698b7a2c4ddcdcd0bccdebdd2">VerifyInputInformation()</a> since this filter's inputs do not need to occupy the same physical space.</p>
+<p >Override <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a5b78881d42235a7bc3a2f1403244ca51">VerifyInputInformation()</a> since this filter's inputs do not need to occupy the same physical space.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ProcessObject.html#a5b30bb4079fab462f90789db0cee94f0" title="Verifies that the inputs meta-data is consistent and valid for continued execution of the pipeline,...">ProcessObject::VerifyInputInformation</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classitk_1_1ImageToImageFilter.html#a3ae8012f909d0034a25ba24085a07a49">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
@@ -1458,19 +1458,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7e24f3ea8410d048f5c0cf0896b8a827" name="a7e24f3ea8410d048f5c0cf0896b8a827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e24f3ea8410d048f5c0cf0896b8a827">&#9670;&nbsp;</a></span>ImageDimension</h2>
+<a id="ad2c7f3fc57ddb08e65c63f75060d18d8" name="ad2c7f3fc57ddb08e65c63f75060d18d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2c7f3fc57ddb08e65c63f75060d18d8">&#9670;&nbsp;</a></span>ImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::ImageDimension = TInputImage::ImageDimension</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::ImageDimension = TInputImage::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -1485,19 +1485,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a827ab6e8ec53a6dec5baf4fe31d15f9d" name="a827ab6e8ec53a6dec5baf4fe31d15f9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a827ab6e8ec53a6dec5baf4fe31d15f9d">&#9670;&nbsp;</a></span>m_DefaultPixelValue</h2>
+<a id="a3a8267836769286622712d8472f26cd6" name="a3a8267836769286622712d8472f26cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8267836769286622712d8472f26cd6">&#9670;&nbsp;</a></span>m_DefaultPixelValue</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a86ed59a3386fb553782355e7e64d0db2">PixelType</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::m_DefaultPixelValue {}</td>
+          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a671f05c3cc3ea7c38b2653ea188c2217">PixelType</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::m_DefaultPixelValue {}</td>
         </tr>
       </table>
   </td>
@@ -1511,19 +1511,19 @@ template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  
 
 </div>
 </div>
-<a id="a639b76257d7b124d21ce07dbe73f9afb" name="a639b76257d7b124d21ce07dbe73f9afb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a639b76257d7b124d21ce07dbe73f9afb">&#9670;&nbsp;</a></span>m_Interpolator</h2>
+<a id="a5fba8fd990eab955649c63baeec891f8" name="a5fba8fd990eab955649c63baeec891f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fba8fd990eab955649c63baeec891f8">&#9670;&nbsp;</a></span>m_Interpolator</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage , typename TCoordType  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordType&gt;&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage , typename TCoordinate  = typename TInputImage::PixelType, typename InterpolatorType  = BSplineInterpolateImageFunction&lt;TInputImage, TCoordinate&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#a0564efa1771c0481c42867601333cbfb">InterpolatorPointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordType, InterpolatorType &gt;::m_Interpolator {}</td>
+          <td class="memname"><a class="el" href="classitk_1_1InterpolateImagePointsFilter.html#aff3727accfcabab0deaef3470edddb21">InterpolatorPointer</a> <a class="el" href="classitk_1_1InterpolateImagePointsFilter.html">itk::InterpolateImagePointsFilter</a>&lt; TInputImage, TOutputImage, TCoordinate, InterpolatorType &gt;::m_Interpolator {}</td>
         </tr>
       </table>
   </td>

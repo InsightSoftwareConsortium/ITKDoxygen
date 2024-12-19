@@ -269,7 +269,7 @@ $(function() {
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j;</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    TRealType    dx;</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    TRealType    sum;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    TRealType    accum = TRealType{};</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keyword">auto</span>         accum = TRealType{};</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">for</span> (i = 0; i &lt; ImageDimension; ++i)</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    {</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      sum = TRealType{};</div>
@@ -328,7 +328,7 @@ $(function() {
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                 g[2][0] * (g[1][1] * g[0][2] - g[0][1] * g[1][2]);</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    <span class="comment">// Find the eigenvalues of g</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keywordtype">int</span> numberOfDistinctRoots = this-&gt;CubicSolver(CharEqn, Lambda);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> numberOfDistinctRoots = this-&gt;CubicSolver(CharEqn, Lambda);</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    <span class="comment">// Define gradient magnitude as the difference between two largest</span></div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="comment">// eigenvalues.  Other definitions may be appropriate here as well.</span></div>
@@ -428,7 +428,7 @@ $(function() {
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>    }</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>    <span class="comment">// Find the eigenvalues of g</span></div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    vnl_symmetric_eigensystem&lt;TRealType&gt; E(g);</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    <span class="keyword">const</span> vnl_symmetric_eigensystem&lt;TRealType&gt; E(g);</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span> </div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    <span class="comment">// Return the difference in length between the first two principle axes.</span></div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="comment">// Note that other edge strength metrics may be appropriate here instead..</span></div>
@@ -525,8 +525,8 @@ $(function() {
 <div class="ttc" id="anamespaceitk_html_a6f5f0cceeeb25d886dcc6303a8e11deb"><div class="ttname"><a href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">itk::ThreadIdType</a></div><div class="ttdeci">unsigned int ThreadIdType</div><div class="ttdef"><b>Definition:</b> <a href="itkIntTypes_8h_source.html#l00102">itkIntTypes.h:102</a></div></div>
 <div class="ttc" id="anamespaceitk_html_ad315c81135528a88c12efa85c9d4ff1e"><div class="ttname"><a href="namespaceitk.html#ad315c81135528a88c12efa85c9d4ff1e">itk::Processing</a></div><div class="ttdeci">*par Constraints *The filter image with at least two dimensions and a vector *length of at least The theory supports extension to scalar but *the implementation of the itk vector classes do not **The template parameter TRealType must be floating so it cannot multithread for data other than in Anisotropic Diffusion of Multivalued Images *with Application to Color IEEE Transactions on Image Processing</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorGradientMagnitudeImageFilter_8h_source.html#l00124">itkVectorGradientMagnitudeImageFilter.h:124</a></div></div>
 <div class="ttc" id="anamespaceitk_html_afbb92e368d0b365d349483cdae730d35"><div class="ttname"><a href="namespaceitk.html#afbb92e368d0b365d349483cdae730d35">itk::images</a></div><div class="ttdeci">*par Constraints *The filter image with at least two dimensions and a vector *length of at least The theory supports extension to scalar images</div><div class="ttdef"><b>Definition:</b> <a href="itkVectorGradientMagnitudeImageFilter_8h_source.html#l00107">itkVectorGradientMagnitudeImageFilter.h:107</a></div></div>
-<div class="ttc" id="astructitk_1_1Concept_1_1HasNumericTraits_html"><div class="ttname"><a href="structitk_1_1Concept_1_1HasNumericTraits.html">itk::Concept::HasNumericTraits</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00716">itkConceptChecking.h:717</a></div></div>
-<div class="ttc" id="astructitk_1_1Concept_1_1SameDimension_html"><div class="ttname"><a href="structitk_1_1Concept_1_1SameDimension.html">itk::Concept::SameDimension</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00696">itkConceptChecking.h:697</a></div></div>
+<div class="ttc" id="astructitk_1_1Concept_1_1HasNumericTraits_html"><div class="ttname"><a href="structitk_1_1Concept_1_1HasNumericTraits.html">itk::Concept::HasNumericTraits</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00717">itkConceptChecking.h:718</a></div></div>
+<div class="ttc" id="astructitk_1_1Concept_1_1SameDimension_html"><div class="ttname"><a href="structitk_1_1Concept_1_1SameDimension.html">itk::Concept::SameDimension</a></div><div class="ttdef"><b>Definition:</b> <a href="itkConceptChecking_8h_source.html#l00697">itkConceptChecking.h:698</a></div></div>
 <div class="ttc" id="astructitk_1_1Size_html"><div class="ttname"><a href="structitk_1_1Size.html">itk::Size&lt; VDimension &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->

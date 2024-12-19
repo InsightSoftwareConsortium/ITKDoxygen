@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classSimpleMultiResolutionImageRegistrationUI.html#a4f88570d40c057045962f6913725d0f7">   33</a></span>  <a class="code hl_function" href="classSimpleMultiResolutionImageRegistrationUI.html#a4f88570d40c057045962f6913725d0f7">SimpleMultiResolutionImageRegistrationUI</a>(TRegistrator * ptr)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    : <a class="code hl_variable" href="classSimpleMultiResolutionImageRegistrationUI.html#aec47a38c849383d37720674459f883b3">m_Tag</a>(0)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!ptr)</div>
@@ -196,14 +196,14 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// Try to cast the optimizer to a gradient descent type,</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// return if casting didn&#39;t work.</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_class" href="classitk_1_1SmartPointer.html">itk::GradientDescentOptimizer::Pointer</a> optimizer =</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> <a class="code hl_class" href="classitk_1_1SmartPointer.html">itk::GradientDescentOptimizer::Pointer</a> optimizer =</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitk_1_1GradientDescentOptimizer.html">itk::GradientDescentOptimizer</a> *<span class="keyword">&gt;</span>(this-&gt;m_Registrator-&gt;GetModifiableOptimizer());</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (!optimizer)</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> level = this-&gt;m_Registrator-&gt;GetCurrentLevel();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> level = this-&gt;m_Registrator-&gt;GetCurrentLevel();</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span> (m_NumberOfIterations.Size() &gt;= level + 1)</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      optimizer-&gt;SetNumberOfIterations(m_NumberOfIterations[level]);</div>

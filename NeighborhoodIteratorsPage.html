@@ -83,23 +83,22 @@ $(function() {
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="IntroductionSection"></a>
 Introduction</h1>
-<p >This document provides a general overview of the intended use of the NeighborhoodIterator classes and their associated objects for low-level image processing in Itk. For a more detailed description of the API, please refer to the inline Itk documentation and manual. <br  />
-</p>
+<p >This document provides a general overview of the intended use of the NeighborhoodIterator classes and their associated objects for low-level image processing in Itk. For a more detailed description of the API, please refer to the inline Itk documentation and manual.</p>
 <dl class="section user"><dt></dt><dd>Neighborhood iterators are the abstraction of the concept of <em>locality</em> in image processing. They are designed to be used in algorithms that perform calculations on a neighborhood of pixel values around a point in an image. For example, a classic neighborhood-based operation is to compute the mean of a set of pixels in order to reduce noise in an image. This is typically done by taking a region of 3x3 pixels and computing the average of their values. A new image with fewer narrow high frequency spikes (noise) is produced using the resulting means.</dd></dl>
 <dl class="section user"><dt></dt><dd>This code in classical <em>texbook</em> notation can look like:</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> nx = 512;</div>
 <div class="line"><span class="keywordtype">int</span> ny = 512;</div>
 <div class="line">ImageType image(nx,ny);</div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> x=1; x&lt;nx-1; x++) </div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> x=1; x&lt;nx-1; x++)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">float</span> sum = 0;</div>
-<div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y=1; y&lt;ny-1; y++) </div>
+<div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> y=1; y&lt;ny-1; y++)</div>
 <div class="line">  {</div>
 <div class="line">    sum += image(x-1,y-1) + image(x  ,y-1) + image(x+1,y-1);</div>
 <div class="line">    sum += image(x-1,y  ) + image(x  ,y  ) + image(x+1,y  );</div>
 <div class="line">    sum += image(x-1,y+1) + image(x  ,y+1) + image(x+1,y+1);</div>
 <div class="line">  }</div>
-<div class="line">}  </div>
+<div class="line">}</div>
 </div><!-- fragment --><dl class="section user"><dt></dt><dd>The code above is readable and straightforward to implement. But its efficiency is limited to the speed of random access into the image. It also assumes a two dimensional image. We can eliminate the random access bottleneck by using iterators to dereference pixels, and for a two-dimensional image, code-readability may not suffer much. But what if we want code for three or more dimensions? Before long, the code size and complexity will increase to unmanageable levels. In Itk, we have encapsulated this functionality for efficiency, readability, and reusability.</dd></dl>
 <h1><a class="anchor" id="NeighborhoodIteratorsSection"></a>
 Neighborhood iterators</h1>
@@ -121,7 +120,7 @@ Neighborhood iterators</h1>
 <div class="line">10  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ImageType::ImageDimension; ++i) radius[i] = 1;</div>
 <div class="line">11</div>
 <div class="line">12  <span class="comment">// Initializes the iterators on the input &amp; output image regions</span></div>
-<div class="line">13  NeighborhoodIterator it(radius, input_image, </div>
+<div class="line">13  NeighborhoodIterator it(radius, input_image,</div>
 <div class="line">14                                  output_image-&gt;GetRequestedRegion());</div>
 <div class="line">15  ImageIterator out(output_image, output_image-&gt;GetRequestedRegion());</div>
 <div class="line">16</div>
@@ -130,8 +129,8 @@ Neighborhood iterators</h1>
 <div class="line">19    {</div>
 <div class="line">20      <span class="keywordtype">float</span> accum = 0.0;</div>
 <div class="line">21      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; it.Size(); ++i)</div>
-<div class="line">22        {    </div>
-<div class="line">23          accum += it.GetPixel(i);  </div>
+<div class="line">22        {</div>
+<div class="line">23          accum += it.GetPixel(i);</div>
 <div class="line">24        }</div>
 <div class="line">25      out.Set(accum/(<span class="keywordtype">float</span>)(it.Size()));</div>
 <div class="line">26    }</div>
@@ -151,7 +150,7 @@ Neighborhood operators and operations</h1>
 <div class="line">4  NeighborhoodInnerProduct IP;</div>
 <div class="line">5</div>
 <div class="line">6  out = out.Begin();</div>
-<div class="line">7  <span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out) </div>
+<div class="line">7  <span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out)</div>
 <div class="line">8  {</div>
 <div class="line">9    out.Set( IP( it, OP) );</div>
 <div class="line">10 }</div>
@@ -159,7 +158,7 @@ Neighborhood operators and operations</h1>
 <div class="fragment"><div class="line">1  NeighborhoodIterator::RadiusType radius = {1, 0, 0};</div>
 <div class="line">2  NeighborhoodIterator it(radius, inputImage, regionToProcess)</div>
 <div class="line">3  ImageRegionIterator out( outputImage, regionToProcess );</div>
-<div class="line">4  <span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out) </div>
+<div class="line">4  <span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out)</div>
 <div class="line">5  {</div>
 <div class="line">6    out.Set( it.GetPixel(3) - it.GetPixel(2) );</div>
 <div class="line">7  }</div>
@@ -189,7 +188,7 @@ Calculations at image boundaries</h1>
 <div class="line">NeighborhoodIterator it (OP.GetRadius(), inputImage, *regions_iterator);</div>
 <div class="line">NeighborhoodInnerProduct IP;</div>
 <div class="line">out = out.Begin();</div>
-<div class="line"><span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out) </div>
+<div class="line"><span class="keywordflow">for</span> (it.SetToBegin(); it != it.End(); ++it, ++out)</div>
 <div class="line">{</div>
 <div class="line">  out.Set( IP( it, OP) );</div>
 <div class="line">}</div>
@@ -203,7 +202,7 @@ Calculations at image boundaries</h1>
 <div class="line">{</div>
 <div class="line">  out = ImageIterator(outputImage, *regions_iterator);</div>
 <div class="line">  sit = SmartNeighborhoodIterator(OP.GetRadius(), inputImage, *regions_iterator);</div>
-<div class="line">  <span class="keywordflow">for</span> (sit.SetToBegin(); sit != sit.End(); ++sit, ++out) </div>
+<div class="line">  <span class="keywordflow">for</span> (sit.SetToBegin(); sit != sit.End(); ++sit, ++out)</div>
 <div class="line">  {</div>
 <div class="line">    out.Set( SIP( sit, OP) );</div>
 <div class="line">  }</div>

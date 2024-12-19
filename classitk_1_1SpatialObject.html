@@ -99,6 +99,8 @@ $(function() {
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int VDimension = 3&gt;<br />
 class itk::SpatialObject&lt; VDimension &gt;</div><p >Implementation of the composite pattern. </p>
 <p >The purpose of this class is to implement the composite pattern [Design Patterns, Gamma, 1995] within itk, so that it becomes easy to create an environment containing objects within a scene, and to manipulate the environment as a whole or any of its component objects. An object has a list of transformations to transform object coordinates to the corresponding coordinates in the real world coordinate system, and a list of inverse transformation to go backward. Any spatial objects can be plugged to a spatial object as children. To implement your own spatial object, you need to derive from the following class, which requires overriding just a few virtual functions. Examples of such functions are <a class="el" href="classitk_1_1SpatialObject.html#a8f9190b75480387c18fcce12362f1c8a">ValueAtInObjectSpace()</a>, <a class="el" href="classitk_1_1SpatialObject.html#a9886361d642d6b63691de4c980f5a0ae">IsInsideInObjectSpace()</a>, and <a class="el" href="classitk_1_1SpatialObject.html#a0d6dc7d481e302698daa5c73d558347e">ComputeMyBoundingBox()</a>, each of which has a meaning specific to each particular object type. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2SpatialObjects_2SpatialObjectTransforms_8cxx-example.html#_a0">Examples/SpatialObjects/SpatialObjectTransforms.cxx</a>.</dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="itkSpatialObject_8h_source.html#l00058">58</a> of file <a class="el" href="itkSpatialObject_8h_source.html">itkSpatialObject.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -216,8 +218,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac054549ef7a80a4c75180115cbce172b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#ac054549ef7a80a4c75180115cbce172b">AddChild</a> (<a class="el" href="classitk_1_1DataObject.html#a066b2a2df8f8a6acbafaad60490a0553">Self</a> *pointer)</td></tr>
 <tr class="separator:ac054549ef7a80a4c75180115cbce172b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5273d182d6e4aec6abe31cfcfacd9bf6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a5273d182d6e4aec6abe31cfcfacd9bf6">AddChildrenToConstList</a> (<a class="el" href="classitk_1_1SpatialObject.html#a103c15bc9e651bd64950c5223dfcda6c">ChildrenConstListType</a> *childrenList, unsigned int depth=0, const std::string &amp;name=&quot;&quot;) const</td></tr>
-<tr class="separator:a5273d182d6e4aec6abe31cfcfacd9bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8aa114b869ac1ac326e02781eaf4fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a6d8aa114b869ac1ac326e02781eaf4fb">AddChildrenToConstList</a> (<a class="el" href="classitk_1_1SpatialObject.html#a103c15bc9e651bd64950c5223dfcda6c">ChildrenConstListType</a> *childrenCList, unsigned int depth=0, const std::string &amp;name=&quot;&quot;) const</td></tr>
+<tr class="separator:a6d8aa114b869ac1ac326e02781eaf4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bf4565def423695a62de682a1a6b886"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#a2bf4565def423695a62de682a1a6b886">AddChildrenToList</a> (<a class="el" href="classitk_1_1SpatialObject.html#afc3a2b1811aa1061618e7dbe8d1e6249">ChildrenListType</a> *childrenList, unsigned int depth=0, const std::string &amp;name=&quot;&quot;) const</td></tr>
 <tr class="separator:a2bf4565def423695a62de682a1a6b886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdf59edd445169d276155f4431271498"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1SpatialObject.html#afdf59edd445169d276155f4431271498">CheckIdValidity</a> () const</td></tr>
@@ -1286,8 +1288,8 @@ template&lt;unsigned int VDimension = 3&gt; </div>
 
 </div>
 </div>
-<a id="a5273d182d6e4aec6abe31cfcfacd9bf6" name="a5273d182d6e4aec6abe31cfcfacd9bf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5273d182d6e4aec6abe31cfcfacd9bf6">&#9670;&nbsp;</a></span>AddChildrenToConstList()</h2>
+<a id="a6d8aa114b869ac1ac326e02781eaf4fb" name="a6d8aa114b869ac1ac326e02781eaf4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8aa114b869ac1ac326e02781eaf4fb">&#9670;&nbsp;</a></span>AddChildrenToConstList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1301,7 +1303,7 @@ template&lt;unsigned int VDimension = 3&gt; </div>
           <td class="memname">virtual void <a class="el" href="classitk_1_1SpatialObject.html">itk::SpatialObject</a>&lt; VDimension &gt;::AddChildrenToConstList </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classitk_1_1SpatialObject.html#a103c15bc9e651bd64950c5223dfcda6c">ChildrenConstListType</a> *&#160;</td>
-          <td class="paramname"><em>childrenList</em>, </td>
+          <td class="paramname"><em>childrenCList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

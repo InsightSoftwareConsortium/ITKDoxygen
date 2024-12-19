@@ -103,6 +103,8 @@ class itk::Matrix&lt; T, VRows, VColumns &gt;</div><p >A templated class holding
 <li>&lt;a href= </li>
 </ul>
 </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2DataRepresentation_2Image_2Image4_8cxx-example.html#_a13">Examples/DataRepresentation/Image/Image4.cxx</a>, and <a class="el" href="Examples_2DataRepresentation_2Mesh_2MeshTraits_8cxx-example.html#_a1">Examples/DataRepresentation/Mesh/MeshTraits.cxx</a>.</dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00052">52</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 </div><table class="memberdecls">
@@ -219,8 +221,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a29fbabb97a86a74fe4fdeba75e520e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a012e708075a5a3372f271b0d38a1eb7b"><td class="memItemLeft" align="right" valign="top">constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Matrix.html#a012e708075a5a3372f271b0d38a1eb7b">size</a> () const</td></tr>
 <tr class="separator:a012e708075a5a3372f271b0d38a1eb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d535071d31f2b1bef57752da144c7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Matrix.html#a61d535071d31f2b1bef57752da144c7b">swap</a> (<a class="el" href="classitk_1_1Matrix.html#abf2107ed7612e33404937076ebed1523">Self</a> &amp;other)</td></tr>
-<tr class="separator:a61d535071d31f2b1bef57752da144c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b5103619bf846f6d53da8b7b06a2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Matrix.html#ab0b5103619bf846f6d53da8b7b06a2ab">swap</a> (<a class="el" href="classitk_1_1Matrix.html#abf2107ed7612e33404937076ebed1523">Self</a> &amp;other) noexcept</td></tr>
+<tr class="separator:ab0b5103619bf846f6d53da8b7b06a2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ab5f668ab6b57074055a3515436c1d471"><td class="memItemLeft" align="right" valign="top">vnl_matrix_fixed&lt; T, VColumns, VRows &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1Matrix.html#ab5f668ab6b57074055a3515436c1d471">GetInverse</a> () const</td></tr>
 <tr class="separator:ab5f668ab6b57074055a3515436c1d471"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -483,7 +485,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Explicit constructor. Copies the elements from the specified <code>vnl_matrix</code> (assuming it has the same dimensions). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00243">243</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00260">260</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -516,7 +518,7 @@ template&lt;typename TElement &gt; </div>
 </div><div class="memdoc">
 <p >Explicit constructor template. Copies the elements from the specified C-style array of rows. </p><dl class="section note"><dt>Note</dt><dd>It might have been clearer to just declare a <code>Matrix(const T (&amp;)[VRows][VColumns])</code> constructor, but SWIG did not like that, saying: "Wrapping/Typedefs/itkMatrix.i:76: Error: Syntax error in input(3)." </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00252">252</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00269">269</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -547,7 +549,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Converting constructor (implicit). </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00290">290</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00307">307</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -606,7 +608,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns an iterator to the first element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00331">331</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00348">348</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +638,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns a const iterator to the first element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00345">345</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00362">362</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +668,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns a const iterator to the first element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00359">359</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00376">376</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -696,7 +698,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns a const iterator just beyond the last element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00366">366</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00383">383</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -726,7 +728,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns an iterator just beyond the last element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00338">338</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00355">355</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -756,7 +758,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns a const iterator just beyond the last element. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00352">352</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00369">369</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -787,7 +789,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Fill the matrix with a value. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00228">228</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00245">245</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -817,7 +819,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Get an identity matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00218">218</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00235">235</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -847,7 +849,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return the inverse matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00296">296</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00313">313</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -877,7 +879,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return the transposed matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00309">309</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00326">326</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -907,9 +909,9 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00197">197</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00214">214</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html#l00051">itk::detail::GetPointerToMatrixData()</a>, and <a class="el" href="itkMatrix_8h_source.html#l00400">itk::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkSymmetricEigenAnalysis_8h_source.html#l00051">itk::detail::GetPointerToMatrixData()</a>, and <a class="el" href="itkMatrix_8h_source.html#l00417">itk::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -939,7 +941,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00204">204</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00221">221</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +1002,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return an element of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00177">177</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00186">186</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1041,7 +1043,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return an element of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00184">184</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00193">193</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1139,7 +1141,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 <p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> by scalar multiplication. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00150">150</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00159">159</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1215,7 +1217,7 @@ template&lt;unsigned int OuterDim&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00108">108</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00114">114</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1312,7 +1314,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> by scalar multiplication. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00144">144</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00152">152</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1449,7 +1451,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> by scalar division. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00167">167</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00176">176</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1480,7 +1482,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p ><a class="el" href="classitk_1_1Matrix.html" title="A templated class holding a M x N size Matrix.">Matrix</a> by scalar division. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00160">160</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00169">169</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1510,7 +1512,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00283">283</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00300">300</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1541,7 +1543,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Assignment operator. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00235">235</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00252">252</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1572,9 +1574,9 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Comparison operators. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00261">261</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00278">278</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkMatrix_8h_source.html#l00395">itk::Matrix&lt; T, VRows, VColumns &gt;::m_Matrix</a>, and <a class="el" href="itkMath_8h_source.html#l00733">itk::Math::NotExactlyEquals()</a>.</p>
+<p class="reference">References <a class="el" href="itkMatrix_8h_source.html#l00412">itk::Matrix&lt; T, VRows, VColumns &gt;::m_Matrix</a>, and <a class="el" href="itkMath_8h_source.html#l00733">itk::Math::NotExactlyEquals()</a>.</p>
 
 </div>
 </div>
@@ -1605,7 +1607,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return a row of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00190">190</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00200">200</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1638,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Return a row of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00193">193</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00207">207</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1676,7 +1678,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00380">380</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00397">397</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
@@ -1706,7 +1708,7 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Set the matrix to identity. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00211">211</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00228">228</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="itkIOTestHelper_8h_source.html#l00190">itk::IOTestHelper::SetIdentityDirection()</a>.</p>
 
@@ -1738,12 +1740,12 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </div><div class="memdoc">
 <p >Returns the number of elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00324">324</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00341">341</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
 </div>
 </div>
-<a id="a61d535071d31f2b1bef57752da144c7b" name="a61d535071d31f2b1bef57752da144c7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61d535071d31f2b1bef57752da144c7b">&#9670;&nbsp;</a></span>swap()</h2>
+<a id="ab0b5103619bf846f6d53da8b7b06a2ab" name="ab0b5103619bf846f6d53da8b7b06a2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b5103619bf846f6d53da8b7b06a2ab">&#9670;&nbsp;</a></span>swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1763,16 +1765,14 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00372">372</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00389">389</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
-<p class="reference">References <a class="el" href="itkMatrix_8h_source.html#l00395">itk::Matrix&lt; T, VRows, VColumns &gt;::m_Matrix</a>, and <a class="el" href="itkMatrix_8h_source.html#l00409">itk::swap()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="itkMatrix_8h_source.html#l00409">itk::swap()</a>.</p>
+<p class="reference">References <a class="el" href="itkMatrix_8h_source.html#l00426">itk::swap()</a>.</p>
 
 </div>
 </div>
@@ -1825,9 +1825,9 @@ template&lt;typename T , unsigned int VRows = 3, unsigned int VColumns = 3&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00395">395</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkMatrix_8h_source.html#l00412">412</a> of file <a class="el" href="itkMatrix_8h_source.html">itkMatrix.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="itkMatrix_8h_source.html#l00261">itk::Matrix&lt; T, VRows, VColumns &gt;::operator==()</a>, and <a class="el" href="itkMatrix_8h_source.html#l00372">itk::Matrix&lt; T, VRows, VColumns &gt;::swap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="itkMatrix_8h_source.html#l00278">itk::Matrix&lt; T, VRows, VColumns &gt;::operator==()</a>.</p>
 
 </div>
 </div>
