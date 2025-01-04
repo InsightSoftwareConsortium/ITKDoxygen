@@ -139,6 +139,6 @@ var searchData=
   ['triangle_5fcell_136',['TRIANGLE_CELL',['../group__ITKCommon.html#gga689d3fe0822471806a38161a1709399aa6129d35d4272521d766d629ce058a97b',1,'itk::CommonEnums']]],
   ['two_137',['TWO',['../group__ITKCommon.html#gga9d34cb0442be1065227aaca910651d54a0f82d86afa0f5dc965c5c15aca58dcfb',1,'itk::OctreeEnums']]],
   ['twofilenifti_138',['TwoFileNifti',['../classitk_1_1NiftiImageIOEnums.html#a3b23c23734f976149b18276b73a55416aa4e333e241850be0cc3e024f2617a438',1,'itk::NiftiImageIOEnums']]],
-  ['typenotapplicable_139',['TypeNotApplicable',['../group__ITKCommon.html#gga6c6b2caa363f53b80fdf87a3325706a3a0073a79ad8c0564d43ea94dd5a7d1985',1,'itk::CommonEnums']]],
-  ['typenotapplicable_140',['TYPENOTAPPLICABLE',['../group__ITKCommon.html#gga6c6b2caa363f53b80fdf87a3325706a3a0d037d192f4c5bbbd9f3ee673431b2ed',1,'itk::CommonEnums']]]
+  ['typenotapplicable_139',['TYPENOTAPPLICABLE',['../group__ITKCommon.html#gga6c6b2caa363f53b80fdf87a3325706a3a0d037d192f4c5bbbd9f3ee673431b2ed',1,'itk::CommonEnums']]],
+  ['typenotapplicable_140',['TypeNotApplicable',['../group__ITKCommon.html#gga6c6b2caa363f53b80fdf87a3325706a3a0073a79ad8c0564d43ea94dd5a7d1985',1,'itk::CommonEnums']]]
 ];

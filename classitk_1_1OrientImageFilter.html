@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ITK: itk::FFTWComplexToComplexFFTImageFilter&lt; TInputImage, TOutputImage &gt; Class Template Reference</title>
+<title>ITK: itk::OrientImageFilter&lt; TInputImage, TOutputImage &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceitk.html">itk</a></li><li class="navelem"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">FFTWComplexToComplexFFTImageFilter</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceitk.html">itk</a></li><li class="navelem"><a class="el" href="classitk_1_1OrientImageFilter.html">OrientImageFilter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,78 +89,93 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="classitk_1_1FFTWComplexToComplexFFTImageFilter-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">itk::FFTWComplexToComplexFFTImageFilter&lt; TInputImage, TOutputImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKImageIntensity.html">Module ITKImageIntensity</a> &raquo; <a class="el" href="group__FourierTransform.html">FourierTransform</a> &#124; <a class="el" href="group__MultiThreadingGroup.html">MultiThreading Support</a> &raquo; <a class="el" href="group__MultiThreaded.html">MultiThreaded Filters</a> &#124; <a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKFFT.html">Module ITKFFT</a></div></div></div>
+<a href="classitk_1_1OrientImageFilter-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">itk::OrientImageFilter&lt; TInputImage, TOutputImage &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Group-Filtering.html">Group Filtering</a> &raquo; <a class="el" href="group__ITKImageGrid.html">Module ITKImageGrid</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage = TInputImage&gt;<br />
-class itk::FFTWComplexToComplexFFTImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Implements an API to enable the Fourier transform or the inverse Fourier transform of images with complex valued voxels to be computed using either FFTW from MIT or the FFTW interface in Intel MKL. </p>
-<p >This filter is multithreaded and supports input images with sizes which are not a power of two.</p>
-<p >This code was contributed in the Insight Journal paper: "FFT Complex to Complex filters and helper classes" by Warfield S. <a href="https://doi.org/10.54294/h4j7t7">https://doi.org/10.54294/h4j7t7</a></p>
-<dl class="section author"><dt>Author</dt><dd>Simon K. Warfield simon.warfield@childrens.harvard.edu</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Attribution Notice. This research work was made possible by Grant Number R01 RR021885 (PI Simon K. Warfield, Ph.D.) from the National Center for Research Resources (NCRR), a component of the National Institutes of Health (NIH). Its contents are solely the responsibility of the authors and do not necessarily represent the official view of NCRR or NIH.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a> </dd></dl>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TInputImage, typename TOutputImage&gt;<br />
+class itk::OrientImageFilter&lt; TInputImage, TOutputImage &gt;</div><p >Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes. </p>
+<p >This class satisfies a common requirement in medical imaging, which is to properly orient a 3 dimensional image with respect to anatomical features. Due to the wide variety of hardware used to generate 3D images of human anatomy, and the even wider variety of image processing software, it is often necessary to re-orient image volume data.</p>
+<p ><a class="el" href="classitk_1_1OrientImageFilter.html" title="Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes.">OrientImageFilter</a> depends on representations of the orientation defined in the <a class="el" href="classitk_1_1AnatomicalOrientation.html" title="Representations of anatomical orientations and methods to convert between conventions.">AnatomicalOrientation</a> class. The orientation is represented by the following anatomical terms with respect to the subject or patient:</p><ul>
+<li>Left and Right (Subject's left and right)</li>
+<li>Anterior and Posterior (Subject's front and back)</li>
+<li>Inferior and Superior (Subject's bottom and top, i.e. feet and head)</li>
+</ul>
+<p >An <a class="el" href="classitk_1_1AnatomicalOrientation.html" title="Representations of anatomical orientations and methods to convert between conventions.">AnatomicalOrientation</a> object can be constructed unambiguously with the following syntax:</p>
+<div class="fragment"><div class="line">AnatomicalOrientation(<a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">AnatomicalOrientation::CoordinateEnum::RightToLeft</a>,</div>
+<div class="line">                      <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a">AnatomicalOrientation::CoordinateEnum::AnteriorToPosterior</a>,</div>
+<div class="line">                      <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061">AnatomicalOrientation::CoordinateEnum::InferiorToSuperior</a>);</div>
+<div class="ttc" id="aclassitk_1_1AnatomicalOrientation_html_a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a"><div class="ttname"><a href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a">itk::AnatomicalOrientation::CoordinateEnum::AnteriorToPosterior</a></div><div class="ttdeci">@ AnteriorToPosterior</div><div class="ttdoc">to back</div></div>
+<div class="ttc" id="aclassitk_1_1AnatomicalOrientation_html_a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2"><div class="ttname"><a href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">itk::AnatomicalOrientation::CoordinateEnum::RightToLeft</a></div><div class="ttdeci">@ RightToLeft</div><div class="ttdoc">0b0010</div></div>
+<div class="ttc" id="aclassitk_1_1AnatomicalOrientation_html_a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061"><div class="ttname"><a href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061">itk::AnatomicalOrientation::CoordinateEnum::InferiorToSuperior</a></div><div class="ttdeci">@ InferiorToSuperior</div><div class="ttdoc">to head - 0b1000</div></div>
+</div><!-- fragment --><p >The orientations were previously defined in the itk::SpatialOrientation class. However, the 3 letter code is ambiguous with label and the direction the axis is increasing.</p>
+<p >In order to use this filter, you need to supply an input image, the current orientation of the input image (set with SetGivenCoordinateOrientation) and the desired orientation. (set with SetDesiredCoordinateOrientation). You may explicitly set the DesiredOrientation with SetDesiredCoordinateOrientation (if UseImageDirection is "off") or you can use the image's direction cosines to set the DesiredOrientation (if UseImageDirection is "on"). When reading image files that define the coordinate orientation of the image, the current orientation is stored in the MetadataDictionary for the <a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">itk::Image</a> object and the Image.Direction direction cosine matrix created from the file. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="Examples_2Filtering_2OrientImageFilter_8cxx-example.html#_a9">Examples/Filtering/OrientImageFilter.cxx</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00059">59</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00074">74</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::FFTWComplexToComplexFFTImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for itk::OrientImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1FFTWComplexToComplexFFTImageFilter__inherit__graph.svg" width="528" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1OrientImageFilter__inherit__graph.svg" width="532" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::FFTWComplexToComplexFFTImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for itk::OrientImageFilter&lt; TInputImage, TOutputImage &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1FFTWComplexToComplexFFTImageFilter__coll__graph.svg" width="3426" height="592"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classitk_1_1OrientImageFilter__coll__graph.svg" width="3372" height="636"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:adf87e98ee127869f6637f47f47f1082e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#adf87e98ee127869f6637f47f47f1082e">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:adf87e98ee127869f6637f47f47f1082e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221b0bd8992a252007dee1fa59126e44"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a221b0bd8992a252007dee1fa59126e44">FFTWProxyType</a> = typename <a class="el" href="classitk_1_1fftw_1_1Proxy.html">fftw::Proxy</a>&lt; typename PixelType::value_type &gt;</td></tr>
-<tr class="separator:a221b0bd8992a252007dee1fa59126e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fbf2cccfa43a61efbb18feb65b08253"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a6fbf2cccfa43a61efbb18feb65b08253">ImageSizeType</a> = typename ImageType::SizeType</td></tr>
-<tr class="separator:a6fbf2cccfa43a61efbb18feb65b08253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bd8347080aef4a9292344920da6887"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a89bd8347080aef4a9292344920da6887">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
-<tr class="separator:a89bd8347080aef4a9292344920da6887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0e199acb4f9eb38a7e78aaa24d68370"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#ad0e199acb4f9eb38a7e78aaa24d68370">PixelType</a> = typename ImageType::PixelType</td></tr>
-<tr class="separator:ad0e199acb4f9eb38a7e78aaa24d68370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa91bafca0afe0822b6da50829d4ae2dd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#aa91bafca0afe0822b6da50829d4ae2dd">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:aa91bafca0afe0822b6da50829d4ae2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e88c4ab9b71105d87ef01c252c183c2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a4e88c4ab9b71105d87ef01c252c183c2">Self</a> = <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">FFTWComplexToComplexFFTImageFilter</a></td></tr>
-<tr class="separator:a4e88c4ab9b71105d87ef01c252c183c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfad5499bb3e9b45b050a9aee4b90500"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#abfad5499bb3e9b45b050a9aee4b90500">Superclass</a> = <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">ComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
-<tr class="separator:abfad5499bb3e9b45b050a9aee4b90500"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ComplexToComplexFFTImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">itk::ComplexToComplexFFTImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a6ef059029b793488b2ae51716779b365 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a6ef059029b793488b2ae51716779b365">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:a6ef059029b793488b2ae51716779b365 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17341a94d02022b17bbaa694adbd0d4b inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a17341a94d02022b17bbaa694adbd0d4b">ImageSizeType</a> = typename ImageType::SizeType</td></tr>
-<tr class="separator:a17341a94d02022b17bbaa694adbd0d4b inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f9da3e3a7723663281f2fef343dc697 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a8f9da3e3a7723663281f2fef343dc697">ImageType</a> = TInputImage</td></tr>
-<tr class="separator:a8f9da3e3a7723663281f2fef343dc697 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f41c9474de2212d54df6721638cd59a inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a9f41c9474de2212d54df6721638cd59a">InputImageType</a> = TInputImage</td></tr>
-<tr class="separator:a9f41c9474de2212d54df6721638cd59a inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae54187cd1e62d3ebd43df1dbde2e52ea inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#ae54187cd1e62d3ebd43df1dbde2e52ea">OutputImageType</a> = TInputImage</td></tr>
-<tr class="separator:ae54187cd1e62d3ebd43df1dbde2e52ea inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff16b64e556389de12158ed1e6e5e027 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#aff16b64e556389de12158ed1e6e5e027">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
-<tr class="separator:aff16b64e556389de12158ed1e6e5e027 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71c53d194be708d7190a879ded5df83b inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a71c53d194be708d7190a879ded5df83b">Self</a> = <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">ComplexToComplexFFTImageFilter</a></td></tr>
-<tr class="separator:a71c53d194be708d7190a879ded5df83b inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba74a763354b46f373db4c3383c3ddd2 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#aba74a763354b46f373db4c3383c3ddd2">Superclass</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a>, <a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> &gt;</td></tr>
-<tr class="separator:aba74a763354b46f373db4c3383c3ddd2 inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b77339bfa343cff7bb825744e139b0c inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a0b77339bfa343cff7bb825744e139b0c">TransformDirectionEnum</a> = <a class="el" href="group__ITKFFT.html#ga041bb72f10be1a3625344da5c25d5f73">ComplexToComplexFFTImageFilterEnums::TransformDirection</a></td></tr>
-<tr class="separator:a0b77339bfa343cff7bb825744e139b0c inherit pub_types_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae23fc89d336966b2c24b84e66ff6a405">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="memitem:aa5db08bf2638fe5555266c045d17eced"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa5db08bf2638fe5555266c045d17eced">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
+<tr class="separator:aa5db08bf2638fe5555266c045d17eced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7893fde0f5718b5e07b870e12128c81"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> = <a class="el" href="classitk_1_1AnatomicalOrientation.html">AnatomicalOrientation</a></td></tr>
+<tr class="separator:ab7893fde0f5718b5e07b870e12128c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2a311f18ee16a212dffda3a030ffb9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a3c2a311f18ee16a212dffda3a030ffb9">FlipAxesArrayType</a> = typename <a class="el" href="classitk_1_1FlipImageFilter.html#a65ab12533fe59e1e00afc922a1ce6178">FlipperType::FlipAxesArrayType</a></td></tr>
+<tr class="separator:a3c2a311f18ee16a212dffda3a030ffb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8d07c9a80f5b03bbeacafb90322ea5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#abf8d07c9a80f5b03bbeacafb90322ea5">FlipperType</a> = <a class="el" href="classitk_1_1FlipImageFilter.html">FlipImageFilter</a>&lt; TInputImage &gt;</td></tr>
+<tr class="separator:abf8d07c9a80f5b03bbeacafb90322ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b1e4f1f355c849c54e6abe96f9b2a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a23b1e4f1f355c849c54e6abe96f9b2a4">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
+<tr class="separator:a23b1e4f1f355c849c54e6abe96f9b2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202be7207be5ecdef2da79d2a090f5ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a202be7207be5ecdef2da79d2a090f5ae">InputImagePixelType</a> = typename InputImageType::PixelType</td></tr>
+<tr class="separator:a202be7207be5ecdef2da79d2a090f5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a442f991a0b6a80534ac0858296b1d2cb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a442f991a0b6a80534ac0858296b1d2cb">InputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a></td></tr>
+<tr class="separator:a442f991a0b6a80534ac0858296b1d2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811dd950e96e2150b717fa61ff452605"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a811dd950e96e2150b717fa61ff452605">InputImageRegionType</a> = typename InputImageType::RegionType</td></tr>
+<tr class="separator:a811dd950e96e2150b717fa61ff452605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7200af63dbf756b1dbabd96a75eb42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aae7200af63dbf756b1dbabd96a75eb42">InputImageType</a> = TInputImage</td></tr>
+<tr class="separator:aae7200af63dbf756b1dbabd96a75eb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bfaaaa382d63c3f309c0c4f0d5937d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa9bfaaaa382d63c3f309c0c4f0d5937d">OutputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">OutputImageType::ConstPointer</a></td></tr>
+<tr class="separator:aa9bfaaaa382d63c3f309c0c4f0d5937d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7141c0948843c06a489ecec4dd542795"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a7141c0948843c06a489ecec4dd542795">OutputImagePixelType</a> = typename OutputImageType::PixelType</td></tr>
+<tr class="separator:a7141c0948843c06a489ecec4dd542795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab8b94feb13d0301173c5b20584e3d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a8ab8b94feb13d0301173c5b20584e3d1">OutputImagePointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a></td></tr>
+<tr class="separator:a8ab8b94feb13d0301173c5b20584e3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea528c8623e26069837ce5859183a7c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aea528c8623e26069837ce5859183a7c3">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
+<tr class="separator:aea528c8623e26069837ce5859183a7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d186d3a90486aa232e69df8824ee48b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a4d186d3a90486aa232e69df8824ee48b">OutputImageType</a> = TOutputImage</td></tr>
+<tr class="separator:a4d186d3a90486aa232e69df8824ee48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4fd08c83f71a66ee0a48610511c45e5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ab4fd08c83f71a66ee0a48610511c45e5">PermuteOrderArrayType</a> = typename <a class="el" href="classitk_1_1PermuteAxesImageFilter.html#af1804a6b36a91765409567befb18377d">PermuterType::PermuteOrderArrayType</a></td></tr>
+<tr class="separator:ab4fd08c83f71a66ee0a48610511c45e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bdf2ccfe7b286468ce49f62ebd2100"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a50bdf2ccfe7b286468ce49f62ebd2100">PermuterType</a> = <a class="el" href="classitk_1_1PermuteAxesImageFilter.html">PermuteAxesImageFilter</a>&lt; TInputImage &gt;</td></tr>
+<tr class="separator:a50bdf2ccfe7b286468ce49f62ebd2100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a8f5cd4896e6b01fca76adbc21cf24"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ae9a8f5cd4896e6b01fca76adbc21cf24">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
+<tr class="separator:ae9a8f5cd4896e6b01fca76adbc21cf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b5f131ea46aa6548b630921a1375b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a45b5f131ea46aa6548b630921a1375b8">Self</a> = <a class="el" href="classitk_1_1OrientImageFilter.html">OrientImageFilter</a></td></tr>
+<tr class="separator:a45b5f131ea46aa6548b630921a1375b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc174f9ae96687a696ba2bbcbe8f354"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a9cc174f9ae96687a696ba2bbcbe8f354">Superclass</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt; TInputImage, TOutputImage &gt;</td></tr>
+<tr class="separator:a9cc174f9ae96687a696ba2bbcbe8f354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
+<tr class="memitem:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae23fc89d336966b2c24b84e66ff6a405">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
 <tr class="separator:ae23fc89d336966b2c24b84e66ff6a405 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f37682bc322d3054a4dd750225e1115 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a3f37682bc322d3054a4dd750225e1115">InputImageConstPointer</a> = typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td></tr>
 <tr class="separator:a3f37682bc322d3054a4dd750225e1115 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,20 +187,20 @@ Public Types</h2></td></tr>
 <tr class="separator:af1215bdc5af73b842e71587c5ad8e6b4 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b36e46e10f4cd943c108c0f4cef263 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> = TInputImage</td></tr>
 <tr class="separator:a21b36e46e10f4cd943c108c0f4cef263 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a070d07c154ac66be8fbf5b4a358f16dc inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a070d07c154ac66be8fbf5b4a358f16dc">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="memitem:a070d07c154ac66be8fbf5b4a358f16dc inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a070d07c154ac66be8fbf5b4a358f16dc">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
 <tr class="separator:a070d07c154ac66be8fbf5b4a358f16dc inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59ecf5f8e29b93dd3a7b7d93de883a3a inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a59ecf5f8e29b93dd3a7b7d93de883a3a">Self</a> = <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a></td></tr>
 <tr class="separator:a59ecf5f8e29b93dd3a7b7d93de883a3a inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23305765ac20f4e77e582da397b65f12 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a23305765ac20f4e77e582da397b65f12">Superclass</a> = <a class="el" href="classitk_1_1ImageSource.html">ImageSource</a>&lt; TInputImage &gt;</td></tr>
+<tr class="memitem:a23305765ac20f4e77e582da397b65f12 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a23305765ac20f4e77e582da397b65f12">Superclass</a> = <a class="el" href="classitk_1_1ImageSource.html">ImageSource</a>&lt; TOutputImage &gt;</td></tr>
 <tr class="separator:a23305765ac20f4e77e582da397b65f12 inherit pub_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
-<tr class="memitem:aab6ba73d7ca08b61069f5e04e3b263f5 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aab6ba73d7ca08b61069f5e04e3b263f5">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="inherit_header pub_types_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
+<tr class="memitem:aab6ba73d7ca08b61069f5e04e3b263f5 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aab6ba73d7ca08b61069f5e04e3b263f5">ConstPointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
 <tr class="separator:aab6ba73d7ca08b61069f5e04e3b263f5 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9df70ee6ce4c55d9e51c7afa93359b90 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a9df70ee6ce4c55d9e51c7afa93359b90">DataObjectIdentifierType</a> = Superclass::DataObjectIdentifierType</td></tr>
+<tr class="memitem:a9df70ee6ce4c55d9e51c7afa93359b90 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a9df70ee6ce4c55d9e51c7afa93359b90">DataObjectIdentifierType</a> = <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">Superclass::DataObjectIdentifierType</a></td></tr>
 <tr class="separator:a9df70ee6ce4c55d9e51c7afa93359b90 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fe7aac26d5d117352cd53c10939a229 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a9fe7aac26d5d117352cd53c10939a229">DataObjectPointer</a> = <a class="el" href="classitk_1_1DataObject.html#a57ddb0e03cf59857375712f3217d89e5">DataObject::Pointer</a></td></tr>
 <tr class="separator:a9fe7aac26d5d117352cd53c10939a229 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0ca8b1aca9833abb5643f7f267fa643 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#af0ca8b1aca9833abb5643f7f267fa643">DataObjectPointerArraySizeType</a> = Superclass::DataObjectPointerArraySizeType</td></tr>
+<tr class="memitem:af0ca8b1aca9833abb5643f7f267fa643 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#af0ca8b1aca9833abb5643f7f267fa643">DataObjectPointerArraySizeType</a> = <a class="el" href="classitk_1_1ProcessObject.html#a3c2994c088964de63ccc5b293b2ac197">Superclass::DataObjectPointerArraySizeType</a></td></tr>
 <tr class="separator:af0ca8b1aca9833abb5643f7f267fa643 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a637c2eb56b4f223249743b3d568b8 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a34a637c2eb56b4f223249743b3d568b8">OutputImagePixelType</a> = typename OutputImageType::PixelType</td></tr>
 <tr class="separator:a34a637c2eb56b4f223249743b3d568b8 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,9 +208,9 @@ Public Types</h2></td></tr>
 <tr class="separator:aa5010ce3a8cd7d8d1bc40c4ae211464e inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a480f6a15f7241d2c63c1b4131246ff03 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> = typename OutputImageType::RegionType</td></tr>
 <tr class="separator:a480f6a15f7241d2c63c1b4131246ff03 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a496eaee630f2f99cc015aa7a6edb2db5 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> = TInputImage</td></tr>
+<tr class="memitem:a496eaee630f2f99cc015aa7a6edb2db5 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> = TOutputImage</td></tr>
 <tr class="separator:a496eaee630f2f99cc015aa7a6edb2db5 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34af1a411b80fe1baa91d0d482132947 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a> &gt;</td></tr>
+<tr class="memitem:a34af1a411b80fe1baa91d0d482132947 inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a> = <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt; <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> &gt;</td></tr>
 <tr class="separator:a34af1a411b80fe1baa91d0d482132947 inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4194253b7d16589cf177cb782184ace inherit pub_types_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a> = <a class="el" href="classitk_1_1ImageSource.html">ImageSource</a></td></tr>
 <tr class="separator:ae4194253b7d16589cf177cb782184ace inherit pub_types_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,25 +256,42 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab341618075913866f488ebc813e0a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a4ab341618075913866f488ebc813e0a6">GenerateOutputInformation</a> () override</td></tr>
+<tr class="separator:a4ab341618075913866f488ebc813e0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c6ae94e66646af890a36819ffe5b32"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa8c6ae94e66646af890a36819ffe5b32">GetDesiredCoordinateOrientation</a> () const</td></tr>
+<tr class="separator:aa8c6ae94e66646af890a36819ffe5b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00197bef6053dbe43cdde8ea6d98a96"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1OrientImageFilter.html#a3c2a311f18ee16a212dffda3a030ffb9">FlipAxesArrayType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ae00197bef6053dbe43cdde8ea6d98a96">GetFlipAxes</a> () const</td></tr>
+<tr class="separator:ae00197bef6053dbe43cdde8ea6d98a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910fb50e4c914ae02c7e79a911af73a0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a910fb50e4c914ae02c7e79a911af73a0">GetNameOfClass</a> () const override</td></tr>
+<tr class="separator:a910fb50e4c914ae02c7e79a911af73a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ea5c34346cbfb50d683954476ed26c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classitk_1_1OrientImageFilter.html#ab4fd08c83f71a66ee0a48610511c45e5">PermuteOrderArrayType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa1ea5c34346cbfb50d683954476ed26c">GetPermuteOrder</a> () const</td></tr>
+<tr class="separator:aa1ea5c34346cbfb50d683954476ed26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768e341961cc470968a228108f330642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a768e341961cc470968a228108f330642">SetDesiredCoordinateDirection</a> (const typename TOutputImage::DirectionType &amp;DesiredDirection)</td></tr>
+<tr class="separator:a768e341961cc470968a228108f330642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48974f74c5d40539fead341a90ba5f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a48974f74c5d40539fead341a90ba5f49">SetDesiredCoordinateOrientation</a> (<a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> newCode)</td></tr>
+<tr class="separator:a48974f74c5d40539fead341a90ba5f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fed706d958185dee0105e4095a8e0d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a1fed706d958185dee0105e4095a8e0d1">SetDesiredCoordinateOrientationToCoronal</a> ()</td></tr>
+<tr class="separator:a1fed706d958185dee0105e4095a8e0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6622962bfbdddd0f71eabd0aa7cee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a2c6622962bfbdddd0f71eabd0aa7cee6">SetDesiredCoordinateOrientationToSagittal</a> ()</td></tr>
+<tr class="separator:a2c6622962bfbdddd0f71eabd0aa7cee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e19ace7999c31907e7b8aadd32761d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ab0e19ace7999c31907e7b8aadd32761d">SetGivenCoordinateDirection</a> (const typename TInputImage::DirectionType &amp;GivenDirection)</td></tr>
+<tr class="separator:ab0e19ace7999c31907e7b8aadd32761d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a177b6d08b70044f8d6ffcc461f7a37bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a177b6d08b70044f8d6ffcc461f7a37bf">SetPlanRigor</a> (const int &amp;value)</td></tr>
-<tr class="separator:a177b6d08b70044f8d6ffcc461f7a37bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f0b85c49352465746ea646294889ca"><td class="memItemLeft" align="right" valign="top">virtual const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a26f0b85c49352465746ea646294889ca">GetPlanRigor</a> () const</td></tr>
-<tr class="separator:a26f0b85c49352465746ea646294889ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ab84aa6e0e8f6f17eaab28fb906005"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#af6ab84aa6e0e8f6f17eaab28fb906005">SetPlanRigor</a> (const std::string &amp;name)</td></tr>
-<tr class="separator:af6ab84aa6e0e8f6f17eaab28fb906005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ComplexToComplexFFTImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">itk::ComplexToComplexFFTImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a51d9d17dec6f51a2626de049f091a8b3 inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a51d9d17dec6f51a2626de049f091a8b3">GetNameOfClass</a> () const override</td></tr>
-<tr class="separator:a51d9d17dec6f51a2626de049f091a8b3 inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0245e4ee52fde465de98bbb8418f47b inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#aa0245e4ee52fde465de98bbb8418f47b">itkFactoryOnlyNewMacro</a> (<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>)</td></tr>
-<tr class="separator:aa0245e4ee52fde465de98bbb8418f47b inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac789b3012c79551fdb75d2cc5bb96d70 inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#ac789b3012c79551fdb75d2cc5bb96d70">SetTransformDirection</a> (const <a class="el" href="group__ITKFFT.html#ga041bb72f10be1a3625344da5c25d5f73">TransformDirectionEnum</a> _arg)</td></tr>
-<tr class="separator:ac789b3012c79551fdb75d2cc5bb96d70 inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f7a96cc2e06742d6b59749e26d13da inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__ITKFFT.html#ga041bb72f10be1a3625344da5c25d5f73">TransformDirectionEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a67f7a96cc2e06742d6b59749e26d13da">GetTransformDirection</a> () const</td></tr>
-<tr class="separator:a67f7a96cc2e06742d6b59749e26d13da inherit pub_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
+<tr class="memitem:aa8c8a35f3f352d39dcb95c017ffd2b1d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa8c8a35f3f352d39dcb95c017ffd2b1d">GetGivenCoordinateOrientation</a> () const</td></tr>
+<tr class="separator:aa8c8a35f3f352d39dcb95c017ffd2b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336575d1b36677abb0b8497536862e0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a336575d1b36677abb0b8497536862e0b">SetGivenCoordinateOrientation</a> (<a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> newCode)</td></tr>
+<tr class="separator:a336575d1b36677abb0b8497536862e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a98694fdf291493055d31b7e1c34fdc0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a98694fdf291493055d31b7e1c34fdc0c">UseImageDirectionOn</a> ()</td></tr>
+<tr class="separator:a98694fdf291493055d31b7e1c34fdc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2236bb1e927df4dbf0b6778f07beec0a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a2236bb1e927df4dbf0b6778f07beec0a">GetUseImageDirection</a> () const</td></tr>
+<tr class="separator:a2236bb1e927df4dbf0b6778f07beec0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28ad090b5acda1f6376e4a6cbf6d2f4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#aa28ad090b5acda1f6376e4a6cbf6d2f4">SetUseImageDirection</a> (bool _arg)</td></tr>
+<tr class="separator:aa28ad090b5acda1f6376e4a6cbf6d2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a0064972d52d1f7f58d983f7c9b436c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a0064972d52d1f7f58d983f7c9b436c02">SetDesiredCoordinateOrientationToAxial</a> ()</td></tr>
+<tr class="separator:a0064972d52d1f7f58d983f7c9b436c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:a9db129144c450fe7d6a1cb2311e73a82 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a9db129144c450fe7d6a1cb2311e73a82">GetInput</a> () const</td></tr>
 <tr class="separator:a9db129144c450fe7d6a1cb2311e73a82 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31337aa79d81e3964f0da71ada9278b4 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a31337aa79d81e3964f0da71ada9278b4">GetInput</a> (unsigned int idx) const</td></tr>
@@ -274,7 +306,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a06dec239139736205671486b39405cb1 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac00cff82ad181786d6503fa483e0b7ef inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ac00cff82ad181786d6503fa483e0b7ef">PushFrontInput</a> (const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *input)</td></tr>
 <tr class="separator:ac00cff82ad181786d6503fa483e0b7ef inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33146cb6219b67349eb1c643617dd82f inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a33146cb6219b67349eb1c643617dd82f">SetInput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
+<tr class="memitem:a33146cb6219b67349eb1c643617dd82f inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a33146cb6219b67349eb1c643617dd82f">SetInput</a> (const <a class="el" href="classitk_1_1ImageSource.html#a9df70ee6ce4c55d9e51c7afa93359b90">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
 <tr class="separator:a33146cb6219b67349eb1c643617dd82f inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91647f648e33842e822586661bf04990 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a91647f648e33842e822586661bf04990">SetInput</a> (const <a class="el" href="classitk_1_1ImageToImageFilter.html#a21b36e46e10f4cd943c108c0f4cef263">InputImageType</a> *input)</td></tr>
 <tr class="separator:a91647f648e33842e822586661bf04990 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,7 +320,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0473b34ee630ac88f1e92fe86e6dc4d8 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eddfd5cd5771049676e509b5504f330 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7eddfd5cd5771049676e509b5504f330">GetDirectionTolerance</a> () const</td></tr>
 <tr class="separator:a7eddfd5cd5771049676e509b5504f330 inherit pub_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
+<tr class="inherit_header pub_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
 <tr class="memitem:aee3ba4e718201b823ef2066a21540e92 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aee3ba4e718201b823ef2066a21540e92">GetNameOfClass</a> () const override</td></tr>
 <tr class="separator:aee3ba4e718201b823ef2066a21540e92 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ec7a0ea40122c508356a6f68ff1415 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1ImageSource.html#a496eaee630f2f99cc015aa7a6edb2db5">OutputImageType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a83ec7a0ea40122c508356a6f68ff1415">GetOutput</a> (unsigned int idx)</td></tr>
@@ -299,7 +331,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a112e68bec4e2494c8e4827a374ed3fb0 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93ec849c07f540382cc4f3ab75a71617 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a93ec849c07f540382cc4f3ab75a71617">GraftOutput</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
 <tr class="separator:a93ec849c07f540382cc4f3ab75a71617 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb19de1bb36d5b2d1fde7690670a9ec6 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aeb19de1bb36d5b2d1fde7690670a9ec6">GraftOutput</a> (const <a class="el" href="classitk_1_1ProcessObject.html#a93046b8571aa1dfe7906ee205b7baf7b">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
+<tr class="memitem:aeb19de1bb36d5b2d1fde7690670a9ec6 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aeb19de1bb36d5b2d1fde7690670a9ec6">GraftOutput</a> (const <a class="el" href="classitk_1_1ImageSource.html#a9df70ee6ce4c55d9e51c7afa93359b90">DataObjectIdentifierType</a> &amp;key, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
 <tr class="separator:aeb19de1bb36d5b2d1fde7690670a9ec6 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2c215ef0ea1e319551fbe6205efcea4 inherit pub_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac2c215ef0ea1e319551fbe6205efcea4">GraftNthOutput</a> (unsigned int idx, <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *graft)</td></tr>
 <tr class="separator:ac2c215ef0ea1e319551fbe6205efcea4 inherit pub_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -467,9 +499,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adbb6b3fd8c371d40b26a087567e6bbdd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#adbb6b3fd8c371d40b26a087567e6bbdd">New</a> ()</td></tr>
-<tr class="separator:adbb6b3fd8c371d40b26a087567e6bbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
+<tr class="memitem:a103a3c85f2ead6f7602f314205109d81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a103a3c85f2ead6f7602f314205109d81">New</a> ()</td></tr>
+<tr class="separator:a103a3c85f2ead6f7602f314205109d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0dbecad3f9685120bfb0878767113837">GetGlobalDefaultCoordinateTolerance</a> ()</td></tr>
 <tr class="separator:a0dbecad3f9685120bfb0878767113837 inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c079e8813621ce4cf31a9376ba9b65d inherit pub_static_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a2c079e8813621ce4cf31a9376ba9b65d">GetGlobalDefaultDirectionTolerance</a> ()</td></tr>
@@ -497,40 +529,42 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:af61e494b6199449dcf39d94ab5b2a3d5"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#af61e494b6199449dcf39d94ab5b2a3d5">ImageDimension</a> = ImageType::ImageDimension</td></tr>
-<tr class="separator:af61e494b6199449dcf39d94ab5b2a3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_attribs_classitk_1_1ComplexToComplexFFTImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ComplexToComplexFFTImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">itk::ComplexToComplexFFTImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a4f98db22cde9b1db4d71b5c57ef5f675 inherit pub_static_attribs_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a4f98db22cde9b1db4d71b5c57ef5f675">ImageDimension</a></td></tr>
-<tr class="separator:a4f98db22cde9b1db4d71b5c57ef5f675 inherit pub_static_attribs_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_attribs_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">InputImageDimension</a></td></tr>
+<tr class="memitem:a0ba3f6e141ed3bc545094d842ac94dce"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a0ba3f6e141ed3bc545094d842ac94dce">InputImageDimension</a> = TInputImage::ImageDimension</td></tr>
+<tr class="separator:a0ba3f6e141ed3bc545094d842ac94dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac184123d4c7f59960eb37c4e85466b14"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ac184123d4c7f59960eb37c4e85466b14">OutputImageDimension</a> = TOutputImage::ImageDimension</td></tr>
+<tr class="separator:ac184123d4c7f59960eb37c4e85466b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
+<tr class="memitem:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">InputImageDimension</a> = TInputImage::ImageDimension</td></tr>
 <tr class="separator:aaee62199ff26743e355dcfa080c54536 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7338e8222efda47b306d30a2820a6e59 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7338e8222efda47b306d30a2820a6e59">OutputImageDimension</a></td></tr>
+<tr class="memitem:a7338e8222efda47b306d30a2820a6e59 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a7338e8222efda47b306d30a2820a6e59">OutputImageDimension</a> = TOutputImage::ImageDimension</td></tr>
 <tr class="separator:a7338e8222efda47b306d30a2820a6e59 inherit pub_static_attribs_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_attribs_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
-<tr class="memitem:abaa451dfb579f07b6b2674f2500ac8a4 inherit pub_static_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#abaa451dfb579f07b6b2674f2500ac8a4">OutputImageDimension</a></td></tr>
+<tr class="inherit_header pub_static_attribs_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
+<tr class="memitem:abaa451dfb579f07b6b2674f2500ac8a4 inherit pub_static_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#abaa451dfb579f07b6b2674f2500ac8a4">OutputImageDimension</a> = TOutputImage::ImageDimension</td></tr>
 <tr class="separator:abaa451dfb579f07b6b2674f2500ac8a4 inherit pub_static_attribs_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a21cccf02fede1c7215ae088b35bf7279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a21cccf02fede1c7215ae088b35bf7279">BeforeThreadedGenerateData</a> () override</td></tr>
-<tr class="separator:a21cccf02fede1c7215ae088b35bf7279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6749f7d1f6eea575067f526db68796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#acf6749f7d1f6eea575067f526db68796">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a89bd8347080aef4a9292344920da6887">OutputImageRegionType</a> &amp;outputRegionForThread) override</td></tr>
-<tr class="separator:acf6749f7d1f6eea575067f526db68796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4136a166d2e6912b6cbd80a0a17272c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#ac4136a166d2e6912b6cbd80a0a17272c">FFTWComplexToComplexFFTImageFilter</a> ()</td></tr>
-<tr class="separator:ac4136a166d2e6912b6cbd80a0a17272c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8da91a56d4b7528bdd61fc94cc9cddee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a8da91a56d4b7528bdd61fc94cc9cddee">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
-<tr class="separator:a8da91a56d4b7528bdd61fc94cc9cddee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6091414e1f6d6f95568fdca389bfa804"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a6091414e1f6d6f95568fdca389bfa804">UpdateOutputData</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *output) override</td></tr>
-<tr class="separator:a6091414e1f6d6f95568fdca389bfa804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1691b2a97699fea3dd78f11dc2eac295"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a1691b2a97699fea3dd78f11dc2eac295">~FFTWComplexToComplexFFTImageFilter</a> () override=default</td></tr>
-<tr class="separator:a1691b2a97699fea3dd78f11dc2eac295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ComplexToComplexFFTImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">itk::ComplexToComplexFFTImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:a8c0c396e77fa3135a2ce10b634c1826f inherit pro_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a8c0c396e77fa3135a2ce10b634c1826f">ComplexToComplexFFTImageFilter</a> ()=default</td></tr>
-<tr class="separator:a8c0c396e77fa3135a2ce10b634c1826f inherit pro_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cf77e3a20ee2fef553bdec7ae95cdfa inherit pro_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html#a5cf77e3a20ee2fef553bdec7ae95cdfa">GenerateInputRequestedRegion</a> () override</td></tr>
-<tr class="separator:a5cf77e3a20ee2fef553bdec7ae95cdfa inherit pro_methods_classitk_1_1ComplexToComplexFFTImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
+<tr class="memitem:a3320b9f0234279d3a12aab26c64b946f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a3320b9f0234279d3a12aab26c64b946f">DeterminePermutationsAndFlips</a> (const <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> fixed_orient, const <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> moving_orient)</td></tr>
+<tr class="separator:a3320b9f0234279d3a12aab26c64b946f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a91a83266c5e494a1d88b5f280239ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a1a91a83266c5e494a1d88b5f280239ce">EnlargeOutputRequestedRegion</a> (<a class="el" href="classitk_1_1DataObject.html">DataObject</a> *) override</td></tr>
+<tr class="separator:a1a91a83266c5e494a1d88b5f280239ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af097f9fc90729a2a85cbed4dc15fa83c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#af097f9fc90729a2a85cbed4dc15fa83c">GenerateData</a> () override</td></tr>
+<tr class="separator:af097f9fc90729a2a85cbed4dc15fa83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123663dd12124df7f2afbea6fcfe6501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a123663dd12124df7f2afbea6fcfe6501">GenerateInputRequestedRegion</a> () override</td></tr>
+<tr class="separator:a123663dd12124df7f2afbea6fcfe6501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4707f17e80c04ed5f57cae8ccd84164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#af4707f17e80c04ed5f57cae8ccd84164">NeedToFlip</a> ()</td></tr>
+<tr class="separator:af4707f17e80c04ed5f57cae8ccd84164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064c38904bf21ce722f966be412cf5c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a064c38904bf21ce722f966be412cf5c1">NeedToPermute</a> ()</td></tr>
+<tr class="separator:a064c38904bf21ce722f966be412cf5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977fd56c6167f8dc3f4b9a209045684f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a977fd56c6167f8dc3f4b9a209045684f">OrientImageFilter</a> ()</td></tr>
+<tr class="separator:a977fd56c6167f8dc3f4b9a209045684f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9572ecfcf7d009e20a24aaec905a61b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a9572ecfcf7d009e20a24aaec905a61b0">PrintSelf</a> (std::ostream &amp;os, <a class="el" href="classitk_1_1Indent.html">Indent</a> indent) const override</td></tr>
+<tr class="separator:a9572ecfcf7d009e20a24aaec905a61b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00938e57eb28622a8cf04b6ba8ebf080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a00938e57eb28622a8cf04b6ba8ebf080">VerifyPreconditions</a> () const override</td></tr>
+<tr class="separator:a00938e57eb28622a8cf04b6ba8ebf080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3de1d16991c22d8d86a4dff4ee996a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#afa3de1d16991c22d8d86a4dff4ee996a">~OrientImageFilter</a> () override=default</td></tr>
+<tr class="separator:afa3de1d16991c22d8d86a4dff4ee996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
 <tr class="memitem:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae201413bc62727f7e282dbd176288b4f">CallCopyInputRegionToOutputRegion</a> (<a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;srcRegion)</td></tr>
 <tr class="separator:ae201413bc62727f7e282dbd176288b4f inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb1b2f9c20c1b13f03b41921422ce17 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a0cb1b2f9c20c1b13f03b41921422ce17">CallCopyOutputRegionToInputRegion</a> (<a class="el" href="classitk_1_1ImageToImageFilter.html#af1215bdc5af73b842e71587c5ad8e6b4">InputImageRegionType</a> &amp;destRegion, const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;srcRegion)</td></tr>
@@ -549,7 +583,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a7d4a3d22d059268e50bdc82af235670d inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a678c313f49e02478ad7e8297380ec607 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a678c313f49e02478ad7e8297380ec607">PushFrontInput</a> (const <a class="el" href="classitk_1_1DataObject.html">DataObject</a> *input)</td></tr>
 <tr class="separator:a678c313f49e02478ad7e8297380ec607 inherit pro_methods_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
+<tr class="inherit_header pro_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
 <tr class="memitem:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData</a> ()</td></tr>
 <tr class="separator:ac1967c5c2e3cbdbf5ae6d1f6c916790d inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c61aaef76b8efe3e7b5dddf907c2fba inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a2c61aaef76b8efe3e7b5dddf907c2fba">AllocateOutputs</a> ()</td></tr>
@@ -572,6 +606,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4bca7bad6981d2e66cee2845f1213078 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;region, <a class="el" href="namespaceitk.html#a6f5f0cceeeb25d886dcc6303a8e11deb">ThreadIdType</a> threadId)</td></tr>
 <tr class="separator:a40d1489ddcb02cc056cfd06853acbd84 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a33ccffad80a3d0d24384c79927642630">DynamicThreadedGenerateData</a> (const <a class="el" href="classitk_1_1ImageSource.html#a480f6a15f7241d2c63c1b4131246ff03">OutputImageRegionType</a> &amp;outputRegionForThread)</td></tr>
+<tr class="separator:a33ccffad80a3d0d24384c79927642630 inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a3024b85b01ce519e3dc080e2108e2e inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a9a3024b85b01ce519e3dc080e2108e2e">GetDynamicMultiThreading</a> () const</td></tr>
 <tr class="separator:a9a3024b85b01ce519e3dc080e2108e2e inherit pro_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e68a7c7e850259c56495c0c88ff9191 inherit pro_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a5e68a7c7e850259c56495c0c88ff9191">SetDynamicMultiThreading</a> (bool _arg)</td></tr>
@@ -740,19 +776,25 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a26433c2c144d4b333a0382aefdeb0f8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a26433c2c144d4b333a0382aefdeb0f8d">m_CanUseDestructiveAlgorithm</a> {}</td></tr>
-<tr class="separator:a26433c2c144d4b333a0382aefdeb0f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf072ced246f5a9b5a819245644408f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#adf072ced246f5a9b5a819245644408f1">m_PlanRigor</a> {}</td></tr>
-<tr class="separator:adf072ced246f5a9b5a819245644408f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c7e85d1a2f612c22e4e5500d72e3f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#ac9c7e85d1a2f612c22e4e5500d72e3f2">m_DesiredCoordinateOrientation</a></td></tr>
+<tr class="separator:ac9c7e85d1a2f612c22e4e5500d72e3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9fbc7dd154ad7989903352fd896b62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1OrientImageFilter.html#a3c2a311f18ee16a212dffda3a030ffb9">FlipAxesArrayType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a6a9fbc7dd154ad7989903352fd896b62">m_FlipAxes</a> { false }</td></tr>
+<tr class="separator:a6a9fbc7dd154ad7989903352fd896b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8077625cfd8988e60e44d55c17662dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a8077625cfd8988e60e44d55c17662dc7">m_GivenCoordinateOrientation</a></td></tr>
+<tr class="separator:a8077625cfd8988e60e44d55c17662dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33be1acfc1384299271a1fc345bcd040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1OrientImageFilter.html#ab4fd08c83f71a66ee0a48610511c45e5">PermuteOrderArrayType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a33be1acfc1384299271a1fc345bcd040">m_PermuteOrder</a> {}</td></tr>
+<tr class="separator:a33be1acfc1384299271a1fc345bcd040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed000f5e7d18cc29a37c1a7a34fc000"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1OrientImageFilter.html#a8ed000f5e7d18cc29a37c1a7a34fc000">m_UseImageDirection</a> { false }</td></tr>
+<tr class="separator:a8ed000f5e7d18cc29a37c1a7a34fc000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TInputImage &gt;</a></td></tr>
-<tr class="memitem:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae052150189e0c19be8035e1814287f16">InputToOutputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::OutputImageDimension, Self::InputImageDimension &gt;</td></tr>
+<tr class="inherit_header pro_types_classitk_1_1ImageToImageFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classitk_1_1ImageToImageFilter')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classitk_1_1ImageToImageFilter.html">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a></td></tr>
+<tr class="memitem:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#ae052150189e0c19be8035e1814287f16">InputToOutputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#a7338e8222efda47b306d30a2820a6e59">Self::OutputImageDimension</a>, <a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">Self::InputImageDimension</a> &gt;</td></tr>
 <tr class="separator:ae052150189e0c19be8035e1814287f16 inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a455189fce2b61b9f70f8a7b3649c67cb">OutputToInputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; Self::InputImageDimension, Self::OutputImageDimension &gt;</td></tr>
+<tr class="memitem:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageToImageFilter.html#a455189fce2b61b9f70f8a7b3649c67cb">OutputToInputRegionCopierType</a> = <a class="el" href="classitk_1_1ImageToImageFilterDetail_1_1ImageRegionCopier.html">ImageToImageFilterDetail::ImageRegionCopier</a>&lt; <a class="el" href="classitk_1_1ImageToImageFilter.html#aaee62199ff26743e355dcfa080c54536">Self::InputImageDimension</a>, <a class="el" href="classitk_1_1ImageToImageFilter.html#a7338e8222efda47b306d30a2820a6e59">Self::OutputImageDimension</a> &gt;</td></tr>
 <tr class="separator:a455189fce2b61b9f70f8a7b3649c67cb inherit pro_types_classitk_1_1ImageToImageFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
+<tr class="inherit_header pro_static_methods_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
 <tr class="memitem:abd90050781371402cdf0a73323c06cbd inherit pro_static_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classitk_1_1ImageRegionSplitterBase.html">ImageRegionSplitterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#abd90050781371402cdf0a73323c06cbd">GetGlobalDefaultSplitter</a> ()</td></tr>
 <tr class="separator:abd90050781371402cdf0a73323c06cbd inherit pro_static_methods_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cb81ba7f4080c186fa8c528c8cda33d inherit pro_static_methods_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceitk.html#abcdbadb88e635b1c819ba5d6213d0286">ITK_THREAD_RETURN_FUNCTION_CALL_CONVENTION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#a8cb81ba7f4080c186fa8c528c8cda33d">ThreaderCallback</a> (void *arg)</td></tr>
@@ -765,8 +807,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a07a30552aaad5d0ddf777cba609b8082 inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a1ae5848c8c2eefa4aa0098f53a1e8c0d">progressFloatToFixed</a> (float f)</td></tr>
 <tr class="separator:a1ae5848c8c2eefa4aa0098f53a1e8c0d inherit pro_static_methods_classitk_1_1ProcessObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TInputImage &gt;</a></td></tr>
-<tr class="memitem:aa26ac1851065e25e726336d3acae4952 inherit pro_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa26ac1851065e25e726336d3acae4952">m_DynamicMultiThreading</a></td></tr>
+<tr class="inherit_header pro_attribs_classitk_1_1ImageSource"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1ImageSource')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1ImageSource.html">itk::ImageSource&lt; TOutputImage &gt;</a></td></tr>
+<tr class="memitem:aa26ac1851065e25e726336d3acae4952 inherit pro_attribs_classitk_1_1ImageSource"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ImageSource.html#aa26ac1851065e25e726336d3acae4952">m_DynamicMultiThreading</a> { true }</td></tr>
 <tr class="separator:aa26ac1851065e25e726336d3acae4952 inherit pro_attribs_classitk_1_1ImageSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classitk_1_1ProcessObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitk_1_1ProcessObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitk_1_1ProcessObject.html">itk::ProcessObject</a></td></tr>
 <tr class="memitem:a6808e5c930d19feeaf22faefefbab783 inherit pro_attribs_classitk_1_1ProcessObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitk_1_1TimeStamp.html">TimeStamp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitk_1_1ProcessObject.html#a6808e5c930d19feeaf22faefefbab783">m_OutputInformationMTime</a> {}</td></tr>
@@ -778,166 +820,366 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a112a61462b494af0d8ca86f068ab2b04 inherit pro_attribs_classitk_1_1LightObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="adf87e98ee127869f6637f47f47f1082e" name="adf87e98ee127869f6637f47f47f1082e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf87e98ee127869f6637f47f47f1082e">&#9670;&nbsp;</a></span>ConstPointer</h2>
+<a id="aa5db08bf2638fe5555266c045d17eced" name="aa5db08bf2638fe5555266c045d17eced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5db08bf2638fe5555266c045d17eced">&#9670;&nbsp;</a></span>ConstPointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">::ConstPointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;const <a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00069">69</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00083">83</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="a221b0bd8992a252007dee1fa59126e44" name="a221b0bd8992a252007dee1fa59126e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a221b0bd8992a252007dee1fa59126e44">&#9670;&nbsp;</a></span>FFTWProxyType</h2>
+<a id="ab7893fde0f5718b5e07b870e12128c81" name="ab7893fde0f5718b5e07b870e12128c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7893fde0f5718b5e07b870e12128c81">&#9670;&nbsp;</a></span>CoordinateOrientationCode</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::FFTWProxyType =  typename <a class="el" href="classitk_1_1fftw_1_1Proxy.html">fftw::Proxy</a>&lt;typename PixelType::value_type&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::CoordinateOrientationCode =  <a class="el" href="classitk_1_1AnatomicalOrientation.html">AnatomicalOrientation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00083">83</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00096">96</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="a6fbf2cccfa43a61efbb18feb65b08253" name="a6fbf2cccfa43a61efbb18feb65b08253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fbf2cccfa43a61efbb18feb65b08253">&#9670;&nbsp;</a></span>ImageSizeType</h2>
+<a id="a3c2a311f18ee16a212dffda3a030ffb9" name="a3c2a311f18ee16a212dffda3a030ffb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c2a311f18ee16a212dffda3a030ffb9">&#9670;&nbsp;</a></span>FlipAxesArrayType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ImageSizeType =  typename ImageType::SizeType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p ><a class="el" href="classitk_1_1Image.html" title="Templated n-dimensional image class.">Image</a> type alias support </p>
-
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00094">94</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
-
-</div>
-</div>
-<a id="a89bd8347080aef4a9292344920da6887" name="a89bd8347080aef4a9292344920da6887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bd8347080aef4a9292344920da6887">&#9670;&nbsp;</a></span>OutputImageRegionType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImageRegionType =  typename OutputImageType::RegionType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::FlipAxesArrayType =  typename <a class="el" href="classitk_1_1FlipImageFilter.html#a65ab12533fe59e1e00afc922a1ce6178">FlipperType::FlipAxesArrayType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00075">75</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00104">104</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="ad0e199acb4f9eb38a7e78aaa24d68370" name="ad0e199acb4f9eb38a7e78aaa24d68370"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0e199acb4f9eb38a7e78aaa24d68370">&#9670;&nbsp;</a></span>PixelType</h2>
+<a id="abf8d07c9a80f5b03bbeacafb90322ea5" name="abf8d07c9a80f5b03bbeacafb90322ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8d07c9a80f5b03bbeacafb90322ea5">&#9670;&nbsp;</a></span>FlipperType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::PixelType =  typename ImageType::PixelType</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::FlipperType =  <a class="el" href="classitk_1_1FlipImageFilter.html">FlipImageFilter</a>&lt;TInputImage&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Axes flipper type. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00103">103</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a23b1e4f1f355c849c54e6abe96f9b2a4" name="a23b1e4f1f355c849c54e6abe96f9b2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b1e4f1f355c849c54e6abe96f9b2a4">&#9670;&nbsp;</a></span>InputImageConstPointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImageConstPointer =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">InputImageType::ConstPointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00072">72</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00088">88</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="aa91bafca0afe0822b6da50829d4ae2dd" name="aa91bafca0afe0822b6da50829d4ae2dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa91bafca0afe0822b6da50829d4ae2dd">&#9670;&nbsp;</a></span>Pointer</h2>
+<a id="a202be7207be5ecdef2da79d2a090f5ae" name="a202be7207be5ecdef2da79d2a090f5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202be7207be5ecdef2da79d2a090f5ae">&#9670;&nbsp;</a></span>InputImagePixelType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1LightObject.html#a0ab3a0958971d53d2e6654785c5e27f7">Self</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImagePixelType =  typename InputImageType::PixelType</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00068">68</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00090">90</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="a4e88c4ab9b71105d87ef01c252c183c2" name="a4e88c4ab9b71105d87ef01c252c183c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e88c4ab9b71105d87ef01c252c183c2">&#9670;&nbsp;</a></span>Self</h2>
+<a id="a442f991a0b6a80534ac0858296b1d2cb" name="a442f991a0b6a80534ac0858296b1d2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a442f991a0b6a80534ac0858296b1d2cb">&#9670;&nbsp;</a></span>InputImagePointer</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">FFTWComplexToComplexFFTImageFilter</a></td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImagePointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">InputImageType::Pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00087">87</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a811dd950e96e2150b717fa61ff452605" name="a811dd950e96e2150b717fa61ff452605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811dd950e96e2150b717fa61ff452605">&#9670;&nbsp;</a></span>InputImageRegionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImageRegionType =  typename InputImageType::RegionType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00089">89</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="aae7200af63dbf756b1dbabd96a75eb42" name="aae7200af63dbf756b1dbabd96a75eb42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7200af63dbf756b1dbabd96a75eb42">&#9670;&nbsp;</a></span>InputImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImageType =  TInputImage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Some convenient type alias. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00086">86</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9bfaaaa382d63c3f309c0c4f0d5937d" name="aa9bfaaaa382d63c3f309c0c4f0d5937d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9bfaaaa382d63c3f309c0c4f0d5937d">&#9670;&nbsp;</a></span>OutputImageConstPointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImageConstPointer =  typename <a class="el" href="itkPowImageFilter_8h.html#a2f58dcf154217e9a950e9621f60e4339">OutputImageType::ConstPointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00093">93</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a7141c0948843c06a489ecec4dd542795" name="a7141c0948843c06a489ecec4dd542795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7141c0948843c06a489ecec4dd542795">&#9670;&nbsp;</a></span>OutputImagePixelType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImagePixelType =  typename OutputImageType::PixelType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00095">95</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a8ab8b94feb13d0301173c5b20584e3d1" name="a8ab8b94feb13d0301173c5b20584e3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab8b94feb13d0301173c5b20584e3d1">&#9670;&nbsp;</a></span>OutputImagePointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImagePointer =  typename <a class="el" href="itkPowImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">OutputImageType::Pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00092">92</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="aea528c8623e26069837ce5859183a7c3" name="aea528c8623e26069837ce5859183a7c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea528c8623e26069837ce5859183a7c3">&#9670;&nbsp;</a></span>OutputImageRegionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImageRegionType =  typename OutputImageType::RegionType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00094">94</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d186d3a90486aa232e69df8824ee48b" name="a4d186d3a90486aa232e69df8824ee48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d186d3a90486aa232e69df8824ee48b">&#9670;&nbsp;</a></span>OutputImageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImageType =  TOutputImage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00091">91</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4fd08c83f71a66ee0a48610511c45e5" name="ab4fd08c83f71a66ee0a48610511c45e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4fd08c83f71a66ee0a48610511c45e5">&#9670;&nbsp;</a></span>PermuteOrderArrayType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::PermuteOrderArrayType =  typename <a class="el" href="classitk_1_1PermuteAxesImageFilter.html#af1804a6b36a91765409567befb18377d">PermuterType::PermuteOrderArrayType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00100">100</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a50bdf2ccfe7b286468ce49f62ebd2100" name="a50bdf2ccfe7b286468ce49f62ebd2100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50bdf2ccfe7b286468ce49f62ebd2100">&#9670;&nbsp;</a></span>PermuterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::PermuterType =  <a class="el" href="classitk_1_1PermuteAxesImageFilter.html">PermuteAxesImageFilter</a>&lt;TInputImage&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Axes permuter type. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00099">99</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="ae9a8f5cd4896e6b01fca76adbc21cf24" name="ae9a8f5cd4896e6b01fca76adbc21cf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a8f5cd4896e6b01fca76adbc21cf24">&#9670;&nbsp;</a></span>Pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#ac831674d6d3f7cd2148ae944cbaa7c9d">::Pointer</a> =  <a class="el" href="classitk_1_1SmartPointer.html">SmartPointer</a>&lt;<a class="el" href="classitk_1_1ImageSource.html#ae4194253b7d16589cf177cb782184ace">Self</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00082">82</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a45b5f131ea46aa6548b630921a1375b8" name="a45b5f131ea46aa6548b630921a1375b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b5f131ea46aa6548b630921a1375b8">&#9670;&nbsp;</a></span>Self</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#aec9acb768e36a04c977b735081c5ed2c">::Self</a> =  <a class="el" href="classitk_1_1OrientImageFilter.html">OrientImageFilter</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Standard class type aliases. </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00066">66</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00080">80</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="abfad5499bb3e9b45b050a9aee4b90500" name="abfad5499bb3e9b45b050a9aee4b90500"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfad5499bb3e9b45b050a9aee4b90500">&#9670;&nbsp;</a></span>Superclass</h2>
+<a id="a9cc174f9ae96687a696ba2bbcbe8f354" name="a9cc174f9ae96687a696ba2bbcbe8f354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc174f9ae96687a696ba2bbcbe8f354">&#9670;&nbsp;</a></span>Superclass</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1ComplexToComplexFFTImageFilter.html">ComplexToComplexFFTImageFilter</a>&lt;TInputImage, TOutputImage&gt;</td>
+          <td class="memname">using <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;<a class="el" href="itkAddImageFilter_8h.html#a8c77390f5f26f2ec5a75801152e1f673">::Superclass</a> =  <a class="el" href="classitk_1_1ImageToImageFilter.html">ImageToImageFilter</a>&lt;TInputImage, TOutputImage&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00067">67</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00081">81</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac4136a166d2e6912b6cbd80a0a17272c" name="ac4136a166d2e6912b6cbd80a0a17272c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4136a166d2e6912b6cbd80a0a17272c">&#9670;&nbsp;</a></span>FFTWComplexToComplexFFTImageFilter()</h2>
+<a id="a977fd56c6167f8dc3f4b9a209045684f" name="a977fd56c6167f8dc3f4b9a209045684f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977fd56c6167f8dc3f4b9a209045684f">&#9670;&nbsp;</a></span>OrientImageFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::FFTWComplexToComplexFFTImageFilter </td>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OrientImageFilter </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -952,19 +1194,19 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
 
 </div>
 </div>
-<a id="a1691b2a97699fea3dd78f11dc2eac295" name="a1691b2a97699fea3dd78f11dc2eac295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1691b2a97699fea3dd78f11dc2eac295">&#9670;&nbsp;</a></span>~FFTWComplexToComplexFFTImageFilter()</h2>
+<a id="afa3de1d16991c22d8d86a4dff4ee996a" name="afa3de1d16991c22d8d86a4dff4ee996a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3de1d16991c22d8d86a4dff4ee996a">&#9670;&nbsp;</a></span>~OrientImageFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::~<a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">FFTWComplexToComplexFFTImageFilter</a> </td>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::~<a class="el" href="classitk_1_1OrientImageFilter.html">OrientImageFilter</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -980,19 +1222,88 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a21cccf02fede1c7215ae088b35bf7279" name="a21cccf02fede1c7215ae088b35bf7279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21cccf02fede1c7215ae088b35bf7279">&#9670;&nbsp;</a></span>BeforeThreadedGenerateData()</h2>
+<a id="a3320b9f0234279d3a12aab26c64b946f" name="a3320b9f0234279d3a12aab26c64b946f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3320b9f0234279d3a12aab26c64b946f">&#9670;&nbsp;</a></span>DeterminePermutationsAndFlips()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::BeforeThreadedGenerateData </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::DeterminePermutationsAndFlips </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td>
+          <td class="paramname"><em>fixed_orient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td>
+          <td class="paramname"><em>moving_orient</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a91a83266c5e494a1d88b5f280239ce" name="a1a91a83266c5e494a1d88b5f280239ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a91a83266c5e494a1d88b5f280239ce">&#9670;&nbsp;</a></span>EnlargeOutputRequestedRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::EnlargeOutputRequestedRegion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p ><a class="el" href="classitk_1_1OrientImageFilter.html" title="Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes.">OrientImageFilter</a> will produce the entire output. </p>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#ac26647c13232381be4f6b1c63e2ec3c9">itk::ProcessObject</a>.</p>
+
+</div>
+</div>
+<a id="af097f9fc90729a2a85cbed4dc15fa83c" name="af097f9fc90729a2a85cbed4dc15fa83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af097f9fc90729a2a85cbed4dc15fa83c">&#9670;&nbsp;</a></span>GenerateData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GenerateData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1004,28 +1315,27 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >If an imaging filter needs to perform processing after the buffer has been allocated but before threads are spawned, the filter can can provide an implementation for <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a21cccf02fede1c7215ae088b35bf7279">BeforeThreadedGenerateData()</a>. The execution flow in the default <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> method will be: 1) Allocate the output buffer 2) Call <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a21cccf02fede1c7215ae088b35bf7279">BeforeThreadedGenerateData()</a> 3) Spawn threads, calling <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> in each thread. 4) Call <a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData()</a> Note that this flow of control is only available if a filter provides a <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> method and NOT a <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> method. </p>
+<p >Single-threaded version of GenerateData. This filter delegates to <a class="el" href="classitk_1_1PermuteAxesImageFilter.html" title="Permutes the image axes according to a user specified order.">PermuteAxesImageFilter</a> and <a class="el" href="classitk_1_1FlipImageFilter.html" title="Flips an image across user specified axes.">FlipImageFilter</a>. </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ImageSource.html#a3feaf3f80b0339277b2f3502140031f8">itk::ImageSource&lt; TInputImage &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">itk::ImageSource&lt; TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
-<a id="acf6749f7d1f6eea575067f526db68796" name="acf6749f7d1f6eea575067f526db68796"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf6749f7d1f6eea575067f526db68796">&#9670;&nbsp;</a></span>DynamicThreadedGenerateData()</h2>
+<a id="a123663dd12124df7f2afbea6fcfe6501" name="a123663dd12124df7f2afbea6fcfe6501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a123663dd12124df7f2afbea6fcfe6501">&#9670;&nbsp;</a></span>GenerateInputRequestedRegion()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::DynamicThreadedGenerateData </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GenerateInputRequestedRegion </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a89bd8347080aef4a9292344920da6887">OutputImageRegionType</a> &amp;&#160;</td>
-          <td class="paramname"><em>outputRegionForThread</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1035,27 +1345,138 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >If an imaging filter can be implemented as a multithreaded algorithm, the filter will provide an implementation of <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> or <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#acf6749f7d1f6eea575067f526db68796">DynamicThreadedGenerateData()</a>. This superclass will automatically split the output image into a number of pieces, spawn multiple threads, and call (Dynamic)<a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> in each thread. Prior to spawning threads, the <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#a21cccf02fede1c7215ae088b35bf7279">BeforeThreadedGenerateData()</a> method is called. After all the threads have completed, the <a class="el" href="classitk_1_1ImageSource.html#ac1967c5c2e3cbdbf5ae6d1f6c916790d">AfterThreadedGenerateData()</a> method is called. If an image processing filter cannot support threading, that filter should provide an implementation of the <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> method instead of providing an implementation of (Dynamic)<a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a>. If a filter provides a <a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a> method as its implementation, then the filter is responsible for allocating the output data. If a filter provides a (Dynamic)<a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> method as its implementation, then the output memory will allocated automatically by this superclass. The (Dynamic)<a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> method should only produce the output specified by "outputThreadRegion" parameter. (Dynamic)<a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> cannot write to any other portion of the output image (as this is responsibility of a different thread).</p>
-<p ><a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html#acf6749f7d1f6eea575067f526db68796">DynamicThreadedGenerateData()</a> is the newer variant without threadId, and is the preferred signature, which is called by default. This variant can split the requested region into different number of pieces depending on current multi-processing load, which allows better load balancing. The non-dynamic (also known as classic) <a class="el" href="classitk_1_1ImageSource.html#a40d1489ddcb02cc056cfd06853acbd84">ThreadedGenerateData()</a> signature has threadId, and number of pieces to be split into is known in advance. It is activated by calling this-&gt;DynamicMultiThreadingOff(); in derived class constructor. It should be used when the multi-threaded algorithm needs to pre-allocate some data structure with size dependent on the number of pieces (also known as chunks, work units, and sometimes also incorrectly as threads). Only PlatformMultiThreader guarantees that each piece will be processed in its own specific thread. Pool and TBB multi-threaders maintain a pool of threads (normally equal to number of processing cores) which they use to process the pieces. This normally results in a single thread being reused to process multiple work units.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ImageSource.html#adb2c5a1c45808a9c5e25e394ef491156">GenerateData()</a>, <a class="el" href="classitk_1_1ImageSource.html#a5f4be3dace79783d5b0bef78812b6875">SplitRequestedRegion()</a> </dd></dl>
+<p ><a class="el" href="classitk_1_1OrientImageFilter.html" title="Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes.">OrientImageFilter</a> needs the entire input be available. Thus, it needs to provide an implementation of <a class="el" href="classitk_1_1OrientImageFilter.html#a123663dd12124df7f2afbea6fcfe6501">GenerateInputRequestedRegion()</a>. </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ImageSource.html#a33ccffad80a3d0d24384c79927642630">itk::ImageSource&lt; TInputImage &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageToImageFilter.html#a6983235b756f273551b95c174b314e67">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6" name="a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d3cec2cdbfa1a3d2b0fdcddbe4bdc6">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
+<a id="a4ab341618075913866f488ebc813e0a6" name="a4ab341618075913866f488ebc813e0a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab341618075913866f488ebc813e0a6">&#9670;&nbsp;</a></span>GenerateOutputInformation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char * <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetNameOfClass </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GenerateOutputInformation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p ><a class="el" href="classitk_1_1OrientImageFilter.html" title="Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes.">OrientImageFilter</a> produces an image which is a different dimensionality than its input image, in general. As such, <a class="el" href="classitk_1_1OrientImageFilter.html" title="Permute axes and then flip images as needed to obtain agreement in coordinateOrientation codes.">OrientImageFilter</a> needs to provide an implementation for <a class="el" href="classitk_1_1OrientImageFilter.html#a4ab341618075913866f488ebc813e0a6">GenerateOutputInformation()</a> in order to inform the pipeline execution model. The original documentation of this method is below. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">ProcessObject::GenerateOutputInformation()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#abe61fb6b7de8c443e7af1561bd722736">itk::ProcessObject</a>.</p>
+
+</div>
+</div>
+<a id="aa8c6ae94e66646af890a36819ffe5b32" name="aa8c6ae94e66646af890a36819ffe5b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c6ae94e66646af890a36819ffe5b32">&#9670;&nbsp;</a></span>GetDesiredCoordinateOrientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetDesiredCoordinateOrientation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae00197bef6053dbe43cdde8ea6d98a96" name="ae00197bef6053dbe43cdde8ea6d98a96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00197bef6053dbe43cdde8ea6d98a96">&#9670;&nbsp;</a></span>GetFlipAxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classitk_1_1OrientImageFilter.html#a3c2a311f18ee16a212dffda3a030ffb9">FlipAxesArrayType</a> &amp; <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetFlipAxes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get flip axes. </p>
+
+</div>
+</div>
+<a id="aa8c8a35f3f352d39dcb95c017ffd2b1d" name="aa8c8a35f3f352d39dcb95c017ffd2b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c8a35f3f352d39dcb95c017ffd2b1d">&#9670;&nbsp;</a></span>GetGivenCoordinateOrientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetGivenCoordinateOrientation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Set/Get the orientation codes to define the coordinate transform. </p>
+
+</div>
+</div>
+<a id="a910fb50e4c914ae02c7e79a911af73a0" name="a910fb50e4c914ae02c7e79a911af73a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a910fb50e4c914ae02c7e79a911af73a0">&#9670;&nbsp;</a></span>GetNameOfClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetNameOfClass </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1069,23 +1490,23 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classitk_1_1LightObject.html#aee4e40acaa2b0aa7113b7cf94d742051">LightObject::GetNameOfClass()</a> </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#ae06f59a162985f74ce85ad71e7ce8cf8">itk::ProcessObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageToImageFilter.html#a442e763fedcf1a90ec426f58c7f725cf">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a26f0b85c49352465746ea646294889ca" name="a26f0b85c49352465746ea646294889ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26f0b85c49352465746ea646294889ca">&#9670;&nbsp;</a></span>GetPlanRigor()</h2>
+<a id="aa1ea5c34346cbfb50d683954476ed26c" name="aa1ea5c34346cbfb50d683954476ed26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ea5c34346cbfb50d683954476ed26c">&#9670;&nbsp;</a></span>GetPermuteOrder()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const int &amp; <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetPlanRigor </td>
+          <td class="memname">virtual const <a class="el" href="classitk_1_1OrientImageFilter.html#ab4fd08c83f71a66ee0a48610511c45e5">PermuteOrderArrayType</a> &amp; <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetPermuteOrder </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1097,26 +1518,108 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Set/Get the behavior of wisdom plan creation. The default is provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html#ac79fe780d1ba82b4873113136e01d0ef">FFTWGlobalConfiguration::GetPlanRigor()</a>.</p>
-<p >The parameter is one of the FFTW planner rigor flags FFTW_ESTIMATE, FFTW_MEASURE, FFTW_PATIENT, FFTW_EXHAUSTIVE provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a>.</p>
-<p >This is not used when ITK_USE_CUFFTW is enabled.</p>
-<p >/sa <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a> </p>
+<p >Get axes permute order. </p>
 
 </div>
 </div>
-<a id="adbb6b3fd8c371d40b26a087567e6bbdd" name="adbb6b3fd8c371d40b26a087567e6bbdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbb6b3fd8c371d40b26a087567e6bbdd">&#9670;&nbsp;</a></span>New()</h2>
+<a id="a2236bb1e927df4dbf0b6778f07beec0a" name="a2236bb1e927df4dbf0b6778f07beec0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2236bb1e927df4dbf0b6778f07beec0a">&#9670;&nbsp;</a></span>GetUseImageDirection()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classitk_1_1LightObject.html#a6444e37a72da674d95010442264cc52c">Pointer</a> <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::New </td>
+          <td class="memname">virtual bool <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::GetUseImageDirection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Controls how the GivenCoordinateOrientation is determined. If set to On, the direction cosines determine the coordinate orientation. If set to Off, the user must use the SetGivenCoordinateOrientation method to establish the orientation.</p>
+<p >For compatibility with the original API, the default value is Off. </p>
+
+</div>
+</div>
+<a id="af4707f17e80c04ed5f57cae8ccd84164" name="af4707f17e80c04ed5f57cae8ccd84164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4707f17e80c04ed5f57cae8ccd84164">&#9670;&nbsp;</a></span>NeedToFlip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::NeedToFlip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns true if flipping is required. Returns false otherwise. </p>
+
+</div>
+</div>
+<a id="a064c38904bf21ce722f966be412cf5c1" name="a064c38904bf21ce722f966be412cf5c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a064c38904bf21ce722f966be412cf5c1">&#9670;&nbsp;</a></span>NeedToPermute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::NeedToPermute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns true if a permute is required. Returns false otherwise. </p>
+
+</div>
+</div>
+<a id="a103a3c85f2ead6f7602f314205109d81" name="a103a3c85f2ead6f7602f314205109d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103a3c85f2ead6f7602f314205109d81">&#9670;&nbsp;</a></span>New()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classitk_1_1ImageSource.html#a34af1a411b80fe1baa91d0d482132947">Pointer</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::New </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1128,23 +1631,23 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Method for creation through the object factory. </p>
+<p >Standard New method. </p>
 
 </div>
 </div>
-<a id="a8da91a56d4b7528bdd61fc94cc9cddee" name="a8da91a56d4b7528bdd61fc94cc9cddee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8da91a56d4b7528bdd61fc94cc9cddee">&#9670;&nbsp;</a></span>PrintSelf()</h2>
+<a id="a9572ecfcf7d009e20a24aaec905a61b0" name="a9572ecfcf7d009e20a24aaec905a61b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9572ecfcf7d009e20a24aaec905a61b0">&#9670;&nbsp;</a></span>PrintSelf()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::PrintSelf </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::PrintSelf </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -1170,62 +1673,26 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
 <p >Methods invoked by <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> to print information about the object including superclasses. Typically not called by the user (use <a class="el" href="classitk_1_1LightObject.html#aeaeeb17d7efc67f9f628f4e920762167">Print()</a> instead) but used in the hierarchical print process to combine the output of several classes. <br  />
  </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#aef3453b86dd89913c90a0574d400ed48">itk::ProcessObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classitk_1_1ImageToImageFilter.html#a8fd631e1dbb1d2e154a5200f4d855ada">itk::ImageToImageFilter&lt; TInputImage, TOutputImage &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a177b6d08b70044f8d6ffcc461f7a37bf" name="a177b6d08b70044f8d6ffcc461f7a37bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a177b6d08b70044f8d6ffcc461f7a37bf">&#9670;&nbsp;</a></span>SetPlanRigor() <span class="overload">[1/2]</span></h2>
+<a id="a768e341961cc470968a228108f330642" name="a768e341961cc470968a228108f330642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768e341961cc470968a228108f330642">&#9670;&nbsp;</a></span>SetDesiredCoordinateDirection()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetPlanRigor </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetDesiredCoordinateDirection </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Set/Get the behavior of wisdom plan creation. The default is provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html#ac79fe780d1ba82b4873113136e01d0ef">FFTWGlobalConfiguration::GetPlanRigor()</a>.</p>
-<p >The parameter is one of the FFTW planner rigor flags FFTW_ESTIMATE, FFTW_MEASURE, FFTW_PATIENT, FFTW_EXHAUSTIVE provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a>.</p>
-<p >This is not used when ITK_USE_CUFFTW is enabled.</p>
-<p >/sa <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00108">108</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
-
-<p class="reference">References <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html#a94b5421080da833e17bd5d256626b401">itk::FFTWGlobalConfiguration::GetPlanRigorName()</a>.</p>
-
-</div>
-</div>
-<a id="af6ab84aa6e0e8f6f17eaab28fb906005" name="af6ab84aa6e0e8f6f17eaab28fb906005"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6ab84aa6e0e8f6f17eaab28fb906005">&#9670;&nbsp;</a></span>SetPlanRigor() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetPlanRigor </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const typename TOutputImage::DirectionType &amp;&#160;</td>
+          <td class="paramname"><em>DesiredDirection</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1235,34 +1702,254 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Set/Get the behavior of wisdom plan creation. The default is provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html#ac79fe780d1ba82b4873113136e01d0ef">FFTWGlobalConfiguration::GetPlanRigor()</a>.</p>
-<p >The parameter is one of the FFTW planner rigor flags FFTW_ESTIMATE, FFTW_MEASURE, FFTW_PATIENT, FFTW_EXHAUSTIVE provided by <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a>.</p>
-<p >This is not used when ITK_USE_CUFFTW is enabled.</p>
-<p >/sa <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html">FFTWGlobalConfiguration</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00122">122</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
-
-<p class="reference">References <a class="el" href="classitk_1_1FFTWGlobalConfiguration.html#a2bb40d207f7f745b4facb60193471d74">itk::FFTWGlobalConfiguration::GetPlanRigorValue()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00133">133</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
-<a id="a6091414e1f6d6f95568fdca389bfa804" name="a6091414e1f6d6f95568fdca389bfa804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6091414e1f6d6f95568fdca389bfa804">&#9670;&nbsp;</a></span>UpdateOutputData()</h2>
+<a id="a48974f74c5d40539fead341a90ba5f49" name="a48974f74c5d40539fead341a90ba5f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48974f74c5d40539fead341a90ba5f49">&#9670;&nbsp;</a></span>SetDesiredCoordinateOrientation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetDesiredCoordinateOrientation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td>
+          <td class="paramname"><em>newCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0064972d52d1f7f58d983f7c9b436c02" name="a0064972d52d1f7f58d983f7c9b436c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0064972d52d1f7f58d983f7c9b436c02">&#9670;&nbsp;</a></span>SetDesiredCoordinateOrientationToAxial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::UpdateOutputData </td>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetDesiredCoordinateOrientationToAxial </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classitk_1_1DataObject.html">DataObject</a> *&#160;</td>
-          <td class="paramname"><em>output</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Convenience methods to set desired slice orientation These methods allow a limited selection of slice orientations without having to specify the SpatialOrientation.</p>
+<p >SetDesiredCoordinateOrientationToAxial is equivalent to <a class="el" href="classitk_1_1AnatomicalOrientation.html#a8add4277b7c5b3b302b4dbec9700d73eaf0bd8ffe783f0ce4bf0fb76c508284f7">AnatomicalOrientation::PositiveEnum::LPS</a>.</p>
+<p >SetDesiredCoordinateOrientationToCoronal is equivalent to <a class="el" href="classitk_1_1AnatomicalOrientation.html#a8add4277b7c5b3b302b4dbec9700d73ea2524fb65ffd8bb8378633440f850db73">AnatomicalOrientation::PositiveEnum::LIP</a>.</p>
+<p >SetDesiredCoordinateOrientationToSagittal is equivalent to <a class="el" href="classitk_1_1AnatomicalOrientation.html#a8add4277b7c5b3b302b4dbec9700d73ea3077413b0d7f456e821af5d0023daae7">AnatomicalOrientation::PositiveEnum::PIR</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00168">168</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a">itk::AnatomicalOrientation::AnteriorToPosterior</a>, <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061">itk::AnatomicalOrientation::InferiorToSuperior</a>, and <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">itk::AnatomicalOrientation::RightToLeft</a>.</p>
+
+</div>
+</div>
+<a id="a1fed706d958185dee0105e4095a8e0d1" name="a1fed706d958185dee0105e4095a8e0d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fed706d958185dee0105e4095a8e0d1">&#9670;&nbsp;</a></span>SetDesiredCoordinateOrientationToCoronal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetDesiredCoordinateOrientationToCoronal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00177">177</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a">itk::AnatomicalOrientation::AnteriorToPosterior</a>, <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">itk::AnatomicalOrientation::RightToLeft</a>, and <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a67af6f139a06da2fc817a5221a4a0386">itk::AnatomicalOrientation::SuperiorToInferior</a>.</p>
+
+</div>
+</div>
+<a id="a2c6622962bfbdddd0f71eabd0aa7cee6" name="a2c6622962bfbdddd0f71eabd0aa7cee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6622962bfbdddd0f71eabd0aa7cee6">&#9670;&nbsp;</a></span>SetDesiredCoordinateOrientationToSagittal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetDesiredCoordinateOrientationToSagittal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00185">185</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+<p class="reference">References <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5d624a09fe221d5fcbeeeb03f2a6920a">itk::AnatomicalOrientation::AnteriorToPosterior</a>, <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ad1e80c506f4c89e3c4fb1c1b4867a03c">itk::AnatomicalOrientation::LeftToRight</a>, and <a class="el" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a67af6f139a06da2fc817a5221a4a0386">itk::AnatomicalOrientation::SuperiorToInferior</a>.</p>
+
+</div>
+</div>
+<a id="ab0e19ace7999c31907e7b8aadd32761d" name="ab0e19ace7999c31907e7b8aadd32761d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e19ace7999c31907e7b8aadd32761d">&#9670;&nbsp;</a></span>SetGivenCoordinateDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetGivenCoordinateDirection </td>
+          <td>(</td>
+          <td class="paramtype">const typename TInputImage::DirectionType &amp;&#160;</td>
+          <td class="paramname"><em>GivenDirection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00123">123</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a336575d1b36677abb0b8497536862e0b" name="a336575d1b36677abb0b8497536862e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336575d1b36677abb0b8497536862e0b">&#9670;&nbsp;</a></span>SetGivenCoordinateOrientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetGivenCoordinateOrientation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a>&#160;</td>
+          <td class="paramname"><em>newCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Set/Get the orientation codes to define the coordinate transform. </p>
+
+</div>
+</div>
+<a id="aa28ad090b5acda1f6376e4a6cbf6d2f4" name="aa28ad090b5acda1f6376e4a6cbf6d2f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28ad090b5acda1f6376e4a6cbf6d2f4">&#9670;&nbsp;</a></span>SetUseImageDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::SetUseImageDirection </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Controls how the GivenCoordinateOrientation is determined. If set to On, the direction cosines determine the coordinate orientation. If set to Off, the user must use the SetGivenCoordinateOrientation method to establish the orientation.</p>
+<p >For compatibility with the original API, the default value is Off. </p>
+
+</div>
+</div>
+<a id="a98694fdf291493055d31b7e1c34fdc0c" name="a98694fdf291493055d31b7e1c34fdc0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98694fdf291493055d31b7e1c34fdc0c">&#9670;&nbsp;</a></span>UseImageDirectionOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::UseImageDirectionOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Controls how the GivenCoordinateOrientation is determined. If set to On, the direction cosines determine the coordinate orientation. If set to Off, the user must use the SetGivenCoordinateOrientation method to establish the orientation.</p>
+<p >For compatibility with the original API, the default value is Off. </p>
+
+</div>
+</div>
+<a id="a00938e57eb28622a8cf04b6ba8ebf080" name="a00938e57eb28622a8cf04b6ba8ebf080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00938e57eb28622a8cf04b6ba8ebf080">&#9670;&nbsp;</a></span>VerifyPreconditions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::VerifyPreconditions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -1271,27 +1958,195 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Actually generate new output <br  />
- </p>
 
-<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#aee9a38d38626f768aafb2d56b870bf08">itk::ProcessObject</a>.</p>
+<p>Verifies that the process object has been configured correctly, that all required inputs are set, and needed parameters are set appropriately. If not valid an exceptions will be thrown. </p>
+<p >This method is called before <a class="el" href="classitk_1_1ProcessObject.html#ae8cfdbc07f262b90ce920e9aa56faab7" title="Update the information describing the output data.">UpdateOutputInformation()</a> is propagated to the inputs.</p>
+<p >The <a class="el" href="classitk_1_1ProcessObject.html" title="The base class for all process objects (source, filters, mappers) in the Insight data processing pipe...">ProcessObject</a>'s implementation verifies that the <a class="el" href="classitk_1_1ProcessObject.html#acce9a301d3bef92f85accbd544796f95">m_NumberOfRequiredInputs</a> are set and not null. </p>
+
+<p>Reimplemented from <a class="el" href="classitk_1_1ProcessObject.html#a492be750fed26fc837cb98498f40ea43">itk::ProcessObject</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af61e494b6199449dcf39d94ab5b2a3d5" name="af61e494b6199449dcf39d94ab5b2a3d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af61e494b6199449dcf39d94ab5b2a3d5">&#9670;&nbsp;</a></span>ImageDimension</h2>
+<a id="a0ba3f6e141ed3bc545094d842ac94dce" name="a0ba3f6e141ed3bc545094d842ac94dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba3f6e141ed3bc545094d842ac94dce">&#9670;&nbsp;</a></span>InputImageDimension</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::ImageDimension = ImageType::ImageDimension</td>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::InputImageDimension = TInputImage::ImageDimension</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >ImageDimension constants </p>
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00107">107</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9c7e85d1a2f612c22e4e5500d72e3f2" name="ac9c7e85d1a2f612c22e4e5500d72e3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c7e85d1a2f612c22e4e5500d72e3f2">&#9670;&nbsp;</a></span>m_DesiredCoordinateOrientation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_DesiredCoordinateOrientation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">AnatomicalOrientation::CoordinateEnum::RightToLeft</a>,</div>
+<div class="line">    <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061">AnatomicalOrientation::CoordinateEnum::InferiorToSuperior</a>,</div>
+<div class="line">    <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5cc37e86a96f51095b1a47d5820794e8">AnatomicalOrientation::CoordinateEnum::PosteriorToAnterior</a></div>
+<div class="line">  }</div>
+<div class="ttc" id="aclassitk_1_1AnatomicalOrientation_html_a18411e0eb84a1060af0e1ecb577a3515a5cc37e86a96f51095b1a47d5820794e8"><div class="ttname"><a href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5cc37e86a96f51095b1a47d5820794e8">itk::AnatomicalOrientation::CoordinateEnum::PosteriorToAnterior</a></div><div class="ttdeci">@ PosteriorToAnterior</div><div class="ttdoc">to front - 0b0100</div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00251">251</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a6a9fbc7dd154ad7989903352fd896b62" name="a6a9fbc7dd154ad7989903352fd896b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9fbc7dd154ad7989903352fd896b62">&#9670;&nbsp;</a></span>m_FlipAxes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html#a3c2a311f18ee16a212dffda3a030ffb9">FlipAxesArrayType</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_FlipAxes { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00259">259</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a8077625cfd8988e60e44d55c17662dc7" name="a8077625cfd8988e60e44d55c17662dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8077625cfd8988e60e44d55c17662dc7">&#9670;&nbsp;</a></span>m_GivenCoordinateOrientation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html#ab7893fde0f5718b5e07b870e12128c81">CoordinateOrientationCode</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_GivenCoordinateOrientation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{ <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ab7b0ea3028791689ea070674776855e2">AnatomicalOrientation::CoordinateEnum::RightToLeft</a>,</div>
+<div class="line">                                                          <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515ac33ec47d656b12d79afb14522caa2061">AnatomicalOrientation::CoordinateEnum::InferiorToSuperior</a>,</div>
+<div class="line">                                                          <a class="code hl_enumvalue" href="classitk_1_1AnatomicalOrientation.html#a18411e0eb84a1060af0e1ecb577a3515a5cc37e86a96f51095b1a47d5820794e8">AnatomicalOrientation::CoordinateEnum::PosteriorToAnterior</a> }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00248">248</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a33be1acfc1384299271a1fc345bcd040" name="a33be1acfc1384299271a1fc345bcd040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33be1acfc1384299271a1fc345bcd040">&#9670;&nbsp;</a></span>m_PermuteOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitk_1_1OrientImageFilter.html#ab4fd08c83f71a66ee0a48610511c45e5">PermuteOrderArrayType</a> <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_PermuteOrder {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00258">258</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="a8ed000f5e7d18cc29a37c1a7a34fc000" name="a8ed000f5e7d18cc29a37c1a7a34fc000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed000f5e7d18cc29a37c1a7a34fc000">&#9670;&nbsp;</a></span>m_UseImageDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_UseImageDirection { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00256">256</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
+
+</div>
+</div>
+<a id="ac184123d4c7f59960eb37c4e85466b14" name="ac184123d4c7f59960eb37c4e85466b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac184123d4c7f59960eb37c4e85466b14">&#9670;&nbsp;</a></span>OutputImageDimension</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TInputImage , typename TOutputImage &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int <a class="el" href="classitk_1_1OrientImageFilter.html">itk::OrientImageFilter</a>&lt; TInputImage, TOutputImage &gt;::OutputImageDimension = TOutputImage::ImageDimension</td>
         </tr>
       </table>
   </td>
@@ -1301,64 +2156,12 @@ template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </di
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00091">91</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
-
-</div>
-</div>
-<a id="a26433c2c144d4b333a0382aefdeb0f8d" name="a26433c2c144d4b333a0382aefdeb0f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26433c2c144d4b333a0382aefdeb0f8d">&#9670;&nbsp;</a></span>m_CanUseDestructiveAlgorithm</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_CanUseDestructiveAlgorithm {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00147">147</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
-
-</div>
-</div>
-<a id="adf072ced246f5a9b5a819245644408f1" name="adf072ced246f5a9b5a819245644408f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf072ced246f5a9b5a819245644408f1">&#9670;&nbsp;</a></span>m_PlanRigor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TInputImage , typename TOutputImage  = TInputImage&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classitk_1_1FFTWComplexToComplexFFTImageFilter.html">itk::FFTWComplexToComplexFFTImageFilter</a>&lt; TInputImage, TOutputImage &gt;::m_PlanRigor {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html#l00149">149</a> of file <a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itkOrientImageFilter_8h_source.html#l00108">108</a> of file <a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="itkFFTWComplexToComplexFFTImageFilter_8h_source.html">itkFFTWComplexToComplexFFTImageFilter.h</a></li>
+<li><a class="el" href="itkOrientImageFilter_8h_source.html">itkOrientImageFilter.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.15-->
