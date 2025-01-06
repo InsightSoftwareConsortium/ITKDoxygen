@@ -228,56 +228,52 @@ $(function() {
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      this-&gt;m_Remaining = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    {</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      this-&gt;m_Position -= this-&gt;m_OffsetTable[n] * (this-&gt;m_Region.GetSize()[n] - 1);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      this-&gt;m_PositionIndex[n] = this-&gt;m_BeginIndex[n];</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    this-&gt;m_Position -= this-&gt;m_OffsetTable[n] * (this-&gt;m_Region.GetSize()[n] - 1);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    this-&gt;m_PositionIndex[n] = this-&gt;m_BeginIndex[n];</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>}</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">//  Pass to the last pixel on the previous line</span></div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">//----------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">//  Pass to the last pixel on the previous line</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">//----------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TImage&gt;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">  281</a></span><a class="code hl_function" href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">ImageLinearConstIteratorWithIndex&lt;TImage&gt;::PreviousLine</a>()</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>{</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  this-&gt;m_Position +=</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    this-&gt;m_OffsetTable[m_Direction] * (this-&gt;m_EndIndex[m_Direction] - 1 - this-&gt;m_PositionIndex[m_Direction]);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TImage&gt;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">  279</a></span><a class="code hl_function" href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">ImageLinearConstIteratorWithIndex&lt;TImage&gt;::PreviousLine</a>()</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>{</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  this-&gt;m_Position +=</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    this-&gt;m_OffsetTable[m_Direction] * (this-&gt;m_EndIndex[m_Direction] - 1 - this-&gt;m_PositionIndex[m_Direction]);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  this-&gt;m_PositionIndex[m_Direction] = this-&gt;m_EndIndex[m_Direction] - 1;</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  this-&gt;m_PositionIndex[m_Direction] = this-&gt;m_EndIndex[m_Direction] - 1;</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n = 0; n &lt; TImage::ImageDimension; ++n)</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  {</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    this-&gt;m_Remaining = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">if</span> (n == m_Direction)</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    {</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    }</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    this-&gt;m_PositionIndex[n]--;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">if</span> (this-&gt;m_PositionIndex[n] &gt;= this-&gt;m_BeginIndex[n])</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      this-&gt;m_Position -= this-&gt;m_OffsetTable[n];</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      this-&gt;m_Remaining = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    {</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      this-&gt;m_Position += this-&gt;m_OffsetTable[n] * (this-&gt;m_Region.GetSize()[n] - 1);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      this-&gt;m_PositionIndex[n] = this-&gt;m_EndIndex[n] - 1;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  }</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n = 0; n &lt; TImage::ImageDimension; ++n)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    this-&gt;m_Remaining = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordflow">if</span> (n == m_Direction)</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    this-&gt;m_PositionIndex[n]--;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">if</span> (this-&gt;m_PositionIndex[n] &gt;= this-&gt;m_BeginIndex[n])</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      this-&gt;m_Position -= this-&gt;m_OffsetTable[n];</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>      this-&gt;m_Remaining = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    this-&gt;m_Position += this-&gt;m_OffsetTable[n] * (this-&gt;m_Region.GetSize()[n] - 1);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    this-&gt;m_PositionIndex[n] = this-&gt;m_EndIndex[n] - 1;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>} <span class="comment">// end namespace itk</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#  include &quot;itkImageLinearConstIteratorWithIndex.hxx&quot;</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#ifndef ITK_MANUAL_INSTANTIATION</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#  include &quot;itkImageLinearConstIteratorWithIndex.hxx&quot;</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassAddImageFilter_html"><div class="ttname"><a href="classAddImageFilter.html">AddImageFilter</a></div><div class="ttdoc">Pixel-wise addition of two images.</div></div>
 <div class="ttc" id="aclassitk_1_1ImageConstIteratorWithIndex_html"><div class="ttname"><a href="classitk_1_1ImageConstIteratorWithIndex.html">itk::ImageConstIteratorWithIndex</a></div><div class="ttdoc">A base class for multi-dimensional iterators templated over image type that are designed to efficient...</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIteratorWithIndex_8h_source.html#l00092">itkImageConstIteratorWithIndex.h:93</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageConstIteratorWithIndex_html_a2f118dc7ee50a2457fbcb68d93b2a79d"><div class="ttname"><a href="classitk_1_1ImageConstIteratorWithIndex.html#a2f118dc7ee50a2457fbcb68d93b2a79d">itk::ImageConstIteratorWithIndex::ImageType</a></div><div class="ttdeci">TImage ImageType</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIteratorWithIndex_8h_source.html#l00116">itkImageConstIteratorWithIndex.h:116</a></div></div>
@@ -288,7 +284,7 @@ $(function() {
 <div class="ttc" id="aclassitk_1_1ImageConstIteratorWithIndex_html_ae942661b6a25eb3a8fdfb045b6ab4cc2"><div class="ttname"><a href="classitk_1_1ImageConstIteratorWithIndex.html#ae942661b6a25eb3a8fdfb045b6ab4cc2">itk::ImageConstIteratorWithIndex::IndexType</a></div><div class="ttdeci">typename TImage::IndexType IndexType</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIteratorWithIndex_8h_source.html#l00105">itkImageConstIteratorWithIndex.h:105</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageConstIteratorWithIndex_html_afdb59208f2437ecccb73465e476e99a1"><div class="ttname"><a href="classitk_1_1ImageConstIteratorWithIndex.html#afdb59208f2437ecccb73465e476e99a1">itk::ImageConstIteratorWithIndex::PixelContainer</a></div><div class="ttdeci">typename TImage::PixelContainer PixelContainer</div><div class="ttdef"><b>Definition:</b> <a href="itkImageConstIteratorWithIndex_8h_source.html#l00121">itkImageConstIteratorWithIndex.h:121</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html">itk::ImageLinearConstIteratorWithIndex</a></div><div class="ttdoc">A multi-dimensional image iterator that visits image pixels within a region in a &quot;scan-line&quot; order.</div><div class="ttdef"><b>Definition:</b> <a href="itkImageLinearConstIteratorWithIndex_8h_source.html#l00101">itkImageLinearConstIteratorWithIndex.h:102</a></div></div>
-<div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html_a037a7a2a44ac225fc85645522aa0e21d"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">itk::ImageLinearConstIteratorWithIndex::PreviousLine</a></div><div class="ttdeci">void PreviousLine()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageLinearConstIteratorWithIndex_8h_source.html#l00281">itkImageLinearConstIteratorWithIndex.h:281</a></div></div>
+<div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html_a037a7a2a44ac225fc85645522aa0e21d"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a037a7a2a44ac225fc85645522aa0e21d">itk::ImageLinearConstIteratorWithIndex::PreviousLine</a></div><div class="ttdeci">void PreviousLine()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageLinearConstIteratorWithIndex_8h_source.html#l00279">itkImageLinearConstIteratorWithIndex.h:279</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html_a20741dc85de10cd8386ceb6d0119ebd4"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a20741dc85de10cd8386ceb6d0119ebd4">itk::ImageLinearConstIteratorWithIndex::ImageLinearConstIteratorWithIndex</a></div><div class="ttdeci">ImageLinearConstIteratorWithIndex()</div><div class="ttdef"><b>Definition:</b> <a href="itkImageLinearConstIteratorWithIndex_8h_source.html#l00133">itkImageLinearConstIteratorWithIndex.h:133</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html_a24cd2a1526552e1e0e6c87e546bf0289"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a24cd2a1526552e1e0e6c87e546bf0289">itk::ImageLinearConstIteratorWithIndex::IsAtReverseEndOfLine</a></div><div class="ttdeci">bool IsAtReverseEndOfLine() const</div><div class="ttdef"><b>Definition:</b> <a href="itkImageLinearConstIteratorWithIndex_8h_source.html#l00187">itkImageLinearConstIteratorWithIndex.h:187</a></div></div>
 <div class="ttc" id="aclassitk_1_1ImageLinearConstIteratorWithIndex_html_a310b2225f9e7d386a2c31f9b580314b2"><div class="ttname"><a href="classitk_1_1ImageLinearConstIteratorWithIndex.html#a310b2225f9e7d386a2c31f9b580314b2">itk::ImageLinearConstIteratorWithIndex::GoToReverseBeginOfLine</a></div><div class="ttdeci">void GoToReverseBeginOfLine()</div></div>
