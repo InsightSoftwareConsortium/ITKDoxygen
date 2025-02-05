@@ -17,7 +17,7 @@ RUN ln /usr/bin/dot /usr/sbin/dot
 
 RUN git clone https://github.com/doxygen/doxygen.git && \
     ( cd doxygen && \
-      git checkout Release_1_9_3 && \
+      git checkout Release_1_13_2 && \
       mkdir bld && cd bld && \
       cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. && \
       ninja install) && \
