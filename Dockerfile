@@ -11,6 +11,8 @@ RUN apt-get update && \
   ninja-build \
   graphviz \
   python3 \
+  perl \
+  pybtex \
   && apt-get clean
 
 RUN ln /usr/bin/dot /usr/sbin/dot
