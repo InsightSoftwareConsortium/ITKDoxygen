@@ -58,6 +58,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.github_token }}
 
+      - name: Trigger ReadTheDocs build
+        if: github.ref == 'refs/heads/main'
+        run: |
+          curl -X POST \
+            -d "token=${{ secrets.rtd_webhook_secret }}" \
+            -H "Content-Type: application/json" \
+            "https://readthedocs.org/api/v2/webhook/itkdoxygen/290126/"
+
       - name: Prepare HTML for GitHub Pages
         if: github.ref == 'refs/heads/main'
         run: |
