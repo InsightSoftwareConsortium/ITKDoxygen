@@ -12,7 +12,7 @@ RUN apt-get update && \
   graphviz \
   python3 \
   perl \
-  pybtex \
+  texlive-bibtex-extra \
   && apt-get clean
 
 RUN ln /usr/bin/dot /usr/sbin/dot
