@@ -62,8 +62,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           curl -X POST \
-            -d "token=${{ secrets.rtd_webhook_secret }}" \
             -H "Content-Type: application/json" \
+            -d '{"token": "${{ secrets.rtd_webhook_secret }}"}' \
             "https://readthedocs.org/api/v2/webhook/itkdoxygen/290126/"
 
       - name: Prepare HTML for GitHub Pages
