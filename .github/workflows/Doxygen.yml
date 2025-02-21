@@ -63,7 +63,7 @@ jobs:
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{"token": "${{ secrets.rtd_webhook_secret }}"}' \
+            -d '{"token": "${{ secrets.rtd_webhook_secret }}", "branches": "latest"}' \
             "https://readthedocs.org/api/v2/webhook/itkdoxygen/290126/"
 
       - name: Prepare HTML for GitHub Pages
