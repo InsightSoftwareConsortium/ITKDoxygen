@@ -6,7 +6,7 @@ SRC_DIR="/work/ITK"
 BLD_DIR="/work/ITK-bld"
 
 # If the SRC_DIR is not mounted, then this tag will be checked out
-GIT_TAG=${GIT_TAG:-"master"}
+GIT_TAG=${GIT_TAG:-"main"}
 
 set -xe
 
