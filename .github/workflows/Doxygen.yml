@@ -3,6 +3,19 @@ name: doxygen
 on:
   push:
     branches: main
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The ITK tag or hash with which to build the Doxygen documentation.'
+        required: false
+        default: 'master'
+        type: string
+      publish:
+        description: 'Create a GitHub release with the Doxygen documentation.'
+        required: true
+        default: 'false'
+        type: boolean
+
   schedule:
     - cron: '0 0 * * *'
 
@@ -19,9 +32,36 @@ jobs:
         run: |
           docker build -f Dockerfile -t itk-doxygen .
 
-      - name: Docker Doxygen generation
+      - name: Configure Variables
+        id: vars
         run: |
-          docker run --name itk-dox itk-doxygen
+          # if running workflow_dispatch, set the target branch to the tag input if set, otherwise set it to master
+            if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+                if [[ "${{ github.event.inputs.tag }}" != "" ]]; then
+                echo "branch=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+                else
+                echo "branch=master" >> $GITHUB_ENV
+                fi
+            else
+                echo "branch=master" >> $GITHUB_ENV
+            fi
+          
+          # Set publish to the input value if running workflow_dispatch, otherwise set it to true of running on main branch
+            if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+                echo "publish=${{ github.event.inputs.publish }}" >> $GITHUB_ENV
+                echo "publish_tag=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+            elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+                echo "publish=true" >> $GITHUB_ENV
+                echo "publish_tag=latest" >> $GITHUB_ENV
+            else
+                echo "publish=false" >> $GITHUB_ENV
+            fi
+
+      - name: Docker Doxygen generation
+        env:
+          TAG: env.branch
+        run: |
+          docker run --env TAG --name itk-dox itk-doxygen
           mkdir -p artifacts
           docker cp itk-dox:/ITKDoxygen.tar.gz artifacts/ITKDoxygen-${GITHUB_SHA}.tar.gz
           docker cp itk-dox:/ITKDoxygenXML.tar.gz artifacts/ITKDoxygenXML-${GITHUB_SHA}.tar.gz
@@ -35,26 +75,26 @@ jobs:
             artifacts/ITKDoxygen-*.tar.gz
 
       - name: Publish to latest GitHub Release
-        if: github.ref == 'refs/heads/main'
+        if: env.publish == 'true'
         run: |
           sudo apt install -y zstd
 
           pushd artifacts
 
-          cp ITKDoxygen-*.tar.gz InsightDoxygenDocHtml-latest.tar.gz
-          gunzip InsightDoxygenDocHtml-latest.tar.gz
-          zstd -f -10 -T6 --long=31 InsightDoxygenDocHtml-latest.tar -o InsightDoxygenDocHtml-latest.tar.zst
-          gzip -9 InsightDoxygenDocHtml-latest.tar
+          cp ITKDoxygen-*.tar.gz InsightDoxygenDocHtml-${publish_tag}.tar.gz
+          gunzip InsightDoxygenDocHtml-${publish_tag}.tar.gz
+          zstd -f -10 -T6 --long=31 InsightDoxygenDocHtml-${publish_tag}.tar -o InsightDoxygenDocHtml-${publish_tag}.tar.zst
+          gzip -9 InsightDoxygenDocHtml-${publish_tag}.tar
 
-          cp ITKDoxygenXML-*.tar.gz InsightDoxygenDocXml-latest.tar.gz
-          gunzip InsightDoxygenDocXml-latest.tar.gz
-          zstd -f -10 -T6 --long=31 InsightDoxygenDocXml-latest.tar -o InsightDoxygenDocXml-latest.tar.zst
-          gzip -9 InsightDoxygenDocXml-latest.tar
+          cp ITKDoxygenXML-*.tar.gz InsightDoxygenDocXml-${publish_tag}.tar.gz
+          gunzip InsightDoxygenDocXml-${publish_tag}.tar.gz
+          zstd -f -10 -T6 --long=31 InsightDoxygenDocXml-${publish_tag}.tar -o InsightDoxygenDocXml-${publish_tag}.tar.zst
+          gzip -9 InsightDoxygenDocXml-${publish_tag}.tar
 
           popd
 
-          gh release delete -R InsightSoftwareConsortium/ITKDoxygen --cleanup-tag latest --yes
-          gh release create latest --notes="ITK Doxygen documentation built from the ITK master branch." --prerelease --title "ITKDoxygen Latest" -R InsightSoftwareConsortium/ITKDoxygen ./artifacts/InsightDoxygen*
+          gh release delete -R InsightSoftwareConsortium/ITKDoxygen --cleanup-tag ${publish_tag} --yes
+          gh release create ${publish_tag} --notes="ITK Doxygen documentation built from the ITK main branch." --prerelease --title "ITKDoxygen ${publish_tag}" -R InsightSoftwareConsortium/ITKDoxygen ./artifacts/InsightDoxygen*
         env:
           GH_TOKEN: ${{ secrets.github_token }}
 
