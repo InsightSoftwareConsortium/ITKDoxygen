@@ -32,8 +32,12 @@ mkdir -p ${BLD_DIR} && \
           -DModule_MGHIO:BOOL=ON \
           -DModule_GenericLabelInterpolator:BOOL=ON \
           -DModule_AdaptiveDenoising:BOOL=ON \
+          -DModule_ITKVtkGlue:BOOL=ON \
+          -DModule_ITKVideoBridgeOpenCV:BOOL=ON \
           ${SRC_DIR} && \
     cmake --build . --target Documentation && \
     cd ${BLD_DIR}/Utilities/Doxygen && \
     tar --exclude=\*.md5 --exclude=\*.map -zcvf /ITKDoxygen.tar.gz ./html && \
     tar -zcvf /ITKDoxygenXML.tar.gz ./xml
+
+gzip -9 -c ${BLD_DIR}/Utilities/Doxygen/InsightDoxygen.tag > /ITKDoxygenDocTag.gz

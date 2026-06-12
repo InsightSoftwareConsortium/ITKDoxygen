@@ -25,6 +25,7 @@ jobs:
           mkdir -p artifacts
           docker cp itk-dox:/ITKDoxygen.tar.gz artifacts/ITKDoxygen-${GITHUB_SHA}.tar.gz
           docker cp itk-dox:/ITKDoxygenXML.tar.gz artifacts/ITKDoxygenXML-${GITHUB_SHA}.tar.gz
+          docker cp itk-dox:/ITKDoxygenDocTag.gz artifacts/ITKDoxygenDocTag-${GITHUB_SHA}.gz
 
       - name: Archive Doxygen Artifacts
         uses: actions/upload-artifact@v7
@@ -32,6 +33,7 @@ jobs:
           name: doxygen
           path: |
             artifacts/ITKDoxygenXML-*.tar.gz
+            artifacts/ITKDoxygenDocTag-*.gz
             artifacts/ITKDoxygen-*.tar.gz
 
       - name: Publish to latest GitHub Release
@@ -50,6 +52,8 @@ jobs:
           gunzip InsightDoxygenDocXml-latest.tar.gz
           zstd -f -10 -T6 --long=31 InsightDoxygenDocXml-latest.tar -o InsightDoxygenDocXml-latest.tar.zst
           gzip -9 InsightDoxygenDocXml-latest.tar
+
+          cp ITKDoxygenDocTag-*.gz InsightDoxygenDocTag-latest.gz
 
           popd
 
