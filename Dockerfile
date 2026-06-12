@@ -10,6 +10,8 @@ RUN apt-get update && \
   git \
   ninja-build \
   graphviz \
+  libvtk9-dev \
+  libopencv-dev \
   python3 \
   perl \
   texlive-bibtex-extra \
