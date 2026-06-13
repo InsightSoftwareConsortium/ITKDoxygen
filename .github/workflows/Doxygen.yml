@@ -5,10 +5,24 @@ on:
     branches: main
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'ITK tag, branch, or commit to document (empty: main, published as latest).'
+        required: false
+        default: ''
+        type: string
+      publish:
+        description: 'Create or replace the GitHub release for the documentation.'
+        required: true
+        default: false
+        type: boolean
 
 jobs:
   doxygen:
     runs-on: ubuntu-24.04
+    outputs:
+      pages: ${{ steps.vars.outputs.pages }}
 
     steps:
       - uses: actions/checkout@v6
@@ -19,9 +33,30 @@ jobs:
         run: |
           docker build -f Dockerfile -t itk-doxygen .
 
+      - name: Configure variables
+        id: vars
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_PUBLISH: ${{ inputs.publish }}
+        run: |
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            GIT_TAG="${INPUT_TAG:-main}"
+            PUBLISH="${INPUT_PUBLISH}"
+            PUBLISH_TAG="${INPUT_TAG:-latest}"
+          else
+            GIT_TAG="main"
+            PUBLISH="true"
+            PUBLISH_TAG="latest"
+          fi
+          echo "GIT_TAG=${GIT_TAG}" >> "$GITHUB_ENV"
+          echo "PUBLISH=${PUBLISH}" >> "$GITHUB_ENV"
+          echo "PUBLISH_TAG=${PUBLISH_TAG}" >> "$GITHUB_ENV"
+          # Pages and ReadTheDocs only track the latest main documentation.
+          echo "pages=$([ "$PUBLISH" = true ] && [ "$PUBLISH_TAG" = latest ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
       - name: Docker Doxygen generation
         run: |
-          docker run --name itk-dox itk-doxygen
+          docker run --env GIT_TAG --name itk-dox itk-doxygen
           mkdir -p artifacts
           docker cp itk-dox:/ITKDoxygen.tar.gz artifacts/ITKDoxygen-${GITHUB_SHA}.tar.gz
           docker cp itk-dox:/ITKDoxygenXML.tar.gz artifacts/ITKDoxygenXML-${GITHUB_SHA}.tar.gz
@@ -36,34 +71,34 @@ jobs:
             artifacts/ITKDoxygenDocTag-*.gz
             artifacts/ITKDoxygen-*.tar.gz
 
-      - name: Publish to latest GitHub Release
-        if: github.ref == 'refs/heads/main'
+      - name: Publish to GitHub Release
+        if: env.PUBLISH == 'true'
         run: |
           sudo apt install -y zstd
 
           pushd artifacts
 
-          cp ITKDoxygen-*.tar.gz InsightDoxygenDocHtml-latest.tar.gz
-          gunzip InsightDoxygenDocHtml-latest.tar.gz
-          zstd -f -10 -T6 --long=31 InsightDoxygenDocHtml-latest.tar -o InsightDoxygenDocHtml-latest.tar.zst
-          gzip -9 InsightDoxygenDocHtml-latest.tar
+          cp ITKDoxygen-*.tar.gz InsightDoxygenDocHtml-${PUBLISH_TAG}.tar.gz
+          gunzip InsightDoxygenDocHtml-${PUBLISH_TAG}.tar.gz
+          zstd -f -10 -T6 --long=31 InsightDoxygenDocHtml-${PUBLISH_TAG}.tar -o InsightDoxygenDocHtml-${PUBLISH_TAG}.tar.zst
+          gzip -9 InsightDoxygenDocHtml-${PUBLISH_TAG}.tar
 
-          cp ITKDoxygenXML-*.tar.gz InsightDoxygenDocXml-latest.tar.gz
-          gunzip InsightDoxygenDocXml-latest.tar.gz
-          zstd -f -10 -T6 --long=31 InsightDoxygenDocXml-latest.tar -o InsightDoxygenDocXml-latest.tar.zst
-          gzip -9 InsightDoxygenDocXml-latest.tar
+          cp ITKDoxygenXML-*.tar.gz InsightDoxygenDocXml-${PUBLISH_TAG}.tar.gz
+          gunzip InsightDoxygenDocXml-${PUBLISH_TAG}.tar.gz
+          zstd -f -10 -T6 --long=31 InsightDoxygenDocXml-${PUBLISH_TAG}.tar -o InsightDoxygenDocXml-${PUBLISH_TAG}.tar.zst
+          gzip -9 InsightDoxygenDocXml-${PUBLISH_TAG}.tar
 
-          cp ITKDoxygenDocTag-*.gz InsightDoxygenDocTag-latest.gz
+          cp ITKDoxygenDocTag-*.gz InsightDoxygenDocTag-${PUBLISH_TAG}.gz
 
           popd
 
-          gh release delete -R InsightSoftwareConsortium/ITKDoxygen --cleanup-tag latest --yes
-          gh release create latest --notes="ITK Doxygen documentation built from the ITK main branch." --prerelease --title "ITKDoxygen Latest" -R InsightSoftwareConsortium/ITKDoxygen ./artifacts/InsightDoxygen*
+          gh release delete -R InsightSoftwareConsortium/ITKDoxygen --cleanup-tag "${PUBLISH_TAG}" --yes || true
+          gh release create "${PUBLISH_TAG}" --notes="ITK Doxygen documentation built from ITK ${GIT_TAG}." --prerelease --title "ITKDoxygen ${PUBLISH_TAG}" -R InsightSoftwareConsortium/ITKDoxygen ./artifacts/InsightDoxygen*
         env:
           GH_TOKEN: ${{ secrets.github_token }}
 
       - name: Trigger ReadTheDocs build
-        if: github.ref == 'refs/heads/main'
+        if: env.PUBLISH == 'true' && env.PUBLISH_TAG == 'latest'
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
@@ -71,13 +106,13 @@ jobs:
             "https://readthedocs.org/api/v2/webhook/itkdoxygen/290126/"
 
       - name: Prepare HTML for GitHub Pages
-        if: github.ref == 'refs/heads/main'
+        if: env.PUBLISH == 'true' && env.PUBLISH_TAG == 'latest'
         run: |
           tar -zxf artifacts/ITKDoxygen-*.tar.gz
           touch html/.nojekyll
 
       - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/main'
+        if: env.PUBLISH == 'true' && env.PUBLISH_TAG == 'latest'
         uses: actions/upload-pages-artifact@v5
         with:
           path: html
@@ -85,6 +120,7 @@ jobs:
 
   deploy-gh-pages:
     needs: doxygen
+    if: needs.doxygen.outputs.pages == 'true'
     runs-on: ubuntu-24.04
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
@@ -100,7 +136,6 @@ jobs:
 
     steps:
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
       id: deployment
       uses: actions/deploy-pages@v5
       # with:
