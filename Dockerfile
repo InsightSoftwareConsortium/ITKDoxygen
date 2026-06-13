@@ -11,6 +11,8 @@ RUN apt-get update && \
   ninja-build \
   graphviz \
   libvtk9-dev \
+  qtbase5-dev \
+  libqt5opengl5-dev \
   libopencv-dev \
   python3 \
   perl \
